@@ -1,127 +1,133 @@
 import Link from 'next/link'
 
-export default function Programs() {
+export type Program = {
+  id: string
+  name: string
+  description: string | null
+  tag: string | null
+  href: string | null
+  grid_slot: string | null
+}
+
+type ProgramsContent = Record<string, string>
+
+const CONTENT_DEFAULTS: ProgramsContent = {
+  headline:    'BUILD YOUR PATH',
+  subheadline: 'From healthcare to technology to the trades — over 200 programs designed to get you where you want to go.',
+  cta_label:   'View all 200+ programs',
+  cta_href:    '/academics',
+}
+
+/* Design per grid slot — admin controls placement, design controls appearance */
+const SLOT_BG: Record<string, string> = {
+  health:   'oklch(0.27 0.13 263)',
+  career:   'oklch(0.94 0.025 263)',
+  transfer: 'oklch(0.22 0.11 265)',
+  business: 'oklch(0.97 0.015 263)',
+}
+
+const SLOT_TAG: Record<string, { bg: string; text: string }> = {
+  health:   { bg: 'oklch(0.83 0.16 82)', text: 'oklch(0.14 0.02 263)' },
+  career:   { bg: 'oklch(0.27 0.13 263)', text: 'white' },
+  transfer: { bg: 'oklch(0.83 0.16 82)', text: 'oklch(0.14 0.02 263)' },
+  business: { bg: 'oklch(0.27 0.13 263)', text: 'white' },
+}
+
+/* Tailwind class sets per slot — kept as full strings for scanner */
+const SLOT_CLASSES: Record<string, string> = {
+  health:   'card-health p-8',
+  career:   'card-career p-6',
+  transfer: 'card-transfer p-6',
+  business: 'card-business p-6',
+}
+
+const SLOT_IS_DARK: Record<string, boolean> = {
+  health: true, career: false, transfer: true, business: false,
+}
+
+export default function Programs({
+  programs,
+  content = {},
+}: {
+  programs: Program[]
+  content?: ProgramsContent
+}) {
+  const c = { ...CONTENT_DEFAULTS, ...content }
+
   return (
     <section className="py-24 px-6" style={{ background: 'oklch(0.98 0.008 263)' }}>
       <div className="max-w-7xl mx-auto">
-        {/* Heading */}
         <div className="mb-14 max-w-2xl">
           <h2
             className="font-display font-black text-lscc-ink leading-none mb-4"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', letterSpacing: '-0.02em' }}
           >
-            BUILD YOUR PATH
+            {c.headline}
           </h2>
           <p className="text-lscc-muted text-lg leading-relaxed" style={{ maxWidth: '60ch' }}>
-            From healthcare to technology to the trades — over 200 programs
-            designed to get you where you want to go.
+            {c.subheadline}
           </p>
         </div>
 
-        {/* Asymmetric grid — see .programs-grid in globals.css */}
-        <div className="programs-grid">
-          {/* Health Sciences — tall left card */}
-          <Link
-            href="/academics/health-sciences"
-            className="card-health group flex flex-col justify-between rounded-xl p-8 transition-transform duration-300 hover:-translate-y-1"
-            style={{ background: 'oklch(0.27 0.13 263)' }}
-          >
-            <span
-              className="self-start text-xs font-semibold px-3 py-1 rounded-full"
-              style={{ background: 'oklch(0.83 0.16 82)', color: 'oklch(0.14 0.02 263)' }}
-            >
-              High demand
-            </span>
-            <div className="mt-auto">
-              <h3
-                className="font-display font-bold text-white mb-3"
-                style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', letterSpacing: '-0.02em' }}
-              >
-                Health Sciences
-              </h3>
-              <p className="text-white/60 leading-relaxed mb-6" style={{ maxWidth: '36ch' }}>
-                Nursing, Dental Hygiene, Radiologic Technology, EMS, and
-                more — careers that make a real difference.
-              </p>
-              <span className="text-white text-sm font-semibold group-hover:underline">
-                Explore programs →
-              </span>
-            </div>
-          </Link>
+        {programs.length > 0 && (
+          <div className="programs-grid">
+            {programs.map((program) => {
+              const slot = program.grid_slot ?? 'business'
+              const isDark = SLOT_IS_DARK[slot] ?? false
+              const tagDesign = SLOT_TAG[slot] ?? SLOT_TAG.business
+              const slotClasses = SLOT_CLASSES[slot] ?? SLOT_CLASSES.business
+              const isHero = slot === 'health'
 
-          {/* Career & Technical */}
-          <Link
-            href="/academics/career-technical"
-            className="card-career group flex flex-col justify-between rounded-xl p-6 transition-transform duration-300 hover:-translate-y-0.5"
-            style={{ background: 'oklch(0.94 0.025 263)' }}
-          >
-            <h3
-              className="font-display font-bold text-lscc-ink mb-2"
-              style={{ fontSize: '1.5rem', letterSpacing: '-0.015em' }}
-            >
-              Career & Technical
-            </h3>
-            <p className="text-lscc-muted text-sm leading-relaxed mb-5">
-              Automotive, Welding, HVAC, Cosmetology — hands-on training
-              for the modern workforce.
-            </p>
-            <span className="text-lscc-blue text-sm font-semibold mt-auto group-hover:underline">
-              View programs →
-            </span>
-          </Link>
-
-          {/* College Transfer */}
-          <Link
-            href="/academics/transfer"
-            className="card-transfer group flex flex-col rounded-xl p-6 transition-transform duration-300 hover:-translate-y-0.5"
-            style={{ background: 'oklch(0.22 0.11 265)' }}
-          >
-            <span
-              className="self-start text-xs font-semibold px-3 py-1 rounded-full mb-4"
-              style={{ background: 'oklch(0.83 0.16 82)', color: 'oklch(0.14 0.02 263)' }}
-            >
-              Save on tuition
-            </span>
-            <h3
-              className="font-display font-bold text-white mb-2"
-              style={{ fontSize: '1.5rem', letterSpacing: '-0.015em' }}
-            >
-              College Transfer
-            </h3>
-            <p className="text-white/60 text-sm leading-relaxed mb-4">
-              Complete your first two years here, then transfer to a
-              4-year university — the smart path to a degree.
-            </p>
-            <span className="text-white text-sm font-semibold mt-auto group-hover:underline">
-              Learn more →
-            </span>
-          </Link>
-
-          {/* Business & IT */}
-          <Link
-            href="/academics/business-it"
-            className="card-business group flex flex-col rounded-xl p-6 transition-transform duration-300 hover:-translate-y-0.5"
-            style={{ background: 'oklch(0.97 0.015 263)' }}
-          >
-            <h3
-              className="font-display font-bold text-lscc-ink mb-2"
-              style={{ fontSize: '1.5rem', letterSpacing: '-0.015em' }}
-            >
-              Business & IT
-            </h3>
-            <p className="text-lscc-muted text-sm leading-relaxed mb-4">
-              Accounting, Management, Computer Science, Cybersecurity —
-              skills for the digital economy.
-            </p>
-            <span className="text-lscc-blue text-sm font-semibold mt-auto group-hover:underline">
-              View programs →
-            </span>
-          </Link>
-        </div>
+              return (
+                <Link
+                  key={program.id}
+                  href={program.href ?? '/academics'}
+                  className={`${slotClasses} group flex flex-col rounded-xl transition-transform duration-300 hover:-translate-y-0.5 ${
+                    isHero ? 'justify-between' : ''
+                  }`}
+                  style={{ background: SLOT_BG[slot] ?? SLOT_BG.business }}
+                >
+                  {program.tag && (
+                    <span
+                      className={`self-start text-xs font-semibold px-3 py-1 rounded-full ${isHero ? '' : 'mb-3'}`}
+                      style={{ background: tagDesign.bg, color: tagDesign.text }}
+                    >
+                      {program.tag}
+                    </span>
+                  )}
+                  <div className={isHero ? 'mt-auto' : 'mt-3'}>
+                    <h3
+                      className={`font-display font-bold mb-2 ${isDark ? 'text-white' : 'text-lscc-ink'}`}
+                      style={{
+                        fontSize: isHero ? 'clamp(1.75rem, 3vw, 2.5rem)' : '1.5rem',
+                        letterSpacing: isHero ? '-0.02em' : '-0.015em',
+                      }}
+                    >
+                      {program.name}
+                    </h3>
+                    {program.description && (
+                      <p
+                        className={`leading-relaxed mb-5 ${isHero ? 'text-base' : 'text-sm'} ${isDark ? 'text-white/60' : 'text-lscc-muted'}`}
+                        style={{ maxWidth: isHero ? '36ch' : undefined }}
+                      >
+                        {program.description}
+                      </p>
+                    )}
+                    <span
+                      className={`text-sm font-semibold mt-auto group-hover:underline ${isDark ? 'text-white' : 'text-lscc-blue'}`}
+                    >
+                      {isHero ? 'Explore programs' : 'View programs'} →
+                    </span>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        )}
 
         <div className="mt-8">
-          <Link href="/academics" className="text-lscc-blue font-semibold text-sm hover:underline">
-            View all 200+ programs →
+          <Link href={c.cta_href} className="text-lscc-blue font-semibold text-sm hover:underline">
+            {c.cta_label} →
           </Link>
         </div>
       </div>

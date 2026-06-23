@@ -1,3 +1,4 @@
+import { createServerClient, buildContentMap } from '@/lib/supabase'
 import Nav from '@/components/nav'
 import Hero from '@/components/hero'
 import Programs from '@/components/programs'
@@ -6,16 +7,56 @@ import NewsEvents from '@/components/news-events'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
 
-export default function Home() {
+export default async function Home() {
+  const db = createServerClient()
+  const today = new Date().toISOString().split('T')[0]
+
+  const [
+    { data: programs },
+    { data: featuredStory },
+    { data: upcomingEvents },
+    { data: pageRows },
+  ] = await Promise.all([
+    db.from('departments')
+      .select('id, name, description, tag, href, grid_slot')
+      .eq('is_featured_home', true)
+      .order('display_order'),
+
+    db.from('announcements')
+      .select('id, title, excerpt, image_url, category, href, published_at')
+      .eq('is_featured', true)
+      .eq('is_published', true)
+      .order('published_at', { ascending: false })
+      .limit(1)
+      .maybeSingle(),
+
+    db.from('events')
+      .select('id, title, event_date, href')
+      .eq('is_published', true)
+      .gte('event_date', today)
+      .order('event_date')
+      .order('sort_order')
+      .limit(7),
+
+    db.from('page_content')
+      .select('section, key, value')
+      .eq('page_slug', 'home'),
+  ])
+
+  const content = buildContentMap(pageRows ?? [])
+
   return (
     <>
       <Nav />
       <main>
-        <Hero />
-        <Programs />
-        <Support />
-        <NewsEvents />
-        <Prefooter />
+        <Hero content={content.hero} />
+        <Programs programs={programs ?? []} content={content.programs} />
+        <Support content={content.support} />
+        <NewsEvents
+          featuredStory={featuredStory ?? null}
+          events={upcomingEvents ?? []}
+        />
+        <Prefooter content={content.prefooter} />
       </main>
       <SiteFooter />
     </>
