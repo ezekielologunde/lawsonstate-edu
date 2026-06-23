@@ -21,7 +21,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
 
   return (
     <section
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
+      className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center overflow-hidden"
       style={{ background: 'oklch(0.27 0.13 263)' }}
     >
       {/* Background depth shapes */}

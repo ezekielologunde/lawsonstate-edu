@@ -52,6 +52,35 @@ body {
   .programs-grid .card-health { min-height: 320px; }
 }
 
+/* ── Pathway cards — same asymmetric pattern as programs ── */
+.pathways-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "new transfer"
+    "new current"
+    "new workforce";
+  gap: 1rem;
+}
+
+.pathways-grid .path-new       { grid-area: new;       min-height: 480px; }
+.pathways-grid .path-transfer  { grid-area: transfer;  }
+.pathways-grid .path-current   { grid-area: current;   }
+.pathways-grid .path-workforce { grid-area: workforce; }
+
+@media (max-width: 767px) {
+  .pathways-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "new" "transfer" "current" "workforce";
+  }
+  .pathways-grid .path-new { min-height: 320px; }
+}
+
+/* Mobile bottom nav clearance */
+@media (max-width: 767px) {
+  .mobile-nav-spacer { padding-bottom: 5rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     transition-duration: 0.01ms !important;

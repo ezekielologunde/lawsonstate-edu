@@ -3,11 +3,14 @@ export const revalidate = 3600
 import { createServerClient, buildContentMap } from '@/lib/supabase'
 import Nav from '@/components/nav'
 import Hero from '@/components/hero'
+import QuickLinks from '@/components/quick-links'
+import PathwayCards from '@/components/pathway-cards'
 import Programs from '@/components/programs'
 import Support from '@/components/support'
 import NewsEvents from '@/components/news-events'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
+import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 export default async function Home() {
   const db = createServerClient()
@@ -50,8 +53,10 @@ export default async function Home() {
   return (
     <>
       <Nav />
-      <main>
+      <main className="mobile-nav-spacer">
         <Hero content={content.hero} />
+        <QuickLinks />
+        <PathwayCards />
         <Programs programs={programs ?? []} content={content.programs} />
         <Support content={content.support} />
         <NewsEvents
@@ -61,6 +66,7 @@ export default async function Home() {
         <Prefooter content={content.prefooter} />
       </main>
       <SiteFooter />
+      <MobileBottomNav />
     </>
   )
 }
