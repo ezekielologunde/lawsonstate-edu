@@ -24,15 +24,30 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
       className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center overflow-hidden"
       style={{ background: 'oklch(0.27 0.13 263)' }}
     >
-      {/* Background depth shapes */}
+      {/* Real campus photo */}
+      <div className="absolute inset-0" aria-hidden>
+        <img
+          src="https://www.lawsonstate.edu/_resources/assets/img/Bessemer%20Campus%20Aerial%20View.jpg"
+          alt=""
+          className="w-full h-full object-cover object-center"
+          loading="eager"
+        />
+        {/* Blue brand overlay */}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'oklch(0.27 0.13 263 / 0.86)' }}
+        />
+      </div>
+
+      {/* Depth shapes on top of photo */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div
           className="absolute -top-40 -right-40 rounded-full"
-          style={{ width: '640px', height: '640px', background: 'oklch(0.33 0.12 263)', opacity: 0.25 }}
+          style={{ width: '640px', height: '640px', background: 'oklch(0.33 0.12 263)', opacity: 0.18 }}
         />
         <div
           className="absolute bottom-0 -left-60 rounded-full"
-          style={{ width: '560px', height: '560px', background: 'oklch(0.32 0.12 263)', opacity: 0.15 }}
+          style={{ width: '560px', height: '560px', background: 'oklch(0.32 0.12 263)', opacity: 0.12 }}
         />
         <div
           className="absolute hidden lg:block"

@@ -7,6 +7,7 @@ export type Program = {
   tag: string | null
   href: string | null
   grid_slot: string | null
+  image_url: string | null
 }
 
 type ProgramsContent = Record<string, string>
@@ -82,42 +83,58 @@ export default function Programs({
                 <Link
                   key={program.id}
                   href={program.href ?? '/academics'}
-                  className={`${slotClasses} group flex flex-col rounded-xl transition-transform duration-300 hover:-translate-y-0.5 ${
+                  className={`${slotClasses} group flex flex-col rounded-xl transition-transform duration-300 hover:-translate-y-0.5 relative overflow-hidden ${
                     isHero ? 'justify-between' : ''
                   }`}
                   style={{ background: SLOT_BG[slot] ?? SLOT_BG.business }}
                 >
-                  {program.tag && (
-                    <span
-                      className={`self-start text-xs font-semibold px-3 py-1 rounded-full ${isHero ? '' : 'mb-3'}`}
-                      style={{ background: tagDesign.bg, color: tagDesign.text }}
-                    >
-                      {program.tag}
-                    </span>
-                  )}
-                  <div className={isHero ? 'mt-auto' : 'mt-3'}>
-                    <h3
-                      className={`font-display font-bold mb-2 ${isDark ? 'text-white' : 'text-lscc-ink'}`}
+                  {/* Real photo background */}
+                  {program.image_url && (
+                    <div
+                      className="absolute inset-0 transition-opacity duration-500"
                       style={{
-                        fontSize: isHero ? 'clamp(1.75rem, 3vw, 2.5rem)' : '1.5rem',
-                        letterSpacing: isHero ? '-0.02em' : '-0.015em',
+                        backgroundImage: `url('${program.image_url}')`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        opacity: isDark ? 0.22 : 0.12,
                       }}
-                    >
-                      {program.name}
-                    </h3>
-                    {program.description && (
-                      <p
-                        className={`leading-relaxed mb-5 ${isHero ? 'text-base' : 'text-sm'} ${isDark ? 'text-white/60' : 'text-lscc-muted'}`}
-                        style={{ maxWidth: isHero ? '36ch' : undefined }}
+                    />
+                  )}
+
+                  {/* Content above image */}
+                  <div className="relative z-10 flex flex-col h-full">
+                    {program.tag && (
+                      <span
+                        className={`self-start text-xs font-semibold px-3 py-1 rounded-full ${isHero ? '' : 'mb-3'}`}
+                        style={{ background: tagDesign.bg, color: tagDesign.text }}
                       >
-                        {program.description}
-                      </p>
+                        {program.tag}
+                      </span>
                     )}
-                    <span
-                      className={`text-sm font-semibold mt-auto group-hover:underline ${isDark ? 'text-white' : 'text-lscc-blue'}`}
-                    >
-                      {isHero ? 'Explore programs' : 'View programs'} →
-                    </span>
+                    <div className={isHero ? 'mt-auto' : 'mt-3'}>
+                      <h3
+                        className={`font-display font-bold mb-2 ${isDark ? 'text-white' : 'text-lscc-ink'}`}
+                        style={{
+                          fontSize: isHero ? 'clamp(1.75rem, 3vw, 2.5rem)' : '1.5rem',
+                          letterSpacing: isHero ? '-0.02em' : '-0.015em',
+                        }}
+                      >
+                        {program.name}
+                      </h3>
+                      {program.description && (
+                        <p
+                          className={`leading-relaxed mb-5 ${isHero ? 'text-base' : 'text-sm'} ${isDark ? 'text-white/60' : 'text-lscc-muted'}`}
+                          style={{ maxWidth: isHero ? '36ch' : undefined }}
+                        >
+                          {program.description}
+                        </p>
+                      )}
+                      <span
+                        className={`text-sm font-semibold mt-auto group-hover:underline ${isDark ? 'text-white' : 'text-lscc-blue'}`}
+                      >
+                        {isHero ? 'Explore programs' : 'View programs'} →
+                      </span>
+                    </div>
                   </div>
                 </Link>
               )

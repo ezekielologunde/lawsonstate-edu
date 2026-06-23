@@ -6,6 +6,8 @@ import Hero from '@/components/hero'
 import QuickLinks from '@/components/quick-links'
 import PathwayCards from '@/components/pathway-cards'
 import Programs from '@/components/programs'
+import VideoSection from '@/components/video-section'
+import CampusLifeGallery from '@/components/campus-life-gallery'
 import Support from '@/components/support'
 import NewsEvents from '@/components/news-events'
 import Prefooter from '@/components/prefooter'
@@ -23,7 +25,7 @@ export default async function Home() {
     { data: pageRows },
   ] = await Promise.all([
     db.from('departments')
-      .select('id, name, description, tag, href, grid_slot')
+      .select('id, name, description, tag, href, grid_slot, image_url')
       .eq('is_featured_home', true)
       .order('display_order'),
 
@@ -58,6 +60,8 @@ export default async function Home() {
         <QuickLinks />
         <PathwayCards />
         <Programs programs={programs ?? []} content={content.programs} />
+        <VideoSection />
+        <CampusLifeGallery />
         <Support content={content.support} />
         <NewsEvents
           featuredStory={featuredStory ?? null}
