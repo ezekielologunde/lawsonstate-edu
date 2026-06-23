@@ -1,3 +1,5 @@
+export const revalidate = 3600
+
 import { createServerClient, buildContentMap } from '@/lib/supabase'
 import Nav from '@/components/nav'
 import Hero from '@/components/hero'
