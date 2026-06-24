@@ -29,7 +29,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
   ]
 
   return (
-    <section className="overflow-hidden" style={{ background: 'oklch(0.20 0.10 265)' }}>
+    <section className="overflow-hidden" style={{ background: 'oklch(0.97 0.008 263)' }}>
       <div className="max-w-7xl mx-auto grid md:grid-cols-[5fr_7fr]">
 
         {/* Left: campus photo */}
@@ -45,7 +45,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
             className="absolute inset-0"
             style={{
               background:
-                'linear-gradient(to right, oklch(0.20 0.10 265 / 0.15) 0%, oklch(0.20 0.10 265 / 0.85) 100%)',
+                'linear-gradient(to right, oklch(0.97 0.008 263 / 0.10) 0%, oklch(0.97 0.008 263 / 0.70) 100%)',
             }}
           />
         </div>
@@ -53,12 +53,12 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
         {/* Right: content */}
         <div className="py-16 px-6 md:px-10 lg:px-16">
           <h2
-            className="font-display font-black text-white leading-none mb-14"
-            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', letterSpacing: '-0.02em' }}
+            className="font-display font-black leading-none mb-14"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', letterSpacing: '-0.02em', color: 'oklch(0.18 0.12 261)' }}
           >
             {c.headline_line1}
             <br />
-            <span style={{ color: 'oklch(0.83 0.16 82)' }}>{c.headline_line2}</span>
+            <span style={{ color: 'oklch(0.60 0.22 78)' }}>{c.headline_line2}</span>
           </h2>
 
           <div className="flex flex-col gap-10">
@@ -66,27 +66,27 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
               <div
                 key={step.num}
                 className="flex flex-col"
-                style={i < steps.length - 1 ? { paddingBottom: '2.5rem', borderBottom: '1px solid oklch(1 0 0 / 0.08)' } : {}}
+                style={i < steps.length - 1 ? { paddingBottom: '2.5rem', borderBottom: '1px solid oklch(0 0 0 / 0.08)' } : {}}
               >
                 <div
                   className="font-display font-black mb-4 leading-none"
-                  style={{ fontSize: '2.4rem', color: 'oklch(0.83 0.16 82)' }}
+                  style={{ fontSize: '2.4rem', color: 'oklch(0.60 0.22 78)' }}
                 >
                   {step.num}
                 </div>
                 <h3
-                  className="font-display font-bold text-white mb-2"
-                  style={{ fontSize: '1.35rem', letterSpacing: '-0.015em' }}
+                  className="font-display font-bold mb-2"
+                  style={{ fontSize: '1.35rem', letterSpacing: '-0.015em', color: 'oklch(0.18 0.12 261)' }}
                 >
                   {step.title}
                 </h3>
-                <p className="text-white/50 leading-relaxed mb-4" style={{ maxWidth: '44ch' }}>
+                <p className="leading-relaxed mb-4" style={{ maxWidth: '44ch', color: 'oklch(0.45 0.08 263)' }}>
                   {step.body}
                 </p>
                 <Link
                   href={step.href}
                   className="text-sm font-semibold hover:underline transition-colors self-start"
-                  style={{ color: 'oklch(0.83 0.16 82)' }}
+                  style={{ color: 'oklch(0.60 0.22 78)' }}
                 >
                   {step.cta} →
                 </Link>

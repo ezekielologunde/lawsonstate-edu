@@ -30,7 +30,7 @@ export default function VideoSection() {
         />
         <div
           className="absolute inset-0"
-          style={{ background: 'oklch(0.20 0.10 265 / 0.92)' }}
+          style={{ background: 'oklch(0.20 0.10 265 / 0.80)' }}
         />
       </div>
 

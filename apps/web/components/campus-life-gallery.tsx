@@ -45,14 +45,14 @@ const PHOTOS = [
 
 export default function CampusLifeGallery() {
   return (
-    <section className="py-14 px-6" style={{ background: 'oklch(0.14 0.02 263)' }}>
+    <section className="py-14 px-6" style={{ background: 'white' }}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-end justify-between mb-10 gap-6">
           <div>
             <p
               className="text-xs font-semibold mb-2 tracking-widest uppercase"
-              style={{ color: 'oklch(0.83 0.16 82)' }}
+              style={{ color: 'oklch(0.60 0.22 78)' }}
             >
               Real moments
             </p>
@@ -61,7 +61,7 @@ export default function CampusLifeGallery() {
               style={{
                 fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)',
                 letterSpacing: '-0.02em',
-                color: 'white',
+                color: 'oklch(0.18 0.12 261)',
               }}
             >
               CAMPUS LIFE
@@ -72,7 +72,7 @@ export default function CampusLifeGallery() {
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 text-sm font-semibold hover:underline"
-            style={{ color: 'oklch(0.83 0.16 82)' }}
+            style={{ color: 'oklch(0.27 0.13 263)' }}
           >
             See all photos →
           </Link>

@@ -70,18 +70,18 @@ export default function PathwayCards() {
   const path = PATHS[active]
 
   return (
-    <section className="py-16 px-6" style={{ background: 'oklch(0.14 0.06 263)' }}>
+    <section className="py-16 px-6" style={{ background: 'white' }}>
       <div className="max-w-7xl mx-auto">
 
         {/* Section header */}
         <div className="mb-8 scroll-reveal">
           <h2
-            className="font-display font-black text-white leading-none mb-1"
-            style={{ fontSize: 'clamp(1.75rem, 4vw, 2.8rem)', letterSpacing: '-0.02em' }}
+            className="font-display font-black leading-none mb-1"
+            style={{ fontSize: 'clamp(1.75rem, 4vw, 2.8rem)', letterSpacing: '-0.02em', color: 'oklch(0.18 0.12 261)' }}
           >
             FIND YOUR PATH
           </h2>
-          <p className="text-white/40 text-sm">Wherever you're starting from, we have a route for you.</p>
+          <p className="text-lscc-muted text-sm">Wherever you're starting from, we have a route for you.</p>
         </div>
 
         {/* Tab strip */}
@@ -93,9 +93,9 @@ export default function PathwayCards() {
               className="press shrink-0 px-5 py-2.5 rounded-full font-bold whitespace-nowrap transition-all duration-200"
               style={{
                 fontSize:   '0.8rem',
-                background: active === i ? 'oklch(0.79 0.19 78)' : 'oklch(1 0 0 / 0.07)',
-                color:      active === i ? 'oklch(0.11 0.03 261)' : 'oklch(1 0 0 / 0.50)',
-                border:     `1px solid ${active === i ? 'transparent' : 'oklch(1 0 0 / 0.11)'}`,
+                background: active === i ? 'oklch(0.79 0.19 78)' : 'oklch(0.94 0.015 263)',
+                color:      active === i ? 'oklch(0.11 0.03 261)' : 'oklch(0.32 0.12 263)',
+                border:     `1px solid ${active === i ? 'transparent' : 'oklch(0 0 0 / 0.09)'}`,
               }}
             >
               {p.label}
@@ -108,20 +108,20 @@ export default function PathwayCards() {
           key={path.id}
           className="tab-content grid grid-cols-1 md:grid-cols-[3fr_2fr] rounded-2xl overflow-hidden"
           style={{
-            background: 'oklch(0.19 0.08 263)',
-            border:     '1px solid oklch(1 0 0 / 0.07)',
+            background: 'oklch(0.96 0.010 263)',
+            border:     '1px solid oklch(0 0 0 / 0.07)',
           }}
         >
           {/* Text + CTA */}
           <div className="p-8 flex flex-col justify-between gap-8">
             <div>
               <h3
-                className="font-display font-black text-white leading-none mb-3"
-                style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', letterSpacing: '-0.02em' }}
+                className="font-display font-black leading-none mb-3"
+                style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', letterSpacing: '-0.02em', color: 'oklch(0.18 0.12 261)' }}
               >
                 {path.headline}
               </h3>
-              <p className="text-white/50 text-sm leading-relaxed mb-6" style={{ maxWidth: '44ch' }}>
+              <p className="text-sm leading-relaxed mb-6" style={{ maxWidth: '44ch', color: 'oklch(0.45 0.08 263)' }}>
                 {path.desc}
               </p>
               <ul className="flex flex-col gap-0.5">
@@ -129,7 +129,8 @@ export default function PathwayCards() {
                   <li key={label}>
                     <Link
                       href={href}
-                      className="link-reveal inline-flex items-center gap-2 py-1.5 text-sm font-medium text-white/65 hover:text-white transition-colors"
+                      className="link-reveal inline-flex items-center gap-2 py-1.5 text-sm font-medium transition-colors"
+                    style={{ color: 'oklch(0.30 0.12 263)' }}
                     >
                       <span aria-hidden style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.7rem' }}>→</span>
                       {label}
@@ -161,7 +162,7 @@ export default function PathwayCards() {
               className="absolute inset-0"
               style={{
                 background:
-                  'linear-gradient(to right, oklch(0.19 0.08 263 / 0.75) 0%, oklch(0.19 0.08 263 / 0.15) 60%, transparent 100%)',
+                  'linear-gradient(to right, oklch(0.96 0.010 263 / 0.90) 0%, oklch(0.96 0.010 263 / 0.20) 55%, transparent 100%)',
               }}
             />
           </div>
