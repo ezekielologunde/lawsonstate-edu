@@ -134,16 +134,16 @@ export default function AcademicsPage() {
       >
         <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(135deg, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.16 0.13 263 / 0.82) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.7rem', letterSpacing: '0.22em' }}>Degrees · Certificates · Skills Training</p>
-          <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.4rem, 6vw, 4.5rem)', letterSpacing: '-0.025em' }}>200+ PROGRAMS</h1>
-          <p className="text-white/60 max-w-xl" style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.05rem)', lineHeight: 1.7 }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>Degrees · Certificates · Skills Training</p>
+          <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em' }}>200+ PROGRAMS</h1>
+          <p className="text-white/75 max-w-xl" style={{ fontSize: 'clamp(1.05rem, 1.6vw, 1.2rem)', lineHeight: 1.7 }}>
             Whether you want to enter the workforce or transfer to a four-year college, Lawson State has hundreds of programs to equip you with the knowledge to succeed.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
-            <Link href="/admissions/apply" className="press btn-shimmer hero-cta-gold inline-flex items-center font-bold px-6 py-3 rounded-lg" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.875rem' }}>
+            <Link href="/admissions/apply" className="press btn-shimmer hero-cta-gold inline-flex items-center font-bold px-6 py-3 rounded-lg" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}>
               Apply Now
             </Link>
-            <Link href="/admissions" className="press hero-cta-ghost inline-flex items-center font-semibold px-6 py-3 rounded-lg text-white" style={{ border: '1.5px solid oklch(1 0 0 / 0.25)', fontSize: '0.875rem' }}>
+            <Link href="/admissions" className="press hero-cta-ghost inline-flex items-center font-semibold px-6 py-3 rounded-lg text-white" style={{ border: '1.5px solid oklch(1 0 0 / 0.25)', fontSize: '1rem' }}>
               Admissions Info
             </Link>
           </div>
@@ -162,8 +162,8 @@ export default function AcademicsPage() {
             ['9', 'Online Certificates'],
           ].map(([n, l]) => (
             <div key={l} className="text-center">
-              <div className="font-display font-black" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 1.9rem)', color: 'oklch(0.11 0.03 261)', letterSpacing: '-0.025em' }}>{n}</div>
-              <div className="font-semibold uppercase" style={{ fontSize: '0.58rem', letterSpacing: '0.14em', color: 'oklch(0.11 0.03 261 / 0.6)' }}>{l}</div>
+              <div className="font-display font-black" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', color: 'oklch(0.11 0.03 261)', letterSpacing: '-0.025em' }}>{n}</div>
+              <div className="font-semibold uppercase" style={{ fontSize: '0.96rem', letterSpacing: '0.14em', color: 'oklch(0.11 0.03 261 / 0.6)' }}>{l}</div>
             </div>
           ))}
         </div>
@@ -173,8 +173,8 @@ export default function AcademicsPage() {
       <section className="py-20 px-6" style={{ background: 'white' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.68rem', letterSpacing: '0.2em' }}>Program Divisions</p>
-            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.025em' }}>FIND YOUR DIVISION</h2>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Program Divisions</p>
+            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>FIND YOUR DIVISION</h2>
           </div>
           <div className="space-y-6">
             {DIVISIONS.map(div => (
@@ -185,20 +185,20 @@ export default function AcademicsPage() {
               >
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-start">
                   <div>
-                    <div className="font-display font-black mb-2" style={{ fontSize: '0.72rem', color: 'oklch(0.79 0.19 78)', letterSpacing: '0.1em' }}>{div.number}</div>
+                    <div className="font-display font-black mb-2" style={{ fontSize: '0.96rem', color: 'oklch(0.79 0.19 78)', letterSpacing: '0.1em' }}>{div.number}</div>
                     <h3
                       className="font-display font-black leading-none mb-3"
-                      style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', letterSpacing: '-0.02em', color: div.dark ? 'white' : 'oklch(0.11 0.03 261)' }}
+                      style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', letterSpacing: '-0.02em', color: div.dark ? 'white' : 'oklch(0.11 0.03 261)' }}
                     >
                       {div.name}
                     </h3>
-                    <p className="mb-5 leading-relaxed" style={{ fontSize: '0.95rem', color: div.dark ? 'oklch(1 0 0 / 0.6)' : 'oklch(0.48 0.06 261)', maxWidth: '56ch' }}>
+                    <p className="mb-5 leading-relaxed" style={{ fontSize: '1.08rem', color: div.dark ? 'oklch(1 0 0 / 0.75)' : 'oklch(0.48 0.06 261)', maxWidth: '56ch' }}>
                       {div.desc}
                     </p>
                     <ul className="flex flex-col gap-1.5">
                       {div.highlights.map(h => (
-                        <li key={h} className="flex items-start gap-2.5 text-sm" style={{ color: div.dark ? 'oklch(1 0 0 / 0.55)' : 'oklch(0.35 0.1 261)' }}>
-                          <span style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.7rem', marginTop: '0.18rem', flexShrink: 0 }}>→</span>
+                        <li key={h} className="flex items-start gap-2.5 text-sm" style={{ color: div.dark ? 'oklch(1 0 0 / 0.70)' : 'oklch(0.35 0.1 261)' }}>
+                          <span style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', marginTop: '0.18rem', flexShrink: 0 }}>→</span>
                           {h}
                         </li>
                       ))}
@@ -208,7 +208,7 @@ export default function AcademicsPage() {
                     <Link
                       href={div.href}
                       className="press btn-shimmer font-bold px-6 py-3 rounded-lg whitespace-nowrap block text-center"
-                      style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.875rem' }}
+                      style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
                     >
                       Explore programs →
                     </Link>
@@ -224,8 +224,8 @@ export default function AcademicsPage() {
       <section className="py-20 px-6" style={{ background: 'oklch(0.97 0.015 263)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.68rem', letterSpacing: '0.2em' }}>Beyond the Classroom</p>
-            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.025em' }}>SPECIALTY PROGRAMS</h2>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Beyond the Classroom</p>
+            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>SPECIALTY PROGRAMS</h2>
           </div>
           <div className="stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {SPECIALTY.map(s => (
@@ -236,8 +236,8 @@ export default function AcademicsPage() {
                 style={{ background: 'white', border: '1px solid oklch(0.92 0.01 263)' }}
               >
                 <div className="mb-3" style={{ fontSize: '1.6rem' }}>{s.icon}</div>
-                <h3 className="font-display font-bold mb-2 text-lscc-ink" style={{ fontSize: '0.95rem', letterSpacing: '-0.01em' }}>{s.name}</h3>
-                <p className="text-lscc-muted leading-relaxed" style={{ fontSize: '0.82rem' }}>{s.desc}</p>
+                <h3 className="font-display font-bold mb-2 text-lscc-ink" style={{ fontSize: '1.08rem', letterSpacing: '-0.01em' }}>{s.name}</h3>
+                <p className="text-lscc-muted leading-relaxed" style={{ fontSize: '1.08rem' }}>{s.desc}</p>
               </Link>
             ))}
           </div>
@@ -248,9 +248,9 @@ export default function AcademicsPage() {
       <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.06 263)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.68rem', letterSpacing: '0.2em' }}>Fast-Track Training</p>
-            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.025em' }}>WORKFORCE DEVELOPMENT</h2>
-            <p className="text-white/50 mt-2" style={{ fontSize: '0.95rem' }}>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Fast-Track Training</p>
+            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>WORKFORCE DEVELOPMENT</h2>
+            <p className="text-white/65 mt-2" style={{ fontSize: '1.08rem' }}>
               Short-term, skills-focused programs designed around employer needs. Some are free. All lead to employment.
             </p>
           </div>
@@ -259,16 +259,16 @@ export default function AcademicsPage() {
               <thead>
                 <tr>
                   {['Program', 'Duration', 'Cost'].map(h => (
-                    <th key={h} className="text-left pb-3 font-semibold uppercase" style={{ fontSize: '0.6rem', letterSpacing: '0.16em', color: 'oklch(0.79 0.19 78)' }}>{h}</th>
+                    <th key={h} className="text-left pb-3 font-semibold uppercase" style={{ fontSize: '0.74rem', letterSpacing: '0.16em', color: 'oklch(0.79 0.19 78)' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {WORKFORCE.map(w => (
                   <tr key={w.name}>
-                    <td className="py-3 pr-8 font-medium text-white" style={{ fontSize: '0.88rem' }}>{w.name}</td>
-                    <td className="py-3 pr-8 text-white/50" style={{ fontSize: '0.84rem', whiteSpace: 'nowrap' }}>{w.duration}</td>
-                    <td className="py-3 font-bold" style={{ fontSize: '0.84rem', color: 'oklch(0.79 0.19 78)', whiteSpace: 'nowrap' }}>{w.cost}</td>
+                    <td className="py-3 pr-8 font-medium text-white" style={{ fontSize: '1rem' }}>{w.name}</td>
+                    <td className="py-3 pr-8 text-white/65" style={{ fontSize: '0.96rem', whiteSpace: 'nowrap' }}>{w.duration}</td>
+                    <td className="py-3 font-bold" style={{ fontSize: '0.96rem', color: 'oklch(0.79 0.19 78)', whiteSpace: 'nowrap' }}>{w.cost}</td>
                   </tr>
                 ))}
               </tbody>
@@ -278,7 +278,7 @@ export default function AcademicsPage() {
             <Link
               href="/workforce"
               className="press btn-shimmer font-bold px-6 py-3 rounded-lg inline-block"
-              style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.875rem' }}
+              style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
             >
               Explore Workforce Programs →
             </Link>
@@ -291,9 +291,9 @@ export default function AcademicsPage() {
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.68rem', letterSpacing: '0.2em' }}>High School Students</p>
-              <h2 className="font-display font-black leading-none mb-4 text-lscc-ink" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', letterSpacing: '-0.025em' }}>DUAL ENROLLMENT</h2>
-              <p className="text-lscc-muted leading-relaxed mb-6" style={{ fontSize: '0.97rem' }}>
+              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>High School Students</p>
+              <h2 className="font-display font-black leading-none mb-4 text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em' }}>DUAL ENROLLMENT</h2>
+              <p className="text-lscc-muted leading-relaxed mb-6" style={{ fontSize: '1.1rem' }}>
                 Start college while still in high school. Take up to 51 available classes and earn real college credits — tuition waived through ACCS grant funding. Available to 10th–12th graders with a 2.5 GPA.
               </p>
               <p className="font-display font-bold text-lscc-ink mb-6" style={{ fontSize: '1rem' }}>
@@ -309,7 +309,7 @@ export default function AcademicsPage() {
               <Link
                 href="/admissions/dual-enrollment"
                 className="press btn-shimmer font-bold px-6 py-3 rounded-lg inline-block"
-                style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.875rem' }}
+                style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
               >
                 Learn About Dual Enrollment →
               </Link>

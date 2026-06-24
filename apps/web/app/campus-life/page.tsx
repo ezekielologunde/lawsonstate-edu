@@ -99,9 +99,9 @@ export default function CampusLifePage() {
       >
         <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(135deg, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.16 0.13 263 / 0.82) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.7rem', letterSpacing: '0.22em' }}>Cougars · Birmingham & Bessemer</p>
-          <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.4rem, 6vw, 4.5rem)', letterSpacing: '-0.025em' }}>CAMPUS LIFE</h1>
-          <p className="text-white/60 max-w-xl" style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.05rem)', lineHeight: 1.7 }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>Cougars · Birmingham & Bessemer</p>
+          <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em' }}>CAMPUS LIFE</h1>
+          <p className="text-white/75 max-w-xl" style={{ fontSize: 'clamp(1.05rem, 1.6vw, 1.2rem)', lineHeight: 1.7 }}>
             If you're looking for a place where you can grow and develop into a leader who will make a difference, you're in the right place.
           </p>
         </div>
@@ -115,7 +115,7 @@ export default function CampusLifePage() {
             '"When they say you can start here and go anywhere — they mean it." — Karl Pruitt Jr., Former SGA President',
             '"Lawson helped me achieve my goals by offering a variety of different organizations." — Zoe Evans, Class of \'22',
           ]).map((q, i) => (
-            <span key={i} className="inline-flex items-center font-semibold whitespace-nowrap" style={{ fontSize: '0.72rem', color: 'oklch(0.11 0.03 261)', paddingRight: '3rem' }}>
+            <span key={i} className="inline-flex items-center font-semibold whitespace-nowrap" style={{ fontSize: '0.96rem', color: 'oklch(0.11 0.03 261)', paddingRight: '3rem' }}>
               {q} <span className="ml-3" style={{ opacity: 0.4 }}>◆</span>
             </span>
           ))}
@@ -126,9 +126,9 @@ export default function CampusLifePage() {
       <section className="py-20 px-6" style={{ background: 'white' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.68rem', letterSpacing: '0.2em' }}>NJCAA · ACCC</p>
-            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.025em' }}>COUGAR ATHLETICS</h2>
-            <p className="text-lscc-muted mt-2" style={{ fontSize: '0.95rem' }}>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>NJCAA · ACCC</p>
+            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>COUGAR ATHLETICS</h2>
+            <p className="text-lscc-muted mt-2" style={{ fontSize: '1.08rem' }}>
               There's nothing like Cougar Pride. Our programs are dedicated to fostering student-athlete success through competitive integrity, academic discipline, and leadership development.
             </p>
           </div>
@@ -140,23 +140,23 @@ export default function CampusLifePage() {
                 style={{ background: 'oklch(0.97 0.015 263)', border: '1px solid oklch(0.92 0.01 263)' }}
               >
                 <div className="text-3xl mb-2">{s.icon}</div>
-                <div className="font-display font-bold text-lscc-ink leading-snug" style={{ fontSize: '0.8rem' }}>{s.name}</div>
+                <div className="font-display font-bold text-lscc-ink leading-snug" style={{ fontSize: '0.92rem' }}>{s.name}</div>
               </div>
             ))}
           </div>
           <div className="rounded-2xl p-6 scroll-reveal" style={{ background: 'oklch(0.97 0.015 263)', border: '1px solid oklch(0.92 0.01 263)' }}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-display font-bold mb-2 text-lscc-ink" style={{ fontSize: '0.95rem' }}>Athletics Director</h3>
-                <p className="font-medium text-lscc-ink" style={{ fontSize: '0.9rem' }}>Dr. Eric R. Agee Jr.</p>
-                <p className="text-lscc-muted" style={{ fontSize: '0.84rem' }}>Director of Athletics / Health & Physical Education</p>
-                <p className="text-lscc-muted mt-1" style={{ fontSize: '0.84rem' }}>205.925.2525 · eagee@lawsonstate.edu</p>
-                <p className="text-lscc-muted" style={{ fontSize: '0.84rem' }}>Arthur Shores Building, Birmingham Campus</p>
+                <h3 className="font-display font-bold mb-2 text-lscc-ink" style={{ fontSize: '1.08rem' }}>Athletics Director</h3>
+                <p className="font-medium text-lscc-ink" style={{ fontSize: '1.05rem' }}>Dr. Eric R. Agee Jr.</p>
+                <p className="text-lscc-muted" style={{ fontSize: '0.96rem' }}>Director of Athletics / Health & Physical Education</p>
+                <p className="text-lscc-muted mt-1" style={{ fontSize: '0.96rem' }}>205.925.2525 · eagee@lawsonstate.edu</p>
+                <p className="text-lscc-muted" style={{ fontSize: '0.96rem' }}>Arthur Shores Building, Birmingham Campus</p>
               </div>
               <div>
-                <h3 className="font-display font-bold mb-2 text-lscc-ink" style={{ fontSize: '0.95rem' }}>Conferences</h3>
-                <p className="text-lscc-muted" style={{ fontSize: '0.88rem' }}>Alabama Community College Conference (ACCC)</p>
-                <p className="text-lscc-muted" style={{ fontSize: '0.88rem' }}>National Junior College Athletic Association (NJCAA)</p>
+                <h3 className="font-display font-bold mb-2 text-lscc-ink" style={{ fontSize: '1.08rem' }}>Conferences</h3>
+                <p className="text-lscc-muted" style={{ fontSize: '1rem' }}>Alabama Community College Conference (ACCC)</p>
+                <p className="text-lscc-muted" style={{ fontSize: '1rem' }}>National Junior College Athletic Association (NJCAA)</p>
               </div>
             </div>
           </div>
@@ -167,9 +167,9 @@ export default function CampusLifePage() {
       <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.06 263)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.68rem', letterSpacing: '0.2em' }}>Get Involved</p>
-            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.025em' }}>CLUBS & ORGANIZATIONS</h2>
-            <p className="text-white/50 mt-2" style={{ fontSize: '0.95rem' }}>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Get Involved</p>
+            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>CLUBS & ORGANIZATIONS</h2>
+            <p className="text-white/65 mt-2" style={{ fontSize: '1.08rem' }}>
               Find your place at Lawson State beyond the classroom. Form lifelong friendships and invaluable network connections.
             </p>
           </div>
@@ -177,18 +177,18 @@ export default function CampusLifePage() {
             {ORGS.map(o => (
               <div key={o.name} className="rounded-2xl p-6" style={{ background: 'oklch(0.19 0.08 263)', border: '1px solid oklch(1 0 0 / 0.07)' }}>
                 <h3 className="font-display font-bold text-white mb-2" style={{ fontSize: '1rem' }}>{o.name}</h3>
-                <p className="text-white/55 leading-relaxed mb-4" style={{ fontSize: '0.86rem' }}>{o.desc}</p>
-                <Link href={o.href} className="link-reveal font-semibold" style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}>
+                <p className="text-white/70 leading-relaxed mb-4" style={{ fontSize: '0.86rem' }}>{o.desc}</p>
+                <Link href={o.href} className="link-reveal font-semibold" style={{ fontSize: '1.08rem', color: 'oklch(0.79 0.19 78)' }}>
                   Learn more →
                 </Link>
               </div>
             ))}
           </div>
           <div className="rounded-2xl p-6 scroll-reveal" style={{ background: 'oklch(0.19 0.08 263)', border: '1px solid oklch(1 0 0 / 0.07)' }}>
-            <p className="text-white/70 mb-3" style={{ fontSize: '0.9rem' }}>
+            <p className="text-white/80 mb-3" style={{ fontSize: '1.05rem' }}>
               Not sure how or where to get plugged in? Contact our Student Engagement Manager.
             </p>
-            <p className="font-bold text-white" style={{ fontSize: '0.9rem' }}>Ms. Tenesha Burns · tburns@lawsonstate.edu</p>
+            <p className="font-bold text-white" style={{ fontSize: '1.05rem' }}>Ms. Tenesha Burns · tburns@lawsonstate.edu</p>
           </div>
         </div>
       </section>
@@ -197,36 +197,36 @@ export default function CampusLifePage() {
       <section className="py-20 px-6" style={{ background: 'oklch(0.97 0.015 263)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.68rem', letterSpacing: '0.2em' }}>We're Here for You</p>
-            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.025em' }}>STUDENT SUPPORT SERVICES</h2>
-            <p className="text-lscc-muted mt-2 max-w-2xl" style={{ fontSize: '0.95rem' }}>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>We're Here for You</p>
+            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>STUDENT SUPPORT SERVICES</h2>
+            <p className="text-lscc-muted mt-2 max-w-2xl" style={{ fontSize: '1.08rem' }}>
               All students — online, on campus, or off-site — are eligible for these services by phone, email, or in person. At Lawson State, we care about your academic, professional, and personal achievement.
             </p>
           </div>
           <div className="stagger-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {SUPPORT_SERVICES.map(s => (
               <div key={s.name} className="card-lift rounded-2xl p-6 shadow-card" style={{ background: 'white', border: '1px solid oklch(0.92 0.01 263)' }}>
-                <h3 className="font-display font-bold mb-2 text-lscc-ink" style={{ fontSize: '0.95rem' }}>{s.name}</h3>
-                <p className="text-lscc-muted leading-relaxed mb-4" style={{ fontSize: '0.84rem' }}>{s.desc}</p>
-                <Link href={s.href} className="link-reveal font-semibold" style={{ fontSize: '0.8rem', color: 'oklch(0.22 0.17 261)' }}>
+                <h3 className="font-display font-bold mb-2 text-lscc-ink" style={{ fontSize: '1.08rem' }}>{s.name}</h3>
+                <p className="text-lscc-muted leading-relaxed mb-4" style={{ fontSize: '0.96rem' }}>{s.desc}</p>
+                <Link href={s.href} className="link-reveal font-semibold" style={{ fontSize: '0.92rem', color: 'oklch(0.22 0.17 261)' }}>
                   Learn more →
                 </Link>
               </div>
             ))}
           </div>
           <div className="mt-8 rounded-2xl p-6 scroll-reveal" style={{ background: 'white', border: '1px solid oklch(0.92 0.01 263)' }}>
-            <h3 className="font-display font-bold mb-3 text-lscc-ink" style={{ fontSize: '0.95rem' }}>Student Support Contact</h3>
+            <h3 className="font-display font-bold mb-3 text-lscc-ink" style={{ fontSize: '1.08rem' }}>Student Support Contact</h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
               <div>
-                <div className="font-semibold uppercase mb-1" style={{ fontSize: '0.6rem', letterSpacing: '0.14em', color: 'oklch(0.79 0.19 78)' }}>Bessemer Campus</div>
+                <div className="font-semibold uppercase mb-1" style={{ fontSize: '0.74rem', letterSpacing: '0.14em', color: 'oklch(0.79 0.19 78)' }}>Bessemer Campus</div>
                 <div className="text-lscc-muted">Building A — 1100 Ninth Ave SW</div>
               </div>
               <div>
-                <div className="font-semibold uppercase mb-1" style={{ fontSize: '0.6rem', letterSpacing: '0.14em', color: 'oklch(0.79 0.19 78)' }}>Birmingham Campus</div>
+                <div className="font-semibold uppercase mb-1" style={{ fontSize: '0.74rem', letterSpacing: '0.14em', color: 'oklch(0.79 0.19 78)' }}>Birmingham Campus</div>
                 <div className="text-lscc-muted">Academic Success Center — 3060 Wilson Rd SW</div>
               </div>
               <div>
-                <div className="font-semibold uppercase mb-1" style={{ fontSize: '0.6rem', letterSpacing: '0.14em', color: 'oklch(0.79 0.19 78)' }}>Contact</div>
+                <div className="font-semibold uppercase mb-1" style={{ fontSize: '0.74rem', letterSpacing: '0.14em', color: 'oklch(0.79 0.19 78)' }}>Contact</div>
                 <div className="text-lscc-muted">205.929.2113 · counseling@lawsonstate.edu</div>
               </div>
             </div>
@@ -238,8 +238,8 @@ export default function CampusLifePage() {
       <section className="py-20 px-6" style={{ background: 'white' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.68rem', letterSpacing: '0.2em' }}>Your One-Stop Center</p>
-            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.025em' }}>STUDENT RESOURCES</h2>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Your One-Stop Center</p>
+            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>STUDENT RESOURCES</h2>
           </div>
           <div className="stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {RESOURCES.map(r => (
@@ -249,8 +249,8 @@ export default function CampusLifePage() {
                 className="card-lift press rounded-xl p-5 shadow-card block"
                 style={{ background: 'oklch(0.97 0.015 263)', border: '1px solid oklch(0.92 0.01 263)' }}
               >
-                <h3 className="font-display font-bold text-lscc-ink mb-1" style={{ fontSize: '0.9rem' }}>{r.name}</h3>
-                <p className="text-lscc-muted" style={{ fontSize: '0.8rem' }}>{r.desc}</p>
+                <h3 className="font-display font-bold text-lscc-ink mb-1" style={{ fontSize: '1.05rem' }}>{r.name}</h3>
+                <p className="text-lscc-muted" style={{ fontSize: '0.92rem' }}>{r.desc}</p>
               </Link>
             ))}
           </div>

@@ -90,16 +90,16 @@ export default function FinancialAidPage() {
       >
         <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(135deg, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.16 0.13 263 / 0.82) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.7rem', letterSpacing: '0.22em' }}>2025–2026 · Grants, Scholarships & More</p>
-          <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.4rem, 6vw, 4.5rem)', letterSpacing: '-0.025em' }}>FINANCIAL AID</h1>
-          <p className="text-white/60 max-w-xl" style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.05rem)', lineHeight: 1.7 }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>2025–2026 · Grants, Scholarships & More</p>
+          <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em' }}>FINANCIAL AID</h1>
+          <p className="text-white/75 max-w-xl" style={{ fontSize: 'clamp(1.05rem, 1.6vw, 1.2rem)', lineHeight: 1.7 }}>
             Lawson State is one of the most affordable paths to a college education. At $131/credit hour in-state, your investment goes further here.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
-            <Link href="https://studentaid.gov/h/apply-for-aid/fafsa" className="press btn-shimmer hero-cta-gold font-bold px-6 py-3 rounded-lg inline-block" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.875rem' }}>
+            <Link href="https://studentaid.gov/h/apply-for-aid/fafsa" className="press btn-shimmer hero-cta-gold font-bold px-6 py-3 rounded-lg inline-block" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}>
               Complete the FAFSA
             </Link>
-            <Link href="/admissions/apply" className="press hero-cta-ghost font-semibold px-6 py-3 rounded-lg text-white inline-block" style={{ border: '1.5px solid oklch(1 0 0 / 0.25)', fontSize: '0.875rem' }}>
+            <Link href="/admissions/apply" className="press hero-cta-ghost font-semibold px-6 py-3 rounded-lg text-white inline-block" style={{ border: '1.5px solid oklch(1 0 0 / 0.25)', fontSize: '1rem' }}>
               Apply Now
             </Link>
           </div>
@@ -110,7 +110,7 @@ export default function FinancialAidPage() {
       <div style={{ background: 'oklch(0.79 0.19 78)' }}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-start gap-3">
           <span className="shrink-0 font-black text-lscc-ink" style={{ fontSize: '1rem' }}>!</span>
-          <p className="font-semibold text-lscc-ink" style={{ fontSize: '0.88rem' }}>
+          <p className="font-semibold text-lscc-ink" style={{ fontSize: '1rem' }}>
             <strong>Important:</strong> Lawson State Community College does NOT participate in the federal student loan program. Students seeking loans should explore private loan options. Grants, scholarships, and work-study are available.
           </p>
         </div>
@@ -120,8 +120,8 @@ export default function FinancialAidPage() {
       <section className="py-20 px-6" style={{ background: 'white' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.68rem', letterSpacing: '0.2em' }}>2025–2026 Academic Year</p>
-            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.025em' }}>TUITION & FEES</h2>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>2025–2026 Academic Year</p>
+            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>TUITION & FEES</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 scroll-reveal">
             <div>
@@ -131,8 +131,8 @@ export default function FinancialAidPage() {
                   <tbody>
                     {TUITION_ROWS.map((row, i) => (
                       <tr key={row[0]} style={{ background: i % 2 === 0 ? 'white' : 'oklch(0.97 0.015 263)' }}>
-                        <td className="px-5 py-3 text-lscc-muted" style={{ fontSize: '0.88rem' }}>{row[0]}</td>
-                        <td className="px-5 py-3 font-bold text-lscc-ink text-right" style={{ fontSize: '0.88rem', whiteSpace: 'nowrap' }}>{row[1]}</td>
+                        <td className="px-5 py-3 text-lscc-muted" style={{ fontSize: '1rem' }}>{row[0]}</td>
+                        <td className="px-5 py-3 font-bold text-lscc-ink text-right" style={{ fontSize: '1rem', whiteSpace: 'nowrap' }}>{row[1]}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -146,22 +146,22 @@ export default function FinancialAidPage() {
                   <tbody>
                     {ROOM_BOARD.map((row, i) => (
                       <tr key={row[0]} style={{ background: i % 2 === 0 ? 'white' : 'oklch(0.97 0.015 263)' }}>
-                        <td className="px-5 py-3 text-lscc-muted" style={{ fontSize: '0.88rem' }}>{row[0]}</td>
-                        <td className="px-5 py-3 font-bold text-lscc-ink text-right" style={{ fontSize: '0.88rem', whiteSpace: 'nowrap' }}>{row[1]}</td>
+                        <td className="px-5 py-3 text-lscc-muted" style={{ fontSize: '1rem' }}>{row[0]}</td>
+                        <td className="px-5 py-3 font-bold text-lscc-ink text-right" style={{ fontSize: '1rem', whiteSpace: 'nowrap' }}>{row[1]}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
               <div className="rounded-xl p-5" style={{ background: 'oklch(0.97 0.015 263)', border: '1px solid oklch(0.92 0.01 263)' }}>
-                <h4 className="font-display font-bold mb-2 text-lscc-ink" style={{ fontSize: '0.9rem' }}>Payment Due Date</h4>
-                <p className="text-lscc-muted leading-relaxed" style={{ fontSize: '0.85rem' }}>
+                <h4 className="font-display font-bold mb-2 text-lscc-ink" style={{ fontSize: '1.05rem' }}>Payment Due Date</h4>
+                <p className="text-lscc-muted leading-relaxed" style={{ fontSize: '1.1rem' }}>
                   Payment is due before the first day of class. A $25 late registration fee and $25 late payment fee apply for payments made after the deadline.
                 </p>
               </div>
               <div className="mt-4 rounded-xl p-5" style={{ background: 'oklch(0.97 0.015 263)', border: '1px solid oklch(0.92 0.01 263)' }}>
-                <h4 className="font-display font-bold mb-2 text-lscc-ink" style={{ fontSize: '0.9rem' }}>Payment Plan</h4>
-                <p className="text-lscc-muted leading-relaxed" style={{ fontSize: '0.85rem' }}>
+                <h4 className="font-display font-bold mb-2 text-lscc-ink" style={{ fontSize: '1.05rem' }}>Payment Plan</h4>
+                <p className="text-lscc-muted leading-relaxed" style={{ fontSize: '1.1rem' }}>
                   A 4-installment monthly payment plan is available through TouchNet. Contact Financial Aid for enrollment details.
                 </p>
               </div>
@@ -174,17 +174,17 @@ export default function FinancialAidPage() {
       <section className="py-20 px-6" style={{ background: 'oklch(0.97 0.015 263)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.68rem', letterSpacing: '0.2em' }}>Funding Options</p>
-            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.025em' }}>TYPES OF FINANCIAL AID</h2>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Funding Options</p>
+            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>TYPES OF FINANCIAL AID</h2>
           </div>
           <div className="stagger-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {AID_TYPES.map(a => (
               <div key={a.type} className="card-lift rounded-2xl p-6 shadow-card" style={{ background: 'white', border: '1px solid oklch(0.92 0.01 263)' }}>
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="font-display font-black text-lscc-ink" style={{ fontSize: '1.05rem' }}>{a.type}</h3>
-                  <span className="font-bold rounded-full px-3 py-1 text-white" style={{ fontSize: '0.62rem', letterSpacing: '0.1em', background: a.badgeColor }}>{a.badge}</span>
+                  <span className="font-bold rounded-full px-3 py-1 text-white" style={{ fontSize: '0.76rem', letterSpacing: '0.1em', background: a.badgeColor }}>{a.badge}</span>
                 </div>
-                <p className="text-lscc-muted leading-relaxed" style={{ fontSize: '0.85rem' }}>{a.desc}</p>
+                <p className="text-lscc-muted leading-relaxed" style={{ fontSize: '1.1rem' }}>{a.desc}</p>
               </div>
             ))}
           </div>
@@ -192,14 +192,14 @@ export default function FinancialAidPage() {
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 items-center">
               <div>
                 <h3 className="font-display font-black text-white mb-2" style={{ fontSize: '1.3rem', letterSpacing: '-0.015em' }}>Start with the FAFSA</h3>
-                <p className="text-white/60" style={{ fontSize: '0.92rem', maxWidth: '52ch' }}>
+                <p className="text-white/75" style={{ fontSize: '0.92rem', maxWidth: '52ch' }}>
                   The Free Application for Federal Student Aid (FAFSA) determines your eligibility for all federal and state grants. It's free and takes about 30 minutes. Submit it as early as possible — awards are limited.
                 </p>
               </div>
               <Link
                 href="https://studentaid.gov/h/apply-for-aid/fafsa"
                 className="press btn-shimmer font-bold px-6 py-3 rounded-lg whitespace-nowrap block text-center shrink-0"
-                style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.875rem' }}
+                style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
               >
                 Complete FAFSA →
               </Link>
@@ -212,25 +212,25 @@ export default function FinancialAidPage() {
       <section className="py-20 px-6" style={{ background: 'white' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.68rem', letterSpacing: '0.2em' }}>Withdrawal Policy</p>
-            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.025em' }}>REFUND SCHEDULE</h2>
-            <p className="text-lscc-muted mt-2" style={{ fontSize: '0.95rem' }}>If you withdraw from a course, the amount refunded depends on when you withdraw.</p>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Withdrawal Policy</p>
+            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>REFUND SCHEDULE</h2>
+            <p className="text-lscc-muted mt-2" style={{ fontSize: '1.08rem' }}>If you withdraw from a course, the amount refunded depends on when you withdraw.</p>
           </div>
           <div className="scroll-reveal overflow-hidden rounded-2xl shadow-card" style={{ border: '1px solid oklch(0.92 0.01 263)', maxWidth: '36rem' }}>
             <table className="w-full">
               <thead>
                 <tr style={{ background: 'oklch(0.22 0.17 261)' }}>
-                  <th className="text-left px-6 py-4 font-display font-bold text-white" style={{ fontSize: '0.8rem', letterSpacing: '0.05em' }}>Withdrawal Period</th>
-                  <th className="text-right px-6 py-4 font-display font-bold text-white" style={{ fontSize: '0.8rem', letterSpacing: '0.05em' }}>Refund</th>
+                  <th className="text-left px-6 py-4 font-display font-bold text-white" style={{ fontSize: '0.92rem', letterSpacing: '0.05em' }}>Withdrawal Period</th>
+                  <th className="text-right px-6 py-4 font-display font-bold text-white" style={{ fontSize: '0.92rem', letterSpacing: '0.05em' }}>Refund</th>
                 </tr>
               </thead>
               <tbody>
                 {REFUND.map((r, i) => (
                   <tr key={r.week} style={{ background: i % 2 === 0 ? 'white' : 'oklch(0.97 0.015 263)' }}>
-                    <td className="px-6 py-3 text-lscc-muted" style={{ fontSize: '0.88rem' }}>{r.week}</td>
+                    <td className="px-6 py-3 text-lscc-muted" style={{ fontSize: '1rem' }}>{r.week}</td>
                     <td
                       className="px-6 py-3 font-bold text-right"
-                      style={{ fontSize: '0.9rem', color: r.pct === '100%' ? 'oklch(0.5 0.15 145)' : r.pct === '0%' ? 'oklch(0.5 0.2 25)' : 'oklch(0.11 0.03 261)' }}
+                      style={{ fontSize: '1.05rem', color: r.pct === '100%' ? 'oklch(0.5 0.15 145)' : r.pct === '0%' ? 'oklch(0.5 0.2 25)' : 'oklch(0.11 0.03 261)' }}
                     >
                       {r.pct}
                     </td>
@@ -246,20 +246,20 @@ export default function FinancialAidPage() {
       <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.06 263)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.68rem', letterSpacing: '0.2em' }}>After Lawson State</p>
-            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.025em' }}>TRANSFER SCHOLARSHIPS</h2>
-            <p className="text-white/50 mt-2" style={{ fontSize: '0.95rem' }}>Completing your degree at Lawson State unlocks exclusive scholarship opportunities at Alabama's top universities.</p>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>After Lawson State</p>
+            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>TRANSFER SCHOLARSHIPS</h2>
+            <p className="text-white/65 mt-2" style={{ fontSize: '1.08rem' }}>Completing your degree at Lawson State unlocks exclusive scholarship opportunities at Alabama's top universities.</p>
           </div>
           <div className="stagger-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {TRANSFER_SCHOLARSHIPS.map(s => (
               <div key={s.school} className="rounded-xl p-6" style={{ background: 'oklch(0.19 0.08 263)', border: '1px solid oklch(1 0 0 / 0.07)' }}>
                 <h3 className="font-display font-bold text-white mb-2" style={{ fontSize: '1rem' }}>{s.school}</h3>
-                <div className="font-bold mb-2" style={{ fontSize: '0.85rem', color: 'oklch(0.79 0.19 78)' }}>{s.award}</div>
-                <div className="text-white/50" style={{ fontSize: '0.8rem' }}>{s.req}</div>
+                <div className="font-bold mb-2" style={{ fontSize: '1.1rem', color: 'oklch(0.79 0.19 78)' }}>{s.award}</div>
+                <div className="text-white/65" style={{ fontSize: '0.92rem' }}>{s.req}</div>
               </div>
             ))}
           </div>
-          <p className="text-white/40 mt-6" style={{ fontSize: '0.8rem' }}>
+          <p className="text-white/40 mt-6" style={{ fontSize: '0.92rem' }}>
             Contact the Career &amp; Transfer Office (205-929-3514) for deadlines and application requirements.
           </p>
         </div>

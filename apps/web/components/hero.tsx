@@ -58,7 +58,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
   return (
     <section
       className="relative flex flex-col overflow-hidden"
-      style={{ background: 'oklch(0.22 0.17 261)', minHeight: '82vh' }}
+      style={{ background: 'oklch(0.22 0.17 261)', minHeight: '92vh' }}
     >
       {/* ── Background video ── */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden>
@@ -72,7 +72,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(135deg, oklch(0.22 0.17 261 / 0.95) 0%, oklch(0.16 0.13 263 / 0.78) 55%, oklch(0.22 0.17 261 / 0.90) 100%)',
+              'linear-gradient(135deg, oklch(0.22 0.17 261 / 0.82) 0%, oklch(0.16 0.13 263 / 0.58) 55%, oklch(0.22 0.17 261 / 0.80) 100%)',
           }}
         />
       </div>
@@ -82,12 +82,24 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
         className="absolute pointer-events-none"
         aria-hidden
         style={{
-          top: '-8%', right: '8%',
-          width: '480px', height: '480px',
+          top: '-8%', right: '4%',
+          width: '700px', height: '700px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, oklch(0.79 0.19 78 / 0.13) 0%, transparent 70%)',
-          filter: 'blur(48px)',
+          background: 'radial-gradient(circle, oklch(0.79 0.19 78 / 0.24) 0%, transparent 68%)',
+          filter: 'blur(60px)',
           animation: 'glow-pulse 5.5s ease-in-out infinite',
+        }}
+      />
+      {/* ── Secondary blue glow bottom-left ── */}
+      <div
+        className="absolute pointer-events-none"
+        aria-hidden
+        style={{
+          bottom: '10%', left: '-6%',
+          width: '500px', height: '500px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, oklch(0.35 0.18 261 / 0.30) 0%, transparent 70%)',
+          filter: 'blur(70px)',
         }}
       />
 
@@ -101,8 +113,8 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
               className="hero-block font-display font-semibold uppercase mb-5"
               style={{
                 color: 'oklch(0.79 0.19 78)',
-                fontSize: '0.7rem',
-                letterSpacing: '0.22em',
+                fontSize: '0.85rem',
+                letterSpacing: '0.18em',
                 animationDelay: '0.05s',
               }}
             >
@@ -110,13 +122,13 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
             </p>
 
             <h1
-              className="font-display font-black leading-none mb-6"
-              style={{ letterSpacing: '-0.025em' }}
+              className="font-display font-black leading-none mb-7"
+              style={{ letterSpacing: '-0.03em' }}
             >
               {/* Static line 1 */}
               <span
                 className="hero-word block text-white"
-                style={{ fontSize: 'clamp(2.6rem, 6.5vw, 5.2rem)', animationDelay: '0.1s' }}
+                style={{ fontSize: 'clamp(3rem, 7.5vw, 6.2rem)', animationDelay: '0.1s' }}
               >
                 WHERE YOUR
               </span>
@@ -125,10 +137,10 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
               <span
                 className="block"
                 style={{
-                  fontSize: 'clamp(2.8rem, 8vw, 6.8rem)',
+                  fontSize: 'clamp(3.4rem, 10vw, 8.8rem)',
                   color: 'oklch(0.79 0.19 78)',
                   overflow: 'hidden',
-                  lineHeight: 1.0,
+                  lineHeight: 0.95,
                 }}
                 aria-live="polite"
                 aria-label={WORDS[wordIdx]}
@@ -137,7 +149,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
                   style={{
                     display: 'inline-block',
                     opacity:   exiting ? 0 : 1,
-                    transform: exiting ? 'translateY(-18px)' : 'translateY(0)',
+                    transform: exiting ? 'translateY(-20px)' : 'translateY(0)',
                     transition: exiting
                       ? 'opacity 0.28s ease-in, transform 0.28s ease-in'
                       : 'opacity 0.32s ease-out, transform 0.32s ease-out',
@@ -150,18 +162,19 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
               {/* Static line 3 */}
               <span
                 className="hero-word block text-white"
-                style={{ fontSize: 'clamp(2.6rem, 6.5vw, 5.2rem)', animationDelay: '0.22s' }}
+                style={{ fontSize: 'clamp(3rem, 7.5vw, 6.2rem)', animationDelay: '0.22s' }}
               >
                 BEGINS HERE.
               </span>
             </h1>
 
             <p
-              className="hero-block text-white/60 mb-8"
+              className="hero-block mb-9"
               style={{
-                fontSize: 'clamp(0.9rem, 1.4vw, 1.05rem)',
-                lineHeight: 1.75,
-                maxWidth: '44ch',
+                color: 'oklch(1 0 0 / 0.78)',
+                fontSize: 'clamp(1.05rem, 1.8vw, 1.25rem)',
+                lineHeight: 1.72,
+                maxWidth: '46ch',
                 animationDelay: '0.38s',
               }}
             >
@@ -169,20 +182,20 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
             </p>
 
             <div
-              className="hero-block flex flex-wrap gap-3"
+              className="hero-block flex flex-wrap gap-4"
               style={{ animationDelay: '0.48s' }}
             >
               <Link
                 href={c.cta_primary_href}
-                className="press btn-shimmer hero-cta-gold inline-flex items-center font-bold px-7 py-3.5 rounded-lg"
-                style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.875rem' }}
+                className="press btn-shimmer hero-cta-gold inline-flex items-center font-bold px-8 py-4 rounded-xl"
+                style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
               >
                 {c.cta_primary_label}
               </Link>
               <Link
                 href={c.cta_secondary_href}
-                className="press hero-cta-ghost inline-flex items-center font-semibold px-7 py-3.5 rounded-lg text-white"
-                style={{ border: '1.5px solid oklch(1 0 0 / 0.25)', fontSize: '0.875rem' }}
+                className="press hero-cta-ghost inline-flex items-center font-semibold px-8 py-4 rounded-xl text-white"
+                style={{ border: '1.5px solid oklch(1 0 0 / 0.32)', fontSize: '1rem' }}
               >
                 {c.cta_secondary_label}
               </Link>
@@ -192,40 +205,39 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
           {/* RIGHT: path selector (desktop) */}
           <div className="hidden lg:flex flex-col">
             <p
-              className="uppercase font-semibold mb-3"
-              style={{ fontSize: '0.58rem', letterSpacing: '0.2em', color: 'oklch(1 0 0 / 0.3)' }}
+              className="uppercase font-semibold mb-4"
+              style={{ fontSize: '0.72rem', letterSpacing: '0.18em', color: 'oklch(1 0 0 / 0.45)' }}
             >
               I am a...
             </p>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2.5">
               {PATHS.map((path) => (
                 <Link
                   key={path.label}
                   href={path.href}
-                  className="press group flex items-center justify-between rounded-xl px-4 py-3 transition-colors"
+                  className="press group flex items-center justify-between rounded-xl px-4 py-3.5 transition-colors"
                   style={{
-                    background: 'oklch(1 0 0 / 0.07)',
-                    border: '1px solid oklch(1 0 0 / 0.11)',
-                    backdropFilter: 'blur(12px)',
+                    background: 'oklch(1 0 0 / 0.09)',
+                    border: '1px solid oklch(1 0 0 / 0.15)',
+                    backdropFilter: 'blur(16px)',
                   }}
                 >
                   <div>
                     <div
-                      className="font-display font-bold text-white leading-none mb-0.5"
-                      style={{ fontSize: '0.82rem' }}
+                      className="font-display font-bold text-white leading-none mb-1"
+                      style={{ fontSize: '0.92rem' }}
                     >
                       {path.label}
                     </div>
                     <div
-                      className="text-white/40"
-                      style={{ fontSize: '0.62rem' }}
+                      style={{ fontSize: '0.72rem', color: 'oklch(1 0 0 / 0.52)' }}
                     >
                       {path.sub}
                     </div>
                   </div>
                   <span
-                    className="text-white/30 group-hover:text-lscc-gold transition-colors"
-                    style={{ fontSize: '0.8rem' }}
+                    className="text-white/40 group-hover:text-lscc-gold transition-colors ml-4"
+                    style={{ fontSize: '1rem' }}
                   >
                     →
                   </span>
@@ -237,24 +249,24 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
 
         {/* Stats strip */}
         <div
-          className="grid grid-cols-2 sm:grid-cols-4 gap-6"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-8"
           style={{
-            marginTop: '2.5rem',
-            paddingTop: '1.5rem',
-            borderTop: '1px solid oklch(1 0 0 / 0.1)',
+            marginTop: '3rem',
+            paddingTop: '2rem',
+            borderTop: '1px solid oklch(1 0 0 / 0.14)',
           }}
         >
           {STATS.map((s) => (
-            <div key={s.number} className="flex flex-col gap-0.5">
+            <div key={s.number} className="flex flex-col gap-1">
               <span
                 className="font-display font-black text-white leading-none"
-                style={{ fontSize: 'clamp(1.6rem, 3vw, 2.25rem)', letterSpacing: '-0.035em' }}
+                style={{ fontSize: 'clamp(2.2rem, 4vw, 3rem)', letterSpacing: '-0.04em' }}
               >
                 {s.number}
               </span>
               <span
-                className="text-white/40 uppercase font-medium"
-                style={{ fontSize: '0.58rem', letterSpacing: '0.16em' }}
+                className="uppercase font-semibold"
+                style={{ fontSize: '0.78rem', letterSpacing: '0.14em', color: 'oklch(1 0 0 / 0.60)' }}
               >
                 {s.label}
               </span>
@@ -266,24 +278,24 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
       {/* ── Marquee ticker ── */}
       <div
         className="relative marquee-strip"
-        style={{ borderTop: '1px solid oklch(1 0 0 / 0.09)' }}
+        style={{ borderTop: '1px solid oklch(1 0 0 / 0.12)', background: 'oklch(0.19 0.10 261 / 0.50)', backdropFilter: 'blur(12px)' }}
       >
-        <div className="marquee-track py-3">
+        <div className="marquee-track py-3.5">
           {[...TICKER, ...TICKER].map((item, i) => (
             <span
               key={i}
               className="inline-flex items-center font-bold uppercase whitespace-nowrap"
               style={{
-                fontSize: '0.65rem',
-                letterSpacing: '0.18em',
+                fontSize: '0.78rem',
+                letterSpacing: '0.16em',
                 paddingRight: '2.5rem',
-                color: 'oklch(1 0 0 / 0.22)',
+                color: 'oklch(1 0 0 / 0.50)',
               }}
             >
               {item}
               <span
                 className="ml-2.5"
-                style={{ color: 'oklch(0.79 0.19 78)', opacity: 0.4 }}
+                style={{ color: 'oklch(0.79 0.19 78)', opacity: 0.7 }}
               >
                 ◆
               </span>

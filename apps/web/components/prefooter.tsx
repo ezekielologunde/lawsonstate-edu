@@ -23,7 +23,7 @@ export default function Prefooter({ content = {} }: { content?: PrefooterContent
   ]
 
   return (
-    <section className="py-24 px-6 relative overflow-hidden" style={{ background: 'oklch(0.27 0.13 263)' }}>
+    <section className="py-28 px-6 relative overflow-hidden" style={{ background: 'oklch(0.22 0.17 261)' }}>
       {/* Animated background orb */}
       <div
         className="absolute pointer-events-none"
@@ -50,15 +50,15 @@ export default function Prefooter({ content = {} }: { content?: PrefooterContent
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-10 scroll-reveal">
+      <div className="relative max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-12 scroll-reveal">
         <div>
           <h2
-            className="font-display font-black text-white leading-none mb-3"
-            style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', letterSpacing: '-0.02em' }}
+            className="font-display font-black text-white leading-none mb-4"
+            style={{ fontSize: 'clamp(3rem, 5.5vw, 5rem)', letterSpacing: '-0.03em' }}
           >
             {c.headline}
           </h2>
-          <p className="text-white/60 text-lg" style={{ maxWidth: '50ch' }}>
+          <p style={{ color: 'oklch(1 0 0 / 0.72)', fontSize: '1.15rem', lineHeight: 1.65, maxWidth: '48ch' }}>
             {c.subheadline}
           </p>
         </div>
@@ -69,8 +69,8 @@ export default function Prefooter({ content = {} }: { content?: PrefooterContent
               <Link
                 key={cta.label}
                 href={cta.href}
-                className="press btn-shimmer hero-cta-gold inline-flex items-center justify-center font-semibold px-8 py-4 rounded"
-                style={{ background: 'oklch(0.83 0.16 82)', color: 'oklch(0.14 0.02 263)', fontSize: '0.9375rem' }}
+                className="press btn-shimmer hero-cta-gold inline-flex items-center justify-center font-bold px-9 py-4.5 rounded-xl"
+                style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
               >
                 {cta.label}
               </Link>
@@ -78,8 +78,8 @@ export default function Prefooter({ content = {} }: { content?: PrefooterContent
               <Link
                 key={cta.label}
                 href={cta.href}
-                className="press hero-cta-ghost inline-flex items-center justify-center font-semibold px-8 py-4 rounded text-white"
-                style={{ border: '2px solid oklch(1 0 0 / 0.25)', fontSize: '0.9375rem' }}
+                className="press hero-cta-ghost inline-flex items-center justify-center font-semibold px-9 py-4.5 rounded-xl text-white"
+                style={{ border: '2px solid oklch(1 0 0 / 0.30)', fontSize: '1rem' }}
               >
                 {cta.label}
               </Link>

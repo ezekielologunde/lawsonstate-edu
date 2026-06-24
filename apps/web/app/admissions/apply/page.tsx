@@ -31,7 +31,7 @@ export default function ApplyPage() {
         />
 
         <div className="relative max-w-2xl mx-auto w-full text-center">
-          <p className="font-display font-semibold uppercase mb-4" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.68rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-4" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>
             Rolling Admissions · No Application Fee
           </p>
           <h1
@@ -40,7 +40,7 @@ export default function ApplyPage() {
           >
             START YOUR APPLICATION
           </h1>
-          <p className="text-white/55 mb-10 mx-auto" style={{ fontSize: '1rem', lineHeight: 1.75, maxWidth: '44ch' }}>
+          <p className="text-white/70 mb-10 mx-auto" style={{ fontSize: '1rem', lineHeight: 1.75, maxWidth: '44ch' }}>
             Lawson State's application is free and takes about 10 minutes. No minimum GPA required. You can apply any time — we accept students year-round.
           </p>
 
@@ -57,7 +57,7 @@ export default function ApplyPage() {
 
           {/* Checklist */}
           <div className="text-left rounded-2xl p-8" style={{ background: 'oklch(0.19 0.08 263)', border: '1px solid oklch(1 0 0 / 0.08)' }}>
-            <h2 className="font-display font-bold text-white mb-6" style={{ fontSize: '0.9rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+            <h2 className="font-display font-bold text-white mb-6" style={{ fontSize: '1.05rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
               What to prepare
             </h2>
             <ul className="space-y-4">
@@ -65,11 +65,11 @@ export default function ApplyPage() {
                 <li key={c.step} className="flex items-start gap-4">
                   <span
                     className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center font-display font-black"
-                    style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.72rem' }}
+                    style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.96rem' }}
                   >
                     {c.step}
                   </span>
-                  <span className="text-white/65 pt-0.5" style={{ fontSize: '0.9rem', lineHeight: 1.6 }}>{c.label}</span>
+                  <span className="text-white/65 pt-0.5" style={{ fontSize: '1.05rem', lineHeight: 1.6 }}>{c.label}</span>
                 </li>
               ))}
             </ul>
@@ -77,23 +77,23 @@ export default function ApplyPage() {
 
           {/* Secondary links */}
           <div className="flex flex-wrap gap-4 justify-center mt-8">
-            <Link href="/admissions" className="link-reveal text-white/50 hover:text-white transition-colors font-medium" style={{ fontSize: '0.85rem' }}>
+            <Link href="/admissions" className="link-reveal text-white/65 hover:text-white transition-colors font-medium" style={{ fontSize: '1.1rem' }}>
               ← Full admissions info
             </Link>
-            <Link href="/financial-aid" className="link-reveal text-white/50 hover:text-white transition-colors font-medium" style={{ fontSize: '0.85rem' }}>
+            <Link href="/financial-aid" className="link-reveal text-white/65 hover:text-white transition-colors font-medium" style={{ fontSize: '1.1rem' }}>
               Financial aid info
             </Link>
-            <Link href="/academics" className="link-reveal text-white/50 hover:text-white transition-colors font-medium" style={{ fontSize: '0.85rem' }}>
+            <Link href="/academics" className="link-reveal text-white/65 hover:text-white transition-colors font-medium" style={{ fontSize: '1.1rem' }}>
               Browse programs
             </Link>
           </div>
 
           {/* Help */}
-          <p className="text-white/30 mt-8" style={{ fontSize: '0.8rem' }}>
+          <p className="text-white/30 mt-8" style={{ fontSize: '0.92rem' }}>
             Questions? Call admissions at{' '}
-            <a href="tel:+12059293416" className="text-white/50 hover:text-white transition-colors">205.929.3416</a>
+            <a href="tel:+12059293416" className="text-white/65 hover:text-white transition-colors">205.929.3416</a>
             {' '}or text{' '}
-            <a href="sms:+12057076422" className="text-white/50 hover:text-white transition-colors">205.707.6422</a>
+            <a href="sms:+12057076422" className="text-white/65 hover:text-white transition-colors">205.707.6422</a>
           </p>
         </div>
       </main>
