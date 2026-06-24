@@ -64,8 +64,8 @@ export default function MobileBottomNav() {
     <nav
       className="md:hidden fixed bottom-0 left-0 right-0 z-50 flex"
       style={{
-        background:       'oklch(0.27 0.13 263)',
-        borderTop:        '1px solid oklch(0.33 0.12 263)',
+        background:       'oklch(0.22 0.17 261)',
+        borderTop:        '1px solid oklch(0.28 0.15 261)',
         paddingBottom:    'env(safe-area-inset-bottom)',
       }}
       aria-label="Quick actions"
@@ -76,8 +76,8 @@ export default function MobileBottomNav() {
           href={href}
           className="flex-1 flex flex-col items-center justify-center gap-1 py-3 transition-opacity active:opacity-70"
           style={{
-            background: primary ? 'oklch(0.83 0.16 82)' : 'transparent',
-            color:      primary ? 'oklch(0.14 0.02 263)' : 'oklch(1 0 0 / 0.70)',
+            background: primary ? 'oklch(0.79 0.19 78)' : 'transparent',
+            color:      primary ? 'oklch(0.11 0.03 261)' : 'oklch(1 0 0 / 0.70)',
           }}
         >
           {icon}

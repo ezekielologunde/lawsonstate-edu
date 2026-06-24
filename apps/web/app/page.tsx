@@ -13,6 +13,7 @@ import NewsEvents from '@/components/news-events'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
 import MobileBottomNav from '@/components/mobile-bottom-nav'
+import HBCUPopup from '@/components/hbcu-popup'
 
 export default async function Home() {
   const db = createServerClient()
@@ -71,6 +72,7 @@ export default async function Home() {
       </main>
       <SiteFooter />
       <MobileBottomNav />
+      <HBCUPopup />
     </>
   )
 }

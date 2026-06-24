@@ -14,27 +14,47 @@ html {
 }
 
 @theme {
-  /* Lawson State brand palette — OKLCH */
-  --color-lscc-blue:      oklch(0.27 0.13 263);
-  --color-lscc-blue-dark: oklch(0.20 0.10 265);
-  --color-lscc-blue-mid:  oklch(0.38 0.13 263);
-  --color-lscc-blue-100:  oklch(0.94 0.025 263);
+  /* Lawson State HBCU brand palette — refined OKLCH */
+  --color-lscc-blue:      oklch(0.22 0.17 261);
+  --color-lscc-blue-dark: oklch(0.16 0.13 263);
+  --color-lscc-blue-mid:  oklch(0.35 0.15 261);
+  --color-lscc-blue-100:  oklch(0.93 0.03 261);
   --color-lscc-blue-50:   oklch(0.97 0.015 263);
-  --color-lscc-gold:      oklch(0.83 0.16 82);
-  --color-lscc-gold-dark: oklch(0.72 0.17 82);
-  --color-lscc-ink:       oklch(0.14 0.02 263);
-  --color-lscc-muted:     oklch(0.50 0.05 263);
+  --color-lscc-gold:      oklch(0.79 0.19 78);
+  --color-lscc-gold-dark: oklch(0.68 0.20 76);
+  --color-lscc-ink:       oklch(0.11 0.03 261);
+  --color-lscc-muted:     oklch(0.48 0.06 261);
   --color-lscc-surface:   oklch(0.98 0.008 263);
 }
 
 @theme inline {
-  --font-display: var(--font-barlow-condensed), "Barlow Condensed", system-ui, sans-serif;
-  --font-sans:    var(--font-barlow), "Barlow", system-ui, sans-serif;
+  --font-display: var(--font-poppins), "Poppins", system-ui, sans-serif;
+  --font-sans:    var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
 body {
   background: oklch(0.98 0.008 263);
-  color: oklch(0.14 0.02 263);
+  color: oklch(0.11 0.03 261);
+  font-family: var(--font-sans);
+}
+
+/* Ken Burns — deliberate slow zoom for hero */
+@keyframes kenburns {
+  0%   { transform: scale(1.06) translate(0,      0); }
+  50%  { transform: scale(1.10) translate(-0.8%, -0.4%); }
+  100% { transform: scale(1.06) translate(0,      0); }
+}
+
+/* Overlay shadow utilities */
+.shadow-card {
+  box-shadow:
+    0 1px 3px oklch(0.11 0.03 261 / 0.06),
+    0 4px 18px oklch(0.11 0.03 261 / 0.10);
+}
+.shadow-card-hover {
+  box-shadow:
+    0 2px 6px oklch(0.11 0.03 261 / 0.08),
+    0 10px 32px oklch(0.11 0.03 261 / 0.16);
 }
 
 /* ── Programs section asymmetric grid ── */

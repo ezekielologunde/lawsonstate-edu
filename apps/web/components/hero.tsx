@@ -12,7 +12,7 @@ const DEFAULTS: HeroContent = {
   cta_secondary_href:  '/academics',
   stat_1: '200+ programs offered',
   stat_2: '2 campuses across Alabama',
-  stat_3: '60+ years of excellence',
+  stat_3: 'Founded 1949',
   stat_4: 'Accredited by SACSCOC',
 }
 
@@ -22,58 +22,77 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
   return (
     <section
       className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center overflow-hidden"
-      style={{ background: 'oklch(0.27 0.13 263)' }}
+      style={{ background: 'oklch(0.22 0.17 261)' }}
     >
-      {/* Real campus photo */}
-      <div className="absolute inset-0" aria-hidden>
+      {/* Ken Burns animated campus photo */}
+      <div className="absolute inset-0 overflow-hidden" aria-hidden>
         <img
           src="https://www.lawsonstate.edu/_resources/assets/img/Bessemer%20Campus%20Aerial%20View.jpg"
           alt=""
           className="w-full h-full object-cover object-center"
           loading="eager"
+          style={{
+            animation: 'kenburns 22s ease-in-out infinite',
+            willChange: 'transform',
+          }}
         />
-        {/* Blue brand overlay */}
+        {/* Gradient overlay — richer at edges, slightly lighter center */}
         <div
           className="absolute inset-0"
-          style={{ background: 'oklch(0.27 0.13 263 / 0.86)' }}
+          style={{
+            background:
+              'linear-gradient(150deg, oklch(0.22 0.17 261 / 0.94) 0%, oklch(0.16 0.13 263 / 0.78) 50%, oklch(0.22 0.17 261 / 0.93) 100%)',
+          }}
+        />
+        {/* Bottom fade */}
+        <div
+          className="absolute bottom-0 inset-x-0"
+          style={{
+            height: '160px',
+            background: 'linear-gradient(to bottom, transparent, oklch(0.22 0.17 261 / 0.55))',
+          }}
         />
       </div>
 
-      {/* Depth shapes on top of photo */}
+      {/* Depth shapes */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div
           className="absolute -top-40 -right-40 rounded-full"
-          style={{ width: '640px', height: '640px', background: 'oklch(0.33 0.12 263)', opacity: 0.18 }}
+          style={{ width: '640px', height: '640px', background: 'oklch(0.28 0.16 261)', opacity: 0.15 }}
         />
         <div
           className="absolute bottom-0 -left-60 rounded-full"
-          style={{ width: '560px', height: '560px', background: 'oklch(0.32 0.12 263)', opacity: 0.12 }}
+          style={{ width: '560px', height: '560px', background: 'oklch(0.27 0.15 261)', opacity: 0.10 }}
         />
+        {/* Gold accent line */}
         <div
           className="absolute hidden lg:block"
           style={{
-            top: '20%', right: '28%',
-            width: '2px', height: '220px',
-            background: 'oklch(0.83 0.16 82)',
-            opacity: 0.35,
+            top: '22%', right: '27%',
+            width: '2px', height: '200px',
+            background: 'oklch(0.79 0.19 78)',
+            opacity: 0.40,
             transform: 'rotate(-10deg)',
           }}
         />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 pt-36 pb-28 w-full">
-        <h1 className="font-display font-black leading-none mb-7" style={{ letterSpacing: '-0.02em' }}>
-          <span className="block text-white" style={{ fontSize: 'clamp(3.5rem, 10vw, 7.5rem)' }}>
+        <h1
+          className="font-display font-black leading-none mb-7"
+          style={{ letterSpacing: '-0.02em', textWrap: 'balance' } as React.CSSProperties}
+        >
+          <span className="block text-white" style={{ fontSize: 'clamp(3.25rem, 9.5vw, 7rem)' }}>
             {c.headline_line1}
           </span>
-          <span className="block" style={{ fontSize: 'clamp(3.5rem, 10vw, 7.5rem)', color: 'oklch(0.83 0.16 82)' }}>
+          <span className="block" style={{ fontSize: 'clamp(3.25rem, 9.5vw, 7rem)', color: 'oklch(0.79 0.19 78)' }}>
             {c.headline_line2}
           </span>
         </h1>
 
         <p
           className="text-white/70 mb-11"
-          style={{ fontSize: 'clamp(1rem, 1.8vw, 1.2rem)', lineHeight: 1.65, maxWidth: '46ch' }}
+          style={{ fontSize: 'clamp(1rem, 1.7vw, 1.15rem)', lineHeight: 1.7, maxWidth: '46ch' }}
         >
           {c.subheadline}
         </p>
@@ -81,15 +100,15 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
         <div className="flex flex-wrap gap-4">
           <Link
             href={c.cta_primary_href}
-            className="inline-flex items-center font-semibold px-8 py-4 rounded transition-all hover:brightness-105"
-            style={{ background: 'oklch(0.83 0.16 82)', color: 'oklch(0.14 0.02 263)', fontSize: '0.9375rem' }}
+            className="inline-flex items-center font-semibold px-8 py-4 rounded-lg transition-all hover:brightness-105 shadow-card"
+            style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.9375rem' }}
           >
             {c.cta_primary_label}
           </Link>
           <Link
             href={c.cta_secondary_href}
-            className="inline-flex items-center font-semibold px-8 py-4 rounded text-white transition-colors hover:bg-white/10"
-            style={{ border: '2px solid oklch(1 0 0 / 0.3)', fontSize: '0.9375rem' }}
+            className="inline-flex items-center font-semibold px-8 py-4 rounded-lg text-white transition-colors hover:bg-white/10"
+            style={{ border: '1.5px solid oklch(1 0 0 / 0.28)', fontSize: '0.9375rem' }}
           >
             {c.cta_secondary_label}
           </Link>
@@ -113,13 +132,16 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
       </div>
 
       {/* Scroll cue */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none" aria-hidden>
-        <span className="text-white/40 text-xs tracking-widest uppercase" style={{ fontSize: '0.625rem' }}>Explore</span>
+      <div
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none"
+        aria-hidden
+      >
+        <span className="text-white/35 uppercase" style={{ fontSize: '0.55rem', letterSpacing: '0.3em' }}>Explore</span>
         <svg
-          width="20" height="20" viewBox="0 0 24 24"
+          width="18" height="18" viewBox="0 0 24 24"
           fill="none" stroke="currentColor" strokeWidth="2"
           strokeLinecap="round" strokeLinejoin="round"
-          className="text-white/40"
+          className="text-white/35"
           style={{ animation: 'bounce 2s infinite' }}
         >
           <polyline points="6 9 12 15 18 9" />
@@ -132,7 +154,8 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
           50%       { transform: translateY(6px); }
         }
         @media (prefers-reduced-motion: reduce) {
-          @keyframes bounce { 0%, 100% { transform: none; } }
+          @keyframes kenburns { 0%, 100% { transform: none; } }
+          @keyframes bounce   { 0%, 100% { transform: none; } }
         }
       `}</style>
     </section>

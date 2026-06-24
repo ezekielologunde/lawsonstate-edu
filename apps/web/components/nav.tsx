@@ -27,22 +27,40 @@ export default function Nav() {
       }`}
       style={{
         background: scrolled
-          ? 'oklch(0.27 0.13 263 / 0.96)'
-          : 'oklch(0.27 0.13 263 / 0)',
+          ? 'oklch(0.22 0.17 261 / 0.96)'
+          : 'oklch(0.22 0.17 261 / 0)',
         backdropFilter: scrolled ? 'blur(12px)' : 'none',
       }}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex flex-col leading-none">
+        {/* Logo — compact monogram + wordmark */}
+        <Link href="/" className="flex items-center gap-2.5 leading-none">
           <span
-            className="font-display font-bold text-white tracking-wide"
-            style={{ fontSize: '1.25rem' }}
+            className="flex items-center justify-center font-display font-black rounded flex-shrink-0"
+            style={{
+              background: 'oklch(0.79 0.19 78)',
+              color: 'oklch(0.16 0.13 263)',
+              width: '30px',
+              height: '30px',
+              fontSize: '0.65rem',
+              letterSpacing: '0.04em',
+            }}
           >
-            LAWSON STATE
+            LS
           </span>
-          <span className="text-white/50 uppercase" style={{ fontSize: '0.625rem', letterSpacing: '0.3em' }}>
-            Community College
+          <span className="flex flex-col leading-none">
+            <span
+              className="font-display font-bold text-white"
+              style={{ fontSize: '1rem', letterSpacing: '-0.01em' }}
+            >
+              LAWSON STATE
+            </span>
+            <span
+              className="text-white/40 uppercase hidden sm:block"
+              style={{ fontSize: '0.5rem', letterSpacing: '0.22em' }}
+            >
+              Community College
+            </span>
           </span>
         </Link>
 
@@ -71,8 +89,8 @@ export default function Nav() {
             href="/admissions/apply"
             className="text-sm font-semibold px-5 py-2.5 rounded transition-colors"
             style={{
-              background: 'oklch(0.83 0.16 82)',
-              color: 'oklch(0.14 0.02 263)',
+              background: 'oklch(0.79 0.19 78)',
+              color: 'oklch(0.11 0.03 261)',
             }}
           >
             Apply Now
@@ -107,7 +125,7 @@ export default function Nav() {
         style={{
           maxHeight: open ? '24rem' : '0',
           opacity: open ? 1 : 0,
-          background: 'oklch(0.20 0.10 265)',
+          background: 'oklch(0.16 0.13 263)',
           borderTop: open ? '1px solid oklch(1 0 0 / 0.1)' : 'none',
         }}
       >
@@ -116,7 +134,7 @@ export default function Nav() {
           <Link
             href="/admissions/apply"
             className="text-center font-bold px-5 py-4 rounded-xl mb-4 transition-colors"
-            style={{ background: 'oklch(0.83 0.16 82)', color: 'oklch(0.14 0.02 263)', fontSize: '1rem' }}
+            style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
             onClick={() => setOpen(false)}
           >
             Apply Now
