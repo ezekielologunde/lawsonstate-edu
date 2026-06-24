@@ -34,7 +34,7 @@ export default function VideoSection() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 py-24">
+      <div className="relative max-w-7xl mx-auto px-6 py-14">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left: text + YouTube CTA */}
           <div>

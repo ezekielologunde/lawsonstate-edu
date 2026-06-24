@@ -51,7 +51,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
         </div>
 
         {/* Right: content */}
-        <div className="py-24 px-6 md:px-10 lg:px-16">
+        <div className="py-16 px-6 md:px-10 lg:px-16">
           <h2
             className="font-display font-black text-white leading-none mb-14"
             style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', letterSpacing: '-0.02em' }}

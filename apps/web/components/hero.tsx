@@ -58,7 +58,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
   return (
     <section
       className="relative flex flex-col overflow-hidden"
-      style={{ background: 'oklch(0.22 0.17 261)', minHeight: '92vh' }}
+      style={{ background: 'oklch(0.22 0.17 261)', minHeight: '80vh' }}
     >
       {/* ── Background video ── */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden>
@@ -104,7 +104,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
       />
 
       {/* ── Main content ── */}
-      <div className="relative flex-1 flex flex-col justify-center max-w-7xl mx-auto px-6 w-full pt-28 pb-8">
+      <div className="relative flex-1 flex flex-col justify-center max-w-7xl mx-auto px-6 w-full pt-20 pb-6">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_220px] gap-10 lg:gap-14 items-center">
 
           {/* LEFT: headline + CTAs */}
@@ -128,7 +128,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
               {/* Static line 1 */}
               <span
                 className="hero-word block text-white"
-                style={{ fontSize: 'clamp(3rem, 7.5vw, 6.2rem)', animationDelay: '0.1s' }}
+                style={{ fontSize: 'clamp(2.2rem, 5.5vw, 4.6rem)', animationDelay: '0.1s' }}
               >
                 WHERE YOUR
               </span>
@@ -137,7 +137,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
               <span
                 className="block"
                 style={{
-                  fontSize: 'clamp(3.4rem, 10vw, 8.8rem)',
+                  fontSize: 'clamp(2.6rem, 7vw, 6.2rem)',
                   color: 'oklch(0.79 0.19 78)',
                   overflow: 'hidden',
                   lineHeight: 0.95,
@@ -162,7 +162,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
               {/* Static line 3 */}
               <span
                 className="hero-word block text-white"
-                style={{ fontSize: 'clamp(3rem, 7.5vw, 6.2rem)', animationDelay: '0.22s' }}
+                style={{ fontSize: 'clamp(2.2rem, 5.5vw, 4.6rem)', animationDelay: '0.22s' }}
               >
                 BEGINS HERE.
               </span>
@@ -260,7 +260,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
             <div key={s.number} className="flex flex-col gap-1">
               <span
                 className="font-display font-black text-white leading-none"
-                style={{ fontSize: 'clamp(2.2rem, 4vw, 3rem)', letterSpacing: '-0.04em' }}
+                style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', letterSpacing: '-0.04em' }}
               >
                 {s.number}
               </span>

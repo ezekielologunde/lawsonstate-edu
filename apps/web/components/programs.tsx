@@ -56,12 +56,12 @@ export default function Programs({
   const c = { ...CONTENT_DEFAULTS, ...content }
 
   return (
-    <section className="py-24 px-6" style={{ background: 'white' }}>
+    <section className="py-14 px-6" style={{ background: 'white' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="mb-14 max-w-2xl scroll-reveal">
+        <div className="mb-10 max-w-2xl scroll-reveal">
           <h2
             className="font-display font-black text-lscc-ink leading-none mb-4"
-            style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', letterSpacing: '-0.02em' }}
+            style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', letterSpacing: '-0.02em' }}
           >
             {c.headline}
           </h2>

@@ -106,7 +106,7 @@ export default function MakersFixers() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden"
-      style={{ background: 'oklch(0.12 0.06 261)', paddingBlock: '5rem 4rem' }}
+      style={{ background: 'oklch(0.12 0.06 261)', paddingBlock: '3.5rem 2.5rem' }}
     >
       {/* Mouse-follow glow */}
       <div
@@ -126,7 +126,7 @@ export default function MakersFixers() {
           <h2
             className="font-display font-black text-white leading-none"
             style={{
-              fontSize: 'clamp(3rem, 8vw, 7rem)',
+              fontSize: 'clamp(2rem, 5vw, 4rem)',
               letterSpacing: '-0.04em',
               maxWidth: '14ch',
             }}
@@ -153,7 +153,7 @@ export default function MakersFixers() {
         </div>
 
         {/* Two-col layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-12 lg:gap-20 items-start mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 lg:gap-16 items-start mb-10">
           {/* Body copy — no scroll-reveal, no parallax transform */}
           <div style={{ opacity: 1 }}>
             <p
@@ -261,7 +261,7 @@ export default function MakersFixers() {
       </div>
 
       {/* Stats bar */}
-      <div className="max-w-7xl mx-auto px-6 mt-14">
+      <div className="max-w-7xl mx-auto px-6 mt-10">
         <div
           className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8"
           style={{ borderTop: '1px solid oklch(1 0 0 / 0.1)' }}

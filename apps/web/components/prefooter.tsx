@@ -23,7 +23,7 @@ export default function Prefooter({ content = {} }: { content?: PrefooterContent
   ]
 
   return (
-    <section className="py-28 px-6 relative overflow-hidden" style={{ background: 'oklch(0.22 0.17 261)' }}>
+    <section className="py-16 px-6 relative overflow-hidden" style={{ background: 'oklch(0.22 0.17 261)' }}>
       {/* Animated background orb */}
       <div
         className="absolute pointer-events-none"
@@ -54,7 +54,7 @@ export default function Prefooter({ content = {} }: { content?: PrefooterContent
         <div>
           <h2
             className="font-display font-black text-white leading-none mb-4"
-            style={{ fontSize: 'clamp(3rem, 5.5vw, 5rem)', letterSpacing: '-0.03em' }}
+            style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', letterSpacing: '-0.03em' }}
           >
             {c.headline}
           </h2>
