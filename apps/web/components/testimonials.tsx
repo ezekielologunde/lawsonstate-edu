@@ -90,7 +90,7 @@ export default function Testimonials() {
 
   return (
     <section
-      style={{ background: 'oklch(0.97 0.01 263)', paddingBlock: '5rem' }}
+      style={{ background: 'oklch(0.18 0.14 261)', paddingBlock: '5rem' }}
       aria-label="Student Testimonials"
     >
       <div className="max-w-7xl mx-auto px-6">
@@ -98,11 +98,11 @@ export default function Testimonials() {
         {/* Header row */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
           <div>
-            <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'oklch(0.55 0.15 68)', textTransform: 'uppercase', marginBottom: '0.4rem', fontWeight: 700 }}>
+            <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'oklch(0.79 0.19 78)', textTransform: 'uppercase', marginBottom: '0.4rem', fontWeight: 700 }}>
               02 — Real Student Stories
             </p>
-            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.6rem, 5.5vw, 4.2rem)', letterSpacing: '-0.04em', color: 'oklch(0.16 0.04 261)' }}>
-              STUDENTS WHO <span style={{ color: 'oklch(0.55 0.15 68)' }}>DID IT</span>
+            <h2 className="font-display font-black text-white leading-none" style={{ fontSize: 'clamp(2.6rem, 5.5vw, 4.2rem)', letterSpacing: '-0.04em' }}>
+              STUDENTS WHO <span style={{ color: 'oklch(0.79 0.19 78)' }}>DID IT</span>
             </h2>
           </div>
 
@@ -124,19 +124,19 @@ export default function Testimonials() {
                     className="font-bold transition-colors"
                     style={{
                       fontSize: '0.85rem',
-                      color: isActive ? 'oklch(0.55 0.15 68)' : 'oklch(0.50 0.03 261)',
+                      color: isActive ? 'oklch(0.79 0.19 78)' : 'oklch(1 0 0 / 0.40)',
                     }}
                   >
                     {t.label}
                   </span>
                   {/* Progress track */}
-                  <div style={{ width: '100%', height: '2px', borderRadius: '2px', background: 'oklch(0 0 0 / 0.10)', overflow: 'hidden' }}>
+                  <div style={{ width: '100%', height: '2px', borderRadius: '2px', background: 'oklch(1 0 0 / 0.12)', overflow: 'hidden' }}>
                     {isActive && (
                       <div
                         key={`prog-${progressKey}-${i}`}
                         style={{
                           height: '100%',
-                          background: 'oklch(0.55 0.15 68)',
+                          background: 'oklch(0.79 0.19 78)',
                           animation: `tprog ${DURATION}ms linear forwards`,
                         }}
                       />
@@ -188,7 +188,7 @@ export default function Testimonials() {
           {/* Quote content */}
           <div
             className="flex flex-col justify-center"
-            style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)', padding: 'clamp(2rem, 4vw, 3.5rem)' }}
+            style={{ background: 'oklch(0.24 0.18 261)', padding: 'clamp(2rem, 4vw, 3.5rem)' }}
           >
             {/* Big decorative quote mark */}
             <svg
@@ -200,9 +200,8 @@ export default function Testimonials() {
 
             <blockquote
               key={tab.id}
-              className="font-display font-bold"
+              className="font-display font-bold text-white"
               style={{
-                color: 'oklch(0.16 0.04 261)',
                 fontSize: 'clamp(1.2rem, 2.2vw, 1.65rem)',
                 lineHeight: 1.50,
                 letterSpacing: '-0.02em',
@@ -216,17 +215,17 @@ export default function Testimonials() {
             {/* Gold separator */}
             <div style={{ width: '44px', height: '3px', background: 'oklch(0.79 0.19 78)', borderRadius: '2px', marginBottom: '1.2rem' }} />
 
-            <p className="font-semibold" style={{ color: 'oklch(0.16 0.04 261)', fontSize: '0.95rem', marginBottom: '0.25rem' }}>
+            <p className="font-semibold text-white" style={{ fontSize: '0.95rem', marginBottom: '0.25rem' }}>
               {tab.name}
             </p>
-            <p style={{ fontSize: '0.78rem', color: 'oklch(0.50 0.03 261)', letterSpacing: '0.04em', marginBottom: '1.8rem' }}>
+            <p style={{ fontSize: '0.78rem', color: 'oklch(1 0 0 / 0.45)', letterSpacing: '0.04em', marginBottom: '1.8rem' }}>
               {tab.detail}
             </p>
 
             <Link
               href={tab.href}
               className="press inline-flex items-center gap-2 font-bold self-start"
-              style={{ fontSize: '0.85rem', color: 'oklch(0.55 0.15 68)', letterSpacing: '0.02em' }}
+              style={{ fontSize: '0.85rem', color: 'oklch(0.79 0.19 78)', letterSpacing: '0.02em' }}
             >
               {tab.cta}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
