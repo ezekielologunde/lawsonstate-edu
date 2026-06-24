@@ -89,12 +89,14 @@ export default function Nav() {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-5">
-          <Link
-            href="/portal"
+          <a
+            href="https://my.lawsonstate.edu"
+            target="_blank"
+            rel="noreferrer"
             className="text-sm font-medium text-white/75 hover:text-white transition-colors"
           >
             Portal Login
-          </Link>
+          </a>
           <Link
             href="/admissions/apply"
             className="text-sm font-semibold px-5 py-2.5 rounded transition-colors"
@@ -160,14 +162,16 @@ export default function Nav() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/portal"
+          <a
+            href="https://my.lawsonstate.edu"
+            target="_blank"
+            rel="noreferrer"
             className="text-white/80 hover:text-white font-medium transition-colors text-sm"
             style={{ padding: '0.5rem 0.5rem' }}
             onClick={() => setOpen(false)}
           >
             Student Portal
-          </Link>
+          </a>
         </nav>
       </div>
     </header>
