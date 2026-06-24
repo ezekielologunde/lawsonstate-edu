@@ -102,7 +102,9 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
             src="https://player.vimeo.com/video/1058690019?background=1&autoplay=1&loop=1&muted=1"
             className="absolute"
             style={{ top:'50%',left:'50%',width:'100vw',height:'56.25vw',minHeight:'100vh',minWidth:'177.78vh',transform:'translate(-50%,-50%)',border:0,pointerEvents:'none' }}
-            allow="autoplay; fullscreen" title="" />
+            allow="autoplay; fullscreen"
+            loading="lazy"
+            title="" />
         </div>
       )}
 

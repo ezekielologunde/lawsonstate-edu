@@ -30,6 +30,65 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
 export default function SiteFooter() {
   return (
     <footer style={{ background: 'oklch(0.14 0.08 265)' }}>
+      {/* Newsletter section */}
+      <div
+        className="border-b"
+        style={{ borderColor: 'oklch(1 0 0 / 0.08)' }}
+      >
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <div className="max-w-md">
+            <h3
+              className="font-display font-bold text-white mb-2"
+              style={{ fontSize: '1.25rem' }}
+            >
+              Stay Connected
+            </h3>
+            <p
+              className="text-sm mb-4"
+              style={{ color: 'oklch(1 0 0 / 0.55)' }}
+            >
+              Get news, events, and program updates in your inbox.
+            </p>
+            <form className="flex gap-2" onSubmit={(e) => {
+              e.preventDefault()
+              const email = (e.currentTarget.elements.namedItem('email') as HTMLInputElement)?.value
+              if (email) {
+                console.log('Newsletter signup:', email)
+              }
+            }}>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-2.5 rounded-lg text-sm"
+                style={{
+                  background: 'oklch(0.22 0.16 261)',
+                  border: '1px solid oklch(1 0 0 / 0.15)',
+                  color: 'white',
+                }}
+                required
+              />
+              <button
+                type="submit"
+                className="px-5 py-2.5 rounded-lg font-semibold text-sm transition-opacity hover:opacity-90"
+                style={{
+                  background: 'oklch(0.79 0.19 78)',
+                  color: 'oklch(0.11 0.03 261)',
+                }}
+              >
+                Sign Up
+              </button>
+            </form>
+            <p
+              className="text-xs mt-2"
+              style={{ color: 'oklch(1 0 0 / 0.40)' }}
+            >
+              We respect your privacy. Unsubscribe anytime.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
         {/* Logo + social */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-14 gap-6">

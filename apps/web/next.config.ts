@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
       { hostname: 'www.lawsonstate.edu' },
       { hostname: 'live.staticflickr.com' },
     ],
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   async redirects() {
     return [

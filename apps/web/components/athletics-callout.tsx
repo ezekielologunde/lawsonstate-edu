@@ -22,6 +22,7 @@ export default function AthleticsCallout() {
         className="absolute inset-0 w-full h-full object-cover object-center"
         style={{ opacity: 0.18 }}
         loading="lazy"
+        decoding="async"
       />
       {/* Background glow orb */}
       <div

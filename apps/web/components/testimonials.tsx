@@ -57,6 +57,29 @@ export default function Testimonials() {
     }, DURATION)
   }
 
+  const handleTabKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>, idx: number) => {
+    switch (e.key) {
+      case 'ArrowLeft':
+      case 'ArrowUp':
+        e.preventDefault()
+        goTo((idx - 1 + TABS.length) % TABS.length)
+        break
+      case 'ArrowRight':
+      case 'ArrowDown':
+        e.preventDefault()
+        goTo((idx + 1) % TABS.length)
+        break
+      case 'Home':
+        e.preventDefault()
+        goTo(0)
+        break
+      case 'End':
+        e.preventDefault()
+        goTo(TABS.length - 1)
+        break
+    }
+  }
+
   useEffect(() => {
     timerRef.current = setInterval(() => {
       setActiveIdx((i) => (i + 1) % TABS.length)
@@ -93,6 +116,7 @@ export default function Testimonials() {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => goTo(i)}
+                  onKeyDown={(e) => handleTabKeyDown(e, i)}
                   className="relative flex flex-col items-center gap-1 press"
                   style={{ minWidth: '5rem' }}
                 >
