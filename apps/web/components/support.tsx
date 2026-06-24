@@ -57,23 +57,23 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
 
   return (
     <section
-      style={{ background: 'oklch(0.16 0.12 261)', paddingBlock: '5rem' }}
+      style={{ background: 'oklch(0.97 0.01 263)', paddingBlock: '5rem' }}
       aria-label="Student Support"
     >
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Section headline */}
         <div className="mb-12 scroll-reveal">
-          <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'oklch(0.79 0.19 78)', textTransform: 'uppercase', marginBottom: '0.5rem', fontWeight: 700 }}>
+          <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'oklch(0.55 0.15 68)', textTransform: 'uppercase', marginBottom: '0.5rem', fontWeight: 700 }}>
             05 — Support that never stops
           </p>
           <h2
-            className="font-display font-black text-white leading-none"
-            style={{ fontSize: 'clamp(2.6rem, 5.5vw, 4.4rem)', letterSpacing: '-0.04em' }}
+            className="font-display font-black leading-none"
+            style={{ fontSize: 'clamp(2.6rem, 5.5vw, 4.4rem)', letterSpacing: '-0.04em', color: 'oklch(0.16 0.04 261)' }}
           >
             {c.headline_line1}
             <br />
-            <span style={{ color: 'oklch(0.79 0.19 78)' }}>{c.headline_line2}</span>
+            <span style={{ color: 'oklch(0.55 0.15 68)' }}>{c.headline_line2}</span>
           </h2>
         </div>
 
@@ -83,7 +83,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
             <article
               key={story.num}
               className="group flex flex-col rounded-2xl overflow-hidden"
-              style={{ background: 'oklch(0.24 0.18 261)' }}
+              style={{ background: 'oklch(0.24 0.18 261)', boxShadow: '0 12px 40px oklch(0.16 0.06 261 / 0.16)' }}
             >
               {/* Photo */}
               <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>

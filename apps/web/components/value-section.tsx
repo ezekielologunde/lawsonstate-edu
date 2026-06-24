@@ -78,7 +78,7 @@ export default function ValueSection() {
   return (
     <section
       ref={sectionRef}
-      style={{ background: 'oklch(0.12 0.08 261)', paddingBlock: '5rem' }}
+      style={{ background: 'oklch(0.97 0.01 263)', paddingBlock: '5rem' }}
       aria-label="Tuition and Value"
     >
       <div className="max-w-7xl mx-auto px-6">
@@ -87,17 +87,17 @@ export default function ValueSection() {
 
           {/* Left — headline */}
           <div className="scroll-reveal lg:pr-12 mb-10 lg:mb-0 flex flex-col justify-center">
-            <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'oklch(0.79 0.19 78)', textTransform: 'uppercase', marginBottom: '0.5rem', fontWeight: 700 }}>
+            <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'oklch(0.55 0.15 68)', textTransform: 'uppercase', marginBottom: '0.5rem', fontWeight: 700 }}>
               03 — Exceptional value
             </p>
             <h2
-              className="font-display font-black text-white leading-none mb-5"
-              style={{ fontSize: 'clamp(2.4rem, 4.5vw, 3.6rem)', letterSpacing: '-0.04em' }}
+              className="font-display font-black leading-none mb-5"
+              style={{ fontSize: 'clamp(2.4rem, 4.5vw, 3.6rem)', letterSpacing: '-0.04em', color: 'oklch(0.16 0.04 261)' }}
             >
               A DEGREE THAT<br />
-              <span style={{ color: 'oklch(0.79 0.19 78)' }}>WON&apos;T BREAK<br />THE BANK</span>
+              <span style={{ color: 'oklch(0.55 0.15 68)' }}>WON&apos;T BREAK<br />THE BANK</span>
             </h2>
-            <p style={{ fontSize: '1rem', lineHeight: 1.80, color: 'oklch(1 0 0 / 0.75)', maxWidth: '38ch', marginBottom: '2rem' }}>
+            <p style={{ fontSize: '1rem', lineHeight: 1.80, color: 'oklch(0.40 0.04 261)', maxWidth: '38ch', marginBottom: '2rem' }}>
               Lawson State combines rigorous academics, hands-on training, and real career outcomes — at a fraction of the cost of a four-year university.
             </p>
             <div className="flex flex-wrap gap-3">
@@ -110,8 +110,8 @@ export default function ValueSection() {
               </Link>
               <Link
                 href="/financial-aid"
-                className="press inline-flex items-center font-semibold px-7 py-3 rounded-xl text-white transition-colors hover:bg-white/10"
-                style={{ border: '2px solid oklch(1 0 0 / 0.25)', fontSize: '0.9rem' }}
+                className="press inline-flex items-center font-semibold px-7 py-3 rounded-xl transition-colors hover:bg-black/5"
+                style={{ border: '2px solid oklch(0.16 0.04 261 / 0.25)', color: 'oklch(0.16 0.04 261)', fontSize: '0.9rem' }}
               >
                 Explore Financial Aid
               </Link>
@@ -119,7 +119,7 @@ export default function ValueSection() {
           </div>
 
           {/* Vertical divider */}
-          <div className="hidden lg:block mx-0" style={{ background: 'oklch(1 0 0 / 0.10)' }} />
+          <div className="hidden lg:block mx-0" style={{ background: 'oklch(0 0 0 / 0.10)' }} />
 
           {/* Right — animated stats */}
           <div className="lg:pl-12 flex flex-col justify-center gap-0">
@@ -127,25 +127,25 @@ export default function ValueSection() {
               <div
                 key={s.label}
                 className="flex items-start gap-5 py-7"
-                style={{ borderBottom: i < STATS.length - 1 ? '1px solid oklch(1 0 0 / 0.10)' : 'none' }}
+                style={{ borderBottom: i < STATS.length - 1 ? '1px solid oklch(0 0 0 / 0.10)' : 'none' }}
               >
                 <div className="shrink-0">
                   <div
-                    className="font-display font-black text-white leading-none"
-                    style={{ fontSize: 'clamp(2.4rem, 4vw, 3.2rem)', letterSpacing: '-0.05em' }}
+                    className="font-display font-black leading-none"
+                    style={{ fontSize: 'clamp(2.4rem, 4vw, 3.2rem)', letterSpacing: '-0.05em', color: 'oklch(0.16 0.04 261)' }}
                   >
                     <CountUp prefix={s.prefix} target={s.target} suffix={s.suffix}
                       active={active && !reduced} delay={i * 160} />
                   </div>
-                  <div style={{ fontSize: '0.72rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'oklch(0.79 0.19 78)', fontWeight: 700, marginTop: '2px' }}>
+                  <div style={{ fontSize: '0.72rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'oklch(0.55 0.15 68)', fontWeight: 700, marginTop: '2px' }}>
                     {s.unit}
                   </div>
                 </div>
                 <div className="pt-1">
-                  <p className="font-display font-bold text-white" style={{ fontSize: '1rem', letterSpacing: '-0.01em', marginBottom: '0.2rem' }}>
+                  <p className="font-display font-bold" style={{ fontSize: '1rem', letterSpacing: '-0.01em', marginBottom: '0.2rem', color: 'oklch(0.16 0.04 261)' }}>
                     {s.label}
                   </p>
-                  <p style={{ fontSize: '0.82rem', color: 'oklch(1 0 0 / 0.50)', lineHeight: 1.5 }}>
+                  <p style={{ fontSize: '0.82rem', color: 'oklch(0.45 0.03 261)', lineHeight: 1.5 }}>
                     {s.sub}
                   </p>
                 </div>
