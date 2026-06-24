@@ -104,7 +104,10 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
       />
 
       {/* ── Main content ── */}
-      <div className="relative flex-1 flex flex-col justify-center max-w-7xl mx-auto px-6 w-full pt-20 pb-6">
+      <div
+        className="relative flex-1 flex flex-col justify-center max-w-7xl mx-auto px-6 w-full pb-6"
+        style={{ paddingTop: 'calc(var(--lscc-banner-h, 0px) + 5.5rem)' }}
+      >
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_220px] gap-10 lg:gap-14 items-center">
 
           {/* LEFT: headline + CTAs */}

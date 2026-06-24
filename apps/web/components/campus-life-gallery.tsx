@@ -52,7 +52,7 @@ export default function CampusLifeGallery() {
           <div>
             <p
               className="text-xs font-semibold mb-2 tracking-widest uppercase"
-              style={{ color: 'oklch(0.60 0.22 78)' }}
+              style={{ color: 'oklch(0.48 0.22 28)' }}
             >
               Real moments
             </p>

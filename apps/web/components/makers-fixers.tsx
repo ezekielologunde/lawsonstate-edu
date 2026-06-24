@@ -14,7 +14,7 @@ const TRADES = [
 
 function TradeIcon({ name }: { name: string }) {
   const props = {
-    width: 36, height: 36, viewBox: '0 0 24 24',
+    width: 28, height: 28, viewBox: '0 0 24 24',
     fill: 'none', stroke: 'currentColor',
     strokeWidth: 1.5, strokeLinecap: 'round' as const,
     strokeLinejoin: 'round' as const,
@@ -106,7 +106,7 @@ export default function MakersFixers() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden"
-      style={{ background: 'oklch(0.12 0.06 261)', paddingBlock: '3.5rem 2.5rem' }}
+      style={{ background: 'oklch(0.12 0.06 261)', paddingBlock: '2rem 1.5rem' }}
     >
       {/* Mouse-follow glow */}
       <div
@@ -121,12 +121,12 @@ export default function MakersFixers() {
         {/* Headline with parallax */}
         <div
           style={{ transform: `translateY(${parallaxY * 0.5}px)` }}
-          className="mb-8"
+          className="mb-5"
         >
           <h2
             className="font-display font-black text-white leading-none"
             style={{
-              fontSize: 'clamp(2rem, 5vw, 4rem)',
+              fontSize: 'clamp(1.6rem, 3.5vw, 2.8rem)',
               letterSpacing: '-0.04em',
               maxWidth: '14ch',
             }}
@@ -139,7 +139,7 @@ export default function MakersFixers() {
 
         {/* Vimeo video — CTE showcase */}
         <div
-          className="relative overflow-hidden mb-12"
+          className="relative overflow-hidden mb-6"
           style={{ borderRadius: '16px', aspectRatio: '16 / 9' }}
         >
           <iframe
@@ -153,34 +153,34 @@ export default function MakersFixers() {
         </div>
 
         {/* Two-col layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10 lg:gap-16 items-start mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-6 lg:gap-10 items-start mb-6">
           {/* Body copy — no scroll-reveal, no parallax transform */}
           <div style={{ opacity: 1 }}>
             <p
               style={{
-                fontSize: 'clamp(1.05rem, 1.8vw, 1.2rem)',
-                lineHeight: 1.75,
+                fontSize: 'clamp(0.88rem, 1.4vw, 1rem)',
+                lineHeight: 1.7,
                 color: 'oklch(1 0 0 / 0.72)',
                 maxWidth: '52ch',
-                marginBottom: '1.5rem',
+                marginBottom: '1rem',
               }}
             >
               At Lawson State, we train the makers and fixers that keep our world running. Whether it&apos;s wiring a building, welding a frame, tuning an engine, or keeping the air on — you&apos;ll learn it here, with real tools, real equipment, and instructors who&apos;ve done the work.
             </p>
             <p
               style={{
-                fontSize: 'clamp(1rem, 1.6vw, 1.1rem)',
-                lineHeight: 1.75,
+                fontSize: 'clamp(0.82rem, 1.2vw, 0.92rem)',
+                lineHeight: 1.7,
                 color: 'oklch(1 0 0 / 0.55)',
                 maxWidth: '50ch',
-                marginBottom: '2.5rem',
+                marginBottom: '1.5rem',
               }}
             >
               Our Career Technical Education programs are built around industry partnerships — including Snap-on Tools — so you graduate with the credentials employers are already looking for.
             </p>
             <Link
               href="/academics"
-              className="press btn-shimmer inline-flex items-center font-bold gap-2 rounded-xl px-8 py-4"
+              className="press btn-shimmer inline-flex items-center font-bold gap-2 rounded-xl px-6 py-3"
               style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.95rem' }}
             >
               Explore CTE Programs
@@ -197,7 +197,7 @@ export default function MakersFixers() {
               background: 'oklch(0.20 0.10 261)',
               border: '1.5px solid oklch(0.35 0.15 261)',
               borderRadius: '14px',
-              padding: '1.5rem',
+              padding: '1.1rem',
             }}
           >
             <p
@@ -207,8 +207,8 @@ export default function MakersFixers() {
               Industry Partner
             </p>
             <p
-              className="font-display font-black text-white mb-3"
-              style={{ fontSize: '1.6rem', letterSpacing: '-0.03em', lineHeight: 1.1 }}
+              className="font-display font-black text-white mb-2"
+              style={{ fontSize: '1.25rem', letterSpacing: '-0.03em', lineHeight: 1.1 }}
             >
               Snap-on Tools
             </p>
@@ -261,9 +261,9 @@ export default function MakersFixers() {
       </div>
 
       {/* Stats bar */}
-      <div className="max-w-7xl mx-auto px-6 mt-10">
+      <div className="max-w-7xl mx-auto px-6 mt-5">
         <div
-          className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-5"
           style={{ borderTop: '1px solid oklch(1 0 0 / 0.1)' }}
         >
           {[
@@ -275,7 +275,7 @@ export default function MakersFixers() {
             <div key={s.n}>
               <div
                 className="font-display font-black"
-                style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', letterSpacing: '-0.04em', color: 'oklch(0.79 0.19 78)' }}
+                style={{ fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', letterSpacing: '-0.04em', color: 'oklch(0.79 0.19 78)' }}
               >
                 {s.n}
               </div>
@@ -310,8 +310,8 @@ function TradeCard({
       className="press relative flex-shrink-0 overflow-hidden cursor-pointer"
       style={{
         scrollSnapAlign: 'start',
-        width: 'clamp(180px, 22vw, 210px)',
-        height: 'clamp(210px, 26vw, 255px)',
+        width: 'clamp(145px, 17vw, 170px)',
+        height: 'clamp(165px, 21vw, 200px)',
         borderRadius: '14px',
         background: trade.bg,
         transform: `translateY(${hovered ? -8 : 0}px) scale(${hovered ? 1.02 : 1})`,
@@ -336,7 +336,7 @@ function TradeCard({
       <div
         className="absolute"
         style={{
-          top: '1.25rem',
+          top: '1rem',
           left: '50%',
           transform: hovered ? 'translateX(-50%) scale(1.15)' : 'translateX(-50%)',
           color: trade.accent,
@@ -348,7 +348,7 @@ function TradeCard({
       </div>
 
       {/* Label — bottom-aligned */}
-      <div className="absolute bottom-0 left-0 right-0 p-4">
+      <div className="absolute bottom-0 left-0 right-0 p-3">
         <p
           className="font-display font-black text-white leading-tight"
           style={{

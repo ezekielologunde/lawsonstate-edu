@@ -58,7 +58,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
           >
             {c.headline_line1}
             <br />
-            <span style={{ color: 'oklch(0.60 0.22 78)' }}>{c.headline_line2}</span>
+            <span style={{ color: 'oklch(0.56 0.22 145)' }}>{c.headline_line2}</span>
           </h2>
 
           <div className="flex flex-col gap-10">
@@ -70,7 +70,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
               >
                 <div
                   className="font-display font-black mb-4 leading-none"
-                  style={{ fontSize: '2.4rem', color: 'oklch(0.60 0.22 78)' }}
+                  style={{ fontSize: '2.4rem', color: 'oklch(0.42 0.22 248)' }}
                 >
                   {step.num}
                 </div>
@@ -86,7 +86,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
                 <Link
                   href={step.href}
                   className="text-sm font-semibold hover:underline transition-colors self-start"
-                  style={{ color: 'oklch(0.60 0.22 78)' }}
+                  style={{ color: 'oklch(0.42 0.22 248)' }}
                 >
                   {step.cta} →
                 </Link>

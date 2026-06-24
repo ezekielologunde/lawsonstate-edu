@@ -151,6 +151,10 @@ body {
   50%       { opacity: 0.65; }
 }
 
+@keyframes ping {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+
 @keyframes marquee-x {
   to { transform: translateX(-50%); }
 }

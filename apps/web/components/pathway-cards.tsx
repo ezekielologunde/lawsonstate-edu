@@ -7,6 +7,7 @@ const PATHS = [
   {
     id:       'new',
     label:    'New Student',
+    color:    'oklch(0.56 0.22 145)',
     headline: 'START YOUR JOURNEY',
     desc:     "Ready to begin at Lawson State? Here's everything from applying to showing up on day one.",
     links: [
@@ -23,6 +24,7 @@ const PATHS = [
   {
     id:       'transfer',
     label:    'Transfer Student',
+    color:    'oklch(0.50 0.22 248)',
     headline: 'TRANSFER WITH CONFIDENCE',
     desc:     'Coming from another school? We make credit transfer clear, fast, and straightforward.',
     links: [
@@ -37,6 +39,7 @@ const PATHS = [
   {
     id:       'current',
     label:    'Current Student',
+    color:    'oklch(0.68 0.20 76)',
     headline: 'EVERYTHING YOU NEED',
     desc:     'Register for classes, check your aid, pay your bill, and get academic support — all in one place.',
     links: [
@@ -52,6 +55,7 @@ const PATHS = [
   {
     id:       'workforce',
     label:    'Adult Learner',
+    color:    'oklch(0.55 0.22 28)',
     headline: 'ADVANCE YOUR CAREER',
     desc:     'Certificates, workforce training, and continuing ed programs built around your life and schedule.',
     links: [
@@ -93,8 +97,8 @@ export default function PathwayCards() {
               className="press shrink-0 px-5 py-2.5 rounded-full font-bold whitespace-nowrap transition-all duration-200"
               style={{
                 fontSize:   '0.8rem',
-                background: active === i ? 'oklch(0.79 0.19 78)' : 'oklch(0.94 0.015 263)',
-                color:      active === i ? 'oklch(0.11 0.03 261)' : 'oklch(0.32 0.12 263)',
+                background: active === i ? p.color : 'oklch(0.94 0.015 263)',
+                color:      active === i ? 'white' : 'oklch(0.32 0.12 263)',
                 border:     `1px solid ${active === i ? 'transparent' : 'oklch(0 0 0 / 0.09)'}`,
               }}
             >
@@ -142,7 +146,7 @@ export default function PathwayCards() {
             <Link
               href={path.ctaHref}
               className="press btn-shimmer font-bold px-6 py-3 rounded-lg whitespace-nowrap self-start"
-              style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.875rem' }}
+              style={{ background: path.color, color: 'white', fontSize: '0.875rem' }}
             >
               {path.cta} →
             </Link>
