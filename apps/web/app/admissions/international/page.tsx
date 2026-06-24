@@ -123,7 +123,7 @@ export default function InternationalPage() {
       </section>
 
       {/* Requirements */}
-      <section className="py-14 px-6" style={{ background: 'oklch(0.97 0.012 263)' }}>
+      <section className="py-14 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display font-black text-lscc-ink mb-8"
             style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', letterSpacing: '-0.02em' }}>
@@ -167,7 +167,7 @@ export default function InternationalPage() {
       </section>
 
       {/* Contact */}
-      <section className="py-14 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
+      <section className="py-14 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display font-black mb-8"
             style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', letterSpacing: '-0.02em', color: 'oklch(0.16 0.04 261)' }}>

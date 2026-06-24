@@ -158,7 +158,7 @@ export default function ApplyPage() {
       </section>
 
       {/* 4-Step Process */}
-      <section className="py-16 px-6" style={{ background: 'oklch(0.97 0.012 263)' }}>
+      <section className="py-16 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display font-black text-lscc-ink mb-10" style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', letterSpacing: '-0.02em' }}>
             THE APPLICATION PROCESS
@@ -226,7 +226,7 @@ export default function ApplyPage() {
       </section>
 
       {/* Enrollment Specialists */}
-      <section id="specialists" className="py-16 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
+      <section id="specialists" className="py-16 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
         <div className="max-w-7xl mx-auto">
           <p className="font-display font-semibold uppercase mb-3"
             style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.85rem', letterSpacing: '0.22em' }}>
@@ -284,7 +284,7 @@ export default function ApplyPage() {
       </section>
 
       {/* Contact */}
-      <section className="py-16 px-6" style={{ background: 'oklch(0.97 0.012 263)' }}>
+      <section className="py-16 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display font-black text-lscc-ink mb-10"
             style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', letterSpacing: '-0.02em' }}>

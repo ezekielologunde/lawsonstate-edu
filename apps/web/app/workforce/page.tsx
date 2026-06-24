@@ -72,7 +72,7 @@ export default function WorkforcePage() {
       {/* Hero */}
       <section
         className="relative py-20 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.97 0.01 263)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
+        style={{ background: 'oklch(0.95 0.03 255)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
       >
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>
@@ -112,7 +112,7 @@ export default function WorkforcePage() {
       </div>
 
       {/* Programs */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Training Programs</p>
@@ -161,7 +161,7 @@ export default function WorkforcePage() {
       </section>
 
       {/* Alabama Career Essentials */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.97 0.01 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -197,7 +197,7 @@ export default function WorkforcePage() {
       </section>
 
       {/* Apprenticeships */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
@@ -223,7 +223,7 @@ export default function WorkforcePage() {
       </section>
 
       {/* Contact */}
-      <section className="py-16 px-6" style={{ background: 'oklch(0.97 0.01 263)' }}>
+      <section className="py-16 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="rounded-2xl p-8" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
             <h2 className="font-display font-black mb-6" style={{ fontSize: '1.3rem', letterSpacing: '-0.015em', color: 'oklch(0.16 0.04 261)' }}>Contact Workforce Development</h2>

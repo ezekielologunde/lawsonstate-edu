@@ -129,7 +129,7 @@ export default function NonDegreePage() {
       </section>
 
       {/* Steps */}
-      <section className="py-14 px-6" style={{ background: 'oklch(0.97 0.012 263)' }}>
+      <section className="py-14 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display font-black text-lscc-ink mb-8"
             style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', letterSpacing: '-0.02em' }}>

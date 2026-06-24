@@ -46,7 +46,7 @@ const PATHWAYS = [
 export default function ProgramPathways() {
   return (
     <section
-      style={{ background: 'oklch(0.97 0.015 263)', paddingBlock: '5rem' }}
+      style={{ background: 'oklch(0.92 0.05 255)', paddingBlock: '5rem' }}
       aria-label="Program Pathways"
     >
       <div className="max-w-7xl mx-auto px-6">

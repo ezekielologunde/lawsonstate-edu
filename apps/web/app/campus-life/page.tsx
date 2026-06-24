@@ -95,7 +95,7 @@ export default function CampusLifePage() {
       {/* Hero */}
       <section
         className="relative py-20 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.97 0.01 263)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
+        style={{ background: 'oklch(0.95 0.03 255)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
       >
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>Cougars · Birmingham & Bessemer</p>
@@ -122,7 +122,7 @@ export default function CampusLifePage() {
       </div>
 
       {/* Athletics */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>NJCAA · ACCC</p>
@@ -170,7 +170,7 @@ export default function CampusLifePage() {
       </section>
 
       {/* Clubs & Organizations */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.97 0.01 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Get Involved</p>
@@ -200,7 +200,7 @@ export default function CampusLifePage() {
       </section>
 
       {/* Support Services */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>We're Here for You</p>
@@ -241,7 +241,7 @@ export default function CampusLifePage() {
       </section>
 
       {/* Quick Resources */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.97 0.01 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Your One-Stop Center</p>

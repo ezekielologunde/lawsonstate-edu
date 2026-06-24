@@ -135,7 +135,7 @@ export default function ProgramCatalog() {
 
       {/* Program grid */}
       {filtered.length === 0 ? (
-        <div className="text-center py-20 rounded-2xl" style={{ background: 'oklch(0.97 0.01 263)' }}>
+        <div className="text-center py-20 rounded-2xl" style={{ background: 'oklch(0.92 0.05 255)' }}>
           <p style={{ fontSize: '1.1rem', color: 'oklch(0.50 0.03 261)', marginBottom: '0.5rem' }}>
             No programs match your search.
           </p>

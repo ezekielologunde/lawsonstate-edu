@@ -130,7 +130,7 @@ export default function DualEnrollmentPage() {
       </section>
 
       {/* S.O.A.R. Program */}
-      <section className="py-16 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
+      <section className="py-16 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4 uppercase tracking-widest"
             style={{ background: 'oklch(0.79 0.19 78 / 0.15)', color: 'oklch(0.55 0.15 68)', border: '1px solid oklch(0.79 0.19 78 / 0.3)' }}>

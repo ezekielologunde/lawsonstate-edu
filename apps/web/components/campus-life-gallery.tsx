@@ -77,7 +77,7 @@ function MarqueeRow({
 export default function CampusLifeGallery() {
   return (
     <section
-      style={{ background: 'oklch(0.97 0.01 263)', paddingBlock: '5rem', overflow: 'hidden' }}
+      style={{ background: 'oklch(0.95 0.03 255)', paddingBlock: '5rem', overflow: 'hidden' }}
       aria-label="Campus Life Gallery"
     >
       {/* Header */}

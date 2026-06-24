@@ -121,7 +121,7 @@ export default function AdmissionsPage() {
       </section>
 
       {/* 4-Step Process */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>How to Apply</p>
@@ -151,7 +151,7 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Student Type Details */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.97 0.01 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Admissions Requirements</p>
@@ -183,7 +183,7 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Contact & Hours */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>

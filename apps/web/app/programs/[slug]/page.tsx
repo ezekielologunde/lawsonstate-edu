@@ -35,7 +35,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
   return (
     <main>
       {/* ── Hero ── */}
-      <section style={{ background: 'oklch(0.99 0.005 263)', paddingTop: '7rem', paddingBottom: '5rem' }}>
+      <section style={{ background: 'oklch(0.95 0.03 255)', paddingTop: '7rem', paddingBottom: '5rem' }}>
         <div className="max-w-7xl mx-auto px-6">
           <nav
             className="page-fade-1 flex items-center gap-2 text-sm mb-8"
@@ -228,7 +228,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
 
       {/* ── Related Programs ── */}
       {related.length > 0 && (
-        <section style={{ background: 'oklch(0.97 0.01 263)', padding: '5rem 0' }}>
+        <section style={{ background: 'oklch(0.92 0.05 255)', padding: '5rem 0' }}>
           <div className="max-w-7xl mx-auto px-6">
             <div className="scroll-reveal mb-8">
               <p

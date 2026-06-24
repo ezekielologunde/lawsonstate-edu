@@ -19,7 +19,7 @@ const PREVIEW_PHOTOS = [
 
 export default function VideoSection() {
   return (
-    <section className="relative overflow-hidden" style={{ background: 'oklch(0.97 0.01 263)' }}>
+    <section className="relative overflow-hidden" style={{ background: 'oklch(0.95 0.03 255)' }}>
       {/* Background: campus photo with strong overlay */}
       <div className="absolute inset-0" aria-hidden>
         <img
@@ -30,7 +30,7 @@ export default function VideoSection() {
         />
         <div
           className="absolute inset-0"
-          style={{ background: 'oklch(0.97 0.01 263 / 0.92)' }}
+          style={{ background: 'oklch(0.95 0.03 255 / 0.92)' }}
         />
       </div>
 

@@ -76,7 +76,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section
         className="relative py-20 px-6 flex items-end overflow-hidden"
-        style={{ background: 'oklch(0.97 0.01 263)', minHeight: '38vh' }}
+        style={{ background: 'oklch(0.95 0.03 255)', minHeight: '38vh' }}
       >
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
@@ -107,7 +107,7 @@ export default function AboutPage() {
       </div>
 
       {/* Mission & Core Values */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
@@ -158,7 +158,7 @@ export default function AboutPage() {
       </section>
 
       {/* President */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.97 0.01 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-12 items-start">
             <div>
@@ -184,7 +184,7 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Our Story</p>
@@ -208,7 +208,7 @@ export default function AboutPage() {
       </section>
 
       {/* Presidents */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.97 0.01 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Leadership Legacy</p>
@@ -236,7 +236,7 @@ export default function AboutPage() {
       </section>
 
       {/* Accreditations */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Quality Assurance</p>
@@ -256,7 +256,7 @@ export default function AboutPage() {
       </section>
 
       {/* Campus Locations */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.97 0.01 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>One College</p>

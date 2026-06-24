@@ -88,10 +88,10 @@ export default function ProgramsFilter() {
   ].reduce((a, b) => a + b, 0)
 
   return (
-    <div style={{ background: 'oklch(0.99 0.005 263)' }}>
+    <div style={{ background: 'oklch(0.95 0.03 255)' }}>
       {/* Search bar */}
       <div className="sticky top-0 z-10 px-6 py-4 md:relative md:py-6"
-        style={{ background: 'oklch(0.99 0.005 263)', borderBottom: '1px solid oklch(0 0 0 / 0.10)' }}>
+        style={{ background: 'oklch(0.95 0.03 255)', borderBottom: '1px solid oklch(0 0 0 / 0.10)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="relative">
             <label htmlFor="program-search" className="sr-only">Search programs</label>

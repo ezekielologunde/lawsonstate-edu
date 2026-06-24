@@ -130,7 +130,7 @@ export default function LearnAtLawsonPage() {
         {/* ── Hero ── */}
         <section
           className="py-28 sm:py-36 px-6"
-          style={{ background: 'oklch(0.97 0.01 263)' }}
+          style={{ background: 'oklch(0.95 0.03 255)' }}
         >
           <div className="max-w-7xl mx-auto">
             <p
@@ -197,7 +197,7 @@ export default function LearnAtLawsonPage() {
         </section>
 
         {/* ── Program Categories ── */}
-        <section className="py-20 sm:py-28 px-6" style={{ background: 'oklch(0.98 0.008 263)' }}>
+        <section className="py-20 sm:py-28 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
           <div className="max-w-7xl mx-auto">
             <div className="mb-14 scroll-reveal">
               <h2
@@ -340,7 +340,7 @@ export default function LearnAtLawsonPage() {
         </section>
 
         {/* ── Campus Locations ── */}
-        <section className="py-20 sm:py-28 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
+        <section className="py-20 sm:py-28 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
           <div className="max-w-7xl mx-auto">
             <div className="mb-14 scroll-reveal">
               <h2

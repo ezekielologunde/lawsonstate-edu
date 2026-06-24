@@ -118,7 +118,7 @@ export default function VisitorDecisionTree() {
   return (
     <section
       ref={sectionRef}
-      style={{ background: 'oklch(0.97 0.01 263)', paddingBlock: '5rem' }}
+      style={{ background: 'oklch(0.92 0.05 255)', paddingBlock: '5rem' }}
       aria-label="Find Your Path"
     >
       <div className="max-w-7xl mx-auto px-6">
