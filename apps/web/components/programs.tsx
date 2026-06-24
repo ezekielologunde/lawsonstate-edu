@@ -58,7 +58,7 @@ export default function Programs({
   return (
     <section className="py-24 px-6" style={{ background: 'oklch(0.98 0.008 263)' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="mb-14 max-w-2xl">
+        <div className="mb-14 max-w-2xl scroll-reveal">
           <h2
             className="font-display font-black text-lscc-ink leading-none mb-4"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', letterSpacing: '-0.02em' }}
@@ -83,15 +83,15 @@ export default function Programs({
                 <Link
                   key={program.id}
                   href={program.href ?? '/academics'}
-                  className={`${slotClasses} group flex flex-col rounded-xl transition-transform duration-300 hover:-translate-y-0.5 relative overflow-hidden ${
+                  className={`${slotClasses} group card-lift press flex flex-col rounded-xl relative overflow-hidden ${
                     isHero ? 'justify-between' : ''
                   }`}
                   style={{ background: SLOT_BG[slot] ?? SLOT_BG.business }}
                 >
-                  {/* Real photo background */}
+                  {/* Photo background — scales on hover via CSS group */}
                   {program.image_url && (
                     <div
-                      className="absolute inset-0 transition-opacity duration-500"
+                      className="absolute inset-0 program-img"
                       style={{
                         backgroundImage: `url('${program.image_url}')`,
                         backgroundSize: 'cover',

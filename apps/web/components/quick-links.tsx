@@ -75,13 +75,13 @@ export default function QuickLinks() {
           <SearchBar />
         </div>
 
-        {/* 4 primary action tiles — 2×2 on mobile, single row on desktop */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 mb-3">
+        {/* 4 primary action tiles — staggered scroll reveal */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 mb-3 stagger-grid">
           {PRIMARY.map(({ label, desc, href, gold, icon }) => (
             <Link
               key={label}
               href={href}
-              className="flex flex-col items-center justify-center gap-1.5 rounded-xl text-center transition-all active:scale-95"
+              className="card-lift press flex flex-col items-center justify-center gap-1.5 rounded-xl text-center"
               style={{
                 background: gold ? 'oklch(0.83 0.16 82)' : 'oklch(0.96 0.012 263)',
                 color:      gold ? 'oklch(0.14 0.02 263)' : 'oklch(0.27 0.13 263)',
@@ -98,10 +98,7 @@ export default function QuickLinks() {
                 {icon}
               </svg>
               <span className="text-sm font-bold leading-tight">{label}</span>
-              <span
-                className="text-xs leading-tight hidden sm:block"
-                style={{ opacity: 0.6 }}
-              >
+              <span className="text-xs leading-tight hidden sm:block" style={{ opacity: 0.6 }}>
                 {desc}
               </span>
             </Link>
@@ -114,7 +111,7 @@ export default function QuickLinks() {
             <Link
               key={label}
               href={href}
-              className="shrink-0 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-all"
+              className="shrink-0 px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap quick-pill"
               style={{
                 background: 'oklch(0.96 0.012 263)',
                 color:      'oklch(0.27 0.13 263)',

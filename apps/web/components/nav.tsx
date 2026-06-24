@@ -33,15 +33,38 @@ export default function Nav() {
       }}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* Official logo */}
-        <Link href="/" className="flex items-center leading-none">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://www.lawsonstate.edu/_resources/assets/img/Lawson-logo.png"
-            alt="Lawson State Community College"
-            className="w-auto object-contain"
-            style={{ height: '36px', filter: 'brightness(0) invert(1)' }}
-          />
+        {/* Logo — Gen Z collegiate lockup */}
+        <Link href="/" className="flex items-center gap-2.5 leading-none">
+          {/* LS badge mark */}
+          <div
+            className="font-display font-black flex-shrink-0 flex items-center justify-center"
+            style={{
+              width: '36px',
+              height: '36px',
+              background: 'oklch(0.79 0.19 78)',
+              color: 'oklch(0.11 0.03 261)',
+              borderRadius: '7px',
+              fontSize: '0.8rem',
+              letterSpacing: '-0.02em',
+            }}
+          >
+            LS
+          </div>
+          {/* Wordmark */}
+          <div className="flex flex-col leading-none" style={{ gap: '3px' }}>
+            <span
+              className="font-display font-extrabold text-white block"
+              style={{ fontSize: '0.9rem', letterSpacing: '0.06em' }}
+            >
+              LAWSON STATE
+            </span>
+            <span
+              className="block text-white/35"
+              style={{ fontSize: '0.43rem', letterSpacing: '0.2em' }}
+            >
+              COMMUNITY COLLEGE
+            </span>
+          </div>
         </Link>
 
         {/* Desktop nav */}

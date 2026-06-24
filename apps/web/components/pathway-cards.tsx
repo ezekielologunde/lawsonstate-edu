@@ -92,7 +92,7 @@ export default function PathwayCards() {
   return (
     <section className="py-20 px-6" style={{ background: 'oklch(0.98 0.008 263)' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="mb-12">
+        <div className="mb-12 scroll-reveal">
           <h2
             className="font-display font-black text-lscc-ink leading-none mb-3"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', letterSpacing: '-0.02em' }}
@@ -104,12 +104,12 @@ export default function PathwayCards() {
           </p>
         </div>
 
-        <div className="pathways-grid">
+        <div className="pathways-grid stagger-grid">
           {PATHWAYS.map((p) => (
             // Card is a div so inner links are valid HTML
             <div
               key={p.slot}
-              className={`path-${p.slot} flex flex-col rounded-xl p-7`}
+              className={`path-${p.slot} card-lift flex flex-col rounded-xl p-7`}
               style={{ background: p.bg }}
             >
               {/* Audience tag */}
@@ -148,7 +148,7 @@ export default function PathwayCards() {
                     <li key={label}>
                       <Link
                         href={href}
-                        className="flex items-center gap-2 py-2.5 text-sm font-medium transition-opacity hover:opacity-75"
+                        className="link-reveal flex items-center gap-2 py-2.5 text-sm font-medium"
                         style={{ color: p.isDark ? 'oklch(1 0 0 / 0.85)' : 'oklch(0.27 0.13 263)' }}
                       >
                         <span aria-hidden="true">→</span>
@@ -161,10 +161,11 @@ export default function PathwayCards() {
                 {/* Primary CTA */}
                 <Link
                   href={p.ctaHref}
-                  className="mt-auto inline-flex items-center text-sm font-bold px-5 py-3 rounded-lg transition-opacity hover:opacity-85"
+                  className="press mt-auto inline-flex items-center text-sm font-bold px-5 py-3 rounded-lg pathway-cta"
                   style={{
                     background: p.isDark ? 'oklch(0.83 0.16 82)' : 'oklch(0.27 0.13 263)',
                     color:      p.isDark ? 'oklch(0.14 0.02 263)' : 'white',
+                    transition: 'filter 0.2s ease',
                   }}
                 >
                   {p.cta}
