@@ -4,6 +4,7 @@ import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
 import MobileBottomNav from '@/components/mobile-bottom-nav'
+import DivisionsFilter, { type Division } from '@/components/divisions-filter'
 
 export const metadata: Metadata = {
   title: 'Academics — 200+ Programs at Lawson State',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     'Explore 200+ degrees, certificates, and training programs at Lawson State Community College — career technical, college transfer, health professions, and workforce development.',
 }
 
-const DIVISIONS = [
+const DIVISIONS: Division[] = [
   {
     id: 'career-technical',
     number: '01',
@@ -132,7 +133,14 @@ export default function AcademicsPage() {
         className="relative py-20 px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
       >
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(135deg, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.16 0.13 263 / 0.82) 100%)' }} />
+        <img
+          src="https://live.staticflickr.com/65535/55214074644_fb8b844f53_c.jpg"
+          alt=""
+          aria-hidden
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          loading="eager"
+        />
+        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.96) 0%, oklch(0.22 0.17 261 / 0.80) 55%, oklch(0.16 0.13 263 / 0.55) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>Degrees · Certificates · Skills Training</p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em' }}>200+ PROGRAMS</h1>
@@ -140,8 +148,8 @@ export default function AcademicsPage() {
             Whether you want to enter the workforce or transfer to a four-year college, Lawson State has hundreds of programs to equip you with the knowledge to succeed.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
-            <Link href="/admissions/apply" className="press btn-shimmer hero-cta-gold inline-flex items-center font-bold px-6 py-3 rounded-lg" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}>
-              Apply Now
+            <Link href="/admissions/apply" className="press btn-shimmer hero-cta-red inline-flex items-center font-bold px-6 py-3 rounded-lg" style={{ background: 'oklch(0.48 0.22 27)', color: 'white', fontSize: '1rem' }}>
+              Start My Application
             </Link>
             <Link href="/admissions" className="press hero-cta-ghost inline-flex items-center font-semibold px-6 py-3 rounded-lg text-white" style={{ border: '1.5px solid oklch(1 0 0 / 0.25)', fontSize: '1rem' }}>
               Admissions Info
@@ -176,47 +184,7 @@ export default function AcademicsPage() {
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Program Divisions</p>
             <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>FIND YOUR DIVISION</h2>
           </div>
-          <div className="space-y-6">
-            {DIVISIONS.map(div => (
-              <div
-                key={div.id}
-                className="card-lift rounded-2xl p-8 scroll-reveal shadow-card"
-                style={{ background: div.bg, border: div.dark ? 'none' : '1px solid oklch(0.92 0.01 263)' }}
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-start">
-                  <div>
-                    <div className="font-display font-black mb-2" style={{ fontSize: '0.96rem', color: 'oklch(0.79 0.19 78)', letterSpacing: '0.1em' }}>{div.number}</div>
-                    <h3
-                      className="font-display font-black leading-none mb-3"
-                      style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', letterSpacing: '-0.02em', color: div.dark ? 'white' : 'oklch(0.11 0.03 261)' }}
-                    >
-                      {div.name}
-                    </h3>
-                    <p className="mb-5 leading-relaxed" style={{ fontSize: '1.08rem', color: div.dark ? 'oklch(1 0 0 / 0.75)' : 'oklch(0.48 0.06 261)', maxWidth: '56ch' }}>
-                      {div.desc}
-                    </p>
-                    <ul className="flex flex-col gap-1.5">
-                      {div.highlights.map(h => (
-                        <li key={h} className="flex items-start gap-2.5 text-sm" style={{ color: div.dark ? 'oklch(1 0 0 / 0.70)' : 'oklch(0.35 0.1 261)' }}>
-                          <span style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', marginTop: '0.18rem', flexShrink: 0 }}>→</span>
-                          {h}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="shrink-0">
-                    <Link
-                      href={div.href}
-                      className="press btn-shimmer font-bold px-6 py-3 rounded-lg whitespace-nowrap block text-center"
-                      style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
-                    >
-                      Explore programs →
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <DivisionsFilter divisions={DIVISIONS} />
         </div>
       </section>
 
@@ -277,8 +245,8 @@ export default function AcademicsPage() {
           <div className="mt-8">
             <Link
               href="/workforce"
-              className="press btn-shimmer font-bold px-6 py-3 rounded-lg inline-block"
-              style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
+              className="press btn-shimmer hero-cta-red font-bold px-6 py-3 rounded-lg inline-block"
+              style={{ background: 'oklch(0.48 0.22 27)', color: 'white', fontSize: '1rem' }}
             >
               Explore Workforce Programs →
             </Link>
@@ -308,8 +276,8 @@ export default function AcademicsPage() {
               </div>
               <Link
                 href="/admissions/dual-enrollment"
-                className="press btn-shimmer font-bold px-6 py-3 rounded-lg inline-block"
-                style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
+                className="press btn-shimmer hero-cta-red font-bold px-6 py-3 rounded-lg inline-block"
+                style={{ background: 'oklch(0.48 0.22 27)', color: 'white', fontSize: '1rem' }}
               >
                 Learn About Dual Enrollment →
               </Link>

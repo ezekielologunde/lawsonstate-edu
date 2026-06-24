@@ -181,7 +181,7 @@ export default function MakersFixers() {
             <Link
               href="/academics"
               className="press btn-shimmer inline-flex items-center font-bold gap-2 rounded-xl px-6 py-3"
-              style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.95rem' }}
+              style={{ background: 'oklch(0.48 0.22 27)', color: 'white', fontSize: '0.95rem' }}
             >
               Explore CTE Programs
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -242,18 +242,9 @@ export default function MakersFixers() {
         </div>
       </div>
 
-      {/* Horizontal trade strip */}
-      <div className="relative">
-        <div
-          className="flex gap-4 overflow-x-auto px-6 pb-4"
-          style={{
-            scrollSnapType: 'x mandatory',
-            WebkitOverflowScrolling: 'touch',
-            msOverflowStyle: 'none',
-            scrollbarWidth: 'none',
-            maxWidth: '100vw',
-          }}
-        >
+      {/* Trade grid */}
+      <div className="max-w-7xl mx-auto px-6 mt-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {TRADES.map((trade, i) => (
             <TradeCard key={trade.label} trade={trade} index={i} />
           ))}
@@ -307,10 +298,9 @@ function TradeCard({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="press relative flex-shrink-0 overflow-hidden cursor-pointer"
+      className="press relative overflow-hidden cursor-pointer"
       style={{
-        scrollSnapAlign: 'start',
-        width: 'clamp(145px, 17vw, 170px)',
+        width: '100%',
         height: 'clamp(165px, 21vw, 200px)',
         borderRadius: '14px',
         background: trade.bg,

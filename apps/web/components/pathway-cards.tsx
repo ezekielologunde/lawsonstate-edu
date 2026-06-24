@@ -9,7 +9,7 @@ const PATHS = [
     label:    'New Student',
     color:    'oklch(0.56 0.22 145)',
     headline: 'START YOUR JOURNEY',
-    desc:     "Ready to begin at Lawson State? Here's everything from applying to showing up on day one.",
+    desc:     "Not sure where to start? We'll guide you from your first application to your first day on campus — no prior college experience needed.",
     links: [
       { label: 'Apply for admission',      href: '/admissions/apply' },
       { label: 'Explore financial aid',    href: '/financial-aid' },
@@ -17,7 +17,7 @@ const PATHS = [
       { label: 'Schedule a campus visit',  href: '/visit' },
       { label: 'Attend orientation',       href: '/orientation' },
     ],
-    cta:     'Begin your application',
+    cta:     'Start my application',
     ctaHref: '/admissions/apply',
     photo:   'https://live.staticflickr.com/65535/55212927272_fb910af83c.jpg',
   },
@@ -26,13 +26,13 @@ const PATHS = [
     label:    'Transfer Student',
     color:    'oklch(0.50 0.22 248)',
     headline: 'TRANSFER WITH CONFIDENCE',
-    desc:     'Coming from another school? We make credit transfer clear, fast, and straightforward.',
+    desc:     'Already have college credits? Most transfer directly. See exactly where you stand and build your degree plan from there.',
     links: [
       { label: 'Transfer admissions info',  href: '/admissions/transfer' },
       { label: 'Credit transfer guide',     href: '/transfer/credits' },
       { label: 'Transfer program options',  href: '/academics/transfer' },
     ],
-    cta:     'Start your transfer',
+    cta:     'Check my credits',
     ctaHref: '/admissions/transfer',
     photo:   'https://live.staticflickr.com/65535/55258970853_28b8ea04e9_z.jpg',
   },
@@ -41,7 +41,7 @@ const PATHS = [
     label:    'Current Student',
     color:    'oklch(0.68 0.20 76)',
     headline: 'EVERYTHING YOU NEED',
-    desc:     'Register for classes, check your aid, pay your bill, and get academic support — all in one place.',
+    desc:     'Everything you need to stay on track this semester — class registration, financial aid status, tutoring support, and academic advising.',
     links: [
       { label: 'Register for classes',  href: '/registration' },
       { label: 'Student portal login',  href: '/student-portal' },
@@ -57,7 +57,7 @@ const PATHS = [
     label:    'Adult Learner',
     color:    'oklch(0.55 0.22 28)',
     headline: 'ADVANCE YOUR CAREER',
-    desc:     'Certificates, workforce training, and continuing ed programs built around your life and schedule.',
+    desc:     'Career change or a promotion? Earn industry-recognized credentials in months, not years — on evenings and weekends, around your life.',
     links: [
       { label: 'Workforce programs',    href: '/workforce' },
       { label: 'Certificate courses',   href: '/academics/certificates' },
@@ -146,7 +146,7 @@ export default function PathwayCards() {
             <Link
               href={path.ctaHref}
               className="press btn-shimmer font-bold px-6 py-3 rounded-lg whitespace-nowrap self-start"
-              style={{ background: path.color, color: 'white', fontSize: '0.875rem' }}
+              style={{ background: 'oklch(0.48 0.22 27)', color: 'white', fontSize: '0.875rem' }}
             >
               {path.cta} →
             </Link>

@@ -17,12 +17,13 @@ export type CalendarEvent = {
   href: string
 }
 
-function formatDate(iso: string): string {
-  const [year, month, day] = iso.split('-').map(Number)
-  return new Date(year, month - 1, day).toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-  })
+function dateParts(iso: string) {
+  const [y, m, d] = iso.split('-').map(Number)
+  const dt = new Date(y, m - 1, d)
+  return {
+    day:     d,
+    weekday: dt.toLocaleDateString('en-US', { weekday: 'short' }).toUpperCase(),
+  }
 }
 
 function formatStoryDate(iso: string): string {
@@ -115,41 +116,71 @@ export default function NewsEvents({
 
           {/* Events list */}
           <div>
-            <h3
-              className="font-display font-bold text-lscc-ink mb-6"
-              style={{ fontSize: '1.25rem', letterSpacing: '-0.01em' }}
-            >
-              Upcoming Events
-            </h3>
+            <div className="flex items-baseline justify-between mb-6">
+              <h3
+                className="font-display font-bold text-lscc-ink"
+                style={{ fontSize: '1.25rem', letterSpacing: '-0.01em' }}
+              >
+                Upcoming Events
+              </h3>
+              <Link
+                href="/calendar"
+                className="text-xs font-semibold hover:underline"
+                style={{ color: 'oklch(0.42 0.22 248)' }}
+              >
+                See all →
+              </Link>
+            </div>
             {events.length > 0 ? (
               <div className="flex flex-col" style={{ borderTop: '1px solid oklch(0.90 0.01 263)' }}>
-                {events.map((event) => (
-                  <Link
-                    key={event.id}
-                    href={event.href}
-                    className="group flex items-start gap-4 py-4 transition-colors"
-                    style={{ borderBottom: '1px solid oklch(0.90 0.01 263)' }}
-                  >
-                    <span
-                      className="shrink-0 font-display font-bold text-sm pt-0.5"
-                      style={{ color: 'oklch(0.83 0.16 82)', minWidth: '3.5rem' }}
+                {events.map((event) => {
+                  const { day, weekday } = dateParts(event.event_date)
+                  return (
+                    <Link
+                      key={event.id}
+                      href={event.href}
+                      className="group flex items-center gap-4 py-4 transition-colors"
+                      style={{ borderBottom: '1px solid oklch(0.90 0.01 263)' }}
                     >
-                      {formatDate(event.event_date)}
-                    </span>
-                    <span className="text-sm font-medium text-lscc-ink group-hover:text-lscc-blue transition-colors leading-snug">
-                      {event.title}
-                    </span>
-                  </Link>
-                ))}
+                      {/* Date block */}
+                      <div className="shrink-0 flex flex-col items-center" style={{ minWidth: '2.6rem' }}>
+                        <span
+                          className="font-semibold uppercase"
+                          style={{ fontSize: '0.6rem', letterSpacing: '0.06em', color: 'oklch(0.55 0.08 263)', lineHeight: 1.2 }}
+                        >
+                          {weekday}
+                        </span>
+                        <span
+                          className="font-display font-black leading-none"
+                          style={{ fontSize: '1.6rem', color: 'oklch(0.48 0.22 27)', letterSpacing: '-0.02em' }}
+                        >
+                          {day}
+                        </span>
+                      </div>
+                      {/* Divider */}
+                      <div
+                        aria-hidden
+                        style={{ width: '1px', height: '2.2rem', background: 'oklch(0.88 0.01 263)', flexShrink: 0 }}
+                      />
+                      <span className="text-sm font-medium text-lscc-ink group-hover:text-lscc-blue transition-colors leading-snug flex-1">
+                        {event.title}
+                      </span>
+                      <span aria-hidden className="text-lscc-muted group-hover:text-lscc-blue transition-colors shrink-0" style={{ fontSize: '0.9rem' }}>
+                        →
+                      </span>
+                    </Link>
+                  )
+                })}
               </div>
             ) : (
-              <p className="text-lscc-muted text-sm">No upcoming events.</p>
+              <p className="text-lscc-muted text-sm">No upcoming events right now.</p>
             )}
             <Link
               href="/calendar"
-              className="mt-6 inline-block text-sm font-semibold text-lscc-blue hover:underline"
+              className="mt-5 inline-block text-sm font-semibold hover:underline"
+              style={{ color: 'oklch(0.42 0.22 248)' }}
             >
-              View full academic calendar →
+              View full calendar →
             </Link>
           </div>
         </div>

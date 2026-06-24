@@ -83,8 +83,8 @@ export default function AnnouncementBanner() {
             rel="noopener noreferrer"
             className="press btn-shimmer font-bold whitespace-nowrap rounded-lg px-5 py-2"
             style={{
-              background: 'oklch(0.11 0.03 261)',
-              color: 'oklch(0.79 0.19 78)',
+              background: 'oklch(0.48 0.22 27)',
+              color: 'white',
               fontSize: '0.85rem',
             }}
           >

@@ -28,6 +28,8 @@ html {
   --color-lscc-ink:       oklch(0.11 0.03 261);
   --color-lscc-muted:     oklch(0.40 0.06 261);
   --color-lscc-surface:   oklch(0.985 0.012 263);
+  --color-lscc-red:      oklch(0.48 0.22 27);
+  --color-lscc-red-dark: oklch(0.42 0.22 27);
   --color-lscc-coral:    oklch(0.72 0.20 28);
   --color-lscc-electric: oklch(0.62 0.22 248);
   --color-lscc-lime:     oklch(0.78 0.18 130);
@@ -287,6 +289,8 @@ a:hover .program-img { transform: scale(1.06); }
 /* ── Hero CTA hover (server-component safe — pure CSS) ── */
 .hero-cta-gold { transition: filter 0.2s ease; }
 .hero-cta-gold:hover { filter: brightness(1.08); }
+.hero-cta-red { transition: filter 0.2s ease; }
+.hero-cta-red:hover { filter: brightness(1.1); }
 .hero-cta-ghost { transition: background 0.2s ease; }
 .hero-cta-ghost:hover { background: oklch(1 0 0 / 0.09) !important; }
 

@@ -6,10 +6,10 @@ import Link from 'next/link'
 type HeroContent = Record<string, string>
 
 const DEFAULTS: HeroContent = {
-  subheadline:         "Birmingham's HBCU since 1949 — quality education, career training, and community leadership for the next generation.",
-  cta_primary_label:   'Apply Now',
+  subheadline:         'Affordable tuition, flexible schedules, and 200+ career-ready programs — built for first-gen students, working adults, and career changers in Birmingham, AL.',
+  cta_primary_label:   'Start My Application',
   cta_primary_href:    '/admissions/apply',
-  cta_secondary_label: 'Explore Programs',
+  cta_secondary_label: 'Browse Programs',
   cta_secondary_href:  '/academics',
 }
 
@@ -23,10 +23,10 @@ const STATS = [
 ]
 
 const PATHS = [
-  { label: 'New Student',     sub: 'Apply & get started',   href: '/admissions/apply' },
-  { label: 'Transfer Student', sub: 'Transfer your credits', href: '/admissions/transfer' },
-  { label: 'Current Student', sub: 'Portal & resources',    href: '/student-portal' },
-  { label: 'Adult Learner',   sub: 'Workforce & certs',     href: '/workforce' },
+  { label: 'New Student',      sub: "I'm ready to apply",    href: '/admissions/apply' },
+  { label: 'Transfer Student', sub: 'Check my credits',      href: '/admissions/transfer' },
+  { label: 'Current Student',  sub: 'Portal & resources',    href: '/student-portal' },
+  { label: 'Adult Learner',    sub: 'Career change programs', href: '/workforce' },
 ]
 
 const TICKER = [
@@ -190,8 +190,8 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
             >
               <Link
                 href={c.cta_primary_href}
-                className="press btn-shimmer hero-cta-gold inline-flex items-center font-bold px-8 py-4 rounded-xl"
-                style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
+                className="press btn-shimmer hero-cta-red inline-flex items-center font-bold px-8 py-4 rounded-xl"
+                style={{ background: 'oklch(0.48 0.22 27)', color: 'white', fontSize: '1rem' }}
               >
                 {c.cta_primary_label}
               </Link>
