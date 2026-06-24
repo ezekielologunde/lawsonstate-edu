@@ -1,12 +1,15 @@
 export const revalidate = 3600 // 1 hour ISR
 
 import { createServerClient, buildContentMap } from '@/lib/supabase'
+import SkipToMainLink from '@/components/skip-to-main-link'
+import StickyStudentNav from '@/components/sticky-student-nav'
 import Nav from '@/components/nav'
 import AnnouncementBanner from '@/components/announcement-banner'
 import Hero from '@/components/hero'
-import MakersFixers from '@/components/makers-fixers'
 import QuickLinks from '@/components/quick-links'
-import PathwayCards from '@/components/pathway-cards'
+import VisitorDecisionTree from '@/components/visitor-decision-tree'
+import FeaturedPrograms from '@/components/featured-programs'
+import MakersFixers from '@/components/makers-fixers'
 import Programs from '@/components/programs'
 import VideoSection from '@/components/video-section'
 import CampusLifeGallery from '@/components/campus-life-gallery'
@@ -57,12 +60,14 @@ export default async function Home() {
 
   return (
     <>
+      <SkipToMainLink />
       <AnnouncementBanner />
       <Nav />
-      <main className="mobile-nav-spacer">
+      <main id="main-content" className="mobile-nav-spacer">
         <Hero content={content.hero} />
         <QuickLinks />
-        <PathwayCards />
+        <VisitorDecisionTree />
+        <FeaturedPrograms programs={programs ?? []} />
         <Programs programs={programs ?? []} content={content.programs} />
         <VideoSection />
         <CampusLifeGallery />
@@ -76,6 +81,7 @@ export default async function Home() {
       </main>
       <SiteFooter />
       <MobileBottomNav />
+      <StickyStudentNav />
       <HBCUPopup />
     </>
   )

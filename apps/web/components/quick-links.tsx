@@ -1,13 +1,17 @@
 import Link from 'next/link'
 
-const ACTIONS = [
-  { label: 'Apply Now',     href: '/admissions/apply',  gold: true  },
-  { label: 'Register',      href: '/registration',      gold: false },
-  { label: 'Financial Aid', href: '/financial-aid',     gold: false },
-  { label: 'Class Schedule', href: '/class-schedule',   gold: false },
-  { label: 'Pay Online',    href: '/pay-bill',          gold: false },
-  { label: 'Student Portal', href: '/student-portal',   gold: false },
-  { label: 'Advising',      href: '/advising',          gold: false },
+const NEW_VISITOR_ACTIONS = [
+  { label: 'Apply Now', href: '/admissions/apply', primary: true },
+  { label: 'Explore Programs', href: '/academics', primary: false },
+  { label: 'Financial Aid Info', href: '/financial-aid', primary: false },
+  { label: 'Schedule Campus Tour', href: '/visit', primary: false },
+]
+
+const QUICK_ACTIONS = [
+  { label: 'Apply Now', href: '/admissions/apply', primary: true },
+  { label: 'Student Portal', href: '/student-portal', primary: false },
+  { label: 'Register', href: '/registration', primary: false },
+  { label: 'Pay Bill', href: '/pay-bill', primary: false },
 ]
 
 export default function QuickLinks() {
@@ -15,20 +19,24 @@ export default function QuickLinks() {
     <div style={{ background: 'white', borderBottom: '1px solid oklch(0.92 0.01 263)' }}>
       <div className="max-w-7xl mx-auto px-4 py-3 flex gap-2 overflow-x-auto scrollbar-hide items-center">
         <span
-          className="shrink-0 text-lscc-muted font-medium hidden sm:block"
-          style={{ fontSize: '0.68rem', letterSpacing: '0.12em', textTransform: 'uppercase', paddingRight: '0.5rem' }}
+          className="shrink-0 text-lscc-muted font-medium hidden sm:block whitespace-nowrap"
+          style={{
+            fontSize: '0.68rem',
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            paddingRight: '0.5rem',
+          }}
         >
-          Quick access
+          Quick Links
         </span>
-        {ACTIONS.map(({ label, href, gold }) => (
+        {QUICK_ACTIONS.map(({ label, href, primary }) => (
           <Link
             key={label}
             href={href}
-            className="press shrink-0 px-4 py-2 rounded-full font-semibold whitespace-nowrap transition-colors"
+            className="press shrink-0 px-4 py-2 rounded-full font-semibold whitespace-nowrap transition-colors text-sm"
             style={{
-              fontSize:    '0.8rem',
-              background:  gold ? 'oklch(0.79 0.19 78)' : 'oklch(0.96 0.012 263)',
-              color:       gold ? 'oklch(0.11 0.03 261)' : 'oklch(0.27 0.13 263)',
+              background: primary ? 'oklch(0.79 0.19 78)' : 'oklch(0.96 0.012 263)',
+              color: primary ? 'oklch(0.11 0.03 261)' : 'oklch(0.27 0.13 263)',
             }}
           >
             {label}
