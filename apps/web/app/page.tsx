@@ -6,12 +6,9 @@ import StickyStudentNav from '@/components/sticky-student-nav'
 import Nav from '@/components/nav'
 import AnnouncementBanner from '@/components/announcement-banner'
 import Hero from '@/components/hero'
-import QuickLinks from '@/components/quick-links'
 import VisitorDecisionTree from '@/components/visitor-decision-tree'
-import FeaturedPrograms from '@/components/featured-programs'
 import MakersFixers from '@/components/makers-fixers'
 import Programs from '@/components/programs'
-import VideoSection from '@/components/video-section'
 import CampusLifeGallery from '@/components/campus-life-gallery'
 import Support from '@/components/support'
 import NewsEvents from '@/components/news-events'
@@ -65,11 +62,8 @@ export default async function Home() {
       <Nav />
       <main id="main-content" className="mobile-nav-spacer">
         <Hero content={content.hero} />
-        <QuickLinks />
         <VisitorDecisionTree />
-        <FeaturedPrograms programs={programs ?? []} />
         <Programs programs={programs ?? []} content={content.programs} />
-        <VideoSection />
         <CampusLifeGallery />
         <Support content={content.support} />
         <NewsEvents
