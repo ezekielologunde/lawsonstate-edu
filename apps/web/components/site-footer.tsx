@@ -28,14 +28,16 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
   ],
 }
 
+const INK   = 'oklch(0.16 0.04 261)'
+const BODY  = 'oklch(0.40 0.04 261)'
+const MUTE  = 'oklch(0.50 0.03 261)'
+const LINE  = 'oklch(0 0 0 / 0.08)'
+
 export default function SiteFooter() {
   return (
-    <footer style={{ background: 'oklch(0.14 0.08 265)' }}>
+    <footer style={{ background: 'oklch(0.96 0.012 263)' }}>
       {/* Newsletter section */}
-      <div
-        className="border-b"
-        style={{ borderColor: 'oklch(1 0 0 / 0.08)' }}
-      >
+      <div className="border-b" style={{ borderColor: LINE }}>
         <div className="max-w-7xl mx-auto px-6 py-12">
           <NewsletterSignup />
         </div>
@@ -46,12 +48,12 @@ export default function SiteFooter() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-14 gap-6">
           <div>
             <div
-              className="font-display font-black text-white tracking-wide mb-1"
-              style={{ fontSize: '1.5rem' }}
+              className="font-display font-black tracking-wide mb-1"
+              style={{ fontSize: '1.5rem', color: INK }}
             >
               LAWSON STATE
             </div>
-            <div className="text-white/35 uppercase" style={{ fontSize: '0.625rem', letterSpacing: '0.3em' }}>
+            <div className="uppercase" style={{ fontSize: '0.625rem', letterSpacing: '0.3em', color: MUTE }}>
               Community College
             </div>
           </div>
@@ -63,7 +65,8 @@ export default function SiteFooter() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={name}
-                className="text-xs font-medium text-white/35 hover:text-white transition-colors"
+                className="text-xs font-medium transition-colors hover:opacity-60"
+                style={{ color: BODY }}
               >
                 {name}
               </a>
@@ -74,7 +77,7 @@ export default function SiteFooter() {
         {/* Campus addresses */}
         <div
           className="grid md:grid-cols-2 gap-8 mb-14 pb-12"
-          style={{ borderBottom: '1px solid oklch(1 0 0 / 0.08)' }}
+          style={{ borderBottom: `1px solid ${LINE}` }}
         >
           {[
             {
@@ -94,17 +97,17 @@ export default function SiteFooter() {
           ].map((campus) => (
             <div key={campus.label}>
               <div
-                className="text-white/35 font-semibold uppercase mb-3"
-                style={{ fontSize: '0.6875rem', letterSpacing: '0.15em' }}
+                className="font-semibold uppercase mb-3"
+                style={{ fontSize: '0.6875rem', letterSpacing: '0.15em', color: MUTE }}
               >
                 {campus.label}
               </div>
-              <address className="not-italic text-white/60 text-sm leading-relaxed">
+              <address className="not-italic text-sm leading-relaxed" style={{ color: BODY }}>
                 {campus.address}
                 <br />
                 {campus.city}
                 <br />
-                <a href={`tel:${campus.tel}`} className="hover:text-white transition-colors">
+                <a href={`tel:${campus.tel}`} className="transition-colors hover:opacity-60" style={{ color: INK, fontWeight: 600 }}>
                   {campus.phone}
                 </a>
                 <br />
@@ -119,8 +122,8 @@ export default function SiteFooter() {
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
               <div
-                className="text-white/35 font-semibold uppercase mb-4"
-                style={{ fontSize: '0.6875rem', letterSpacing: '0.15em' }}
+                className="font-semibold uppercase mb-4"
+                style={{ fontSize: '0.6875rem', letterSpacing: '0.15em', color: MUTE }}
               >
                 {category}
               </div>
@@ -129,7 +132,8 @@ export default function SiteFooter() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-white/55 hover:text-white transition-colors"
+                      className="text-sm transition-colors hover:opacity-60"
+                      style={{ color: BODY }}
                     >
                       {link.label}
                     </Link>
@@ -142,8 +146,8 @@ export default function SiteFooter() {
 
         {/* Bottom bar */}
         <div
-          className="pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-white/30"
-          style={{ borderTop: '1px solid oklch(1 0 0 / 0.08)' }}
+          className="pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs"
+          style={{ borderTop: `1px solid ${LINE}`, color: MUTE }}
         >
           <p>© 2026 Lawson State Community College. All rights reserved.</p>
           <div className="flex flex-wrap gap-x-6 gap-y-1">
@@ -153,7 +157,7 @@ export default function SiteFooter() {
               { label: 'Title IX', href: '/title-ix' },
               { label: 'Non-Discrimination', href: '/non-discrimination' },
             ].map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-white transition-colors">
+              <Link key={l.href} href={l.href} className="transition-colors hover:opacity-60" style={{ color: MUTE }}>
                 {l.label}
               </Link>
             ))}

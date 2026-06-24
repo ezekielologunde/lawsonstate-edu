@@ -25,8 +25,8 @@ const PROGRAMS = [
     name:   'Career Technical Programs',
     desc:   'Specialized workforce credentials that lead to high income and in-demand skills — from welding and HVAC to culinary arts and cosmetology.',
     href:   '/academics/career-technical',
-    bg:     'oklch(0.22 0.17 261)',
-    dark:   true,
+    bg:     'white',
+    dark:   false,
   },
   {
     number: '02',
@@ -41,8 +41,8 @@ const PROGRAMS = [
     name:   'Business & Information Technologies',
     desc:   'From Cybersecurity and Computer Hardware to Accounting and Economics — the skills the modern economy demands.',
     href:   '/academics/business-it',
-    bg:     'oklch(0.27 0.13 263)',
-    dark:   true,
+    bg:     'white',
+    dark:   false,
   },
   {
     number: '04',
@@ -130,25 +130,25 @@ export default function LearnAtLawsonPage() {
         {/* ── Hero ── */}
         <section
           className="py-28 sm:py-36 px-6"
-          style={{ background: 'oklch(0.22 0.17 261)' }}
+          style={{ background: 'oklch(0.97 0.01 263)' }}
         >
           <div className="max-w-7xl mx-auto">
             <p
               className="font-display font-semibold uppercase tracking-widest mb-4 scroll-reveal"
-              style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.75rem', letterSpacing: '0.18em' }}
+              style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.75rem', letterSpacing: '0.18em' }}
             >
               Lawson State Community College
             </p>
             <h1
-              className="font-display font-black text-white leading-none mb-8 scroll-reveal"
-              style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', letterSpacing: '-0.025em', maxWidth: '14ch' }}
+              className="font-display font-black leading-none mb-8 scroll-reveal"
+              style={{ fontSize: 'clamp(3rem, 7vw, 6rem)', letterSpacing: '-0.025em', maxWidth: '14ch', color: 'oklch(0.16 0.04 261)' }}
             >
               Learn at<br />
-              <span style={{ color: 'oklch(0.79 0.19 78)' }}>Lawson.</span>
+              <span style={{ color: 'oklch(0.55 0.15 68)' }}>Lawson.</span>
             </h1>
             <p
-              className="text-white/70 leading-relaxed scroll-reveal"
-              style={{ fontSize: 'clamp(1rem, 1.6vw, 1.25rem)', maxWidth: '56ch' }}
+              className="leading-relaxed scroll-reveal"
+              style={{ fontSize: 'clamp(1rem, 1.6vw, 1.25rem)', maxWidth: '56ch', color: 'oklch(0.40 0.04 261)' }}
             >
               When you learn at Lawson, you join a tight-knit community that extends beyond
               the classroom and values innovation and experimentation. You leave well-rounded,
@@ -164,8 +164,8 @@ export default function LearnAtLawsonPage() {
               </Link>
               <Link
                 href="/academics"
-                className="press hero-cta-ghost inline-flex items-center font-semibold px-8 py-4 rounded text-white"
-                style={{ border: '2px solid oklch(1 0 0 / 0.25)', fontSize: '0.9375rem' }}
+                className="press hero-cta-ghost inline-flex items-center font-semibold px-8 py-4 rounded"
+                style={{ border: '2px solid oklch(0.16 0.04 261 / 0.25)', fontSize: '0.9375rem', color: 'oklch(0.16 0.04 261)' }}
               >
                 Browse All Programs
               </Link>
@@ -217,7 +217,11 @@ export default function LearnAtLawsonPage() {
                   key={p.number}
                   href={p.href}
                   className="group card-lift press flex flex-col justify-between rounded-xl p-8 min-h-[280px]"
-                  style={{ background: p.bg }}
+                  style={{
+                    background: p.bg,
+                    border: p.bg === 'white' ? '1px solid oklch(0 0 0 / 0.08)' : undefined,
+                    boxShadow: p.bg === 'white' ? '0 8px 30px oklch(0.16 0.06 261 / 0.08)' : undefined,
+                  }}
                 >
                   <div className="flex justify-between items-start mb-8">
                     <span
@@ -336,16 +340,16 @@ export default function LearnAtLawsonPage() {
         </section>
 
         {/* ── Campus Locations ── */}
-        <section className="py-20 sm:py-28 px-6" style={{ background: 'oklch(0.22 0.17 261)' }}>
+        <section className="py-20 sm:py-28 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
           <div className="max-w-7xl mx-auto">
             <div className="mb-14 scroll-reveal">
               <h2
-                className="font-display font-black text-white leading-none mb-3"
-                style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.02em' }}
+                className="font-display font-black leading-none mb-3"
+                style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.02em', color: 'oklch(0.16 0.04 261)' }}
               >
                 TWO CAMPUSES, ONE COMMUNITY
               </h2>
-              <p className="text-white/60 text-lg" style={{ maxWidth: '50ch' }}>
+              <p className="text-lg" style={{ maxWidth: '50ch', color: 'oklch(0.50 0.03 261)' }}>
                 Learn close to home — Birmingham and Bessemer campuses both offer the full
                 Lawson State experience.
               </p>
@@ -356,13 +360,17 @@ export default function LearnAtLawsonPage() {
                 <div
                   key={c.name}
                   className="rounded-xl p-8 flex flex-col gap-5"
-                  style={{ background: c.primary ? 'oklch(0.79 0.19 78)' : 'oklch(0.30 0.14 263)' }}
+                  style={{
+                    background: c.primary ? 'oklch(0.79 0.19 78)' : 'white',
+                    border: c.primary ? undefined : '1px solid oklch(0 0 0 / 0.08)',
+                    boxShadow: c.primary ? undefined : '0 8px 30px oklch(0.16 0.06 261 / 0.08)',
+                  }}
                 >
                   <h3
                     className="font-display font-bold leading-tight"
                     style={{
                       fontSize: 'clamp(1.3rem, 2.2vw, 1.8rem)',
-                      color: c.primary ? 'oklch(0.14 0.02 263)' : 'white',
+                      color: c.primary ? 'oklch(0.14 0.02 263)' : 'oklch(0.16 0.04 261)',
                       letterSpacing: '-0.01em',
                     }}
                   >
@@ -370,7 +378,7 @@ export default function LearnAtLawsonPage() {
                   </h3>
                   <div
                     className="flex flex-col gap-1.5 text-sm font-medium"
-                    style={{ color: c.primary ? 'oklch(0.27 0.13 263)' : 'oklch(1 0 0 / 0.75)' }}
+                    style={{ color: c.primary ? 'oklch(0.27 0.13 263)' : 'oklch(0.40 0.04 261)' }}
                   >
                     <p>{c.address}</p>
                     <p>{c.city}</p>
@@ -394,8 +402,8 @@ export default function LearnAtLawsonPage() {
                       rel="noopener noreferrer"
                       className="press inline-flex items-center text-sm font-semibold px-5 py-2.5 rounded"
                       style={{
-                        border: `2px solid ${c.primary ? 'oklch(0.22 0.17 261 / 0.25)' : 'oklch(1 0 0 / 0.25)'}`,
-                        color: c.primary ? 'oklch(0.22 0.17 261)' : 'white',
+                        border: `2px solid ${c.primary ? 'oklch(0.22 0.17 261 / 0.25)' : 'oklch(0.16 0.04 261 / 0.25)'}`,
+                        color: c.primary ? 'oklch(0.22 0.17 261)' : 'oklch(0.16 0.04 261)',
                       }}
                     >
                       Get Directions

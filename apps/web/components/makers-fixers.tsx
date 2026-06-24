@@ -62,7 +62,7 @@ export default function MakersFixers() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden"
-      style={{ background: 'oklch(0.12 0.06 261)', paddingBlock: '5rem' }}
+      style={{ background: 'oklch(0.99 0.005 263)', paddingBlock: '5rem' }}
       onMouseMove={handleMouseMove}
     >
       {/* Mouse-follow glow — updated via DOM ref, no re-render */}
@@ -76,7 +76,7 @@ export default function MakersFixers() {
             style={{
               fontSize: '0.78rem',
               letterSpacing: '0.18em',
-              color: 'oklch(0.79 0.19 78)',
+              color: 'oklch(0.55 0.15 68)',
               textTransform: 'uppercase',
               marginBottom: '0.6rem',
             }}
@@ -84,11 +84,11 @@ export default function MakersFixers() {
             Career &amp; Technical Education
           </p>
           <h2
-            className="font-display font-black text-white leading-none"
-            style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.04em' }}
+            className="font-display font-black leading-none"
+            style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.04em', color: 'oklch(0.16 0.04 261)' }}
           >
             WHAT WILL<br />
-            <span style={{ color: 'oklch(0.79 0.19 78)' }}>YOU BUILD?</span>
+            <span style={{ color: 'oklch(0.55 0.15 68)' }}>YOU BUILD?</span>
           </h2>
         </div>
 
@@ -113,7 +113,7 @@ export default function MakersFixers() {
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                  background: 'linear-gradient(to top, oklch(0.12 0.06 261 / 0.55) 0%, transparent 55%)',
+                  background: 'linear-gradient(to top, oklch(0.16 0.06 261 / 0.30) 0%, transparent 55%)',
                 }}
               />
             </div>
@@ -142,7 +142,7 @@ export default function MakersFixers() {
               style={{
                 fontSize: 'clamp(0.88rem, 1.4vw, 1rem)',
                 lineHeight: 1.7,
-                color: 'oklch(1 0 0 / 0.72)',
+                color: 'oklch(0.40 0.04 261)',
                 maxWidth: '52ch',
                 marginBottom: '1rem',
               }}
@@ -153,7 +153,7 @@ export default function MakersFixers() {
               style={{
                 fontSize: 'clamp(0.82rem, 1.2vw, 0.92rem)',
                 lineHeight: 1.7,
-                color: 'oklch(1 0 0 / 0.55)',
+                color: 'oklch(0.50 0.03 261)',
                 maxWidth: '50ch',
                 marginBottom: '1.5rem',
               }}
@@ -176,30 +176,31 @@ export default function MakersFixers() {
           {/* Snap-on partner callout */}
           <div
             style={{
-              background: 'oklch(0.20 0.10 261)',
-              border: '1.5px solid oklch(0.35 0.15 261)',
+              background: 'white',
+              border: '1px solid oklch(0 0 0 / 0.08)',
+              boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)',
               borderRadius: '14px',
               padding: '1.1rem',
             }}
           >
             <p
               className="font-display font-bold mb-3"
-              style={{ fontSize: '0.7rem', letterSpacing: '0.14em', color: 'oklch(0.79 0.19 78)', textTransform: 'uppercase' }}
+              style={{ fontSize: '0.7rem', letterSpacing: '0.14em', color: 'oklch(0.55 0.15 68)', textTransform: 'uppercase' }}
             >
               Industry Partner
             </p>
             <p
-              className="font-display font-black text-white mb-2"
-              style={{ fontSize: '1.25rem', letterSpacing: '-0.03em', lineHeight: 1.1 }}
+              className="font-display font-black mb-2"
+              style={{ fontSize: '1.25rem', letterSpacing: '-0.03em', lineHeight: 1.1, color: 'oklch(0.16 0.04 261)' }}
             >
               Snap-on Tools
             </p>
-            <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'oklch(1 0 0 / 0.60)' }}>
+            <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'oklch(0.40 0.04 261)' }}>
               Our Automotive Technology students train with professional-grade Snap-on equipment — the same tools used in dealerships across the country. Graduate ready to work on day one.
             </p>
             <div
               className="mt-5 pt-5 flex items-center gap-3"
-              style={{ borderTop: '1.5px solid oklch(0.35 0.15 261)' }}
+              style={{ borderTop: '1px solid oklch(0 0 0 / 0.10)' }}
             >
               <div
                 className="flex items-center justify-center text-white font-bold"
@@ -215,8 +216,8 @@ export default function MakersFixers() {
                 S
               </div>
               <div>
-                <p className="font-semibold text-white" style={{ fontSize: '0.85rem' }}>Snap-on Tools</p>
-                <p style={{ fontSize: '0.72rem', color: 'oklch(1 0 0 / 0.45)' }}>Official Equipment Partner</p>
+                <p className="font-semibold" style={{ fontSize: '0.85rem', color: 'oklch(0.16 0.04 261)' }}>Snap-on Tools</p>
+                <p style={{ fontSize: '0.72rem', color: 'oklch(0.50 0.03 261)' }}>Official Equipment Partner</p>
               </div>
             </div>
           </div>
@@ -225,19 +226,19 @@ export default function MakersFixers() {
         {/* Stats bar */}
         <div
           className={`grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 ${fade(400)}`}
-          style={{ borderTop: '1px solid oklch(1 0 0 / 0.1)' }}
+          style={{ borderTop: '1px solid oklch(0 0 0 / 0.10)' }}
         >
           {CTE_STATS.map((s) => (
             <div key={s.n}>
               <div
                 className="font-display font-black"
-                style={{ fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', letterSpacing: '-0.04em', color: 'oklch(0.79 0.19 78)' }}
+                style={{ fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', letterSpacing: '-0.04em', color: 'oklch(0.55 0.15 68)' }}
               >
                 {s.n}
               </div>
               <div
                 className="uppercase font-semibold"
-                style={{ fontSize: '0.72rem', letterSpacing: '0.14em', color: 'oklch(1 0 0 / 0.55)', marginTop: '2px' }}
+                style={{ fontSize: '0.72rem', letterSpacing: '0.14em', color: 'oklch(0.50 0.03 261)', marginTop: '2px' }}
               >
                 {s.label}
               </div>

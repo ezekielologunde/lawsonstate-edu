@@ -66,9 +66,9 @@ export default function DivisionsFilter({ divisions }: { divisions: Division[] }
             className="press px-4 py-2 rounded-full font-semibold transition-all"
             style={{
               fontSize: '0.82rem',
-              background: active === f.id ? 'oklch(0.79 0.19 78)' : 'oklch(0.22 0.16 261)',
-              color:      active === f.id ? 'oklch(0.11 0.03 261)' : 'oklch(1 0 0 / 0.65)',
-              border:     `1px solid ${active === f.id ? 'transparent' : 'oklch(1 0 0 / 0.12)'}`,
+              background: active === f.id ? 'oklch(0.79 0.19 78)' : 'white',
+              color:      active === f.id ? 'oklch(0.11 0.03 261)' : 'oklch(0.40 0.04 261)',
+              border:     `1px solid ${active === f.id ? 'transparent' : 'oklch(0 0 0 / 0.10)'}`,
               transform: active === f.id ? 'scale(1.02)' : 'scale(1)',
             }}
           >

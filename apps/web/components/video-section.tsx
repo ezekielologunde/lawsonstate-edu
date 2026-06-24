@@ -19,7 +19,7 @@ const PREVIEW_PHOTOS = [
 
 export default function VideoSection() {
   return (
-    <section className="relative overflow-hidden" style={{ background: 'oklch(0.20 0.10 265)' }}>
+    <section className="relative overflow-hidden" style={{ background: 'oklch(0.97 0.01 263)' }}>
       {/* Background: campus photo with strong overlay */}
       <div className="absolute inset-0" aria-hidden>
         <img
@@ -30,7 +30,7 @@ export default function VideoSection() {
         />
         <div
           className="absolute inset-0"
-          style={{ background: 'oklch(0.20 0.10 265 / 0.80)' }}
+          style={{ background: 'oklch(0.97 0.01 263 / 0.92)' }}
         />
       </div>
 
@@ -40,19 +40,19 @@ export default function VideoSection() {
           <div>
             <p
               className="text-xs font-semibold mb-4 tracking-widest uppercase"
-              style={{ color: 'oklch(0.83 0.16 82)' }}
+              style={{ color: 'oklch(0.55 0.15 68)' }}
             >
               Lawson State on YouTube
             </p>
             <h2
-              className="font-display font-black leading-none mb-6 text-white"
-              style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', letterSpacing: '-0.02em' }}
+              className="font-display font-black leading-none mb-6"
+              style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', letterSpacing: '-0.02em', color: 'oklch(0.16 0.04 261)' }}
             >
               WATCH OUR<br />STORY
             </h2>
             <p
               className="mb-6 leading-relaxed"
-              style={{ color: 'oklch(1 0 0 / 0.65)', maxWidth: '42ch' }}
+              style={{ color: 'oklch(0.40 0.04 261)', maxWidth: '42ch' }}
             >
               Real students, real results. See graduation ceremonies, program highlights, athletics, and campus life — all on our YouTube channel.
             </p>
@@ -80,7 +80,7 @@ export default function VideoSection() {
               Watch on YouTube
             </Link>
 
-            <p className="mt-4 text-xs" style={{ color: 'oklch(1 0 0 / 0.40)' }}>
+            <p className="mt-4 text-xs" style={{ color: 'oklch(0.50 0.03 261)' }}>
               @lawsonstatecommunitycolleg273
             </p>
           </div>

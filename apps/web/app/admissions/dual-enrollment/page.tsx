@@ -36,9 +36,9 @@ export default function DualEnrollmentPage() {
 
       {/* Hero */}
       <section className="relative py-14 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '24vh', display: 'flex', alignItems: 'flex-end' }}>
+        style={{ background: 'oklch(0.42 0.17 261)', minHeight: '24vh', display: 'flex', alignItems: 'flex-end' }}>
         <div className="absolute inset-0" aria-hidden
-          style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.16 0.13 263 / 0.75) 100%)' }} />
+          style={{ background: 'linear-gradient(to right, oklch(0.42 0.17 261 / 0.97) 0%, oklch(0.38 0.15 263 / 0.75) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -130,18 +130,18 @@ export default function DualEnrollmentPage() {
       </section>
 
       {/* S.O.A.R. Program */}
-      <section className="py-16 px-6" style={{ background: 'oklch(0.22 0.17 261)' }}>
+      <section className="py-16 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4 uppercase tracking-widest"
-            style={{ background: 'oklch(0.79 0.19 78 / 0.15)', color: 'oklch(0.79 0.19 78)', border: '1px solid oklch(0.79 0.19 78 / 0.3)' }}>
+            style={{ background: 'oklch(0.79 0.19 78 / 0.15)', color: 'oklch(0.55 0.15 68)', border: '1px solid oklch(0.79 0.19 78 / 0.3)' }}>
             In Partnership with TMCF
           </div>
-          <h2 className="font-display font-black text-white mb-3"
-            style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.02em' }}>
+          <h2 className="font-display font-black mb-3"
+            style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '-0.02em', color: 'oklch(0.16 0.04 261)' }}>
             LAWSON STATE S.O.A.R.
           </h2>
-          <p className="mb-10" style={{ color: 'oklch(1 0 0 / 0.6)', fontSize: '1rem', maxWidth: '58ch', lineHeight: 1.75 }}>
-            Seeking, Observing and Achieving Results. Lawson State is looking for <strong className="text-white">100 dynamic rising seniors (Class of 2027)</strong> to participate in a week-long, on-campus boot camp with the Thurgood Marshall College Fund. <strong className="text-white">This program is FREE</strong> to all participants.
+          <p className="mb-10" style={{ color: 'oklch(0.40 0.04 261)', fontSize: '1rem', maxWidth: '58ch', lineHeight: 1.75 }}>
+            Seeking, Observing and Achieving Results. Lawson State is looking for <strong style={{ color: 'oklch(0.16 0.04 261)' }}>100 dynamic rising seniors (Class of 2027)</strong> to participate in a week-long, on-campus boot camp with the Thurgood Marshall College Fund. <strong style={{ color: 'oklch(0.16 0.04 261)' }}>This program is FREE</strong> to all participants.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
@@ -163,10 +163,10 @@ export default function DualEnrollmentPage() {
               },
             ].map(c => (
               <div key={c.title} className="rounded-2xl p-6"
-                style={{ background: 'oklch(0.28 0.12 261)', border: '1.5px solid oklch(0.35 0.15 261)' }}>
+                style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
                 <div className="text-2xl mb-3" aria-hidden>{c.icon}</div>
-                <div className="font-bold text-white mb-2" style={{ fontSize: '1rem' }}>{c.title}</div>
-                <p className="whitespace-pre-line" style={{ fontSize: '0.9rem', lineHeight: 1.65, color: 'oklch(1 0 0 / 0.55)' }}>{c.body}</p>
+                <div className="font-bold mb-2" style={{ fontSize: '1rem', color: 'oklch(0.16 0.04 261)' }}>{c.title}</div>
+                <p className="whitespace-pre-line" style={{ fontSize: '0.9rem', lineHeight: 1.65, color: 'oklch(0.40 0.04 261)' }}>{c.body}</p>
               </div>
             ))}
           </div>
@@ -174,11 +174,11 @@ export default function DualEnrollmentPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8 items-start">
             {/* Program overview */}
             <div>
-              <h3 className="font-bold text-white mb-3" style={{ fontSize: '1.05rem' }}>Program Overview</h3>
-              <p className="mb-4" style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'oklch(1 0 0 / 0.6)' }}>
+              <h3 className="font-bold mb-3" style={{ fontSize: '1.05rem', color: 'oklch(0.16 0.04 261)' }}>Program Overview</h3>
+              <p className="mb-4" style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'oklch(0.40 0.04 261)' }}>
                 SOAR provides a multi-year approach to preparing students for life beyond K-12. During Year 1, high school juniors are exposed to the vast array of opportunities following secondary education through an HBCU on-campus residential experience. Students engage with their host school throughout senior year.
               </p>
-              <p style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'oklch(1 0 0 / 0.6)' }}>
+              <p style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'oklch(0.40 0.04 261)' }}>
                 In Year 2, following high school graduation, students engage in enrichment and preparatory training for a successful transition to college or the workforce.
               </p>
               <div className="mt-5 flex gap-4 flex-wrap">
@@ -188,8 +188,8 @@ export default function DualEnrollmentPage() {
                   Apply to S.O.A.R. →
                 </a>
                 <a href="https://www.tmcf.org/students-alumni/tmcf-soar/" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center font-semibold px-7 py-3 rounded-xl transition-colors"
-                  style={{ border: '1.5px solid oklch(1 0 0 / 0.2)', color: 'oklch(1 0 0 / 0.7)', fontSize: '0.95rem' }}>
+                  className="inline-flex items-center font-semibold px-7 py-3 rounded-xl transition-colors hover:bg-black/5"
+                  style={{ border: '1px solid oklch(0.16 0.04 261 / 0.25)', color: 'oklch(0.16 0.04 261)', fontSize: '0.95rem' }}>
                   Learn More (TMCF) →
                 </a>
               </div>
@@ -197,22 +197,22 @@ export default function DualEnrollmentPage() {
 
             {/* Interest meetings */}
             <div className="rounded-2xl p-6"
-              style={{ background: 'oklch(0.28 0.12 261)', border: '1.5px solid oklch(0.35 0.15 261)' }}>
-              <div className="font-bold text-white mb-4">Interest Meetings</div>
+              style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
+              <div className="font-bold mb-4" style={{ color: 'oklch(0.16 0.04 261)' }}>Interest Meetings</div>
               <div className="space-y-3">
                 {MEETINGS.map(m => (
                   <div key={m.date} className="rounded-lg px-4 py-3"
-                    style={{ background: 'oklch(0.22 0.17 261 / 0.6)', border: '1px solid oklch(1 0 0 / 0.08)' }}>
-                    <div className="font-semibold text-white text-sm">{m.date}</div>
-                    <div className="text-sm" style={{ color: 'oklch(0.79 0.19 78)' }}>{m.time}</div>
+                    style={{ background: 'oklch(0.97 0.01 263)', border: '1px solid oklch(0 0 0 / 0.10)' }}>
+                    <div className="font-semibold text-sm" style={{ color: 'oklch(0.16 0.04 261)' }}>{m.date}</div>
+                    <div className="text-sm" style={{ color: 'oklch(0.55 0.15 68)' }}>{m.time}</div>
                   </div>
                 ))}
               </div>
-              <div className="mt-5 pt-5 border-t" style={{ borderColor: 'oklch(1 0 0 / 0.1)' }}>
-                <div className="text-xs font-semibold mb-1" style={{ color: 'oklch(1 0 0 / 0.4)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Questions?</div>
-                <div className="text-sm text-white">Mr. Dorian Waluyn</div>
-                <div className="text-xs mt-0.5 mb-1" style={{ color: 'oklch(1 0 0 / 0.5)' }}>Executive Director of Strategic Initiatives</div>
-                <a href="mailto:dwaluyn@lawsonstate.edu" className="text-sm hover:underline" style={{ color: 'oklch(0.79 0.19 78)' }}>
+              <div className="mt-5 pt-5 border-t" style={{ borderColor: 'oklch(0 0 0 / 0.10)' }}>
+                <div className="text-xs font-semibold mb-1" style={{ color: 'oklch(0.50 0.03 261)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Questions?</div>
+                <div className="text-sm" style={{ color: 'oklch(0.16 0.04 261)' }}>Mr. Dorian Waluyn</div>
+                <div className="text-xs mt-0.5 mb-1" style={{ color: 'oklch(0.50 0.03 261)' }}>Executive Director of Strategic Initiatives</div>
+                <a href="mailto:dwaluyn@lawsonstate.edu" className="text-sm hover:underline" style={{ color: 'oklch(0.55 0.15 68)' }}>
                   dwaluyn@lawsonstate.edu
                 </a>
               </div>

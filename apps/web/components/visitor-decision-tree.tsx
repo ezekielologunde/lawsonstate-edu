@@ -118,7 +118,7 @@ export default function VisitorDecisionTree() {
   return (
     <section
       ref={sectionRef}
-      style={{ background: 'oklch(0.09 0.04 261)', paddingBlock: '5rem' }}
+      style={{ background: 'oklch(0.97 0.01 263)', paddingBlock: '5rem' }}
       aria-label="Find Your Path"
     >
       <div className="max-w-7xl mx-auto px-6">
@@ -127,14 +127,14 @@ export default function VisitorDecisionTree() {
         <div
           className={`mb-10 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <p style={{ fontSize: '0.78rem', letterSpacing: '0.18em', color: 'oklch(0.79 0.19 78)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+          <p style={{ fontSize: '0.78rem', letterSpacing: '0.18em', color: 'oklch(0.55 0.15 68)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
             Your Starting Point
           </p>
           <h2
-            className="font-display font-black text-white leading-none"
-            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', letterSpacing: '-0.04em' }}
+            className="font-display font-black leading-none"
+            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', letterSpacing: '-0.04em', color: 'oklch(0.16 0.04 261)' }}
           >
-            I AM A<span style={{ color: 'oklch(0.79 0.19 78)' }}>...</span>
+            I AM A<span style={{ color: 'oklch(0.55 0.15 68)' }}>...</span>
           </h2>
         </div>
 
@@ -153,10 +153,10 @@ export default function VisitorDecisionTree() {
                 style={{
                   padding: '1.6rem 1.4rem',
                   transitionDelay: `${i * 80}ms`,
-                  background: isActive ? path.accent : 'oklch(0.15 0.08 261)',
-                  border: `2px solid ${isActive ? path.accent : 'oklch(1 0 0 / 0.08)'}`,
-                  boxShadow: isActive ? `0 0 40px ${path.accent}44` : 'none',
-                  color: isActive ? path.accentText : 'oklch(1 0 0 / 0.75)',
+                  background: isActive ? path.accent : 'white',
+                  border: `2px solid ${isActive ? path.accent : 'oklch(0 0 0 / 0.08)'}`,
+                  boxShadow: isActive ? `0 0 40px ${path.accent}44` : '0 8px 30px oklch(0.16 0.06 261 / 0.08)',
+                  color: isActive ? path.accentText : 'oklch(0.16 0.04 261)',
                 }}
               >
                 <div
@@ -180,8 +180,9 @@ export default function VisitorDecisionTree() {
         <div
           className={`rounded-2xl overflow-hidden transition-all duration-500 ${visible ? 'opacity-100' : 'opacity-0'}`}
           style={{
-            background: 'oklch(0.15 0.08 261)',
+            background: 'white',
             border: `2px solid ${active.accent}33`,
+            boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)',
           }}
         >
           <div
@@ -196,7 +197,7 @@ export default function VisitorDecisionTree() {
               >
                 {active.headline}
               </h3>
-              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'oklch(1 0 0 / 0.65)', maxWidth: '48ch', marginBottom: '1.5rem' }}>
+              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'oklch(0.40 0.04 261)', maxWidth: '48ch', marginBottom: '1.5rem' }}>
                 {active.summary}
               </p>
               <Link
@@ -212,11 +213,11 @@ export default function VisitorDecisionTree() {
             </div>
 
             {/* Divider */}
-            <div className="hidden lg:block" style={{ background: 'oklch(1 0 0 / 0.08)' }} />
+            <div className="hidden lg:block" style={{ background: 'oklch(0 0 0 / 0.10)' }} />
 
             {/* Steps */}
             <div className="lg:pl-8 mt-8 lg:mt-0">
-              <p style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(1 0 0 / 0.45)', marginBottom: '1rem' }}>
+              <p style={{ fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.50 0.03 261)', marginBottom: '1rem' }}>
                 Your next steps
               </p>
               <ul className="flex flex-col gap-1">
@@ -225,7 +226,7 @@ export default function VisitorDecisionTree() {
                     <Link
                       href={href}
                       className="group flex items-center gap-3 py-2 transition-colors"
-                      style={{ color: 'oklch(1 0 0 / 0.70)' }}
+                      style={{ color: 'oklch(0.40 0.04 261)' }}
                     >
                       <span
                         className="shrink-0 flex items-center justify-center font-bold"
@@ -237,7 +238,7 @@ export default function VisitorDecisionTree() {
                       >
                         {i + 1}
                       </span>
-                      <span className="text-sm group-hover:text-white transition-colors">{label}</span>
+                      <span className="text-sm group-hover:opacity-70 transition-opacity">{label}</span>
                     </Link>
                   </li>
                 ))}

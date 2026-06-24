@@ -147,7 +147,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
   }
 
   return (
-    <section className="relative flex flex-col overflow-hidden" style={{ minHeight: '100dvh' }} aria-label="Hero">
+    <section className="relative flex flex-col overflow-hidden" style={{ minHeight: 'clamp(600px, 82vh, 800px)' }} aria-label="Hero">
 
       {/* Background video (with poster fallback) — parallax wrapper */}
       <div ref={videoWrap} aria-hidden className="absolute inset-0" style={{ willChange: 'transform' }}>
@@ -165,14 +165,14 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
         />
       </div>
 
-      {/* Cinematic scrim — deeper on the left for headline legibility, vignette at edges */}
+      {/* Scrim — lighter so more of the (bright) video shows; left stays dark enough for white text */}
       <div aria-hidden className="absolute inset-0" style={{
         background:
-          'linear-gradient(105deg, oklch(0.07 0.05 261 / 0.97) 0%, oklch(0.09 0.05 261 / 0.84) 40%, oklch(0.10 0.05 261 / 0.42) 100%)',
+          'linear-gradient(105deg, oklch(0.13 0.07 261 / 0.78) 0%, oklch(0.16 0.07 261 / 0.48) 46%, oklch(0.24 0.06 261 / 0.10) 100%)',
       }} />
       <div aria-hidden className="absolute inset-0" style={{
         background:
-          'radial-gradient(120% 100% at 50% 0%, transparent 55%, oklch(0.06 0.04 261 / 0.55) 100%)',
+          'radial-gradient(120% 100% at 50% 0%, transparent 62%, oklch(0.10 0.04 261 / 0.28) 100%)',
       }} />
 
       {/* Static gold glow orb */}
@@ -199,7 +199,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
 
       {/* Main content — parallax foreground layer */}
       <div ref={contentWrap} className="relative flex-1 flex flex-col justify-center max-w-7xl mx-auto px-6 w-full"
-        style={{ paddingTop: 'calc(var(--lscc-banner-h, 0px) + 5rem)', paddingBottom: '5rem', willChange: 'transform' }}>
+        style={{ paddingTop: 'calc(var(--lscc-banner-h, 0px) + 3.25rem)', paddingBottom: '3.25rem', willChange: 'transform', textShadow: '0 1px 24px oklch(0.08 0.04 261 / 0.45)' }}>
         <div style={{ maxWidth: '720px' }}>
 
           {/* HBCU eyebrow badge */}

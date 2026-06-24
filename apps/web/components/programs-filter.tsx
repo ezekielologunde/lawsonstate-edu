@@ -88,10 +88,10 @@ export default function ProgramsFilter() {
   ].reduce((a, b) => a + b, 0)
 
   return (
-    <div style={{ background: 'oklch(0.14 0.10 261)' }}>
+    <div style={{ background: 'oklch(0.99 0.005 263)' }}>
       {/* Search bar */}
       <div className="sticky top-0 z-10 px-6 py-4 md:relative md:py-6"
-        style={{ background: 'oklch(0.14 0.10 261)', borderBottom: '1px solid oklch(1 0 0 / 0.08)' }}>
+        style={{ background: 'oklch(0.99 0.005 263)', borderBottom: '1px solid oklch(0 0 0 / 0.10)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="relative">
             <label htmlFor="program-search" className="sr-only">Search programs</label>
@@ -103,9 +103,9 @@ export default function ProgramsFilter() {
               onChange={handleSearch}
               className="w-full px-4 py-3 rounded-lg text-sm transition-all"
               style={{
-                background: 'oklch(0.22 0.16 261)',
-                border: '1.5px solid oklch(1 0 0 / 0.15)',
-                color: 'white',
+                background: 'white',
+                border: '1.5px solid oklch(0 0 0 / 0.15)',
+                color: 'oklch(0.16 0.04 261)',
               }}
               aria-label="Search programs"
             />
@@ -113,7 +113,7 @@ export default function ProgramsFilter() {
               <button
                 onClick={() => clearFilter('search')}
                 className="absolute right-3 top-1/2 -translate-y-1/2 transition-colors"
-                style={{ color: 'oklch(1 0 0 / 0.45)' }}
+                style={{ color: 'oklch(0.50 0.03 261)' }}
                 aria-label="Clear search"
               >
                 <span aria-hidden="true">✕</span>
@@ -128,7 +128,7 @@ export default function ProgramsFilter() {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden w-full flex items-center justify-between p-3 rounded-lg mb-4 font-medium"
-          style={{ border: '1px solid oklch(1 0 0 / 0.12)', color: 'oklch(1 0 0 / 0.75)' }}
+          style={{ border: '1px solid oklch(0 0 0 / 0.10)', color: 'oklch(0.40 0.04 261)' }}
           aria-expanded={mobileOpen}
           aria-controls="filter-panel"
           aria-label={`Filters${activeFilterCount > 0 ? `, ${activeFilterCount} active` : ''}`}
@@ -157,13 +157,13 @@ export default function ProgramsFilter() {
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-semibold uppercase tracking-wide"
-                    style={{ color: 'oklch(1 0 0 / 0.45)' }}>
+                    style={{ color: 'oklch(0.50 0.03 261)' }}>
                     Active filters
                   </span>
                   <button
                     onClick={clearAllFilters}
                     className="text-xs font-semibold transition-colors"
-                    style={{ color: 'oklch(0.79 0.19 78)' }}
+                    style={{ color: 'oklch(0.55 0.15 68)' }}
                     aria-label="Clear all filters"
                   >
                     Clear all
@@ -172,10 +172,10 @@ export default function ProgramsFilter() {
                 <div className="flex flex-wrap gap-2">
                   {filters.search && (
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm"
-                      style={{ background: 'oklch(0.22 0.16 261)', border: '1px solid oklch(1 0 0 / 0.12)', color: 'oklch(1 0 0 / 0.75)' }}>
+                      style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.10)', color: 'oklch(0.40 0.04 261)' }}>
                       "{filters.search}"
                       <button onClick={() => clearFilter('search')}
-                        style={{ color: 'oklch(1 0 0 / 0.45)' }}
+                        style={{ color: 'oklch(0.50 0.03 261)' }}
                         aria-label="Remove search filter">
                         <span aria-hidden="true">✕</span>
                       </button>
@@ -183,10 +183,10 @@ export default function ProgramsFilter() {
                   )}
                   {filters.degreeTypes.map(type => (
                     <div key={type} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm"
-                      style={{ background: 'oklch(0.22 0.16 261)', border: '1px solid oklch(1 0 0 / 0.12)', color: 'oklch(1 0 0 / 0.75)' }}>
+                      style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.10)', color: 'oklch(0.40 0.04 261)' }}>
                       {type}
                       <button onClick={() => toggleDegreeType(type)}
-                        style={{ color: 'oklch(1 0 0 / 0.45)' }}
+                        style={{ color: 'oklch(0.50 0.03 261)' }}
                         aria-label={`Remove ${type} filter`}>
                         <span aria-hidden="true">✕</span>
                       </button>
@@ -194,10 +194,10 @@ export default function ProgramsFilter() {
                   ))}
                   {filters.deliveryModes.map(mode => (
                     <div key={mode} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm"
-                      style={{ background: 'oklch(0.22 0.16 261)', border: '1px solid oklch(1 0 0 / 0.12)', color: 'oklch(1 0 0 / 0.75)' }}>
+                      style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.10)', color: 'oklch(0.40 0.04 261)' }}>
                       {DELIVERY_MODES[mode].label}
                       <button onClick={() => toggleDeliveryMode(mode)}
-                        style={{ color: 'oklch(1 0 0 / 0.45)' }}
+                        style={{ color: 'oklch(0.50 0.03 261)' }}
                         aria-label={`Remove ${DELIVERY_MODES[mode].label} filter`}>
                         <span aria-hidden="true">✕</span>
                       </button>
@@ -205,10 +205,10 @@ export default function ProgramsFilter() {
                   ))}
                   {filters.categories.map(cat => (
                     <div key={cat} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm"
-                      style={{ background: 'oklch(0.22 0.16 261)', border: '1px solid oklch(1 0 0 / 0.12)', color: 'oklch(1 0 0 / 0.75)' }}>
+                      style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.10)', color: 'oklch(0.40 0.04 261)' }}>
                       {CATEGORIES[cat].label}
                       <button onClick={() => toggleCategory(cat)}
-                        style={{ color: 'oklch(1 0 0 / 0.45)' }}
+                        style={{ color: 'oklch(0.50 0.03 261)' }}
                         aria-label={`Remove ${CATEGORIES[cat].label} filter`}>
                         <span aria-hidden="true">✕</span>
                       </button>
@@ -220,7 +220,7 @@ export default function ProgramsFilter() {
 
             {/* Degree Type filter */}
             <fieldset>
-              <legend className="text-sm font-bold mb-3 block text-white">Degree Type</legend>
+              <legend className="text-sm font-bold mb-3 block" style={{ color: 'oklch(0.16 0.04 261)' }}>Degree Type</legend>
               <div className="space-y-2">
                 {(Object.entries(DEGREE_TYPES) as Array<[DegreeType, any]>).map(([type, info]) => (
                   <label key={type} className="flex items-start gap-3 cursor-pointer group">
@@ -236,8 +236,8 @@ export default function ProgramsFilter() {
                       aria-label={`${type} - ${info.label}`}
                     />
                     <div className="flex-1 min-w-0">
-                      <div className="font-medium text-sm text-white">{type}</div>
-                      <div className="text-xs" style={{ color: 'oklch(1 0 0 / 0.50)' }}>{info.description}</div>
+                      <div className="font-medium text-sm" style={{ color: 'oklch(0.16 0.04 261)' }}>{type}</div>
+                      <div className="text-xs" style={{ color: 'oklch(0.50 0.03 261)' }}>{info.description}</div>
                     </div>
                   </label>
                 ))}
@@ -246,7 +246,7 @@ export default function ProgramsFilter() {
 
             {/* Delivery Mode filter */}
             <fieldset>
-              <legend className="text-sm font-bold mb-3 block text-white">How You'll Learn</legend>
+              <legend className="text-sm font-bold mb-3 block" style={{ color: 'oklch(0.16 0.04 261)' }}>How You'll Learn</legend>
               <div className="space-y-2">
                 {(Object.entries(DELIVERY_MODES) as Array<[DeliveryMode, any]>).map(([mode, info]) => (
                   <label key={mode} className="flex items-center gap-3 cursor-pointer group">
@@ -261,7 +261,7 @@ export default function ProgramsFilter() {
                       }}
                       aria-label={`${info.label}`}
                     />
-                    <span className="font-medium text-sm text-white">
+                    <span className="font-medium text-sm" style={{ color: 'oklch(0.16 0.04 261)' }}>
                       {info.label}
                     </span>
                   </label>
@@ -271,7 +271,7 @@ export default function ProgramsFilter() {
 
             {/* Category filter */}
             <fieldset>
-              <legend className="text-sm font-bold mb-3 block text-white">Program Area</legend>
+              <legend className="text-sm font-bold mb-3 block" style={{ color: 'oklch(0.16 0.04 261)' }}>Program Area</legend>
               <div className="space-y-2">
                 {(Object.entries(CATEGORIES) as Array<[ProgramCategory, any]>).map(([cat, info]) => (
                   <label key={cat} className="flex items-center gap-3 cursor-pointer group">
@@ -286,7 +286,7 @@ export default function ProgramsFilter() {
                       }}
                       aria-label={`${info.label}`}
                     />
-                    <span className="font-medium text-sm text-white">{info.label}</span>
+                    <span className="font-medium text-sm" style={{ color: 'oklch(0.16 0.04 261)' }}>{info.label}</span>
                   </label>
                 ))}
               </div>
@@ -296,22 +296,22 @@ export default function ProgramsFilter() {
           {/* Results */}
           <section aria-label="Program search results">
             <div className="mb-4" role="status" aria-live="polite" aria-atomic="true">
-              <p className="text-sm" style={{ color: 'oklch(1 0 0 / 0.55)' }}>
-                Found <span className="font-bold text-white">{filteredPrograms.length}</span> program{filteredPrograms.length !== 1 ? 's' : ''}
+              <p className="text-sm" style={{ color: 'oklch(0.50 0.03 261)' }}>
+                Found <span className="font-bold" style={{ color: 'oklch(0.16 0.04 261)' }}>{filteredPrograms.length}</span> program{filteredPrograms.length !== 1 ? 's' : ''}
                 {activeFilterCount > 0 && ` matching your criteria`}
               </p>
             </div>
 
             {filteredPrograms.length === 0 ? (
               <div className="py-12 text-center">
-                <h3 className="text-lg font-bold text-white mb-2">No programs found</h3>
-                <p className="text-sm mb-6 max-w-md mx-auto" style={{ color: 'oklch(1 0 0 / 0.55)' }}>
+                <h3 className="text-lg font-bold mb-2" style={{ color: 'oklch(0.16 0.04 261)' }}>No programs found</h3>
+                <p className="text-sm mb-6 max-w-md mx-auto" style={{ color: 'oklch(0.50 0.03 261)' }}>
                   Try adjusting your filters or search terms to find what you&apos;re looking for.
                 </p>
                 <button
                   onClick={clearAllFilters}
                   className="text-sm font-semibold transition-colors"
-                  style={{ color: 'oklch(0.79 0.19 78)' }}
+                  style={{ color: 'oklch(0.55 0.15 68)' }}
                   aria-label="Clear all filters and show all programs"
                 >
                   Clear all filters
@@ -323,7 +323,7 @@ export default function ProgramsFilter() {
                   <Link key={program.id} href={program.href}>
                     <article
                       className="card-appear group p-5 rounded-xl transition-colors"
-                      style={{ border: '1px solid oklch(1 0 0 / 0.10)', background: 'oklch(0.20 0.15 261)', animationDelay: `${i * 0.04}s` }}
+                      style={{ border: '1px solid oklch(0 0 0 / 0.08)', background: 'white', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)', animationDelay: `${i * 0.04}s` }}
                     >
                       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                         <div className="flex-1 min-w-0">
@@ -333,29 +333,29 @@ export default function ProgramsFilter() {
                               {program.degreeType}
                             </span>
                             {program.jobPlacementRate && (
-                              <span className="text-xs font-semibold" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
+                              <span className="text-xs font-semibold" style={{ color: 'oklch(0.50 0.03 261)' }}>
                                 {program.jobPlacementRate}% placement
                               </span>
                             )}
                           </div>
-                          <h3 className="text-lg font-bold text-white mb-2 transition-colors"
-                            style={{ '--hover-color': 'oklch(0.79 0.19 78)' } as React.CSSProperties}>
+                          <h3 className="text-lg font-bold mb-2 transition-colors"
+                            style={{ color: 'oklch(0.16 0.04 261)', '--hover-color': 'oklch(0.55 0.15 68)' } as React.CSSProperties}>
                             {program.name}
                           </h3>
-                          <p className="text-sm mb-3" style={{ color: 'oklch(1 0 0 / 0.65)' }}>{program.description}</p>
+                          <p className="text-sm mb-3" style={{ color: 'oklch(0.40 0.04 261)' }}>{program.description}</p>
                           <div className="flex flex-wrap gap-2">
                             {program.deliveryModes.map(mode => (
                               <span key={mode} className="text-xs px-2.5 py-1 rounded-full"
-                                style={{ background: 'oklch(1 0 0 / 0.08)', color: 'oklch(1 0 0 / 0.55)' }}>
+                                style={{ background: 'oklch(0 0 0 / 0.06)', color: 'oklch(0.40 0.04 261)' }}>
                                 {DELIVERY_MODES[mode].label}
                               </span>
                             ))}
                           </div>
                         </div>
                         <div className="text-right shrink-0">
-                          <div className="text-sm font-semibold text-white mb-1">{program.duration}</div>
-                          <div className="text-xs mb-3" style={{ color: 'oklch(1 0 0 / 0.45)' }}>{program.durationMonths} months</div>
-                          <span style={{ color: 'oklch(0.79 0.19 78)' }} className="group-hover:translate-x-1 transition-transform inline-block">→</span>
+                          <div className="text-sm font-semibold mb-1" style={{ color: 'oklch(0.16 0.04 261)' }}>{program.duration}</div>
+                          <div className="text-xs mb-3" style={{ color: 'oklch(0.50 0.03 261)' }}>{program.durationMonths} months</div>
+                          <span style={{ color: 'oklch(0.55 0.15 68)' }} className="group-hover:translate-x-1 transition-transform inline-block">→</span>
                         </div>
                       </div>
                     </article>

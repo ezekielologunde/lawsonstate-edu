@@ -100,9 +100,9 @@ export default function AdmissionsPage() {
       {/* Hero */}
       <section
         className="relative py-20 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
+        style={{ background: 'oklch(0.42 0.17 261)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
       >
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(135deg, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.16 0.13 263 / 0.82) 100%)' }} />
+        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(135deg, oklch(0.42 0.17 261 / 0.97) 0%, oklch(0.38 0.15 263 / 0.82) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>Rolling Admissions · No GPA Minimum</p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em' }}>APPLY TO LAWSON STATE</h1>
@@ -121,25 +121,25 @@ export default function AdmissionsPage() {
       </section>
 
       {/* 4-Step Process */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.10 261)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>How to Apply</p>
-            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>4 STEPS TO ENROLLMENT</h2>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>How to Apply</p>
+            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>4 STEPS TO ENROLLMENT</h2>
           </div>
           <div className="relative">
             {/* connector line — desktop only */}
-            <div className="hidden lg:block absolute top-10 left-[calc(12.5%)] right-[calc(12.5%)] h-px" style={{ background: 'oklch(0.79 0.19 78 / 0.25)' }} />
+            <div className="hidden lg:block absolute top-10 left-[calc(12.5%)] right-[calc(12.5%)] h-px" style={{ background: 'oklch(0.55 0.15 68 / 0.25)' }} />
             <div className="stagger-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {STEPS.map((s) => (
-                <div key={s.step} className="card-lift rounded-2xl p-6 shadow-card" style={{ background: 'oklch(0.22 0.16 261)', border: '1px solid oklch(1 0 0 / 0.10)' }}>
+                <div key={s.step} className="card-lift rounded-2xl p-6 shadow-card" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
                   <div className="w-10 h-10 rounded-full flex items-center justify-center mb-4 font-display font-black" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1.08rem' }}>
                     {s.step}
                   </div>
-                  <h3 className="font-display font-bold mb-2 text-white leading-snug" style={{ fontSize: '1.08rem' }}>{s.title}</h3>
-                  <p className="leading-relaxed mb-4" style={{ fontSize: '0.96rem', color: 'oklch(1 0 0 / 0.70)' }}>{s.desc}</p>
+                  <h3 className="font-display font-bold mb-2 leading-snug" style={{ fontSize: '1.08rem', color: 'oklch(0.16 0.04 261)' }}>{s.title}</h3>
+                  <p className="leading-relaxed mb-4" style={{ fontSize: '0.96rem', color: 'oklch(0.40 0.04 261)' }}>{s.desc}</p>
                   {s.link && (
-                    <Link href={s.link.href} className="link-reveal font-semibold" style={{ fontSize: '1.08rem', color: 'oklch(0.79 0.19 78)' }}>
+                    <Link href={s.link.href} className="link-reveal font-semibold" style={{ fontSize: '1.08rem', color: 'oklch(0.55 0.15 68)' }}>
                       {s.link.label}
                     </Link>
                   )}
@@ -151,19 +151,19 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Student Type Details */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.06 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.97 0.01 263)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Admissions Requirements</p>
-            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>FIND YOUR PATH</h2>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Admissions Requirements</p>
+            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>FIND YOUR PATH</h2>
           </div>
           <div className="stagger-grid grid grid-cols-1 lg:grid-cols-3 gap-6">
             {TYPES.map(t => (
-              <div key={t.id} className="rounded-2xl p-7" style={{ background: 'oklch(0.19 0.08 263)', border: '1px solid oklch(1 0 0 / 0.07)' }}>
-                <h3 className="font-display font-black text-white mb-5" style={{ fontSize: '1.1rem', letterSpacing: '-0.01em' }}>{t.label}</h3>
+              <div key={t.id} className="rounded-2xl p-7" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
+                <h3 className="font-display font-black mb-5" style={{ fontSize: '1.1rem', letterSpacing: '-0.01em', color: 'oklch(0.16 0.04 261)' }}>{t.label}</h3>
                 <ul className="space-y-3 mb-6">
                   {t.items.map(item => (
-                    <li key={item} className="flex items-start gap-2.5" style={{ fontSize: '0.85rem', color: 'oklch(1 0 0 / 0.55)' }}>
+                    <li key={item} className="flex items-start gap-2.5" style={{ fontSize: '0.85rem', color: 'oklch(0.50 0.03 261)' }}>
                       <span style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', marginTop: '0.2rem', flexShrink: 0 }}>✓</span>
                       {item}
                     </li>
@@ -183,40 +183,40 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Contact & Hours */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.10 261)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Need Help?</p>
-              <h2 className="font-display font-black leading-none mb-6 text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em' }}>CONTACT ADMISSIONS</h2>
+              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Need Help?</p>
+              <h2 className="font-display font-black leading-none mb-6" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>CONTACT ADMISSIONS</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {CONTACT.map(c => (
-                  <div key={c.label} className="rounded-xl p-4" style={{ background: 'oklch(0.22 0.16 261)', border: '1px solid oklch(1 0 0 / 0.10)' }}>
-                    <div className="font-semibold uppercase mb-0.5" style={{ fontSize: '0.74rem', letterSpacing: '0.14em', color: 'oklch(0.79 0.19 78)' }}>{c.label}</div>
-                    <div className="font-medium text-white" style={{ fontSize: '1.05rem' }}>{c.value}</div>
+                  <div key={c.label} className="rounded-xl p-4" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
+                    <div className="font-semibold uppercase mb-0.5" style={{ fontSize: '0.74rem', letterSpacing: '0.14em', color: 'oklch(0.55 0.15 68)' }}>{c.label}</div>
+                    <div className="font-medium" style={{ fontSize: '1.05rem', color: 'oklch(0.16 0.04 261)' }}>{c.value}</div>
                   </div>
                 ))}
               </div>
             </div>
             <div>
-              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Office Hours</p>
-              <h2 className="font-display font-black leading-none mb-6 text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em' }}>WHEN WE'RE OPEN</h2>
+              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Office Hours</p>
+              <h2 className="font-display font-black leading-none mb-6" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>WHEN WE'RE OPEN</h2>
               <div className="space-y-3">
                 {[
                   ['General Office Hours', 'Monday–Friday: 8:00 AM – 5:00 PM'],
                   ['Admissions (Extended)', 'Monday–Thursday: 8:00 AM – 6:30 PM\nFriday: 8:00 AM – 5:00 PM'],
                 ].map(([label, hours]) => (
-                  <div key={label} className="rounded-xl p-5" style={{ background: 'oklch(0.22 0.16 261)', border: '1px solid oklch(1 0 0 / 0.10)' }}>
-                    <div className="font-semibold mb-1 text-white" style={{ fontSize: '1rem' }}>{label}</div>
-                    <div className="whitespace-pre-line" style={{ fontSize: '0.96rem', color: 'oklch(1 0 0 / 0.70)' }}>{hours}</div>
+                  <div key={label} className="rounded-xl p-5" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
+                    <div className="font-semibold mb-1" style={{ fontSize: '1rem', color: 'oklch(0.16 0.04 261)' }}>{label}</div>
+                    <div className="whitespace-pre-line" style={{ fontSize: '0.96rem', color: 'oklch(0.40 0.04 261)' }}>{hours}</div>
                   </div>
                 ))}
               </div>
               <div className="mt-6">
                 <Link
                   href="/visit"
-                  className="press font-semibold px-6 py-3 rounded-lg inline-block"
-                  style={{ background: 'oklch(0.22 0.16 261)', border: '1px solid oklch(1 0 0 / 0.15)', color: 'white', fontSize: '1rem' }}
+                  className="press font-semibold px-6 py-3 rounded-lg inline-block hover:bg-black/5"
+                  style={{ background: 'white', border: '1px solid oklch(0.16 0.04 261 / 0.25)', color: 'oklch(0.16 0.04 261)', fontSize: '1rem' }}
                 >
                   Schedule a Campus Visit →
                 </Link>

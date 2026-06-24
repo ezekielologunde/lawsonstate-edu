@@ -86,20 +86,19 @@ export default function FinancialAidPage() {
       {/* Hero */}
       <section
         className="relative py-20 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
+        style={{ background: 'oklch(0.97 0.01 263)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
       >
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(135deg, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.16 0.13 263 / 0.82) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>2025–2026 · Grants, Scholarships & More</p>
-          <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em' }}>FINANCIAL AID</h1>
-          <p className="text-white/75 max-w-xl" style={{ fontSize: 'clamp(1.05rem, 1.6vw, 1.2rem)', lineHeight: 1.7 }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>2025–2026 · Grants, Scholarships & More</p>
+          <h1 className="font-display font-black leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>FINANCIAL AID</h1>
+          <p className="max-w-xl" style={{ fontSize: 'clamp(1.05rem, 1.6vw, 1.2rem)', lineHeight: 1.7, color: 'oklch(0.40 0.04 261)' }}>
             Lawson State is one of the most affordable paths to a college education. At $131/credit hour in-state, your investment goes further here.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
             <Link href="https://studentaid.gov/h/apply-for-aid/fafsa" className="press btn-shimmer hero-cta-gold font-bold px-6 py-3 rounded-lg inline-block" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}>
               Complete the FAFSA
             </Link>
-            <Link href="/admissions/apply" className="press hero-cta-ghost font-semibold px-6 py-3 rounded-lg text-white inline-block" style={{ border: '1.5px solid oklch(1 0 0 / 0.25)', fontSize: '1rem' }}>
+            <Link href="/admissions/apply" className="press hero-cta-ghost font-semibold px-6 py-3 rounded-lg inline-block" style={{ border: '1.5px solid oklch(0.16 0.04 261 / 0.25)', fontSize: '1rem', color: 'oklch(0.16 0.04 261)' }}>
               Apply Now
             </Link>
           </div>
@@ -188,11 +187,11 @@ export default function FinancialAidPage() {
               </div>
             ))}
           </div>
-          <div className="mt-8 scroll-reveal rounded-2xl p-8" style={{ background: 'oklch(0.22 0.17 261)' }}>
+          <div className="mt-8 scroll-reveal rounded-2xl p-8" style={{ background: 'oklch(0.42 0.17 261)' }}>
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 items-center">
               <div>
                 <h3 className="font-display font-black text-white mb-2" style={{ fontSize: '1.3rem', letterSpacing: '-0.015em' }}>Start with the FAFSA</h3>
-                <p className="text-white/75" style={{ fontSize: '0.92rem', maxWidth: '52ch' }}>
+                <p className="text-white/80" style={{ fontSize: '0.92rem', maxWidth: '52ch' }}>
                   The Free Application for Federal Student Aid (FAFSA) determines your eligibility for all federal and state grants. It's free and takes about 30 minutes. Submit it as early as possible — awards are limited.
                 </p>
               </div>
@@ -243,23 +242,23 @@ export default function FinancialAidPage() {
       </section>
 
       {/* Transfer Scholarships */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.06 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>After Lawson State</p>
-            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>TRANSFER SCHOLARSHIPS</h2>
-            <p className="text-white/65 mt-2" style={{ fontSize: '1.08rem' }}>Completing your degree at Lawson State unlocks exclusive scholarship opportunities at Alabama's top universities.</p>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>After Lawson State</p>
+            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>TRANSFER SCHOLARSHIPS</h2>
+            <p className="mt-2" style={{ fontSize: '1.08rem', color: 'oklch(0.50 0.03 261)' }}>Completing your degree at Lawson State unlocks exclusive scholarship opportunities at Alabama's top universities.</p>
           </div>
           <div className="stagger-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {TRANSFER_SCHOLARSHIPS.map(s => (
-              <div key={s.school} className="rounded-xl p-6" style={{ background: 'oklch(0.19 0.08 263)', border: '1px solid oklch(1 0 0 / 0.07)' }}>
-                <h3 className="font-display font-bold text-white mb-2" style={{ fontSize: '1rem' }}>{s.school}</h3>
-                <div className="font-bold mb-2" style={{ fontSize: '1.1rem', color: 'oklch(0.79 0.19 78)' }}>{s.award}</div>
-                <div className="text-white/65" style={{ fontSize: '0.92rem' }}>{s.req}</div>
+              <div key={s.school} className="rounded-xl p-6" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
+                <h3 className="font-display font-bold mb-2" style={{ fontSize: '1rem', color: 'oklch(0.16 0.04 261)' }}>{s.school}</h3>
+                <div className="font-bold mb-2" style={{ fontSize: '1.1rem', color: 'oklch(0.55 0.15 68)' }}>{s.award}</div>
+                <div style={{ fontSize: '0.92rem', color: 'oklch(0.40 0.04 261)' }}>{s.req}</div>
               </div>
             ))}
           </div>
-          <p className="text-white/40 mt-6" style={{ fontSize: '0.92rem' }}>
+          <p className="mt-6" style={{ fontSize: '0.92rem', color: 'oklch(0.50 0.03 261)' }}>
             Contact the Career &amp; Transfer Office (205-929-3514) for deadlines and application requirements.
           </p>
         </div>

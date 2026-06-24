@@ -27,8 +27,8 @@ const DIVISIONS: Division[] = [
       'Medium/Heavy Truck Technician, Auto Body/Collision Repair',
     ],
     href: '/academics/career-technical',
-    bg: 'oklch(0.22 0.17 261)',
-    dark: true,
+    bg: 'white',
+    dark: false,
   },
   {
     id: 'college-transfer',
@@ -44,8 +44,8 @@ const DIVISIONS: Division[] = [
       'NSF HBCU-UP grants for STEM students',
     ],
     href: '/academics/transfer',
-    bg: 'oklch(0.20 0.15 261)',
-    dark: true,
+    bg: 'white',
+    dark: false,
   },
   {
     id: 'health-professions',
@@ -63,8 +63,8 @@ const DIVISIONS: Division[] = [
       'Nursing Assistant / Nurse Aide',
     ],
     href: '/academics/health-professions',
-    bg: 'oklch(0.20 0.15 261)',
-    dark: true,
+    bg: 'white',
+    dark: false,
   },
   {
     id: 'business-it',
@@ -81,8 +81,8 @@ const DIVISIONS: Division[] = [
       'Two fully online degrees: Business and Business Education',
     ],
     href: '/academics/business-it',
-    bg: 'oklch(0.20 0.15 261)',
-    dark: true,
+    bg: 'white',
+    dark: false,
   },
 ]
 
@@ -175,29 +175,29 @@ export default function AcademicsPage() {
       </div>
 
       {/* Division cards */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.10 261)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Program Divisions</p>
-            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>FIND YOUR DIVISION</h2>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Program Divisions</p>
+            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>FIND YOUR DIVISION</h2>
           </div>
           <DivisionsFilter divisions={DIVISIONS} />
         </div>
       </section>
 
       {/* Live Program Catalog */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.10 261)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.97 0.01 263)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3"
-              style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>
+              style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>
               Browse the Full Catalog
             </p>
-            <h2 className="font-display font-black leading-none text-white mb-3"
-              style={{ fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', letterSpacing: '-0.04em' }}>
+            <h2 className="font-display font-black leading-none mb-3"
+              style={{ fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', letterSpacing: '-0.04em', color: 'oklch(0.16 0.04 261)' }}>
               ALL {150}+ PROGRAMS
             </h2>
-            <p style={{ fontSize: '1rem', color: 'oklch(1 0 0 / 0.65)', maxWidth: '55ch', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '1rem', color: 'oklch(0.40 0.04 261)', maxWidth: '55ch', lineHeight: 1.7 }}>
               Filter by subject area, credential type, or search by name. Placement rates shown where available.
             </p>
           </div>
@@ -206,11 +206,11 @@ export default function AcademicsPage() {
       </section>
 
       {/* Specialty programs */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.18 0.14 261)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Beyond the Classroom</p>
-            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>SPECIALTY PROGRAMS</h2>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Beyond the Classroom</p>
+            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>SPECIALTY PROGRAMS</h2>
           </div>
           <div className="stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {SPECIALTY.map(s => (
@@ -218,10 +218,10 @@ export default function AcademicsPage() {
                 key={s.name}
                 href={s.href}
                 className="card-lift press rounded-2xl p-6 block"
-                style={{ background: 'oklch(0.26 0.18 261)', border: '1px solid oklch(1 0 0 / 0.10)' }}
+                style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}
               >
-                <h3 className="font-display font-bold mb-2 text-white" style={{ fontSize: '1.08rem', letterSpacing: '-0.01em' }}>{s.name}</h3>
-                <p className="leading-relaxed" style={{ fontSize: '0.96rem', color: 'oklch(1 0 0 / 0.70)' }}>{s.desc}</p>
+                <h3 className="font-display font-bold mb-2" style={{ fontSize: '1.08rem', letterSpacing: '-0.01em', color: 'oklch(0.16 0.04 261)' }}>{s.name}</h3>
+                <p className="leading-relaxed" style={{ fontSize: '0.96rem', color: 'oklch(0.40 0.04 261)' }}>{s.desc}</p>
               </Link>
             ))}
           </div>
@@ -229,12 +229,12 @@ export default function AcademicsPage() {
       </section>
 
       {/* Workforce Development */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.06 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.97 0.01 263)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Fast-Track Training</p>
-            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>WORKFORCE DEVELOPMENT</h2>
-            <p className="text-white/65 mt-2" style={{ fontSize: '1.08rem' }}>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Fast-Track Training</p>
+            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>WORKFORCE DEVELOPMENT</h2>
+            <p className="mt-2" style={{ fontSize: '1.08rem', color: 'oklch(0.50 0.03 261)' }}>
               Short-term, skills-focused programs designed around employer needs. Some are free. All lead to employment.
             </p>
           </div>
@@ -243,16 +243,16 @@ export default function AcademicsPage() {
               <thead>
                 <tr>
                   {['Program', 'Duration', 'Cost'].map(h => (
-                    <th key={h} className="text-left pb-3 font-semibold uppercase" style={{ fontSize: '0.74rem', letterSpacing: '0.16em', color: 'oklch(0.79 0.19 78)' }}>{h}</th>
+                    <th key={h} className="text-left pb-3 font-semibold uppercase" style={{ fontSize: '0.74rem', letterSpacing: '0.16em', color: 'oklch(0.55 0.15 68)' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {WORKFORCE.map(w => (
                   <tr key={w.name}>
-                    <td className="py-3 pr-8 font-medium text-white" style={{ fontSize: '1rem' }}>{w.name}</td>
-                    <td className="py-3 pr-8 text-white/65" style={{ fontSize: '0.96rem', whiteSpace: 'nowrap' }}>{w.duration}</td>
-                    <td className="py-3 font-bold" style={{ fontSize: '0.96rem', color: 'oklch(0.79 0.19 78)', whiteSpace: 'nowrap' }}>{w.cost}</td>
+                    <td className="py-3 pr-8 font-medium" style={{ fontSize: '1rem', color: 'oklch(0.16 0.04 261)' }}>{w.name}</td>
+                    <td className="py-3 pr-8" style={{ fontSize: '0.96rem', whiteSpace: 'nowrap', color: 'oklch(0.50 0.03 261)' }}>{w.duration}</td>
+                    <td className="py-3 font-bold" style={{ fontSize: '0.96rem', color: 'oklch(0.55 0.15 68)', whiteSpace: 'nowrap' }}>{w.cost}</td>
                   </tr>
                 ))}
               </tbody>
@@ -271,22 +271,22 @@ export default function AcademicsPage() {
       </section>
 
       {/* Dual Enrollment */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.10 261)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>High School Students</p>
-              <h2 className="font-display font-black leading-none mb-4 text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em' }}>DUAL ENROLLMENT</h2>
-              <p className="leading-relaxed mb-6" style={{ fontSize: '1.1rem', color: 'oklch(1 0 0 / 0.72)' }}>
+              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>High School Students</p>
+              <h2 className="font-display font-black leading-none mb-4" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>DUAL ENROLLMENT</h2>
+              <p className="leading-relaxed mb-6" style={{ fontSize: '1.1rem', color: 'oklch(0.40 0.04 261)' }}>
                 Start college while still in high school. Take up to 51 available classes and earn real college credits — tuition waived through ACCS grant funding. Available to 10th–12th graders with a 2.5 GPA.
               </p>
-              <p className="font-display font-bold mb-6" style={{ fontSize: '1rem', color: 'oklch(1 0 0 / 0.85)' }}>
+              <p className="font-display font-bold mb-6" style={{ fontSize: '1rem', color: 'oklch(0.16 0.04 261)' }}>
                 "I have taken 13 dual enrollment courses so far, reducing the time and cost of pursuing my degree."
               </p>
-              <div className="flex flex-col gap-2 text-sm mb-6" style={{ color: 'oklch(1 0 0 / 0.65)' }}>
+              <div className="flex flex-col gap-2 text-sm mb-6" style={{ color: 'oklch(0.40 0.04 261)' }}>
                 {['General Education', 'Health Professions', 'Computer Science', 'Construction', 'Business', 'Automotive & Transportation'].map(p => (
                   <div key={p} className="flex items-center gap-2">
-                    <span style={{ color: 'oklch(0.79 0.19 78)' }}>→</span> {p}
+                    <span style={{ color: 'oklch(0.55 0.15 68)' }}>→</span> {p}
                   </div>
                 ))}
               </div>
@@ -305,9 +305,9 @@ export default function AcademicsPage() {
                 { n: 'FREE', l: 'Tuition (ACCS Grant)' },
                 { n: '10–12', l: 'Grade Eligible' },
               ].map(s => (
-                <div key={s.l} className="rounded-2xl p-6 text-center" style={{ background: 'oklch(0.22 0.16 261)', border: '1px solid oklch(1 0 0 / 0.10)' }}>
-                  <div className="font-display font-black" style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', color: 'oklch(0.79 0.19 78)', letterSpacing: '-0.03em' }}>{s.n}</div>
-                  <div className="font-medium mt-1" style={{ fontSize: '0.78rem', color: 'oklch(1 0 0 / 0.60)' }}>{s.l}</div>
+                <div key={s.l} className="rounded-2xl p-6 text-center" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
+                  <div className="font-display font-black" style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', color: 'oklch(0.55 0.15 68)', letterSpacing: '-0.03em' }}>{s.n}</div>
+                  <div className="font-medium mt-1" style={{ fontSize: '0.78rem', color: 'oklch(0.50 0.03 261)' }}>{s.l}</div>
                 </div>
               ))}
             </div>

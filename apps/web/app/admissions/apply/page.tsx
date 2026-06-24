@@ -76,10 +76,10 @@ export default function ApplyPage() {
       {/* Hero */}
       <section
         className="relative py-14 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '24vh', display: 'flex', alignItems: 'flex-end' }}
+        style={{ background: 'oklch(0.42 0.17 261)', minHeight: '24vh', display: 'flex', alignItems: 'flex-end' }}
       >
         <div className="absolute inset-0" aria-hidden
-          style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.16 0.13 263 / 0.75) 100%)' }} />
+          style={{ background: 'linear-gradient(to right, oklch(0.42 0.17 261 / 0.97) 0%, oklch(0.38 0.15 263 / 0.75) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -143,15 +143,15 @@ export default function ApplyPage() {
           {/* Student quote */}
           <blockquote
             className="rounded-2xl p-8"
-            style={{ background: 'oklch(0.22 0.17 261)', border: '1.5px solid oklch(0.30 0.14 261)' }}
+            style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}
           >
-            <div aria-hidden className="text-3xl mb-4" style={{ color: 'oklch(0.79 0.19 78)' }}>"</div>
-            <p className="text-white mb-5" style={{ fontSize: '1rem', lineHeight: 1.75 }}>
+            <div aria-hidden className="text-3xl mb-4" style={{ color: 'oklch(0.55 0.15 68)' }}>"</div>
+            <p className="mb-5" style={{ fontSize: '1rem', lineHeight: 1.75, color: 'oklch(0.16 0.04 261)' }}>
               Applying to college can be scary. Lawson State made it easy for me.
             </p>
             <footer>
-              <div className="font-bold text-white text-sm">Kenmia Boware</div>
-              <div className="text-sm" style={{ color: 'oklch(0.79 0.19 78)' }}>Criminal Justice Major</div>
+              <div className="font-bold text-sm" style={{ color: 'oklch(0.16 0.04 261)' }}>Kenmia Boware</div>
+              <div className="text-sm" style={{ color: 'oklch(0.55 0.15 68)' }}>Criminal Justice Major</div>
             </footer>
           </blockquote>
         </div>
@@ -226,30 +226,30 @@ export default function ApplyPage() {
       </section>
 
       {/* Enrollment Specialists */}
-      <section id="specialists" className="py-16 px-6" style={{ background: 'oklch(0.22 0.17 261)' }}>
+      <section id="specialists" className="py-16 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
         <div className="max-w-7xl mx-auto">
           <p className="font-display font-semibold uppercase mb-3"
-            style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.85rem', letterSpacing: '0.22em' }}>
+            style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.85rem', letterSpacing: '0.22em' }}>
             Here to Help You
           </p>
-          <h2 className="font-display font-black text-white mb-3"
-            style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', letterSpacing: '-0.02em' }}>
+          <h2 className="font-display font-black mb-3"
+            style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', letterSpacing: '-0.02em', color: 'oklch(0.16 0.04 261)' }}>
             MEET YOUR ENROLLMENT SPECIALISTS
           </h2>
-          <p className="mb-10" style={{ color: 'oklch(1 0 0 / 0.6)', fontSize: '0.96rem', maxWidth: '56ch' }}>
+          <p className="mb-10" style={{ color: 'oklch(0.40 0.04 261)', fontSize: '0.96rem', maxWidth: '56ch' }}>
             Your Enrollment Specialist is here to assist you through the admissions and enrollment process. Contact them any time you need help beginning your academic journey.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {SPECIALISTS.map(s => (
               <div key={s.name} className="rounded-2xl p-6 flex items-center gap-4"
-                style={{ background: 'oklch(0.28 0.12 261)', border: '1.5px solid oklch(0.35 0.15 261)' }}>
+                style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
                 <div className="shrink-0 w-14 h-14 rounded-full flex items-center justify-center font-display font-black text-lg"
                   style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)' }}>
                   {s.initials}
                 </div>
                 <div>
-                  <div className="font-bold text-white" style={{ fontSize: '1rem' }}>{s.name}</div>
-                  <div className="text-sm" style={{ color: 'oklch(1 0 0 / 0.5)' }}>Enrollment Specialist</div>
+                  <div className="font-bold" style={{ fontSize: '1rem', color: 'oklch(0.16 0.04 261)' }}>{s.name}</div>
+                  <div className="text-sm" style={{ color: 'oklch(0.50 0.03 261)' }}>Enrollment Specialist</div>
                 </div>
               </div>
             ))}

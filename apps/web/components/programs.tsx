@@ -55,7 +55,7 @@ export default function Programs({
 
   return (
     <section
-      style={{ background: 'oklch(0.14 0.10 261)', paddingBlock: '5rem' }}
+      style={{ background: 'oklch(0.99 0.005 263)', paddingBlock: '5rem' }}
       aria-label="Academic Programs"
     >
       <div className="max-w-7xl mx-auto px-6">
@@ -66,13 +66,13 @@ export default function Programs({
             <div>
               <p style={{
                 fontSize: '0.78rem', letterSpacing: '0.22em', textTransform: 'uppercase',
-                color: 'oklch(0.79 0.19 78)', marginBottom: '0.5rem', fontWeight: 700,
+                color: 'oklch(0.55 0.15 68)', marginBottom: '0.5rem', fontWeight: 700,
               }}>
                 01 — Explore Academics
               </p>
               <h2
-                className="font-display font-black text-white leading-none"
-                style={{ fontSize: 'clamp(2.6rem, 5.5vw, 4.2rem)', letterSpacing: '-0.04em' }}
+                className="font-display font-black leading-none"
+                style={{ fontSize: 'clamp(2.6rem, 5.5vw, 4.2rem)', letterSpacing: '-0.04em', color: 'oklch(0.16 0.04 261)' }}
               >
                 {c.headline}
               </h2>
@@ -88,7 +88,7 @@ export default function Programs({
               </svg>
             </Link>
           </div>
-          <p style={{ fontSize: 'clamp(1rem, 1.6vw, 1.15rem)', lineHeight: 1.75, color: 'oklch(1 0 0 / 0.72)', maxWidth: '62ch' }}>
+          <p style={{ fontSize: 'clamp(1rem, 1.6vw, 1.15rem)', lineHeight: 1.75, color: 'oklch(0.40 0.04 261)', maxWidth: '62ch' }}>
             {c.subheadline}
           </p>
         </div>
@@ -171,7 +171,7 @@ export default function Programs({
 
         {programs.length === 0 && (
           <div className="text-center py-20">
-            <p style={{ color: 'oklch(1 0 0 / 0.40)', fontSize: '0.95rem' }}>Programs loading…</p>
+            <p style={{ color: 'oklch(0.50 0.03 261)', fontSize: '0.95rem' }}>Programs loading…</p>
           </div>
         )}
 

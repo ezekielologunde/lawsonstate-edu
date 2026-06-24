@@ -27,11 +27,11 @@ export default function ActionStrip() {
   return (
     <section
       aria-label="Next Steps"
-      style={{ background: 'oklch(0.30 0.15 261)', paddingBlock: '0' }}
+      style={{ background: 'oklch(0.99 0.005 263)', paddingBlock: '0' }}
     >
       <div
         className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4"
-        style={{ borderTop: '1px solid oklch(1 0 0 / 0.10)', borderBottom: '1px solid oklch(1 0 0 / 0.10)' }}
+        style={{ borderTop: '1px solid oklch(0 0 0 / 0.10)', borderBottom: '1px solid oklch(0 0 0 / 0.10)' }}
       >
         {ACTIONS.map((action, i) => (
           <Link
@@ -40,21 +40,21 @@ export default function ActionStrip() {
             className="action-item group flex items-center justify-between gap-4 press"
             style={{
               padding: '1.35rem 1.5rem',
-              borderRight: i < ACTIONS.length - 1 ? '1px solid oklch(1 0 0 / 0.10)' : 'none',
+              borderRight: i < ACTIONS.length - 1 ? '1px solid oklch(0 0 0 / 0.10)' : 'none',
               textDecoration: 'none',
             }}
           >
             <div>
               <p
-                className="font-display font-bold text-white"
-                style={{ fontSize: '0.92rem', letterSpacing: '-0.01em', lineHeight: 1.2 }}
+                className="font-display font-bold"
+                style={{ fontSize: '0.92rem', letterSpacing: '-0.01em', lineHeight: 1.2, color: 'oklch(0.16 0.04 261)' }}
               >
                 {action.label}
               </p>
               <p
                 style={{
                   fontSize: '0.72rem',
-                  color: 'oklch(1 0 0 / 0.50)',
+                  color: 'oklch(0.50 0.03 261)',
                   letterSpacing: '0.02em',
                   marginTop: '0.2rem',
                 }}
@@ -68,7 +68,7 @@ export default function ActionStrip() {
               strokeLinecap="round" strokeLinejoin="round"
               aria-hidden
               className="shrink-0 transition-transform group-hover:translate-x-1"
-              style={{ color: 'oklch(0.79 0.19 78)' }}
+              style={{ color: 'oklch(0.55 0.15 68)' }}
             >
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />

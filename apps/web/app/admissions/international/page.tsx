@@ -64,9 +64,9 @@ export default function InternationalPage() {
 
       {/* Hero */}
       <section className="relative py-14 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '24vh', display: 'flex', alignItems: 'flex-end' }}>
+        style={{ background: 'oklch(0.42 0.17 261)', minHeight: '24vh', display: 'flex', alignItems: 'flex-end' }}>
         <div className="absolute inset-0" aria-hidden
-          style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.16 0.13 263 / 0.75) 100%)' }} />
+          style={{ background: 'linear-gradient(to right, oklch(0.42 0.17 261 / 0.97) 0%, oklch(0.38 0.15 263 / 0.75) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -167,26 +167,26 @@ export default function InternationalPage() {
       </section>
 
       {/* Contact */}
-      <section className="py-14 px-6" style={{ background: 'oklch(0.22 0.17 261)' }}>
+      <section className="py-14 px-6" style={{ background: 'oklch(0.99 0.005 263)' }}>
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-display font-black text-white mb-8"
-            style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', letterSpacing: '-0.02em' }}>
+          <h2 className="font-display font-black mb-8"
+            style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', letterSpacing: '-0.02em', color: 'oklch(0.16 0.04 261)' }}>
             QUESTIONS ABOUT INTERNATIONAL ADMISSIONS?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-2xl">
             <div className="rounded-2xl p-6"
-              style={{ background: 'oklch(0.28 0.12 261)', border: '1.5px solid oklch(0.35 0.15 261)' }}>
-              <div className="font-bold text-white mb-1">Dr. Cyrus Vance</div>
-              <div className="text-sm mb-3" style={{ color: 'oklch(0.79 0.19 78)' }}>Dean of Students</div>
-              <a href="mailto:cvance@lawsonstate.edu" className="text-sm block hover:underline mb-1" style={{ color: 'oklch(1 0 0 / 0.65)' }}>cvance@lawsonstate.edu</a>
-              <a href="tel:+12059296361" className="text-sm block hover:underline" style={{ color: 'oklch(1 0 0 / 0.65)' }}>205-929-6361</a>
+              style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
+              <div className="font-bold mb-1" style={{ color: 'oklch(0.16 0.04 261)' }}>Dr. Cyrus Vance</div>
+              <div className="text-sm mb-3" style={{ color: 'oklch(0.55 0.15 68)' }}>Dean of Students</div>
+              <a href="mailto:cvance@lawsonstate.edu" className="text-sm block hover:underline mb-1" style={{ color: 'oklch(0.40 0.04 261)' }}>cvance@lawsonstate.edu</a>
+              <a href="tel:+12059296361" className="text-sm block hover:underline" style={{ color: 'oklch(0.40 0.04 261)' }}>205-929-6361</a>
             </div>
             <div className="rounded-2xl p-6"
-              style={{ background: 'oklch(0.28 0.12 261)', border: '1.5px solid oklch(0.35 0.15 261)' }}>
-              <div className="font-bold text-white mb-1">Admissions Office</div>
-              <div className="text-sm mb-3" style={{ color: 'oklch(0.79 0.19 78)' }}>Birmingham Campus</div>
-              <a href="tel:+12059296309" className="text-sm block hover:underline mb-1" style={{ color: 'oklch(1 0 0 / 0.65)' }}>205-929-6309</a>
-              <a href="mailto:admissions@lawsonstate.edu" className="text-sm block hover:underline" style={{ color: 'oklch(1 0 0 / 0.65)' }}>admissions@lawsonstate.edu</a>
+              style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
+              <div className="font-bold mb-1" style={{ color: 'oklch(0.16 0.04 261)' }}>Admissions Office</div>
+              <div className="text-sm mb-3" style={{ color: 'oklch(0.55 0.15 68)' }}>Birmingham Campus</div>
+              <a href="tel:+12059296309" className="text-sm block hover:underline mb-1" style={{ color: 'oklch(0.40 0.04 261)' }}>205-929-6309</a>
+              <a href="mailto:admissions@lawsonstate.edu" className="text-sm block hover:underline" style={{ color: 'oklch(0.40 0.04 261)' }}>admissions@lawsonstate.edu</a>
             </div>
           </div>
         </div>

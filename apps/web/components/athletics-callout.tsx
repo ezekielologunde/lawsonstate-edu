@@ -11,7 +11,7 @@ export default function AthleticsCallout() {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ background: 'oklch(0.22 0.15 261)', paddingBlock: '4.5rem' }}
+      style={{ background: 'oklch(0.99 0.005 263)', paddingBlock: '4.5rem' }}
       aria-label="Monarch Athletics"
     >
       {/* Real athletics photo background */}
@@ -20,7 +20,7 @@ export default function AthleticsCallout() {
         alt=""
         aria-hidden
         className="absolute inset-0 w-full h-full object-cover object-center"
-        style={{ opacity: 0.18 }}
+        style={{ opacity: 0.10 }}
         loading="lazy"
         decoding="async"
       />
@@ -42,16 +42,16 @@ export default function AthleticsCallout() {
 
           {/* Left — copy */}
           <div className="scroll-reveal">
-            <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'oklch(0.79 0.19 78)', textTransform: 'uppercase', marginBottom: '0.5rem', fontWeight: 700 }}>
+            <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'oklch(0.55 0.15 68)', textTransform: 'uppercase', marginBottom: '0.5rem', fontWeight: 700 }}>
               04 — Lawson State Athletics
             </p>
             <h2
-              className="font-display font-black text-white leading-none mb-4"
-              style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)', letterSpacing: '-0.04em' }}
+              className="font-display font-black leading-none mb-4"
+              style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)', letterSpacing: '-0.04em', color: 'oklch(0.16 0.04 261)' }}
             >
-              COMPETE AT THE <span style={{ color: 'oklch(0.79 0.19 78)' }}>NEXT LEVEL</span>
+              COMPETE AT THE <span style={{ color: 'oklch(0.55 0.15 68)' }}>NEXT LEVEL</span>
             </h2>
-            <p style={{ fontSize: '1rem', lineHeight: 1.80, color: 'oklch(1 0 0 / 0.80)', maxWidth: '50ch', marginBottom: '2rem' }}>
+            <p style={{ fontSize: '1rem', lineHeight: 1.80, color: 'oklch(0.40 0.04 261)', maxWidth: '50ch', marginBottom: '2rem' }}>
               Lawson State student-athletes compete in NJCAA athletics and earn academic scholarships. Train hard, compete harder, graduate ready.
             </p>
 
@@ -60,12 +60,12 @@ export default function AthleticsCallout() {
               {SPORTS_STATS.map((s) => (
                 <div key={s.n}>
                   <div
-                    className="font-display font-black text-white leading-none"
-                    style={{ fontSize: 'clamp(1.8rem, 2.5vw, 2.4rem)', letterSpacing: '-0.05em' }}
+                    className="font-display font-black leading-none"
+                    style={{ fontSize: 'clamp(1.8rem, 2.5vw, 2.4rem)', letterSpacing: '-0.05em', color: 'oklch(0.16 0.04 261)' }}
                   >
                     {s.n}
                   </div>
-                  <div style={{ fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(1 0 0 / 0.50)', marginTop: '2px' }}>
+                  <div style={{ fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'oklch(0.50 0.03 261)', marginTop: '2px' }}>
                     {s.label}
                   </div>
                 </div>
@@ -95,12 +95,13 @@ export default function AthleticsCallout() {
                 className="flex items-center justify-center font-display font-bold rounded-xl"
                 style={{
                   padding: '1rem 1.1rem',
-                  background: 'oklch(1 0 0 / 0.06)',
-                  border: '1px solid oklch(1 0 0 / 0.10)',
+                  background: 'white',
+                  border: '1px solid oklch(0 0 0 / 0.08)',
+                  boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)',
                   fontSize: '0.72rem',
                   letterSpacing: '0.10em',
                   textTransform: 'uppercase',
-                  color: 'oklch(1 0 0 / 0.60)',
+                  color: 'oklch(0.16 0.04 261)',
                 }}
               >
                 {sport}

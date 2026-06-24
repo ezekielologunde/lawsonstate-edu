@@ -77,19 +77,19 @@ function MarqueeRow({
 export default function CampusLifeGallery() {
   return (
     <section
-      style={{ background: 'oklch(0.08 0.04 261)', paddingBlock: '5rem', overflow: 'hidden' }}
+      style={{ background: 'oklch(0.97 0.01 263)', paddingBlock: '5rem', overflow: 'hidden' }}
       aria-label="Campus Life Gallery"
     >
       {/* Header */}
       <div className="max-w-7xl mx-auto px-6 mb-10">
         <div className="flex items-end justify-between gap-6">
           <div>
-            <p style={{ fontSize: '0.78rem', letterSpacing: '0.18em', color: 'oklch(0.79 0.19 78)', textTransform: 'uppercase', marginBottom: '0.4rem' }}>
+            <p style={{ fontSize: '0.78rem', letterSpacing: '0.18em', color: 'oklch(0.55 0.15 68)', textTransform: 'uppercase', marginBottom: '0.4rem' }}>
               Real moments
             </p>
             <h2
-              className="font-display font-black text-white leading-none"
-              style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.04em' }}
+              className="font-display font-black leading-none"
+              style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.04em', color: 'oklch(0.16 0.04 261)' }}
             >
               CAMPUS LIFE
             </h2>
@@ -99,7 +99,7 @@ export default function CampusLifeGallery() {
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 font-semibold hover:underline press"
-            style={{ fontSize: '0.85rem', color: 'oklch(0.79 0.19 78)' }}
+            style={{ fontSize: '0.85rem', color: 'oklch(0.55 0.15 68)' }}
           >
             See all photos →
           </Link>

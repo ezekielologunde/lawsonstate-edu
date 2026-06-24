@@ -35,18 +35,18 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
   return (
     <main>
       {/* ── Hero ── */}
-      <section style={{ background: 'oklch(0.14 0.10 261)', paddingTop: '7rem', paddingBottom: '5rem' }}>
+      <section style={{ background: 'oklch(0.99 0.005 263)', paddingTop: '7rem', paddingBottom: '5rem' }}>
         <div className="max-w-7xl mx-auto px-6">
           <nav
             className="page-fade-1 flex items-center gap-2 text-sm mb-8"
-            style={{ color: 'oklch(1 0 0 / 0.45)' }}
+            style={{ color: 'oklch(0.50 0.03 261)' }}
             aria-label="Breadcrumb"
           >
-            <Link href="/" className="transition-colors hover:text-white" style={{ color: 'oklch(1 0 0 / 0.45)' }}>Home</Link>
+            <Link href="/" className="transition-colors hover:opacity-70" style={{ color: 'oklch(0.50 0.03 261)' }}>Home</Link>
             <span>/</span>
-            <Link href="/programs" className="transition-colors hover:text-white" style={{ color: 'oklch(1 0 0 / 0.45)' }}>Programs</Link>
+            <Link href="/programs" className="transition-colors hover:opacity-70" style={{ color: 'oklch(0.50 0.03 261)' }}>Programs</Link>
             <span>/</span>
-            <span style={{ color: 'oklch(1 0 0 / 0.72)' }}>{program.name}</span>
+            <span style={{ color: 'oklch(0.40 0.04 261)' }}>{program.name}</span>
           </nav>
 
           <div className="grid lg:grid-cols-[1fr_360px] gap-12 items-start">
@@ -61,31 +61,31 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
                 </span>
                 <span
                   className="inline-block px-3 py-1 rounded-full text-xs font-semibold"
-                  style={{ background: 'oklch(1 0 0 / 0.10)', color: 'oklch(0.79 0.19 78)' }}
+                  style={{ background: 'oklch(0 0 0 / 0.06)', color: 'oklch(0.55 0.15 68)' }}
                 >
                   {program.degreeType} — {degreeInfo.label}
                 </span>
               </div>
 
               <h1
-                className="page-fade-3 font-display font-black text-white mb-4 leading-tight"
-                style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.02em' }}
+                className="page-fade-3 font-display font-black mb-4 leading-tight"
+                style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.02em', color: 'oklch(0.16 0.04 261)' }}
               >
                 {program.name}
               </h1>
 
               <p
                 className="page-fade-4 text-lg mb-6 leading-relaxed max-w-[58ch]"
-                style={{ color: 'oklch(1 0 0 / 0.72)' }}
+                style={{ color: 'oklch(0.40 0.04 261)' }}
               >
                 {program.description}
               </p>
 
               <div className="flex flex-wrap items-center gap-4 mb-8">
                 <div className="flex items-center gap-2">
-                  <span style={{ color: 'oklch(0.79 0.19 78)' }}>—</span>
-                  <span className="text-sm font-semibold text-white">{program.duration}</span>
-                  <span className="text-sm" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
+                  <span style={{ color: 'oklch(0.55 0.15 68)' }}>—</span>
+                  <span className="text-sm font-semibold" style={{ color: 'oklch(0.16 0.04 261)' }}>{program.duration}</span>
+                  <span className="text-sm" style={{ color: 'oklch(0.50 0.03 261)' }}>
                     ({program.durationMonths} months)
                   </span>
                 </div>
@@ -93,7 +93,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
                   <span
                     key={mode}
                     className="text-xs px-2.5 py-1 rounded-full"
-                    style={{ background: 'oklch(1 0 0 / 0.08)', color: 'oklch(1 0 0 / 0.65)' }}
+                    style={{ background: 'oklch(0 0 0 / 0.06)', color: 'oklch(0.40 0.04 261)' }}
                   >
                     {DELIVERY_MODES[mode].label}
                   </span>
@@ -110,15 +110,15 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
                 </Link>
                 <Link
                   href="/financial-aid"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-sm transition-colors hover:text-white"
-                  style={{ border: '1.5px solid oklch(1 0 0 / 0.22)', color: 'oklch(1 0 0 / 0.80)' }}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-sm transition-colors hover:bg-black/5"
+                  style={{ border: '1.5px solid oklch(0.16 0.04 261 / 0.25)', color: 'oklch(0.16 0.04 261)' }}
                 >
                   Financial Aid
                 </Link>
                 <Link
                   href="/programs"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:text-white"
-                  style={{ color: 'oklch(1 0 0 / 0.50)' }}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-colors hover:opacity-70"
+                  style={{ color: 'oklch(0.50 0.03 261)' }}
                 >
                   ← All Programs
                 </Link>
@@ -128,11 +128,11 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
             {/* Quick facts sidebar */}
             <aside
               className="rounded-2xl p-6"
-              style={{ background: 'oklch(0.22 0.16 261)', border: '1px solid oklch(1 0 0 / 0.10)' }}
+              style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}
             >
               <h2
                 className="text-xs font-bold uppercase tracking-widest mb-5"
-                style={{ color: 'oklch(0.79 0.19 78)' }}
+                style={{ color: 'oklch(0.55 0.15 68)' }}
               >
                 Program Details
               </h2>
@@ -147,20 +147,20 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
                 ].map((item, i) => (
                   <div
                     key={item.label}
-                    style={{ borderTop: i > 0 ? '1px solid oklch(1 0 0 / 0.08)' : undefined, paddingTop: i > 0 ? '1rem' : 0, paddingBottom: '1rem' }}
+                    style={{ borderTop: i > 0 ? '1px solid oklch(0 0 0 / 0.10)' : undefined, paddingTop: i > 0 ? '1rem' : 0, paddingBottom: '1rem' }}
                   >
-                    <dt className="text-xs uppercase tracking-wide mb-1" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
+                    <dt className="text-xs uppercase tracking-wide mb-1" style={{ color: 'oklch(0.50 0.03 261)' }}>
                       {item.label}
                     </dt>
-                    <dd className="text-sm font-semibold text-white">{item.value}</dd>
+                    <dd className="text-sm font-semibold" style={{ color: 'oklch(0.16 0.04 261)' }}>{item.value}</dd>
                     {item.sub && (
-                      <dd className="text-xs mt-0.5" style={{ color: 'oklch(1 0 0 / 0.50)' }}>{item.sub}</dd>
+                      <dd className="text-xs mt-0.5" style={{ color: 'oklch(0.50 0.03 261)' }}>{item.sub}</dd>
                     )}
                   </div>
                 ))}
 
-                <div style={{ borderTop: '1px solid oklch(1 0 0 / 0.08)', paddingTop: '1rem', paddingBottom: '1rem' }}>
-                  <dt className="text-xs uppercase tracking-wide mb-2" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
+                <div style={{ borderTop: '1px solid oklch(0 0 0 / 0.10)', paddingTop: '1rem', paddingBottom: '1rem' }}>
+                  <dt className="text-xs uppercase tracking-wide mb-2" style={{ color: 'oklch(0.50 0.03 261)' }}>
                     How You&apos;ll Learn
                   </dt>
                   <dd className="flex flex-wrap gap-1.5">
@@ -168,7 +168,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
                       <span
                         key={mode}
                         className="text-xs px-2 py-0.5 rounded-full"
-                        style={{ background: 'oklch(1 0 0 / 0.08)', color: 'oklch(1 0 0 / 0.65)' }}
+                        style={{ background: 'oklch(0 0 0 / 0.06)', color: 'oklch(0.40 0.04 261)' }}
                       >
                         {DELIVERY_MODES[mode].label}
                       </span>
@@ -177,34 +177,34 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
                 </div>
 
                 {program.jobPlacementRate && (
-                  <div style={{ borderTop: '1px solid oklch(1 0 0 / 0.08)', paddingTop: '1rem', paddingBottom: '1rem' }}>
-                    <dt className="text-xs uppercase tracking-wide mb-1" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
+                  <div style={{ borderTop: '1px solid oklch(0 0 0 / 0.10)', paddingTop: '1rem', paddingBottom: '1rem' }}>
+                    <dt className="text-xs uppercase tracking-wide mb-1" style={{ color: 'oklch(0.50 0.03 261)' }}>
                       Job Placement Rate
                     </dt>
                     <dd
                       className="text-3xl font-black leading-none"
-                      style={{ color: 'oklch(0.79 0.19 78)' }}
+                      style={{ color: 'oklch(0.55 0.15 68)' }}
                     >
                       {program.jobPlacementRate}%
                     </dd>
                   </div>
                 )}
 
-                <div style={{ borderTop: '1px solid oklch(1 0 0 / 0.08)', paddingTop: '1rem', paddingBottom: '1rem' }}>
-                  <dt className="text-xs uppercase tracking-wide mb-1" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
+                <div style={{ borderTop: '1px solid oklch(0 0 0 / 0.10)', paddingTop: '1rem', paddingBottom: '1rem' }}>
+                  <dt className="text-xs uppercase tracking-wide mb-1" style={{ color: 'oklch(0.50 0.03 261)' }}>
                     Transfer Pathway
                   </dt>
                   <dd
                     className="text-sm font-semibold"
-                    style={{ color: program.transferable ? 'oklch(0.65 0.18 160)' : 'oklch(1 0 0 / 0.55)' }}
+                    style={{ color: program.transferable ? 'oklch(0.50 0.16 160)' : 'oklch(0.50 0.03 261)' }}
                   >
                     {program.transferable ? 'Yes — 4-year transfer ready' : 'Career credential'}
                   </dd>
                 </div>
 
                 {program.tags && program.tags.length > 0 && (
-                  <div style={{ borderTop: '1px solid oklch(1 0 0 / 0.08)', paddingTop: '1rem' }}>
-                    <dt className="text-xs uppercase tracking-wide mb-2" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
+                  <div style={{ borderTop: '1px solid oklch(0 0 0 / 0.10)', paddingTop: '1rem' }}>
+                    <dt className="text-xs uppercase tracking-wide mb-2" style={{ color: 'oklch(0.50 0.03 261)' }}>
                       Keywords
                     </dt>
                     <dd className="flex flex-wrap gap-1.5">
@@ -212,7 +212,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
                         <span
                           key={tag}
                           className="text-xs px-2 py-0.5 rounded"
-                          style={{ background: 'oklch(1 0 0 / 0.06)', color: 'oklch(1 0 0 / 0.40)' }}
+                          style={{ background: 'oklch(0 0 0 / 0.05)', color: 'oklch(0.50 0.03 261)' }}
                         >
                           {tag}
                         </span>
@@ -228,18 +228,18 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
 
       {/* ── Related Programs ── */}
       {related.length > 0 && (
-        <section style={{ background: 'oklch(0.18 0.14 261)', padding: '5rem 0' }}>
+        <section style={{ background: 'oklch(0.97 0.01 263)', padding: '5rem 0' }}>
           <div className="max-w-7xl mx-auto px-6">
             <div className="scroll-reveal mb-8">
               <p
                 className="text-xs font-bold uppercase tracking-widest mb-2"
-                style={{ color: 'oklch(0.79 0.19 78)' }}
+                style={{ color: 'oklch(0.55 0.15 68)' }}
               >
                 Also in {category.label}
               </p>
               <h2
-                className="font-display font-black text-white text-3xl"
-                style={{ letterSpacing: '-0.02em' }}
+                className="font-display font-black text-3xl"
+                style={{ letterSpacing: '-0.02em', color: 'oklch(0.16 0.04 261)' }}
               >
                 Related Programs
               </h2>
@@ -249,7 +249,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
                 <Link key={rel.id} href={rel.href}>
                   <article
                     className="group h-full rounded-xl p-5 transition-colors"
-                    style={{ background: 'oklch(0.22 0.16 261)', border: '1px solid oklch(1 0 0 / 0.10)' }}
+                    style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}
                   >
                     <div className="flex items-center gap-2 mb-3">
                       <span
@@ -259,16 +259,16 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
                         {rel.degreeType}
                       </span>
                       {rel.jobPlacementRate && (
-                        <span className="text-xs" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
+                        <span className="text-xs" style={{ color: 'oklch(0.50 0.03 261)' }}>
                           {rel.jobPlacementRate}% placement
                         </span>
                       )}
                     </div>
-                    <h3 className="font-bold text-white mb-2 leading-snug">{rel.name}</h3>
+                    <h3 className="font-bold mb-2 leading-snug" style={{ color: 'oklch(0.16 0.04 261)' }}>{rel.name}</h3>
                     <p
                       className="text-sm mb-4"
                       style={{
-                        color: 'oklch(1 0 0 / 0.65)',
+                        color: 'oklch(0.40 0.04 261)',
                         display: '-webkit-box',
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: 'vertical',
@@ -278,9 +278,9 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
                       {rel.description}
                     </p>
                     <div className="flex items-center justify-between mt-auto">
-                      <span className="text-xs font-semibold text-white">{rel.duration}</span>
+                      <span className="text-xs font-semibold" style={{ color: 'oklch(0.16 0.04 261)' }}>{rel.duration}</span>
                       <span
-                        style={{ color: 'oklch(0.79 0.19 78)' }}
+                        style={{ color: 'oklch(0.55 0.15 68)' }}
                         className="group-hover:translate-x-1 transition-transform inline-block"
                       >
                         →
@@ -294,7 +294,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
               <Link
                 href="/programs"
                 className="inline-flex items-center gap-2 font-semibold text-sm transition-colors hover:opacity-80"
-                style={{ color: 'oklch(0.79 0.19 78)' }}
+                style={{ color: 'oklch(0.55 0.15 68)' }}
               >
                 View all programs →
               </Link>

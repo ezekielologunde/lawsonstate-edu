@@ -44,9 +44,9 @@ export default function NonDegreePage() {
 
       {/* Hero */}
       <section className="relative py-14 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '24vh', display: 'flex', alignItems: 'flex-end' }}>
+        style={{ background: 'oklch(0.42 0.17 261)', minHeight: '24vh', display: 'flex', alignItems: 'flex-end' }}>
         <div className="absolute inset-0" aria-hidden
-          style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.16 0.13 263 / 0.75) 100%)' }} />
+          style={{ background: 'linear-gradient(to right, oklch(0.42 0.17 261 / 0.97) 0%, oklch(0.38 0.15 263 / 0.75) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -105,8 +105,8 @@ export default function NonDegreePage() {
           </div>
 
           {/* Semester dates */}
-          <div className="rounded-2xl p-7" style={{ background: 'oklch(0.22 0.17 261)', border: '1.5px solid oklch(0.30 0.14 261)' }}>
-            <div className="font-display font-bold text-white mb-5" style={{ fontSize: '1.05rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+          <div className="rounded-2xl p-7" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
+            <div className="font-display font-bold mb-5" style={{ fontSize: '1.05rem', letterSpacing: '0.05em', textTransform: 'uppercase', color: 'oklch(0.16 0.04 261)' }}>
               Upcoming Start Dates
             </div>
             <div className="space-y-4">
@@ -115,13 +115,13 @@ export default function NonDegreePage() {
                 { sem: 'Fall 2025',   date: 'August 18th' },
               ].map(s => (
                 <div key={s.sem} className="flex items-center justify-between py-3 border-b"
-                  style={{ borderColor: 'oklch(1 0 0 / 0.1)' }}>
-                  <span className="font-semibold text-white" style={{ fontSize: '0.97rem' }}>{s.sem}</span>
-                  <span className="font-bold" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.97rem' }}>{s.date}</span>
+                  style={{ borderColor: 'oklch(0 0 0 / 0.10)' }}>
+                  <span className="font-semibold" style={{ fontSize: '0.97rem', color: 'oklch(0.16 0.04 261)' }}>{s.sem}</span>
+                  <span className="font-bold" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.97rem' }}>{s.date}</span>
                 </div>
               ))}
             </div>
-            <p className="mt-4 text-sm" style={{ color: 'oklch(1 0 0 / 0.5)' }}>
+            <p className="mt-4 text-sm" style={{ color: 'oklch(0.50 0.03 261)' }}>
               Applications accepted year-round. No application fee.
             </p>
           </div>

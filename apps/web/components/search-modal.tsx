@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import SearchBar from './search-bar'
 
-export default function SearchModal() {
+export default function SearchModal({ dark = true }: { dark?: boolean }) {
   const [open, setOpen] = useState(false)
   const modalRef = useRef<HTMLDivElement>(null)
 
@@ -26,9 +26,9 @@ export default function SearchModal() {
         onClick={() => setOpen(true)}
         className="hidden md:flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
         style={{
-          background: 'oklch(1 0 0 / 0.05)',
-          color: 'oklch(1 0 0 / 0.60)',
-          border: '1px solid oklch(1 0 0 / 0.10)',
+          background: dark ? 'oklch(1 0 0 / 0.05)' : 'oklch(0 0 0 / 0.04)',
+          color: dark ? 'oklch(1 0 0 / 0.60)' : 'oklch(0.40 0.04 261)',
+          border: dark ? '1px solid oklch(1 0 0 / 0.10)' : '1px solid oklch(0 0 0 / 0.12)',
         }}
         aria-label="Open search (⌘K)"
         title="⌘K"

@@ -17,19 +17,19 @@ export default function NewsletterSignup() {
   return (
     <div className="max-w-md">
       <h3
-        className="font-display font-bold text-white mb-2"
-        style={{ fontSize: '1.25rem' }}
+        className="font-display font-bold mb-2"
+        style={{ fontSize: '1.25rem', color: 'oklch(0.16 0.04 261)' }}
       >
         Stay Connected
       </h3>
-      <p className="text-sm mb-4" style={{ color: 'oklch(1 0 0 / 0.55)' }}>
+      <p className="text-sm mb-4" style={{ color: 'oklch(0.45 0.03 261)' }}>
         Get news, events, and program updates in your inbox.
       </p>
 
       {submitted ? (
         <p
           className="text-sm font-semibold py-2.5"
-          style={{ color: 'oklch(0.79 0.19 78)' }}
+          style={{ color: 'oklch(0.55 0.15 68)' }}
           role="status"
         >
           Thanks — you&apos;re on the list. Watch your inbox.
@@ -48,9 +48,9 @@ export default function NewsletterSignup() {
             placeholder="Enter your email"
             className="flex-1 px-4 py-2.5 rounded-lg text-sm"
             style={{
-              background: 'oklch(0.22 0.16 261)',
-              border: '1px solid oklch(1 0 0 / 0.15)',
-              color: 'white',
+              background: 'white',
+              border: '1px solid oklch(0 0 0 / 0.15)',
+              color: 'oklch(0.16 0.04 261)',
             }}
             required
           />
@@ -67,7 +67,7 @@ export default function NewsletterSignup() {
         </form>
       )}
 
-      <p className="text-xs mt-2" style={{ color: 'oklch(1 0 0 / 0.40)' }}>
+      <p className="text-xs mt-2" style={{ color: 'oklch(0.50 0.03 261)' }}>
         We respect your privacy. Unsubscribe anytime.
       </p>
     </div>

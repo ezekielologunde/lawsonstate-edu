@@ -35,8 +35,9 @@ export default function HBCUPopup() {
       <div
         className="relative w-full max-w-sm rounded-2xl overflow-hidden shadow-card-hover"
         style={{
-          background: 'oklch(0.22 0.17 261)',
-          border: '1px solid oklch(0.79 0.19 78 / 0.22)',
+          background: 'white',
+          border: '1px solid oklch(0 0 0 / 0.08)',
+          boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)',
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -63,21 +64,21 @@ export default function HBCUPopup() {
               </svg>
               HBCU PROUD
             </span>
-            <span className="text-white/35" style={{ fontSize: '0.75rem' }}>est. 1949</span>
+            <span style={{ fontSize: '0.75rem', color: 'oklch(0.50 0.03 261)' }}>est. 1949</span>
           </div>
 
           <h2
             id="hbcu-heading"
-            className="font-display font-black text-white mb-2"
-            style={{ fontSize: 'clamp(1.4rem, 5vw, 1.85rem)', letterSpacing: '-0.02em', lineHeight: 1.15 }}
+            className="font-display font-black mb-2"
+            style={{ fontSize: 'clamp(1.4rem, 5vw, 1.85rem)', letterSpacing: '-0.02em', lineHeight: 1.15, color: 'oklch(0.16 0.04 261)' }}
           >
             Welcome to<br />
-            <span style={{ color: 'oklch(0.79 0.19 78)' }}>Lawson State</span>
+            <span style={{ color: 'oklch(0.55 0.15 68)' }}>Lawson State</span>
           </h2>
 
           <p
-            className="text-white/55 leading-relaxed mb-6"
-            style={{ fontSize: '0.875rem', maxWidth: '34ch' }}
+            className="leading-relaxed mb-6"
+            style={{ fontSize: '0.875rem', maxWidth: '34ch', color: 'oklch(0.40 0.04 261)' }}
           >
             A Historically Black College & University serving Birmingham and Alabama since 1949 — excellence, legacy, and community for generations.
           </p>
@@ -88,11 +89,11 @@ export default function HBCUPopup() {
               <div
                 key={word}
                 className="rounded-xl py-3 text-center"
-                style={{ background: 'oklch(0.28 0.16 261)' }}
+                style={{ background: 'oklch(0.97 0.01 263)', border: '1px solid oklch(0 0 0 / 0.08)' }}
               >
                 <span
-                  className="text-white/80 font-semibold uppercase block"
-                  style={{ fontSize: '0.6rem', letterSpacing: '0.06em' }}
+                  className="font-semibold uppercase block"
+                  style={{ fontSize: '0.6rem', letterSpacing: '0.06em', color: 'oklch(0.16 0.04 261)' }}
                 >
                   {word}
                 </span>
@@ -111,8 +112,8 @@ export default function HBCUPopup() {
               Apply Now
             </Link>
             <button
-              className="flex-1 font-semibold py-3.5 rounded-xl text-sm text-white/65 hover:text-white transition-colors"
-              style={{ border: '1px solid oklch(1 0 0 / 0.15)' }}
+              className="flex-1 font-semibold py-3.5 rounded-xl text-sm transition-colors hover:bg-black/5"
+              style={{ border: '1px solid oklch(0.16 0.04 261 / 0.25)', color: 'oklch(0.16 0.04 261)' }}
               onClick={dismiss}
             >
               Explore
@@ -122,7 +123,8 @@ export default function HBCUPopup() {
 
         {/* Close button */}
         <button
-          className="absolute top-4 right-4 text-white/35 hover:text-white/70 transition-colors"
+          className="absolute top-4 right-4 transition-colors hover:opacity-70"
+          style={{ color: 'oklch(0.50 0.03 261)' }}
           onClick={dismiss}
           aria-label="Close"
         >

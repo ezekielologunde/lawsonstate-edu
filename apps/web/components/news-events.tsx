@@ -42,7 +42,7 @@ export default function NewsEvents({
 }) {
   return (
     <section
-      style={{ background: 'oklch(0.14 0.10 261)', paddingBlock: '5rem' }}
+      style={{ background: 'oklch(0.97 0.01 263)', paddingBlock: '5rem' }}
       aria-label="News and Events"
     >
       <div className="max-w-7xl mx-auto px-6">
@@ -50,12 +50,12 @@ export default function NewsEvents({
         {/* Header */}
         <div className="flex items-end justify-between mb-12 scroll-reveal">
           <div>
-            <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'oklch(0.79 0.19 78)', marginBottom: '0.4rem', fontWeight: 700 }}>
+            <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'oklch(0.55 0.15 68)', marginBottom: '0.4rem', fontWeight: 700 }}>
               06 — Campus life
             </p>
             <h2
-              className="font-display font-black text-white leading-none"
-              style={{ fontSize: 'clamp(2.6rem, 5vw, 3.8rem)', letterSpacing: '-0.04em' }}
+              className="font-display font-black leading-none"
+              style={{ fontSize: 'clamp(2.6rem, 5vw, 3.8rem)', letterSpacing: '-0.04em', color: 'oklch(0.16 0.04 261)' }}
             >
               WHAT'S HAPPENING
             </h2>
@@ -64,7 +64,7 @@ export default function NewsEvents({
             <Link
               href="/news"
               className="inline-flex items-center gap-1 font-semibold transition-colors"
-              style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}
+              style={{ fontSize: '0.82rem', color: 'oklch(0.55 0.15 68)' }}
             >
               All News
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -74,7 +74,7 @@ export default function NewsEvents({
             <Link
               href="/calendar"
               className="inline-flex items-center gap-1 font-semibold transition-colors"
-              style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}
+              style={{ fontSize: '0.82rem', color: 'oklch(0.55 0.15 68)' }}
             >
               Full Calendar
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -91,7 +91,7 @@ export default function NewsEvents({
             <Link
               href={featuredStory.href ?? '/news'}
               className="scroll-reveal group block rounded-2xl overflow-hidden"
-              style={{ background: 'oklch(0.22 0.16 261)' }}
+              style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}
             >
               {/* Image */}
               <div className="relative overflow-hidden" style={{ aspectRatio: '16/9' }}>
@@ -102,7 +102,7 @@ export default function NewsEvents({
                 />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0"
-                  style={{ background: 'linear-gradient(to bottom, transparent 30%, oklch(0.22 0.16 261) 100%)' }} />
+                  style={{ background: 'linear-gradient(to bottom, transparent 30%, white 100%)' }} />
                 {/* Category badge */}
                 <div className="absolute top-4 left-4">
                   <span
@@ -121,28 +121,28 @@ export default function NewsEvents({
               {/* Copy */}
               <div className="p-6">
                 <h3
-                  className="font-display font-black text-white leading-tight mb-3"
+                  className="font-display font-black leading-tight mb-3"
                   style={{
                     fontSize: 'clamp(1.2rem, 2.5vw, 1.65rem)', letterSpacing: '-0.03em',
-                    transition: 'color 0.2s',
+                    transition: 'color 0.2s', color: 'oklch(0.16 0.04 261)',
                   }}
                 >
                   {featuredStory.title}
                 </h3>
                 {featuredStory.excerpt && (
-                  <p style={{ fontSize: '0.88rem', lineHeight: 1.7, color: 'oklch(1 0 0 / 0.55)', marginBottom: '1rem', maxWidth: '65ch' }}>
+                  <p style={{ fontSize: '0.88rem', lineHeight: 1.7, color: 'oklch(0.40 0.04 261)', marginBottom: '1rem', maxWidth: '65ch' }}>
                     {featuredStory.excerpt}
                   </p>
                 )}
                 <div className="flex items-center justify-between">
                   {featuredStory.published_at && (
-                    <span style={{ fontSize: '0.72rem', color: 'oklch(1 0 0 / 0.35)', letterSpacing: '0.04em' }}>
+                    <span style={{ fontSize: '0.72rem', color: 'oklch(0.50 0.03 261)', letterSpacing: '0.04em' }}>
                       {formatStoryDate(featuredStory.published_at)}
                     </span>
                   )}
                   <span
                     className="inline-flex items-center gap-1 font-bold"
-                    style={{ fontSize: '0.78rem', color: 'oklch(0.79 0.19 78)' }}
+                    style={{ fontSize: '0.78rem', color: 'oklch(0.55 0.15 68)' }}
                   >
                     Read story
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden
@@ -156,19 +156,19 @@ export default function NewsEvents({
           ) : (
             <div
               className="rounded-2xl flex items-center justify-center"
-              style={{ aspectRatio: '16/9', background: 'oklch(0.14 0.07 261)' }}
+              style={{ aspectRatio: '16/9', background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}
             >
-              <p style={{ fontSize: '0.88rem', color: 'oklch(1 0 0 / 0.30)' }}>No featured story yet.</p>
+              <p style={{ fontSize: '0.88rem', color: 'oklch(0.50 0.03 261)' }}>No featured story yet.</p>
             </div>
           )}
 
           {/* Events sidebar */}
           <div
             className="scroll-reveal rounded-2xl overflow-hidden"
-            style={{ background: 'oklch(0.22 0.16 261)' }}
+            style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}
           >
-            <div className="px-5 pt-5 pb-4" style={{ borderBottom: '1px solid oklch(1 0 0 / 0.10)' }}>
-              <p style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'oklch(0.79 0.19 78)', fontWeight: 700 }}>
+            <div className="px-5 pt-5 pb-4" style={{ borderBottom: '1px solid oklch(0 0 0 / 0.10)' }}>
+              <p style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'oklch(0.55 0.15 68)', fontWeight: 700 }}>
                 Upcoming Events
               </p>
             </div>
@@ -181,8 +181,8 @@ export default function NewsEvents({
                     <Link
                       key={event.id}
                       href={event.href}
-                      className="group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-white/5"
-                      style={{ borderBottom: i < events.length - 1 ? '1px solid oklch(1 0 0 / 0.06)' : 'none' }}
+                      className="group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-black/5"
+                      style={{ borderBottom: i < events.length - 1 ? '1px solid oklch(0 0 0 / 0.10)' : 'none' }}
                     >
                       {/* Date block */}
                       <div
@@ -199,13 +199,13 @@ export default function NewsEvents({
 
                       <span
                         className="text-sm font-medium flex-1 leading-snug"
-                        style={{ color: 'oklch(1 0 0 / 0.80)', transition: 'color 0.2s' }}
+                        style={{ color: 'oklch(0.40 0.04 261)', transition: 'color 0.2s' }}
                       >
                         {event.title}
                       </span>
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
                         className="shrink-0 transition-transform duration-300 group-hover:translate-x-0.5"
-                        style={{ color: 'oklch(1 0 0 / 0.25)' }} aria-hidden>
+                        style={{ color: 'oklch(0.50 0.03 261)' }} aria-hidden>
                         <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
                       </svg>
                     </Link>
@@ -213,16 +213,16 @@ export default function NewsEvents({
                 })}
               </div>
             ) : (
-              <p className="px-5 py-6" style={{ fontSize: '0.85rem', color: 'oklch(1 0 0 / 0.35)' }}>
+              <p className="px-5 py-6" style={{ fontSize: '0.85rem', color: 'oklch(0.50 0.03 261)' }}>
                 No upcoming events right now.
               </p>
             )}
 
-            <div className="px-5 py-4" style={{ borderTop: '1px solid oklch(1 0 0 / 0.08)' }}>
+            <div className="px-5 py-4" style={{ borderTop: '1px solid oklch(0 0 0 / 0.10)' }}>
               <Link
                 href="/calendar"
                 className="inline-flex items-center gap-1.5 font-bold"
-                style={{ fontSize: '0.78rem', color: 'oklch(0.79 0.19 78)' }}
+                style={{ fontSize: '0.78rem', color: 'oklch(0.55 0.15 68)' }}
               >
                 View full calendar
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -234,9 +234,9 @@ export default function NewsEvents({
         </div>
 
         {/* Mobile links */}
-        <div className="md:hidden flex gap-6 mt-8" style={{ borderTop: '1px solid oklch(1 0 0 / 0.08)', paddingTop: '1.5rem' }}>
-          <Link href="/news" className="font-semibold" style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}>All News →</Link>
-          <Link href="/calendar" className="font-semibold" style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}>Full Calendar →</Link>
+        <div className="md:hidden flex gap-6 mt-8" style={{ borderTop: '1px solid oklch(0 0 0 / 0.10)', paddingTop: '1.5rem' }}>
+          <Link href="/news" className="font-semibold" style={{ fontSize: '0.82rem', color: 'oklch(0.55 0.15 68)' }}>All News →</Link>
+          <Link href="/calendar" className="font-semibold" style={{ fontSize: '0.82rem', color: 'oklch(0.55 0.15 68)' }}>Full Calendar →</Link>
         </div>
       </div>
     </section>

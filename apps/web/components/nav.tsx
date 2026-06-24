@@ -21,17 +21,20 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
+  // Transparent over the dark hero (white text); light bar with dark text once scrolled
+  const linkColor = scrolled ? 'oklch(0.32 0.05 261)' : 'oklch(1 0 0 / 0.82)'
+  const wordColor = scrolled ? 'oklch(0.16 0.04 261)' : 'white'
+  const subColor  = scrolled ? 'oklch(0.48 0.03 261)' : 'oklch(1 0 0 / 0.40)'
+  const barColor  = scrolled ? 'oklch(0.20 0.04 261)' : 'white'
+
   return (
     <header
-      className={`fixed inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? 'shadow-lg' : ''
-      }`}
+      className={`fixed inset-x-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-lg' : ''}`}
       style={{
         top: 'var(--lscc-banner-h, 0px)',
-        background: scrolled
-          ? 'oklch(0.22 0.17 261 / 0.96)'
-          : 'oklch(0.22 0.17 261 / 0)',
+        background: scrolled ? 'oklch(0.99 0.005 263 / 0.92)' : 'oklch(0.99 0.005 263 / 0)',
         backdropFilter: scrolled ? 'blur(12px)' : 'none',
+        borderBottom: scrolled ? '1px solid oklch(0 0 0 / 0.08)' : '1px solid transparent',
       }}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
@@ -55,20 +58,20 @@ export default function Nav() {
           {/* Wordmark */}
           <div className="flex flex-col leading-none" style={{ gap: '2px' }}>
             <span
-              className="font-display font-extrabold text-white block hidden md:block"
-              style={{ fontSize: '0.9rem', letterSpacing: '0.06em' }}
+              className="font-display font-extrabold block hidden md:block transition-colors"
+              style={{ fontSize: '0.9rem', letterSpacing: '0.06em', color: wordColor }}
             >
               LAWSON STATE
             </span>
             <span
-              className="block text-white/35 hidden md:block"
-              style={{ fontSize: '0.43rem', letterSpacing: '0.2em' }}
+              className="block hidden md:block transition-colors"
+              style={{ fontSize: '0.43rem', letterSpacing: '0.2em', color: subColor }}
             >
               COMMUNITY COLLEGE
             </span>
             <span
-              className="font-display font-extrabold text-white block md:hidden"
-              style={{ fontSize: '0.75rem', letterSpacing: '0.04em' }}
+              className="font-display font-extrabold block md:hidden transition-colors"
+              style={{ fontSize: '0.75rem', letterSpacing: '0.04em', color: wordColor }}
             >
               LS
             </span>
@@ -81,7 +84,8 @@ export default function Nav() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-white/75 hover:text-white transition-colors"
+              className="text-sm font-medium transition-colors hover:opacity-70"
+              style={{ color: linkColor }}
             >
               {link.label}
             </Link>
@@ -90,12 +94,13 @@ export default function Nav() {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-5">
-          <SearchModal />
+          <SearchModal dark={!scrolled} />
           <a
             href="https://my.lawsonstate.edu"
             target="_blank"
             rel="noreferrer"
-            className="text-sm font-medium text-white/75 hover:text-white transition-colors"
+            className="text-sm font-medium transition-colors hover:opacity-70"
+            style={{ color: linkColor }}
           >
             Portal Login
           </a>
@@ -119,28 +124,28 @@ export default function Nav() {
           aria-expanded={open}
         >
           <span
-            className="w-6 h-0.5 bg-white block transition-transform duration-200 origin-center"
-            style={{ transform: open ? 'rotate(45deg) translateY(8px)' : 'none' }}
+            className="w-6 h-0.5 block transition-all duration-200 origin-center"
+            style={{ background: barColor, transform: open ? 'rotate(45deg) translateY(8px)' : 'none' }}
           />
           <span
-            className="w-6 h-0.5 bg-white block transition-opacity duration-200"
-            style={{ opacity: open ? 0 : 1 }}
+            className="w-6 h-0.5 block transition-all duration-200"
+            style={{ background: barColor, opacity: open ? 0 : 1 }}
           />
           <span
-            className="w-6 h-0.5 bg-white block transition-transform duration-200 origin-center"
-            style={{ transform: open ? 'rotate(-45deg) translateY(-8px)' : 'none' }}
+            className="w-6 h-0.5 block transition-all duration-200 origin-center"
+            style={{ background: barColor, transform: open ? 'rotate(-45deg) translateY(-8px)' : 'none' }}
           />
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — light panel */}
       <div
         className="md:hidden overflow-hidden transition-all duration-300"
         style={{
           maxHeight: open ? '20rem' : '0',
           opacity: open ? 1 : 0,
-          background: 'oklch(0.16 0.13 263)',
-          borderTop: open ? '1px solid oklch(1 0 0 / 0.1)' : 'none',
+          background: 'oklch(0.99 0.005 263)',
+          borderTop: open ? '1px solid oklch(0 0 0 / 0.08)' : 'none',
         }}
       >
         <nav className="px-6 py-3 flex flex-col gap-1">
@@ -157,8 +162,8 @@ export default function Nav() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-white/80 hover:text-white font-medium transition-colors text-sm"
-              style={{ padding: '0.5rem 0.5rem', borderBottom: '1px solid oklch(1 0 0 / 0.08)' }}
+              className="font-medium transition-colors text-sm hover:opacity-70"
+              style={{ padding: '0.5rem 0.5rem', borderBottom: '1px solid oklch(0 0 0 / 0.07)', color: 'oklch(0.30 0.05 261)' }}
               onClick={() => setOpen(false)}
             >
               {link.label}
@@ -168,8 +173,8 @@ export default function Nav() {
             href="https://my.lawsonstate.edu"
             target="_blank"
             rel="noreferrer"
-            className="text-white/80 hover:text-white font-medium transition-colors text-sm"
-            style={{ padding: '0.5rem 0.5rem' }}
+            className="font-medium transition-colors text-sm hover:opacity-70"
+            style={{ padding: '0.5rem 0.5rem', color: 'oklch(0.30 0.05 261)' }}
             onClick={() => setOpen(false)}
           >
             Student Portal
