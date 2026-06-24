@@ -24,7 +24,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
     <section
       className="relative flex flex-col overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, oklch(0.22 0.17 261) 0%, oklch(0.18 0.14 262) 100%)',
+        background: 'linear-gradient(135deg, var(--color-lscc-blue) 0%, oklch(0.25 0.14 262) 100%)',
         minHeight: '60vh',
       }}
     >

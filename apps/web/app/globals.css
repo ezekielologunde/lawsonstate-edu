@@ -16,7 +16,8 @@ html {
 
 @theme {
   /* Lawson State HBCU brand palette — refined OKLCH */
-  --color-lscc-blue:      oklch(0.22 0.17 261);
+  /* Navy increased from 0.22 to 0.30 for WCAG AA contrast (4.5:1) with gold */
+  --color-lscc-blue:      oklch(0.30 0.15 261);
   --color-lscc-blue-dark: oklch(0.16 0.13 263);
   --color-lscc-blue-mid:  oklch(0.35 0.15 261);
   --color-lscc-blue-100:  oklch(0.93 0.03 261);
