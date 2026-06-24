@@ -1,5 +1,6 @@
 www.lawsonstate.edu
 apps/mobile
+apps/axion
 node_modules
 *.pdf
 *.zip
