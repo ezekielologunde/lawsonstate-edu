@@ -42,7 +42,7 @@ const VISITOR_PATHS = [
   {
     id: 'current',
     label: 'Current Student',
-    description: 'I'm already enrolled at Lawson State',
+    description: "I'm already enrolled at Lawson State",
     color: 'oklch(0.79 0.19 78)',
     icon: '✓',
     headline: 'EVERYTHING YOU NEED',
@@ -60,7 +60,7 @@ const VISITOR_PATHS = [
   {
     id: 'adult',
     label: 'Career Changer / Adult Learner',
-    description: 'I'm looking for career training or quick certification',
+    description: "I'm looking for career training or quick certification",
     color: 'oklch(0.22 0.17 261)',
     icon: '⚡',
     headline: 'ADVANCE YOUR CAREER',
