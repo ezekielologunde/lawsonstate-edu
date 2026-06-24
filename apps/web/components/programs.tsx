@@ -55,7 +55,7 @@ export default function Programs({
 
   return (
     <section
-      style={{ background: 'oklch(0.99 0.005 263)', paddingBlock: '5rem' }}
+      style={{ background: 'oklch(0.95 0.03 255)', paddingBlock: '5rem' }}
       aria-label="Academic Programs"
     >
       <div className="max-w-7xl mx-auto px-6">
