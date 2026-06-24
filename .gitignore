@@ -47,3 +47,9 @@ supabase/.temp
 *.sw?
 
 .vercel
+
+# No PDFs, downloaded site archives, or local tools
+*.pdf
+*.zip
+wget.exe
+www.lawsonstate.edu/
