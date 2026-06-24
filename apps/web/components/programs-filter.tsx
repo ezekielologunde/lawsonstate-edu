@@ -101,12 +101,13 @@ export default function ProgramsFilter() {
               placeholder="Search by program name, credential, or skill…"
               value={filters.search}
               onChange={handleSearch}
-              className="w-full px-4 py-3 rounded-lg text-sm focus:outline-none transition-all"
+              className="w-full px-4 py-3 rounded-lg text-sm transition-all"
               style={{
                 background: 'oklch(0.22 0.16 261)',
                 border: '1.5px solid oklch(1 0 0 / 0.15)',
                 color: 'white',
               }}
+              aria-label="Search programs"
             />
             {filters.search && (
               <button
@@ -227,8 +228,11 @@ export default function ProgramsFilter() {
                       type="checkbox"
                       checked={filters.degreeTypes.includes(type)}
                       onChange={() => toggleDegreeType(type)}
-                      className="mt-1 w-4 h-4 rounded cursor-pointer"
-                      style={{ accentColor: 'oklch(0.79 0.19 78)' }}
+                      className="mt-1 w-4 h-4 rounded cursor-pointer transition-shadow"
+                      style={{
+                        accentColor: 'oklch(0.79 0.19 78)',
+                        borderRadius: '4px',
+                      }}
                       aria-label={`${type} - ${info.label}`}
                     />
                     <div className="flex-1 min-w-0">
@@ -250,8 +254,12 @@ export default function ProgramsFilter() {
                       type="checkbox"
                       checked={filters.deliveryModes.includes(mode)}
                       onChange={() => toggleDeliveryMode(mode)}
-                      className="w-4 h-4 rounded cursor-pointer"
-                      style={{ accentColor: 'oklch(0.79 0.19 78)' }}
+                      className="w-4 h-4 rounded cursor-pointer transition-shadow"
+                      style={{
+                        accentColor: 'oklch(0.79 0.19 78)',
+                        borderRadius: '4px',
+                      }}
+                      aria-label={`${info.label}`}
                     />
                     <span className="font-medium text-sm text-white">
                       {info.label}
@@ -271,9 +279,12 @@ export default function ProgramsFilter() {
                       type="checkbox"
                       checked={filters.categories.includes(cat)}
                       onChange={() => toggleCategory(cat)}
-                      className="w-4 h-4 rounded cursor-pointer"
-                      style={{ accentColor: 'oklch(0.79 0.19 78)' }}
-                      aria-label={info.label}
+                      className="w-4 h-4 rounded cursor-pointer transition-shadow"
+                      style={{
+                        accentColor: 'oklch(0.79 0.19 78)',
+                        borderRadius: '4px',
+                      }}
+                      aria-label={`${info.label}`}
                     />
                     <span className="font-medium text-sm text-white">{info.label}</span>
                   </label>

@@ -385,3 +385,20 @@ a:hover .program-img { transform: scale(1.06); }
 /* ── Action strip item hover ── */
 .action-item { transition: background 0.18s ease; }
 .action-item:hover { background: oklch(0.79 0.19 78 / 0.07) !important; }
+
+/* ── Form input focus states ── */
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 0 2px oklch(0.14 0.10 261),
+              0 0 0 4px oklch(0.79 0.19 78);
+}
+
+/* ── Checkbox & radio focus ── */
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  outline: 2px solid oklch(0.79 0.19 78);
+  outline-offset: 2px;
+}
