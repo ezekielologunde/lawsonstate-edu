@@ -354,4 +354,34 @@ a:hover .program-img { transform: scale(1.06); }
   .float-slow, .float-medium, .marquee-track { animation: none; }
   .btn-shimmer::after { display: none; }
   .hero-word, .hero-block { animation: none; opacity: 1; }
+  /* Scroll-driven reveals — show immediately */
+  .scroll-reveal,
+  .scroll-reveal-fade,
+  .stagger-grid > *,
+  .programs-grid,
+  .page-fade-1, .page-fade-2, .page-fade-3, .page-fade-4, .page-fade-5 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
+
+/* ── Page-level time-based entrance (for hero content, not scroll-driven) ── */
+.page-fade-1 { animation: fade-up 0.65s cubic-bezier(0.23, 1, 0.32, 1) 0.08s both; }
+.page-fade-2 { animation: fade-up 0.65s cubic-bezier(0.23, 1, 0.32, 1) 0.20s both; }
+.page-fade-3 { animation: fade-up 0.65s cubic-bezier(0.23, 1, 0.32, 1) 0.32s both; }
+.page-fade-4 { animation: fade-up 0.65s cubic-bezier(0.23, 1, 0.32, 1) 0.44s both; }
+.page-fade-5 { animation: fade-up 0.65s cubic-bezier(0.23, 1, 0.32, 1) 0.56s both; }
+
+/* ── Dynamic card appear (JS-rendered lists, filter results) ── */
+@keyframes card-appear {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.card-appear {
+  animation: card-appear 0.38s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* ── Action strip item hover ── */
+.action-item { transition: background 0.18s ease; }
+.action-item:hover { background: oklch(0.79 0.19 78 / 0.07) !important; }

@@ -113,11 +113,11 @@ export default function WorkforcePage() {
       </div>
 
       {/* Programs */}
-      <section className="py-20 px-6" style={{ background: 'white' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.10 261)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Training Programs</p>
-            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>FAST-TRACK CREDENTIALS</h2>
+            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>FAST-TRACK CREDENTIALS</h2>
           </div>
           <div className="space-y-10">
             {PROGRAMS.map(cat => (
@@ -133,10 +133,10 @@ export default function WorkforcePage() {
                     <div
                       key={item.name}
                       className="card-lift rounded-xl p-6 shadow-card"
-                      style={{ background: 'oklch(0.97 0.015 263)', border: '1px solid oklch(0.92 0.01 263)' }}
+                      style={{ background: 'oklch(0.22 0.16 261)', border: '1px solid oklch(1 0 0 / 0.10)' }}
                     >
                       <div className="flex items-start justify-between gap-4 mb-3">
-                        <h4 className="font-display font-bold text-lscc-ink leading-snug" style={{ fontSize: '1.08rem' }}>{item.name}</h4>
+                        <h4 className="font-display font-bold text-white leading-snug" style={{ fontSize: '1.08rem' }}>{item.name}</h4>
                         <span
                           className="shrink-0 font-black rounded-lg px-3 py-1"
                           style={{
@@ -149,10 +149,9 @@ export default function WorkforcePage() {
                         </span>
                       </div>
                       <div className="flex items-center gap-2 mb-3">
-                        <span style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem' }}>⏱</span>
-                        <span className="font-semibold text-lscc-muted" style={{ fontSize: '0.92rem' }}>{item.duration}</span>
+                        <span className="font-semibold" style={{ fontSize: '0.92rem', color: 'oklch(1 0 0 / 0.65)' }}>{item.duration}</span>
                       </div>
-                      <p className="text-lscc-muted leading-relaxed" style={{ fontSize: '1.08rem' }}>{item.detail}</p>
+                      <p className="leading-relaxed" style={{ fontSize: '1.08rem', color: 'oklch(1 0 0 / 0.70)' }}>{item.detail}</p>
                     </div>
                   ))}
                 </div>
@@ -184,13 +183,12 @@ export default function WorkforcePage() {
             </div>
             <div className="stagger-grid grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { icon: '🎓', label: 'ACT National Career Readiness Certificate (NCRC)' },
-                { icon: '📜', label: 'Alabama Certified Employee Certificate' },
-                { icon: '📚', label: '1 free college course (up to 4 credit hours)' },
-                { icon: '✅', label: 'Articulated credit for WKO 110 (3 credits)' },
+                { label: 'ACT National Career Readiness Certificate (NCRC)' },
+                { label: 'Alabama Certified Employee Certificate' },
+                { label: '1 free college course (up to 4 credit hours)' },
+                { label: 'Articulated credit for WKO 110 (3 credits)' },
               ].map(item => (
                 <div key={item.label} className="rounded-xl p-5" style={{ background: 'oklch(0.19 0.08 263)', border: '1px solid oklch(1 0 0 / 0.07)' }}>
-                  <div className="text-2xl mb-2">{item.icon}</div>
                   <p className="text-white/80 leading-snug" style={{ fontSize: '1.1rem' }}>{item.label}</p>
                 </div>
               ))}
@@ -200,7 +198,7 @@ export default function WorkforcePage() {
       </section>
 
       {/* Apprenticeships */}
-      <section className="py-20 px-6" style={{ background: 'white' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.10 261)' }}>
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
@@ -211,13 +209,13 @@ export default function WorkforcePage() {
             </div>
             <div className="order-1 lg:order-2">
               <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Earn While You Learn</p>
-              <h2 className="font-display font-black leading-none text-lscc-ink mb-4" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em' }}>
+              <h2 className="font-display font-black leading-none text-white mb-4" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em' }}>
                 APPRENTICESHIP PROGRAMS
               </h2>
-              <p className="text-lscc-muted leading-relaxed mb-4" style={{ fontSize: '1.1rem' }}>
+              <p className="leading-relaxed mb-4" style={{ fontSize: '1.1rem', color: 'oklch(1 0 0 / 0.72)' }}>
                 Lawson State partners with 7 employers to offer registered apprenticeship programs — structured on-the-job training combined with classroom instruction. Earn an income while earning your credential.
               </p>
-              <p className="text-lscc-muted leading-relaxed" style={{ fontSize: '1.1rem' }}>
+              <p className="leading-relaxed" style={{ fontSize: '1.1rem', color: 'oklch(1 0 0 / 0.72)' }}>
                 Contact the Workforce Development office to learn which employer partners are currently hiring apprentices and whether your field of interest is available.
               </p>
             </div>
@@ -226,28 +224,28 @@ export default function WorkforcePage() {
       </section>
 
       {/* Contact */}
-      <section className="py-16 px-6" style={{ background: 'oklch(0.97 0.015 263)' }}>
+      <section className="py-16 px-6" style={{ background: 'oklch(0.18 0.14 261)' }}>
         <div className="max-w-7xl mx-auto scroll-reveal">
-          <div className="rounded-2xl p-8" style={{ background: 'white', border: '1px solid oklch(0.92 0.01 263)', boxShadow: '0 1px 3px oklch(0.11 0.03 261 / 0.06), 0 4px 18px oklch(0.11 0.03 261 / 0.1)' }}>
-            <h2 className="font-display font-black text-lscc-ink mb-6" style={{ fontSize: '1.3rem', letterSpacing: '-0.015em' }}>Contact Workforce Development</h2>
+          <div className="rounded-2xl p-8" style={{ background: 'oklch(0.26 0.18 261)', border: '1px solid oklch(1 0 0 / 0.10)' }}>
+            <h2 className="font-display font-black text-white mb-6" style={{ fontSize: '1.3rem', letterSpacing: '-0.015em' }}>Contact Workforce Development</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm">
               <div>
                 <div className="font-semibold uppercase mb-1" style={{ fontSize: '0.74rem', letterSpacing: '0.14em', color: 'oklch(0.79 0.19 78)' }}>Contact</div>
-                <p className="font-medium text-lscc-ink">Ms. Tomeka Minnifield</p>
-                <a href="tel:+12059296384" className="text-lscc-muted hover:text-lscc-blue transition-colors block">205.929.6384</a>
-                <a href="mailto:timminifield@lawsonstate.edu" className="text-lscc-muted hover:text-lscc-blue transition-colors block">timminifield@lawsonstate.edu</a>
+                <p className="font-medium text-white">Ms. Tomeka Minnifield</p>
+                <a href="tel:+12059296384" className="block" style={{ color: 'oklch(1 0 0 / 0.65)' }}>205.929.6384</a>
+                <a href="mailto:timminifield@lawsonstate.edu" className="block" style={{ color: 'oklch(1 0 0 / 0.65)' }}>timminifield@lawsonstate.edu</a>
               </div>
               <div>
                 <div className="font-semibold uppercase mb-1" style={{ fontSize: '0.74rem', letterSpacing: '0.14em', color: 'oklch(0.79 0.19 78)' }}>Location</div>
-                <p className="text-lscc-muted">Millsap Building</p>
-                <p className="text-lscc-muted">Bessemer Campus</p>
-                <p className="text-lscc-muted">1100 Ninth Avenue SW</p>
-                <p className="text-lscc-muted">Bessemer, AL 35022</p>
+                <p style={{ color: 'oklch(1 0 0 / 0.65)' }}>Millsap Building</p>
+                <p style={{ color: 'oklch(1 0 0 / 0.65)' }}>Bessemer Campus</p>
+                <p style={{ color: 'oklch(1 0 0 / 0.65)' }}>1100 Ninth Avenue SW</p>
+                <p style={{ color: 'oklch(1 0 0 / 0.65)' }}>Bessemer, AL 35022</p>
               </div>
               <div>
                 <div className="font-semibold uppercase mb-1" style={{ fontSize: '0.74rem', letterSpacing: '0.14em', color: 'oklch(0.79 0.19 78)' }}>Hours</div>
-                <p className="text-lscc-muted">Monday–Friday</p>
-                <p className="text-lscc-muted">8:00 AM – 5:00 PM</p>
+                <p style={{ color: 'oklch(1 0 0 / 0.65)' }}>Monday–Friday</p>
+                <p style={{ color: 'oklch(1 0 0 / 0.65)' }}>8:00 AM – 5:00 PM</p>
               </div>
             </div>
           </div>

@@ -112,34 +112,34 @@ export default function AboutPage() {
       </div>
 
       {/* Mission & Core Values */}
-      <section className="py-20 px-6" style={{ background: 'white' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.10 261)' }}>
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Our Purpose</p>
-              <h2 className="font-display font-black leading-none mb-8 text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em' }}>MISSION &amp; VISION</h2>
+              <h2 className="font-display font-black leading-none mb-8 text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em' }}>MISSION &amp; VISION</h2>
               <div className="space-y-6">
                 <div style={{ borderLeft: '3px solid oklch(0.79 0.19 78)', paddingLeft: '1.25rem' }}>
-                  <h3 className="font-display font-bold mb-2 text-lscc-blue" style={{ fontSize: '1.05rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Mission</h3>
-                  <p className="text-lscc-muted leading-relaxed" style={{ fontSize: '1.08rem' }}>
+                  <h3 className="font-display font-bold mb-2" style={{ fontSize: '1.05rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(0.79 0.19 78)' }}>Mission</h3>
+                  <p className="leading-relaxed" style={{ color: 'oklch(1 0 0 / 0.72)', fontSize: '1.08rem' }}>
                     With a focus on student success, Lawson State Community College provides affordable and quality educational opportunities, promotes economic growth, and enhances the quality of life in the communities it serves. Through innovative instruction and lifelong learning opportunities, the College prepares students for college transfer, employment, and career advancement.
                   </p>
                 </div>
                 <div style={{ borderLeft: '3px solid oklch(0.79 0.19 78)', paddingLeft: '1.25rem' }}>
-                  <h3 className="font-display font-bold mb-2 text-lscc-blue" style={{ fontSize: '1.05rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Vision</h3>
-                  <p className="text-lscc-muted leading-relaxed" style={{ fontSize: '1.08rem' }}>
+                  <h3 className="font-display font-bold mb-2" style={{ fontSize: '1.05rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(0.79 0.19 78)' }}>Vision</h3>
+                  <p className="leading-relaxed" style={{ color: 'oklch(1 0 0 / 0.72)', fontSize: '1.08rem' }}>
                     Cultivating success through excellence and innovation.
                   </p>
                 </div>
                 <div style={{ borderLeft: '3px solid oklch(0.79 0.19 78)', paddingLeft: '1.25rem' }}>
-                  <h3 className="font-display font-bold mb-2 text-lscc-blue" style={{ fontSize: '1.05rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Motto</h3>
-                  <p className="font-display font-black text-lscc-ink" style={{ fontSize: '1.1rem' }}>"It's All Here!"</p>
+                  <h3 className="font-display font-bold mb-2" style={{ fontSize: '1.05rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(0.79 0.19 78)' }}>Motto</h3>
+                  <p className="font-display font-black text-white" style={{ fontSize: '1.1rem' }}>"It's All Here!"</p>
                 </div>
               </div>
             </div>
             <div>
               <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>What We Stand For</p>
-              <h2 className="font-display font-black leading-none mb-8 text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em' }}>CORE VALUES</h2>
+              <h2 className="font-display font-black leading-none mb-8 text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em' }}>CORE VALUES</h2>
               <ul className="space-y-5">
                 {[
                   ['Student Success', 'Recruitment, persistence, graduation, and career development at the center of everything we do.'],
@@ -151,8 +151,8 @@ export default function AboutPage() {
                   <li key={value} className="flex gap-4 items-start">
                     <span className="shrink-0 w-2 h-2 rounded-full mt-2" style={{ background: 'oklch(0.79 0.19 78)' }} />
                     <div>
-                      <span className="font-display font-bold text-lscc-ink" style={{ fontSize: '1.05rem' }}>{value} — </span>
-                      <span className="text-lscc-muted" style={{ fontSize: '1.05rem' }}>{desc}</span>
+                      <span className="font-display font-bold text-white" style={{ fontSize: '1.05rem' }}>{value} — </span>
+                      <span style={{ color: 'oklch(1 0 0 / 0.72)', fontSize: '1.05rem' }}>{desc}</span>
                     </div>
                   </li>
                 ))}
@@ -163,25 +163,25 @@ export default function AboutPage() {
       </section>
 
       {/* President */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.97 0.015 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.18 0.14 261)' }}>
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-12 items-start">
             <div>
               <div className="aspect-[3/4] rounded-2xl mb-4 flex items-center justify-center" style={{ background: 'oklch(0.22 0.17 261)' }}>
                 <span className="font-display font-black text-white/20" style={{ fontSize: '5rem' }}>CTA</span>
               </div>
-              <p className="font-display font-black text-lscc-ink" style={{ fontSize: '1rem' }}>Dr. Cynthia T. Anthony</p>
-              <p className="text-lscc-muted" style={{ fontSize: '0.8rem' }}>5th President, Lawson State CC</p>
+              <p className="font-display font-black text-white" style={{ fontSize: '1rem' }}>Dr. Cynthia T. Anthony</p>
+              <p style={{ color: 'oklch(1 0 0 / 0.70)', fontSize: '0.8rem' }}>5th President, Lawson State CC</p>
               <p className="font-semibold mt-1" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.75rem' }}>First Female President · Appointed March 15, 2021</p>
             </div>
             <div>
               <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>A Message From Our President</p>
-              <h2 className="font-display font-black leading-none mb-6 text-lscc-ink" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', letterSpacing: '-0.025em' }}>WELCOME TO LAWSON STATE</h2>
-              <div className="space-y-4 text-lscc-muted leading-relaxed" style={{ fontSize: '1.1rem', maxWidth: '60ch' }}>
+              <h2 className="font-display font-black leading-none mb-6 text-white" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', letterSpacing: '-0.025em' }}>WELCOME TO LAWSON STATE</h2>
+              <div className="space-y-4 leading-relaxed" style={{ color: 'oklch(1 0 0 / 0.70)', fontSize: '1.1rem', maxWidth: '60ch' }}>
                 <p>Welcome to Lawson State Community College! Lawson State is an institution with a rich history of academic achievement and an unmatched record of community leadership and service.</p>
                 <p>As President, I am committed to student success and excellence in teaching and learning. The College offers an affordable and flexible education that is comprehensive, innovative, technology-rich, and designed to meet the diverse needs of constituents in Jefferson County.</p>
                 <p>The College has positioned itself to equip, engage, and empower students to be active and responsible participants in the educational process as well as in future endeavors — through face-to-face instruction, as well as virtual and online courses.</p>
-                <p className="font-display font-bold text-lscc-ink" style={{ fontSize: '1rem' }}>"It's All Here!"</p>
+                <p className="font-display font-bold text-white" style={{ fontSize: '1rem' }}>"It's All Here!"</p>
               </div>
             </div>
           </div>
@@ -213,11 +213,11 @@ export default function AboutPage() {
       </section>
 
       {/* Presidents */}
-      <section className="py-20 px-6" style={{ background: 'white' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.10 261)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Leadership Legacy</p>
-            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>COLLEGE PRESIDENTS</h2>
+            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>COLLEGE PRESIDENTS</h2>
           </div>
           <div className="stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {PRESIDENTS.map((p, i) => (
@@ -225,13 +225,13 @@ export default function AboutPage() {
                 key={p.name}
                 className="card-lift rounded-2xl p-6 shadow-card"
                 style={{
-                  background: p.current ? 'oklch(0.22 0.17 261)' : 'oklch(0.97 0.015 263)',
-                  border: `1px solid ${p.current ? 'transparent' : 'oklch(0.92 0.01 263)'}`,
+                  background: p.current ? 'oklch(0.22 0.17 261)' : 'oklch(0.20 0.15 261)',
+                  border: `1px solid ${p.current ? 'transparent' : 'oklch(1 0 0 / 0.10)'}`,
                 }}
               >
                 <div className="font-display font-black mb-2" style={{ fontSize: '0.84rem', color: 'oklch(0.79 0.19 78)', letterSpacing: '0.1em' }}>#{i + 1}</div>
-                <div className="font-display font-bold leading-snug mb-1" style={{ fontSize: '1rem', color: p.current ? 'white' : 'oklch(0.11 0.03 261)' }}>{p.name}</div>
-                <div style={{ fontSize: '1rem', color: p.current ? 'oklch(1 0 0 / 0.5)' : 'oklch(0.48 0.06 261)' }}>{p.years}</div>
+                <div className="font-display font-bold leading-snug mb-1" style={{ fontSize: '1rem', color: p.current ? 'white' : 'white' }}>{p.name}</div>
+                <div style={{ fontSize: '1rem', color: p.current ? 'oklch(1 0 0 / 0.5)' : 'oklch(1 0 0 / 0.60)' }}>{p.years}</div>
                 {p.note && <div className="mt-2 font-semibold" style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}>{p.note}</div>}
               </div>
             ))}
@@ -240,18 +240,18 @@ export default function AboutPage() {
       </section>
 
       {/* Accreditations */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.97 0.015 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.18 0.14 261)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Quality Assurance</p>
-            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>ACCREDITATIONS</h2>
-            <p className="text-lscc-muted mt-2" style={{ fontSize: '1.08rem' }}>Lawson State holds institutional and program-level accreditations that ensure the highest standards of education.</p>
+            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>ACCREDITATIONS</h2>
+            <p style={{ color: 'oklch(1 0 0 / 0.70)', fontSize: '1.08rem' }} className="mt-2">Lawson State holds institutional and program-level accreditations that ensure the highest standards of education.</p>
           </div>
           <div className="stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {ACCREDITATIONS.map(a => (
-              <div key={a.org} className="card-lift rounded-xl p-5 shadow-card" style={{ background: 'white', border: '1px solid oklch(0.92 0.01 263)' }}>
-                <div className="font-display font-black mb-1" style={{ fontSize: '1rem', color: 'oklch(0.22 0.17 261)' }}>{a.org}</div>
-                <div className="text-lscc-muted leading-snug mb-2" style={{ fontSize: '0.79rem' }}>{a.desc}</div>
+              <div key={a.org} className="card-lift rounded-xl p-5 shadow-card" style={{ background: 'oklch(0.26 0.18 261)', border: '1px solid oklch(1 0 0 / 0.10)' }}>
+                <div className="font-display font-black mb-1" style={{ fontSize: '1rem', color: 'white' }}>{a.org}</div>
+                <div className="leading-snug mb-2" style={{ color: 'oklch(1 0 0 / 0.65)', fontSize: '0.79rem' }}>{a.desc}</div>
                 <div className="font-semibold" style={{ fontSize: '0.84rem', color: 'oklch(0.79 0.19 78)' }}>{a.scope}</div>
               </div>
             ))}

@@ -5,95 +5,167 @@ type SupportContent = Record<string, string>
 const DEFAULTS: SupportContent = {
   headline_line1: "WE'RE WITH YOU",
   headline_line2: 'THE WHOLE WAY',
-  step_1_title: 'In the Classroom',
-  step_1_body:  'Small classes mean your professors actually know your name. Hands-on labs and real-world projects build the skills employers in Birmingham are actively hiring for.',
-  step_1_cta:   'Academics',
-  step_1_href:  '/academics',
-  step_2_title: 'Beyond Campus',
-  step_2_body:  "Free tutoring, mental health counseling, a campus food pantry, and 30+ clubs — because we know your life doesn't stop when classes start.",
-  step_2_cta:   'Student Life',
-  step_2_href:  '/student-life',
-  step_3_title: 'After Graduation',
-  step_3_body:  'Transfer seamlessly to UAB, Auburn, or UAH — or step directly into a career through our employer partnerships and on-campus recruiting programs.',
-  step_3_cta:   'Career Services',
-  step_3_href:  '/career-services',
+  step_1_title:  'Professors Who Know Your Name',
+  step_1_pull:   '"My professor stayed after class every Tuesday until I got it. That\'s just Lawson State."',
+  step_1_attr:   '— Nursing Student, Class of 2024',
+  step_1_body:   'Small classes. Real mentorship. Hands-on labs and real-world projects that build the skills Birmingham employers are actively hiring for right now.',
+  step_1_cta:    'Explore Academics',
+  step_1_href:   '/academics',
+  step_2_title:  'Resources for Your Whole Life',
+  step_2_pull:   '"The campus food pantry was there when I needed it most. I didn\'t have to choose between eating and studying."',
+  step_2_attr:   '— Business Student, Class of 2025',
+  step_2_body:   'Free tutoring, mental health counseling, a campus food pantry, and 30+ clubs — because your life doesn\'t stop when classes start.',
+  step_2_cta:    'Student Services',
+  step_2_href:   '/student-life',
+  step_3_title:  'A Launchpad, Not a Destination',
+  step_3_pull:   '"I transferred to UAB with a 3.8 GPA. Lawson State prepared me better than I ever expected."',
+  step_3_attr:   '— Transfer Student, Class of 2023',
+  step_3_body:   'Transfer seamlessly to UAB, Auburn, or UAH — or step directly into a career through our employer partnerships and on-campus recruiting.',
+  step_3_cta:    'Career Services',
+  step_3_href:   '/career-services',
 }
+
+const STORY_PHOTOS = [
+  'https://www.lawsonstate.edu/_resources/assets/img/dental%20main2.jpg',
+  'https://www.lawsonstate.edu/_resources/assets/img/LSCC%20Students%20Serv.jpg',
+  'https://www.lawsonstate.edu/_resources/assets/img/alabama%20transfers.jpg',
+]
 
 export default function Support({ content = {} }: { content?: SupportContent }) {
   const c = { ...DEFAULTS, ...content }
 
-  const steps = [
-    { num: '01', title: c.step_1_title, body: c.step_1_body, cta: c.step_1_cta, href: c.step_1_href },
-    { num: '02', title: c.step_2_title, body: c.step_2_body, cta: c.step_2_cta, href: c.step_2_href },
-    { num: '03', title: c.step_3_title, body: c.step_3_body, cta: c.step_3_cta, href: c.step_3_href },
+  const stories = [
+    {
+      num: '01', eyebrow: 'In the Classroom',
+      title: c.step_1_title, pull: c.step_1_pull, attr: c.step_1_attr,
+      body: c.step_1_body, cta: c.step_1_cta, href: c.step_1_href,
+      photo: STORY_PHOTOS[0],
+    },
+    {
+      num: '02', eyebrow: 'Beyond Campus',
+      title: c.step_2_title, pull: c.step_2_pull, attr: c.step_2_attr,
+      body: c.step_2_body, cta: c.step_2_cta, href: c.step_2_href,
+      photo: STORY_PHOTOS[1],
+    },
+    {
+      num: '03', eyebrow: 'After Graduation',
+      title: c.step_3_title, pull: c.step_3_pull, attr: c.step_3_attr,
+      body: c.step_3_body, cta: c.step_3_cta, href: c.step_3_href,
+      photo: STORY_PHOTOS[2],
+    },
   ]
 
   return (
-    <section className="overflow-hidden" style={{ background: 'oklch(0.97 0.008 263)' }}>
-      <div className="max-w-7xl mx-auto grid md:grid-cols-[5fr_7fr]">
+    <section
+      style={{ background: 'oklch(0.16 0.12 261)', paddingBlock: '5rem' }}
+      aria-label="Student Support"
+    >
+      <div className="max-w-7xl mx-auto px-6">
 
-        {/* Left: campus photo */}
-        <div className="relative hidden md:block">
-          <img
-            src="https://live.staticflickr.com/65535/55259062249_bda6f008e2_z.jpg"
-            alt="Lawson State students at commencement"
-            className="absolute inset-0 w-full h-full object-cover object-top"
-            loading="lazy"
-          />
-          <div
-            aria-hidden
-            className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(to right, oklch(0.97 0.008 263 / 0.10) 0%, oklch(0.97 0.008 263 / 0.70) 100%)',
-            }}
-          />
-        </div>
-
-        {/* Right: content */}
-        <div className="py-12 px-6 md:px-10 lg:px-16">
+        {/* Section headline */}
+        <div className="mb-12 scroll-reveal">
+          <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'oklch(0.79 0.19 78)', textTransform: 'uppercase', marginBottom: '0.5rem', fontWeight: 700 }}>
+            05 — Support that never stops
+          </p>
           <h2
-            className="font-display font-black leading-none mb-10"
-            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', letterSpacing: '-0.02em', color: 'oklch(0.18 0.12 261)' }}
+            className="font-display font-black text-white leading-none"
+            style={{ fontSize: 'clamp(2.6rem, 5.5vw, 4.4rem)', letterSpacing: '-0.04em' }}
           >
             {c.headline_line1}
             <br />
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>{c.headline_line2}</span>
           </h2>
+        </div>
 
-          <div className="flex flex-col gap-8">
-            {steps.map((step, i) => (
-              <div
-                key={step.num}
-                className="flex flex-col"
-                style={i < steps.length - 1 ? { paddingBottom: '2.5rem', borderBottom: '1px solid oklch(0 0 0 / 0.08)' } : {}}
-              >
+        {/* Three story cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 stagger-grid">
+          {stories.map((story) => (
+            <article
+              key={story.num}
+              className="group flex flex-col rounded-2xl overflow-hidden"
+              style={{ background: 'oklch(0.24 0.18 261)' }}
+            >
+              {/* Photo */}
+              <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
+                <img
+                  src={story.photo}
+                  alt=""
+                  aria-hidden
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                {/* Gradient scrim */}
                 <div
-                  className="font-display font-black mb-4 leading-none"
-                  style={{ fontSize: '2.4rem', color: 'oklch(0.42 0.22 248)' }}
+                  className="absolute inset-0"
+                  style={{ background: 'linear-gradient(to bottom, transparent 40%, oklch(0.24 0.18 261) 100%)' }}
+                />
+                {/* Step number badge */}
+                <div
+                  className="absolute top-4 left-4 font-display font-black"
+                  style={{
+                    fontSize: '0.72rem', letterSpacing: '0.18em',
+                    padding: '0.28rem 0.72rem', borderRadius: '999px',
+                    background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)',
+                  }}
                 >
-                  {step.num}
+                  {story.num}
                 </div>
-                <h3
-                  className="font-display font-bold mb-2"
-                  style={{ fontSize: '1.35rem', letterSpacing: '-0.015em', color: 'oklch(0.18 0.12 261)' }}
-                >
-                  {step.title}
-                </h3>
-                <p className="leading-relaxed mb-4" style={{ maxWidth: '44ch', color: 'oklch(0.45 0.08 263)' }}>
-                  {step.body}
+              </div>
+
+              {/* Content */}
+              <div className="flex flex-col flex-1 p-6">
+                <p style={{ fontSize: '0.70rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.79 0.19 78)', marginBottom: '0.5rem', fontWeight: 700 }}>
+                  {story.eyebrow}
                 </p>
-                <Link
-                  href={step.href}
-                  className="text-sm font-semibold hover:underline transition-colors self-start"
-                  style={{ color: 'oklch(0.42 0.22 248)' }}
+
+                <h3
+                  className="font-display font-black text-white leading-tight mb-4"
+                  style={{ fontSize: 'clamp(1.1rem, 1.8vw, 1.3rem)', letterSpacing: '-0.02em' }}
                 >
-                  {step.cta} →
+                  {story.title}
+                </h3>
+
+                {/* Gold separator */}
+                <div style={{ width: '32px', height: '2px', background: 'oklch(0.79 0.19 78)', borderRadius: '2px', marginBottom: '1rem' }} />
+
+                {/* Pull quote */}
+                <blockquote
+                  className="font-display font-semibold mb-1"
+                  style={{
+                    fontSize: '0.88rem', lineHeight: 1.55,
+                    color: 'oklch(1 0 0 / 0.80)',
+                    fontStyle: 'italic',
+                    letterSpacing: '-0.01em',
+                  }}
+                >
+                  {story.pull}
+                </blockquote>
+                <p style={{ fontSize: '0.72rem', color: 'oklch(1 0 0 / 0.40)', marginBottom: '1rem', letterSpacing: '0.02em' }}>
+                  {story.attr}
+                </p>
+
+                {/* Body */}
+                <p style={{ fontSize: '0.88rem', lineHeight: 1.75, color: 'oklch(1 0 0 / 0.72)', marginBottom: '1.5rem', flex: 1 }}>
+                  {story.body}
+                </p>
+
+                {/* CTA */}
+                <Link
+                  href={story.href}
+                  className="group/link inline-flex items-center gap-2 font-bold self-start press"
+                  style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)', letterSpacing: '0.03em' }}
+                >
+                  {story.cta}
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden
+                    className="transition-transform duration-300 group-hover/link:translate-x-1">
+                    <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+                  </svg>
                 </Link>
               </div>
-            ))}
-          </div>
+            </article>
+          ))}
         </div>
+
       </div>
     </section>
   )

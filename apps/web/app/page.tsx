@@ -6,12 +6,14 @@ import StickyStudentNav from '@/components/sticky-student-nav'
 import Nav from '@/components/nav'
 import AnnouncementBanner from '@/components/announcement-banner'
 import Hero from '@/components/hero'
-import VisitorDecisionTree from '@/components/visitor-decision-tree'
-import MakersFixers from '@/components/makers-fixers'
 import Programs from '@/components/programs'
-import CampusLifeGallery from '@/components/campus-life-gallery'
 import Support from '@/components/support'
 import NewsEvents from '@/components/news-events'
+import StatsTicker from '@/components/stats-ticker'
+import Testimonials from '@/components/testimonials'
+import ValueSection from '@/components/value-section'
+import AthleticsCallout from '@/components/athletics-callout'
+import ActionStrip from '@/components/action-strip'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
 import MobileBottomNav from '@/components/mobile-bottom-nav'
@@ -62,15 +64,17 @@ export default async function Home() {
       <Nav />
       <main id="main-content" className="mobile-nav-spacer">
         <Hero content={content.hero} />
-        <VisitorDecisionTree />
+        <StatsTicker />
         <Programs programs={programs ?? []} content={content.programs} />
-        <CampusLifeGallery />
+        <Testimonials />
+        <ValueSection />
+        <AthleticsCallout />
         <Support content={content.support} />
         <NewsEvents
           featuredStory={featuredStory ?? null}
           events={upcomingEvents ?? []}
         />
-        <MakersFixers />
+        <ActionStrip />
         <Prefooter content={content.prefooter} />
       </main>
       <SiteFooter />

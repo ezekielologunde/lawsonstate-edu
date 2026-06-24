@@ -5,6 +5,7 @@ import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
 import MobileBottomNav from '@/components/mobile-bottom-nav'
 import DivisionsFilter, { type Division } from '@/components/divisions-filter'
+import ProgramCatalog from '@/components/program-catalog'
 
 export const metadata: Metadata = {
   title: 'Academics — 200+ Programs at Lawson State',
@@ -43,8 +44,8 @@ const DIVISIONS: Division[] = [
       'NSF HBCU-UP grants for STEM students',
     ],
     href: '/academics/transfer',
-    bg: 'white',
-    dark: false,
+    bg: 'oklch(0.20 0.15 261)',
+    dark: true,
   },
   {
     id: 'health-professions',
@@ -62,8 +63,8 @@ const DIVISIONS: Division[] = [
       'Nursing Assistant / Nurse Aide',
     ],
     href: '/academics/health-professions',
-    bg: 'oklch(0.97 0.015 263)',
-    dark: false,
+    bg: 'oklch(0.20 0.15 261)',
+    dark: true,
   },
   {
     id: 'business-it',
@@ -80,32 +81,28 @@ const DIVISIONS: Division[] = [
       'Two fully online degrees: Business and Business Education',
     ],
     href: '/academics/business-it',
-    bg: 'white',
-    dark: false,
+    bg: 'oklch(0.20 0.15 261)',
+    dark: true,
   },
 ]
 
 const SPECIALTY = [
   {
-    icon: '⚗',
     name: 'STEM Programs',
     desc: 'STEM Scholars Program, STEM Internship, and STEAM Academy for middle/high school students. NSF I-RISE grant funded. Only STEM Center of Excellence in Alabama.',
     href: '/academics/stem',
   },
   {
-    icon: '🏆',
     name: 'Honors College',
     desc: 'Exclusive scholarships, study abroad, mentorships, and network connections. Member of the National Collegiate Honors Council and National Association of African-American Honors Programs.',
     href: '/academics/honors',
   },
   {
-    icon: '💻',
     name: 'eCollege (Online)',
     desc: 'Fully online degrees in Business and Business Education. Online general education courses available for all majors. 24/7 access via Canvas. Free Tutor.com tutoring in 500+ subjects.',
     href: '/academics/online',
   },
   {
-    icon: '📅',
     name: 'Weekend College',
     desc: 'Earn an Associate\'s Degree across 66 credits — on weekends. Ideal for working adults. Complete health professions prerequisites and the Cybersecurity Short Certificate.',
     href: '/academics/weekend-college',
@@ -178,34 +175,53 @@ export default function AcademicsPage() {
       </div>
 
       {/* Division cards */}
-      <section className="py-20 px-6" style={{ background: 'white' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.10 261)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Program Divisions</p>
-            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>FIND YOUR DIVISION</h2>
+            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>FIND YOUR DIVISION</h2>
           </div>
           <DivisionsFilter divisions={DIVISIONS} />
         </div>
       </section>
 
+      {/* Live Program Catalog */}
+      <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.10 261)' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-10 scroll-reveal">
+            <p className="font-display font-semibold uppercase mb-3"
+              style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>
+              Browse the Full Catalog
+            </p>
+            <h2 className="font-display font-black leading-none text-white mb-3"
+              style={{ fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', letterSpacing: '-0.04em' }}>
+              ALL {150}+ PROGRAMS
+            </h2>
+            <p style={{ fontSize: '1rem', color: 'oklch(1 0 0 / 0.65)', maxWidth: '55ch', lineHeight: 1.7 }}>
+              Filter by subject area, credential type, or search by name. Placement rates shown where available.
+            </p>
+          </div>
+          <ProgramCatalog />
+        </div>
+      </section>
+
       {/* Specialty programs */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.97 0.015 263)' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.18 0.14 261)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Beyond the Classroom</p>
-            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>SPECIALTY PROGRAMS</h2>
+            <h2 className="font-display font-black leading-none text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>SPECIALTY PROGRAMS</h2>
           </div>
           <div className="stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {SPECIALTY.map(s => (
               <Link
                 key={s.name}
                 href={s.href}
-                className="card-lift press rounded-2xl p-6 shadow-card block"
-                style={{ background: 'white', border: '1px solid oklch(0.92 0.01 263)' }}
+                className="card-lift press rounded-2xl p-6 block"
+                style={{ background: 'oklch(0.26 0.18 261)', border: '1px solid oklch(1 0 0 / 0.10)' }}
               >
-                <div className="mb-3" style={{ fontSize: '1.6rem' }}>{s.icon}</div>
-                <h3 className="font-display font-bold mb-2 text-lscc-ink" style={{ fontSize: '1.08rem', letterSpacing: '-0.01em' }}>{s.name}</h3>
-                <p className="text-lscc-muted leading-relaxed" style={{ fontSize: '1.08rem' }}>{s.desc}</p>
+                <h3 className="font-display font-bold mb-2 text-white" style={{ fontSize: '1.08rem', letterSpacing: '-0.01em' }}>{s.name}</h3>
+                <p className="leading-relaxed" style={{ fontSize: '0.96rem', color: 'oklch(1 0 0 / 0.70)' }}>{s.desc}</p>
               </Link>
             ))}
           </div>
@@ -255,19 +271,19 @@ export default function AcademicsPage() {
       </section>
 
       {/* Dual Enrollment */}
-      <section className="py-20 px-6" style={{ background: 'white' }}>
+      <section className="py-20 px-6" style={{ background: 'oklch(0.14 0.10 261)' }}>
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>High School Students</p>
-              <h2 className="font-display font-black leading-none mb-4 text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em' }}>DUAL ENROLLMENT</h2>
-              <p className="text-lscc-muted leading-relaxed mb-6" style={{ fontSize: '1.1rem' }}>
+              <h2 className="font-display font-black leading-none mb-4 text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em' }}>DUAL ENROLLMENT</h2>
+              <p className="leading-relaxed mb-6" style={{ fontSize: '1.1rem', color: 'oklch(1 0 0 / 0.72)' }}>
                 Start college while still in high school. Take up to 51 available classes and earn real college credits — tuition waived through ACCS grant funding. Available to 10th–12th graders with a 2.5 GPA.
               </p>
-              <p className="font-display font-bold text-lscc-ink mb-6" style={{ fontSize: '1rem' }}>
+              <p className="font-display font-bold mb-6" style={{ fontSize: '1rem', color: 'oklch(1 0 0 / 0.85)' }}>
                 "I have taken 13 dual enrollment courses so far, reducing the time and cost of pursuing my degree."
               </p>
-              <div className="flex flex-col gap-2 text-sm text-lscc-muted mb-6">
+              <div className="flex flex-col gap-2 text-sm mb-6" style={{ color: 'oklch(1 0 0 / 0.65)' }}>
                 {['General Education', 'Health Professions', 'Computer Science', 'Construction', 'Business', 'Automotive & Transportation'].map(p => (
                   <div key={p} className="flex items-center gap-2">
                     <span style={{ color: 'oklch(0.79 0.19 78)' }}>→</span> {p}
@@ -289,9 +305,9 @@ export default function AcademicsPage() {
                 { n: 'FREE', l: 'Tuition (ACCS Grant)' },
                 { n: '10–12', l: 'Grade Eligible' },
               ].map(s => (
-                <div key={s.l} className="rounded-2xl p-6 text-center shadow-card" style={{ background: 'oklch(0.97 0.015 263)', border: '1px solid oklch(0.92 0.01 263)' }}>
-                  <div className="font-display font-black" style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', color: 'oklch(0.22 0.17 261)', letterSpacing: '-0.03em' }}>{s.n}</div>
-                  <div className="text-lscc-muted font-medium mt-1" style={{ fontSize: '0.78rem' }}>{s.l}</div>
+                <div key={s.l} className="rounded-2xl p-6 text-center" style={{ background: 'oklch(0.22 0.16 261)', border: '1px solid oklch(1 0 0 / 0.10)' }}>
+                  <div className="font-display font-black" style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', color: 'oklch(0.79 0.19 78)', letterSpacing: '-0.03em' }}>{s.n}</div>
+                  <div className="font-medium mt-1" style={{ fontSize: '0.78rem', color: 'oklch(1 0 0 / 0.60)' }}>{s.l}</div>
                 </div>
               ))}
             </div>
