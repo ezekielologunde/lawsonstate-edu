@@ -45,7 +45,7 @@ const PHOTOS = [
 
 export default function CampusLifeGallery() {
   return (
-    <section className="py-14 px-6" style={{ background: 'white' }}>
+    <section className="py-10 px-6" style={{ background: 'white' }}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-end justify-between mb-10 gap-6">

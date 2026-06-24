@@ -51,9 +51,9 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
         </div>
 
         {/* Right: content */}
-        <div className="py-16 px-6 md:px-10 lg:px-16">
+        <div className="py-12 px-6 md:px-10 lg:px-16">
           <h2
-            className="font-display font-black leading-none mb-14"
+            className="font-display font-black leading-none mb-10"
             style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', letterSpacing: '-0.02em', color: 'oklch(0.18 0.12 261)' }}
           >
             {c.headline_line1}
@@ -61,7 +61,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
             <span style={{ color: 'oklch(0.56 0.22 145)' }}>{c.headline_line2}</span>
           </h2>
 
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-8">
             {steps.map((step, i) => (
               <div
                 key={step.num}

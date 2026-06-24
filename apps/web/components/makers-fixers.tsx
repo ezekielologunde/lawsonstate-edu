@@ -106,7 +106,7 @@ export default function MakersFixers() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden"
-      style={{ background: 'oklch(0.12 0.06 261)', paddingBlock: '2rem 1.5rem' }}
+      style={{ background: 'oklch(0.12 0.06 261)', paddingBlock: '1.5rem 1rem' }}
     >
       {/* Mouse-follow glow */}
       <div

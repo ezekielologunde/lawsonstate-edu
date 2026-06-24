@@ -56,7 +56,7 @@ export default function Programs({
   const c = { ...CONTENT_DEFAULTS, ...content }
 
   return (
-    <section className="py-14 px-6" style={{ background: 'white' }}>
+    <section className="py-10 px-6" style={{ background: 'white' }}>
       <div className="max-w-7xl mx-auto">
         <div className="mb-10 max-w-2xl scroll-reveal">
           <h2

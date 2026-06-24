@@ -34,8 +34,8 @@ export default function VideoSection() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 py-14">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative max-w-7xl mx-auto px-6 py-10">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left: text + YouTube CTA */}
           <div>
             <p
@@ -46,12 +46,12 @@ export default function VideoSection() {
             </p>
             <h2
               className="font-display font-black leading-none mb-6 text-white"
-              style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.02em' }}
+              style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', letterSpacing: '-0.02em' }}
             >
               WATCH OUR<br />STORY
             </h2>
             <p
-              className="mb-10 leading-relaxed"
+              className="mb-6 leading-relaxed"
               style={{ color: 'oklch(1 0 0 / 0.65)', maxWidth: '42ch' }}
             >
               Real students, real results. See graduation ceremonies, program highlights, athletics, and campus life — all on our YouTube channel.

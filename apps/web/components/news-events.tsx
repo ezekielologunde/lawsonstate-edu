@@ -42,7 +42,7 @@ export default function NewsEvents({
   events: CalendarEvent[]
 }) {
   return (
-    <section className="py-14 px-6 bg-white">
+    <section className="py-10 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-12">
           <h2

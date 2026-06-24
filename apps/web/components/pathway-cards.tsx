@@ -74,7 +74,7 @@ export default function PathwayCards() {
   const path = PATHS[active]
 
   return (
-    <section className="py-16 px-6" style={{ background: 'white' }}>
+    <section className="py-12 px-6" style={{ background: 'white' }}>
       <div className="max-w-7xl mx-auto">
 
         {/* Section header */}

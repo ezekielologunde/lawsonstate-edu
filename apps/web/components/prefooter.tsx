@@ -23,7 +23,7 @@ export default function Prefooter({ content = {} }: { content?: PrefooterContent
   ]
 
   return (
-    <section className="py-16 px-6 relative overflow-hidden" style={{ background: 'oklch(0.22 0.17 261)' }}>
+    <section className="py-12 px-6 relative overflow-hidden" style={{ background: 'oklch(0.22 0.17 261)' }}>
       {/* Animated background orb */}
       <div
         className="absolute pointer-events-none"
