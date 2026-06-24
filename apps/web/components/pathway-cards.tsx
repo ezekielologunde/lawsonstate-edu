@@ -24,7 +24,7 @@ const PATHS = [
   {
     id:       'transfer',
     label:    'Transfer Student',
-    color:    'oklch(0.50 0.22 248)',
+    color:    'oklch(0.22 0.17 261)',
     headline: 'TRANSFER WITH CONFIDENCE',
     desc:     'Already have college credits? Most transfer directly. See exactly where you stand and build your degree plan from there.',
     links: [
@@ -39,7 +39,7 @@ const PATHS = [
   {
     id:       'current',
     label:    'Current Student',
-    color:    'oklch(0.68 0.20 76)',
+    color:    'oklch(0.79 0.19 78)',
     headline: 'EVERYTHING YOU NEED',
     desc:     'Everything you need to stay on track this semester — class registration, financial aid status, tutoring support, and academic advising.',
     links: [
@@ -55,7 +55,7 @@ const PATHS = [
   {
     id:       'workforce',
     label:    'Adult Learner',
-    color:    'oklch(0.55 0.22 28)',
+    color:    'oklch(0.22 0.17 261)',
     headline: 'ADVANCE YOUR CAREER',
     desc:     'Career change or a promotion? Earn industry-recognized credentials in months, not years — on evenings and weekends, around your life.',
     links: [

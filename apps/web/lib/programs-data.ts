@@ -34,11 +34,11 @@ export const DELIVERY_MODES: Record<DeliveryMode, { label: string; icon: string 
 }
 
 export const CATEGORIES: Record<ProgramCategory, { label: string; color: string }> = {
-  'career-technical': { label: 'Career Technical', color: 'oklch(0.48 0.22 27)' },
-  'college-transfer': { label: 'College Transfer', color: 'oklch(0.50 0.22 248)' },
-  'health-professions': { label: 'Health Professions', color: 'oklch(0.68 0.20 76)' },
-  'business-it': { label: 'Business & IT', color: 'oklch(0.55 0.22 28)' },
-  stem: { label: 'STEM & Honors', color: 'oklch(0.62 0.22 248)' },
+  'career-technical': { label: 'Career Technical', color: 'oklch(0.79 0.19 78)' },
+  'college-transfer': { label: 'College Transfer', color: 'oklch(0.22 0.17 261)' },
+  'health-professions': { label: 'Health Professions', color: 'oklch(0.79 0.19 78)' },
+  'business-it': { label: 'Business & IT', color: 'oklch(0.22 0.17 261)' },
+  stem: { label: 'STEM & Honors', color: 'oklch(0.79 0.19 78)' },
   other: { label: 'Other', color: 'oklch(0.22 0.17 261)' },
 }
 

@@ -191,7 +191,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
               <Link
                 href={c.cta_primary_href}
                 className="press btn-shimmer inline-flex items-center font-bold px-8 py-4 rounded-xl"
-                style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
+                style={{ background: 'oklch(0.48 0.22 27)', color: 'white', fontSize: '1rem' }}
               >
                 {c.cta_primary_label}
               </Link>
