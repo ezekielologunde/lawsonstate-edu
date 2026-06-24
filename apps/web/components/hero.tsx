@@ -16,8 +16,8 @@ const DEFAULTS: HeroContent = {
   stat_4: 'Accredited by SACSCOC',
 }
 
-const VIDEO_ID = 'EsSClH-SjEc'
-const CAMPUS_PHOTO = 'https://www.lawsonstate.edu/_resources/assets/img/Bessemer%20Campus%20Aerial%20View.jpg'
+const VIDEO_SRC   = 'https://www.lawsonstate.edu/_resources/assets/video/lawson-state-homepage-video.mp4'
+const POSTER_IMG  = 'https://www.lawsonstate.edu/_resources/assets/img/Bessemer%20Campus%20Aerial%20View.jpg'
 
 export default function Hero({ content = {} }: { content?: HeroContent }) {
   const c = { ...DEFAULTS, ...content }
@@ -27,53 +27,28 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
       className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center overflow-hidden"
       style={{ background: 'oklch(0.22 0.17 261)' }}
     >
-      {/* ── Mobile background: Ken Burns photo (video autoplay blocked on mobile) ── */}
-      <div className="md:hidden absolute inset-0 overflow-hidden" aria-hidden>
-        <img
-          src={CAMPUS_PHOTO}
-          alt=""
-          className="w-full h-full object-cover object-center"
-          loading="eager"
-          style={{
-            animation: 'kenburns 22s ease-in-out infinite',
-            willChange: 'transform',
-          }}
-        />
-      </div>
-
-      {/* ── Desktop background: looping YouTube video ── */}
-      <div className="hidden md:block absolute inset-0 overflow-hidden" aria-hidden>
-        {/* Poster image shows while video loads */}
-        <img
-          src={CAMPUS_PHOTO}
-          alt=""
+      {/* ── Background video (native — works on all devices) ── */}
+      <div className="absolute inset-0 overflow-hidden" aria-hidden>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster={POSTER_IMG}
           className="absolute w-full h-full object-cover object-center"
-          loading="eager"
-        />
-        <iframe
-          src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&controls=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1`}
-          className="absolute pointer-events-none border-0"
-          allow="autoplay; encrypted-media"
-          title=""
-          aria-hidden="true"
-          style={{
-            /* Scale to fill — 16:9 video centred in any viewport */
-            width:     'max(100%, 177.78vh)',
-            height:    'max(100%, 56.25vw)',
-            top:       '50%',
-            left:      '50%',
-            transform: 'translate(-50%, -50%)',
-          }}
-        />
+        >
+          <source src={VIDEO_SRC} type="video/mp4" />
+        </video>
       </div>
 
-      {/* ── Shared overlay — sits on top of both photo and video ── */}
+      {/* ── Overlay — brand colour gradient over the video ── */}
       <div className="absolute inset-0" aria-hidden>
         <div
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(150deg, oklch(0.22 0.17 261 / 0.90) 0%, oklch(0.16 0.13 263 / 0.72) 50%, oklch(0.22 0.17 261 / 0.90) 100%)',
+              'linear-gradient(150deg, oklch(0.22 0.17 261 / 0.88) 0%, oklch(0.16 0.13 263 / 0.68) 50%, oklch(0.22 0.17 261 / 0.88) 100%)',
           }}
         />
         {/* Bottom fade */}
@@ -90,11 +65,11 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div
           className="absolute -top-40 -right-40 rounded-full"
-          style={{ width: '640px', height: '640px', background: 'oklch(0.28 0.16 261)', opacity: 0.12 }}
+          style={{ width: '640px', height: '640px', background: 'oklch(0.28 0.16 261)', opacity: 0.10 }}
         />
         <div
           className="absolute bottom-0 -left-60 rounded-full"
-          style={{ width: '560px', height: '560px', background: 'oklch(0.27 0.15 261)', opacity: 0.08 }}
+          style={{ width: '560px', height: '560px', background: 'oklch(0.27 0.15 261)', opacity: 0.07 }}
         />
         <div
           className="absolute hidden lg:block"
@@ -189,8 +164,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
           50%       { transform: translateY(6px); }
         }
         @media (prefers-reduced-motion: reduce) {
-          @keyframes kenburns { 0%, 100% { transform: none; } }
-          @keyframes bounce   { 0%, 100% { transform: none; } }
+          @keyframes bounce { 0%, 100% { transform: none; } }
         }
       `}</style>
     </section>

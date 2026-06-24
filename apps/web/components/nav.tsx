@@ -33,35 +33,15 @@ export default function Nav() {
       }}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* Logo — compact monogram + wordmark */}
-        <Link href="/" className="flex items-center gap-2.5 leading-none">
-          <span
-            className="flex items-center justify-center font-display font-black rounded flex-shrink-0"
-            style={{
-              background: 'oklch(0.79 0.19 78)',
-              color: 'oklch(0.16 0.13 263)',
-              width: '30px',
-              height: '30px',
-              fontSize: '0.65rem',
-              letterSpacing: '0.04em',
-            }}
-          >
-            LS
-          </span>
-          <span className="flex flex-col leading-none">
-            <span
-              className="font-display font-bold text-white"
-              style={{ fontSize: '1rem', letterSpacing: '-0.01em' }}
-            >
-              LAWSON STATE
-            </span>
-            <span
-              className="text-white/40 uppercase hidden sm:block"
-              style={{ fontSize: '0.5rem', letterSpacing: '0.22em' }}
-            >
-              Community College
-            </span>
-          </span>
+        {/* Official logo */}
+        <Link href="/" className="flex items-center leading-none">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://www.lawsonstate.edu/_resources/assets/img/Lawson-logo.png"
+            alt="Lawson State Community College"
+            className="w-auto object-contain"
+            style={{ height: '36px', filter: 'brightness(0) invert(1)' }}
+          />
         </Link>
 
         {/* Desktop nav */}
