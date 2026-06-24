@@ -3,9 +3,11 @@
 import { useRef, useState, useEffect } from 'react'
 import Link from 'next/link'
 import SearchBar from './search-bar'
-import CursorGlow from './cursor-glow'
 
 type HeroContent = Record<string, string>
+
+const VIDEO_SRC = 'https://www.lawsonstate.edu/_resources/assets/video/lawson-state-homepage-video.mp4'
+const POSTER_SRC = 'https://www.lawsonstate.edu/_resources/assets/img/grads%20lawson.jpeg'
 
 const DEFAULTS: HeroContent = {
   subheadline:         'Affordable tuition, flexible schedules, and 200+ career-ready programs — built for first-gen students, working adults, and career changers in Birmingham, AL.',
@@ -64,7 +66,18 @@ function StatCounter({ target, suffix, label, active, delay = 0 }: {
 
 export default function Hero({ content = {} }: { content?: HeroContent }) {
   const c = { ...DEFAULTS, ...content }
-  const videoRef  = useRef<HTMLIFrameElement>(null)
+
+  const videoEl     = useRef<HTMLVideoElement>(null)
+  const videoWrap   = useRef<HTMLDivElement>(null)
+  const contentWrap = useRef<HTMLDivElement>(null)
+  const glowEl      = useRef<HTMLDivElement>(null)
+
+  // continuous pointer/scroll values — refs only, never state (avoids re-render storms)
+  const mouseTarget = useRef({ x: 0, y: 0 })
+  const mouseLerp   = useRef({ x: 0, y: 0 })
+  const scrollY     = useRef(0)
+  const rafRef      = useRef<number | undefined>(undefined)
+
   const [playing,      setPlaying]      = useState(true)
   const [reduceMotion, setReduceMotion] = useState(false)
   const [statsActive,  setStatsActive]  = useState(false)
@@ -72,61 +85,122 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
     if (mq.matches) { setReduceMotion(true); setPlaying(false) }
-    // start count-up after entrance animations finish
     const t = setTimeout(() => setStatsActive(true), 900)
     return () => clearTimeout(t)
   }, [])
 
+  // Parallax + cursor glow — single rAF loop, gated on reduced motion
+  useEffect(() => {
+    if (reduceMotion) return
+
+    const onMove = (e: MouseEvent) => {
+      mouseTarget.current.x = e.clientX / window.innerWidth - 0.5
+      mouseTarget.current.y = e.clientY / window.innerHeight - 0.5
+      if (glowEl.current) {
+        glowEl.current.style.opacity = '1'
+        glowEl.current.style.left = `${e.clientX}px`
+        glowEl.current.style.top  = `${e.clientY}px`
+      }
+    }
+    const onLeave = () => { if (glowEl.current) glowEl.current.style.opacity = '0' }
+    const onScroll = () => { scrollY.current = window.scrollY }
+
+    window.addEventListener('mousemove', onMove)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    document.addEventListener('mouseleave', onLeave)
+
+    const tick = () => {
+      mouseLerp.current.x += (mouseTarget.current.x - mouseLerp.current.x) * 0.06
+      mouseLerp.current.y += (mouseTarget.current.y - mouseLerp.current.y) * 0.06
+      const mx = mouseLerp.current.x
+      const my = mouseLerp.current.y
+      const sy = scrollY.current
+
+      if (videoWrap.current) {
+        // video drifts opposite the cursor + parallaxes up on scroll
+        videoWrap.current.style.transform =
+          `scale(1.16) translate3d(${mx * -18}px, ${sy * 0.18 + my * -14}px, 0)`
+      }
+      if (contentWrap.current) {
+        // foreground content leans toward the cursor — subtle depth
+        contentWrap.current.style.transform =
+          `translate3d(${mx * 12}px, ${my * 12}px, 0)`
+      }
+      rafRef.current = requestAnimationFrame(tick)
+    }
+    rafRef.current = requestAnimationFrame(tick)
+
+    return () => {
+      window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('scroll', onScroll)
+      document.removeEventListener('mouseleave', onLeave)
+      if (rafRef.current) cancelAnimationFrame(rafRef.current)
+    }
+  }, [reduceMotion])
+
   const toggleVideo = () => {
-    videoRef.current?.contentWindow?.postMessage(
-      JSON.stringify({ method: playing ? 'pause' : 'play' }),
-      'https://player.vimeo.com'
-    )
+    const v = videoEl.current
+    if (!v) return
+    if (playing) v.pause()
+    else v.play().catch(() => {})
     setPlaying(!playing)
   }
 
   return (
     <section className="relative flex flex-col overflow-hidden" style={{ minHeight: '100dvh' }} aria-label="Hero">
 
-      {/* Fallback kenburns bg */}
+      {/* Background video (with poster fallback) — parallax wrapper */}
+      <div ref={videoWrap} aria-hidden className="absolute inset-0" style={{ willChange: 'transform' }}>
+        <video
+          ref={videoEl}
+          className="absolute inset-0 w-full h-full object-cover"
+          src={VIDEO_SRC}
+          poster={POSTER_SRC}
+          autoPlay={!reduceMotion}
+          loop
+          muted
+          playsInline
+          preload="auto"
+          tabIndex={-1}
+        />
+      </div>
+
+      {/* Cinematic scrim — deeper on the left for headline legibility, vignette at edges */}
       <div aria-hidden className="absolute inset-0" style={{
-        backgroundImage: `url('https://www.lawsonstate.edu/_resources/assets/img/grads%20lawson.jpeg')`,
-        backgroundSize: 'cover', backgroundPosition: 'center 30%',
-        animation: reduceMotion ? 'none' : 'kenburns 25s ease-in-out infinite alternate',
+        background:
+          'linear-gradient(105deg, oklch(0.07 0.05 261 / 0.97) 0%, oklch(0.09 0.05 261 / 0.84) 40%, oklch(0.10 0.05 261 / 0.42) 100%)',
+      }} />
+      <div aria-hidden className="absolute inset-0" style={{
+        background:
+          'radial-gradient(120% 100% at 50% 0%, transparent 55%, oklch(0.06 0.04 261 / 0.55) 100%)',
       }} />
 
-      {/* Vimeo ambient — desktop only */}
+      {/* Static gold glow orb */}
+      <div aria-hidden className="absolute pointer-events-none" style={{
+        top: '-10%', right: '-6%', width: '820px', height: '820px', borderRadius: '50%',
+        background: 'radial-gradient(circle, oklch(0.79 0.19 78 / 0.20) 0%, transparent 68%)',
+        filter: 'blur(90px)',
+      }} />
+
+      {/* Mouse-tracking cursor glow (positioned via rAF above) */}
       {!reduceMotion && (
-        <div aria-hidden className="absolute inset-0 overflow-hidden hidden md:block" style={{ pointerEvents: 'none' }}>
-          <iframe ref={videoRef}
-            src="https://player.vimeo.com/video/1058690019?background=1&autoplay=1&loop=1&muted=1"
-            className="absolute"
-            style={{ top:'50%',left:'50%',width:'100vw',height:'56.25vw',minHeight:'100vh',minWidth:'177.78vh',transform:'translate(-50%,-50%)',border:0,pointerEvents:'none' }}
-            allow="autoplay; fullscreen"
-            loading="lazy"
-            title="" />
-        </div>
+        <div
+          ref={glowEl}
+          aria-hidden
+          className="pointer-events-none"
+          style={{
+            position: 'fixed', top: 0, left: 0, width: '600px', height: '600px',
+            transform: 'translate(-50%, -50%)', borderRadius: '50%',
+            background: 'radial-gradient(circle, oklch(0.79 0.19 78 / 0.10) 0%, transparent 62%)',
+            filter: 'blur(40px)', opacity: 0, transition: 'opacity 0.4s ease', zIndex: 1,
+          }}
+        />
       )}
 
-      {/* Scrim — deeper on left for text legibility */}
-      <div aria-hidden className="absolute inset-0" style={{
-        background: 'linear-gradient(108deg, oklch(0.08 0.05 261 / 0.96) 0%, oklch(0.10 0.05 261 / 0.82) 42%, oklch(0.10 0.05 261 / 0.44) 100%)',
-      }} />
-
-      {/* Gold glow orb */}
-      <div aria-hidden className="absolute pointer-events-none" style={{
-        top: '-8%', right: '-4%', width: '800px', height: '800px', borderRadius: '50%',
-        background: 'radial-gradient(circle, oklch(0.79 0.19 78 / 0.18) 0%, transparent 68%)',
-        filter: 'blur(80px)',
-      }} />
-
-      {/* Mouse-tracking cursor glow */}
-      {!reduceMotion && <CursorGlow />}
-
-      {/* Main content */}
-      <div className="relative flex-1 flex flex-col justify-center max-w-7xl mx-auto px-6 w-full"
-        style={{ paddingTop: 'calc(var(--lscc-banner-h, 0px) + 5rem)', paddingBottom: '5rem' }}>
-        <div style={{ maxWidth: '700px' }}>
+      {/* Main content — parallax foreground layer */}
+      <div ref={contentWrap} className="relative flex-1 flex flex-col justify-center max-w-7xl mx-auto px-6 w-full"
+        style={{ paddingTop: 'calc(var(--lscc-banner-h, 0px) + 5rem)', paddingBottom: '5rem', willChange: 'transform' }}>
+        <div style={{ maxWidth: '720px' }}>
 
           {/* HBCU eyebrow badge */}
           <div className="flex items-center gap-3 mb-5 h-fade-1">
@@ -146,13 +220,13 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
           </div>
 
           <h1 className="font-display font-black mb-6 h-fade-2"
-            style={{ fontSize: 'clamp(2.8rem, 7vw, 5.2rem)', letterSpacing: '-0.04em', lineHeight: 0.93, color: 'white' }}>
+            style={{ fontSize: 'clamp(2.9rem, 7.2vw, 5.4rem)', letterSpacing: '-0.04em', lineHeight: 0.92, color: 'white' }}>
             Start Your Future<br />
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>at Lawson State</span>
           </h1>
 
           <p className="mb-8 h-fade-3"
-            style={{ color: 'oklch(1 0 0 / 0.78)', fontSize: 'clamp(1rem, 1.6vw, 1.15rem)', lineHeight: 1.75, maxWidth: '52ch' }}>
+            style={{ color: 'oklch(1 0 0 / 0.80)', fontSize: 'clamp(1rem, 1.6vw, 1.15rem)', lineHeight: 1.75, maxWidth: '52ch' }}>
             {c.subheadline}
           </p>
 
@@ -217,7 +291,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
         }} />
       </div>
 
-      {/* Video play/pause — desktop only */}
+      {/* Video play/pause — now controls the native <video> directly */}
       {!reduceMotion && (
         <button onClick={toggleVideo}
           className="absolute bottom-6 right-6 hidden md:flex items-center gap-2 press"
@@ -226,7 +300,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
             backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
             borderRadius: '999px', padding: '0.5rem 1.1rem',
             color: 'oklch(1 0 0 / 0.85)', fontSize: '0.7rem', fontWeight: 700,
-            letterSpacing: '0.10em', cursor: 'pointer',
+            letterSpacing: '0.10em', cursor: 'pointer', zIndex: 2,
           }}
           aria-label={playing ? 'Pause background video' : 'Play background video'}>
           {playing ? (
