@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/academics/weekend-college',     priority: 0.7, freq: 'monthly' },
     { path: '/admissions/dual-enrollment',    priority: 0.7, freq: 'monthly' },
     { path: '/calendar',                       priority: 0.8, freq: 'weekly'  },
+    { path: '/programs',                       priority: 0.9, freq: 'weekly'  },
     { path: '/campus-life',                   priority: 0.7, freq: 'monthly' },
     { path: '/about',                         priority: 0.7, freq: 'monthly' },
     { path: '/learn',                         priority: 0.7, freq: 'monthly' },
