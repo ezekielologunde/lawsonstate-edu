@@ -41,8 +41,8 @@ export default function DivisionsFilter({ divisions }: { divisions: Division[] }
             className="press px-4 py-2 rounded-full font-semibold"
             style={{
               fontSize: '0.82rem',
-              background: active === f.id ? 'oklch(0.48 0.22 27)' : 'oklch(0.94 0.015 263)',
-              color:      active === f.id ? 'white'                : 'oklch(0.32 0.12 263)',
+              background: active === f.id ? 'oklch(0.79 0.19 78)' : 'oklch(0.94 0.015 263)',
+              color:      active === f.id ? 'oklch(0.11 0.03 261)' : 'oklch(0.32 0.12 263)',
               border:     `1px solid ${active === f.id ? 'transparent' : 'oklch(0 0 0 / 0.09)'}`,
               transition: 'background 0.15s ease, color 0.15s ease',
             }}
@@ -96,8 +96,8 @@ export default function DivisionsFilter({ divisions }: { divisions: Division[] }
               <div className="shrink-0">
                 <Link
                   href={div.href}
-                  className="press btn-shimmer hero-cta-red font-bold px-6 py-3 rounded-lg whitespace-nowrap block text-center"
-                  style={{ background: 'oklch(0.48 0.22 27)', color: 'white', fontSize: '1rem' }}
+                  className="press btn-shimmer font-bold px-6 py-3 rounded-lg whitespace-nowrap block text-center"
+                  style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
                 >
                   Explore programs →
                 </Link>

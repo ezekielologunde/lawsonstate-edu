@@ -148,7 +148,7 @@ export default function AcademicsPage() {
             Whether you want to enter the workforce or transfer to a four-year college, Lawson State has hundreds of programs to equip you with the knowledge to succeed.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
-            <Link href="/admissions/apply" className="press btn-shimmer hero-cta-red inline-flex items-center font-bold px-6 py-3 rounded-lg" style={{ background: 'oklch(0.48 0.22 27)', color: 'white', fontSize: '1rem' }}>
+            <Link href="/admissions/apply" className="press btn-shimmer inline-flex items-center font-bold px-6 py-3 rounded-lg" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}>
               Start My Application
             </Link>
             <Link href="/admissions" className="press hero-cta-ghost inline-flex items-center font-semibold px-6 py-3 rounded-lg text-white" style={{ border: '1.5px solid oklch(1 0 0 / 0.25)', fontSize: '1rem' }}>
@@ -245,8 +245,8 @@ export default function AcademicsPage() {
           <div className="mt-8">
             <Link
               href="/workforce"
-              className="press btn-shimmer hero-cta-red font-bold px-6 py-3 rounded-lg inline-block"
-              style={{ background: 'oklch(0.48 0.22 27)', color: 'white', fontSize: '1rem' }}
+              className="press btn-shimmer font-bold px-6 py-3 rounded-lg inline-block"
+              style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
             >
               Explore Workforce Programs →
             </Link>
@@ -276,8 +276,8 @@ export default function AcademicsPage() {
               </div>
               <Link
                 href="/admissions/dual-enrollment"
-                className="press btn-shimmer hero-cta-red font-bold px-6 py-3 rounded-lg inline-block"
-                style={{ background: 'oklch(0.48 0.22 27)', color: 'white', fontSize: '1rem' }}
+                className="press btn-shimmer font-bold px-6 py-3 rounded-lg inline-block"
+                style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
               >
                 Learn About Dual Enrollment →
               </Link>

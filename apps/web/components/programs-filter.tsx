@@ -99,7 +99,7 @@ export default function ProgramsFilter() {
               placeholder="Search by program name, credential, or skill…"
               value={filters.search}
               onChange={handleSearch}
-              className="w-full px-4 py-3 rounded-lg border border-oklch(0.85 0.02 263) bg-white text-sm focus:outline-none focus:ring-2 focus:ring-oklch(0.48 0.22 27) focus:border-transparent transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-oklch(0.85 0.02 263) bg-white text-sm focus:outline-none focus:ring-2 focus:ring-oklch(0.79 0.19 78) focus:border-transparent transition-all"
               aria-label="Search programs"
             />
             {filters.search && (
@@ -124,7 +124,7 @@ export default function ProgramsFilter() {
           aria-controls="filter-panel"
         >
           <span className="flex items-center gap-2">
-            🔍 Filters {activeFilterCount > 0 && <span className="text-sm font-bold text-white bg-oklch(0.48 0.22 27) rounded-full px-2 py-0.5">{activeFilterCount}</span>}
+            🔍 Filters {activeFilterCount > 0 && <span className="text-sm font-bold text-white bg-oklch(0.79 0.19 78) rounded-full px-2 py-0.5">{activeFilterCount}</span>}
           </span>
           <span>{mobileOpen ? '▲' : '▼'}</span>
         </button>
@@ -144,7 +144,7 @@ export default function ProgramsFilter() {
                   <span className="text-xs font-semibold uppercase tracking-wide text-lscc-muted">Active filters</span>
                   <button
                     onClick={clearAllFilters}
-                    className="text-xs font-semibold text-oklch(0.48 0.22 27) hover:text-oklch(0.42 0.22 27) transition-colors"
+                    className="text-xs font-semibold text-oklch(0.79 0.19 78) hover:text-oklch(0.73 0.17 78) transition-colors"
                   >
                     Clear all
                   </button>
@@ -212,11 +212,11 @@ export default function ProgramsFilter() {
                       type="checkbox"
                       checked={filters.degreeTypes.includes(type)}
                       onChange={() => toggleDegreeType(type)}
-                      className="mt-1 w-4 h-4 rounded border-oklch(0.85 0.02 263) text-oklch(0.48 0.22 27) focus:ring-2 focus:ring-offset-0 focus:ring-oklch(0.48 0.22 27) cursor-pointer"
+                      className="mt-1 w-4 h-4 rounded border-oklch(0.85 0.02 263) text-oklch(0.79 0.19 78) focus:ring-2 focus:ring-offset-0 focus:ring-oklch(0.79 0.19 78) cursor-pointer"
                       aria-label={`${type} - ${info.label}`}
                     />
                     <div className="flex-1 min-w-0">
-                      <div className="font-medium text-sm text-lscc-ink group-hover:text-oklch(0.48 0.22 27) transition-colors">{type}</div>
+                      <div className="font-medium text-sm text-lscc-ink group-hover:text-oklch(0.79 0.19 78) transition-colors">{type}</div>
                       <div className="text-xs text-lscc-muted">{info.description}</div>
                     </div>
                   </label>
@@ -234,10 +234,10 @@ export default function ProgramsFilter() {
                       type="checkbox"
                       checked={filters.deliveryModes.includes(mode)}
                       onChange={() => toggleDeliveryMode(mode)}
-                      className="w-4 h-4 rounded border-oklch(0.85 0.02 263) text-oklch(0.48 0.22 27) focus:ring-2 focus:ring-offset-0 focus:ring-oklch(0.48 0.22 27) cursor-pointer"
+                      className="w-4 h-4 rounded border-oklch(0.85 0.02 263) text-oklch(0.79 0.19 78) focus:ring-2 focus:ring-offset-0 focus:ring-oklch(0.79 0.19 78) cursor-pointer"
                       aria-label={info.label}
                     />
-                    <span className="font-medium text-sm text-lscc-ink group-hover:text-oklch(0.48 0.22 27) transition-colors">
+                    <span className="font-medium text-sm text-lscc-ink group-hover:text-oklch(0.79 0.19 78) transition-colors">
                       {info.icon} {info.label}
                     </span>
                   </label>
@@ -255,10 +255,10 @@ export default function ProgramsFilter() {
                       type="checkbox"
                       checked={filters.categories.includes(cat)}
                       onChange={() => toggleCategory(cat)}
-                      className="w-4 h-4 rounded border-oklch(0.85 0.02 263) text-oklch(0.48 0.22 27) focus:ring-2 focus:ring-offset-0 focus:ring-oklch(0.48 0.22 27) cursor-pointer"
+                      className="w-4 h-4 rounded border-oklch(0.85 0.02 263) text-oklch(0.79 0.19 78) focus:ring-2 focus:ring-offset-0 focus:ring-oklch(0.79 0.19 78) cursor-pointer"
                       aria-label={info.label}
                     />
-                    <span className="font-medium text-sm text-lscc-ink group-hover:text-oklch(0.48 0.22 27) transition-colors">{info.label}</span>
+                    <span className="font-medium text-sm text-lscc-ink group-hover:text-oklch(0.79 0.19 78) transition-colors">{info.label}</span>
                   </label>
                 ))}
               </div>
@@ -283,7 +283,7 @@ export default function ProgramsFilter() {
                 </p>
                 <button
                   onClick={clearAllFilters}
-                  className="text-sm font-semibold text-oklch(0.48 0.22 27) hover:text-oklch(0.42 0.22 27) transition-colors"
+                  className="text-sm font-semibold text-oklch(0.79 0.19 78) hover:text-oklch(0.73 0.17 78) transition-colors"
                 >
                   Clear all filters
                 </button>
@@ -292,7 +292,7 @@ export default function ProgramsFilter() {
               <div className="grid gap-4">
                 {filteredPrograms.map(program => (
                   <Link key={program.id} href={program.href}>
-                    <article className="group p-5 rounded-xl border border-oklch(0.90 0.01 263) hover:border-oklch(0.48 0.22 27) transition-colors hover:shadow-lg bg-white">
+                    <article className="group p-5 rounded-xl border border-oklch(0.90 0.01 263) hover:border-oklch(0.79 0.19 78) transition-colors hover:shadow-lg bg-white">
                       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-2">
@@ -305,7 +305,7 @@ export default function ProgramsFilter() {
                               </span>
                             )}
                           </div>
-                          <h3 className="text-lg font-bold text-lscc-ink group-hover:text-oklch(0.48 0.22 27) transition-colors mb-2">
+                          <h3 className="text-lg font-bold text-lscc-ink group-hover:text-oklch(0.79 0.19 78) transition-colors mb-2">
                             {program.name}
                           </h3>
                           <p className="text-sm text-lscc-muted mb-3">{program.description}</p>
@@ -320,7 +320,7 @@ export default function ProgramsFilter() {
                         <div className="text-right shrink-0">
                           <div className="text-sm font-semibold text-lscc-ink mb-1">{program.duration}</div>
                           <div className="text-xs text-lscc-muted mb-3">{program.durationMonths} months</div>
-                          <span className="text-oklch(0.48 0.22 27) group-hover:translate-x-1 transition-transform inline-block">→</span>
+                          <span className="text-oklch(0.79 0.19 78) group-hover:translate-x-1 transition-transform inline-block">→</span>
                         </div>
                       </div>
                     </article>

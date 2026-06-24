@@ -181,7 +181,7 @@ export default function MakersFixers() {
             <Link
               href="/academics"
               className="press btn-shimmer inline-flex items-center font-bold gap-2 rounded-xl px-6 py-3"
-              style={{ background: 'oklch(0.48 0.22 27)', color: 'white', fontSize: '0.95rem' }}
+              style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.95rem' }}
             >
               Explore CTE Programs
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>

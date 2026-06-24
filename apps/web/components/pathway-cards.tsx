@@ -146,7 +146,7 @@ export default function PathwayCards() {
             <Link
               href={path.ctaHref}
               className="press btn-shimmer font-bold px-6 py-3 rounded-lg whitespace-nowrap self-start"
-              style={{ background: 'oklch(0.48 0.22 27)', color: 'white', fontSize: '0.875rem' }}
+              style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.875rem' }}
             >
               {path.cta} →
             </Link>

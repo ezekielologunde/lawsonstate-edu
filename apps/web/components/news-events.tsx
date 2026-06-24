@@ -152,7 +152,7 @@ export default function NewsEvents({
                         </span>
                         <span
                           className="font-display font-black leading-none"
-                          style={{ fontSize: '1.6rem', color: 'oklch(0.48 0.22 27)', letterSpacing: '-0.02em' }}
+                          style={{ fontSize: '1.6rem', color: 'oklch(0.79 0.19 78)', letterSpacing: '-0.02em' }}
                         >
                           {day}
                         </span>

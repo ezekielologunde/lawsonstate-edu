@@ -106,8 +106,8 @@ export default async function CalendarPage() {
                 href="https://www.lawsonstate.edu/about/calendar.php"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="press btn-shimmer hero-cta-red font-bold px-6 py-3 rounded-lg inline-block"
-                style={{ background: 'oklch(0.48 0.22 27)', color: 'white', fontSize: '1rem' }}
+                className="press btn-shimmer font-bold px-6 py-3 rounded-lg inline-block"
+                style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
               >
                 View Academic Calendar →
               </Link>
@@ -157,7 +157,7 @@ export default async function CalendarPage() {
                             </span>
                             <span
                               className="font-display font-black leading-none"
-                              style={{ fontSize: '2rem', color: 'oklch(0.48 0.22 27)', letterSpacing: '-0.02em' }}
+                              style={{ fontSize: '2rem', color: 'oklch(0.79 0.19 78)', letterSpacing: '-0.02em' }}
                             >
                               {day}
                             </span>
@@ -204,8 +204,8 @@ export default async function CalendarPage() {
                 href="https://www.lawsonstate.edu/about/calendar.php"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="press btn-shimmer hero-cta-red font-bold px-6 py-3 rounded-lg whitespace-nowrap shrink-0 inline-block text-center"
-                style={{ background: 'oklch(0.48 0.22 27)', color: 'white', fontSize: '0.95rem' }}
+                className="press btn-shimmer font-bold px-6 py-3 rounded-lg whitespace-nowrap shrink-0 inline-block text-center"
+                style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.95rem' }}
               >
                 Academic Calendar →
               </Link>

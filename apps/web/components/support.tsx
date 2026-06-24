@@ -58,7 +58,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
           >
             {c.headline_line1}
             <br />
-            <span style={{ color: 'oklch(0.48 0.22 27)' }}>{c.headline_line2}</span>
+            <span style={{ color: 'oklch(0.79 0.19 78)' }}>{c.headline_line2}</span>
           </h2>
 
           <div className="flex flex-col gap-8">
