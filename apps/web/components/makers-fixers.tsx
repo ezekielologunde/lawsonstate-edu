@@ -137,39 +137,19 @@ export default function MakersFixers() {
           </h2>
         </div>
 
-        {/* Atmospheric photo banner */}
+        {/* Vimeo video — CTE showcase */}
         <div
           className="relative overflow-hidden mb-12"
-          style={{ height: 'clamp(220px, 30vw, 380px)', borderRadius: '16px' }}
+          style={{ borderRadius: '16px', aspectRatio: '16 / 9' }}
         >
-          <img
-            src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1400&q=75&auto=format&fit=crop"
-            alt="Student training in a vocational workshop"
-            className="w-full h-full object-cover"
-            loading="lazy"
+          <iframe
+            src="https://player.vimeo.com/video/1058690019?h=ff50502b3b&color=c9a227&title=0&byline=0&portrait=0"
+            className="absolute inset-0 w-full h-full"
+            style={{ border: 0 }}
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            title="Lawson State Career Technical Education"
           />
-          <div
-            aria-hidden
-            className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(135deg, oklch(0.12 0.06 261 / 0.90) 0%, oklch(0.12 0.06 261 / 0.50) 55%, transparent 100%)',
-            }}
-          />
-          <div className="absolute bottom-0 left-0 p-6 md:p-8">
-            <p
-              className="font-semibold uppercase mb-1"
-              style={{ fontSize: '0.68rem', letterSpacing: '0.16em', color: 'oklch(0.79 0.19 78)' }}
-            >
-              Hands-On Training
-            </p>
-            <p
-              className="font-display font-black text-white leading-none"
-              style={{ fontSize: 'clamp(1.3rem, 2.6vw, 1.9rem)', letterSpacing: '-0.03em' }}
-            >
-              Real tools. Real equipment. Real careers.
-            </p>
-          </div>
         </div>
 
         {/* Two-col layout */}
