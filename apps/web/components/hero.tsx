@@ -16,6 +16,9 @@ const DEFAULTS: HeroContent = {
   stat_4: 'Accredited by SACSCOC',
 }
 
+const VIDEO_ID = 'EsSClH-SjEc'
+const CAMPUS_PHOTO = 'https://www.lawsonstate.edu/_resources/assets/img/Bessemer%20Campus%20Aerial%20View.jpg'
+
 export default function Hero({ content = {} }: { content?: HeroContent }) {
   const c = { ...DEFAULTS, ...content }
 
@@ -24,10 +27,10 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
       className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center overflow-hidden"
       style={{ background: 'oklch(0.22 0.17 261)' }}
     >
-      {/* Ken Burns animated campus photo */}
-      <div className="absolute inset-0 overflow-hidden" aria-hidden>
+      {/* ── Mobile background: Ken Burns photo (video autoplay blocked on mobile) ── */}
+      <div className="md:hidden absolute inset-0 overflow-hidden" aria-hidden>
         <img
-          src="https://www.lawsonstate.edu/_resources/assets/img/Bessemer%20Campus%20Aerial%20View.jpg"
+          src={CAMPUS_PHOTO}
           alt=""
           className="w-full h-full object-cover object-center"
           loading="eager"
@@ -36,47 +39,76 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
             willChange: 'transform',
           }}
         />
-        {/* Gradient overlay — richer at edges, slightly lighter center */}
+      </div>
+
+      {/* ── Desktop background: looping YouTube video ── */}
+      <div className="hidden md:block absolute inset-0 overflow-hidden" aria-hidden>
+        {/* Poster image shows while video loads */}
+        <img
+          src={CAMPUS_PHOTO}
+          alt=""
+          className="absolute w-full h-full object-cover object-center"
+          loading="eager"
+        />
+        <iframe
+          src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&controls=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1`}
+          className="absolute pointer-events-none border-0"
+          allow="autoplay; encrypted-media"
+          title=""
+          aria-hidden="true"
+          style={{
+            /* Scale to fill — 16:9 video centred in any viewport */
+            width:     'max(100%, 177.78vh)',
+            height:    'max(100%, 56.25vw)',
+            top:       '50%',
+            left:      '50%',
+            transform: 'translate(-50%, -50%)',
+          }}
+        />
+      </div>
+
+      {/* ── Shared overlay — sits on top of both photo and video ── */}
+      <div className="absolute inset-0" aria-hidden>
         <div
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(150deg, oklch(0.22 0.17 261 / 0.94) 0%, oklch(0.16 0.13 263 / 0.78) 50%, oklch(0.22 0.17 261 / 0.93) 100%)',
+              'linear-gradient(150deg, oklch(0.22 0.17 261 / 0.90) 0%, oklch(0.16 0.13 263 / 0.72) 50%, oklch(0.22 0.17 261 / 0.90) 100%)',
           }}
         />
         {/* Bottom fade */}
         <div
           className="absolute bottom-0 inset-x-0"
           style={{
-            height: '160px',
+            height: '180px',
             background: 'linear-gradient(to bottom, transparent, oklch(0.22 0.17 261 / 0.55))',
           }}
         />
       </div>
 
-      {/* Depth shapes */}
+      {/* ── Depth accent shapes ── */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
         <div
           className="absolute -top-40 -right-40 rounded-full"
-          style={{ width: '640px', height: '640px', background: 'oklch(0.28 0.16 261)', opacity: 0.15 }}
+          style={{ width: '640px', height: '640px', background: 'oklch(0.28 0.16 261)', opacity: 0.12 }}
         />
         <div
           className="absolute bottom-0 -left-60 rounded-full"
-          style={{ width: '560px', height: '560px', background: 'oklch(0.27 0.15 261)', opacity: 0.10 }}
+          style={{ width: '560px', height: '560px', background: 'oklch(0.27 0.15 261)', opacity: 0.08 }}
         />
-        {/* Gold accent line */}
         <div
           className="absolute hidden lg:block"
           style={{
             top: '22%', right: '27%',
             width: '2px', height: '200px',
             background: 'oklch(0.79 0.19 78)',
-            opacity: 0.40,
+            opacity: 0.38,
             transform: 'rotate(-10deg)',
           }}
         />
       </div>
 
+      {/* ── Content ── */}
       <div className="relative max-w-7xl mx-auto px-6 pt-36 pb-28 w-full">
         <h1
           className="font-display font-black leading-none mb-7"
@@ -85,7 +117,10 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
           <span className="block text-white" style={{ fontSize: 'clamp(3.25rem, 9.5vw, 7rem)' }}>
             {c.headline_line1}
           </span>
-          <span className="block" style={{ fontSize: 'clamp(3.25rem, 9.5vw, 7rem)', color: 'oklch(0.79 0.19 78)' }}>
+          <span
+            className="block"
+            style={{ fontSize: 'clamp(3.25rem, 9.5vw, 7rem)', color: 'oklch(0.79 0.19 78)' }}
+          >
             {c.headline_line2}
           </span>
         </h1>
