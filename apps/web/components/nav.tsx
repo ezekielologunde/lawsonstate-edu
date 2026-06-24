@@ -33,37 +33,43 @@ export default function Nav() {
         backdropFilter: scrolled ? 'blur(12px)' : 'none',
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
         {/* Logo — Gen Z collegiate lockup */}
-        <Link href="/" className="flex items-center gap-2.5 leading-none">
+        <Link href="/" className="flex items-center gap-2 md:gap-2.5 leading-none">
           {/* LS badge mark */}
           <div
             className="font-display font-black flex-shrink-0 flex items-center justify-center"
             style={{
-              width: '36px',
-              height: '36px',
+              width: '32px',
+              height: '32px',
               background: 'oklch(0.79 0.19 78)',
               color: 'oklch(0.11 0.03 261)',
-              borderRadius: '7px',
-              fontSize: '0.8rem',
+              borderRadius: '6px',
+              fontSize: '0.75rem',
               letterSpacing: '-0.02em',
             }}
           >
             LS
           </div>
           {/* Wordmark */}
-          <div className="flex flex-col leading-none" style={{ gap: '3px' }}>
+          <div className="flex flex-col leading-none" style={{ gap: '2px' }}>
             <span
-              className="font-display font-extrabold text-white block"
+              className="font-display font-extrabold text-white block hidden md:block"
               style={{ fontSize: '0.9rem', letterSpacing: '0.06em' }}
             >
               LAWSON STATE
             </span>
             <span
-              className="block text-white/35"
+              className="block text-white/35 hidden md:block"
               style={{ fontSize: '0.43rem', letterSpacing: '0.2em' }}
             >
               COMMUNITY COLLEGE
+            </span>
+            <span
+              className="font-display font-extrabold text-white block md:hidden"
+              style={{ fontSize: '0.75rem', letterSpacing: '0.04em' }}
+            >
+              LS
             </span>
           </div>
         </Link>
@@ -103,7 +109,7 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="md:hidden flex flex-col gap-1 p-1.5"
           onClick={() => setOpen(!open)}
           aria-label="Toggle navigation"
           aria-expanded={open}
@@ -127,18 +133,18 @@ export default function Nav() {
       <div
         className="md:hidden overflow-hidden transition-all duration-300"
         style={{
-          maxHeight: open ? '24rem' : '0',
+          maxHeight: open ? '20rem' : '0',
           opacity: open ? 1 : 0,
           background: 'oklch(0.16 0.13 263)',
           borderTop: open ? '1px solid oklch(1 0 0 / 0.1)' : 'none',
         }}
       >
-        <nav className="px-6 py-4 flex flex-col">
+        <nav className="px-6 py-3 flex flex-col gap-1">
           {/* Apply Now — most important action, top of mobile menu */}
           <Link
             href="/admissions/apply"
-            className="text-center font-bold px-5 py-4 rounded-xl mb-4 transition-colors"
-            style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
+            className="text-center font-bold px-4 py-2.5 rounded-lg transition-colors text-sm"
+            style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)' }}
             onClick={() => setOpen(false)}
           >
             Apply Now
@@ -147,8 +153,8 @@ export default function Nav() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-white/80 hover:text-white font-medium transition-colors"
-              style={{ padding: '0.75rem 0', borderBottom: '1px solid oklch(1 0 0 / 0.08)' }}
+              className="text-white/80 hover:text-white font-medium transition-colors text-sm"
+              style={{ padding: '0.5rem 0.5rem', borderBottom: '1px solid oklch(1 0 0 / 0.08)' }}
               onClick={() => setOpen(false)}
             >
               {link.label}
@@ -156,8 +162,8 @@ export default function Nav() {
           ))}
           <Link
             href="/portal"
-            className="text-white/80 hover:text-white font-medium transition-colors mt-1"
-            style={{ padding: '0.75rem 0' }}
+            className="text-white/80 hover:text-white font-medium transition-colors text-sm"
+            style={{ padding: '0.5rem 0.5rem' }}
             onClick={() => setOpen(false)}
           >
             Student Portal
