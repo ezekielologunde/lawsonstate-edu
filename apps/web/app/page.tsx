@@ -2,7 +2,9 @@ export const revalidate = 3600 // 1 hour ISR
 
 import { createServerClient, buildContentMap } from '@/lib/supabase'
 import Nav from '@/components/nav'
+import AnnouncementBanner from '@/components/announcement-banner'
 import Hero from '@/components/hero'
+import MakersFixers from '@/components/makers-fixers'
 import QuickLinks from '@/components/quick-links'
 import PathwayCards from '@/components/pathway-cards'
 import Programs from '@/components/programs'
@@ -55,6 +57,7 @@ export default async function Home() {
 
   return (
     <>
+      <AnnouncementBanner />
       <Nav />
       <main className="mobile-nav-spacer">
         <Hero content={content.hero} />
@@ -68,6 +71,7 @@ export default async function Home() {
           featuredStory={featuredStory ?? null}
           events={upcomingEvents ?? []}
         />
+        <MakersFixers />
         <Prefooter content={content.prefooter} />
       </main>
       <SiteFooter />

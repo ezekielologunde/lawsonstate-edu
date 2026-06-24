@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 const NAV_LINKS = [
-  { label: 'Admissions', href: '/admissions' },
-  { label: 'Academics', href: '/academics' },
-  { label: 'Campus Life', href: '/campus-life' },
-  { label: 'About', href: '/about' },
+  { label: 'How to Apply', href: '/admissions' },
+  { label: 'Programs',     href: '/academics' },
+  { label: 'Campus Life',  href: '/campus-life' },
+  { label: 'About',        href: '/about' },
 ]
 
 export default function Nav() {
@@ -22,10 +22,11 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 z-50 transition-all duration-300 ${
         scrolled ? 'shadow-lg' : ''
       }`}
       style={{
+        top: 'var(--lscc-banner-h, 0px)',
         background: scrolled
           ? 'oklch(0.22 0.17 261 / 0.96)'
           : 'oklch(0.22 0.17 261 / 0)',
