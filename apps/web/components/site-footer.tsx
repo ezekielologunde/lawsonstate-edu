@@ -14,10 +14,10 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
     { label: 'Visit Campus', href: '/visit' },
   ],
   'Student Services': [
-    { label: 'Student Portal', href: '/portal' },
-    { label: 'Advising', href: '/advising' },
-    { label: 'Counseling', href: '/counseling' },
-    { label: 'Career Services', href: '/career-services' },
+    { label: 'Campus Life', href: '/campus-life' },
+    { label: 'Student Portal', href: 'https://my.lawsonstate.edu' },
+    { label: 'Advising', href: '/campus-life#support' },
+    { label: 'Career Services', href: '/campus-life#career' },
   ],
   Institution: [
     { label: 'About Lawson State', href: '/about' },

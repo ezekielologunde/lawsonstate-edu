@@ -6,7 +6,7 @@ import Link from 'next/link'
 const NAV_LINKS = [
   { label: 'Admissions', href: '/admissions' },
   { label: 'Academics', href: '/academics' },
-  { label: 'Student Life', href: '/student-life' },
+  { label: 'Campus Life', href: '/campus-life' },
   { label: 'About', href: '/about' },
 ]
 
