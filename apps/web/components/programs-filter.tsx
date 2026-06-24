@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useCallback } from 'react'
+import { useState, useMemo } from 'react'
 import Link from 'next/link'
 import type { Program, DegreeType, DeliveryMode, ProgramCategory } from '@/lib/programs-data'
 import { DEGREE_TYPES, DELIVERY_MODES, CATEGORIES, SAMPLE_PROGRAMS } from '@/lib/programs-data'
@@ -94,13 +94,14 @@ export default function ProgramsFilter() {
       <div className="sticky top-0 z-10 px-6 py-4 border-b border-oklch(0.90 0.01 263) bg-white md:relative md:border-0 md:py-6">
         <div className="max-w-7xl mx-auto">
           <div className="relative">
+            <label htmlFor="program-search" className="sr-only">Search programs</label>
             <input
-              type="text"
+              id="program-search"
+              type="search"
               placeholder="Search by program name, credential, or skill…"
               value={filters.search}
               onChange={handleSearch}
               className="w-full px-4 py-3 rounded-lg border border-oklch(0.85 0.02 263) bg-white text-sm focus:outline-none focus:ring-2 focus:ring-oklch(0.79 0.19 78) focus:border-transparent transition-all"
-              aria-label="Search programs"
             />
             {filters.search && (
               <button
@@ -108,7 +109,7 @@ export default function ProgramsFilter() {
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-lscc-muted hover:text-lscc-ink transition-colors"
                 aria-label="Clear search"
               >
-                ✕
+                <span aria-hidden="true">✕</span>
               </button>
             )}
           </div>
@@ -122,11 +123,12 @@ export default function ProgramsFilter() {
           className="md:hidden w-full flex items-center justify-between p-3 rounded-lg border border-oklch(0.85 0.02 263) mb-4 font-medium"
           aria-expanded={mobileOpen}
           aria-controls="filter-panel"
+          aria-label={`Filters${activeFilterCount > 0 ? `, ${activeFilterCount} active` : ''}`}
         >
-          <span className="flex items-center gap-2">
+          <span className="flex items-center gap-2" aria-hidden="true">
             🔍 Filters {activeFilterCount > 0 && <span className="text-sm font-bold text-white bg-oklch(0.79 0.19 78) rounded-full px-2 py-0.5">{activeFilterCount}</span>}
           </span>
-          <span>{mobileOpen ? '▲' : '▼'}</span>
+          <span aria-hidden="true">{mobileOpen ? '▲' : '▼'}</span>
         </button>
 
         <div className="grid md:grid-cols-[280px_1fr] gap-8">
@@ -145,6 +147,7 @@ export default function ProgramsFilter() {
                   <button
                     onClick={clearAllFilters}
                     className="text-xs font-semibold text-oklch(0.79 0.19 78) hover:text-oklch(0.73 0.17 78) transition-colors"
+                    aria-label="Clear all filters"
                   >
                     Clear all
                   </button>
@@ -158,7 +161,7 @@ export default function ProgramsFilter() {
                         className="text-lscc-muted hover:text-lscc-ink"
                         aria-label="Remove search filter"
                       >
-                        ✕
+                        <span aria-hidden="true">✕</span>
                       </button>
                     </div>
                   )}
@@ -170,7 +173,7 @@ export default function ProgramsFilter() {
                         className="text-lscc-muted hover:text-lscc-ink"
                         aria-label={`Remove ${type} filter`}
                       >
-                        ✕
+                        <span aria-hidden="true">✕</span>
                       </button>
                     </div>
                   ))}
@@ -182,7 +185,7 @@ export default function ProgramsFilter() {
                         className="text-lscc-muted hover:text-lscc-ink"
                         aria-label={`Remove ${DELIVERY_MODES[mode].label} filter`}
                       >
-                        ✕
+                        <span aria-hidden="true">✕</span>
                       </button>
                     </div>
                   ))}
@@ -194,7 +197,7 @@ export default function ProgramsFilter() {
                         className="text-lscc-muted hover:text-lscc-ink"
                         aria-label={`Remove ${CATEGORIES[cat].label} filter`}
                       >
-                        ✕
+                        <span aria-hidden="true">✕</span>
                       </button>
                     </div>
                   ))}
@@ -235,10 +238,9 @@ export default function ProgramsFilter() {
                       checked={filters.deliveryModes.includes(mode)}
                       onChange={() => toggleDeliveryMode(mode)}
                       className="w-4 h-4 rounded border-oklch(0.85 0.02 263) text-oklch(0.79 0.19 78) focus:ring-2 focus:ring-offset-0 focus:ring-oklch(0.79 0.19 78) cursor-pointer"
-                      aria-label={info.label}
                     />
                     <span className="font-medium text-sm text-lscc-ink group-hover:text-oklch(0.79 0.19 78) transition-colors">
-                      {info.icon} {info.label}
+                      <span aria-hidden="true">{info.icon} </span>{info.label}
                     </span>
                   </label>
                 ))}
@@ -266,8 +268,8 @@ export default function ProgramsFilter() {
           </aside>
 
           {/* Results */}
-          <main>
-            <div className="mb-4">
+          <section aria-label="Program search results">
+            <div className="mb-4" role="status" aria-live="polite" aria-atomic="true">
               <p className="text-sm text-lscc-muted">
                 Found <span className="font-bold text-lscc-ink">{filteredPrograms.length}</span> program{filteredPrograms.length !== 1 ? 's' : ''}
                 {activeFilterCount > 0 && ` matching your criteria`}
@@ -276,14 +278,15 @@ export default function ProgramsFilter() {
 
             {filteredPrograms.length === 0 ? (
               <div className="py-12 text-center">
-                <div className="text-4xl mb-3">🔍</div>
+                <div className="text-4xl mb-3" aria-hidden="true">🔍</div>
                 <h3 className="text-lg font-bold text-lscc-ink mb-2">No programs found</h3>
                 <p className="text-sm text-lscc-muted mb-6 max-w-md mx-auto">
-                  Try adjusting your filters or search terms to find what you're looking for.
+                  Try adjusting your filters or search terms to find what you&apos;re looking for.
                 </p>
                 <button
                   onClick={clearAllFilters}
                   className="text-sm font-semibold text-oklch(0.79 0.19 78) hover:text-oklch(0.73 0.17 78) transition-colors"
+                  aria-label="Clear all filters and show all programs"
                 >
                   Clear all filters
                 </button>
@@ -301,7 +304,7 @@ export default function ProgramsFilter() {
                             </span>
                             {program.jobPlacementRate && (
                               <span className="text-xs font-semibold text-oklch(0.55 0.08 263)">
-                                📊 {program.jobPlacementRate}% placement
+                                <span aria-hidden="true">📊 </span>{program.jobPlacementRate}% placement
                               </span>
                             )}
                           </div>
@@ -312,7 +315,7 @@ export default function ProgramsFilter() {
                           <div className="flex flex-wrap gap-2">
                             {program.deliveryModes.map(mode => (
                               <span key={mode} className="text-xs px-2.5 py-1 rounded-full bg-oklch(0.97 0.015 263) text-lscc-muted">
-                                {DELIVERY_MODES[mode].icon} {DELIVERY_MODES[mode].label}
+                                <span aria-hidden="true">{DELIVERY_MODES[mode].icon} </span>{DELIVERY_MODES[mode].label}
                               </span>
                             ))}
                           </div>
@@ -328,7 +331,7 @@ export default function ProgramsFilter() {
                 ))}
               </div>
             )}
-          </main>
+          </section>
         </div>
       </div>
     </div>

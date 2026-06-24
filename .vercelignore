@@ -1,0 +1,17 @@
+www.lawsonstate.edu
+apps/mobile
+node_modules
+*.pdf
+*.zip
+*.exe
+saveweb2zip-com-lawsonstate-edu.zip
+homepage-colors-fixed.png
+homepage-corrected.png
+homepage-fixed.png
+apply-page.png
+programs-page-check.png
+programs-viewport.png
+ACCESSIBILITY_AUDIT_REPORT.md
+HOMEPAGE_ACCESSIBILITY_REBUILD.md
+IMPLEMENTATION_COMPLETE.md
+wget.exe
