@@ -3,6 +3,15 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  /* Scroll padding for fixed header */
+  scroll-padding-top: 100px;
+}
+
+/* Smooth scroll for internal links */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Hide scrollbars while keeping scroll functionality */
@@ -428,4 +437,22 @@ a:focus-visible {
 button:focus-visible {
   outline: 2px solid oklch(0.79 0.19 78);
   outline-offset: 2px;
+}
+
+/* ── Smooth page transitions ── */
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Page fade-in on load */
+main {
+  animation: page-fade-in 0.4s ease-out;
+}
+
+/* ── Reduced motion overrides ── */
+@media (prefers-reduced-motion: reduce) {
+  main {
+    animation: none;
+  }
 }
