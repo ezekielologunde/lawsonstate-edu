@@ -1,31 +1,31 @@
 import Link from 'next/link'
 
 type Pathway = {
-  slot: string
-  audience: string
-  headline: string
+  slot:        string
+  audience:    string
+  headline:    string
   description: string
-  links: { label: string; href: string }[]
-  cta: string
-  ctaHref: string
-  bg: string
-  isDark: boolean
-  tagBg: string
-  tagText: string
+  links:       { label: string; href: string }[]
+  cta:         string
+  ctaHref:     string
+  bg:          string
+  isDark:      boolean
+  tagBg:       string
+  tagText:     string
 }
 
 const PATHWAYS: Pathway[] = [
   {
-    slot:     'new',
-    audience: 'New Student',
-    headline: 'START YOUR JOURNEY HERE',
+    slot:        'new',
+    audience:    'New Student',
+    headline:    'START YOUR JOURNEY HERE',
     description: 'Ready to begin at Lawson State? Here\'s everything you need — from applying to showing up on day one.',
     links: [
-      { label: 'Apply for admission',       href: '/admissions/apply' },
-      { label: 'Explore financial aid',     href: '/financial-aid' },
-      { label: 'See all programs',          href: '/academics' },
-      { label: 'Schedule a campus visit',   href: '/visit' },
-      { label: 'Attend orientation',        href: '/orientation' },
+      { label: 'Apply for admission',     href: '/admissions/apply' },
+      { label: 'Explore financial aid',   href: '/financial-aid' },
+      { label: 'See all programs',        href: '/academics' },
+      { label: 'Schedule a campus visit', href: '/visit' },
+      { label: 'Attend orientation',      href: '/orientation' },
     ],
     cta:     'Begin your application →',
     ctaHref: '/admissions/apply',
@@ -35,14 +35,14 @@ const PATHWAYS: Pathway[] = [
     tagText: 'white',
   },
   {
-    slot:     'transfer',
-    audience: 'Transfer Student',
-    headline: 'TRANSFER WITH CONFIDENCE',
+    slot:        'transfer',
+    audience:    'Transfer Student',
+    headline:    'TRANSFER WITH CONFIDENCE',
     description: 'Coming from another school? We make the credit transfer process clear and straightforward.',
     links: [
-      { label: 'Transfer admissions',       href: '/admissions/transfer' },
-      { label: 'Credit transfer guide',     href: '/transfer/credits' },
-      { label: 'Transfer programs',         href: '/academics/transfer' },
+      { label: 'Transfer admissions',   href: '/admissions/transfer' },
+      { label: 'Credit transfer guide', href: '/transfer/credits' },
+      { label: 'Transfer programs',     href: '/academics/transfer' },
     ],
     cta:     'Transfer info →',
     ctaHref: '/admissions/transfer',
@@ -52,15 +52,15 @@ const PATHWAYS: Pathway[] = [
     tagText: 'oklch(0.14 0.02 263)',
   },
   {
-    slot:     'current',
-    audience: 'Current Student',
-    headline: 'EVERYTHING YOU NEED',
+    slot:        'current',
+    audience:    'Current Student',
+    headline:    'EVERYTHING YOU NEED',
     description: 'Register for classes, check your aid, pay your bill, and get support — all in one place.',
     links: [
-      { label: 'Register for classes',      href: '/registration' },
-      { label: 'Student portal login',      href: '/student-portal' },
-      { label: 'Financial aid status',      href: '/financial-aid' },
-      { label: 'Pay your bill',             href: '/pay-bill' },
+      { label: 'Register for classes',  href: '/registration' },
+      { label: 'Student portal login',  href: '/student-portal' },
+      { label: 'Financial aid status',  href: '/financial-aid' },
+      { label: 'Pay your bill',         href: '/pay-bill' },
     ],
     cta:     'Student portal →',
     ctaHref: '/student-portal',
@@ -70,14 +70,14 @@ const PATHWAYS: Pathway[] = [
     tagText: 'oklch(0.14 0.02 263)',
   },
   {
-    slot:     'workforce',
-    audience: 'Adult & Workforce',
-    headline: 'ADVANCE YOUR CAREER',
+    slot:        'workforce',
+    audience:    'Adult & Workforce',
+    headline:    'ADVANCE YOUR CAREER',
     description: 'Certificates, workforce training, and continuing ed programs built around your life and schedule.',
     links: [
-      { label: 'Workforce programs',        href: '/workforce' },
-      { label: 'Certificate courses',       href: '/academics/certificates' },
-      { label: 'Continuing education',      href: '/continuing-ed' },
+      { label: 'Workforce programs',   href: '/workforce' },
+      { label: 'Certificate courses',  href: '/academics/certificates' },
+      { label: 'Continuing education', href: '/continuing-ed' },
     ],
     cta:     'Explore workforce programs →',
     ctaHref: '/workforce',
@@ -106,28 +106,28 @@ export default function PathwayCards() {
 
         <div className="pathways-grid">
           {PATHWAYS.map((p) => (
-            <Link
+            // Card is a div so inner links are valid HTML
+            <div
               key={p.slot}
-              href={p.ctaHref}
-              className={`path-${p.slot} group flex flex-col rounded-xl p-7 transition-transform duration-300 hover:-translate-y-0.5`}
-              style={{ background: p.bg, textDecoration: 'none' }}
+              className={`path-${p.slot} flex flex-col rounded-xl p-7`}
+              style={{ background: p.bg }}
             >
-              {/* Tag */}
+              {/* Audience tag */}
               <span
-                className="self-start text-xs font-semibold px-3 py-1 rounded-full mb-auto"
+                className="self-start text-xs font-semibold px-3 py-1 rounded-full"
                 style={{ background: p.tagBg, color: p.tagText }}
               >
                 {p.audience}
               </span>
 
-              {/* Content anchored to bottom */}
-              <div className="mt-10">
+              {/* Body */}
+              <div className="mt-8 flex flex-col flex-1">
                 <h3
                   className="font-display font-black leading-none mb-3"
                   style={{
-                    fontSize: p.slot === 'new' ? 'clamp(1.75rem, 3vw, 2.4rem)' : '1.4rem',
+                    fontSize:      p.slot === 'new' ? 'clamp(1.75rem, 3vw, 2.4rem)' : '1.4rem',
                     letterSpacing: '-0.02em',
-                    color: p.isDark ? 'white' : 'oklch(0.14 0.02 263)',
+                    color:         p.isDark ? 'white' : 'oklch(0.14 0.02 263)',
                   }}
                 >
                   {p.headline}
@@ -135,35 +135,42 @@ export default function PathwayCards() {
                 <p
                   className="text-sm leading-relaxed mb-5"
                   style={{
-                    color: p.isDark ? 'oklch(1 0 0 / 0.60)' : 'oklch(0.38 0.05 263)',
+                    color:    p.isDark ? 'oklch(1 0 0 / 0.60)' : 'oklch(0.38 0.05 263)',
                     maxWidth: '38ch',
                   }}
                 >
                   {p.description}
                 </p>
 
-                {/* Quick link list */}
-                <ul className="flex flex-col gap-1.5 mb-6">
+                {/* Quick links — real navigable links with proper tap targets */}
+                <ul className="flex flex-col mb-6">
                   {p.links.map(({ label, href }) => (
                     <li key={label}>
-                      <span
-                        className="text-sm font-medium"
-                        style={{ color: p.isDark ? 'oklch(1 0 0 / 0.75)' : 'oklch(0.27 0.13 263)' }}
+                      <Link
+                        href={href}
+                        className="flex items-center gap-2 py-2.5 text-sm font-medium transition-opacity hover:opacity-75"
+                        style={{ color: p.isDark ? 'oklch(1 0 0 / 0.85)' : 'oklch(0.27 0.13 263)' }}
                       >
-                        → {label}
-                      </span>
+                        <span aria-hidden="true">→</span>
+                        {label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
 
-                <span
-                  className="text-sm font-semibold group-hover:underline"
-                  style={{ color: p.isDark ? 'oklch(0.83 0.16 82)' : 'oklch(0.27 0.13 263)' }}
+                {/* Primary CTA */}
+                <Link
+                  href={p.ctaHref}
+                  className="mt-auto inline-flex items-center text-sm font-bold px-5 py-3 rounded-lg transition-opacity hover:opacity-85"
+                  style={{
+                    background: p.isDark ? 'oklch(0.83 0.16 82)' : 'oklch(0.27 0.13 263)',
+                    color:      p.isDark ? 'oklch(0.14 0.02 263)' : 'white',
+                  }}
                 >
                   {p.cta}
-                </span>
+                </Link>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

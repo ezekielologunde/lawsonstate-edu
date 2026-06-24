@@ -111,32 +111,34 @@ export default function Nav() {
           borderTop: open ? '1px solid oklch(1 0 0 / 0.1)' : 'none',
         }}
       >
-        <nav className="px-6 py-5 flex flex-col gap-4">
+        <nav className="px-6 py-4 flex flex-col">
+          {/* Apply Now — most important action, top of mobile menu */}
+          <Link
+            href="/admissions/apply"
+            className="text-center font-bold px-5 py-4 rounded-xl mb-4 transition-colors"
+            style={{ background: 'oklch(0.83 0.16 82)', color: 'oklch(0.14 0.02 263)', fontSize: '1rem' }}
+            onClick={() => setOpen(false)}
+          >
+            Apply Now
+          </Link>
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-white/75 hover:text-white font-medium py-1 transition-colors"
+              className="text-white/80 hover:text-white font-medium transition-colors"
+              style={{ padding: '0.75rem 0', borderBottom: '1px solid oklch(1 0 0 / 0.08)' }}
               onClick={() => setOpen(false)}
             >
               {link.label}
             </Link>
           ))}
-          <hr className="border-white/10" />
           <Link
             href="/portal"
-            className="text-white/75 hover:text-white font-medium py-1 transition-colors"
+            className="text-white/80 hover:text-white font-medium transition-colors mt-1"
+            style={{ padding: '0.75rem 0' }}
             onClick={() => setOpen(false)}
           >
-            Portal Login
-          </Link>
-          <Link
-            href="/admissions/apply"
-            className="text-center font-semibold px-5 py-3 rounded transition-colors"
-            style={{ background: 'oklch(0.83 0.16 82)', color: 'oklch(0.14 0.02 263)' }}
-            onClick={() => setOpen(false)}
-          >
-            Apply Now
+            Student Portal
           </Link>
         </nav>
       </div>

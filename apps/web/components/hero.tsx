@@ -111,6 +111,30 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
           })}
         </div>
       </div>
+
+      {/* Scroll cue */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none" aria-hidden>
+        <span className="text-white/40 text-xs tracking-widest uppercase" style={{ fontSize: '0.625rem' }}>Explore</span>
+        <svg
+          width="20" height="20" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" strokeWidth="2"
+          strokeLinecap="round" strokeLinejoin="round"
+          className="text-white/40"
+          style={{ animation: 'bounce 2s infinite' }}
+        >
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </div>
+
+      <style>{`
+        @keyframes bounce {
+          0%, 100% { transform: translateY(0); }
+          50%       { transform: translateY(6px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          @keyframes bounce { 0%, 100% { transform: none; } }
+        }
+      `}</style>
     </section>
   )
 }
