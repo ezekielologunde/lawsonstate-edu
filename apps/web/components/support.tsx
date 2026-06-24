@@ -29,50 +29,70 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
   ]
 
   return (
-    <section className="py-24 px-6" style={{ background: 'oklch(0.20 0.10 265)' }}>
-      <div className="max-w-7xl mx-auto">
-        <h2
-          className="font-display font-black text-white leading-none mb-16"
-          style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', letterSpacing: '-0.02em' }}
-        >
-          {c.headline_line1}
-          <br />
-          <span style={{ color: 'oklch(0.83 0.16 82)' }}>{c.headline_line2}</span>
-        </h2>
+    <section className="overflow-hidden" style={{ background: 'oklch(0.20 0.10 265)' }}>
+      <div className="max-w-7xl mx-auto grid md:grid-cols-[5fr_7fr]">
 
-        <div className="grid md:grid-cols-3 gap-12 md:gap-8">
-          {steps.map((step, i) => (
-            <div key={step.num} className="relative">
-              {i < steps.length - 1 && (
-                <div
-                  className="hidden md:block absolute top-0 -right-4 bottom-0 w-px"
-                  style={{ background: 'oklch(1 0 0 / 0.08)' }}
-                />
-              )}
+        {/* Left: campus photo */}
+        <div className="relative hidden md:block">
+          <img
+            src="https://live.staticflickr.com/65535/55259062249_bda6f008e2_z.jpg"
+            alt="Lawson State students at commencement"
+            className="absolute inset-0 w-full h-full object-cover object-top"
+            loading="lazy"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(to right, oklch(0.20 0.10 265 / 0.15) 0%, oklch(0.20 0.10 265 / 0.85) 100%)',
+            }}
+          />
+        </div>
+
+        {/* Right: content */}
+        <div className="py-24 px-6 md:px-10 lg:px-16">
+          <h2
+            className="font-display font-black text-white leading-none mb-14"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', letterSpacing: '-0.02em' }}
+          >
+            {c.headline_line1}
+            <br />
+            <span style={{ color: 'oklch(0.83 0.16 82)' }}>{c.headline_line2}</span>
+          </h2>
+
+          <div className="flex flex-col gap-10">
+            {steps.map((step, i) => (
               <div
-                className="font-display font-black mb-6 leading-none"
-                style={{ fontSize: '3rem', color: 'oklch(0.83 0.16 82)' }}
+                key={step.num}
+                className="flex flex-col"
+                style={i < steps.length - 1 ? { paddingBottom: '2.5rem', borderBottom: '1px solid oklch(1 0 0 / 0.08)' } : {}}
               >
-                {step.num}
+                <div
+                  className="font-display font-black mb-4 leading-none"
+                  style={{ fontSize: '2.4rem', color: 'oklch(0.83 0.16 82)' }}
+                >
+                  {step.num}
+                </div>
+                <h3
+                  className="font-display font-bold text-white mb-2"
+                  style={{ fontSize: '1.35rem', letterSpacing: '-0.015em' }}
+                >
+                  {step.title}
+                </h3>
+                <p className="text-white/50 leading-relaxed mb-4" style={{ maxWidth: '44ch' }}>
+                  {step.body}
+                </p>
+                <Link
+                  href={step.href}
+                  className="text-sm font-semibold hover:underline transition-colors self-start"
+                  style={{ color: 'oklch(0.83 0.16 82)' }}
+                >
+                  {step.cta} →
+                </Link>
               </div>
-              <h3
-                className="font-display font-bold text-white mb-3"
-                style={{ fontSize: '1.5rem', letterSpacing: '-0.015em' }}
-              >
-                {step.title}
-              </h3>
-              <p className="text-white/50 leading-relaxed mb-6" style={{ maxWidth: '38ch' }}>
-                {step.body}
-              </p>
-              <Link
-                href={step.href}
-                className="text-sm font-semibold hover:underline transition-colors"
-                style={{ color: 'oklch(0.83 0.16 82)' }}
-              >
-                {step.cta} →
-              </Link>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
