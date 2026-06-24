@@ -21,17 +21,17 @@ const CONTENT_DEFAULTS: ProgramsContent = {
 
 /* Design per grid slot — admin controls placement, design controls appearance */
 const SLOT_BG: Record<string, string> = {
-  health:   'oklch(0.27 0.13 263)',
-  career:   'oklch(0.94 0.025 263)',
-  transfer: 'oklch(0.22 0.11 265)',
-  business: 'oklch(0.97 0.015 263)',
+  health:   'oklch(0.24 0.17 261)',    // richer navy blue (more vivid)
+  career:   'oklch(0.94 0.025 263)',   // light stays
+  transfer: 'oklch(0.28 0.16 26)',     // warm coral-red (vivid contrast)
+  business: 'oklch(0.97 0.015 263)',   // near-white stays
 }
 
 const SLOT_TAG: Record<string, { bg: string; text: string }> = {
-  health:   { bg: 'oklch(0.83 0.16 82)', text: 'oklch(0.14 0.02 263)' },
-  career:   { bg: 'oklch(0.27 0.13 263)', text: 'white' },
-  transfer: { bg: 'oklch(0.83 0.16 82)', text: 'oklch(0.14 0.02 263)' },
-  business: { bg: 'oklch(0.27 0.13 263)', text: 'white' },
+  health:   { bg: 'oklch(0.83 0.16 82)',   text: 'oklch(0.14 0.02 263)' },
+  career:   { bg: 'oklch(0.24 0.17 261)',  text: 'white' },
+  transfer: { bg: 'oklch(0.72 0.20 28)',   text: 'oklch(0.14 0.02 263)' },
+  business: { bg: 'oklch(0.24 0.17 261)',  text: 'white' },
 }
 
 /* Tailwind class sets per slot — kept as full strings for scanner */
@@ -56,7 +56,7 @@ export default function Programs({
   const c = { ...CONTENT_DEFAULTS, ...content }
 
   return (
-    <section className="py-24 px-6" style={{ background: 'oklch(0.98 0.008 263)' }}>
+    <section className="py-24 px-6" style={{ background: 'white' }}>
       <div className="max-w-7xl mx-auto">
         <div className="mb-14 max-w-2xl scroll-reveal">
           <h2

@@ -28,6 +28,11 @@ html {
   --color-lscc-ink:       oklch(0.11 0.03 261);
   --color-lscc-muted:     oklch(0.40 0.06 261);
   --color-lscc-surface:   oklch(0.985 0.012 263);
+  --color-lscc-coral:    oklch(0.72 0.20 28);
+  --color-lscc-electric: oklch(0.62 0.22 248);
+  --color-lscc-lime:     oklch(0.78 0.18 130);
+  --color-lscc-teal:     oklch(0.62 0.16 210);
+  --color-lscc-amber:    oklch(0.78 0.18 58);
 }
 
 @theme inline {

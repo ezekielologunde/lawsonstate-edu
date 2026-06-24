@@ -72,7 +72,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(135deg, oklch(0.22 0.17 261 / 0.82) 0%, oklch(0.16 0.13 263 / 0.58) 55%, oklch(0.22 0.17 261 / 0.80) 100%)',
+              'linear-gradient(135deg, oklch(0.22 0.17 261 / 0.68) 0%, oklch(0.16 0.13 263 / 0.42) 55%, oklch(0.22 0.17 261 / 0.65) 100%)',
           }}
         />
       </div>
@@ -85,7 +85,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
           top: '-8%', right: '4%',
           width: '700px', height: '700px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, oklch(0.79 0.19 78 / 0.24) 0%, transparent 68%)',
+          background: 'radial-gradient(circle, oklch(0.79 0.19 78 / 0.32) 0%, transparent 68%)',
           filter: 'blur(60px)',
           animation: 'glow-pulse 5.5s ease-in-out infinite',
         }}
@@ -98,7 +98,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
           bottom: '10%', left: '-6%',
           width: '500px', height: '500px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, oklch(0.35 0.18 261 / 0.30) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, oklch(0.45 0.22 248 / 0.28) 0%, transparent 70%)',
           filter: 'blur(70px)',
         }}
       />

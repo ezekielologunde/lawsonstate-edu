@@ -4,17 +4,70 @@ import { useRef, useEffect, useState } from 'react'
 import Link from 'next/link'
 
 const TRADES = [
-  { label: 'Automotive\nTechnology', glyph: '🔧', color: 'oklch(0.30 0.12 261)', accent: 'oklch(0.55 0.14 261)' },
-  { label: 'Welding\nTechnology',    glyph: '⚡', color: 'oklch(0.22 0.10 50)',  accent: 'oklch(0.60 0.18 50)'  },
-  { label: 'Electrical\nTechnology', glyph: '💡', color: 'oklch(0.20 0.10 100)', accent: 'oklch(0.65 0.18 85)'  },
-  { label: 'HVAC',                   glyph: '❄️', color: 'oklch(0.22 0.12 220)', accent: 'oklch(0.55 0.16 225)' },
-  { label: 'Industrial\nMaintenance', glyph: '⚙️', color: 'oklch(0.18 0.08 270)', accent: 'oklch(0.50 0.15 270)' },
-  { label: 'Construction\nTechnology', glyph: '🏗️', color: 'oklch(0.26 0.10 45)', accent: 'oklch(0.55 0.16 55)' },
+  { label: 'Automotive Technology',  sub: 'Engines, diagnostics & repair',    icon: 'auto',  bg: 'oklch(0.28 0.16 26)',  accent: 'oklch(0.60 0.24 28)'  },
+  { label: 'Welding Technology',      sub: 'Metal fab & structural welding',   icon: 'weld',  bg: 'oklch(0.32 0.15 55)',  accent: 'oklch(0.68 0.22 58)'  },
+  { label: 'Electrical Technology',   sub: 'Power systems & wiring',           icon: 'elec',  bg: 'oklch(0.26 0.18 248)', accent: 'oklch(0.58 0.24 248)' },
+  { label: 'HVAC',                    sub: 'Heating, cooling & air quality',   icon: 'hvac',  bg: 'oklch(0.28 0.14 210)', accent: 'oklch(0.60 0.20 210)' },
+  { label: 'Industrial Maintenance',  sub: 'Machinery & systems upkeep',       icon: 'indus', bg: 'oklch(0.26 0.15 295)', accent: 'oklch(0.56 0.22 295)' },
+  { label: 'Construction Technology', sub: 'Building trades & project mgmt',   icon: 'const', bg: 'oklch(0.30 0.16 130)', accent: 'oklch(0.62 0.22 132)' },
 ]
+
+function TradeIcon({ name }: { name: string }) {
+  const props = {
+    width: 36, height: 36, viewBox: '0 0 24 24',
+    fill: 'none', stroke: 'currentColor',
+    strokeWidth: 1.5, strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+    'aria-hidden': true,
+  }
+  switch (name) {
+    case 'auto': return (
+      <svg {...props}>
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+      </svg>
+    )
+    case 'weld': return (
+      <svg {...props}>
+        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+      </svg>
+    )
+    case 'elec': return (
+      <svg {...props}>
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+      </svg>
+    )
+    case 'hvac': return (
+      <svg {...props}>
+        <circle cx="12" cy="12" r="4"/>
+        <line x1="12" y1="2" x2="12" y2="4"/>
+        <line x1="12" y1="20" x2="12" y2="22"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="2" y1="12" x2="4" y2="12"/>
+        <line x1="20" y1="12" x2="22" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+    )
+    case 'indus': return (
+      <svg {...props}>
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </svg>
+    )
+    case 'const': return (
+      <svg {...props}>
+        <path d="M3 22L12 3L21 22H3z"/>
+        <line x1="12" y1="3" x2="12" y2="22"/>
+        <line x1="7.5" y1="15" x2="16.5" y2="15"/>
+      </svg>
+    )
+    default: return null
+  }
+}
 
 export default function MakersFixers() {
   const sectionRef = useRef<HTMLElement>(null)
-  const stripRef   = useRef<HTMLDivElement>(null)
   const [scrollPct, setScrollPct] = useState(0)
   const [glowPos, setGlowPos]     = useState({ x: 50, y: 50 })
 
@@ -53,41 +106,18 @@ export default function MakersFixers() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden"
-      style={{ background: 'oklch(0.10 0.04 261)', paddingBlock: '7rem 5rem' }}
+      style={{ background: 'oklch(0.12 0.06 261)', paddingBlock: '5rem 4rem' }}
     >
       {/* Mouse-follow glow */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none transition-opacity duration-500"
         style={{
-          background: `radial-gradient(ellipse 700px 500px at ${glowPos.x}% ${glowPos.y}%, oklch(0.79 0.19 78 / 0.07) 0%, transparent 70%)`,
-        }}
-      />
-
-      {/* Parallax texture lines */}
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none opacity-[0.035]"
-        style={{
-          backgroundImage: 'repeating-linear-gradient(0deg, oklch(1 0 0) 0px, oklch(1 0 0) 1px, transparent 1px, transparent 72px)',
-          transform: `translateY(${parallaxY * 0.5}px)`,
+          background: `radial-gradient(ellipse 600px 400px at ${glowPos.x}% ${glowPos.y}%, oklch(0.79 0.19 78 / 0.08) 0%, transparent 70%)`,
         }}
       />
 
       <div className="relative max-w-7xl mx-auto px-6">
-        {/* Kicker */}
-        <p
-          className="font-display font-black uppercase mb-6"
-          style={{
-            fontSize: '0.75rem',
-            letterSpacing: '0.22em',
-            color: 'oklch(0.79 0.19 78)',
-            transform: `translateY(${parallaxY * 0.3}px)`,
-          }}
-        >
-          Career & Technical Education · Est. 1949
-        </p>
-
         {/* Headline with parallax */}
         <div
           style={{ transform: `translateY(${parallaxY * 0.5}px)` }}
@@ -97,7 +127,7 @@ export default function MakersFixers() {
             className="font-display font-black text-white leading-none"
             style={{
               fontSize: 'clamp(3rem, 8vw, 7rem)',
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.04em',
               maxWidth: '14ch',
             }}
           >
@@ -109,11 +139,8 @@ export default function MakersFixers() {
 
         {/* Two-col layout */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-12 lg:gap-20 items-start mb-16">
-          {/* Body copy */}
-          <div
-            className="scroll-reveal"
-            style={{ transform: `translateY(${parallaxY * 0.2}px)` }}
-          >
+          {/* Body copy — no scroll-reveal, no parallax transform */}
+          <div style={{ opacity: 1 }}>
             <p
               style={{
                 fontSize: 'clamp(1.05rem, 1.8vw, 1.2rem)',
@@ -123,7 +150,7 @@ export default function MakersFixers() {
                 marginBottom: '1.5rem',
               }}
             >
-              At Lawson State, we train the makers and fixers that keep our world running. Whether it's wiring a building, welding a frame, tuning an engine, or keeping the air on — you'll learn it here, with real tools, real equipment, and instructors who've done the work.
+              At Lawson State, we train the makers and fixers that keep our world running. Whether it&apos;s wiring a building, welding a frame, tuning an engine, or keeping the air on — you&apos;ll learn it here, with real tools, real equipment, and instructors who&apos;ve done the work.
             </p>
             <p
               style={{
@@ -141,28 +168,32 @@ export default function MakersFixers() {
               className="press btn-shimmer inline-flex items-center font-bold gap-2 rounded-xl px-8 py-4"
               style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.95rem' }}
             >
-              Explore CTE Programs →
+              Explore CTE Programs
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
             </Link>
           </div>
 
-          {/* Snap-on partner callout */}
+          {/* Snap-on partner callout — solid border, no shadow, no glassmorphism */}
           <div
-            className="scroll-reveal rounded-2xl p-6"
             style={{
-              background: 'oklch(1 0 0 / 0.04)',
-              border: '1px solid oklch(1 0 0 / 0.10)',
-              backdropFilter: 'blur(10px)',
+              background: 'oklch(0.20 0.10 261)',
+              border: '1.5px solid oklch(0.35 0.15 261)',
+              borderRadius: '14px',
+              padding: '1.5rem',
             }}
           >
             <p
-              className="font-display font-bold uppercase mb-3"
-              style={{ fontSize: '0.65rem', letterSpacing: '0.2em', color: 'oklch(0.79 0.19 78)' }}
+              className="font-display font-bold mb-3"
+              style={{ fontSize: '0.7rem', letterSpacing: '0.14em', color: 'oklch(0.79 0.19 78)', textTransform: 'uppercase' }}
             >
               Industry Partner
             </p>
             <p
               className="font-display font-black text-white mb-3"
-              style={{ fontSize: '1.6rem', letterSpacing: '-0.02em', lineHeight: 1.1 }}
+              style={{ fontSize: '1.6rem', letterSpacing: '-0.03em', lineHeight: 1.1 }}
             >
               Snap-on Tools
             </p>
@@ -171,19 +202,21 @@ export default function MakersFixers() {
             </p>
             <div
               className="mt-5 pt-5 flex items-center gap-3"
-              style={{ borderTop: '1px solid oklch(1 0 0 / 0.10)' }}
+              style={{ borderTop: '1.5px solid oklch(0.35 0.15 261)' }}
             >
               <div
-                className="rounded-lg flex items-center justify-center text-white font-bold"
+                className="flex items-center justify-center text-white font-bold"
                 style={{
                   width: '40px',
                   height: '40px',
-                  background: 'oklch(0.55 0.14 24)',
-                  fontSize: '0.7rem',
+                  borderRadius: '8px',
+                  background: 'oklch(0.44 0.22 24)',
+                  fontSize: '0.75rem',
                   letterSpacing: '0.02em',
+                  flexShrink: 0,
                 }}
               >
-                S-on
+                S
               </div>
               <div>
                 <p className="font-semibold text-white" style={{ fontSize: '0.85rem' }}>Snap-on Tools</p>
@@ -194,8 +227,8 @@ export default function MakersFixers() {
         </div>
       </div>
 
-      {/* Horizontal trade strip — scroll-snap */}
-      <div ref={stripRef} className="relative">
+      {/* Horizontal trade strip */}
+      <div className="relative">
         <div
           className="flex gap-4 overflow-x-auto px-6 pb-4"
           style={{
@@ -207,7 +240,7 @@ export default function MakersFixers() {
           }}
         >
           {TRADES.map((trade, i) => (
-            <TradeCard key={trade.label} trade={trade} index={i} scrollPct={scrollPct} />
+            <TradeCard key={trade.label} trade={trade} index={i} />
           ))}
         </div>
       </div>
@@ -219,21 +252,21 @@ export default function MakersFixers() {
           style={{ borderTop: '1px solid oklch(1 0 0 / 0.1)' }}
         >
           {[
-            { n: '30+', label: 'CTE Certificates' },
+            { n: '30+',  label: 'CTE Certificates' },
             { n: '100%', label: 'Hands-On Training' },
-            { n: '92%', label: 'Job Placement Rate' },
-            { n: '1st', label: 'Class Priority Placement' },
+            { n: '92%',  label: 'Job Placement Rate' },
+            { n: '1st',  label: 'Class Priority Placement' },
           ].map((s) => (
             <div key={s.n}>
               <div
-                className="font-display font-black text-white"
-                style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', letterSpacing: '-0.04em' }}
+                className="font-display font-black"
+                style={{ fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', letterSpacing: '-0.04em', color: 'oklch(0.79 0.19 78)' }}
               >
                 {s.n}
               </div>
               <div
                 className="uppercase font-semibold"
-                style={{ fontSize: '0.72rem', letterSpacing: '0.14em', color: 'oklch(1 0 0 / 0.50)', marginTop: '2px' }}
+                style={{ fontSize: '0.72rem', letterSpacing: '0.14em', color: 'oklch(1 0 0 / 0.55)', marginTop: '2px' }}
               >
                 {s.label}
               </div>
@@ -248,11 +281,9 @@ export default function MakersFixers() {
 function TradeCard({
   trade,
   index,
-  scrollPct,
 }: {
   trade: (typeof TRADES)[0]
   index: number
-  scrollPct: number
 }) {
   const [hovered, setHovered] = useState(false)
   const delay = index * 0.06
@@ -261,21 +292,21 @@ function TradeCard({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="press relative flex-shrink-0 rounded-2xl overflow-hidden cursor-pointer"
+      className="press relative flex-shrink-0 overflow-hidden cursor-pointer"
       style={{
         scrollSnapAlign: 'start',
-        width: 'clamp(200px, 28vw, 240px)',
-        height: 'clamp(260px, 35vw, 320px)',
-        background: trade.color,
-        border: `1px solid oklch(1 0 0 / 0.08)`,
+        width: 'clamp(180px, 22vw, 210px)',
+        height: 'clamp(210px, 26vw, 255px)',
+        borderRadius: '14px',
+        background: trade.bg,
         transform: `translateY(${hovered ? -8 : 0}px) scale(${hovered ? 1.02 : 1})`,
         transition: `transform 350ms cubic-bezier(0.23, 1, 0.32, 1) ${delay}s, box-shadow 350ms ease`,
         boxShadow: hovered
-          ? `0 20px 60px oklch(0 0 0 / 0.5), 0 0 0 1px ${trade.accent}`
+          ? `0 20px 60px oklch(0 0 0 / 0.5), 0 0 0 1.5px ${trade.accent}`
           : '0 4px 20px oklch(0 0 0 / 0.3)',
       }}
     >
-      {/* Radial accent */}
+      {/* Radial accent gradient */}
       <div
         aria-hidden
         className="absolute inset-0"
@@ -286,48 +317,43 @@ function TradeCard({
         }}
       />
 
-      {/* Glyph */}
+      {/* Icon — top-center */}
       <div
         className="absolute"
         style={{
-          top: '1.5rem',
-          right: '1.5rem',
-          fontSize: '2.5rem',
-          opacity: hovered ? 0.9 : 0.55,
+          top: '1.25rem',
+          left: '50%',
+          transform: hovered ? 'translateX(-50%) scale(1.15)' : 'translateX(-50%)',
+          color: trade.accent,
+          opacity: hovered ? 1 : 0.75,
           transition: 'opacity 300ms ease, transform 350ms cubic-bezier(0.23, 1, 0.32, 1)',
-          transform: hovered ? 'scale(1.2) rotate(-5deg)' : 'none',
-          filter: 'grayscale(0.2)',
         }}
-        aria-hidden
       >
-        {trade.glyph}
+        <TradeIcon name={trade.icon} />
       </div>
 
-      {/* Label */}
-      <div className="absolute bottom-0 left-0 right-0 p-5">
+      {/* Label — bottom-aligned */}
+      <div className="absolute bottom-0 left-0 right-0 p-4">
         <p
           className="font-display font-black text-white leading-tight"
           style={{
-            fontSize: 'clamp(1rem, 2.5vw, 1.15rem)',
-            letterSpacing: '-0.01em',
-            whiteSpace: 'pre-line',
+            fontSize: 'clamp(0.9rem, 2.2vw, 1.05rem)',
+            letterSpacing: '-0.02em',
           }}
         >
           {trade.label}
         </p>
         <p
           style={{
-            fontSize: '0.72rem',
-            letterSpacing: '0.12em',
-            color: 'oklch(1 0 0 / 0.50)',
-            marginTop: '4px',
-            textTransform: 'uppercase',
+            fontSize: '0.68rem',
+            color: 'oklch(1 0 0 / 0.55)',
+            marginTop: '3px',
             opacity: hovered ? 1 : 0,
-            transform: hovered ? 'translateY(0)' : 'translateY(6px)',
+            transform: hovered ? 'translateY(0)' : 'translateY(5px)',
             transition: 'opacity 250ms ease, transform 250ms ease',
           }}
         >
-          View Program →
+          {trade.sub}
         </p>
       </div>
     </div>

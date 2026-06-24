@@ -39,7 +39,7 @@ export default function AnnouncementBanner() {
             className="shrink-0 font-display font-black hidden sm:block"
             style={{ fontSize: '0.72rem', letterSpacing: '0.14em', color: 'oklch(0.11 0.03 261)', textTransform: 'uppercase' }}
           >
-            📋 Registration Open
+            Registration Open
           </span>
           <span
             className="font-bold text-ellipsis overflow-hidden whitespace-nowrap"
