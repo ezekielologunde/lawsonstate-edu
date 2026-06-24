@@ -11,7 +11,7 @@ export default function AthleticsCallout() {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ background: 'oklch(0.95 0.03 255)', paddingBlock: '4.5rem' }}
+      style={{ background: 'oklch(0.92 0.05 255)', paddingBlock: '4.5rem' }}
       aria-label="Monarch Athletics"
     >
       {/* Real athletics photo background */}

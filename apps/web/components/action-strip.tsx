@@ -27,7 +27,7 @@ export default function ActionStrip() {
   return (
     <section
       aria-label="Next Steps"
-      style={{ background: 'oklch(0.95 0.03 255)', paddingBlock: '0' }}
+      style={{ background: 'oklch(0.96 0.05 88)', paddingBlock: '0' }}
     >
       <div
         className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4"

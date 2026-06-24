@@ -78,7 +78,7 @@ export default function ValueSection() {
   return (
     <section
       ref={sectionRef}
-      style={{ background: 'oklch(0.92 0.05 255)', paddingBlock: '5rem' }}
+      style={{ background: 'oklch(0.96 0.05 88)', paddingBlock: '5rem' }}
       aria-label="Tuition and Value"
     >
       <div className="max-w-7xl mx-auto px-6">

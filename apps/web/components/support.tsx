@@ -57,7 +57,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
 
   return (
     <section
-      style={{ background: 'oklch(0.92 0.05 255)', paddingBlock: '5rem' }}
+      style={{ background: 'oklch(0.95 0.03 255)', paddingBlock: '5rem' }}
       aria-label="Student Support"
     >
       <div className="max-w-7xl mx-auto px-6">
