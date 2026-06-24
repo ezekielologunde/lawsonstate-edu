@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import SearchModal from './search-modal'
 
 const NAV_LINKS = [
   { label: 'How to Apply', href: '/admissions' },
@@ -89,6 +90,7 @@ export default function Nav() {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-5">
+          <SearchModal />
           <a
             href="https://my.lawsonstate.edu"
             target="_blank"
