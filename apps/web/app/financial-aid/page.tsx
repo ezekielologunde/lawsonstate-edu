@@ -230,7 +230,7 @@ export default function FinancialAidPage() {
                     <td className="px-6 py-3 text-lscc-muted" style={{ fontSize: '1rem' }}>{r.week}</td>
                     <td
                       className="px-6 py-3 font-bold text-right"
-                      style={{ fontSize: '1.05rem', color: r.pct === '100%' ? 'oklch(0.5 0.15 145)' : r.pct === '0%' ? 'oklch(0.5 0.2 25)' : 'oklch(0.11 0.03 261)' }}
+                      style={{ fontSize: '1.05rem', color: r.pct === '100%' ? 'oklch(0.79 0.19 78)' : r.pct === '0%' ? 'oklch(0.5 0.2 25)' : 'oklch(0.11 0.03 261)' }}
                     >
                       {r.pct}
                     </td>

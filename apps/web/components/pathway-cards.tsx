@@ -7,7 +7,7 @@ const PATHS = [
   {
     id:       'new',
     label:    'New Student',
-    color:    'oklch(0.56 0.22 145)',
+    color:    'oklch(0.79 0.19 78)',
     headline: 'START YOUR JOURNEY',
     desc:     "Not sure where to start? We'll guide you from your first application to your first day on campus — no prior college experience needed.",
     links: [

@@ -32,7 +32,6 @@ html {
   --color-lscc-red-dark: oklch(0.42 0.22 27);
   --color-lscc-coral:    oklch(0.72 0.20 28);
   --color-lscc-electric: oklch(0.62 0.22 248);
-  --color-lscc-lime:     oklch(0.78 0.18 130);
   --color-lscc-teal:     oklch(0.62 0.16 210);
   --color-lscc-amber:    oklch(0.78 0.18 58);
 }

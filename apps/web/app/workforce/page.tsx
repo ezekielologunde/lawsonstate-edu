@@ -140,7 +140,7 @@ export default function WorkforcePage() {
                         <span
                           className="shrink-0 font-black rounded-lg px-3 py-1"
                           style={{
-                            background: item.cost === 'FREE' ? 'oklch(0.5 0.15 145)' : 'oklch(0.22 0.17 261)',
+                            background: item.cost === 'FREE' ? 'oklch(0.79 0.19 78)' : 'oklch(0.22 0.17 261)',
                             color: 'white',
                             fontSize: '0.96rem',
                           }}

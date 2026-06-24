@@ -7,9 +7,9 @@ const TRADES = [
   { label: 'Automotive Technology',  sub: 'Engines, diagnostics & repair',    icon: 'auto',  bg: 'oklch(0.28 0.16 26)',  accent: 'oklch(0.60 0.24 28)'  },
   { label: 'Welding Technology',      sub: 'Metal fab & structural welding',   icon: 'weld',  bg: 'oklch(0.32 0.15 55)',  accent: 'oklch(0.68 0.22 58)'  },
   { label: 'Electrical Technology',   sub: 'Power systems & wiring',           icon: 'elec',  bg: 'oklch(0.26 0.18 248)', accent: 'oklch(0.58 0.24 248)' },
-  { label: 'HVAC',                    sub: 'Heating, cooling & air quality',   icon: 'hvac',  bg: 'oklch(0.28 0.14 210)', accent: 'oklch(0.60 0.20 210)' },
-  { label: 'Industrial Maintenance',  sub: 'Machinery & systems upkeep',       icon: 'indus', bg: 'oklch(0.26 0.15 295)', accent: 'oklch(0.56 0.22 295)' },
-  { label: 'Construction Technology', sub: 'Building trades & project mgmt',   icon: 'const', bg: 'oklch(0.30 0.16 130)', accent: 'oklch(0.62 0.22 132)' },
+  { label: 'HVAC',                    sub: 'Heating, cooling & air quality',   icon: 'hvac',  bg: 'oklch(0.28 0.15 78)',  accent: 'oklch(0.60 0.22 78)'  },
+  { label: 'Industrial Maintenance',  sub: 'Machinery & systems upkeep',       icon: 'indus', bg: 'oklch(0.26 0.16 261)', accent: 'oklch(0.56 0.22 261)' },
+  { label: 'Construction Technology', sub: 'Building trades & project mgmt',   icon: 'const', bg: 'oklch(0.30 0.16 78)',  accent: 'oklch(0.62 0.22 78)'  },
 ]
 
 function TradeIcon({ name }: { name: string }) {
