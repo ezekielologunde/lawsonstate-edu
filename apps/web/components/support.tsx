@@ -77,13 +77,15 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
           </h2>
         </div>
 
-        {/* Three story cards */}
+        {/* Three story cards — white & cream mix on the blue section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 stagger-grid">
-          {stories.map((story) => (
+          {stories.map((story, i) => {
+            const cardBg = i === 1 ? 'oklch(0.96 0.05 88)' : 'white'
+            return (
             <article
               key={story.num}
               className="group flex flex-col rounded-2xl overflow-hidden"
-              style={{ background: 'oklch(0.24 0.18 261)', boxShadow: '0 12px 40px oklch(0.16 0.06 261 / 0.16)' }}
+              style={{ background: cardBg, border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 12px 40px oklch(0.16 0.06 261 / 0.10)' }}
             >
               {/* Photo */}
               <div className="relative overflow-hidden" style={{ aspectRatio: '16/10' }}>
@@ -94,10 +96,10 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
-                {/* Gradient scrim */}
+                {/* Gradient scrim — fades into the card color */}
                 <div
                   className="absolute inset-0"
-                  style={{ background: 'linear-gradient(to bottom, transparent 40%, oklch(0.24 0.18 261) 100%)' }}
+                  style={{ background: `linear-gradient(to bottom, transparent 55%, ${cardBg} 100%)` }}
                 />
                 {/* Step number badge */}
                 <div
@@ -114,38 +116,38 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
 
               {/* Content */}
               <div className="flex flex-col flex-1 p-6">
-                <p style={{ fontSize: '0.70rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.79 0.19 78)', marginBottom: '0.5rem', fontWeight: 700 }}>
+                <p style={{ fontSize: '0.70rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.55 0.15 68)', marginBottom: '0.5rem', fontWeight: 700 }}>
                   {story.eyebrow}
                 </p>
 
                 <h3
-                  className="font-display font-black text-white leading-tight mb-4"
-                  style={{ fontSize: 'clamp(1.1rem, 1.8vw, 1.3rem)', letterSpacing: '-0.02em' }}
+                  className="font-display font-black leading-tight mb-4"
+                  style={{ fontSize: 'clamp(1.1rem, 1.8vw, 1.3rem)', letterSpacing: '-0.02em', color: 'oklch(0.16 0.04 261)' }}
                 >
                   {story.title}
                 </h3>
 
                 {/* Gold separator */}
-                <div style={{ width: '32px', height: '2px', background: 'oklch(0.79 0.19 78)', borderRadius: '2px', marginBottom: '1rem' }} />
+                <div style={{ width: '32px', height: '2px', background: 'oklch(0.55 0.15 68)', borderRadius: '2px', marginBottom: '1rem' }} />
 
                 {/* Pull quote */}
                 <blockquote
                   className="font-display font-semibold mb-1"
                   style={{
                     fontSize: '0.88rem', lineHeight: 1.55,
-                    color: 'oklch(1 0 0 / 0.80)',
+                    color: 'oklch(0.28 0.04 261)',
                     fontStyle: 'italic',
                     letterSpacing: '-0.01em',
                   }}
                 >
                   {story.pull}
                 </blockquote>
-                <p style={{ fontSize: '0.72rem', color: 'oklch(1 0 0 / 0.40)', marginBottom: '1rem', letterSpacing: '0.02em' }}>
+                <p style={{ fontSize: '0.72rem', color: 'oklch(0.50 0.03 261)', marginBottom: '1rem', letterSpacing: '0.02em' }}>
                   {story.attr}
                 </p>
 
                 {/* Body */}
-                <p style={{ fontSize: '0.88rem', lineHeight: 1.75, color: 'oklch(1 0 0 / 0.72)', marginBottom: '1.5rem', flex: 1 }}>
+                <p style={{ fontSize: '0.88rem', lineHeight: 1.75, color: 'oklch(0.40 0.04 261)', marginBottom: '1.5rem', flex: 1 }}>
                   {story.body}
                 </p>
 
@@ -153,7 +155,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
                 <Link
                   href={story.href}
                   className="group/link inline-flex items-center gap-2 font-bold self-start press"
-                  style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)', letterSpacing: '0.03em' }}
+                  style={{ fontSize: '0.82rem', color: 'oklch(0.55 0.15 68)', letterSpacing: '0.03em' }}
                 >
                   {story.cta}
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden
@@ -163,7 +165,8 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
                 </Link>
               </div>
             </article>
-          ))}
+            )
+          })}
         </div>
 
       </div>
