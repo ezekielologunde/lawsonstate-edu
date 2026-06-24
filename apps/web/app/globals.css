@@ -15,7 +15,7 @@ html {
 }
 
 @theme {
-  /* Lawson State HBCU brand palette — refined OKLCH (navy + gold only) */
+  /* Lawson State HBCU brand palette — refined OKLCH */
   --color-lscc-blue:      oklch(0.22 0.17 261);
   --color-lscc-blue-dark: oklch(0.16 0.13 263);
   --color-lscc-blue-mid:  oklch(0.35 0.15 261);
@@ -28,6 +28,12 @@ html {
   --color-lscc-ink:       oklch(0.11 0.03 261);
   --color-lscc-muted:     oklch(0.40 0.06 261);
   --color-lscc-surface:   oklch(0.985 0.012 263);
+  --color-lscc-red:      oklch(0.48 0.22 27);
+  --color-lscc-red-dark: oklch(0.42 0.22 27);
+  --color-lscc-coral:    oklch(0.72 0.20 28);
+  --color-lscc-electric: oklch(0.62 0.22 248);
+  --color-lscc-teal:     oklch(0.62 0.16 210);
+  --color-lscc-amber:    oklch(0.78 0.18 58);
 }
 
 @theme inline {

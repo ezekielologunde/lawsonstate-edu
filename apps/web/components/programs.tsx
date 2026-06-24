@@ -23,14 +23,14 @@ const CONTENT_DEFAULTS: ProgramsContent = {
 const SLOT_BG: Record<string, string> = {
   health:   'oklch(0.24 0.17 261)',    // richer navy blue (more vivid)
   career:   'oklch(0.94 0.025 263)',   // light stays
-  transfer: 'oklch(0.85 0.22 78)',     // warm gold (vivid contrast)
+  transfer: 'oklch(0.28 0.16 26)',     // warm coral-red (vivid contrast)
   business: 'oklch(0.97 0.015 263)',   // near-white stays
 }
 
 const SLOT_TAG: Record<string, { bg: string; text: string }> = {
   health:   { bg: 'oklch(0.83 0.16 82)',   text: 'oklch(0.14 0.02 263)' },
   career:   { bg: 'oklch(0.24 0.17 261)',  text: 'white' },
-  transfer: { bg: 'oklch(0.24 0.17 261)',  text: 'white' },
+  transfer: { bg: 'oklch(0.72 0.20 28)',   text: 'oklch(0.14 0.02 263)' },
   business: { bg: 'oklch(0.24 0.17 261)',  text: 'white' },
 }
 
