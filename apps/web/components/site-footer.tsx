@@ -28,14 +28,14 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
   ],
 }
 
-const INK   = 'oklch(0.16 0.04 261)'
-const BODY  = 'oklch(0.40 0.04 261)'
-const MUTE  = 'oklch(0.50 0.03 261)'
-const LINE  = 'oklch(0 0 0 / 0.08)'
+const INK   = 'white'
+const BODY  = 'oklch(1 0 0 / 0.70)'
+const MUTE  = 'oklch(1 0 0 / 0.45)'
+const LINE  = 'oklch(1 0 0 / 0.10)'
 
 export default function SiteFooter() {
   return (
-    <footer style={{ background: 'oklch(0.96 0.012 263)' }}>
+    <footer style={{ background: 'oklch(0.19 0.09 263)' }}>
       {/* Newsletter section */}
       <div className="border-b" style={{ borderColor: LINE }}>
         <div className="max-w-7xl mx-auto px-6 py-12">
