@@ -90,7 +90,7 @@ export default function NewsEvents({
           {featuredStory ? (
             <Link
               href={featuredStory.href ?? '/news'}
-              className="group block rounded-2xl overflow-hidden"
+              className="scroll-reveal group block rounded-2xl overflow-hidden"
               style={{ background: 'oklch(0.22 0.16 261)' }}
             >
               {/* Image */}
@@ -164,7 +164,7 @@ export default function NewsEvents({
 
           {/* Events sidebar */}
           <div
-            className="rounded-2xl overflow-hidden"
+            className="scroll-reveal rounded-2xl overflow-hidden"
             style={{ background: 'oklch(0.22 0.16 261)' }}
           >
             <div className="px-5 pt-5 pb-4" style={{ borderBottom: '1px solid oklch(1 0 0 / 0.10)' }}>

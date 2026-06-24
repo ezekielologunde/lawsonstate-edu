@@ -187,6 +187,20 @@ body {
   to { transform: translateX(-50%); }
 }
 
+@keyframes marquee-left {
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+/* Pause marquee on hover */
+.marquee-pause:hover [style*="animation"] {
+  animation-play-state: paused !important;
+}
+
 @keyframes shimmer-sweep {
   from { background-position: 200% center; }
   to   { background-position: -200% center; }
@@ -399,6 +413,19 @@ select:focus {
 /* ── Checkbox & radio focus ── */
 input[type="checkbox"]:focus,
 input[type="radio"]:focus {
+  outline: 2px solid oklch(0.79 0.19 78);
+  outline-offset: 2px;
+}
+
+/* ── Link focus ring ── */
+a:focus-visible {
+  outline: 2px solid oklch(0.79 0.19 78);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── Button focus ring ── */
+button:focus-visible {
   outline: 2px solid oklch(0.79 0.19 78);
   outline-offset: 2px;
 }

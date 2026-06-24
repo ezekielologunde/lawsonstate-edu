@@ -32,7 +32,7 @@ function MarqueeRow({
   const doubled = [...photos, ...photos]
   const anim = direction === 'left' ? 'marquee-left' : 'marquee-right'
   return (
-    <div style={{ overflow: 'hidden', width: '100%' }}>
+    <div style={{ overflow: 'hidden', width: '100%' }} className="marquee-pause">
       <div
         style={{
           display: 'flex',

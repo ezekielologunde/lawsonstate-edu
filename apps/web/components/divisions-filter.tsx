@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import Link from 'next/link'
 
 export type Division = {
@@ -29,22 +29,47 @@ export default function DivisionsFilter({ divisions }: { divisions: Division[] }
 
   const visible = active === 'all' ? divisions : divisions.filter(d => d.id === active)
 
+  const handleFilterKeyDown = useCallback((e: React.KeyboardEvent<HTMLButtonElement>, idx: number) => {
+    switch (e.key) {
+      case 'ArrowLeft':
+      case 'ArrowUp':
+        e.preventDefault()
+        setActive(FILTERS[(idx - 1 + FILTERS.length) % FILTERS.length].id)
+        break
+      case 'ArrowRight':
+      case 'ArrowDown':
+        e.preventDefault()
+        setActive(FILTERS[(idx + 1) % FILTERS.length].id)
+        break
+      case 'Home':
+        e.preventDefault()
+        setActive(FILTERS[0].id)
+        break
+      case 'End':
+        e.preventDefault()
+        setActive(FILTERS[FILTERS.length - 1].id)
+        break
+    }
+  }, [])
+
   return (
     <div>
       {/* Filter pills */}
-      <div className="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filter programs by division">
-        {FILTERS.map(f => (
+      <div className="flex flex-wrap gap-2 mb-8" role="tablist" aria-label="Filter programs by division">
+        {FILTERS.map((f, idx) => (
           <button
             key={f.id}
             onClick={() => setActive(f.id)}
-            aria-pressed={active === f.id}
-            className="press px-4 py-2 rounded-full font-semibold"
+            onKeyDown={(e) => handleFilterKeyDown(e, idx)}
+            role="tab"
+            aria-selected={active === f.id}
+            className="press px-4 py-2 rounded-full font-semibold transition-all"
             style={{
               fontSize: '0.82rem',
               background: active === f.id ? 'oklch(0.79 0.19 78)' : 'oklch(0.22 0.16 261)',
               color:      active === f.id ? 'oklch(0.11 0.03 261)' : 'oklch(1 0 0 / 0.65)',
               border:     `1px solid ${active === f.id ? 'transparent' : 'oklch(1 0 0 / 0.12)'}`,
-              transition: 'background 0.15s ease, color 0.15s ease',
+              transform: active === f.id ? 'scale(1.02)' : 'scale(1)',
             }}
           >
             {f.label}
@@ -53,12 +78,16 @@ export default function DivisionsFilter({ divisions }: { divisions: Division[] }
       </div>
 
       {/* Division cards */}
-      <div className="space-y-6">
-        {visible.map(div => (
+      <div className="stagger-grid space-y-6">
+        {visible.map((div, idx) => (
           <div
             key={div.id}
             className="card-lift rounded-2xl p-8 shadow-card"
-            style={{ background: div.bg, border: div.dark ? 'none' : '1px solid oklch(0.92 0.01 263)' }}
+            style={{
+              background: div.bg,
+              border: div.dark ? 'none' : '1px solid oklch(0.92 0.01 263)',
+              animationDelay: `${idx * 0.05}s`,
+            }}
           >
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-start">
               <div>
