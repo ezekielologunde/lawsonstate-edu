@@ -1,0 +1,489 @@
+@import "tailwindcss";
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  /* Scroll padding for fixed header */
+  scroll-padding-top: 100px;
+}
+
+/* Smooth scroll for internal links */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Hide scrollbars while keeping scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@theme {
+  /* Lawson State HBCU brand palette — refined OKLCH */
+  /* Navy increased from 0.22 to 0.30 for WCAG AA contrast (4.5:1) with gold */
+  --color-lscc-blue:      oklch(0.30 0.15 261);
+  --color-lscc-blue-dark: oklch(0.16 0.13 263);
+  --color-lscc-blue-mid:  oklch(0.35 0.15 261);
+  --color-lscc-blue-100:  oklch(0.93 0.03 261);
+  --color-lscc-blue-50:   oklch(0.97 0.015 263);
+  --color-lscc-gold:      oklch(0.79 0.19 78);
+  --color-lscc-gold-dark: oklch(0.68 0.20 76);
+  --color-lscc-gold-light: oklch(0.96 0.04 82);
+  --color-lscc-cream:     oklch(0.97 0.022 82);
+  --color-lscc-ink:       oklch(0.11 0.03 261);
+  --color-lscc-muted:     oklch(0.40 0.06 261);
+  --color-lscc-surface:   oklch(0.985 0.012 263);
+  --color-lscc-red:      oklch(0.48 0.22 27);
+  --color-lscc-red-dark: oklch(0.42 0.22 27);
+  --color-lscc-coral:    oklch(0.72 0.20 28);
+  --color-lscc-electric: oklch(0.62 0.22 248);
+  --color-lscc-teal:     oklch(0.62 0.16 210);
+  --color-lscc-amber:    oklch(0.78 0.18 58);
+
+  /* ── Semantic contrast tokens (WCAG 2.1 AA) ──
+     The gold "eyebrow" label color must differ by background:
+     darker to pass ≥4.5:1 on light sections, brighter on navy.
+     Use these instead of the raw oklch(0.55 0.15 68) literal. */
+  --lscc-eyebrow:         oklch(0.48 0.13 66);   /* gold label on LIGHT bg  */
+  --lscc-eyebrow-on-dark: oklch(0.82 0.16 80);   /* gold label on DARK bg   */
+  --lscc-muted-on-dark:   oklch(1 0 0 / 0.66);   /* muted text on navy      */
+}
+
+@theme inline {
+  --font-display: var(--font-poppins), "Poppins", system-ui, sans-serif;
+  --font-sans:    var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+body {
+  background: white;
+  color: oklch(0.11 0.03 261);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessibility: Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Show sr-only content on focus */
+.sr-only:focus,
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Ken Burns — deliberate slow zoom for hero */
+@keyframes kenburns {
+  0%   { transform: scale(1.06) translate(0,      0); }
+  50%  { transform: scale(1.10) translate(-0.8%, -0.4%); }
+  100% { transform: scale(1.06) translate(0,      0); }
+}
+
+/* Overlay shadow utilities */
+.shadow-card {
+  box-shadow:
+    0 1px 2px oklch(0.11 0.03 261 / 0.04),
+    0 4px 16px oklch(0.11 0.03 261 / 0.08),
+    0 12px 40px oklch(0.11 0.03 261 / 0.07);
+}
+.shadow-card-hover {
+  box-shadow:
+    0 2px 6px oklch(0.11 0.03 261 / 0.06),
+    0 12px 40px oklch(0.11 0.03 261 / 0.14),
+    0 28px 60px oklch(0.11 0.03 261 / 0.10);
+}
+
+/* ── Programs section asymmetric grid ── */
+.programs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "health career"
+    "health transfer"
+    "health business";
+  gap: 1rem;
+}
+
+.programs-grid .card-health   { grid-area: health;   min-height: 500px; }
+.programs-grid .card-career   { grid-area: career;   }
+.programs-grid .card-transfer { grid-area: transfer; }
+.programs-grid .card-business { grid-area: business; }
+
+@media (max-width: 767px) {
+  .programs-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "health"
+      "career"
+      "transfer"
+      "business";
+  }
+  .programs-grid .card-health { min-height: 320px; }
+}
+
+/* ── Pathway cards — same asymmetric pattern as programs ── */
+.pathways-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "new transfer"
+    "new current"
+    "new workforce";
+  gap: 1rem;
+}
+
+.pathways-grid .path-new       { grid-area: new;       min-height: 480px; }
+.pathways-grid .path-transfer  { grid-area: transfer;  }
+.pathways-grid .path-current   { grid-area: current;   }
+.pathways-grid .path-workforce { grid-area: workforce; }
+
+@media (max-width: 767px) {
+  .pathways-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "new" "transfer" "current" "workforce";
+  }
+  .pathways-grid .path-new { min-height: 320px; }
+}
+
+/* Mobile + tablet bottom nav clearance (bottom bar shows below lg/1024px) */
+@media (max-width: 1023px) {
+  .mobile-nav-spacer { padding-bottom: 5rem; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   Motion system — intentional, not decorative
+   Respects prefers-reduced-motion (see override below)
+═══════════════════════════════════════════════════════ */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-word {
+  from { opacity: 0; transform: translateY(22px); filter: blur(8px); }
+  to   { opacity: 1; transform: translateY(0);    filter: blur(0);   }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0px);  }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.35; }
+  50%       { opacity: 0.65; }
+}
+
+@keyframes ping {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes marquee-x {
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-left {
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+/* Pause marquee on hover */
+.marquee-pause:hover [style*="animation"] {
+  animation-play-state: paused !important;
+}
+
+@keyframes shimmer-sweep {
+  from { background-position: 200% center; }
+  to   { background-position: -200% center; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Scroll-driven section reveals ── */
+.scroll-reveal {
+  animation: fade-up linear both;
+  animation-timeline: view();
+  animation-range: entry 5% entry 35%;
+}
+
+.scroll-reveal-fade {
+  animation: scale-in linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 28%;
+}
+
+/* Staggered grid children */
+.stagger-grid > *:nth-child(1) { animation: fade-up linear both; animation-timeline: view(); animation-range: entry 5%  entry 38%; }
+.stagger-grid > *:nth-child(2) { animation: fade-up linear both; animation-timeline: view(); animation-range: entry 10% entry 43%; }
+.stagger-grid > *:nth-child(3) { animation: fade-up linear both; animation-timeline: view(); animation-range: entry 15% entry 48%; }
+.stagger-grid > *:nth-child(4) { animation: fade-up linear both; animation-timeline: view(); animation-range: entry 20% entry 53%; }
+.stagger-grid > *:nth-child(5) { animation: fade-up linear both; animation-timeline: view(); animation-range: entry 22% entry 55%; }
+.stagger-grid > *:nth-child(6) { animation: fade-up linear both; animation-timeline: view(); animation-range: entry 24% entry 57%; }
+.stagger-grid > *:nth-child(7) { animation: fade-up linear both; animation-timeline: view(); animation-range: entry 26% entry 59%; }
+.stagger-grid > *:nth-child(8) { animation: fade-up linear both; animation-timeline: view(); animation-range: entry 28% entry 61%; }
+
+/* ── Hero entrance (time-based — plays on load) ── */
+.hero-word {
+  display: inline-block;
+  animation: hero-word 0.75s cubic-bezier(0.23, 1, 0.32, 1) both;
+  will-change: transform, opacity;
+}
+
+.hero-block {
+  animation: hero-word 0.75s cubic-bezier(0.23, 1, 0.32, 1) both;
+  will-change: transform, opacity;
+}
+
+/* ── Float utilities ── */
+.float-slow   { animation: float-y 5.2s ease-in-out infinite; }
+.float-medium { animation: float-y 3.8s ease-in-out infinite; }
+
+/* ── Marquee ── */
+.marquee-strip {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-x 26s linear infinite;
+}
+
+/* ── Card hover ── */
+.card-lift {
+  transition: transform 0.22s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.22s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+}
+.card-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 56px oklch(0.11 0.03 261 / 0.16);
+}
+.card-lift:active { transform: translateY(-2px) scale(0.99); }
+
+/* ── Press feedback for CTAs ── */
+.press {
+  transition: transform 0.12s ease-out;
+}
+.press:active { transform: scale(0.97); }
+
+/* ── CTA shimmer ── */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    oklch(1 0 0 / 0.22) 50%,
+    transparent 65%
+  );
+  background-size: 250% 100%;
+  animation: shimmer-sweep 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ── Program card image parallax on hover ── */
+.program-img {
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+              opacity   0.4s ease;
+}
+a:hover .program-img { transform: scale(1.06); }
+
+/* ── Programs grid scroll reveal ── */
+.programs-grid {
+  animation: fade-up linear both;
+  animation-timeline: view();
+  animation-range: entry 5% entry 40%;
+}
+
+/* ── Pathway card CTA hover ── */
+.pathway-cta:hover { filter: brightness(1.1); }
+
+/* ── Quick links pill hover ── */
+.quick-pill {
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.quick-pill:hover {
+  background: oklch(0.27 0.13 263) !important;
+  color: white !important;
+}
+
+/* ── Hero CTA hover (server-component safe — pure CSS) ── */
+.hero-cta-gold { transition: filter 0.2s ease; }
+.hero-cta-gold:hover { filter: brightness(1.08); }
+.hero-cta-red { transition: filter 0.2s ease; }
+.hero-cta-red:hover { filter: brightness(1.1); }
+.hero-cta-ghost { transition: background 0.2s ease; }
+.hero-cta-ghost:hover { background: oklch(1 0 0 / 0.09) !important; }
+
+/* ── Tab content fade-in ── */
+@keyframes tab-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.tab-content {
+  animation: tab-in 0.22s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* ── Underline reveal on hover ── */
+.link-reveal {
+  position: relative;
+}
+.link-reveal::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 100%; height: 1.5px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.link-reveal:hover::after { transform: scaleX(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration:  0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  .float-slow, .float-medium, .marquee-track { animation: none; }
+  .btn-shimmer::after { display: none; }
+  .hero-word, .hero-block { animation: none; opacity: 1; }
+  /* Scroll-driven reveals — show immediately */
+  .scroll-reveal,
+  .scroll-reveal-fade,
+  .stagger-grid > *,
+  .programs-grid,
+  .page-fade-1, .page-fade-2, .page-fade-3, .page-fade-4, .page-fade-5 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ── Page-level time-based entrance (for hero content, not scroll-driven) ── */
+.page-fade-1 { animation: fade-up 0.70s cubic-bezier(0.23, 1, 0.32, 1) 0.08s both; }
+.page-fade-2 { animation: fade-up 0.70s cubic-bezier(0.23, 1, 0.32, 1) 0.20s both; }
+.page-fade-3 { animation: fade-up 0.70s cubic-bezier(0.23, 1, 0.32, 1) 0.32s both; }
+.page-fade-4 { animation: fade-up 0.70s cubic-bezier(0.23, 1, 0.32, 1) 0.44s both; }
+.page-fade-5 { animation: fade-up 0.70s cubic-bezier(0.23, 1, 0.32, 1) 0.56s both; }
+
+/* ── Inner-page hero decoration ── */
+/* Gold top accent + warm glow spot, no layout changes required */
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, oklch(0.79 0.19 78) 0%, oklch(0.79 0.19 78 / 0.6) 55%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+.page-hero::after {
+  content: '';
+  position: absolute;
+  top: -10%; right: -8%;
+  width: min(55vw, 480px); height: min(55vw, 480px);
+  border-radius: 50%;
+  background: radial-gradient(circle, oklch(0.79 0.19 78 / 0.09) 0%, transparent 65%);
+  filter: blur(48px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Dynamic card appear (JS-rendered lists, filter results) ── */
+@keyframes card-appear {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.card-appear {
+  animation: card-appear 0.38s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* ── Action strip item hover ── */
+.action-item { transition: background 0.18s ease; }
+.action-item:hover { background: oklch(0.79 0.19 78 / 0.07) !important; }
+
+/* ── Form input focus states ── */
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 0 2px oklch(0.14 0.10 261),
+              0 0 0 4px oklch(0.79 0.19 78);
+}
+
+/* ── Checkbox & radio focus ── */
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  outline: 2px solid oklch(0.79 0.19 78);
+  outline-offset: 2px;
+}
+
+/* ── Link focus ring ── */
+a:focus-visible {
+  outline: 2px solid oklch(0.79 0.19 78);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── Button focus ring ── */
+button:focus-visible {
+  outline: 2px solid oklch(0.79 0.19 78);
+  outline-offset: 2px;
+}
+
+/* ── Smooth page transitions ── */
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Page fade-in on load */
+main {
+  animation: page-fade-in 0.4s ease-out;
+}
+
+/* ── Reduced motion overrides ── */
+@media (prefers-reduced-motion: reduce) {
+  main {
+    animation: none;
+  }
+}
