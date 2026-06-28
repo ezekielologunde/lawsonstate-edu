@@ -1,19 +1,19 @@
-‘use client’
+'use client'
 
-import { useRef, useState, useEffect } from ‘react’
-import Link from ‘next/link’
+import { useRef, useState, useEffect } from 'react'
+import Link from 'next/link'
 
 type HeroContent = Record<string, string>
 
-const VIDEO_SRC = ‘https://www.lawsonstate.edu/_resources/assets/video/lawson-state-homepage-video.mp4’
-const POSTER_SRC = ‘https://www.lawsonstate.edu/_resources/assets/img/grads%20lawson.jpeg’
+const VIDEO_SRC = 'https://www.lawsonstate.edu/_resources/assets/video/lawson-state-homepage-video.mp4'
+const POSTER_SRC = 'https://www.lawsonstate.edu/_resources/assets/img/grads%20lawson.jpeg'
 
 const DEFAULTS: HeroContent = {
-  subheadline:         ‘Alabama’s proud HBCU since 1949 — 200+ career-ready programs across two Birmingham campuses.’,
-  cta_primary_label:   ‘Apply Now’,
-  cta_primary_href:    ‘/admissions/apply’,
-  cta_secondary_label: ‘Explore Programs’,
-  cta_secondary_href:  ‘/academics’,
+  subheadline:         'Alabama's proud HBCU since 1949 — 200+ career-ready programs across two Birmingham campuses.',
+  cta_primary_label:   'Apply Now',
+  cta_primary_href:    '/admissions/apply',
+  cta_secondary_label: 'Explore Programs',
+  cta_secondary_href:  '/academics',
 }
 
 export default function Hero({ content = {} }: { content?: HeroContent }) {
@@ -30,7 +30,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
   const [reduceMotion, setReduceMotion] = useState(false)
 
   useEffect(() => {
-    if (window.matchMedia(‘(prefers-reduced-motion: reduce)’).matches) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setReduceMotion(true)
       setPlaying(false)
     }
@@ -40,7 +40,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
   useEffect(() => {
     if (reduceMotion) return
     const onScroll = () => { scrollY.current = window.scrollY }
-    window.addEventListener(‘scroll’, onScroll, { passive: true })
+    window.addEventListener('scroll', onScroll, { passive: true })
 
     const tick = () => {
       if (videoWrap.current) {
@@ -51,7 +51,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
     rafRef.current = requestAnimationFrame(tick)
 
     return () => {
-      window.removeEventListener(‘scroll’, onScroll)
+      window.removeEventListener('scroll', onScroll)
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
     }
   }, [reduceMotion])
@@ -68,8 +68,8 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
       const y = ((e.clientY - r.top)  / r.height) * 100
       glow.style.background = `radial-gradient(circle 520px at ${x}% ${y}%, oklch(0.79 0.19 78 / 0.11) 0%, transparent 70%)`
     }
-    el.addEventListener(‘mousemove’, onMove)
-    return () => el.removeEventListener(‘mousemove’, onMove)
+    el.addEventListener('mousemove', onMove)
+    return () => el.removeEventListener('mousemove', onMove)
   }, [reduceMotion])
 
   const toggleVideo = () => {
