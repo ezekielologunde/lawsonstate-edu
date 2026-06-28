@@ -641,57 +641,6 @@ main {
   .gz-blob, [class*="gz-"] { animation: none !important; }
 }
 
-/* ── Cinematic hero keyframes ── */
-@keyframes lscc-cam-pan {
-  from { transform: scale(1.08) translate(0%,   0%);   }
-  to   { transform: scale(1.14) translate(-2%, -1.5%); }
-}
-@keyframes lscc-orb-a {
-  0%,100% { transform: translate(0,   0)   scale(1);    }
-  33%     { transform: translate(22px,-32px) scale(1.06); }
-  66%     { transform: translate(-16px,18px) scale(0.94); }
-}
-@keyframes lscc-orb-b {
-  0%,100% { transform: translate(0,   0)   scale(1);    }
-  40%     { transform: translate(-28px,18px) scale(1.08); }
-  70%     { transform: translate(22px,-22px) scale(0.92); }
-}
-@keyframes lscc-slide-up {
-  from { opacity: 0; transform: translateY(26px); }
-  to   { opacity: 1; transform: translateY(0);    }
-}
-@keyframes lscc-pulse {
-  0%,100% { opacity: 1; transform: scale(1);   }
-  50%     { opacity: 0.55; transform: scale(1.6); }
-}
-@keyframes lscc-scroll-bounce {
-  0%,100% { transform: translateX(-50%) translateY(0);   }
-  50%     { transform: translateX(-50%) translateY(7px);  }
-}
-
-/* Section-to-section cinematic wipe transition */
-.section-wipe {
-  clip-path: inset(0 100% 0 0);
-  animation: lscc-wipe-in 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
-}
-@keyframes lscc-wipe-in {
-  from { clip-path: inset(0 100% 0 0); }
-  to   { clip-path: inset(0 0% 0 0);   }
-}
-
-/* Scroll-driven float for decorative elements */
-@supports (animation-timeline: scroll()) {
-  .scroll-float {
-    animation: lscc-scroll-float linear both;
-    animation-timeline: scroll();
-    animation-range: entry 0% exit 100%;
-  }
-  @keyframes lscc-scroll-float {
-    from { transform: translateY(0);    }
-    to   { transform: translateY(-40px); }
-  }
-}
-
 /* ── Accessibility tool overrides ── */
 html.lscc-high-contrast {
   filter: contrast(1.45) saturate(1.2);
