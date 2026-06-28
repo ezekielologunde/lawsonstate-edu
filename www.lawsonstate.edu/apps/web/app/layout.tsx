@@ -5,14 +5,14 @@ import './globals.css'
 const poppins = Poppins({
   variable: '--font-poppins',
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
+  weight: ['600', '700', '800', '900'],
   display: 'swap',
 })
 
 const jakarta = Plus_Jakarta_Sans({
   variable: '--font-jakarta',
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '600', '700', '800'],
   display: 'swap',
 })
 

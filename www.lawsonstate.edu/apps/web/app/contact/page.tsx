@@ -42,7 +42,7 @@ export default function ContactPage() {
   return (
     <main>
       {/* Hero */}
-      <section style={{ background: 'oklch(0.95 0.03 255)', paddingTop: '8rem', paddingBottom: '5rem' }}>
+      <section className="page-hero" style={{ background: 'oklch(0.95 0.03 255)', paddingTop: '8rem', paddingBottom: '5rem' }}>
         <div className="max-w-7xl mx-auto px-6">
           <nav
             className="page-fade-1 flex items-center gap-2 text-sm mb-8"

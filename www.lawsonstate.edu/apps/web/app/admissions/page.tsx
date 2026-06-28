@@ -99,7 +99,7 @@ export default function AdmissionsPage() {
 
       {/* Hero */}
       <section
-        className="relative py-20 px-6 overflow-hidden"
+        className="page-hero relative py-20 px-6 overflow-hidden"
         style={{ background: 'oklch(0.42 0.17 261)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
       >
         <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(135deg, oklch(0.42 0.17 261 / 0.97) 0%, oklch(0.38 0.15 263 / 0.82) 100%)' }} />

@@ -1,5 +1,6 @@
 export const revalidate = 3600 // 1 hour ISR
 
+import dynamic from 'next/dynamic'
 import { createServerClient, buildContentMap } from '@/lib/supabase'
 import SkipToMainLink from '@/components/skip-to-main-link'
 import StickyStudentNav from '@/components/sticky-student-nav'
@@ -17,7 +18,9 @@ import ActionStrip from '@/components/action-strip'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
 import MobileBottomNav from '@/components/mobile-bottom-nav'
-import HBCUPopup from '@/components/hbcu-popup'
+
+// HBCUPopup shows after 900ms — defer its JS until after initial paint
+const HBCUPopup = dynamic(() => import('@/components/hbcu-popup'), { ssr: false })
 
 export default async function Home() {
   const db = createServerClient()

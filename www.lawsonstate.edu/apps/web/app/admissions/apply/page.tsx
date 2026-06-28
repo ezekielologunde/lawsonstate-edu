@@ -75,7 +75,7 @@ export default function ApplyPage() {
 
       {/* Hero */}
       <section
-        className="relative py-14 px-6 overflow-hidden"
+        className="page-hero relative py-14 px-6 overflow-hidden"
         style={{ background: 'oklch(0.42 0.17 261)', minHeight: '24vh', display: 'flex', alignItems: 'flex-end' }}
       >
         <div className="absolute inset-0" aria-hidden

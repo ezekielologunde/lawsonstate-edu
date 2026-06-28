@@ -75,7 +75,7 @@ export default function AboutPage() {
 
       {/* Hero */}
       <section
-        className="relative py-20 px-6 flex items-end overflow-hidden"
+        className="page-hero relative py-20 px-6 flex items-end overflow-hidden"
         style={{ background: 'oklch(0.95 0.03 255)', minHeight: '38vh' }}
       >
         <div className="relative max-w-7xl mx-auto w-full">

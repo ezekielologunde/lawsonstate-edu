@@ -1,45 +1,46 @@
-'use client'
+‘use client’
 
-import { useRef, useState, useEffect } from 'react'
-import Link from 'next/link'
+import { useRef, useState, useEffect } from ‘react’
+import Link from ‘next/link’
 
 type HeroContent = Record<string, string>
 
-const VIDEO_SRC = 'https://www.lawsonstate.edu/_resources/assets/video/lawson-state-homepage-video.mp4'
-const POSTER_SRC = 'https://www.lawsonstate.edu/_resources/assets/img/grads%20lawson.jpeg'
+const VIDEO_SRC = ‘https://www.lawsonstate.edu/_resources/assets/video/lawson-state-homepage-video.mp4’
+const POSTER_SRC = ‘https://www.lawsonstate.edu/_resources/assets/img/grads%20lawson.jpeg’
 
 const DEFAULTS: HeroContent = {
-  subheadline:         'Alabama’s proud HBCU since 1949 — 200+ career-ready programs across two Birmingham campuses.',
-  cta_primary_label:   'Apply Now',
-  cta_primary_href:    '/admissions/apply',
-  cta_secondary_label: 'Explore Programs',
-  cta_secondary_href:  '/academics',
+  subheadline:         ‘Alabama’s proud HBCU since 1949 — 200+ career-ready programs across two Birmingham campuses.’,
+  cta_primary_label:   ‘Apply Now’,
+  cta_primary_href:    ‘/admissions/apply’,
+  cta_secondary_label: ‘Explore Programs’,
+  cta_secondary_href:  ‘/academics’,
 }
 
 export default function Hero({ content = {} }: { content?: HeroContent }) {
   const c = { ...DEFAULTS, ...content }
 
-  const videoEl   = useRef<HTMLVideoElement>(null)
-  const videoWrap = useRef<HTMLDivElement>(null)
-  const scrollY   = useRef(0)
-  const rafRef    = useRef<number | undefined>(undefined)
+  const sectionRef = useRef<HTMLElement>(null)
+  const videoEl    = useRef<HTMLVideoElement>(null)
+  const videoWrap  = useRef<HTMLDivElement>(null)
+  const glowRef    = useRef<HTMLDivElement>(null)
+  const scrollY    = useRef(0)
+  const rafRef     = useRef<number | undefined>(undefined)
 
   const [playing,      setPlaying]      = useState(true)
   const [reduceMotion, setReduceMotion] = useState(false)
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (window.matchMedia(‘(prefers-reduced-motion: reduce)’).matches) {
       setReduceMotion(true)
       setPlaying(false)
     }
   }, [])
 
-  // Single subtle moving effect: a whisper of scroll parallax on the video.
-  // No cursor parallax, no breathing layers — restrained by design.
+  // Scroll parallax on the video background layer.
   useEffect(() => {
     if (reduceMotion) return
     const onScroll = () => { scrollY.current = window.scrollY }
-    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener(‘scroll’, onScroll, { passive: true })
 
     const tick = () => {
       if (videoWrap.current) {
@@ -50,9 +51,25 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
     rafRef.current = requestAnimationFrame(tick)
 
     return () => {
-      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener(‘scroll’, onScroll)
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
     }
+  }, [reduceMotion])
+
+  // Mouse-follow atmospheric glow — direct DOM update (no state, no re-render).
+  useEffect(() => {
+    if (reduceMotion) return
+    const el = sectionRef.current
+    const glow = glowRef.current
+    if (!el || !glow) return
+    const onMove = (e: MouseEvent) => {
+      const r = el.getBoundingClientRect()
+      const x = ((e.clientX - r.left) / r.width) * 100
+      const y = ((e.clientY - r.top)  / r.height) * 100
+      glow.style.background = `radial-gradient(circle 520px at ${x}% ${y}%, oklch(0.79 0.19 78 / 0.11) 0%, transparent 70%)`
+    }
+    el.addEventListener(‘mousemove’, onMove)
+    return () => el.removeEventListener(‘mousemove’, onMove)
   }, [reduceMotion])
 
   const toggleVideo = () => {
@@ -65,6 +82,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
 
   return (
     <section
+      ref={sectionRef}
       className="hero-video relative flex items-center overflow-hidden"
       aria-label="Welcome to Lawson State Community College"
       style={{ minHeight: 'clamp(600px, 84vh, 820px)' }}
@@ -81,7 +99,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           tabIndex={-1}
         />
       </div>
@@ -95,6 +113,9 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
       <div aria-hidden className="absolute inset-0" style={{
         background: 'linear-gradient(0deg, oklch(0.11 0.05 263 / 0.55) 0%, transparent 32%)',
       }} />
+
+      {/* Mouse-follow atmospheric glow — updated via direct DOM, no re-renders */}
+      <div ref={glowRef} aria-hidden className="absolute inset-0 pointer-events-none" style={{ zIndex: 1, transition: 'background 0.35s ease' }} />
 
       {/* Content — one calm column, generous whitespace */}
       <div className="relative w-full max-w-7xl mx-auto px-6"

@@ -94,7 +94,7 @@ export default function CampusLifePage() {
 
       {/* Hero */}
       <section
-        className="relative py-20 px-6 overflow-hidden"
+        className="page-hero relative py-20 px-6 overflow-hidden"
         style={{ background: 'oklch(0.95 0.03 255)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
       >
         <div className="relative max-w-7xl mx-auto w-full">

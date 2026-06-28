@@ -126,7 +126,7 @@ export default function AcademicsPage() {
 
       {/* Hero */}
       <section
-        className="relative py-20 px-6 overflow-hidden"
+        className="page-hero relative py-20 px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
       >
         <img

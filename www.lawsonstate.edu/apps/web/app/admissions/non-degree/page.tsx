@@ -43,7 +43,7 @@ export default function NonDegreePage() {
       <Nav />
 
       {/* Hero */}
-      <section className="relative py-14 px-6 overflow-hidden"
+      <section className="page-hero relative py-14 px-6 overflow-hidden"
         style={{ background: 'oklch(0.42 0.17 261)', minHeight: '24vh', display: 'flex', alignItems: 'flex-end' }}>
         <div className="absolute inset-0" aria-hidden
           style={{ background: 'linear-gradient(to right, oklch(0.42 0.17 261 / 0.97) 0%, oklch(0.38 0.15 263 / 0.75) 100%)' }} />

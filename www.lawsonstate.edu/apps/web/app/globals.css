@@ -398,11 +398,34 @@ a:hover .program-img { transform: scale(1.06); }
 }
 
 /* ── Page-level time-based entrance (for hero content, not scroll-driven) ── */
-.page-fade-1 { animation: fade-up 0.65s cubic-bezier(0.23, 1, 0.32, 1) 0.08s both; }
-.page-fade-2 { animation: fade-up 0.65s cubic-bezier(0.23, 1, 0.32, 1) 0.20s both; }
-.page-fade-3 { animation: fade-up 0.65s cubic-bezier(0.23, 1, 0.32, 1) 0.32s both; }
-.page-fade-4 { animation: fade-up 0.65s cubic-bezier(0.23, 1, 0.32, 1) 0.44s both; }
-.page-fade-5 { animation: fade-up 0.65s cubic-bezier(0.23, 1, 0.32, 1) 0.56s both; }
+.page-fade-1 { animation: fade-up 0.70s cubic-bezier(0.23, 1, 0.32, 1) 0.08s both; }
+.page-fade-2 { animation: fade-up 0.70s cubic-bezier(0.23, 1, 0.32, 1) 0.20s both; }
+.page-fade-3 { animation: fade-up 0.70s cubic-bezier(0.23, 1, 0.32, 1) 0.32s both; }
+.page-fade-4 { animation: fade-up 0.70s cubic-bezier(0.23, 1, 0.32, 1) 0.44s both; }
+.page-fade-5 { animation: fade-up 0.70s cubic-bezier(0.23, 1, 0.32, 1) 0.56s both; }
+
+/* ── Inner-page hero decoration ── */
+/* Gold top accent + warm glow spot, no layout changes required */
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, oklch(0.79 0.19 78) 0%, oklch(0.79 0.19 78 / 0.6) 55%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+.page-hero::after {
+  content: '';
+  position: absolute;
+  top: -10%; right: -8%;
+  width: min(55vw, 480px); height: min(55vw, 480px);
+  border-radius: 50%;
+  background: radial-gradient(circle, oklch(0.79 0.19 78 / 0.09) 0%, transparent 65%);
+  filter: blur(48px);
+  pointer-events: none;
+  z-index: 0;
+}
 
 /* ── Dynamic card appear (JS-rendered lists, filter results) ── */
 @keyframes card-appear {
