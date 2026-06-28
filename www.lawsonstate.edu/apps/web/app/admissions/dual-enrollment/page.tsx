@@ -133,7 +133,7 @@ export default function DualEnrollmentPage() {
       <section className="py-16 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4 uppercase tracking-widest"
-            style={{ background: 'oklch(0.79 0.19 78 / 0.15)', color: 'oklch(0.55 0.15 68)', border: '1px solid oklch(0.79 0.19 78 / 0.3)' }}>
+            style={{ background: 'oklch(0.79 0.19 78 / 0.15)', color: 'var(--lscc-eyebrow)', border: '1px solid oklch(0.79 0.19 78 / 0.3)' }}>
             In Partnership with TMCF
           </div>
           <h2 className="font-display font-black mb-3"
@@ -204,7 +204,7 @@ export default function DualEnrollmentPage() {
                   <div key={m.date} className="rounded-lg px-4 py-3"
                     style={{ background: 'oklch(0.97 0.01 263)', border: '1px solid oklch(0 0 0 / 0.10)' }}>
                     <div className="font-semibold text-sm" style={{ color: 'oklch(0.16 0.04 261)' }}>{m.date}</div>
-                    <div className="text-sm" style={{ color: 'oklch(0.55 0.15 68)' }}>{m.time}</div>
+                    <div className="text-sm" style={{ color: 'var(--lscc-eyebrow)' }}>{m.time}</div>
                   </div>
                 ))}
               </div>
@@ -212,7 +212,7 @@ export default function DualEnrollmentPage() {
                 <div className="text-xs font-semibold mb-1" style={{ color: 'oklch(0.50 0.03 261)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Questions?</div>
                 <div className="text-sm" style={{ color: 'oklch(0.16 0.04 261)' }}>Mr. Dorian Waluyn</div>
                 <div className="text-xs mt-0.5 mb-1" style={{ color: 'oklch(0.50 0.03 261)' }}>Executive Director of Strategic Initiatives</div>
-                <a href="mailto:dwaluyn@lawsonstate.edu" className="text-sm hover:underline" style={{ color: 'oklch(0.55 0.15 68)' }}>
+                <a href="mailto:dwaluyn@lawsonstate.edu" className="text-sm hover:underline" style={{ color: 'var(--lscc-eyebrow)' }}>
                   dwaluyn@lawsonstate.edu
                 </a>
               </div>

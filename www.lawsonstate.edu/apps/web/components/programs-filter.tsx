@@ -175,7 +175,7 @@ export default function ProgramsFilter() {
                   <button
                     onClick={clearAllFilters}
                     className="text-xs font-semibold transition-colors"
-                    style={{ color: 'oklch(0.55 0.15 68)' }}
+                    style={{ color: 'var(--lscc-eyebrow)' }}
                     aria-label="Clear all filters"
                   >
                     Clear all
@@ -323,7 +323,7 @@ export default function ProgramsFilter() {
                 <button
                   onClick={clearAllFilters}
                   className="text-sm font-semibold transition-colors"
-                  style={{ color: 'oklch(0.55 0.15 68)' }}
+                  style={{ color: 'var(--lscc-eyebrow)' }}
                   aria-label="Clear all filters and show all programs"
                 >
                   Clear all filters
@@ -351,7 +351,7 @@ export default function ProgramsFilter() {
                             )}
                           </div>
                           <h3 className="text-lg font-bold mb-2 transition-colors"
-                            style={{ color: 'oklch(0.16 0.04 261)', '--hover-color': 'oklch(0.55 0.15 68)' } as React.CSSProperties}>
+                            style={{ color: 'oklch(0.16 0.04 261)', '--hover-color': 'var(--lscc-eyebrow)' } as React.CSSProperties}>
                             {program.name}
                           </h3>
                           <p className="text-sm mb-3" style={{ color: 'oklch(0.40 0.04 261)' }}>{program.description}</p>
@@ -367,7 +367,7 @@ export default function ProgramsFilter() {
                         <div className="text-right shrink-0">
                           <div className="text-sm font-semibold mb-1" style={{ color: 'oklch(0.16 0.04 261)' }}>{program.duration}</div>
                           <div className="text-xs mb-3" style={{ color: 'oklch(0.50 0.03 261)' }}>{program.durationMonths} months</div>
-                          <span style={{ color: 'oklch(0.55 0.15 68)' }} className="group-hover:translate-x-1 transition-transform inline-block">→</span>
+                          <span style={{ color: 'var(--lscc-eyebrow)' }} className="group-hover:translate-x-1 transition-transform inline-block">→</span>
                         </div>
                       </div>
                     </article>

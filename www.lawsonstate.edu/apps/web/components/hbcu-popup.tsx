@@ -73,7 +73,7 @@ export default function HBCUPopup() {
             style={{ fontSize: 'clamp(1.4rem, 5vw, 1.85rem)', letterSpacing: '-0.02em', lineHeight: 1.15, color: 'oklch(0.16 0.04 261)' }}
           >
             Welcome to<br />
-            <span style={{ color: 'oklch(0.55 0.15 68)' }}>Lawson State</span>
+            <span style={{ color: 'var(--lscc-eyebrow)' }}>Lawson State</span>
           </h2>
 
           <p

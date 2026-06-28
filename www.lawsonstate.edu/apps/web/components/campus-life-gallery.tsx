@@ -84,7 +84,7 @@ export default function CampusLifeGallery() {
       <div className="max-w-7xl mx-auto px-6 mb-10">
         <div className="flex items-end justify-between gap-6">
           <div>
-            <p style={{ fontSize: '0.78rem', letterSpacing: '0.18em', color: 'oklch(0.55 0.15 68)', textTransform: 'uppercase', marginBottom: '0.4rem' }}>
+            <p style={{ fontSize: '0.78rem', letterSpacing: '0.18em', color: 'var(--lscc-eyebrow)', textTransform: 'uppercase', marginBottom: '0.4rem' }}>
               Real moments
             </p>
             <h2
@@ -99,7 +99,7 @@ export default function CampusLifeGallery() {
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 font-semibold hover:underline press"
-            style={{ fontSize: '0.85rem', color: 'oklch(0.55 0.15 68)' }}
+            style={{ fontSize: '0.85rem', color: 'var(--lscc-eyebrow)' }}
           >
             See all photos →
           </Link>

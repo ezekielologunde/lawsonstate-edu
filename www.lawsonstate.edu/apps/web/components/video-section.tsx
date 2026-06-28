@@ -40,7 +40,7 @@ export default function VideoSection() {
           <div>
             <p
               className="text-xs font-semibold mb-4 tracking-widest uppercase"
-              style={{ color: 'oklch(0.55 0.15 68)' }}
+              style={{ color: 'var(--lscc-eyebrow)' }}
             >
               Lawson State on YouTube
             </p>

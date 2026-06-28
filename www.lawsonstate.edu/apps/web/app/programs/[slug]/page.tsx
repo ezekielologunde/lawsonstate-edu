@@ -61,7 +61,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
                 </span>
                 <span
                   className="inline-block px-3 py-1 rounded-full text-xs font-semibold"
-                  style={{ background: 'oklch(0 0 0 / 0.06)', color: 'oklch(0.55 0.15 68)' }}
+                  style={{ background: 'oklch(0 0 0 / 0.06)', color: 'var(--lscc-eyebrow)' }}
                 >
                   {program.degreeType} — {degreeInfo.label}
                 </span>
@@ -83,7 +83,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
 
               <div className="flex flex-wrap items-center gap-4 mb-8">
                 <div className="flex items-center gap-2">
-                  <span style={{ color: 'oklch(0.55 0.15 68)' }}>—</span>
+                  <span style={{ color: 'var(--lscc-eyebrow)' }}>—</span>
                   <span className="text-sm font-semibold" style={{ color: 'oklch(0.16 0.04 261)' }}>{program.duration}</span>
                   <span className="text-sm" style={{ color: 'oklch(0.50 0.03 261)' }}>
                     ({program.durationMonths} months)
@@ -132,7 +132,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
             >
               <h2
                 className="text-xs font-bold uppercase tracking-widest mb-5"
-                style={{ color: 'oklch(0.55 0.15 68)' }}
+                style={{ color: 'var(--lscc-eyebrow)' }}
               >
                 Program Details
               </h2>
@@ -183,7 +183,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
                     </dt>
                     <dd
                       className="text-3xl font-black leading-none"
-                      style={{ color: 'oklch(0.55 0.15 68)' }}
+                      style={{ color: 'var(--lscc-eyebrow)' }}
                     >
                       {program.jobPlacementRate}%
                     </dd>
@@ -233,7 +233,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
             <div className="scroll-reveal mb-8">
               <p
                 className="text-xs font-bold uppercase tracking-widest mb-2"
-                style={{ color: 'oklch(0.55 0.15 68)' }}
+                style={{ color: 'var(--lscc-eyebrow)' }}
               >
                 Also in {category.label}
               </p>
@@ -280,7 +280,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
                     <div className="flex items-center justify-between mt-auto">
                       <span className="text-xs font-semibold" style={{ color: 'oklch(0.16 0.04 261)' }}>{rel.duration}</span>
                       <span
-                        style={{ color: 'oklch(0.55 0.15 68)' }}
+                        style={{ color: 'var(--lscc-eyebrow)' }}
                         className="group-hover:translate-x-1 transition-transform inline-block"
                       >
                         →
@@ -294,7 +294,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
               <Link
                 href="/programs"
                 className="inline-flex items-center gap-2 font-semibold text-sm transition-colors hover:opacity-80"
-                style={{ color: 'oklch(0.55 0.15 68)' }}
+                style={{ color: 'var(--lscc-eyebrow)' }}
               >
                 View all programs →
               </Link>

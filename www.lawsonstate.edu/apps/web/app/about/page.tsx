@@ -79,7 +79,7 @@ export default function AboutPage() {
         style={{ background: 'oklch(0.95 0.03 255)', minHeight: '38vh' }}
       >
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Est. 1949 · Birmingham, AL
           </p>
           <h1
@@ -111,29 +111,29 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Our Purpose</p>
+              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Our Purpose</p>
               <h2 className="font-display font-black leading-none mb-8" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>MISSION &amp; VISION</h2>
               <div className="space-y-6">
                 <div style={{ borderLeft: '3px solid oklch(0.79 0.19 78)', paddingLeft: '1.25rem' }}>
-                  <h3 className="font-display font-bold mb-2" style={{ fontSize: '1.05rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(0.55 0.15 68)' }}>Mission</h3>
+                  <h3 className="font-display font-bold mb-2" style={{ fontSize: '1.05rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--lscc-eyebrow)' }}>Mission</h3>
                   <p className="leading-relaxed" style={{ color: 'oklch(0.40 0.04 261)', fontSize: '1.08rem' }}>
                     With a focus on student success, Lawson State Community College provides affordable and quality educational opportunities, promotes economic growth, and enhances the quality of life in the communities it serves. Through innovative instruction and lifelong learning opportunities, the College prepares students for college transfer, employment, and career advancement.
                   </p>
                 </div>
                 <div style={{ borderLeft: '3px solid oklch(0.79 0.19 78)', paddingLeft: '1.25rem' }}>
-                  <h3 className="font-display font-bold mb-2" style={{ fontSize: '1.05rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(0.55 0.15 68)' }}>Vision</h3>
+                  <h3 className="font-display font-bold mb-2" style={{ fontSize: '1.05rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--lscc-eyebrow)' }}>Vision</h3>
                   <p className="leading-relaxed" style={{ color: 'oklch(0.40 0.04 261)', fontSize: '1.08rem' }}>
                     Cultivating success through excellence and innovation.
                   </p>
                 </div>
                 <div style={{ borderLeft: '3px solid oklch(0.79 0.19 78)', paddingLeft: '1.25rem' }}>
-                  <h3 className="font-display font-bold mb-2" style={{ fontSize: '1.05rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'oklch(0.55 0.15 68)' }}>Motto</h3>
+                  <h3 className="font-display font-bold mb-2" style={{ fontSize: '1.05rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--lscc-eyebrow)' }}>Motto</h3>
                   <p className="font-display font-black" style={{ fontSize: '1.1rem', color: 'oklch(0.16 0.04 261)' }}>"It's All Here!"</p>
                 </div>
               </div>
             </div>
             <div>
-              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>What We Stand For</p>
+              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>What We Stand For</p>
               <h2 className="font-display font-black leading-none mb-8" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>CORE VALUES</h2>
               <ul className="space-y-5">
                 {[
@@ -167,10 +167,10 @@ export default function AboutPage() {
               </div>
               <p className="font-display font-black" style={{ fontSize: '1rem', color: 'oklch(0.16 0.04 261)' }}>Dr. Cynthia T. Anthony</p>
               <p style={{ color: 'oklch(0.40 0.04 261)', fontSize: '0.8rem' }}>5th President, Lawson State CC</p>
-              <p className="font-semibold mt-1" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.75rem' }}>First Female President · Appointed March 15, 2021</p>
+              <p className="font-semibold mt-1" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.75rem' }}>First Female President · Appointed March 15, 2021</p>
             </div>
             <div>
-              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>A Message From Our President</p>
+              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>A Message From Our President</p>
               <h2 className="font-display font-black leading-none mb-6" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>WELCOME TO LAWSON STATE</h2>
               <div className="space-y-4 leading-relaxed" style={{ color: 'oklch(0.40 0.04 261)', fontSize: '1.1rem', maxWidth: '60ch' }}>
                 <p>Welcome to Lawson State Community College! Lawson State is an institution with a rich history of academic achievement and an unmatched record of community leadership and service.</p>
@@ -187,7 +187,7 @@ export default function AboutPage() {
       <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Our Story</p>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Our Story</p>
             <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>70+ YEARS OF HISTORY</h2>
           </div>
           <div className="relative">
@@ -197,7 +197,7 @@ export default function AboutPage() {
                 <li key={m.year} className="relative scroll-reveal">
                   <div className="absolute -left-8 top-1.5 w-3.5 h-3.5 rounded-full" style={{ background: 'oklch(0.79 0.19 78)' }} />
                   <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
-                    <span className="shrink-0 font-display font-black" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1rem', letterSpacing: '0.05em', minWidth: '3.5rem' }}>{m.year}</span>
+                    <span className="shrink-0 font-display font-black" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1rem', letterSpacing: '0.05em', minWidth: '3.5rem' }}>{m.year}</span>
                     <p className="leading-relaxed" style={{ fontSize: '1.05rem', color: 'oklch(0.40 0.04 261)' }}>{m.event}</p>
                   </div>
                 </li>
@@ -211,7 +211,7 @@ export default function AboutPage() {
       <section className="py-20 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Leadership Legacy</p>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Leadership Legacy</p>
             <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>COLLEGE PRESIDENTS</h2>
           </div>
           <div className="stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -225,10 +225,10 @@ export default function AboutPage() {
                   boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)',
                 }}
               >
-                <div className="font-display font-black mb-2" style={{ fontSize: '0.84rem', color: 'oklch(0.55 0.15 68)', letterSpacing: '0.1em' }}>#{i + 1}</div>
+                <div className="font-display font-black mb-2" style={{ fontSize: '0.84rem', color: 'var(--lscc-eyebrow)', letterSpacing: '0.1em' }}>#{i + 1}</div>
                 <div className="font-display font-bold leading-snug mb-1" style={{ fontSize: '1rem', color: 'oklch(0.16 0.04 261)' }}>{p.name}</div>
                 <div style={{ fontSize: '1rem', color: 'oklch(0.50 0.03 261)' }}>{p.years}</div>
-                {p.note && <div className="mt-2 font-semibold" style={{ fontSize: '0.82rem', color: 'oklch(0.55 0.15 68)' }}>{p.note}</div>}
+                {p.note && <div className="mt-2 font-semibold" style={{ fontSize: '0.82rem', color: 'var(--lscc-eyebrow)' }}>{p.note}</div>}
               </div>
             ))}
           </div>
@@ -239,7 +239,7 @@ export default function AboutPage() {
       <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Quality Assurance</p>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Quality Assurance</p>
             <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>ACCREDITATIONS</h2>
             <p style={{ color: 'oklch(0.40 0.04 261)', fontSize: '1.08rem' }} className="mt-2">Lawson State holds institutional and program-level accreditations that ensure the highest standards of education.</p>
           </div>
@@ -248,7 +248,7 @@ export default function AboutPage() {
               <div key={a.org} className="card-lift rounded-xl p-5 shadow-card" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
                 <div className="font-display font-black mb-1" style={{ fontSize: '1rem', color: 'oklch(0.16 0.04 261)' }}>{a.org}</div>
                 <div className="leading-snug mb-2" style={{ color: 'oklch(0.50 0.03 261)', fontSize: '0.79rem' }}>{a.desc}</div>
-                <div className="font-semibold" style={{ fontSize: '0.84rem', color: 'oklch(0.55 0.15 68)' }}>{a.scope}</div>
+                <div className="font-semibold" style={{ fontSize: '0.84rem', color: 'var(--lscc-eyebrow)' }}>{a.scope}</div>
               </div>
             ))}
           </div>
@@ -259,7 +259,7 @@ export default function AboutPage() {
       <section className="py-20 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>One College</p>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>One College</p>
             <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>TWO CAMPUSES</h2>
             <p className="mt-2" style={{ fontSize: '1.08rem', color: 'oklch(0.50 0.03 261)' }}>Approximately nine miles apart — both campuses are open Monday–Friday with a full range of services and programs.</p>
           </div>
@@ -275,7 +275,7 @@ export default function AboutPage() {
                     ['Hours', campus.hours],
                   ].map(([label, value]) => (
                     <div key={label}>
-                      <span className="font-semibold uppercase block mb-0.5" style={{ fontSize: '0.74rem', letterSpacing: '0.15em', color: 'oklch(0.55 0.15 68)' }}>{label}</span>
+                      <span className="font-semibold uppercase block mb-0.5" style={{ fontSize: '0.74rem', letterSpacing: '0.15em', color: 'var(--lscc-eyebrow)' }}>{label}</span>
                       <p className="whitespace-pre-line" style={{ color: 'oklch(0.40 0.04 261)' }}>{value}</p>
                     </div>
                   ))}

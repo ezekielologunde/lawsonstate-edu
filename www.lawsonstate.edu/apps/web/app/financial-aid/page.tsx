@@ -89,7 +89,7 @@ export default function FinancialAidPage() {
         style={{ background: 'oklch(0.95 0.03 255)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
       >
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>2025–2026 · Grants, Scholarships & More</p>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>2025–2026 · Grants, Scholarships & More</p>
           <h1 className="font-display font-black leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>FINANCIAL AID</h1>
           <p className="max-w-xl" style={{ fontSize: 'clamp(1.05rem, 1.6vw, 1.2rem)', lineHeight: 1.7, color: 'oklch(0.40 0.04 261)' }}>
             Lawson State is one of the most affordable paths to a college education. At $131/credit hour in-state, your investment goes further here.
@@ -245,7 +245,7 @@ export default function FinancialAidPage() {
       <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>After Lawson State</p>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>After Lawson State</p>
             <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>TRANSFER SCHOLARSHIPS</h2>
             <p className="mt-2" style={{ fontSize: '1.08rem', color: 'oklch(0.50 0.03 261)' }}>Completing your degree at Lawson State unlocks exclusive scholarship opportunities at Alabama's top universities.</p>
           </div>
@@ -253,7 +253,7 @@ export default function FinancialAidPage() {
             {TRANSFER_SCHOLARSHIPS.map(s => (
               <div key={s.school} className="rounded-xl p-6" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
                 <h3 className="font-display font-bold mb-2" style={{ fontSize: '1rem', color: 'oklch(0.16 0.04 261)' }}>{s.school}</h3>
-                <div className="font-bold mb-2" style={{ fontSize: '1.1rem', color: 'oklch(0.55 0.15 68)' }}>{s.award}</div>
+                <div className="font-bold mb-2" style={{ fontSize: '1.1rem', color: 'var(--lscc-eyebrow)' }}>{s.award}</div>
                 <div style={{ fontSize: '0.92rem', color: 'oklch(0.40 0.04 261)' }}>{s.req}</div>
               </div>
             ))}

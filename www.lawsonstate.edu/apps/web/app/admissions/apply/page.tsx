@@ -145,13 +145,13 @@ export default function ApplyPage() {
             className="rounded-2xl p-8"
             style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}
           >
-            <div aria-hidden className="text-3xl mb-4" style={{ color: 'oklch(0.55 0.15 68)' }}>"</div>
+            <div aria-hidden className="text-3xl mb-4" style={{ color: 'var(--lscc-eyebrow)' }}>"</div>
             <p className="mb-5" style={{ fontSize: '1rem', lineHeight: 1.75, color: 'oklch(0.16 0.04 261)' }}>
               Applying to college can be scary. Lawson State made it easy for me.
             </p>
             <footer>
               <div className="font-bold text-sm" style={{ color: 'oklch(0.16 0.04 261)' }}>Kenmia Boware</div>
-              <div className="text-sm" style={{ color: 'oklch(0.55 0.15 68)' }}>Criminal Justice Major</div>
+              <div className="text-sm" style={{ color: 'var(--lscc-eyebrow)' }}>Criminal Justice Major</div>
             </footer>
           </blockquote>
         </div>
@@ -229,7 +229,7 @@ export default function ApplyPage() {
       <section id="specialists" className="py-16 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
         <div className="max-w-7xl mx-auto">
           <p className="font-display font-semibold uppercase mb-3"
-            style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.85rem', letterSpacing: '0.22em' }}>
+            style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.85rem', letterSpacing: '0.22em' }}>
             Here to Help You
           </p>
           <h2 className="font-display font-black mb-3"

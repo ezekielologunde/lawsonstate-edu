@@ -124,7 +124,7 @@ export default function AdmissionsPage() {
       <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>How to Apply</p>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>How to Apply</p>
             <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>4 STEPS TO ENROLLMENT</h2>
           </div>
           <div className="relative">
@@ -139,7 +139,7 @@ export default function AdmissionsPage() {
                   <h3 className="font-display font-bold mb-2 leading-snug" style={{ fontSize: '1.08rem', color: 'oklch(0.16 0.04 261)' }}>{s.title}</h3>
                   <p className="leading-relaxed mb-4" style={{ fontSize: '0.96rem', color: 'oklch(0.40 0.04 261)' }}>{s.desc}</p>
                   {s.link && (
-                    <Link href={s.link.href} className="link-reveal font-semibold" style={{ fontSize: '1.08rem', color: 'oklch(0.55 0.15 68)' }}>
+                    <Link href={s.link.href} className="link-reveal font-semibold" style={{ fontSize: '1.08rem', color: 'var(--lscc-eyebrow)' }}>
                       {s.link.label}
                     </Link>
                   )}
@@ -154,7 +154,7 @@ export default function AdmissionsPage() {
       <section className="py-20 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Admissions Requirements</p>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Admissions Requirements</p>
             <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>FIND YOUR PATH</h2>
           </div>
           <div className="stagger-grid grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -187,19 +187,19 @@ export default function AdmissionsPage() {
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Need Help?</p>
+              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Need Help?</p>
               <h2 className="font-display font-black leading-none mb-6" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>CONTACT ADMISSIONS</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {CONTACT.map(c => (
                   <div key={c.label} className="rounded-xl p-4" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
-                    <div className="font-semibold uppercase mb-0.5" style={{ fontSize: '0.74rem', letterSpacing: '0.14em', color: 'oklch(0.55 0.15 68)' }}>{c.label}</div>
+                    <div className="font-semibold uppercase mb-0.5" style={{ fontSize: '0.74rem', letterSpacing: '0.14em', color: 'var(--lscc-eyebrow)' }}>{c.label}</div>
                     <div className="font-medium" style={{ fontSize: '1.05rem', color: 'oklch(0.16 0.04 261)' }}>{c.value}</div>
                   </div>
                 ))}
               </div>
             </div>
             <div>
-              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Office Hours</p>
+              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Office Hours</p>
               <h2 className="font-display font-black leading-none mb-6" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>WHEN WE'RE OPEN</h2>
               <div className="space-y-3">
                 {[

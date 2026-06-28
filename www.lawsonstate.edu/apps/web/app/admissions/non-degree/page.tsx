@@ -117,7 +117,7 @@ export default function NonDegreePage() {
                 <div key={s.sem} className="flex items-center justify-between py-3 border-b"
                   style={{ borderColor: 'oklch(0 0 0 / 0.10)' }}>
                   <span className="font-semibold" style={{ fontSize: '0.97rem', color: 'oklch(0.16 0.04 261)' }}>{s.sem}</span>
-                  <span className="font-bold" style={{ color: 'oklch(0.55 0.15 68)', fontSize: '0.97rem' }}>{s.date}</span>
+                  <span className="font-bold" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.97rem' }}>{s.date}</span>
                 </div>
               ))}
             </div>

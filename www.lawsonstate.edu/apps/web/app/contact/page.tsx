@@ -54,7 +54,7 @@ export default function ContactPage() {
             <span style={{ color: 'oklch(0.16 0.04 261)' }}>Contact</span>
           </nav>
 
-          <p className="page-fade-1 text-xs font-bold uppercase tracking-widest mb-3" style={{ color: 'oklch(0.55 0.15 68)' }}>
+          <p className="page-fade-1 text-xs font-bold uppercase tracking-widest mb-3" style={{ color: 'var(--lscc-eyebrow)' }}>
             Get in Touch
           </p>
           <h1
@@ -97,7 +97,7 @@ export default function ContactPage() {
                 <a
                   href={`tel:${campus.tel}`}
                   className="font-bold block mb-4 hover:opacity-75 transition-opacity"
-                  style={{ color: 'oklch(0.55 0.15 68)', fontSize: '1.15rem' }}
+                  style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.15rem' }}
                 >
                   {campus.phone}
                 </a>
@@ -134,7 +134,7 @@ export default function ContactPage() {
               >
                 <p
                   className="text-xs font-bold uppercase tracking-widest mb-3"
-                  style={{ color: 'oklch(0.55 0.15 68)' }}
+                  style={{ color: 'var(--lscc-eyebrow)' }}
                 >
                   {dept.label}
                 </p>

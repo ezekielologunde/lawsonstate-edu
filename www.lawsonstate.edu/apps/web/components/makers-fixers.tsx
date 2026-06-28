@@ -76,7 +76,7 @@ export default function MakersFixers() {
             style={{
               fontSize: '0.78rem',
               letterSpacing: '0.18em',
-              color: 'oklch(0.55 0.15 68)',
+              color: 'var(--lscc-eyebrow)',
               textTransform: 'uppercase',
               marginBottom: '0.6rem',
             }}
@@ -88,7 +88,7 @@ export default function MakersFixers() {
             style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.04em', color: 'oklch(0.16 0.04 261)' }}
           >
             WHAT WILL<br />
-            <span style={{ color: 'oklch(0.55 0.15 68)' }}>YOU BUILD?</span>
+            <span style={{ color: 'var(--lscc-eyebrow)' }}>YOU BUILD?</span>
           </h2>
         </div>
 
@@ -185,7 +185,7 @@ export default function MakersFixers() {
           >
             <p
               className="font-display font-bold mb-3"
-              style={{ fontSize: '0.7rem', letterSpacing: '0.14em', color: 'oklch(0.55 0.15 68)', textTransform: 'uppercase' }}
+              style={{ fontSize: '0.7rem', letterSpacing: '0.14em', color: 'var(--lscc-eyebrow)', textTransform: 'uppercase' }}
             >
               Industry Partner
             </p>
@@ -232,7 +232,7 @@ export default function MakersFixers() {
             <div key={s.n}>
               <div
                 className="font-display font-black"
-                style={{ fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', letterSpacing: '-0.04em', color: 'oklch(0.55 0.15 68)' }}
+                style={{ fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', letterSpacing: '-0.04em', color: 'var(--lscc-eyebrow)' }}
               >
                 {s.n}
               </div>

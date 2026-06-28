@@ -177,14 +177,14 @@ export default function InternationalPage() {
             <div className="rounded-2xl p-6"
               style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
               <div className="font-bold mb-1" style={{ color: 'oklch(0.16 0.04 261)' }}>Dr. Cyrus Vance</div>
-              <div className="text-sm mb-3" style={{ color: 'oklch(0.55 0.15 68)' }}>Dean of Students</div>
+              <div className="text-sm mb-3" style={{ color: 'var(--lscc-eyebrow)' }}>Dean of Students</div>
               <a href="mailto:cvance@lawsonstate.edu" className="text-sm block hover:underline mb-1" style={{ color: 'oklch(0.40 0.04 261)' }}>cvance@lawsonstate.edu</a>
               <a href="tel:+12059296361" className="text-sm block hover:underline" style={{ color: 'oklch(0.40 0.04 261)' }}>205-929-6361</a>
             </div>
             <div className="rounded-2xl p-6"
               style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
               <div className="font-bold mb-1" style={{ color: 'oklch(0.16 0.04 261)' }}>Admissions Office</div>
-              <div className="text-sm mb-3" style={{ color: 'oklch(0.55 0.15 68)' }}>Birmingham Campus</div>
+              <div className="text-sm mb-3" style={{ color: 'var(--lscc-eyebrow)' }}>Birmingham Campus</div>
               <a href="tel:+12059296309" className="text-sm block hover:underline mb-1" style={{ color: 'oklch(0.40 0.04 261)' }}>205-929-6309</a>
               <a href="mailto:admissions@lawsonstate.edu" className="text-sm block hover:underline" style={{ color: 'oklch(0.40 0.04 261)' }}>admissions@lawsonstate.edu</a>
             </div>
