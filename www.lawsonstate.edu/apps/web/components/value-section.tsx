@@ -78,18 +78,10 @@ export default function ValueSection() {
   return (
     <section
       ref={sectionRef}
-      style={{ position: 'relative', overflow: 'hidden', background: 'oklch(0.92 0.05 255)', paddingBlock: '5rem' }}
+      style={{ background: 'oklch(0.92 0.05 255)', paddingBlock: '5rem' }}
       aria-label="Tuition and Value"
     >
-      {/* Decorative orbs */}
-      {!reduced && (
-        <>
-          <div aria-hidden className="float-orb" style={{ position: 'absolute', top: '-5%', right: '-4%', width: '420px', height: '420px', borderRadius: '50%', background: 'radial-gradient(circle, oklch(0.79 0.19 78 / 0.10) 0%, transparent 65%)', filter: 'blur(52px)', pointerEvents: 'none', zIndex: 0 }} />
-          <div aria-hidden className="float-orb-reverse" style={{ position: 'absolute', bottom: '-8%', left: '-3%', width: '280px', height: '280px', borderRadius: '50%', background: 'radial-gradient(circle, oklch(0.62 0.22 248 / 0.10) 0%, transparent 65%)', filter: 'blur(40px)', pointerEvents: 'none', zIndex: 0 }} />
-        </>
-      )}
-
-      <div className="max-w-7xl mx-auto px-6" style={{ position: 'relative', zIndex: 1 }}>
+      <div className="max-w-7xl mx-auto px-6">
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1.8fr] gap-0">
 
@@ -99,7 +91,7 @@ export default function ValueSection() {
               03 — Exceptional value
             </p>
             <h2
-              className="font-display font-black leading-none mb-5 wipe-reveal"
+              className="font-display font-black leading-none mb-5"
               style={{ fontSize: 'clamp(2.4rem, 4.5vw, 3.6rem)', letterSpacing: '-0.04em', color: 'oklch(0.16 0.04 261)' }}
             >
               A DEGREE THAT<br />

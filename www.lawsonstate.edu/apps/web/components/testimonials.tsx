@@ -101,7 +101,7 @@ export default function Testimonials() {
             <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'oklch(0.79 0.19 78)', textTransform: 'uppercase', marginBottom: '0.4rem', fontWeight: 700 }}>
               02 — Real Student Stories
             </p>
-            <h2 className="font-display font-black text-white leading-none wipe-reveal" style={{ fontSize: 'clamp(2.6rem, 5.5vw, 4.2rem)', letterSpacing: '-0.04em' }}>
+            <h2 className="font-display font-black text-white leading-none" style={{ fontSize: 'clamp(2.6rem, 5.5vw, 4.2rem)', letterSpacing: '-0.04em' }}>
               STUDENTS WHO <span style={{ color: 'oklch(0.79 0.19 78)' }}>DID IT</span>
             </h2>
           </div>
