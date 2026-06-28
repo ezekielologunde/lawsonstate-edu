@@ -22,7 +22,7 @@ const DEFAULTS: SupportContent = {
   step_3_attr:   '— Transfer Student, Class of 2023',
   step_3_body:   'Transfer seamlessly to UAB, Auburn, or UAH — or step directly into a career through our employer partnerships and on-campus recruiting.',
   step_3_cta:    'Career Services',
-  step_3_href:   '/campus-life#career',
+  step_3_href:   '/support/career',
 }
 
 const STORY_PHOTOS = [

@@ -64,7 +64,7 @@ const PATHS = [
       { label: 'Student portal login', href: 'https://my.lawsonstate.edu' },
       { label: 'Financial aid status', href: '/financial-aid' },
       { label: 'Pay your bill', href: 'https://my.lawsonstate.edu' },
-      { label: 'Get tutoring support', href: '/campus-life' },
+      { label: 'Get tutoring support', href: '/support/academic' },
     ],
     cta: 'Go to Student Portal',
     ctaHref: 'https://my.lawsonstate.edu',
