@@ -103,6 +103,8 @@ export default function AdmissionsPage() {
         style={{ background: 'oklch(0.42 0.17 261)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
       >
         <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(135deg, oklch(0.42 0.17 261 / 0.97) 0%, oklch(0.38 0.15 263 / 0.82) 100%)' }} />
+        <div aria-hidden style={{ position: 'absolute', top: '-15%', right: '-8%', width: '380px', height: '380px', borderRadius: '50%', background: 'radial-gradient(circle, oklch(0.79 0.19 78 / 0.14) 0%, transparent 65%)', filter: 'blur(60px)', pointerEvents: 'none', zIndex: 1 }} />
+        <div aria-hidden style={{ position: 'absolute', bottom: '-20%', left: '-5%', width: '260px', height: '260px', borderRadius: '50%', background: 'radial-gradient(circle, oklch(0.62 0.22 248 / 0.10) 0%, transparent 65%)', filter: 'blur(44px)', pointerEvents: 'none', zIndex: 1 }} />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>Rolling Admissions · No GPA Minimum</p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em' }}>APPLY TO LAWSON STATE</h1>
@@ -125,7 +127,7 @@ export default function AdmissionsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>How to Apply</p>
-            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>4 STEPS TO ENROLLMENT</h2>
+            <h2 className="font-display font-black leading-none wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>4 STEPS TO ENROLLMENT</h2>
           </div>
           <div className="relative">
             {/* connector line — desktop only */}
@@ -155,7 +157,7 @@ export default function AdmissionsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Admissions Requirements</p>
-            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>FIND YOUR PATH</h2>
+            <h2 className="font-display font-black leading-none wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>FIND YOUR PATH</h2>
           </div>
           <div className="stagger-grid grid grid-cols-1 lg:grid-cols-3 gap-6">
             {TYPES.map(t => (
@@ -188,7 +190,7 @@ export default function AdmissionsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Need Help?</p>
-              <h2 className="font-display font-black leading-none mb-6" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>CONTACT ADMISSIONS</h2>
+              <h2 className="font-display font-black leading-none mb-6 wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>CONTACT ADMISSIONS</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {CONTACT.map(c => (
                   <div key={c.label} className="rounded-xl p-4" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
@@ -200,7 +202,7 @@ export default function AdmissionsPage() {
             </div>
             <div>
               <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Office Hours</p>
-              <h2 className="font-display font-black leading-none mb-6" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>WHEN WE'RE OPEN</h2>
+              <h2 className="font-display font-black leading-none mb-6 wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>WHEN WE'RE OPEN</h2>
               <div className="space-y-3">
                 {[
                   ['General Office Hours', 'Monday–Friday: 8:00 AM – 5:00 PM'],
@@ -214,7 +216,7 @@ export default function AdmissionsPage() {
               </div>
               <div className="mt-6">
                 <Link
-                  href="/visit"
+                  href="/contact"
                   className="press font-semibold px-6 py-3 rounded-lg inline-block hover:bg-black/5"
                   style={{ background: 'white', border: '1px solid oklch(0.16 0.04 261 / 0.25)', color: 'oklch(0.16 0.04 261)', fontSize: '1rem' }}
                 >

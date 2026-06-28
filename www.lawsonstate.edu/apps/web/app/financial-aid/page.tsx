@@ -120,7 +120,7 @@ export default function FinancialAidPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>2025–2026 Academic Year</p>
-            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>TUITION & FEES</h2>
+            <h2 className="font-display font-black leading-none text-lscc-ink wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>TUITION & FEES</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 scroll-reveal">
             <div>
@@ -174,7 +174,7 @@ export default function FinancialAidPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Funding Options</p>
-            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>TYPES OF FINANCIAL AID</h2>
+            <h2 className="font-display font-black leading-none text-lscc-ink wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>TYPES OF FINANCIAL AID</h2>
           </div>
           <div className="stagger-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {AID_TYPES.map(a => (
@@ -212,7 +212,7 @@ export default function FinancialAidPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Withdrawal Policy</p>
-            <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>REFUND SCHEDULE</h2>
+            <h2 className="font-display font-black leading-none text-lscc-ink wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>REFUND SCHEDULE</h2>
             <p className="text-lscc-muted mt-2" style={{ fontSize: '1.08rem' }}>If you withdraw from a course, the amount refunded depends on when you withdraw.</p>
           </div>
           <div className="scroll-reveal overflow-hidden rounded-2xl shadow-card" style={{ border: '1px solid oklch(0.92 0.01 263)', maxWidth: '36rem' }}>
@@ -246,7 +246,7 @@ export default function FinancialAidPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>After Lawson State</p>
-            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>TRANSFER SCHOLARSHIPS</h2>
+            <h2 className="font-display font-black leading-none wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>TRANSFER SCHOLARSHIPS</h2>
             <p className="mt-2" style={{ fontSize: '1.08rem', color: 'oklch(0.50 0.03 261)' }}>Completing your degree at Lawson State unlocks exclusive scholarship opportunities at Alabama's top universities.</p>
           </div>
           <div className="stagger-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

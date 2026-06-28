@@ -137,6 +137,8 @@ export default function AcademicsPage() {
           loading="eager"
         />
         <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.96) 0%, oklch(0.22 0.17 261 / 0.80) 55%, oklch(0.16 0.13 263 / 0.55) 100%)' }} />
+        <div aria-hidden style={{ position: 'absolute', top: '-10%', right: '-8%', width: '360px', height: '360px', borderRadius: '50%', background: 'radial-gradient(circle, oklch(0.79 0.19 78 / 0.13) 0%, transparent 65%)', filter: 'blur(60px)', pointerEvents: 'none', zIndex: 1 }} />
+        <div aria-hidden style={{ position: 'absolute', bottom: '-15%', left: '-5%', width: '260px', height: '260px', borderRadius: '50%', background: 'radial-gradient(circle, oklch(0.48 0.22 27 / 0.09) 0%, transparent 65%)', filter: 'blur(44px)', pointerEvents: 'none', zIndex: 1 }} />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>Degrees · Certificates · Skills Training</p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em' }}>200+ PROGRAMS</h1>
@@ -178,7 +180,7 @@ export default function AcademicsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Program Divisions</p>
-            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>FIND YOUR DIVISION</h2>
+            <h2 className="font-display font-black leading-none wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>FIND YOUR DIVISION</h2>
           </div>
           <DivisionsFilter divisions={DIVISIONS} />
         </div>
@@ -199,7 +201,7 @@ export default function AcademicsPage() {
                 style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.92rem', letterSpacing: '0.2em' }}>
                 Know what you want?
               </p>
-              <h2 className="font-display font-black text-white leading-none mb-4"
+              <h2 className="font-display font-black text-white leading-none mb-4 wipe-reveal"
                 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', letterSpacing: '-0.03em' }}>
                 FIND YOUR PROGRAM
               </h2>
@@ -226,7 +228,7 @@ export default function AcademicsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Beyond the Classroom</p>
-            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>SPECIALTY PROGRAMS</h2>
+            <h2 className="font-display font-black leading-none wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>SPECIALTY PROGRAMS</h2>
           </div>
           <div className="stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {SPECIALTY.map(s => (
@@ -249,7 +251,7 @@ export default function AcademicsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Fast-Track Training</p>
-            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>WORKFORCE DEVELOPMENT</h2>
+            <h2 className="font-display font-black leading-none wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>WORKFORCE DEVELOPMENT</h2>
             <p className="mt-2" style={{ fontSize: '1.08rem', color: 'oklch(0.50 0.03 261)' }}>
               Short-term, skills-focused programs designed around employer needs. Some are free. All lead to employment.
             </p>
@@ -292,7 +294,7 @@ export default function AcademicsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>High School Students</p>
-              <h2 className="font-display font-black leading-none mb-4" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>DUAL ENROLLMENT</h2>
+              <h2 className="font-display font-black leading-none mb-4 wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>DUAL ENROLLMENT</h2>
               <p className="leading-relaxed mb-6" style={{ fontSize: '1.1rem', color: 'oklch(0.40 0.04 261)' }}>
                 Start college while still in high school. Take up to 51 available classes and earn real college credits — tuition waived through ACCS grant funding. Available to 10th–12th graders with a 2.5 GPA.
               </p>

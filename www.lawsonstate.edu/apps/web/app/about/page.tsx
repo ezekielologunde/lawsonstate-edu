@@ -99,7 +99,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 py-6 grid grid-cols-2 sm:grid-cols-4 gap-4">
           {STATS.map(s => (
             <div key={s.number} className="text-center">
-              <div className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', color: 'oklch(0.11 0.03 261)', letterSpacing: '-0.03em' }}>{s.number}</div>
+              <div className="font-display font-black leading-none wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4vw, 3.2rem)', color: 'oklch(0.11 0.03 261)', letterSpacing: '-0.03em' }}>{s.number}</div>
               <div className="font-semibold uppercase mt-1" style={{ fontSize: '1rem', letterSpacing: '0.16em', color: 'oklch(0.11 0.03 261 / 0.6)' }}>{s.label}</div>
             </div>
           ))}
@@ -112,7 +112,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Our Purpose</p>
-              <h2 className="font-display font-black leading-none mb-8" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>MISSION &amp; VISION</h2>
+              <h2 className="font-display font-black leading-none mb-8 wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>MISSION &amp; VISION</h2>
               <div className="space-y-6">
                 <div style={{ borderLeft: '3px solid oklch(0.79 0.19 78)', paddingLeft: '1.25rem' }}>
                   <h3 className="font-display font-bold mb-2" style={{ fontSize: '1.05rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--lscc-eyebrow)' }}>Mission</h3>
@@ -134,7 +134,7 @@ export default function AboutPage() {
             </div>
             <div>
               <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>What We Stand For</p>
-              <h2 className="font-display font-black leading-none mb-8" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>CORE VALUES</h2>
+              <h2 className="font-display font-black leading-none mb-8 wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>CORE VALUES</h2>
               <ul className="space-y-5">
                 {[
                   ['Student Success', 'Recruitment, persistence, graduation, and career development at the center of everything we do.'],
@@ -171,7 +171,7 @@ export default function AboutPage() {
             </div>
             <div>
               <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>A Message From Our President</p>
-              <h2 className="font-display font-black leading-none mb-6" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>WELCOME TO LAWSON STATE</h2>
+              <h2 className="font-display font-black leading-none mb-6 wipe-reveal" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>WELCOME TO LAWSON STATE</h2>
               <div className="space-y-4 leading-relaxed" style={{ color: 'oklch(0.40 0.04 261)', fontSize: '1.1rem', maxWidth: '60ch' }}>
                 <p>Welcome to Lawson State Community College! Lawson State is an institution with a rich history of academic achievement and an unmatched record of community leadership and service.</p>
                 <p>As President, I am committed to student success and excellence in teaching and learning. The College offers an affordable and flexible education that is comprehensive, innovative, technology-rich, and designed to meet the diverse needs of constituents in Jefferson County.</p>
@@ -188,7 +188,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Our Story</p>
-            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>70+ YEARS OF HISTORY</h2>
+            <h2 className="font-display font-black leading-none wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>70+ YEARS OF HISTORY</h2>
           </div>
           <div className="relative">
             <div className="absolute left-[7px] top-0 bottom-0 w-px" style={{ background: 'oklch(0 0 0 / 0.10)' }} />
@@ -212,7 +212,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Leadership Legacy</p>
-            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>COLLEGE PRESIDENTS</h2>
+            <h2 className="font-display font-black leading-none wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>COLLEGE PRESIDENTS</h2>
           </div>
           <div className="stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {PRESIDENTS.map((p, i) => (
@@ -240,7 +240,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Quality Assurance</p>
-            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>ACCREDITATIONS</h2>
+            <h2 className="font-display font-black leading-none wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>ACCREDITATIONS</h2>
             <p style={{ color: 'oklch(0.40 0.04 261)', fontSize: '1.08rem' }} className="mt-2">Lawson State holds institutional and program-level accreditations that ensure the highest standards of education.</p>
           </div>
           <div className="stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -260,7 +260,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>One College</p>
-            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>TWO CAMPUSES</h2>
+            <h2 className="font-display font-black leading-none wipe-reveal" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>TWO CAMPUSES</h2>
             <p className="mt-2" style={{ fontSize: '1.08rem', color: 'oklch(0.50 0.03 261)' }}>Approximately nine miles apart — both campuses are open Monday–Friday with a full range of services and programs.</p>
           </div>
           <div className="stagger-grid grid grid-cols-1 md:grid-cols-2 gap-6">

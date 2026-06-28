@@ -1,5 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Nav from '@/components/nav'
+import Prefooter from '@/components/prefooter'
+import SiteFooter from '@/components/site-footer'
+import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Lawson State Community College',
@@ -40,10 +44,12 @@ const DEPARTMENTS = [
 
 export default function ContactPage() {
   return (
-    <main>
+    <>
+      <Nav />
+      <main>
       {/* Hero */}
-      <section className="page-hero" style={{ background: 'oklch(0.95 0.03 255)', paddingTop: '8rem', paddingBottom: '5rem' }}>
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="page-hero relative py-20 px-6 overflow-hidden" style={{ background: 'oklch(0.95 0.03 255)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}>
+        <div className="relative max-w-7xl mx-auto w-full">
           <nav
             className="page-fade-1 flex items-center gap-2 text-sm mb-8"
             style={{ color: 'oklch(0.45 0.03 261)' }}
@@ -76,10 +82,10 @@ export default function ContactPage() {
       <section style={{ background: 'oklch(0.92 0.05 255)', padding: '5rem 0' }}>
         <div className="max-w-7xl mx-auto px-6">
           <h2
-            className="scroll-reveal font-display font-black text-2xl mb-8"
-            style={{ letterSpacing: '-0.02em', color: 'oklch(0.16 0.04 261)' }}
+            className="font-display font-black leading-none mb-8 wipe-reveal"
+            style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}
           >
-            Our Campuses
+            OUR CAMPUSES
           </h2>
           <div className="stagger-grid grid md:grid-cols-2 gap-6">
             {CAMPUSES.map((campus) => (
@@ -120,10 +126,10 @@ export default function ContactPage() {
       <section style={{ background: 'oklch(0.95 0.03 255)', padding: '5rem 0' }}>
         <div className="max-w-7xl mx-auto px-6">
           <h2
-            className="scroll-reveal font-display font-black text-2xl mb-8"
-            style={{ letterSpacing: '-0.02em', color: 'oklch(0.16 0.04 261)' }}
+            className="font-display font-black leading-none mb-8 wipe-reveal"
+            style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}
           >
-            Key Departments
+            KEY DEPARTMENTS
           </h2>
           <div className="stagger-grid grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {DEPARTMENTS.map((dept) => (
@@ -158,8 +164,8 @@ export default function ContactPage() {
       <section style={{ background: 'oklch(0.42 0.17 261)', padding: '4rem 0' }}>
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
-            <h2 className="font-display font-black text-white text-2xl mb-1" style={{ letterSpacing: '-0.02em' }}>
-              Ready to start?
+            <h2 className="font-display font-black text-white leading-none mb-2 wipe-reveal" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', letterSpacing: '-0.025em' }}>
+              READY TO START?
             </h2>
             <p style={{ color: 'oklch(1 0 0 / 0.80)' }}>
               Applications are open — join Lawson State today.
@@ -183,6 +189,11 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+      <Prefooter />
+      <SiteFooter />
+      <MobileBottomNav />
+      <div className="mobile-nav-spacer" />
+    </>
   )
 }
