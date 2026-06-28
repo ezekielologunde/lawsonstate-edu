@@ -69,7 +69,7 @@ export default function Prefooter({ content = {} }: { content?: PrefooterContent
               <Link
                 key={cta.label}
                 href={cta.href}
-                className="press btn-shimmer hero-cta-gold inline-flex items-center justify-center font-bold px-9 py-4.5 rounded-xl"
+                className="press btn-shimmer hero-cta-gold cta-urgent inline-flex items-center justify-center font-bold px-9 py-4.5 rounded-xl"
                 style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
               >
                 {cta.label}

@@ -46,10 +46,14 @@ const PATHWAYS = [
 export default function ProgramPathways() {
   return (
     <section
-      style={{ background: 'oklch(0.92 0.05 255)', paddingBlock: '5rem' }}
+      style={{ position: 'relative', overflow: 'hidden', background: 'oklch(0.92 0.05 255)', paddingBlock: '5rem' }}
       aria-label="Program Pathways"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      {/* Decorative orbs — CSS animation:none handles prefers-reduced-motion */}
+      <div aria-hidden className="float-orb" style={{ position: 'absolute', top: '-8%', left: '-4%', width: '380px', height: '380px', borderRadius: '50%', background: 'radial-gradient(circle, oklch(0.79 0.19 78 / 0.09) 0%, transparent 65%)', filter: 'blur(50px)', pointerEvents: 'none', zIndex: 0 }} />
+      <div aria-hidden className="float-orb-reverse" style={{ position: 'absolute', bottom: '-6%', right: '-3%', width: '300px', height: '300px', borderRadius: '50%', background: 'radial-gradient(circle, oklch(0.48 0.22 27 / 0.08) 0%, transparent 65%)', filter: 'blur(44px)', pointerEvents: 'none', zIndex: 0 }} />
+
+      <div className="max-w-7xl mx-auto px-6" style={{ position: 'relative', zIndex: 1 }}>
 
         {/* Header */}
         <div className="mb-10 scroll-reveal">
@@ -57,7 +61,7 @@ export default function ProgramPathways() {
             Where Will You Go?
           </p>
           <h2
-            className="font-display font-black leading-none"
+            className="font-display font-black leading-none wipe-reveal"
             style={{ fontSize: 'clamp(2rem, 4.5vw, 3.4rem)', letterSpacing: '-0.04em', color: 'oklch(0.11 0.03 261)' }}
           >
             CHOOSE YOUR <span style={{ color: 'oklch(0.30 0.15 261)' }}>PATH</span>
