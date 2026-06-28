@@ -6,13 +6,14 @@ import StickyStudentNav from '@/components/sticky-student-nav'
 import Nav from '@/components/nav'
 import AnnouncementBanner from '@/components/announcement-banner'
 import Hero from '@/components/hero'
-import StatsTicker from '@/components/stats-ticker'
-import QuickLinks from '@/components/quick-links'
-import QuickLinksGrid from '@/components/quick-links-grid'
-import ValueSection from '@/components/value-section'
 import Programs from '@/components/programs'
-import CampusLifeGallery from '@/components/campus-life-gallery'
+import Support from '@/components/support'
 import NewsEvents from '@/components/news-events'
+import StatsTicker from '@/components/stats-ticker'
+import Testimonials from '@/components/testimonials'
+import ValueSection from '@/components/value-section'
+import AthleticsCallout from '@/components/athletics-callout'
+import CinematicSection from '@/components/cinematic-section'
 import ActionStrip from '@/components/action-strip'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
@@ -65,12 +66,13 @@ export default async function Home() {
       <Nav />
       <main id="main-content" className="mobile-nav-spacer">
         <Hero content={content.hero} />
-        <QuickLinksGrid />
         <StatsTicker />
-        <QuickLinks />
-        <ValueSection />
         <Programs programs={programs ?? []} content={content.programs} />
-        <CampusLifeGallery />
+        <Testimonials />
+        <CinematicSection />
+        <ValueSection />
+        <AthleticsCallout />
+        <Support content={content.support} />
         <NewsEvents
           featuredStory={featuredStory ?? null}
           events={upcomingEvents ?? []}
