@@ -97,7 +97,7 @@ export default function AdultLearner() {
         </div>
 
         {/* Stats row */}
-        <div className="grid grid-cols-3 gap-6 mb-14 pb-14" style={{ borderBottom: '1px solid oklch(1 0 0 / 0.08)' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 mb-14 pb-14" style={{ borderBottom: '1px solid oklch(1 0 0 / 0.08)' }}>
           {STATS.map(s => <StatCounter key={s.label || s.suffix} {...s} />)}
         </div>
 

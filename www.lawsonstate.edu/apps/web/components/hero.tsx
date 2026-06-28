@@ -119,9 +119,9 @@ export default function Hero({ content = {} }: { content?: Record<string, string
         }}
       />
 
-      {/* ── Overlays ── */}
-      <div aria-hidden style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, ${NAVY}bb 0%, ${NAVY}44 45%, ${NAVY}cc 78%, ${NAVY} 100%)` }} />
-      <div aria-hidden style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, oklch(0.16 0.06 261 / 0.88) 0%, transparent 55%)' }} />
+      {/* ── Overlays — lighter to let the campus photo breathe ── */}
+      <div aria-hidden style={{ position: 'absolute', inset: 0, background: `linear-gradient(180deg, ${NAVY}55 0%, ${NAVY}18 40%, ${NAVY}88 80%, ${NAVY} 100%)` }} />
+      <div aria-hidden style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, oklch(0.16 0.06 261 / 0.46) 0%, transparent 52%)' }} />
 
       {/* ── Animated orbs (video-like ambient light) ── */}
       <div data-par="0.9" aria-hidden style={{ position: 'absolute', top: '12%', right: '8%', width: 'min(500px, 44vw)', height: 'min(500px, 44vw)', borderRadius: '50%', background: 'radial-gradient(circle, oklch(0.62 0.22 248 / 0.20) 0%, transparent 70%)', filter: 'blur(52px)', animation: 'lscc-orb-a 16s ease-in-out infinite', transition: 'transform .35s ease-out', willChange: 'transform', pointerEvents: 'none' }} />
@@ -129,7 +129,7 @@ export default function Hero({ content = {} }: { content?: Record<string, string
       <div data-par="0.5" aria-hidden style={{ position: 'absolute', bottom: '22%', right: '22%', width: 'min(260px, 24vw)', height: 'min(260px, 24vw)', borderRadius: '50%', background: 'radial-gradient(circle, oklch(0.79 0.19 78 / 0.10) 0%, transparent 70%)', filter: 'blur(36px)', animation: 'lscc-orb-a 12s ease-in-out infinite reverse', transition: 'transform .35s ease-out', willChange: 'transform', pointerEvents: 'none' }} />
 
       {/* ── Main content ── */}
-      <div style={{ position: 'relative', zIndex: 10, padding: 'clamp(5.5rem,10vw,8rem) clamp(1.25rem,4.5vw,3rem) clamp(2.5rem,5vw,4rem)', maxWidth: '1360px', width: '100%', margin: '0 auto' }}>
+      <div style={{ position: 'relative', zIndex: 10, padding: 'clamp(4rem,10vw,8rem) clamp(1rem,4.5vw,3rem) clamp(2rem,5vw,4rem)', maxWidth: '1360px', width: '100%', margin: '0 auto' }}>
 
         {/* Badge */}
         <div style={{ ...fade(0), display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'oklch(0.79 0.19 78 / 0.14)', border: `1px solid oklch(0.79 0.19 78 / 0.35)`, color: GOLD, padding: '6px 14px', borderRadius: '999px', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: '1.6rem' }}>
