@@ -9,7 +9,7 @@ const VIDEO_SRC = 'https://www.lawsonstate.edu/_resources/assets/video/lawson-st
 const POSTER_SRC = 'https://www.lawsonstate.edu/_resources/assets/img/grads%20lawson.jpeg'
 
 const DEFAULTS: HeroContent = {
-  subheadline:         'Alabama's proud HBCU since 1949 — 200+ career-ready programs across two Birmingham campuses.',
+  subheadline:         "Alabama's proud HBCU since 1949 — 200+ career-ready programs across two Birmingham campuses.",
   cta_primary_label:   'Apply Now',
   cta_primary_href:    '/admissions/apply',
   cta_secondary_label: 'Explore Programs',
