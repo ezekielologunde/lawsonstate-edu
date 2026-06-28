@@ -40,7 +40,7 @@ const PATHS = [
     steps: [
       { label: 'Transfer admissions info', href: '/admissions/transfer' },
       { label: 'Credit transfer guide', href: '/transfer/credits' },
-      { label: 'Transfer program options', href: '/programs?area=college-transfer' },
+      { label: 'Transfer program options', href: '/academics/transfer' },
       { label: 'Meet with an advisor', href: '/advising' },
     ],
     cta: 'Check My Credits',
@@ -85,7 +85,7 @@ const PATHS = [
     summary: 'Earn industry-recognized credentials in months, not years — on evenings and weekends, around your life.',
     steps: [
       { label: 'Workforce programs', href: '/workforce' },
-      { label: 'Certificate courses', href: '/programs?type=CER' },
+      { label: 'Certificate courses', href: '/academics/certificates' },
       { label: 'Continuing education', href: '/continuing-ed' },
       { label: 'Schedule a consultation', href: '/visit' },
     ],
@@ -127,14 +127,14 @@ export default function VisitorDecisionTree() {
         <div
           className={`mb-10 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <p style={{ fontSize: '0.78rem', letterSpacing: '0.18em', color: 'var(--lscc-eyebrow)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+          <p style={{ fontSize: '0.78rem', letterSpacing: '0.18em', color: 'oklch(0.55 0.15 68)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
             Your Starting Point
           </p>
           <h2
             className="font-display font-black leading-none"
             style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', letterSpacing: '-0.04em', color: 'oklch(0.16 0.04 261)' }}
           >
-            I AM A<span style={{ color: 'var(--lscc-eyebrow)' }}>...</span>
+            I AM A<span style={{ color: 'oklch(0.55 0.15 68)' }}>...</span>
           </h2>
         </div>
 

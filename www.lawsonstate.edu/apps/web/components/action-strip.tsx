@@ -8,12 +8,12 @@ const ACTIONS = [
   },
   {
     label: 'Schedule a Visit',
-    href: '/contact',
+    href: '/admissions/visit',
     sublabel: 'See campus in person',
   },
   {
     label: 'Request Information',
-    href: '/contact',
+    href: '/admissions/request-info',
     sublabel: 'Get answers to your questions',
   },
   {

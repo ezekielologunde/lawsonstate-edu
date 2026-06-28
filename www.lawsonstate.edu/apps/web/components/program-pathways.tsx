@@ -36,7 +36,7 @@ const PATHWAYS = [
     sub: 'We Honor Your Service',
     description: 'Dedicated support for active-duty service members, veterans, and their families. Your service translates to real college credit.',
     photo: 'https://www.lawsonstate.edu/_resources/assets/img/college_students3.jpg',
-    href: '/admissions',
+    href: '/military-veterans',
     tag: 'Military-friendly',
     accent: 'oklch(0.60 0.18 152)',
     textColor: 'white',

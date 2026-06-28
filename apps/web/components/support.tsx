@@ -64,7 +64,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
 
         {/* Section headline */}
         <div className="mb-12 scroll-reveal">
-          <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'var(--lscc-eyebrow)', textTransform: 'uppercase', marginBottom: '0.5rem', fontWeight: 700 }}>
+          <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'oklch(0.55 0.15 68)', textTransform: 'uppercase', marginBottom: '0.5rem', fontWeight: 700 }}>
             05 — Support that never stops
           </p>
           <h2
@@ -73,7 +73,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
           >
             {c.headline_line1}
             <br />
-            <span style={{ color: 'var(--lscc-eyebrow)' }}>{c.headline_line2}</span>
+            <span style={{ color: 'oklch(0.55 0.15 68)' }}>{c.headline_line2}</span>
           </h2>
         </div>
 
@@ -116,7 +116,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
 
               {/* Content */}
               <div className="flex flex-col flex-1 p-6">
-                <p style={{ fontSize: '0.70rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--lscc-eyebrow)', marginBottom: '0.5rem', fontWeight: 700 }}>
+                <p style={{ fontSize: '0.70rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'oklch(0.55 0.15 68)', marginBottom: '0.5rem', fontWeight: 700 }}>
                   {story.eyebrow}
                 </p>
 
@@ -128,7 +128,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
                 </h3>
 
                 {/* Gold separator */}
-                <div style={{ width: '32px', height: '2px', background: 'var(--lscc-eyebrow)', borderRadius: '2px', marginBottom: '1rem' }} />
+                <div style={{ width: '32px', height: '2px', background: 'oklch(0.55 0.15 68)', borderRadius: '2px', marginBottom: '1rem' }} />
 
                 {/* Pull quote */}
                 <blockquote
@@ -155,7 +155,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
                 <Link
                   href={story.href}
                   className="group/link inline-flex items-center gap-2 font-bold self-start press"
-                  style={{ fontSize: '0.82rem', color: 'var(--lscc-eyebrow)', letterSpacing: '0.03em' }}
+                  style={{ fontSize: '0.82rem', color: 'oklch(0.55 0.15 68)', letterSpacing: '0.03em' }}
                 >
                   {story.cta}
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden

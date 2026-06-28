@@ -4,7 +4,7 @@ import NewsletterSignup from './newsletter-signup'
 const footerLinks: Record<string, { label: string; href: string }[]> = {
   Academics: [
     { label: 'Programs & Degrees', href: '/academics' },
-    { label: 'Find Your Program', href: '/programs' },
+    { label: 'Departments', href: '/academics/departments' },
     { label: 'Academic Calendar', href: '/calendar' },
     { label: 'Library', href: '/library' },
   ],
@@ -30,7 +30,7 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
 
 const INK   = 'white'
 const BODY  = 'oklch(1 0 0 / 0.70)'
-const MUTE  = 'var(--lscc-muted-on-dark)'
+const MUTE  = 'oklch(1 0 0 / 0.45)'
 const LINE  = 'oklch(1 0 0 / 0.10)'
 
 export default function SiteFooter() {
