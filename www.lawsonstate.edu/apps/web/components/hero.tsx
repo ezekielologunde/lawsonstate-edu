@@ -117,6 +117,18 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
       {/* Mouse-follow atmospheric glow — updated via direct DOM, no re-renders */}
       <div ref={glowRef} aria-hidden className="absolute inset-0 pointer-events-none" style={{ zIndex: 1, transition: 'background 0.35s ease' }} />
 
+      {/* Floating accent orbs — Gen Z decorative energy */}
+      {!reduceMotion && (
+        <>
+          <div aria-hidden className="float-orb absolute pointer-events-none"
+            style={{ top: '12%', right: '8%', width: '320px', height: '320px', borderRadius: '50%', background: 'radial-gradient(circle, oklch(0.79 0.19 78 / 0.14) 0%, transparent 70%)', filter: 'blur(40px)', zIndex: 1 }} />
+          <div aria-hidden className="float-orb-reverse absolute pointer-events-none"
+            style={{ bottom: '18%', right: '22%', width: '200px', height: '200px', borderRadius: '50%', background: 'radial-gradient(circle, oklch(0.48 0.22 27 / 0.12) 0%, transparent 70%)', filter: 'blur(32px)', zIndex: 1 }} />
+          <div aria-hidden className="float-orb absolute pointer-events-none"
+            style={{ top: '40%', left: '5%', width: '180px', height: '180px', borderRadius: '50%', background: 'radial-gradient(circle, oklch(0.62 0.22 248 / 0.10) 0%, transparent 70%)', filter: 'blur(28px)', zIndex: 1, animationDelay: '3s' }} />
+        </>
+      )}
+
       {/* Content — one calm column, generous whitespace */}
       <div className="relative w-full max-w-7xl mx-auto px-6"
         style={{ paddingTop: 'calc(var(--lscc-banner-h, 0px) + 2rem)', paddingBottom: '2rem', zIndex: 2 }}>
@@ -141,7 +153,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
             textShadow: '0 2px 30px oklch(0.08 0.04 263 / 0.5)',
           }}>
             Your future starts{' '}
-            <span style={{ color: 'oklch(0.84 0.17 82)' }}>here.</span>
+            <span className="text-shimmer">here.</span>
           </h1>
 
           {/* Subhead — one concise line */}

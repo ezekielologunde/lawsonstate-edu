@@ -16,8 +16,8 @@ const PATHS = [
       { label: 'Apply for admission', href: '/admissions/apply' },
       { label: 'Explore financial aid', href: '/financial-aid' },
       { label: 'Browse all 200+ programs', href: '/academics' },
-      { label: 'Schedule a campus visit', href: '/visit' },
-      { label: 'Attend orientation', href: '/orientation' },
+      { label: 'Schedule a campus visit', href: '/contact' },
+      { label: 'Attend orientation', href: '/admissions/apply' },
     ],
     cta: 'Start My Application',
     ctaHref: '/admissions/apply',
@@ -39,9 +39,9 @@ const PATHS = [
     summary: 'Already have college credits? Most transfer directly. See exactly where you stand and build your degree plan from there.',
     steps: [
       { label: 'Transfer admissions info', href: '/admissions/transfer' },
-      { label: 'Credit transfer guide', href: '/transfer/credits' },
+      { label: 'Credit transfer guide', href: '/admissions/transfer' },
       { label: 'Transfer program options', href: '/programs?area=college-transfer' },
-      { label: 'Meet with an advisor', href: '/advising' },
+      { label: 'Meet with an advisor', href: '/campus-life' },
     ],
     cta: 'Check My Credits',
     ctaHref: '/admissions/transfer',
@@ -60,14 +60,14 @@ const PATHS = [
     headline: 'EVERYTHING YOU NEED',
     summary: 'Everything you need to stay on track this semester — registration, financial aid status, tutoring support, and academic advising.',
     steps: [
-      { label: 'Register for classes', href: '/registration' },
-      { label: 'Student portal login', href: '/student-portal' },
+      { label: 'Register for classes', href: 'https://my.lawsonstate.edu' },
+      { label: 'Student portal login', href: 'https://my.lawsonstate.edu' },
       { label: 'Financial aid status', href: '/financial-aid' },
-      { label: 'Pay your bill', href: '/pay-bill' },
-      { label: 'Get tutoring support', href: '/tutoring' },
+      { label: 'Pay your bill', href: 'https://my.lawsonstate.edu' },
+      { label: 'Get tutoring support', href: '/campus-life' },
     ],
     cta: 'Go to Student Portal',
-    ctaHref: '/student-portal',
+    ctaHref: 'https://my.lawsonstate.edu',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" aria-hidden className="w-10 h-10">
         <circle cx="24" cy="24" r="18" stroke="currentColor" strokeWidth="2.5" />
@@ -86,8 +86,8 @@ const PATHS = [
     steps: [
       { label: 'Workforce programs', href: '/workforce' },
       { label: 'Certificate courses', href: '/programs?type=CER' },
-      { label: 'Continuing education', href: '/continuing-ed' },
-      { label: 'Schedule a consultation', href: '/visit' },
+      { label: 'Continuing education', href: '/workforce' },
+      { label: 'Schedule a consultation', href: '/contact' },
     ],
     cta: 'Explore Workforce Programs',
     ctaHref: '/workforce',

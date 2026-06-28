@@ -73,7 +73,7 @@ export default function AthleticsCallout() {
             </div>
 
             <Link
-              href="/athletics"
+              href="/campus-life"
               className="press btn-shimmer inline-flex items-center gap-2 font-bold px-7 py-3 rounded-xl"
               style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.92rem' }}
             >

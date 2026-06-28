@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Poppins, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
+import DynamicIsland from '@/components/dynamic-island'
+import ClickRipple from '@/components/click-ripple'
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -53,7 +55,11 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${poppins.variable} ${jakarta.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <DynamicIsland />
+        <ClickRipple />
+      </body>
     </html>
   )
 }
