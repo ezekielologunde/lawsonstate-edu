@@ -132,20 +132,12 @@ export default function QuickLinksGrid() {
         .qlg-label { font-size: 0.7rem; }
         @media (max-width: 700px) {
           .qlg-grid { grid-template-columns: repeat(5, 1fr); gap: 2px; }
-          .qlg-label { font-size: 0.62rem; }
+          .qlg-label { font-size: 0.6rem; }
           .qlg-icon svg { width: 22px; height: 22px; }
         }
-        @media (max-width: 480px) {
-          .qlg-grid { grid-template-columns: repeat(5, 1fr); gap: 1px; }
-          .qlg-cell { padding: 0.7rem 0.15rem; }
-          .qlg-label { font-size: 0.54rem; letter-spacing: -0.01em; }
-          .qlg-icon svg { width: 20px; height: 20px; }
-        }
-        @media (max-width: 360px) {
-          .qlg-grid { grid-template-columns: repeat(5, 1fr); gap: 0; }
-          .qlg-cell { padding: 0.6rem 0.1rem; }
-          .qlg-label { font-size: 0.5rem; }
-          .qlg-icon svg { width: 18px; height: 18px; }
+        @media (max-width: 440px) {
+          .qlg-grid { grid-template-columns: repeat(5, 1fr); }
+          .qlg-cell { padding: 0.6rem 0.2rem; }
         }
       `}</style>
     </section>
