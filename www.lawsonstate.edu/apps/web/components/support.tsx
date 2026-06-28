@@ -16,13 +16,13 @@ const DEFAULTS: SupportContent = {
   step_2_attr:   '— Business Student, Class of 2025',
   step_2_body:   'Free tutoring, mental health counseling, a campus food pantry, and 30+ clubs — because your life doesn\'t stop when classes start.',
   step_2_cta:    'Student Services',
-  step_2_href:   '/student-life',
+  step_2_href:   '/campus-life',
   step_3_title:  'A Launchpad, Not a Destination',
   step_3_pull:   '"I transferred to UAB with a 3.8 GPA. Lawson State prepared me better than I ever expected."',
   step_3_attr:   '— Transfer Student, Class of 2023',
   step_3_body:   'Transfer seamlessly to UAB, Auburn, or UAH — or step directly into a career through our employer partnerships and on-campus recruiting.',
   step_3_cta:    'Career Services',
-  step_3_href:   '/career-services',
+  step_3_href:   '/campus-life#career',
 }
 
 const STORY_PHOTOS = [

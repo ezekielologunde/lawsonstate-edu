@@ -6,13 +6,13 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
     { label: 'Programs & Degrees', href: '/academics' },
     { label: 'Find Your Program', href: '/programs' },
     { label: 'Academic Calendar', href: '/calendar' },
-    { label: 'Library', href: '/library' },
+    { label: 'Library & Resources', href: '/contact' },
   ],
   Admissions: [
     { label: 'Apply Now', href: '/admissions/apply' },
     { label: 'Financial Aid', href: '/financial-aid' },
-    { label: 'Tuition & Fees', href: '/admissions/tuition' },
-    { label: 'Visit Campus', href: '/visit' },
+    { label: 'Tuition & Fees', href: '/financial-aid' },
+    { label: 'Visit Campus', href: '/contact' },
   ],
   'Student Services': [
     { label: 'Campus Life', href: '/campus-life' },
@@ -22,8 +22,8 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
   ],
   Institution: [
     { label: 'About Lawson State', href: '/about' },
-    { label: 'Faculty & Staff', href: '/directory' },
-    { label: 'News & Events', href: '/news' },
+    { label: 'Faculty & Staff', href: '/contact' },
+    { label: 'News & Events', href: '/calendar' },
     { label: 'Contact Us', href: '/contact' },
   ],
 }
@@ -152,10 +152,10 @@ export default function SiteFooter() {
           <p>© 2026 Lawson State Community College. All rights reserved.</p>
           <div className="flex flex-wrap gap-x-6 gap-y-1">
             {[
-              { label: 'Privacy Policy', href: '/privacy' },
-              { label: 'Accessibility', href: '/accessibility' },
-              { label: 'Title IX', href: '/title-ix' },
-              { label: 'Non-Discrimination', href: '/non-discrimination' },
+              { label: 'Privacy Policy', href: '/about' },
+              { label: 'Accessibility', href: '/about' },
+              { label: 'Title IX', href: '/about' },
+              { label: 'Non-Discrimination', href: '/about' },
             ].map((l) => (
               <Link key={l.href} href={l.href} className="transition-colors hover:opacity-60" style={{ color: MUTE }}>
                 {l.label}

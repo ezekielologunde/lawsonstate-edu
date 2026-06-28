@@ -9,9 +9,9 @@ const NEW_VISITOR_ACTIONS = [
 
 const QUICK_ACTIONS = [
   { label: 'Apply Now', href: '/admissions/apply', primary: true },
-  { label: 'Student Portal', href: '/student-portal', primary: false },
-  { label: 'Register', href: '/registration', primary: false },
-  { label: 'Pay Bill', href: '/pay-bill', primary: false },
+  { label: 'Student Portal', href: 'https://my.lawsonstate.edu', primary: false },
+  { label: 'Register', href: 'https://my.lawsonstate.edu', primary: false },
+  { label: 'Pay Bill', href: 'https://my.lawsonstate.edu', primary: false },
 ]
 
 export default function QuickLinks() {

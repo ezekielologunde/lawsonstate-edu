@@ -62,7 +62,7 @@ export default function NewsEvents({
           </div>
           <div className="hidden md:flex gap-5">
             <Link
-              href="/news"
+              href="/calendar"
               className="inline-flex items-center gap-1 font-semibold transition-colors"
               style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}
             >
@@ -89,7 +89,7 @@ export default function NewsEvents({
           {/* Featured story */}
           {featuredStory ? (
             <Link
-              href={featuredStory.href ?? '/news'}
+              href={featuredStory.href ?? '/calendar'}
               className="scroll-reveal group block rounded-2xl overflow-hidden"
               style={{ background: 'oklch(0.22 0.16 261)' }}
             >
@@ -235,7 +235,7 @@ export default function NewsEvents({
 
         {/* Mobile links */}
         <div className="md:hidden flex gap-6 mt-8" style={{ borderTop: '1px solid oklch(1 0 0 / 0.08)', paddingTop: '1.5rem' }}>
-          <Link href="/news" className="font-semibold" style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}>All News →</Link>
+          <Link href="/calendar" className="font-semibold" style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}>All News →</Link>
           <Link href="/calendar" className="font-semibold" style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}>Full Calendar →</Link>
         </div>
       </div>
