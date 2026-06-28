@@ -11,6 +11,7 @@ import QuickLinks from '@/components/quick-links'
 import QuickLinksGrid from '@/components/quick-links-grid'
 import ValueSection from '@/components/value-section'
 import Programs from '@/components/programs'
+import AdultLearner from '@/components/adult-learner'
 import CampusLifeGallery from '@/components/campus-life-gallery'
 import NewsEvents from '@/components/news-events'
 import ActionStrip from '@/components/action-strip'
@@ -70,6 +71,7 @@ export default async function Home() {
         <QuickLinks />
         <ValueSection />
         <Programs programs={programs ?? []} content={content.programs} />
+        <AdultLearner />
         <CampusLifeGallery />
         <NewsEvents
           featuredStory={featuredStory ?? null}
