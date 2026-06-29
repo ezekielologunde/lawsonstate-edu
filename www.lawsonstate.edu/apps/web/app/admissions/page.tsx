@@ -164,9 +164,9 @@ export default function AdmissionsPage() {
       {/* Hero */}
       <section
         className="page-hero relative overflow-hidden"
-        style={{ background: 'oklch(0.42 0.17 261)', minHeight: '42vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}
+        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '42vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}
       >
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(135deg, oklch(0.42 0.17 261 / 0.97) 0%, oklch(0.38 0.15 263 / 0.82) 100%)' }} />
+        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="page-fade-1 font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Rolling Admissions · Free to Apply · No GPA Minimum

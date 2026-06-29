@@ -20,7 +20,7 @@ export default function ProgramsPage() {
       {/* Hero */}
       <section
         className="relative py-16 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.42 0.17 261)', minHeight: '28vh', display: 'flex', alignItems: 'flex-end' }}
+        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '28vh', display: 'flex', alignItems: 'flex-end' }}
       >
         <Image
           src="https://live.staticflickr.com/65535/55212927272_fb910af83c.jpg"
@@ -34,7 +34,7 @@ export default function ProgramsPage() {
         <div
           className="absolute inset-0"
           aria-hidden
-          style={{ background: 'linear-gradient(to right, oklch(0.42 0.17 261 / 0.96) 0%, oklch(0.42 0.17 261 / 0.80) 55%, oklch(0.42 0.17 261 / 0.55) 100%)' }}
+          style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.96) 0%, oklch(0.22 0.17 261 / 0.80) 55%, oklch(0.18 0.15 262 / 0.55) 100%)' }}
         />
         <div className="relative max-w-7xl mx-auto w-full px-6">
           <p
