@@ -4,7 +4,6 @@ import { createServerClient, buildContentMap } from '@/lib/supabase'
 import SkipToMainLink from '@/components/skip-to-main-link'
 import StickyStudentNav from '@/components/sticky-student-nav'
 import Nav from '@/components/nav'
-import AnnouncementBanner from '@/components/announcement-banner'
 import Hero from '@/components/hero'
 import Programs from '@/components/programs'
 import Support from '@/components/support'
@@ -61,7 +60,6 @@ export default async function Home() {
   return (
     <>
       <SkipToMainLink />
-      <AnnouncementBanner />
       <Nav />
       <main id="main-content" className="mobile-nav-spacer">
         <Hero content={content.hero} />

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Poppins, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
+import AnnouncementBanner from '@/components/announcement-banner'
 import DynamicIsland from '@/components/dynamic-island'
 import ClickRipple from '@/components/click-ripple'
 
@@ -56,6 +57,9 @@ export default function RootLayout({
       className={`${poppins.variable} ${jakarta.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {/* Sets --lscc-banner-h synchronously before first paint so nav never jumps */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{if(!sessionStorage.getItem('lscc-banner-dismissed-summer2026'))document.documentElement.style.setProperty('--lscc-banner-h','44px')}catch(e){}})()` }} />
+        <AnnouncementBanner />
         {children}
         <DynamicIsland />
         <ClickRipple />
