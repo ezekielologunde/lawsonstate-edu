@@ -214,7 +214,7 @@ export default function AdmissionsPage() {
               </div>
               <div className="mt-6">
                 <Link
-                  href="/visit"
+                  href="/contact"
                   className="press font-semibold px-6 py-3 rounded-lg inline-block hover:bg-black/5"
                   style={{ background: 'white', border: '1px solid oklch(0.16 0.04 261 / 0.25)', color: 'oklch(0.16 0.04 261)', fontSize: '1rem' }}
                 >
