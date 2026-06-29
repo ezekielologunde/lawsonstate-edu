@@ -77,6 +77,30 @@ const NAV: NavEntry[] = [
   },
   { label: 'Financial Aid', href: '/financial-aid' },
   {
+    label: 'Current Students',
+    href: '/student-resources',
+    mega: [
+      {
+        title: 'Log In',
+        items: [
+          { label: 'MyLawson',      href: 'https://my.lawsonstate.edu',         note: 'Register, grades, payments',       external: true },
+          { label: 'Canvas',        href: 'https://lawsonstate.instructure.com', note: 'Online courses & assignments',     external: true },
+          { label: 'Student Email', href: 'https://webmail.lawsonstate.edu',     note: 'Your LSCC email account',          external: true },
+          { label: 'Help Desk',     href: 'mailto:help@lawsonstate.edu',         note: 'IT support · help@lawsonstate.edu', external: true },
+        ],
+      },
+      {
+        title: 'Student Services',
+        items: [
+          { label: 'Student Resources',     href: '/student-resources',             note: 'All tools & services' },
+          { label: 'Transcript Requests',   href: '/student-resources/transcripts', note: 'Official & unofficial' },
+          { label: 'Graduation Info',       href: '/student-resources/graduation',  note: 'Apply, ceremony, diploma' },
+          { label: 'Concerns & Complaints', href: '/student-resources/concerns',    note: 'Grievance & support process' },
+        ],
+      },
+    ],
+  },
+  {
     label: 'Campus Life',
     href: '/campus-life',
     mega: [
@@ -138,6 +162,19 @@ const MOBILE_GROUPS: MobileGroup[] = [
       { label: 'Grants & Scholarships', href: '/financial-aid' },
       { label: 'Tuition & Fees',        href: '/financial-aid' },
       { label: 'Advising',              href: '/contact' },
+    ],
+  },
+  {
+    label: 'Current Students',
+    href: '/student-resources',
+    items: [
+      { label: 'MyLawson',              href: 'https://my.lawsonstate.edu',         external: true, gold: true },
+      { label: 'Canvas',                href: 'https://lawsonstate.instructure.com', external: true },
+      { label: 'Student Email',         href: 'https://webmail.lawsonstate.edu',     external: true },
+      { label: 'Student Resources',     href: '/student-resources' },
+      { label: 'Transcript Requests',   href: '/student-resources/transcripts' },
+      { label: 'Graduation Info',       href: '/student-resources/graduation' },
+      { label: 'Concerns & Complaints', href: '/student-resources/concerns' },
     ],
   },
   {
