@@ -1,5 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Nav from '@/components/nav'
+import Prefooter from '@/components/prefooter'
+import SiteFooter from '@/components/site-footer'
+import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Lawson State Community College',
@@ -38,37 +42,69 @@ const DEPARTMENTS = [
   { label: 'Disability Svc.',  phone: '205.925.2515', tel: '+12059252515' },
 ]
 
+const QUICK_LINKS = [
+  { label: 'Apply Now', desc: 'Start your application today', href: '/admissions', gold: true },
+  { label: 'Financial Aid', desc: 'FAFSA, scholarships & grants', href: '/financial-aid', gold: false },
+  { label: 'MyLawson Portal', desc: 'Register, grades, billing', href: 'https://my.lawsonstate.edu', gold: false },
+  { label: 'Browse Programs', desc: '60+ degrees & certificates', href: '/academics', gold: false },
+]
+
 export default function ContactPage() {
   return (
+    <>
+      <Nav />
     <main>
       {/* Hero */}
-      <section className="page-hero" style={{ background: 'oklch(0.95 0.03 255)', paddingTop: '8rem', paddingBottom: '5rem' }}>
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="page-hero" style={{ background: 'oklch(0.22 0.17 261)', paddingTop: '8rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
+        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <div className="max-w-7xl mx-auto px-6" style={{ position: 'relative', zIndex: 1 }}>
           <nav
             className="page-fade-1 flex items-center gap-2 text-sm mb-8"
-            style={{ color: 'oklch(0.45 0.03 261)' }}
+            style={{ color: 'oklch(1 0 0 / 0.55)' }}
             aria-label="Breadcrumb"
           >
-            <Link href="/" className="hover:opacity-70 transition-opacity" style={{ color: 'oklch(0.45 0.03 261)' }}>Home</Link>
+            <Link href="/" className="hover:opacity-70 transition-opacity" style={{ color: 'oklch(1 0 0 / 0.55)' }}>Home</Link>
             <span>/</span>
-            <span style={{ color: 'oklch(0.16 0.04 261)' }}>Contact</span>
+            <span style={{ color: 'oklch(1 0 0 / 0.85)' }}>Contact</span>
           </nav>
 
-          <p className="page-fade-1 text-xs font-bold uppercase tracking-widest mb-3" style={{ color: 'var(--lscc-eyebrow)' }}>
+          <p className="page-fade-1 text-xs font-bold uppercase tracking-widest mb-3" style={{ color: 'oklch(0.79 0.19 78)' }}>
             Get in Touch
           </p>
           <h1
             className="page-fade-2 font-display font-black leading-none mb-5"
-            style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', letterSpacing: '-0.03em', color: 'oklch(0.16 0.04 261)' }}
+            style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', letterSpacing: '-0.03em', color: 'white' }}
           >
             Contact Us
           </h1>
           <p
             className="page-fade-3 text-lg max-w-[52ch]"
-            style={{ color: 'oklch(0.40 0.04 261)', lineHeight: 1.75 }}
+            style={{ color: 'oklch(1 0 0 / 0.70)', lineHeight: 1.75 }}
           >
             We&apos;re here to help. Reach our team at either campus — Monday through Friday, 8 AM to 5 PM.
           </p>
+        </div>
+      </section>
+
+      {/* Quick links */}
+      <section style={{ background: 'oklch(0.79 0.19 78)', padding: '2rem 0' }}>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {QUICK_LINKS.map(l => (
+              <Link
+                key={l.label}
+                href={l.href}
+                className="press rounded-xl p-4 block text-center"
+                style={{
+                  background: l.gold ? 'oklch(0.22 0.17 261)' : 'white',
+                  border: '1px solid oklch(0.11 0.03 261 / 0.12)',
+                }}
+              >
+                <div className="font-display font-bold" style={{ fontSize: '0.96rem', color: l.gold ? 'white' : 'oklch(0.16 0.04 261)' }}>{l.label}</div>
+                <div style={{ fontSize: '0.78rem', color: l.gold ? 'oklch(1 0 0 / 0.65)' : 'oklch(0.50 0.03 261)', marginTop: '0.2rem' }}>{l.desc}</div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -184,5 +220,10 @@ export default function ContactPage() {
         </div>
       </section>
     </main>
+      <Prefooter />
+      <SiteFooter />
+      <MobileBottomNav />
+      <div className="mobile-nav-spacer" />
+    </>
   )
 }

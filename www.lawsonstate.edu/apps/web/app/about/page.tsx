@@ -76,21 +76,39 @@ export default function AboutPage() {
       {/* Hero */}
       <section
         className="page-hero relative py-20 px-6 flex items-end overflow-hidden"
-        style={{ background: 'oklch(0.95 0.03 255)', minHeight: '38vh' }}
+        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '38vh' }}
       >
+        <div className="absolute inset-0" aria-hidden
+          style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Est. 1949 · Birmingham, AL
           </p>
           <h1
             className="font-display font-black leading-none mb-4"
-            style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}
+            style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em', color: 'white' }}
           >
             ABOUT LAWSON STATE
           </h1>
-          <p className="max-w-xl" style={{ fontSize: 'clamp(1.05rem, 1.6vw, 1.2rem)', lineHeight: 1.7, color: 'oklch(0.40 0.04 261)' }}>
+          <p className="max-w-xl" style={{ fontSize: 'clamp(1.05rem, 1.6vw, 1.2rem)', lineHeight: 1.7, color: 'oklch(1 0 0 / 0.70)' }}>
             Birmingham's HBCU — over 70 years of academic achievement, community leadership, and transforming lives across Jefferson County.
           </p>
+          <div className="flex flex-wrap gap-3 mt-8">
+            <Link
+              href="/admissions"
+              className="press btn-shimmer font-bold px-6 py-3 rounded-lg inline-block"
+              style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
+            >
+              Apply Now →
+            </Link>
+            <Link
+              href="/academics"
+              className="press font-semibold px-6 py-3 rounded-lg inline-block"
+              style={{ border: '1.5px solid oklch(1 0 0 / 0.28)', fontSize: '1rem', color: 'white' }}
+            >
+              Browse Programs
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -282,6 +300,35 @@ export default function AboutPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Next Steps CTA */}
+      <section className="py-20 px-6" style={{ background: 'oklch(0.42 0.17 261)' }}>
+        <div className="max-w-7xl mx-auto scroll-reveal">
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Ready to Join Us?</p>
+          <h2 className="font-display font-black leading-none mb-6" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'white' }}>YOUR NEXT STEPS</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+            {[
+              { step: '01', label: 'Apply Online', desc: 'Free application — takes about 20 minutes.', href: '/admissions' },
+              { step: '02', label: 'File Your FAFSA', desc: 'Most students qualify for aid. File early at studentaid.gov.', href: '/financial-aid' },
+              { step: '03', label: 'Pick Your Program', desc: 'Browse 60+ degrees, certificates, and transfer pathways.', href: '/academics' },
+            ].map(s => (
+              <Link key={s.step} href={s.href} className="press rounded-2xl p-6 block" style={{ background: 'oklch(1 0 0 / 0.07)', border: '1px solid oklch(1 0 0 / 0.14)' }}>
+                <div className="font-display font-black mb-1" style={{ fontSize: '0.74rem', letterSpacing: '0.18em', color: 'oklch(0.79 0.19 78)' }}>STEP {s.step}</div>
+                <div className="font-display font-bold mb-2" style={{ fontSize: '1.1rem', color: 'white' }}>{s.label}</div>
+                <p style={{ fontSize: '0.92rem', color: 'oklch(1 0 0 / 0.70)' }}>{s.desc}</p>
+              </Link>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-4">
+            <Link href="/admissions" className="press btn-shimmer font-bold px-7 py-3 rounded-lg inline-block" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}>
+              Apply Now →
+            </Link>
+            <Link href="/contact" className="press font-semibold px-7 py-3 rounded-lg inline-block" style={{ border: '1.5px solid oklch(1 0 0 / 0.30)', color: 'white', fontSize: '1rem' }}>
+              Talk to Admissions
+            </Link>
           </div>
         </div>
       </section>

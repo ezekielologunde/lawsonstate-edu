@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
@@ -129,12 +130,14 @@ export default function AcademicsPage() {
         className="page-hero relative py-20 px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
       >
-        <img
+        <Image
           src="https://live.staticflickr.com/65535/55214074644_fb8b844f53_c.jpg"
           alt=""
-          aria-hidden
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          loading="eager"
+          aria-hidden="true"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
         />
         <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.96) 0%, oklch(0.22 0.17 261 / 0.80) 55%, oklch(0.16 0.13 263 / 0.55) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">

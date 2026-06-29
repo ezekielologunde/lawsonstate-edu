@@ -72,16 +72,18 @@ export default function WorkforcePage() {
       {/* Hero */}
       <section
         className="page-hero relative py-20 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.95 0.03 255)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
+        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
       >
+        <div className="absolute inset-0" aria-hidden
+          style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>
             Fast-Track Skills Training · Bessemer Campus
           </p>
-          <h1 className="font-display font-black leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>
+          <h1 className="font-display font-black leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em', color: 'white' }}>
             WORKFORCE DEVELOPMENT
           </h1>
-          <p className="max-w-xl" style={{ fontSize: 'clamp(1.05rem, 1.6vw, 1.2rem)', lineHeight: 1.7, color: 'oklch(0.40 0.04 261)' }}>
+          <p className="max-w-xl" style={{ fontSize: 'clamp(1.05rem, 1.6vw, 1.2rem)', lineHeight: 1.7, color: 'oklch(1 0 0 / 0.70)' }}>
             The Office of Workforce Development offers short-term, employer-aligned training programs. Get job-ready skills — fast. Some programs are completely free.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
@@ -92,7 +94,7 @@ export default function WorkforcePage() {
             >
               Call 205.929.6384
             </a>
-            <Link href="/academics" className="press hero-cta-ghost font-semibold px-6 py-3 rounded-lg inline-block" style={{ border: '1.5px solid oklch(0.16 0.04 261 / 0.25)', fontSize: '1rem', color: 'oklch(0.16 0.04 261)' }}>
+            <Link href="/academics" className="press hero-cta-ghost font-semibold px-6 py-3 rounded-lg inline-block" style={{ border: '1.5px solid oklch(1 0 0 / 0.28)', fontSize: '1rem', color: 'white' }}>
               Browse All Programs
             </Link>
           </div>
@@ -140,7 +142,7 @@ export default function WorkforcePage() {
                           className="shrink-0 font-black rounded-lg px-3 py-1"
                           style={{
                             background: item.cost === 'FREE' ? 'oklch(0.79 0.19 78)' : 'oklch(0.22 0.17 261)',
-                            color: 'white',
+                            color: item.cost === 'FREE' ? 'oklch(0.11 0.03 261)' : 'white',
                             fontSize: '0.96rem',
                           }}
                         >
@@ -218,6 +220,29 @@ export default function WorkforcePage() {
                 Contact the Workforce Development office to learn which employer partners are currently hiring apprentices and whether your field of interest is available.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Enroll CTA */}
+      <section className="py-16 px-6" style={{ background: 'oklch(0.42 0.17 261)' }}>
+        <div className="max-w-7xl mx-auto scroll-reveal flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <p className="font-display font-semibold uppercase mb-2" style={{ fontSize: '0.78rem', letterSpacing: '0.18em', color: 'oklch(0.79 0.19 78)' }}>Looking for a Degree?</p>
+            <h2 className="font-display font-black text-white leading-none mb-2" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', letterSpacing: '-0.025em' }}>
+              EXPLORE FULL DEGREE PROGRAMS
+            </h2>
+            <p style={{ color: 'oklch(1 0 0 / 0.75)', fontSize: '1rem' }}>
+              Workforce certificates can stack toward a full associate degree — ask us how.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3 shrink-0">
+            <Link href="/admissions" className="press btn-shimmer font-bold px-6 py-3 rounded-lg inline-block" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}>
+              Apply Now →
+            </Link>
+            <Link href="/academics" className="press font-semibold px-6 py-3 rounded-lg inline-block" style={{ border: '1.5px solid oklch(1 0 0 / 0.30)', color: 'white', fontSize: '1rem' }}>
+              All Programs
+            </Link>
           </div>
         </div>
       </section>

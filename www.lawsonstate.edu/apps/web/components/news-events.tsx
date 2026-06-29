@@ -99,6 +99,8 @@ export default function NewsEvents({
                   src={featuredStory.image_url ?? 'https://www.lawsonstate.edu/_resources/assets/img/Lawson%20State%20Pic%204.jpg'}
                   alt={featuredStory.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0"

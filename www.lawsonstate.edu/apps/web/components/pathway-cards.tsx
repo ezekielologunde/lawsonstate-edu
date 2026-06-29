@@ -160,6 +160,7 @@ export default function PathwayCards() {
               aria-hidden
               className="absolute inset-0 w-full h-full object-cover object-center"
               loading="lazy"
+              decoding="async"
             />
             <div
               aria-hidden

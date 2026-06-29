@@ -80,7 +80,7 @@ export default function AnnouncementBanner() {
             className="press btn-shimmer font-bold whitespace-nowrap rounded-lg px-4 py-1.5"
             style={{ background: 'oklch(0.22 0.17 261)', color: 'white', fontSize: '0.80rem' }}
           >
-            Register Now →
+            Register Now →<span className="sr-only"> (opens in new tab)</span>
           </a>
           <button
             onClick={dismiss}

@@ -1,6 +1,7 @@
 export const dynamic = 'force-dynamic'
 
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
@@ -64,12 +65,14 @@ export default async function CalendarPage() {
         className="relative py-20 px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '32vh', display: 'flex', alignItems: 'flex-end' }}
       >
-        <img
+        <Image
           src="https://live.staticflickr.com/65535/55259062249_bda6f008e2_z.jpg"
           alt=""
-          aria-hidden
-          className="absolute inset-0 w-full h-full object-cover object-top"
-          loading="eager"
+          aria-hidden="true"
+          fill
+          priority
+          className="object-cover object-top"
+          sizes="100vw"
         />
         <div
           className="absolute inset-0"

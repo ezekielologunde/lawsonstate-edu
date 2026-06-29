@@ -6,7 +6,7 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
     { label: 'Programs & Degrees', href: '/academics' },
     { label: 'Find Your Program', href: '/programs' },
     { label: 'Academic Calendar', href: '/calendar' },
-    { label: 'Library & Resources', href: '/contact' },
+    { label: 'Library & Resources', href: 'https://lawsonstate.edu/Library' },
   ],
   Admissions: [
     { label: 'Apply Now', href: '/admissions/apply' },
@@ -15,10 +15,10 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
     { label: 'Visit Campus', href: '/contact' },
   ],
   'Student Services': [
+    { label: 'Student Portal Hub', href: '/portal' },
     { label: 'Campus Life', href: '/campus-life' },
-    { label: 'Student Portal', href: 'https://my.lawsonstate.edu' },
-    { label: 'Advising', href: '/campus-life#support' },
-    { label: 'Career Services', href: '/campus-life#career' },
+    { label: 'MyLawson Login', href: 'https://my.lawsonstate.edu' },
+    { label: 'Academic Advising', href: '/portal' },
   ],
   Institution: [
     { label: 'About Lawson State', href: '/about' },
@@ -129,7 +129,7 @@ export default function SiteFooter() {
               </div>
               <ul className="flex flex-col gap-3">
                 {links.map((link) => (
-                  <li key={link.href}>
+                  <li key={link.label}>
                     <Link
                       href={link.href}
                       className="text-sm transition-colors hover:opacity-60"
@@ -157,7 +157,7 @@ export default function SiteFooter() {
               { label: 'Title IX', href: '/about' },
               { label: 'Non-Discrimination', href: '/about' },
             ].map((l) => (
-              <Link key={l.href} href={l.href} className="transition-colors hover:opacity-60" style={{ color: MUTE }}>
+              <Link key={l.label} href={l.href} className="transition-colors hover:opacity-60" style={{ color: MUTE }}>
                 {l.label}
               </Link>
             ))}

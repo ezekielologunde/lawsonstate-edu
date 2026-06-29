@@ -92,6 +92,7 @@ export default function MobileBottomNav() {
         return external ? (
           <a key={label} href={href} target="_blank" rel="noopener noreferrer" className={className} style={style}>
             {inner}
+            <span className="sr-only"> (opens in new tab)</span>
           </a>
         ) : (
           <Link key={label} href={href} className={className} style={style}>

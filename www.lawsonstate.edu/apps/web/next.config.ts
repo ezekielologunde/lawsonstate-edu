@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    optimizePackageImports: ['next/font'],
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error'] } : false,
+  },
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       { hostname: 'www.lawsonstate.edu' },
       { hostname: 'live.staticflickr.com' },
@@ -12,7 +19,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // Admissions sub-routes → admissions hub or nearest page
-      { source: '/admissions/apply',        destination: '/admissions',    permanent: false },
       { source: '/admissions/visit',        destination: '/admissions',    permanent: false },
       { source: '/admissions/request-info', destination: '/admissions',    permanent: false },
       { source: '/admissions/tuition',      destination: '/financial-aid', permanent: false },
@@ -52,11 +58,12 @@ const nextConfig: NextConfig = {
       { source: '/support/veterans', destination: '/campus-life', permanent: false },
 
       // Utility pages → nearest equivalent
-      { source: '/news',      destination: '/calendar', permanent: false },
-      { source: '/directory', destination: '/about',    permanent: false },
+      { source: '/news',        destination: '/calendar',     permanent: false },
+      { source: '/directory',   destination: '/about',        permanent: false },
+      { source: '/student-life', destination: '/campus-life', permanent: false },
 
       // External redirects (student systems + official Lawson State pages)
-      { source: '/portal',             destination: 'https://my.lawsonstate.edu',                      permanent: false },
+      { source: '/mylawson',           destination: 'https://my.lawsonstate.edu',                      permanent: false },
       { source: '/library',            destination: 'https://www.lawsonstate.edu/library',             permanent: false },
       { source: '/athletics',          destination: 'https://www.lawsonstate.edu/athletics',           permanent: false },
       { source: '/privacy',            destination: 'https://www.lawsonstate.edu/privacy-policy',      permanent: false },

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const CHANNEL_URL = 'https://www.youtube.com/@lawsonstatecommunitycolleg273'
 
@@ -21,12 +22,13 @@ export default function VideoSection() {
   return (
     <section className="relative overflow-hidden" style={{ background: 'oklch(0.95 0.03 255)' }}>
       {/* Background: campus photo with strong overlay */}
-      <div className="absolute inset-0" aria-hidden>
-        <img
+      <div className="absolute inset-0" aria-hidden="true">
+        <Image
           src="https://www.lawsonstate.edu/_resources/assets/img/couger_strong.jpeg"
           alt=""
-          className="w-full h-full object-cover object-center"
-          loading="lazy"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
         />
         <div
           className="absolute inset-0"
@@ -96,11 +98,12 @@ export default function VideoSection() {
                 className="group relative overflow-hidden rounded-xl block"
                 style={{ aspectRatio: '3/4' }}
               >
-                <img
+                <Image
                   src={photo.src}
                   alt={photo.label}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 0vw, 33vw"
                 />
                 {/* Play button overlay */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"

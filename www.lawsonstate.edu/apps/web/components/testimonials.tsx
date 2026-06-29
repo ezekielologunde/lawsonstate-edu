@@ -162,6 +162,7 @@ export default function Testimonials() {
               className="absolute inset-0 w-full h-full object-cover"
               style={{ animation: 'tfade 0.55s ease' }}
               loading="lazy"
+              decoding="async"
             />
             <div
               className="absolute inset-0 pointer-events-none"

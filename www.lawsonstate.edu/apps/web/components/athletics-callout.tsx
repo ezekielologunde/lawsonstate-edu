@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const SPORTS_STATS = [
   { n: '14', label: 'NJCAA Sports' },
@@ -15,14 +16,14 @@ export default function AthleticsCallout() {
       aria-label="Monarch Athletics"
     >
       {/* Real athletics photo background */}
-      <img
+      <Image
         src="https://www.lawsonstate.edu/_resources/assets/img/athletics/hero-athletics.webp"
         alt=""
-        aria-hidden
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        aria-hidden="true"
+        fill
+        className="object-cover object-center"
+        sizes="100vw"
         style={{ opacity: 0.10 }}
-        loading="lazy"
-        decoding="async"
       />
       {/* Background glow orb */}
       <div

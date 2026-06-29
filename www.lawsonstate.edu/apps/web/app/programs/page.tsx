@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
+import Image from 'next/image'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
@@ -21,12 +22,14 @@ export default function ProgramsPage() {
         className="relative py-16 px-6 overflow-hidden"
         style={{ background: 'oklch(0.42 0.17 261)', minHeight: '28vh', display: 'flex', alignItems: 'flex-end' }}
       >
-        <img
+        <Image
           src="https://live.staticflickr.com/65535/55212927272_fb910af83c.jpg"
           alt=""
-          aria-hidden
-          className="absolute inset-0 w-full h-full object-cover object-top"
-          loading="eager"
+          aria-hidden="true"
+          fill
+          priority
+          className="object-cover object-top"
+          sizes="100vw"
         />
         <div
           className="absolute inset-0"

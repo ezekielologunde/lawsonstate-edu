@@ -86,7 +86,7 @@ const NAV: NavEntry[] = [
           { label: 'Clubs & Activities',  href: '/campus-life', note: '30+ student organizations' },
           { label: 'Monarch Athletics',   href: '/campus-life', note: 'NJCAA — 14 sports' },
           { label: 'Tutoring & Support',  href: '/campus-life', note: 'Free academic help' },
-          { label: 'Student Portal',      href: 'https://my.lawsonstate.edu', note: 'MyLawson login', external: true },
+          { label: 'Student Portal Hub',  href: '/portal',                    note: 'New & returning students' },
         ],
       },
       {
@@ -299,16 +299,16 @@ export default function Nav() {
                     <div className="grid gap-5" style={{ gridTemplateColumns: `repeat(${item.mega.length}, 1fr)` }}>
                       {item.mega.map((group) => (
                         <div key={group.title}>
-                          <p style={{ fontSize: '0.64rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'oklch(0.60 0.12 68)', fontWeight: 700, marginBottom: '0.55rem' }}>
+                          <p style={{ fontSize: '0.64rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--lscc-eyebrow)', fontWeight: 700, marginBottom: '0.55rem' }}>
                             {group.title}
                           </p>
                           <div className="flex flex-col gap-0.5">
                             {group.items.map((sub) => {
                               const inner = (
                                 <div className="flex flex-col gap-0.5 px-2.5 py-2 rounded-xl transition-colors hover:bg-black/[0.04]">
-                                  <span className="text-[0.84rem] font-semibold flex items-center gap-1.5" style={{ color: sub.highlight ? 'oklch(0.55 0.15 68)' : 'oklch(0.16 0.04 261)' }}>
+                                  <span className="text-[0.84rem] font-semibold flex items-center gap-1.5" style={{ color: sub.highlight ? 'var(--lscc-eyebrow)' : 'oklch(0.16 0.04 261)' }}>
                                     {sub.label}
-                                    {sub.highlight && <span style={{ fontSize: '0.60rem', background: 'oklch(0.96 0.05 82)', color: 'oklch(0.55 0.15 68)', padding: '0.12rem 0.45rem', borderRadius: '999px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Browse</span>}
+                                    {sub.highlight && <span style={{ fontSize: '0.60rem', background: 'oklch(0.96 0.05 82)', color: 'var(--lscc-eyebrow)', padding: '0.12rem 0.45rem', borderRadius: '999px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Browse</span>}
                                     {sub.external && <ExternalIcon />}
                                   </span>
                                   {sub.note && <span style={{ fontSize: '0.70rem', color: 'oklch(0.55 0.05 261)', lineHeight: 1.3 }}>{sub.note}</span>}
@@ -335,7 +335,7 @@ export default function Nav() {
         <div className="hidden md:flex items-center gap-3 shrink-0">
           <SearchModal dark={!scrolled} />
           <a href="https://my.lawsonstate.edu" target="_blank" rel="noreferrer" className="text-[0.82rem] font-semibold transition-opacity hover:opacity-60 whitespace-nowrap" style={{ color: lc }}>
-            My Portal
+            My Portal<span className="sr-only"> (opens in new tab)</span>
           </a>
           <Link href="/admissions/apply" className="press btn-shimmer text-[0.82rem] font-bold px-5 py-2 rounded-lg whitespace-nowrap" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', boxShadow: '0 2px 12px oklch(0.79 0.19 78 / 0.35)' }}>
             Apply Now
@@ -436,7 +436,16 @@ export default function Nav() {
           </nav>
 
           {/* Footer row */}
-          <div className="px-4 pb-6 pt-3" style={{ borderTop: '1px solid oklch(0 0 0 / 0.07)', marginTop: '0.5rem' }}>
+          <div className="px-4 pb-6 pt-3 flex flex-col gap-1" style={{ borderTop: '1px solid oklch(0 0 0 / 0.07)', marginTop: '0.5rem' }}>
+            <Link
+              href="/portal"
+              onClick={() => setOpen(false)}
+              className="flex items-center justify-between text-sm font-semibold px-3 py-3 rounded-xl hover:bg-black/[0.04] transition-colors"
+              style={{ color: 'oklch(0.22 0.05 261)' }}
+            >
+              Student Portal Hub
+              <ArrowRight />
+            </Link>
             <a
               href="https://my.lawsonstate.edu"
               target="_blank" rel="noreferrer"
@@ -444,7 +453,7 @@ export default function Nav() {
               className="flex items-center justify-between text-sm font-semibold px-3 py-3 rounded-xl hover:bg-black/[0.04] transition-colors"
               style={{ color: 'oklch(0.22 0.05 261)' }}
             >
-              Student Portal (MyLawson)
+              MyLawson (Login)
               <ExternalIcon />
             </a>
           </div>

@@ -109,6 +109,7 @@ export default function MakersFixers() {
                 alt={photo.alt}
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 loading="lazy"
+                decoding="async"
               />
               <div
                 className="absolute inset-0 pointer-events-none"
