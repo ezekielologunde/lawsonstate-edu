@@ -154,10 +154,10 @@ export default function SiteFooter() {
           <p>© 2026 Lawson State Community College. All rights reserved.</p>
           <div className="flex flex-wrap gap-x-6 gap-y-1">
             {[
-              { label: 'Privacy Policy', href: '/about' },
-              { label: 'Accessibility', href: '/about' },
-              { label: 'Title IX', href: '/about' },
-              { label: 'Non-Discrimination', href: '/about' },
+              { label: 'Privacy Policy', href: '/about/privacy' },
+              { label: 'Accessibility', href: '/about/accessibility' },
+              { label: 'Title IX', href: '/about/title-ix' },
+              { label: 'Non-Discrimination', href: '/about/non-discrimination' },
             ].map((l) => (
               <Link key={l.label} href={l.href} className="transition-colors hover:opacity-60" style={{ color: MUTE }}>
                 {l.label}
