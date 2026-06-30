@@ -51,7 +51,7 @@ const DIVISIONS = [
     name: 'Physical Education & Athletics',
     role: 'Director',
     contact: '205.925.2525',
-    desc: 'Health and physical education instruction; NCAA Division I Athletics.',
+    desc: 'Health and physical education instruction; NJCAA Division I Athletics.',
   },
 ]
 
