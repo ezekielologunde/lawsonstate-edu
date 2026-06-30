@@ -19,8 +19,8 @@ export default function ProgramsPage() {
 
       {/* Hero */}
       <section
-        className="relative py-16 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '28vh', display: 'flex', alignItems: 'flex-end' }}
+        className="page-hero relative px-6 overflow-hidden"
+        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}
       >
         <Image
           src="https://live.staticflickr.com/65535/55212927272_fb910af83c.jpg"
@@ -36,7 +36,7 @@ export default function ProgramsPage() {
           aria-hidden
           style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.96) 0%, oklch(0.22 0.17 261 / 0.80) 55%, oklch(0.18 0.15 262 / 0.55) 100%)' }}
         />
-        <div className="relative max-w-7xl mx-auto w-full px-6">
+        <div className="relative max-w-7xl mx-auto w-full">
           <p
             className="font-display font-semibold uppercase mb-3"
             style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.22em' }}
