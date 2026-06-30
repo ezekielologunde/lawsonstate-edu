@@ -25,8 +25,8 @@ const TABS = [
     quote: "I was the first person in my family to go to college. Walking onto campus for the first time felt like I'd finally found the right room. Everyone here is rooting for each other.",
     name: 'Marcus W.',
     detail: 'Business Administration · Class of 2025',
-    href: '/student-life',
-    cta: 'Discover Student Life',
+    href: '/campus-life',
+    cta: 'Discover Campus Life',
   },
   {
     id: 'transform',

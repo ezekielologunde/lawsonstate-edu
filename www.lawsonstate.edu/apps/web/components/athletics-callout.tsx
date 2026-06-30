@@ -13,7 +13,7 @@ export default function AthleticsCallout() {
     <section
       className="relative overflow-hidden"
       style={{ background: 'oklch(0.92 0.05 255)', paddingBlock: '4.5rem' }}
-      aria-label="Monarch Athletics"
+      aria-label="Cougar Athletics"
     >
       {/* Real athletics photo background */}
       <Image
@@ -44,7 +44,7 @@ export default function AthleticsCallout() {
           {/* Left — copy */}
           <div className="scroll-reveal">
             <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'var(--lscc-eyebrow)', textTransform: 'uppercase', marginBottom: '0.5rem', fontWeight: 700 }}>
-              04 — Lawson State Athletics
+              04 — Cougar Athletics
             </p>
             <h2
               className="font-display font-black leading-none mb-4"
@@ -78,7 +78,7 @@ export default function AthleticsCallout() {
               className="press btn-shimmer inline-flex items-center gap-2 font-bold px-7 py-3 rounded-xl"
               style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.92rem' }}
             >
-              Explore Monarch Athletics
+              Explore Cougar Athletics
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
               </svg>
