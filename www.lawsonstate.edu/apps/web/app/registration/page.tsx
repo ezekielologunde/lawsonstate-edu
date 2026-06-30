@@ -67,24 +67,27 @@ export default function RegistrationPage() {
 
       {/* Hero */}
       <section
-        className="page-hero relative py-14 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '24vh', display: 'flex', alignItems: 'flex-end' }}
+        className="page-hero relative px-6 overflow-hidden"
+        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}
       >
         <div className="absolute inset-0" aria-hidden
           style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
+          <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span className="mx-2" aria-hidden>›</span>
             <Link href="/admissions/apply" className="hover:text-white transition-colors">How to Apply</Link>
             <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Registration</span>
           </p>
-          <h1 className="font-display font-black text-white leading-none"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.6rem)', letterSpacing: '-0.025em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+            Advising · Scheduling · Enrollment
+          </p>
+          <h1 className="font-display font-black text-white leading-none mb-4"
+            style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
             CLASS REGISTRATION
           </h1>
-          <p className="mt-3 text-white/70 max-w-2xl" style={{ fontSize: '1.05rem', lineHeight: 1.65 }}>
+          <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.15rem)', color: 'oklch(1 0 0 / 0.70)', maxWidth: '56ch', lineHeight: 1.7 }}>
             Accepted? Great. Now let&apos;s get you into classes. Here&apos;s exactly how registration works at Lawson State.
           </p>
         </div>
@@ -93,6 +96,7 @@ export default function RegistrationPage() {
       {/* 4-Step Process */}
       <section className="py-16 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
+          <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>Step-by-Step</p>
           <h2 className="font-display font-black text-lscc-ink mb-10"
             style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', letterSpacing: '-0.02em' }}>
             HOW REGISTRATION WORKS
@@ -133,6 +137,7 @@ export default function RegistrationPage() {
       {/* Need to Know */}
       <section className="py-16 px-6" style={{ background: 'white' }}>
         <div className="max-w-7xl mx-auto">
+          <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>Key Info</p>
           <h2 className="font-display font-black text-lscc-ink mb-10"
             style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', letterSpacing: '-0.02em' }}>
             WHAT YOU NEED TO KNOW
@@ -190,6 +195,7 @@ export default function RegistrationPage() {
       {/* Contact — Registrar */}
       <section className="py-16 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
+          <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>Registrar&apos;s Office</p>
           <h2 className="font-display font-black text-lscc-ink mb-8"
             style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', letterSpacing: '-0.02em' }}>
             CONTACT THE REGISTRAR&apos;S OFFICE

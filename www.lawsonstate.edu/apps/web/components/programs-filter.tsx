@@ -334,7 +334,7 @@ export default function ProgramsFilter() {
                 {filteredPrograms.map((program, i) => (
                   <Link key={program.id} href={program.href}>
                     <article
-                      className="card-appear group p-5 rounded-xl transition-colors"
+                      className="card-appear group p-5 rounded-none transition-colors"
                       style={{ border: '1px solid oklch(0 0 0 / 0.08)', background: 'white', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)', animationDelay: `${i * 0.04}s` }}
                     >
                       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">

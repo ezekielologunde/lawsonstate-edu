@@ -35,22 +35,28 @@ export default function DualEnrollmentPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="page-hero relative py-14 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '24vh', display: 'flex', alignItems: 'flex-end' }}>
+      <section className="page-hero relative px-6 overflow-hidden"
+        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}>
         <div className="absolute inset-0" aria-hidden
           style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
+          <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span className="mx-2" aria-hidden>›</span>
             <Link href="/admissions" className="hover:text-white transition-colors">How to Apply</Link>
             <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Dual Enrollment</span>
           </p>
-          <h1 className="font-display font-black text-white leading-none"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.6rem)', letterSpacing: '-0.025em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+            High School Students · College Credit · S.O.A.R.
+          </p>
+          <h1 className="font-display font-black text-white leading-none mb-4"
+            style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
             DUAL ENROLLMENT
           </h1>
+          <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.15rem)', color: 'oklch(1 0 0 / 0.70)', maxWidth: '56ch', lineHeight: 1.7 }}>
+            Grades 10–12 students can earn college credit at Lawson State while still in high school — over 51 courses available, and tuition may be waived through ACCS grants.
+          </p>
         </div>
       </section>
 
@@ -77,6 +83,7 @@ export default function DualEnrollmentPage() {
       <section className="py-14 px-6" style={{ background: 'white' }}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-12 items-start">
           <div>
+            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>Dual Enrollment Program</p>
             <h2 className="font-display font-black text-lscc-ink mb-4"
               style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', letterSpacing: '-0.02em' }}>
               EARN COLLEGE CREDIT IN HIGH SCHOOL

@@ -91,22 +91,28 @@ export default function PoliciesPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="relative py-14 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '24vh', display: 'flex', alignItems: 'flex-end' }}>
+      <section className="page-hero relative px-6 overflow-hidden"
+        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}>
         <div className="absolute inset-0" aria-hidden
           style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
+          <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span className="mx-2" aria-hidden>›</span>
             <Link href="/admissions" className="hover:text-white transition-colors">How to Apply</Link>
             <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Admissions Policies & Forms</span>
           </p>
-          <h1 className="font-display font-black text-white leading-none"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.6rem)', letterSpacing: '-0.025em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+            ACCS Board Policies · Downloadable Forms
+          </p>
+          <h1 className="font-display font-black text-white leading-none mb-4"
+            style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
             ADMISSIONS POLICIES &amp; FORMS
           </h1>
+          <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.15rem)', color: 'oklch(1 0 0 / 0.70)', maxWidth: '56ch', lineHeight: 1.7 }}>
+            Admissions policies at Lawson State are governed by the Alabama Community College System. Download the forms you need or contact the Admissions Office.
+          </p>
         </div>
       </section>
 
@@ -132,6 +138,7 @@ export default function PoliciesPage() {
       {/* Policies intro */}
       <section className="py-14 px-6" style={{ background: 'white' }}>
         <div className="max-w-7xl mx-auto max-w-3xl">
+          <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>ACCS Policies</p>
           <h2 className="font-display font-black text-lscc-ink mb-4"
             style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', letterSpacing: '-0.02em' }}>
             ADMISSIONS POLICIES &amp; PROCEDURES
@@ -163,6 +170,7 @@ export default function PoliciesPage() {
       {/* Forms */}
       <section className="py-14 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
+          <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>Downloadable Forms</p>
           <h2 className="font-display font-black text-lscc-ink mb-2"
             style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', letterSpacing: '-0.02em' }}>
             LAWSON STATE ADMISSIONS FORMS
