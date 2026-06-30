@@ -24,7 +24,7 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
   ],
   Institution: [
     { label: 'About Lawson State', href: '/about' },
-    { label: 'Faculty & Staff', href: '/contact' },
+    { label: 'Faculty & Staff', href: '/about/faculty' },
     { label: 'News & Events', href: '/calendar' },
     { label: 'Contact Us', href: '/contact' },
   ],

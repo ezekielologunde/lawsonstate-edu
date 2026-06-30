@@ -142,7 +142,7 @@ const NAV: NavEntry[] = [
         title: 'Campus',
         items: [
           { label: 'Campus Calendar', href: '/calendar',    note: 'Events & deadlines' },
-          { label: 'News & Stories',  href: '/about',       note: 'Latest from LSCC' },
+          { label: 'News & Stories',  href: '/news',        note: 'Latest from LSCC' },
           { label: 'Contact & Hours', href: '/contact',     note: 'Call, email, or visit' },
           { label: 'About LSCC',      href: '/about',       note: 'Mission & HBCU legacy' },
         ],
@@ -222,7 +222,7 @@ const MOBILE_GROUPS: MobileGroup[] = [
     href: '/about',
     items: [
       { label: 'About Lawson State', href: '/about' },
-      { label: 'News & Stories',     href: '/about' },
+      { label: 'News & Stories',     href: '/news' },
       { label: 'Contact Us',         href: '/contact' },
       { label: 'Visit Campus',       href: '/contact' },
     ],
