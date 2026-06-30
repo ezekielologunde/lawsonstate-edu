@@ -45,7 +45,7 @@ export default function NonDiscriminationPage() {
             <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Non-Discrimination</span>
           </p>
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Equal Opportunity · Civil Rights Compliance
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
@@ -79,11 +79,11 @@ export default function NonDiscriminationPage() {
             </div>
           </div>
           <div className="rounded-2xl p-7" style={{ background: 'oklch(0.22 0.17 261)' }}>
-            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>Compliance Contacts</p>
+            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>Compliance Contacts</p>
             <p className="font-display font-black text-white mb-5" style={{ fontSize: '1.2rem', letterSpacing: '-0.02em' }}>WHO TO CONTACT</p>
             <div className="flex flex-col gap-5">
               <div>
-                <p className="text-xs uppercase font-bold mb-1" style={{ color: 'oklch(0.79 0.19 78)', letterSpacing: '0.12em' }}>Title IX / Sex Discrimination</p>
+                <p className="text-xs uppercase font-bold mb-1" style={{ color: 'var(--lscc-eyebrow-on-dark)', letterSpacing: '0.12em' }}>Title IX / Sex Discrimination</p>
                 <p className="text-sm" style={{ color: 'oklch(1 0 0 / 0.75)', lineHeight: 1.6 }}>
                   Title IX Coordinator · Office of Student Affairs<br />
                   205.929.6437 · titleix@lawsonstate.edu
@@ -93,7 +93,7 @@ export default function NonDiscriminationPage() {
                 </Link>
               </div>
               <div style={{ borderTop: '1px solid oklch(1 0 0 / 0.12)', paddingTop: '1.2rem' }}>
-                <p className="text-xs uppercase font-bold mb-1" style={{ color: 'oklch(0.79 0.19 78)', letterSpacing: '0.12em' }}>Disability / Section 504 / ADA</p>
+                <p className="text-xs uppercase font-bold mb-1" style={{ color: 'var(--lscc-eyebrow-on-dark)', letterSpacing: '0.12em' }}>Disability / Section 504 / ADA</p>
                 <p className="text-sm" style={{ color: 'oklch(1 0 0 / 0.75)', lineHeight: 1.6 }}>
                   Section 504 / ADA Coordinator · Student Affairs<br />
                   205.929.6437 · ada@lawsonstate.edu
@@ -103,7 +103,7 @@ export default function NonDiscriminationPage() {
                 </Link>
               </div>
               <div style={{ borderTop: '1px solid oklch(1 0 0 / 0.12)', paddingTop: '1.2rem' }}>
-                <p className="text-xs uppercase font-bold mb-1" style={{ color: 'oklch(0.79 0.19 78)', letterSpacing: '0.12em' }}>All Other Discrimination</p>
+                <p className="text-xs uppercase font-bold mb-1" style={{ color: 'var(--lscc-eyebrow-on-dark)', letterSpacing: '0.12em' }}>All Other Discrimination</p>
                 <p className="text-sm" style={{ color: 'oklch(1 0 0 / 0.75)', lineHeight: 1.6 }}>
                   Office of the President / Human Resources<br />
                   205.925.2515 · hr@lawsonstate.edu

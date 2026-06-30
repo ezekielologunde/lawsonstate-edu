@@ -80,7 +80,7 @@ export default function RegistrationPage() {
             <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Registration</span>
           </p>
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Advising · Scheduling · Enrollment
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4"
@@ -167,7 +167,7 @@ export default function RegistrationPage() {
       <section className="py-16 px-6" style={{ background: 'oklch(0.22 0.17 261)' }}>
         <div className="max-w-7xl mx-auto text-center">
           <p className="font-display font-semibold uppercase mb-3"
-            style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+            style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Need Help Getting Started?
           </p>
           <h2 className="font-display font-black text-white mb-4"

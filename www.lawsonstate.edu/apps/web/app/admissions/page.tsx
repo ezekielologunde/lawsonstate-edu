@@ -168,7 +168,7 @@ export default function AdmissionsPage() {
       >
         <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="page-fade-1 font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="page-fade-1 font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Rolling Admissions · Free to Apply · No GPA Minimum
           </p>
           <h1 className="page-fade-2 font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em' }}>
@@ -373,7 +373,7 @@ export default function AdmissionsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="scroll-reveal">
-              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>Free · Walk-In or By Phone</p>
+              <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>Free · Walk-In or By Phone</p>
               <h2 className="font-display font-black leading-none mb-4 text-white" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em' }}>TALK TO AN ADVISOR</h2>
               <p className="leading-relaxed mb-8" style={{ fontSize: '1.05rem', color: 'oklch(1 0 0 / 0.72)', maxWidth: '48ch' }}>
                 Not sure where to start? Our advisors will walk you through program selection, placement testing, financial aid, and every document you need — at no cost.
@@ -397,7 +397,7 @@ export default function AdmissionsPage() {
                 { label: 'Walk-Ins', value: 'Birmingham & Bessemer' },
               ].map(item => (
                 <div key={item.label} className="rounded-xl p-4" style={{ background: 'oklch(1 0 0 / 0.07)', border: '1px solid oklch(1 0 0 / 0.12)' }}>
-                  <div className="font-semibold uppercase mb-0.5" style={{ fontSize: '0.72rem', letterSpacing: '0.14em', color: 'oklch(0.79 0.19 78)' }}>{item.label}</div>
+                  <div className="font-semibold uppercase mb-0.5" style={{ fontSize: '0.72rem', letterSpacing: '0.14em', color: 'var(--lscc-eyebrow-on-dark)' }}>{item.label}</div>
                   <div className="font-medium whitespace-pre-line" style={{ fontSize: '0.9rem', color: 'oklch(1 0 0 / 0.85)' }}>{item.value}</div>
                 </div>
               ))}

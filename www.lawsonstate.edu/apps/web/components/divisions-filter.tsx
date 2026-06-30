@@ -93,7 +93,7 @@ export default function DivisionsFilter({ divisions }: { divisions: Division[] }
               <div>
                 <div
                   className="font-display font-black mb-2"
-                  style={{ fontSize: '0.96rem', color: 'oklch(0.79 0.19 78)', letterSpacing: '0.1em' }}
+                  style={{ fontSize: '0.96rem', color: div.dark ? 'var(--lscc-eyebrow-on-dark)' : 'var(--lscc-eyebrow)', letterSpacing: '0.1em' }}
                 >
                   {div.number}
                 </div>

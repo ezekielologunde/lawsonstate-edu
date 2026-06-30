@@ -40,7 +40,7 @@ export default function AccreditationPage() {
             <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Accreditation</span>
           </p>
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             SACSCOC · Program Accreditation · Memberships
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
@@ -76,7 +76,7 @@ export default function AccreditationPage() {
             </a>
           </div>
           <div className="rounded-2xl p-7" style={{ background: 'oklch(0.22 0.17 261)' }}>
-            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>HBCU Status</p>
+            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>HBCU Status</p>
             <p className="font-display font-black text-white mb-4" style={{ fontSize: '1.2rem', letterSpacing: '-0.02em' }}>HISTORICALLY BLACK COMMUNITY COLLEGE</p>
             <p style={{ fontSize: '0.88rem', color: 'oklch(1 0 0 / 0.68)', lineHeight: 1.7 }}>
               Lawson State Community College was founded in 1949 and is designated a Historically Black College or University (HBCU) under Title III of the Higher Education Act. This designation reflects our founding mission and ongoing commitment to access, equity, and educational opportunity.

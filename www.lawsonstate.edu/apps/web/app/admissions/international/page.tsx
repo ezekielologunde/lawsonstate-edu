@@ -76,7 +76,7 @@ export default function InternationalPage() {
             <span className="mx-2" aria-hidden>â€º</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>International Students</span>
           </p>
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             F-1 &amp; M-1 Visa Â· Birmingham Campus
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4"

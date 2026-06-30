@@ -49,7 +49,7 @@ export default function TitleIXPage() {
             <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Title IX</span>
           </p>
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Federal Law · Sexual Misconduct Policy
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
@@ -77,27 +77,27 @@ export default function TitleIXPage() {
             className="rounded-2xl p-8"
             style={{ background: 'oklch(0.22 0.17 261)', boxShadow: '0 4px 24px oklch(0.22 0.17 261 / 0.25)' }}
           >
-            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>Report a Concern</p>
+            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>Report a Concern</p>
             <p className="font-display font-black text-white mb-5" style={{ fontSize: '1.5rem', letterSpacing: '-0.02em' }}>TITLE IX COORDINATOR</p>
             <div className="flex flex-col gap-3 text-sm" style={{ color: 'oklch(1 0 0 / 0.80)' }}>
               <div>
-                <span style={{ color: 'oklch(0.79 0.19 78)', fontWeight: 700, display: 'block', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.15rem' }}>Office</span>
+                <span style={{ color: 'var(--lscc-eyebrow-on-dark)', fontWeight: 700, display: 'block', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.15rem' }}>Office</span>
                 Office of Student Affairs, Lawson State Community College
               </div>
               <div>
-                <span style={{ color: 'oklch(0.79 0.19 78)', fontWeight: 700, display: 'block', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.15rem' }}>Phone</span>
+                <span style={{ color: 'var(--lscc-eyebrow-on-dark)', fontWeight: 700, display: 'block', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.15rem' }}>Phone</span>
                 205.929.6437
               </div>
               <div>
-                <span style={{ color: 'oklch(0.79 0.19 78)', fontWeight: 700, display: 'block', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.15rem' }}>Email</span>
+                <span style={{ color: 'var(--lscc-eyebrow-on-dark)', fontWeight: 700, display: 'block', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.15rem' }}>Email</span>
                 titleix@lawsonstate.edu
               </div>
               <div>
-                <span style={{ color: 'oklch(0.79 0.19 78)', fontWeight: 700, display: 'block', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.15rem' }}>Location</span>
+                <span style={{ color: 'var(--lscc-eyebrow-on-dark)', fontWeight: 700, display: 'block', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.15rem' }}>Location</span>
                 Birmingham Campus · Student Services Building
               </div>
               <div>
-                <span style={{ color: 'oklch(0.79 0.19 78)', fontWeight: 700, display: 'block', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.15rem' }}>Hours</span>
+                <span style={{ color: 'var(--lscc-eyebrow-on-dark)', fontWeight: 700, display: 'block', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.15rem' }}>Hours</span>
                 Monday – Friday · 8 AM – 5 PM
               </div>
             </div>

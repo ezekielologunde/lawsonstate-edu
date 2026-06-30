@@ -61,7 +61,7 @@ export default function WeekendCollegePage() {
             <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Weekend College</span>
           </p>
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Friday · Saturday · Hybrid Options
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
@@ -151,7 +151,7 @@ export default function WeekendCollegePage() {
             <p className="mt-4 text-sm" style={{ color: 'oklch(0.55 0.04 261)' }}>Course availability changes each semester. Search MyLawson for current sections.</p>
           </div>
           <div className="rounded-2xl p-7" style={{ background: 'oklch(0.22 0.17 261)' }}>
-            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>Find Sections</p>
+            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>Find Sections</p>
             <p className="font-display font-black text-white mb-4" style={{ fontSize: '1.2rem', letterSpacing: '-0.02em' }}>SEARCH THE CLASS SCHEDULE</p>
             <p style={{ fontSize: '0.88rem', color: 'oklch(1 0 0 / 0.65)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               In MyLawson, search for classes and filter by meeting day — select Friday or Saturday to see all Weekend College sections. You can also filter by campus (Birmingham or Bessemer) and subject.

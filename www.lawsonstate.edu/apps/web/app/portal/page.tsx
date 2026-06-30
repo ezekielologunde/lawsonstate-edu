@@ -80,7 +80,7 @@ export default function PortalPage() {
       >
         <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full" style={{ position: 'relative', zIndex: 1 }}>
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Student Gateway · Lawson State CC
           </p>
           <h1 className="font-display font-black leading-none mb-3" style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.5rem)', letterSpacing: '-0.025em', color: 'white' }}>
@@ -197,7 +197,7 @@ export default function PortalPage() {
 
             {/* Admission advising */}
             <div className="rounded-2xl p-8 scroll-reveal" style={{ background: 'oklch(0.22 0.17 261)' }}>
-              <div className="font-display font-black mb-1" style={{ fontSize: '0.74rem', letterSpacing: '0.18em', color: 'oklch(0.79 0.19 78)' }}>FOR PROSPECTIVE STUDENTS</div>
+              <div className="font-display font-black mb-1" style={{ fontSize: '0.74rem', letterSpacing: '0.18em', color: 'var(--lscc-eyebrow-on-dark)' }}>FOR PROSPECTIVE STUDENTS</div>
               <h3 className="font-display font-bold mb-3 text-white" style={{ fontSize: '1.3rem' }}>Admission Advising</h3>
               <p className="leading-relaxed mb-6" style={{ fontSize: '0.96rem', color: 'oklch(1 0 0 / 0.72)' }}>
                 Not sure where to start? Talk to an Admissions advisor before you apply. We will walk you through program options, placement, financial aid, and your next step.

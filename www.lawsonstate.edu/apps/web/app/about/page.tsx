@@ -81,7 +81,7 @@ export default function AboutPage() {
         <div className="absolute inset-0" aria-hidden
           style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Est. 1949 · Birmingham, AL
           </p>
           <h1
@@ -307,7 +307,7 @@ export default function AboutPage() {
       {/* Next Steps CTA */}
       <section className="py-20 px-6" style={{ background: 'oklch(0.42 0.17 261)' }}>
         <div className="max-w-7xl mx-auto scroll-reveal">
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Ready to Join Us?</p>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Ready to Join Us?</p>
           <h2 className="font-display font-black leading-none mb-6" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'white' }}>YOUR NEXT STEPS</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             {[
@@ -316,7 +316,7 @@ export default function AboutPage() {
               { step: '03', label: 'Pick Your Program', desc: 'Browse 60+ degrees, certificates, and transfer pathways.', href: '/academics' },
             ].map(s => (
               <Link key={s.step} href={s.href} className="press rounded-2xl p-6 block" style={{ background: 'oklch(1 0 0 / 0.07)', border: '1px solid oklch(1 0 0 / 0.14)' }}>
-                <div className="font-display font-black mb-1" style={{ fontSize: '0.74rem', letterSpacing: '0.18em', color: 'oklch(0.79 0.19 78)' }}>STEP {s.step}</div>
+                <div className="font-display font-black mb-1" style={{ fontSize: '0.74rem', letterSpacing: '0.18em', color: 'var(--lscc-eyebrow-on-dark)' }}>STEP {s.step}</div>
                 <div className="font-display font-bold mb-2" style={{ fontSize: '1.1rem', color: 'white' }}>{s.label}</div>
                 <p style={{ fontSize: '0.92rem', color: 'oklch(1 0 0 / 0.70)' }}>{s.desc}</p>
               </Link>

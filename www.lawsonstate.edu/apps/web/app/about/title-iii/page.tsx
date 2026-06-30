@@ -37,7 +37,7 @@ export default function TitleIIIPage() {
             <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Title III</span>
           </p>
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Higher Education Act · HBCU Strengthening
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
@@ -73,7 +73,7 @@ export default function TitleIIIPage() {
             </a>
           </div>
           <div className="rounded-2xl p-7" style={{ background: 'oklch(0.22 0.17 261)' }}>
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>HBCU Eligibility</p>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>HBCU Eligibility</p>
             <p className="font-display font-black text-white mb-4" style={{ fontSize: '1.1rem', letterSpacing: '-0.02em' }}>WHO QUALIFIES FOR TITLE III</p>
             <ul className="flex flex-col gap-3">
               {ELIGIBILITY.map((e) => (

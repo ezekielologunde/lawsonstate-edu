@@ -50,7 +50,7 @@ export default function NewsEvents({
         {/* Header */}
         <div className="flex items-end justify-between mb-12 scroll-reveal">
           <div>
-            <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'oklch(0.79 0.19 78)', marginBottom: '0.4rem', fontWeight: 700 }}>
+            <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--lscc-eyebrow-on-dark)', marginBottom: '0.4rem', fontWeight: 700 }}>
               06 — Campus life
             </p>
             <h2
@@ -170,7 +170,7 @@ export default function NewsEvents({
             style={{ background: 'oklch(0.22 0.16 261)' }}
           >
             <div className="px-5 pt-5 pb-4" style={{ borderBottom: '1px solid oklch(1 0 0 / 0.10)' }}>
-              <p style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'oklch(0.79 0.19 78)', fontWeight: 700 }}>
+              <p style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--lscc-eyebrow-on-dark)', fontWeight: 700 }}>
                 Upcoming Events
               </p>
             </div>
@@ -191,7 +191,7 @@ export default function NewsEvents({
                         className="shrink-0 flex flex-col items-center justify-center rounded-xl"
                         style={{ width: '44px', height: '44px', background: 'oklch(0.30 0.20 261)' }}
                       >
-                        <span style={{ fontSize: '0.52rem', fontWeight: 700, letterSpacing: '0.10em', color: 'oklch(0.79 0.19 78)', lineHeight: 1 }}>
+                        <span style={{ fontSize: '0.52rem', fontWeight: 700, letterSpacing: '0.10em', color: 'var(--lscc-eyebrow-on-dark)', lineHeight: 1 }}>
                           {month}
                         </span>
                         <span className="font-display font-black text-white leading-none" style={{ fontSize: '1.3rem', letterSpacing: '-0.03em' }}>

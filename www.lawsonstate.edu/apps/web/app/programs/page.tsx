@@ -39,7 +39,7 @@ export default function ProgramsPage() {
         <div className="relative max-w-7xl mx-auto w-full">
           <p
             className="font-display font-semibold uppercase mb-3"
-            style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.22em' }}
+            style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '1.08rem', letterSpacing: '0.22em' }}
           >
             Programs & Degrees
           </p>

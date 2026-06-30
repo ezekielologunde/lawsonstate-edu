@@ -77,7 +77,7 @@ export default function WorkforcePage() {
         <div className="absolute inset-0" aria-hidden
           style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>
             Fast-Track Skills Training · Bessemer Campus
           </p>
           <h1 className="font-display font-black leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em', color: 'white' }}>
@@ -228,7 +228,7 @@ export default function WorkforcePage() {
       <section className="py-16 px-6" style={{ background: 'oklch(0.42 0.17 261)' }}>
         <div className="max-w-7xl mx-auto scroll-reveal flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
-            <p className="font-display font-semibold uppercase mb-2" style={{ fontSize: '0.78rem', letterSpacing: '0.18em', color: 'oklch(0.79 0.19 78)' }}>Looking for a Degree?</p>
+            <p className="font-display font-semibold uppercase mb-2" style={{ fontSize: '0.78rem', letterSpacing: '0.18em', color: 'var(--lscc-eyebrow-on-dark)' }}>Looking for a Degree?</p>
             <h2 className="font-display font-black text-white leading-none mb-2" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', letterSpacing: '-0.025em' }}>
               EXPLORE FULL DEGREE PROGRAMS
             </h2>

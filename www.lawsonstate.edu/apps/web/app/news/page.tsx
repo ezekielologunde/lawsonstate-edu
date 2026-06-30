@@ -86,7 +86,7 @@ export default function NewsPage() {
             <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>News & Stories</span>
           </p>
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Lawson State Community College
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
@@ -137,7 +137,7 @@ export default function NewsPage() {
               <span className="text-sm" style={{ color: 'oklch(1 0 0 / 0.50)' }}>{FEATURED.date}</span>
               <span
                 className="text-xs font-bold uppercase px-3 py-1 rounded-full"
-                style={{ background: 'oklch(0.79 0.19 78 / 0.15)', color: 'oklch(0.79 0.19 78)', letterSpacing: '0.08em' }}
+                style={{ background: 'oklch(0.79 0.19 78 / 0.15)', color: 'var(--lscc-eyebrow-on-dark)', letterSpacing: '0.08em' }}
               >
                 Featured
               </span>

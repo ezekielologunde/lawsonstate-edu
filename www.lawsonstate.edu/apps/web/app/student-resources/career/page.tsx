@@ -90,7 +90,7 @@ export default function CareerServicesPage() {
             <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Career Services</span>
           </p>
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Career Development · Student Success
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.6rem)', letterSpacing: '-0.025em' }}>
@@ -199,7 +199,7 @@ export default function CareerServicesPage() {
 
           {/* Contact card */}
           <div className="rounded-2xl p-8" style={{ background: 'oklch(0.22 0.17 261)' }}>
-            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>Career Services</p>
+            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>Career Services</p>
             <p className="font-display font-black text-white mb-4" style={{ fontSize: '1.4rem', letterSpacing: '-0.02em' }}>SCHEDULE AN APPOINTMENT</p>
             <p style={{ fontSize: '0.9rem', color: 'oklch(1 0 0 / 0.70)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               Our career coaches are available in person on both campuses and virtually through Handshake. Walk-ins welcome during office hours.

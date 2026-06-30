@@ -50,7 +50,7 @@ export default function AthleticsPage() {
             <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Cougar Athletics</span>
           </p>
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             NJCAA Division I · Alabama Community College Conference
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.6rem, 6vw, 5.2rem)', letterSpacing: '-0.03em' }}>
@@ -150,7 +150,7 @@ export default function AthleticsPage() {
 
           {/* Recruitment card */}
           <div className="rounded-2xl p-8" style={{ background: 'oklch(0.22 0.17 261)' }}>
-            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>Prospective Athletes</p>
+            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>Prospective Athletes</p>
             <p className="font-display font-black text-white mb-4" style={{ fontSize: '1.5rem', letterSpacing: '-0.02em' }}>WANT TO PLAY FOR THE COUGARS?</p>
             <p style={{ fontSize: '0.9rem', color: 'oklch(1 0 0 / 0.70)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               Contact the Athletics Department to learn about tryouts, scholarships, and eligibility requirements for NJCAA student-athletes.

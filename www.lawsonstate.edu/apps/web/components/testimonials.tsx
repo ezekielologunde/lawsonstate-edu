@@ -98,7 +98,7 @@ export default function Testimonials() {
         {/* Header row */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
           <div>
-            <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'oklch(0.79 0.19 78)', textTransform: 'uppercase', marginBottom: '0.4rem', fontWeight: 700 }}>
+            <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'var(--lscc-eyebrow-on-dark)', textTransform: 'uppercase', marginBottom: '0.4rem', fontWeight: 700 }}>
               02 — Real Student Stories
             </p>
             <h2 className="font-display font-black text-white leading-none" style={{ fontSize: 'clamp(2.6rem, 5.5vw, 4.2rem)', letterSpacing: '-0.04em' }}>
@@ -226,7 +226,7 @@ export default function Testimonials() {
             <Link
               href={tab.href}
               className="press inline-flex items-center gap-2 font-bold self-start"
-              style={{ fontSize: '0.85rem', color: 'oklch(0.79 0.19 78)', letterSpacing: '0.02em' }}
+              style={{ fontSize: '0.85rem', color: 'var(--lscc-eyebrow-on-dark)', letterSpacing: '0.02em' }}
             >
               {tab.cta}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>

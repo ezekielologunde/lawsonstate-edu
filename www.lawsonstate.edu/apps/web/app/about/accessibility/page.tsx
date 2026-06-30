@@ -39,7 +39,7 @@ export default function AccessibilityPage() {
             <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Accessibility</span>
           </p>
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             WCAG 2.1 AA · ADA · Section 508
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
@@ -127,7 +127,7 @@ export default function AccessibilityPage() {
             </div>
           </div>
           <div className="rounded-2xl p-7" style={{ background: 'oklch(0.22 0.17 261)' }}>
-            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>Alternative Access</p>
+            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>Alternative Access</p>
             <h3 className="font-display font-black text-white mb-4" style={{ fontSize: '1.3rem', letterSpacing: '-0.01em' }}>NEED ANOTHER FORMAT?</h3>
             <p style={{ fontSize: '0.9rem', color: 'oklch(1 0 0 / 0.70)', lineHeight: 1.7, marginBottom: '1.25rem' }}>
               If digital content is inaccessible to you due to a disability, we will provide an accessible alternative format upon request — large print, audio recording, or an in-person alternative.

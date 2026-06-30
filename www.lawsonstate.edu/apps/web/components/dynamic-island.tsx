@@ -62,7 +62,7 @@ export default function DynamicIsland() {
               LAWSON STATE
             </span>
           </div>
-          <span style={{ fontSize: '0.65rem', color: 'oklch(0.79 0.19 78)', fontWeight: 700, letterSpacing: '0.08em' }}>
+          <span style={{ fontSize: '0.65rem', color: 'var(--lscc-eyebrow-on-dark)', fontWeight: 700, letterSpacing: '0.08em' }}>
             APPLY NOW →
           </span>
         </button>
@@ -70,7 +70,7 @@ export default function DynamicIsland() {
         /* Expanded panel */
         <div className="w-full">
           <div className="flex items-center justify-between mb-3">
-            <span style={{ fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.14em', color: 'oklch(0.79 0.19 78)', textTransform: 'uppercase' }}>
+            <span style={{ fontSize: '0.68rem', fontWeight: 800, letterSpacing: '0.14em', color: 'var(--lscc-eyebrow-on-dark)', textTransform: 'uppercase' }}>
               Quick Links
             </span>
             <button

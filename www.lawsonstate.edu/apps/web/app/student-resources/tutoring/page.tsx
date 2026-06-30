@@ -88,7 +88,7 @@ export default function TutoringPage() {
             <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Tutoring &amp; Support</span>
           </p>
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Academic Support · Student Services
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.6rem)', letterSpacing: '-0.025em' }}>
@@ -180,7 +180,7 @@ export default function TutoringPage() {
             className="rounded-2xl p-8"
             style={{ background: 'oklch(0.22 0.17 261)', color: 'white' }}
           >
-            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>Get Help Now</p>
+            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>Get Help Now</p>
             <p className="font-display font-black mb-4" style={{ fontSize: '1.5rem', letterSpacing: '-0.02em' }}>STILL NOT SURE WHERE TO START?</p>
             <p style={{ fontSize: '0.9rem', color: 'oklch(1 0 0 / 0.70)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               Your advisor is your best first call. They can point you to exactly the right resource — whether it&apos;s tutoring, counseling, disability services, or financial help.

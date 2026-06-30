@@ -100,7 +100,7 @@ export default function StudentResourcesPage() {
       >
         <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full" style={{ position: 'relative', zIndex: 1 }}>
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Current Students · Lawson State CC
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.6rem, 6vw, 5rem)', letterSpacing: '-0.025em' }}>
@@ -174,7 +174,7 @@ export default function StudentResourcesPage() {
       <div style={{ background: 'oklch(0.22 0.17 261)' }}>
         <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
-            <p className="font-display font-semibold uppercase mb-1" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.75rem', letterSpacing: '0.2em' }}>Need Help?</p>
+            <p className="font-display font-semibold uppercase mb-1" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.75rem', letterSpacing: '0.2em' }}>Need Help?</p>
             <p className="font-display font-black text-white" style={{ fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)', letterSpacing: '-0.02em' }}>We&apos;re here for you.</p>
             <p style={{ fontSize: '0.9rem', color: 'oklch(1 0 0 / 0.65)', marginTop: '0.4rem' }}>
               Call 205.925.2515 · Visit either Birmingham campus · Email counseling@lawsonstate.edu
