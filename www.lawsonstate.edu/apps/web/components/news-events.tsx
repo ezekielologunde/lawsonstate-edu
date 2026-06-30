@@ -62,7 +62,7 @@ export default function NewsEvents({
           </div>
           <div className="hidden md:flex gap-5">
             <Link
-              href="/calendar"
+              href="/news"
               className="inline-flex items-center gap-1 font-semibold transition-colors"
               style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}
             >
