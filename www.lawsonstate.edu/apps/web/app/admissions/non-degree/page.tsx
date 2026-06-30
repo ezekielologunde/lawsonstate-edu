@@ -119,8 +119,8 @@ export default function NonDegreePage() {
             </div>
             <div className="space-y-4">
               {[
-                { sem: 'Summer 2025', date: 'May 21st' },
-                { sem: 'Fall 2025',   date: 'August 18th' },
+                { sem: 'Fall 2026',   date: 'August 17th' },
+                { sem: 'Spring 2027', date: 'January 12th' },
               ].map(s => (
                 <div key={s.sem} className="flex items-center justify-between py-3 border-b"
                   style={{ borderColor: 'oklch(0 0 0 / 0.10)' }}>
