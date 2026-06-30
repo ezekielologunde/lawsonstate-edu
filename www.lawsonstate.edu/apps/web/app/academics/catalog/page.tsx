@@ -1,6 +1,8 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
+import Prefooter from '@/components/prefooter'
+import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 const CATALOG_SECTIONS = [
   { title: 'Degree Programs', desc: 'Associate of Arts, Associate of Science, Associate of Applied Science degrees — full program requirements listed by division.', icon: '🎓' },
@@ -149,7 +151,13 @@ export default function CatalogPage() {
         </div>
       </section>
 
+      <Prefooter />
+
       <SiteFooter />
+
+      <MobileBottomNav />
+
+      <div className="mobile-nav-spacer" />
     </>
   )
 }

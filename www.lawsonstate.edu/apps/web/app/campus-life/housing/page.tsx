@@ -1,6 +1,8 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
+import Prefooter from '@/components/prefooter'
+import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 const NEARBY = [
   { name: 'Reserve at Riverchase', distance: '~3.5 mi from Birmingham Campus', amenities: ['Student-friendly leasing', 'Bus route access', 'Furnished options'] },
@@ -152,7 +154,13 @@ export default function HousingPage() {
         </div>
       </div>
 
+      <Prefooter />
+
       <SiteFooter />
+
+      <MobileBottomNav />
+
+      <div className="mobile-nav-spacer" />
     </>
   )
 }

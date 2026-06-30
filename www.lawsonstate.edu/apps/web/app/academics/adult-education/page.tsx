@@ -1,6 +1,8 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
+import Prefooter from '@/components/prefooter'
+import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 const PROGRAMS = [
   {
@@ -155,7 +157,13 @@ export default function AdultEducationPage() {
         </div>
       </div>
 
+      <Prefooter />
+
       <SiteFooter />
+
+      <MobileBottomNav />
+
+      <div className="mobile-nav-spacer" />
     </>
   )
 }

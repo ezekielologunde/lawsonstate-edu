@@ -1,6 +1,8 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
+import Prefooter from '@/components/prefooter'
+import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 const PARTNER_UNIVERSITIES = [
   { name: 'University of Alabama', abbr: 'UA', location: 'Tuscaloosa', note: 'Guaranteed admission with 60+ credit hours and 2.0 GPA', href: 'https://ua.edu' },
@@ -194,7 +196,13 @@ export default function AlabamaTransferPage() {
         </div>
       </div>
 
+      <Prefooter />
+
       <SiteFooter />
+
+      <MobileBottomNav />
+
+      <div className="mobile-nav-spacer" />
     </>
   )
 }

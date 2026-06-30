@@ -222,7 +222,10 @@ export default function NewsPage() {
         </div>
       </div>
 
+      <Prefooter />
       <SiteFooter />
+      <MobileBottomNav />
+      <div className="mobile-nav-spacer" />
     </>
   )
 }

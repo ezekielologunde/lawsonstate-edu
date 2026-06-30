@@ -1,6 +1,8 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
+import Prefooter from '@/components/prefooter'
+import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 const REPORTS = [
   { year: '2023–2024', label: 'Annual Financial Report', type: 'Audited', href: 'https://lawsonstate.edu/about/financials', available: true },
@@ -113,7 +115,13 @@ export default function FinancialDataPage() {
         </div>
       </section>
 
+      <Prefooter />
+
       <SiteFooter />
+
+      <MobileBottomNav />
+
+      <div className="mobile-nav-spacer" />
     </>
   )
 }

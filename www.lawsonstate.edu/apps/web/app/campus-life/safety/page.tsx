@@ -1,6 +1,8 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
+import Prefooter from '@/components/prefooter'
+import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 const EMERGENCY_CONTACTS = [
   { label: '911 — Police, Fire, Medical', value: '911', href: 'tel:911', urgent: true },
@@ -156,7 +158,13 @@ export default function StudentSafetyPage() {
         </div>
       </section>
 
+      <Prefooter />
+
       <SiteFooter />
+
+      <MobileBottomNav />
+
+      <div className="mobile-nav-spacer" />
     </>
   )
 }

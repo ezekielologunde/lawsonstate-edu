@@ -1,6 +1,8 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
+import Prefooter from '@/components/prefooter'
+import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 const SPORTS = [
   { name: 'Baseball', season: 'Spring', conf: 'ACCC / NJCAA Division I', note: 'Competing since 1971' },
@@ -168,7 +170,13 @@ export default function AthleticsPage() {
         </div>
       </section>
 
+      <Prefooter />
+
       <SiteFooter />
+
+      <MobileBottomNav />
+
+      <div className="mobile-nav-spacer" />
     </>
   )
 }

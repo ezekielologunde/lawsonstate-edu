@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/nav'
+import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
+import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 export const metadata: Metadata = {
   title: 'Veterans & Military — Admissions | Lawson State',
@@ -16,7 +18,9 @@ const SUBNAV = [
   { label: 'Transient Students',                href: '/admissions/transient' },
   { label: 'Admissions Policies & Forms',       href: '/admissions/policies' },
   { label: 'Dual Enrollment',                   href: '/admissions/dual-enrollment' },
+  { label: 'Veterans & Military',               href: '/admissions/veterans' },
 ]
+const ACTIVE = '/admissions/veterans'
 
 const BENEFITS = [
   {
@@ -103,8 +107,8 @@ export default function VeteransPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="page-hero relative py-14 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '30vh', display: 'flex', alignItems: 'flex-end' }}>
+      <section className="page-hero relative px-6 overflow-hidden"
+        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}>
         <div className="absolute inset-0" aria-hidden
           style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
@@ -137,8 +141,8 @@ export default function VeteransPage() {
               <Link href={href}
                 className="inline-block py-4 px-4 text-sm font-medium border-b-2 transition-colors whitespace-nowrap"
                 style={{
-                  borderColor: 'transparent',
-                  color: 'oklch(0.45 0.08 263)',
+                  borderColor: href === ACTIVE ? 'oklch(0.79 0.19 78)' : 'transparent',
+                  color: href === ACTIVE ? 'oklch(0.22 0.17 261)' : 'oklch(0.45 0.08 263)',
                 }}>
                 {label}
               </Link>
@@ -259,7 +263,10 @@ export default function VeteransPage() {
         </div>
       </div>
 
+      <Prefooter />
       <SiteFooter />
+      <MobileBottomNav />
+      <div className="mobile-nav-spacer" />
     </>
   )
 }

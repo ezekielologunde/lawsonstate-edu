@@ -1,6 +1,8 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
+import Prefooter from '@/components/prefooter'
+import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 const PROTECTED_CLASSES = [
   { basis: 'Race, Color, or National Origin', law: 'Title VI · Civil Rights Act of 1964' },
@@ -168,7 +170,13 @@ export default function NonDiscriminationPage() {
         </div>
       </section>
 
+      <Prefooter />
+
       <SiteFooter />
+
+      <MobileBottomNav />
+
+      <div className="mobile-nav-spacer" />
     </>
   )
 }

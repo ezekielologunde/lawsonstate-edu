@@ -1,6 +1,8 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
+import Prefooter from '@/components/prefooter'
+import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 const INCIDENT_TYPES = [
   { title: 'Academic Misconduct', desc: 'Plagiarism, cheating, fabrication of data, academic dishonesty by another student.', severity: 'standard' },
@@ -160,7 +162,13 @@ export default function StudentIncidentPage() {
         </div>
       </section>
 
+      <Prefooter />
+
       <SiteFooter />
+
+      <MobileBottomNav />
+
+      <div className="mobile-nav-spacer" />
     </>
   )
 }

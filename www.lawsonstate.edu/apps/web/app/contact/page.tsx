@@ -32,14 +32,14 @@ const CAMPUSES = [
 ]
 
 const DEPARTMENTS = [
-  { label: 'Admissions',       phone: '205.925.2515', tel: '+12059252515' },
-  { label: 'Financial Aid',    phone: '205.925.2515', tel: '+12059252515' },
-  { label: 'Registrar',        phone: '205.925.2515', tel: '+12059252515' },
-  { label: 'Student Affairs',  phone: '205.925.2515', tel: '+12059252515' },
-  { label: 'Workforce Dev.',   phone: '205.925.2515', tel: '+12059252515' },
-  { label: 'Dual Enrollment',  phone: '205.925.2515', tel: '+12059252515' },
-  { label: 'Career Services',  phone: '205.925.2515', tel: '+12059252515' },
-  { label: 'Disability Svc.',  phone: '205.925.2515', tel: '+12059252515' },
+  { label: 'Admissions',       phone: '205.929.6309', tel: '+12059296309' },
+  { label: 'Financial Aid',    phone: '205.929.6330', tel: '+12059296330' },
+  { label: 'Registrar',        phone: '205.929.6350', tel: '+12059296350' },
+  { label: 'Student Affairs',  phone: '205.929.6361', tel: '+12059296361' },
+  { label: 'Workforce Dev.',   phone: '205.929.6770', tel: '+12059296770' },
+  { label: 'Dual Enrollment',  phone: '205.929.6378', tel: '+12059296378' },
+  { label: 'Career Services',  phone: '205.929.6382', tel: '+12059296382' },
+  { label: 'Disability Svc.',  phone: '205.929.6394', tel: '+12059296394' },
 ]
 
 const QUICK_LINKS = [
