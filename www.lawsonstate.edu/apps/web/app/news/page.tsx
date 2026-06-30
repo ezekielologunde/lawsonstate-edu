@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Nav from '@/components/nav'
+import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
+import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 const CATEGORIES = ['All', 'Academics', 'Athletics', 'Student Life', 'Community', 'Awards & Honors', 'Workforce']
 
