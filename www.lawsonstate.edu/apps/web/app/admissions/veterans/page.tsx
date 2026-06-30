@@ -35,7 +35,7 @@ const BENEFITS = [
     badge: 'Chapter 1606',
   },
   {
-    label: 'Survivors' and Dependents' Educational Assistance (Chapter 35)',
+    label: "Survivors' and Dependents' Educational Assistance (Chapter 35)",
     desc: 'For dependents of veterans who are permanently and totally disabled or who died while on active duty. Contact the VA for eligibility details.',
     badge: 'Chapter 35',
   },
