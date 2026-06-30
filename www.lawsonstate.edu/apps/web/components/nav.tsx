@@ -3,231 +3,8 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import SearchModal from './search-modal'
-
-// ── Types ───────────────────────────────────────────────────────
-
-type NavChild = {
-  label: string
-  href: string
-  note?: string
-  highlight?: boolean
-  external?: boolean
-}
-
-type NavGroup = { title: string; items: NavChild[] }
-
-type NavEntry = { label: string; href: string; mega?: NavGroup[] }
-
-type MobileItem = NavChild & { gold?: boolean }
-
-type MobileGroup = { label: string; href: string; items: MobileItem[] }
-
-// ── Desktop nav data ────────────────────────────────────────────
-
-const NAV: NavEntry[] = [
-  {
-    label: 'Programs',
-    href: '/academics',
-    mega: [
-      {
-        title: 'Program Areas',
-        items: [
-          { label: 'Health Sciences',   href: '/academics?tag=health',               note: 'Nursing, Dental, EMS' },
-          { label: 'Business & IT',     href: '/academics?tag=business',             note: 'Accounting, CIS, Admin' },
-          { label: 'Trades & CTE',      href: '/academics?tag=trades',               note: 'Mechatronics, HVAC, Welding' },
-          { label: 'Transfer Degrees',  href: '/academics?tag=transfer',             note: 'To UAB, Auburn & more' },
-          { label: 'Online Learning',   href: 'https://lawsonstate.instructure.com', note: 'Canvas LMS', external: true },
-        ],
-      },
-      {
-        title: 'More Options',
-        items: [
-          { label: 'All 200+ Programs',  href: '/academics',  highlight: true },
-          { label: 'Workforce Training', href: '/workforce',   note: 'Industry certs in months' },
-          { label: 'Continuing Ed',      href: '/academics',  note: 'Non-credit courses' },
-          { label: 'Academic Calendar',  href: '/calendar',   note: 'Important dates' },
-        ],
-      },
-    ],
-  },
-  {
-    label: 'Admissions',
-    href: '/admissions',
-    mega: [
-      {
-        title: 'Get Started',
-        items: [
-          { label: 'Apply Now',           href: '/admissions/apply',           highlight: true },
-          { label: 'New Students',        href: '/admissions',                 note: 'First-time college' },
-          { label: 'Transfer Students',   href: '/admissions/transfer',        note: 'Credits transfer easily' },
-          { label: 'Dual Enrollment',     href: '/admissions/dual-enrollment', note: 'High school + college' },
-          { label: 'Veterans & Military', href: '/admissions/veterans',          note: 'GI Bill & benefits' },
-        ],
-      },
-      {
-        title: 'Resources',
-        items: [
-          { label: 'Financial Aid',  href: '/financial-aid',              note: 'Grants, Pell, scholarships' },
-          { label: 'FAFSA Guide',    href: '/financial-aid/fafsa',        note: 'School code: 001025' },
-          { label: 'Visit Campus',   href: '/contact',       note: '2 Birmingham locations' },
-          { label: 'Advising',       href: '/contact',       note: 'Talk to an advisor' },
-        ],
-      },
-    ],
-  },
-  {
-    label: 'Financial Aid',
-    href: '/financial-aid',
-    mega: [
-      {
-        title: 'Apply for Aid',
-        items: [
-          { label: 'FAFSA Guide',        href: '/financial-aid/fafsa',         note: 'Step-by-step walkthrough',  highlight: true },
-          { label: 'Scholarships',       href: '/financial-aid/scholarships',  note: '$1.5M awarded annually' },
-          { label: 'Aid Overview',       href: '/financial-aid',               note: 'Grants, Pell, work-study' },
-        ],
-      },
-      {
-        title: 'Costs & Planning',
-        items: [
-          { label: 'Tuition & Fees',    href: '/financial-aid',               note: '$131 / credit hour in-state' },
-          { label: 'Special Circumstances', href: '/contact',                 note: 'Income change? Ask us' },
-          { label: 'Financial Aid Office', href: '/contact',                  note: '205.929.6346' },
-        ],
-      },
-    ],
-  },
-  {
-    label: 'Current Students',
-    href: '/student-resources',
-    mega: [
-      {
-        title: 'Log In',
-        items: [
-          { label: 'MyLawson',      href: 'https://my.lawsonstate.edu',         note: 'Register, grades, payments',       external: true },
-          { label: 'Canvas',        href: 'https://lawsonstate.instructure.com', note: 'Online courses & assignments',     external: true },
-          { label: 'Student Email', href: 'https://webmail.lawsonstate.edu',     note: 'Your LSCC email account',          external: true },
-          { label: 'Help Desk',     href: 'mailto:help@lawsonstate.edu',         note: 'IT support · help@lawsonstate.edu', external: true },
-        ],
-      },
-      {
-        title: 'Student Services',
-        items: [
-          { label: 'Student Resources',     href: '/student-resources',              note: 'All tools & services' },
-          { label: 'Tutoring & Support',    href: '/student-resources/tutoring',   note: 'Free · 24/7 · R.A.C.E. Center' },
-          { label: 'Career Services',       href: '/student-resources/career',     note: 'Jobs, résumé, mock interviews' },
-          { label: 'Health & Wellness',     href: '/student-resources/health',     note: 'Counseling, pantry, support' },
-          { label: 'Disability Services',    href: '/student-resources/disability',  note: 'ADA accommodations' },
-          { label: 'TRiO Programs',         href: '/student-resources/trio',        note: 'First-gen student support' },
-          { label: 'Transcript Requests',   href: '/student-resources/transcripts', note: 'Official & unofficial' },
-          { label: 'Graduation Info',       href: '/student-resources/graduation',  note: 'Apply, ceremony, diploma' },
-        ],
-      },
-    ],
-  },
-  {
-    label: 'Campus Life',
-    href: '/campus-life',
-    mega: [
-      {
-        title: 'Student Life',
-        items: [
-          { label: 'Clubs & Activities',  href: '/campus-life/clubs',    note: '30+ student organizations' },
-          { label: 'Monarch Athletics',   href: '/campus-life/athletics', note: 'NJCAA — 14 sports' },
-          { label: 'Tutoring & Support',  href: '/student-resources/tutoring', note: 'Free academic help' },
-          { label: 'Student Portal Hub',  href: '/portal',                    note: 'New & returning students' },
-        ],
-      },
-      {
-        title: 'Campus',
-        items: [
-          { label: 'Campus Calendar', href: '/calendar',    note: 'Events & deadlines' },
-          { label: 'News & Stories',  href: '/news',        note: 'Latest from LSCC' },
-          { label: 'Contact & Hours', href: '/contact',     note: 'Call, email, or visit' },
-          { label: 'About LSCC',      href: '/about',       note: 'Mission & HBCU legacy' },
-        ],
-      },
-    ],
-  },
-  { label: 'About', href: '/about' },
-]
-
-// ── Mobile nav data ─────────────────────────────────────────────
-
-const MOBILE_GROUPS: MobileGroup[] = [
-  {
-    label: 'Programs',
-    href: '/academics',
-    items: [
-      { label: 'All 200+ Programs',  href: '/academics' },
-      { label: 'Health Sciences',    href: '/academics?tag=health' },
-      { label: 'Business & IT',      href: '/academics?tag=business' },
-      { label: 'Trades & CTE',       href: '/academics?tag=trades' },
-      { label: 'Transfer Degrees',   href: '/academics?tag=transfer' },
-      { label: 'Online Learning',    href: 'https://lawsonstate.instructure.com', external: true },
-      { label: 'Workforce Training', href: '/workforce' },
-    ],
-  },
-  {
-    label: 'Admissions',
-    href: '/admissions',
-    items: [
-      { label: 'Apply Now',           href: '/admissions/apply',           gold: true },
-      { label: 'New Students',        href: '/admissions' },
-      { label: 'Transfer Students',   href: '/admissions/transfer' },
-      { label: 'Dual Enrollment',     href: '/admissions/dual-enrollment' },
-      { label: 'Veterans & Military', href: '/admissions/veterans' },
-    ],
-  },
-  {
-    label: 'Financial Aid',
-    href: '/financial-aid',
-    items: [
-      { label: 'FAFSA Guide',       href: '/financial-aid/fafsa',        gold: true },
-      { label: 'Scholarships',      href: '/financial-aid/scholarships' },
-      { label: 'Aid Overview',      href: '/financial-aid' },
-      { label: 'Tuition & Fees',    href: '/financial-aid' },
-      { label: 'Contact Aid Office', href: '/contact' },
-    ],
-  },
-  {
-    label: 'Current Students',
-    href: '/student-resources',
-    items: [
-      { label: 'MyLawson',              href: 'https://my.lawsonstate.edu',         external: true, gold: true },
-      { label: 'Canvas',                href: 'https://lawsonstate.instructure.com', external: true },
-      { label: 'Student Email',         href: 'https://webmail.lawsonstate.edu',     external: true },
-      { label: 'Student Resources',     href: '/student-resources' },
-      { label: 'Tutoring & Support',    href: '/student-resources/tutoring' },
-      { label: 'Career Services',       href: '/student-resources/career' },
-      { label: 'Health & Wellness',     href: '/student-resources/health' },
-      { label: 'Disability Services',   href: '/student-resources/disability' },
-      { label: 'TRiO Programs',         href: '/student-resources/trio' },
-      { label: 'Transcript Requests',   href: '/student-resources/transcripts' },
-      { label: 'Graduation Info',       href: '/student-resources/graduation' },
-    ],
-  },
-  {
-    label: 'Campus Life',
-    href: '/campus-life',
-    items: [
-      { label: 'Clubs & Activities', href: '/campus-life/clubs' },
-      { label: 'Monarch Athletics',  href: '/campus-life/athletics' },
-      { label: 'Tutoring & Support', href: '/student-resources/tutoring' },
-      { label: 'Campus Calendar',    href: '/calendar' },
-    ],
-  },
-  {
-    label: 'About & Contact',
-    href: '/about',
-    items: [
-      { label: 'About Lawson State', href: '/about' },
-      { label: 'News & Stories',     href: '/news' },
-      { label: 'Contact Us',         href: '/contact' },
-      { label: 'Visit Campus',       href: '/contact' },
-    ],
-  },
-]
+import { NAV, MOBILE_GROUPS } from './nav-data'
+import type { NavEntry } from './nav-data'
 
 // ── Icons ────────────────────────────────────────────────────────
 
@@ -326,13 +103,13 @@ export default function Nav() {
           onMouseEnter={cancelClose}
           aria-label="Main navigation"
         >
-          {NAV.map((item) => (
+          {NAV.map((item: NavEntry) => (
             <div key={item.label} className="relative">
 
               {/* Trigger */}
               <Link
                 href={item.href}
-                className="flex items-center gap-1 px-3.5 py-2 text-[0.83rem] font-semibold rounded-lg transition-colors duration-150 hover:bg-white/8"
+                className="flex items-center gap-1 px-3 py-2 text-[0.80rem] font-semibold rounded-lg transition-colors duration-150 hover:bg-white/8"
                 style={{ color: lc }}
                 onMouseEnter={() => { cancelClose(); setOpenMenu(item.mega ? item.label : null) }}
                 aria-haspopup={item.mega ? 'true' : undefined}
@@ -355,7 +132,7 @@ export default function Nav() {
                   <div
                     className="nav-dropdown mt-2"
                     style={{
-                      minWidth: '480px',
+                      minWidth: '520px',
                       background: 'white',
                       borderRadius: '18px',
                       border: '1px solid oklch(0 0 0 / 0.08)',
