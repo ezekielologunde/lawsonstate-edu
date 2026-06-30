@@ -62,8 +62,8 @@ export default async function CalendarPage() {
 
       {/* Hero */}
       <section
-        className="relative py-20 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '32vh', display: 'flex', alignItems: 'flex-end' }}
+        className="page-hero relative px-6 overflow-hidden"
+        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}
       >
         <Image
           src="https://live.staticflickr.com/65535/55259062249_bda6f008e2_z.jpg"

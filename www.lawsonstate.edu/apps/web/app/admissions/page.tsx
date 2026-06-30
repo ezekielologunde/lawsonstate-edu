@@ -38,13 +38,13 @@ const BROWSE = [
     label: 'Veterans & Military',
     tagline: 'GI Bill & benefits',
     desc: 'VA-approved institution. GI Bill, MyCAA, and Voc Rehab accepted. Priority registration.',
-    href: '/contact',
+    href: '/admissions/veterans',
   },
 ]
 
 const QUICK = [
   { label: 'Financial Aid',   sub: 'Grants, loans, scholarships',  href: '/financial-aid' },
-  { label: 'Tuition & Fees', sub: '$148 / credit hour',            href: '/admissions/apply' },
+  { label: 'Tuition & Fees', sub: '$131 / credit hour',            href: '/admissions/apply' },
   { label: 'Visit Campus',   sub: '2 Birmingham locations',         href: '/contact' },
   { label: 'Advising',       sub: 'Talk to an advisor',            href: '/contact' },
 ]

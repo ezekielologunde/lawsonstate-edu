@@ -66,6 +66,7 @@ const SUBNAV = [
   { label: 'Transient Students',           href: '/admissions/transient' },
   { label: 'Admissions Policies & Forms',  href: '/admissions/policies' },
   { label: 'Dual Enrollment',              href: '/admissions/dual-enrollment' },
+  { label: 'Veterans & Military',          href: '/admissions/veterans' },
 ]
 
 export default function ApplyPage() {

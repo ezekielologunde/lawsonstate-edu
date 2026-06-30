@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
@@ -19,14 +19,15 @@ const SUBNAV = [
   { label: 'Transient Students',                href: '/admissions/transient' },
   { label: 'Admissions Policies & Forms',       href: '/admissions/policies' },
   { label: 'Dual Enrollment',                   href: '/admissions/dual-enrollment' },
+  { label: 'Veterans & Military',               href: '/admissions/veterans' },
 ]
 const ACTIVE = '/admissions/dual-enrollment'
 
 const MEETINGS = [
-  { date: 'Tuesday, March 17', time: '5:30 PM – 6:30 PM' },
-  { date: 'Wednesday, April 8', time: '5:30 PM – 6:30 PM' },
-  { date: 'Tuesday, May 12', time: '5:30 PM – 6:30 PM' },
-  { date: 'Wednesday, June 10', time: '5:30 PM – 6:30 PM' },
+  { date: 'Tuesday, March 17', time: '5:30 PM â€“ 6:30 PM' },
+  { date: 'Wednesday, April 8', time: '5:30 PM â€“ 6:30 PM' },
+  { date: 'Tuesday, May 12', time: '5:30 PM â€“ 6:30 PM' },
+  { date: 'Wednesday, June 10', time: '5:30 PM â€“ 6:30 PM' },
 ]
 
 export default function DualEnrollmentPage() {
@@ -42,20 +43,20 @@ export default function DualEnrollmentPage() {
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span className="mx-2" aria-hidden>›</span>
+            <span className="mx-2" aria-hidden>â€º</span>
             <Link href="/admissions" className="hover:text-white transition-colors">How to Apply</Link>
-            <span className="mx-2" aria-hidden>›</span>
+            <span className="mx-2" aria-hidden>â€º</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Dual Enrollment</span>
           </p>
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
-            High School Students · College Credit · S.O.A.R.
+            High School Students Â· College Credit Â· S.O.A.R.
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4"
             style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
             DUAL ENROLLMENT
           </h1>
           <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.15rem)', color: 'oklch(1 0 0 / 0.70)', maxWidth: '56ch', lineHeight: 1.7 }}>
-            Grades 10–12 students can earn college credit at Lawson State while still in high school — over 51 courses available, and tuition may be waived through ACCS grants.
+            Grades 10â€“12 students can earn college credit at Lawson State while still in high school â€” over 51 courses available, and tuition may be waived through ACCS grants.
           </p>
         </div>
       </section>
@@ -89,20 +90,20 @@ export default function DualEnrollmentPage() {
               EARN COLLEGE CREDIT IN HIGH SCHOOL
             </h2>
             <p className="text-lscc-muted mb-4" style={{ fontSize: '1.02rem', lineHeight: 1.75, maxWidth: '54ch' }}>
-              Dual Enrollment allows 10th–12th grade students to earn college credit while still in high school. Over 51 classes are available across 8+ pathways — online, virtual, or in-person.
+              Dual Enrollment allows 10thâ€“12th grade students to earn college credit while still in high school. Over 51 classes are available across 8+ pathways â€” online, virtual, or in-person.
             </p>
             <ul className="space-y-2 mb-6">
               {[
-                'Available to 10th–12th grade students',
+                'Available to 10thâ€“12th grade students',
                 'Minimum 2.5 GPA required',
-                'ACCS grant funding available — tuition may be waived',
+                'ACCS grant funding available â€” tuition may be waived',
                 '51 classes across 8+ pathways',
                 'Available online, virtually, or in-person',
-                'Accelerated High School option for 11th–12th graders with 3.0+ GPA',
+                'Accelerated High School option for 11thâ€“12th graders with 3.0+ GPA',
               ].map(item => (
                 <li key={item} className="flex items-start gap-2.5 text-sm"
                   style={{ color: 'oklch(0.45 0.08 263)' }}>
-                  <span style={{ color: 'oklch(0.79 0.19 78)', flexShrink: 0, marginTop: '0.15rem' }}>✓</span>
+                  <span style={{ color: 'oklch(0.79 0.19 78)', flexShrink: 0, marginTop: '0.15rem' }}>âœ“</span>
                   {item}
                 </li>
               ))}
@@ -110,7 +111,7 @@ export default function DualEnrollmentPage() {
             <a href="https://lawsonstate.edu/admissions/default.aspx" target="_blank" rel="noopener noreferrer"
               className="press btn-shimmer inline-flex items-center font-bold px-8 py-3.5 rounded-xl"
               style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.97rem' }}>
-              Apply for Dual Enrollment →
+              Apply for Dual Enrollment â†’
             </a>
           </div>
           <div className="rounded-2xl p-7" style={{ background: 'oklch(0.97 0.012 263)', border: '1px solid oklch(0.92 0.01 263)' }}>
@@ -124,13 +125,13 @@ export default function DualEnrollmentPage() {
                 'High school administrator approval',
               ].map(d => (
                 <li key={d} className="flex items-start gap-2">
-                  <span style={{ color: 'oklch(0.79 0.19 78)', flexShrink: 0 }}>→</span>{d}
+                  <span style={{ color: 'oklch(0.79 0.19 78)', flexShrink: 0 }}>â†’</span>{d}
                 </li>
               ))}
             </ul>
             <Link href="/admissions/policies" className="inline-block mt-5 text-sm font-semibold"
               style={{ color: 'oklch(0.22 0.17 261)' }}>
-              Download forms →
+              Download forms â†’
             </Link>
           </div>
         </div>
@@ -154,19 +155,19 @@ export default function DualEnrollmentPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
             {[
               {
-                icon: '📅',
+                icon: 'ðŸ“…',
                 title: 'Program Dates',
-                body: 'July 19 – July 24\nOne-week residential program. All participants must live on campus for the entire program.',
+                body: 'July 19 â€“ July 24\nOne-week residential program. All participants must live on campus for the entire program.',
               },
               {
-                icon: '🎓',
+                icon: 'ðŸŽ“',
                 title: 'Eligibility',
                 body: 'Current high school juniors (Class of 2027). Must participate during the summer before senior year. Minimum 2.5 GPA required.',
               },
               {
-                icon: '⏰',
+                icon: 'â°',
                 title: 'Application Deadline',
-                body: 'Applications close July 5th. The application includes a Save & Continue option — students can complete it in multiple sessions.',
+                body: 'Applications close July 5th. The application includes a Save & Continue option â€” students can complete it in multiple sessions.',
               },
             ].map(c => (
               <div key={c.title} className="rounded-2xl p-6"
@@ -192,12 +193,12 @@ export default function DualEnrollmentPage() {
                 <a href="https://lawsonstate.edu/admissions/default.aspx" target="_blank" rel="noopener noreferrer"
                   className="press btn-shimmer inline-flex items-center font-bold px-7 py-3 rounded-xl"
                   style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.95rem' }}>
-                  Apply to S.O.A.R. →
+                  Apply to S.O.A.R. â†’
                 </a>
                 <a href="https://www.tmcf.org/students-alumni/tmcf-soar/" target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center font-semibold px-7 py-3 rounded-xl transition-colors hover:bg-black/5"
                   style={{ border: '1px solid oklch(0.16 0.04 261 / 0.25)', color: 'oklch(0.16 0.04 261)', fontSize: '0.95rem' }}>
-                  Learn More (TMCF) →
+                  Learn More (TMCF) â†’
                 </a>
               </div>
             </div>
@@ -235,3 +236,4 @@ export default function DualEnrollmentPage() {
     </>
   )
 }
+

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
@@ -6,7 +6,7 @@ import SiteFooter from '@/components/site-footer'
 import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 export const metadata: Metadata = {
-  title: 'Transient Students — Admissions | Lawson State',
+  title: 'Transient Students â€” Admissions | Lawson State',
   description:
     'Attend Lawson State as a transient student while enrolled at another institution. Simple admissions process for temporary enrollment.',
 }
@@ -19,6 +19,7 @@ const SUBNAV = [
   { label: 'Transient Students',                href: '/admissions/transient' },
   { label: 'Admissions Policies & Forms',       href: '/admissions/policies' },
   { label: 'Dual Enrollment',                   href: '/admissions/dual-enrollment' },
+  { label: 'Veterans & Military',               href: '/admissions/veterans' },
 ]
 const ACTIVE = '/admissions/transient'
 
@@ -42,20 +43,20 @@ export default function TransientPage() {
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span className="mx-2" aria-hidden>›</span>
+            <span className="mx-2" aria-hidden>â€º</span>
             <Link href="/admissions" className="hover:text-white transition-colors">How to Apply</Link>
-            <span className="mx-2" aria-hidden>›</span>
+            <span className="mx-2" aria-hidden>â€º</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Transient Students</span>
           </p>
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
-            Temporary Enrollment · Transfer Credits Back
+            Temporary Enrollment Â· Transfer Credits Back
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4"
             style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
             TRANSIENT STUDENTS
           </h1>
           <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.15rem)', color: 'oklch(1 0 0 / 0.70)', maxWidth: '56ch', lineHeight: 1.7 }}>
-            Enrolled elsewhere? Take a semester at Lawson State and transfer credits back to your home institution. The process is quick — you can be enrolled in days.
+            Enrolled elsewhere? Take a semester at Lawson State and transfer credits back to your home institution. The process is quick â€” you can be enrolled in days.
           </p>
         </div>
       </section>
@@ -91,12 +92,12 @@ export default function TransientPage() {
             A transient student is currently enrolled at another college or university and wishes to take courses at Lawson State for a specific semester, transferring those credits back to their home institution.
           </p>
           <p className="text-lscc-muted mb-6" style={{ fontSize: '1rem', lineHeight: 1.75 }}>
-            We are currently accepting applications for all 2025 semesters. The process is quick — you can be enrolled in a matter of days.
+            We are currently accepting applications for all 2025 semesters. The process is quick â€” you can be enrolled in a matter of days.
           </p>
           <a href="https://lawsonstate.edu/admissions/default.aspx" target="_blank" rel="noopener noreferrer"
             className="press btn-shimmer inline-flex items-center font-bold px-8 py-3.5 rounded-xl"
             style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.97rem' }}>
-            Apply as a Transient Student →
+            Apply as a Transient Student â†’
           </a>
         </div>
       </section>
@@ -127,7 +128,7 @@ export default function TransientPage() {
           <div className="mt-6">
             <Link href="/admissions/policies" className="inline-flex items-center font-semibold text-sm gap-2"
               style={{ color: 'oklch(0.22 0.17 261)' }}>
-              Download the Transient Letter Request Form →
+              Download the Transient Letter Request Form â†’
             </Link>
           </div>
         </div>
@@ -148,7 +149,7 @@ export default function TransientPage() {
           </div>
           <div className="rounded-2xl p-6" style={{ background: 'oklch(0.97 0.012 263)', border: '1px solid oklch(0.92 0.01 263)' }}>
             <div className="font-bold text-lscc-ink mb-2">Hours</div>
-            <div className="text-sm text-lscc-muted mb-3">Mon–Thu: 8:00 AM – 6:30 PM<br />Fri: 8:00 AM – 5:00 PM</div>
+            <div className="text-sm text-lscc-muted mb-3">Monâ€“Thu: 8:00 AM â€“ 6:30 PM<br />Fri: 8:00 AM â€“ 5:00 PM</div>
             <a href="mailto:admissions@lawsonstate.edu" className="font-semibold text-sm" style={{ color: 'oklch(0.22 0.17 261)' }}>admissions@lawsonstate.edu</a>
           </div>
         </div>
@@ -161,3 +162,4 @@ export default function TransientPage() {
     </>
   )
 }
+
