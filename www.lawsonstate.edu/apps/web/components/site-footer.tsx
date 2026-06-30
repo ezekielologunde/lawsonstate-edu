@@ -24,8 +24,11 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
   ],
   Institution: [
     { label: 'About Lawson State', href: '/about' },
-    { label: 'Faculty & Staff', href: '/about/faculty' },
-    { label: 'News & Events', href: '/calendar' },
+    { label: 'Career Opportunities', href: '/careers' },
+    { label: 'Accreditation', href: '/about/accreditation' },
+    { label: 'Facts & Data', href: '/about/facts' },
+    { label: 'Financial Data', href: '/about/financial-data' },
+    { label: 'Disclosures', href: '/about/disclosures' },
     { label: 'Contact Us', href: '/contact' },
   ],
 }
@@ -157,6 +160,7 @@ export default function SiteFooter() {
               { label: 'Privacy Policy', href: '/about/privacy' },
               { label: 'Accessibility', href: '/about/accessibility' },
               { label: 'Title IX', href: '/about/title-ix' },
+              { label: 'Title III', href: '/about/title-iii' },
               { label: 'Non-Discrimination', href: '/about/non-discrimination' },
             ].map((l) => (
               <Link key={l.label} href={l.href} className="transition-colors hover:opacity-60" style={{ color: MUTE }}>
