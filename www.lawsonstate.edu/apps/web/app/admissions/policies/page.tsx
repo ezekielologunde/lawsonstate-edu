@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
@@ -98,9 +98,9 @@ export default function PoliciesPage() {
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span className="mx-2" aria-hidden>â€º</span>
+            <span className="mx-2" aria-hidden>›</span>
             <Link href="/admissions" className="hover:text-white transition-colors">How to Apply</Link>
-            <span className="mx-2" aria-hidden>â€º</span>
+            <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Admissions Policies & Forms</span>
           </p>
           <h1 className="font-display font-black text-white leading-none"
@@ -145,7 +145,7 @@ export default function PoliciesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               { label: 'Alabama Community College System Policies', sub: '801.01 Admission General', href: 'https://www.accs.edu/' },
-              { label: 'Board Policies & Chancellor\'s Procedures', sub: '800.00 â€“ 801.04', href: 'https://www.accs.edu/' },
+              { label: 'Board Policies & Chancellor\'s Procedures', sub: '800.00 – 801.04', href: 'https://www.accs.edu/' },
               { label: 'Admissions & Enrollment Management Manual', sub: 'Lawson State General Policies', href: 'https://lawsonstate.edu/admissions/' },
               { label: 'General Admissions Table', sub: 'What you must submit', href: 'https://lawsonstate.edu/admissions/' },
             ].map(p => (
@@ -153,7 +153,7 @@ export default function PoliciesPage() {
                 className="rounded-xl p-5 block hover:shadow-md transition-shadow"
                 style={{ background: 'oklch(0.97 0.012 263)', border: '1px solid oklch(0.92 0.01 263)' }}>
                 <div className="font-semibold text-lscc-ink mb-1" style={{ fontSize: '0.95rem' }}>{p.label}</div>
-                <div className="text-sm" style={{ color: 'oklch(0.55 0.08 263)' }}>{p.sub} â†’</div>
+                <div className="text-sm" style={{ color: 'oklch(0.55 0.08 263)' }}>{p.sub} →</div>
               </a>
             ))}
           </div>
@@ -218,4 +218,3 @@ export default function PoliciesPage() {
     </>
   )
 }
-

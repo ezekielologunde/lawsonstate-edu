@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
@@ -6,7 +6,7 @@ import SiteFooter from '@/components/site-footer'
 import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 export const metadata: Metadata = {
-  title: 'How to Apply â€” First Time Students | Lawson State',
+  title: 'How to Apply — First Time Students | Lawson State',
   description:
     'Apply to Lawson State Community College. Free online application, rolling admissions. Follow four steps to complete your general admissions process.',
 }
@@ -83,9 +83,9 @@ export default function ApplyPage() {
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span className="mx-2" aria-hidden>â€º</span>
+            <span className="mx-2" aria-hidden>›</span>
             <Link href="/admissions" className="hover:text-white transition-colors">How to Apply</Link>
-            <span className="mx-2" aria-hidden>â€º</span>
+            <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>First Time Students</span>
           </p>
           <h1 className="font-display font-black text-white leading-none"
@@ -124,7 +124,7 @@ export default function ApplyPage() {
               TAKE THE FIRST STEP TOWARD YOUR FUTURE
             </h2>
             <p className="text-lscc-muted mb-4" style={{ fontSize: '1.02rem', lineHeight: 1.75, maxWidth: '54ch' }}>
-              Determine what type of applicant you are and follow the steps to apply. Reach out to Admissions if you have any questions â€” we are currently accepting applications.
+              Determine what type of applicant you are and follow the steps to apply. Reach out to Admissions if you have any questions — we are currently accepting applications.
             </p>
             <p className="font-semibold text-lscc-muted mb-6" style={{ fontSize: '1rem', lineHeight: 1.7, maxWidth: '54ch' }}>
               Our online application process is <strong className="text-lscc-ink">free and easy to complete.</strong> If you need help, reach out to us. We are here to help!
@@ -136,7 +136,7 @@ export default function ApplyPage() {
               className="press btn-shimmer inline-flex items-center font-bold px-8 py-3.5 rounded-xl"
               style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.97rem' }}
             >
-              Apply Now â€” It&apos;s Free â†’
+              Apply Now — It&apos;s Free →
             </a>
           </div>
 
@@ -191,7 +191,7 @@ export default function ApplyPage() {
                         <a key={e.href} href={e.href}
                           className="text-sm font-semibold transition-colors hover:underline"
                           style={{ color: 'oklch(0.22 0.17 261)' }}>
-                          {e.label} â†’
+                          {e.label} →
                         </a>
                       ))}
                     </div>
@@ -275,7 +275,7 @@ export default function ApplyPage() {
                 </h3>
                 <p className="text-lscc-muted mb-4" style={{ fontSize: '0.9rem', lineHeight: 1.65 }}>{ns.desc}</p>
                 <span className="font-semibold text-sm" style={{ color: 'oklch(0.22 0.17 261)' }}>
-                  Learn more â†’
+                  Learn more →
                 </span>
               </Link>
             ))}
@@ -300,10 +300,10 @@ export default function ApplyPage() {
                 Birmingham, AL 35221
               </div>
               <a href="tel:+12059296309" className="font-semibold text-sm hover:underline block mb-1" style={{ color: 'oklch(0.22 0.17 261)' }}>
-                ðŸ“ž 205-929-6309
+                📞 205-929-6309
               </a>
               <a href="mailto:admissions@lawsonstate.edu" className="font-semibold text-sm hover:underline" style={{ color: 'oklch(0.22 0.17 261)' }}>
-                âœ‰ admissions@lawsonstate.edu
+                ✉ admissions@lawsonstate.edu
               </a>
             </div>
 
@@ -312,14 +312,14 @@ export default function ApplyPage() {
               <div className="font-display font-bold mb-3 text-lscc-ink">Bessemer Campus</div>
               <div className="text-lscc-muted text-sm leading-relaxed mb-4">
                 Student Services Building A<br />
-                Second Floor Lobby â€“ Admissions Desk<br />
+                Second Floor Lobby – Admissions Desk<br />
                 1100 Ninth Avenue SW, Bessemer, AL 35022
               </div>
               <a href="tel:+12059293418" className="font-semibold text-sm hover:underline block mb-1" style={{ color: 'oklch(0.22 0.17 261)' }}>
-                ðŸ“ž 205-929-3418
+                📞 205-929-3418
               </a>
               <a href="sms:+12057076422" className="font-semibold text-sm hover:underline" style={{ color: 'oklch(0.22 0.17 261)' }}>
-                ðŸ’¬ Text: 205-707-6422
+                💬 Text: 205-707-6422
               </a>
             </div>
 
@@ -328,12 +328,12 @@ export default function ApplyPage() {
               <div className="font-display font-bold mb-3 text-lscc-ink">Office Hours</div>
               <div className="space-y-2">
                 <div>
-                  <div className="text-xs font-semibold uppercase tracking-widest mb-0.5" style={{ color: 'oklch(0.79 0.19 78)' }}>Mon â€“ Thu</div>
-                  <div className="text-lscc-ink font-medium text-sm">8:00 AM â€“ 6:30 PM</div>
+                  <div className="text-xs font-semibold uppercase tracking-widest mb-0.5" style={{ color: 'oklch(0.79 0.19 78)' }}>Mon – Thu</div>
+                  <div className="text-lscc-ink font-medium text-sm">8:00 AM – 6:30 PM</div>
                 </div>
                 <div>
                   <div className="text-xs font-semibold uppercase tracking-widest mb-0.5" style={{ color: 'oklch(0.79 0.19 78)' }}>Friday</div>
-                  <div className="text-lscc-ink font-medium text-sm">8:00 AM â€“ 5:00 PM</div>
+                  <div className="text-lscc-ink font-medium text-sm">8:00 AM – 5:00 PM</div>
                 </div>
                 <div className="text-xs mt-3" style={{ color: 'oklch(0.55 0.05 263)' }}>All times Central Standard Time (CST)</div>
               </div>
@@ -349,4 +349,3 @@ export default function ApplyPage() {
     </>
   )
 }
-

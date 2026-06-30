@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
@@ -6,7 +6,7 @@ import SiteFooter from '@/components/site-footer'
 import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 export const metadata: Metadata = {
-  title: 'International Students â€” Admissions | Lawson State',
+  title: 'International Students — Admissions | Lawson State',
   description:
     'International student admissions at Lawson State Community College. F-1 and M-1 visa requirements, transcript evaluation, financial support, and TOEFL scores.',
 }
@@ -45,15 +45,15 @@ const REQUIREMENTS = [
   },
   {
     title: 'TOEFL / IELTS Scores',
-    body: 'A minimum score of 5.5 on the IELTS, or a total score of 61 on the Internet-based TOEFL, 173 on the computer-based TOEFL, or 500 on the paper-based TOEFL. Scores must be sent by ETS/TOEFL. The English exam may be waived for students from English-speaking countries including Australia, Canada, England, Ireland, Jamaica, Nigeria, and others â€” contact Admissions to verify.',
+    body: 'A minimum score of 5.5 on the IELTS, or a total score of 61 on the Internet-based TOEFL, 173 on the computer-based TOEFL, or 500 on the paper-based TOEFL. Scores must be sent by ETS/TOEFL. The English exam may be waived for students from English-speaking countries including Australia, Canada, England, Ireland, Jamaica, Nigeria, and others — contact Admissions to verify.',
   },
   {
     title: 'Class Registration',
-    body: 'F-1 visa holders must be enrolled at full-time status â€” 12 semester hours or more â€” and must make satisfactory progress in a degree program. The Bessemer Campus is not authorized to admit or enroll international students. All international student applicants must attend the Birmingham Campus.',
+    body: 'F-1 visa holders must be enrolled at full-time status — 12 semester hours or more — and must make satisfactory progress in a degree program. The Bessemer Campus is not authorized to admit or enroll international students. All international student applicants must attend the Birmingham Campus.',
   },
   {
     title: 'Tuition & Fees',
-    body: 'International students are assessed tuition at the out-of-state student rate â€” two times the basic in-state residential tuition rate, plus applicable technology and facility fees. Tuition and fees are subject to change. Fees are non-negotiable and non-refundable.',
+    body: 'International students are assessed tuition at the out-of-state student rate — two times the basic in-state residential tuition rate, plus applicable technology and facility fees. Tuition and fees are subject to change. Fees are non-negotiable and non-refundable.',
   },
 ]
 
@@ -70,9 +70,9 @@ export default function InternationalPage() {
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span className="mx-2" aria-hidden>â€º</span>
+            <span className="mx-2" aria-hidden>›</span>
             <Link href="/admissions" className="hover:text-white transition-colors">How to Apply</Link>
-            <span className="mx-2" aria-hidden>â€º</span>
+            <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>International Students</span>
           </p>
           <h1 className="font-display font-black text-white leading-none"
@@ -116,8 +116,8 @@ export default function InternationalPage() {
           </p>
           <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl text-sm font-semibold"
             style={{ background: 'oklch(0.97 0.012 263)', border: '1.5px solid oklch(0.79 0.19 78 / 0.3)', color: 'oklch(0.22 0.17 261)' }}>
-            <span aria-hidden>ðŸ“</span>
-            All international students must attend the <strong>Birmingham Campus</strong> â€” the Bessemer Campus is not authorized to enroll international students.
+            <span aria-hidden>📍</span>
+            All international students must attend the <strong>Birmingham Campus</strong> — the Bessemer Campus is not authorized to enroll international students.
           </div>
         </div>
       </section>
@@ -160,7 +160,7 @@ export default function InternationalPage() {
             </p>
             <Link href="/admissions/policies" className="inline-block mt-3 font-semibold text-sm"
               style={{ color: 'oklch(0.22 0.17 261)' }}>
-              Download forms â†’
+              Download forms →
             </Link>
           </div>
         </div>
@@ -199,4 +199,3 @@ export default function InternationalPage() {
     </>
   )
 }
-
