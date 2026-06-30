@@ -61,6 +61,24 @@ const SERVICES = [
     cta: 'Explore Careers',
   },
   {
+    label: 'Health & Wellness',
+    desc: 'Counseling Services, Cougar Pantry, Cougar Clothing Closet, and Crisis Resources — free for all enrolled students. Lawson State is a Caring Campus.',
+    href: '/student-resources/health',
+    cta: 'Wellness Support',
+  },
+  {
+    label: 'Disability Services',
+    desc: 'Academic accommodations under the ADA and Section 504 — extended test time, note-taking assistance, accessible materials, and more.',
+    href: '/student-resources/disability',
+    cta: 'Request Accommodations',
+  },
+  {
+    label: 'TRiO Programs',
+    desc: 'Federally funded support for first-generation, low-income, and disabled students — advising, workshops, cultural enrichment, and transfer planning.',
+    href: '/student-resources/trio',
+    cta: 'Learn About TRiO',
+  },
+  {
     label: 'Academic Advising',
     desc: 'Your advisor helps you plan courses, stay on track for graduation, and connect with support on both campuses.',
     href: '/contact',

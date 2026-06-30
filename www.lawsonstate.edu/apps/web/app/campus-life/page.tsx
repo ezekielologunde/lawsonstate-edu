@@ -62,12 +62,12 @@ const SUPPORT_SERVICES = [
   {
     name: 'Disability Support (ADA)',
     desc: 'Academic accommodations for students with disabilities. Apply online and connect with our counselors for a personalized accommodation plan.',
-    href: '/contact',
+    href: '/student-resources/disability',
   },
   {
     name: 'TRiO Programs',
     desc: 'Individualized academic support, workshops, cultural enrichment, and financial habit-building. Open to qualifying first-generation and low-income students.',
-    href: '/contact',
+    href: '/student-resources/trio',
   },
   {
     name: 'Veterans Services',
