@@ -151,7 +151,7 @@ export default function AthleticsPage() {
           {/* Recruitment card */}
           <div className="rounded-2xl p-8" style={{ background: 'oklch(0.22 0.17 261)' }}>
             <p className="font-display font-semibold uppercase mb-2" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>Prospective Athletes</p>
-            <p className="font-display font-black text-white mb-4" style={{ fontSize: '1.5rem', letterSpacing: '-0.02em' }}>WANT TO PLAY FOR THE MONARCHS?</p>
+            <p className="font-display font-black text-white mb-4" style={{ fontSize: '1.5rem', letterSpacing: '-0.02em' }}>WANT TO PLAY FOR THE COUGARS?</p>
             <p style={{ fontSize: '0.9rem', color: 'oklch(1 0 0 / 0.70)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               Contact the Athletics Department to learn about tryouts, scholarships, and eligibility requirements for NJCAA student-athletes.
             </p>

@@ -103,7 +103,7 @@ export default function NonDegreePage() {
             </p>
             <p className="text-lscc-muted mb-6"
               style={{ fontSize: '1rem', lineHeight: 1.75, maxWidth: '54ch' }}>
-              Reach out to Admissions if you have any questions. We are currently accepting applications for all 2025 semesters.
+              Reach out to Admissions if you have any questions. We are currently accepting applications year-round.
             </p>
             <a href="https://lawsonstate.edu/admissions/default.aspx" target="_blank" rel="noopener noreferrer"
               className="press btn-shimmer inline-flex items-center font-bold px-8 py-3.5 rounded-xl"

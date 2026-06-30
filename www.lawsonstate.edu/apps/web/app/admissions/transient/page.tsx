@@ -92,7 +92,7 @@ export default function TransientPage() {
             A transient student is currently enrolled at another college or university and wishes to take courses at Lawson State for a specific semester, transferring those credits back to their home institution.
           </p>
           <p className="text-lscc-muted mb-6" style={{ fontSize: '1rem', lineHeight: 1.75 }}>
-            We are currently accepting applications for all 2025 semesters. The process is quick â€” you can be enrolled in a matter of days.
+            We are currently accepting applications year-round. The process is quick â€” you can be enrolled in a matter of days.
           </p>
           <a href="https://lawsonstate.edu/admissions/default.aspx" target="_blank" rel="noopener noreferrer"
             className="press btn-shimmer inline-flex items-center font-bold px-8 py-3.5 rounded-xl"
