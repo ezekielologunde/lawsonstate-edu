@@ -14,7 +14,7 @@ const CATALOG_SECTIONS = [
 ]
 
 const QUICK_LINKS = [
-  { label: 'Current Catalog (PDF)', desc: 'Download the full 2025–2026 catalog', href: 'https://lawsonstate.edu/catalog', external: true },
+  { label: 'Current Catalog (PDF)', desc: 'Download the full 2026–2027 catalog', href: 'https://lawsonstate.edu/catalog', external: true },
   { label: 'Previous Catalogs Archive', desc: 'Access catalogs from prior academic years', href: 'https://lawsonstate.edu/catalog', external: true },
   { label: 'Alabama Transfer (AGSC)', desc: 'AGSC core and transfer planning', href: '/academics/alabama-transfer', external: false },
   { label: 'Class Schedule (MyLawson)', desc: 'Search current course sections', href: 'https://my.lawsonstate.edu', external: true },
@@ -51,7 +51,7 @@ export default function CatalogPage() {
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Academic Catalog</span>
           </p>
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
-            2025–2026 Academic Year
+            2026–2027 Academic Year
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
             ACADEMIC CATALOG
