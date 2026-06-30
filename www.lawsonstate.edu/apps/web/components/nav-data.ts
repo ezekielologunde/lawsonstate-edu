@@ -248,7 +248,7 @@ export const MOBILE_GROUPS: MobileGroup[] = [
     href: '/campus-life',
     items: [
       { label: 'Clubs & Activities',    href: '/campus-life/clubs' },
-      { label: 'Monarch Athletics',     href: '/campus-life/athletics' },
+      { label: 'Cougar Athletics',      href: '/campus-life/athletics' },
       { label: 'Housing & Residential', href: '/campus-life/housing' },
       { label: 'Student Safety',        href: '/campus-life/safety' },
       { label: 'Tutoring & Support',    href: '/student-resources/tutoring' },

@@ -48,13 +48,13 @@ export default function AthleticsPage() {
             <span className="mx-2" aria-hidden>›</span>
             <Link href="/campus-life" className="hover:text-white transition-colors">Campus Life</Link>
             <span className="mx-2" aria-hidden>›</span>
-            <span style={{ color: 'oklch(0.79 0.19 78)' }}>Monarch Athletics</span>
+            <span style={{ color: 'oklch(0.79 0.19 78)' }}>Cougar Athletics</span>
           </p>
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             NJCAA Division I · Alabama Community College Conference
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.6rem, 6vw, 5.2rem)', letterSpacing: '-0.03em' }}>
-            MONARCH ATHLETICS
+            COUGAR ATHLETICS
           </h1>
           <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.2rem)', color: 'oklch(1 0 0 / 0.70)', maxWidth: '52ch', lineHeight: 1.7 }}>
             14 intercollegiate sports. Competing at the highest level of junior college athletics — NJCAA Division I.
@@ -67,7 +67,7 @@ export default function AthleticsPage() {
               className="press btn-shimmer inline-flex items-center font-bold px-6 py-3 rounded-lg"
               style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.95rem' }}
             >
-              Monarch Sports Site<span className="sr-only"> (opens in new tab)</span>
+              Cougar Sports Site<span className="sr-only"> (opens in new tab)</span>
             </a>
             <Link
               href="/contact"

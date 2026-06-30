@@ -139,7 +139,7 @@ export default function FinancialAidPage() {
       <section className="py-20 px-6" style={{ background: 'white' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
-            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>2025–2026 Academic Year</p>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>2026–2027 Academic Year</p>
             <h2 className="font-display font-black leading-none text-lscc-ink" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em' }}>TUITION & FEES</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 scroll-reveal">

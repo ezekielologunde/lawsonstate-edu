@@ -179,7 +179,7 @@ export default function CareerServicesPage() {
       <section className="py-14 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 items-start">
           <div>
-            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>Who Hires Monarchs</p>
+            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>Who Hires Cougars</p>
             <h2 className="font-display font-black mb-6" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.4rem)', letterSpacing: '-0.02em', color: 'oklch(0.16 0.04 261)' }}>LOCAL EMPLOYERS</h2>
             <p style={{ fontSize: '0.9rem', color: 'oklch(0.40 0.04 261)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               Our graduates are hired across healthcare, manufacturing, government, banking, and technology. Regional employers actively recruit at LSCC career events.

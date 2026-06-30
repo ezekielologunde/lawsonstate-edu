@@ -11,7 +11,7 @@ const FAST_FACTS = [
   { value: '$131', label: 'Per Credit Hour', note: 'In-state tuition — among Alabama\'s lowest' },
   { value: '2', label: 'Campuses', note: 'Birmingham and Bessemer' },
   { value: '75+', label: 'Years of History', note: 'Serving Birmingham since 1949' },
-  { value: '14', label: 'Varsity Sports', note: 'NJCAA — Monarchs Athletics' },
+  { value: '14', label: 'Varsity Sports', note: 'NJCAA — Cougar Athletics' },
   { value: '75%', label: 'Pell-Eligible', note: 'Students qualifying for Pell Grants' },
 ]
 
