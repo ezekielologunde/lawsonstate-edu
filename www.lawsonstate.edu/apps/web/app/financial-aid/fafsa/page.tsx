@@ -83,9 +83,9 @@ const FAQS = [
 ]
 
 const DEADLINES = [
-  { semester: 'Fall 2025', fafsa: 'Submit ASAP', priority: 'April 1, 2025' },
-  { semester: 'Spring 2026', fafsa: 'Submit ASAP', priority: 'October 1, 2025' },
   { semester: 'Summer 2026', fafsa: 'Submit ASAP', priority: 'March 1, 2026' },
+  { semester: 'Fall 2026', fafsa: 'Submit ASAP', priority: 'July 1, 2026' },
+  { semester: 'Spring 2027', fafsa: 'Submit ASAP', priority: 'November 1, 2026' },
 ]
 
 export default function FafsaPage() {
