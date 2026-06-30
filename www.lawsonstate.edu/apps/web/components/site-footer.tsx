@@ -10,15 +10,17 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
   ],
   Admissions: [
     { label: 'Apply Now', href: '/admissions/apply' },
+    { label: 'FAFSA Guide', href: '/financial-aid/fafsa' },
+    { label: 'Scholarships', href: '/financial-aid/scholarships' },
     { label: 'Financial Aid', href: '/financial-aid' },
-    { label: 'Tuition & Fees', href: '/financial-aid' },
     { label: 'Visit Campus', href: '/contact' },
   ],
   'Student Services': [
     { label: 'Student Resources', href: '/student-resources' },
+    { label: 'Tutoring & Support', href: '/student-resources/tutoring' },
+    { label: 'Career Services', href: '/student-resources/career' },
     { label: 'Transcript Requests', href: '/student-resources/transcripts' },
     { label: 'Graduation Info', href: '/student-resources/graduation' },
-    { label: 'Concerns & Complaints', href: '/student-resources/concerns' },
   ],
   Institution: [
     { label: 'About Lawson State', href: '/about' },

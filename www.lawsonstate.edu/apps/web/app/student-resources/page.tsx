@@ -49,6 +49,18 @@ const SERVICES = [
     cta: 'File a Concern',
   },
   {
+    label: 'Tutoring & Academic Support',
+    desc: 'Free Tutor.com access 24/7, R.A.C.E. advising, the S.P.A.C.E. Center, Writing & Math Lab, and Disability Services accommodations.',
+    href: '/student-resources/tutoring',
+    cta: 'Get Tutoring',
+  },
+  {
+    label: 'Career Services',
+    desc: 'Résumé coaching, mock interviews, the College Central job board, Career Coach assessments, and connections to local employers.',
+    href: '/student-resources/career',
+    cta: 'Explore Careers',
+  },
+  {
     label: 'Academic Advising',
     desc: 'Your advisor helps you plan courses, stay on track for graduation, and connect with support on both campuses.',
     href: '/contact',

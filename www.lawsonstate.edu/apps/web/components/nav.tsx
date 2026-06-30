@@ -61,21 +61,42 @@ const NAV: NavEntry[] = [
           { label: 'New Students',        href: '/admissions',                 note: 'First-time college' },
           { label: 'Transfer Students',   href: '/admissions/transfer',        note: 'Credits transfer easily' },
           { label: 'Dual Enrollment',     href: '/admissions/dual-enrollment', note: 'High school + college' },
-          { label: 'Veterans & Military', href: '/admissions',                 note: 'GI Bill & benefits' },
+          { label: 'Veterans & Military', href: '/admissions/veterans',          note: 'GI Bill & benefits' },
         ],
       },
       {
         title: 'Resources',
         items: [
-          { label: 'Financial Aid',  href: '/financial-aid', note: 'Grants, loans, scholarships' },
-          { label: 'Tuition & Fees', href: '/financial-aid', note: '$148 / credit hour' },
+          { label: 'Financial Aid',  href: '/financial-aid',              note: 'Grants, Pell, scholarships' },
+          { label: 'FAFSA Guide',    href: '/financial-aid/fafsa',        note: 'School code: 001025' },
           { label: 'Visit Campus',   href: '/contact',       note: '2 Birmingham locations' },
           { label: 'Advising',       href: '/contact',       note: 'Talk to an advisor' },
         ],
       },
     ],
   },
-  { label: 'Financial Aid', href: '/financial-aid' },
+  {
+    label: 'Financial Aid',
+    href: '/financial-aid',
+    mega: [
+      {
+        title: 'Apply for Aid',
+        items: [
+          { label: 'FAFSA Guide',        href: '/financial-aid/fafsa',         note: 'Step-by-step walkthrough',  highlight: true },
+          { label: 'Scholarships',       href: '/financial-aid/scholarships',  note: '$1.5M awarded annually' },
+          { label: 'Aid Overview',       href: '/financial-aid',               note: 'Grants, Pell, work-study' },
+        ],
+      },
+      {
+        title: 'Costs & Planning',
+        items: [
+          { label: 'Tuition & Fees',    href: '/financial-aid',               note: '$131 / credit hour in-state' },
+          { label: 'Special Circumstances', href: '/contact',                 note: 'Income change? Ask us' },
+          { label: 'Financial Aid Office', href: '/contact',                  note: '205.929.6346' },
+        ],
+      },
+    ],
+  },
   {
     label: 'Current Students',
     href: '/student-resources',
@@ -92,7 +113,10 @@ const NAV: NavEntry[] = [
       {
         title: 'Student Services',
         items: [
-          { label: 'Student Resources',     href: '/student-resources',             note: 'All tools & services' },
+          { label: 'Student Resources',     href: '/student-resources',              note: 'All tools & services' },
+          { label: 'Tutoring & Support',    href: '/student-resources/tutoring',   note: 'Free · 24/7 · R.A.C.E. Center' },
+          { label: 'Career Services',       href: '/student-resources/career',     note: 'Jobs, résumé, mock interviews' },
+          { label: 'Health & Wellness',     href: '/student-resources/health',     note: 'Counseling, pantry, support' },
           { label: 'Transcript Requests',   href: '/student-resources/transcripts', note: 'Official & unofficial' },
           { label: 'Graduation Info',       href: '/student-resources/graduation',  note: 'Apply, ceremony, diploma' },
           { label: 'Concerns & Complaints', href: '/student-resources/concerns',    note: 'Grievance & support process' },
@@ -107,9 +131,9 @@ const NAV: NavEntry[] = [
       {
         title: 'Student Life',
         items: [
-          { label: 'Clubs & Activities',  href: '/campus-life', note: '30+ student organizations' },
-          { label: 'Monarch Athletics',   href: '/campus-life', note: 'NJCAA — 14 sports' },
-          { label: 'Tutoring & Support',  href: '/campus-life', note: 'Free academic help' },
+          { label: 'Clubs & Activities',  href: '/campus-life/clubs',    note: '30+ student organizations' },
+          { label: 'Monarch Athletics',   href: '/campus-life/athletics', note: 'NJCAA — 14 sports' },
+          { label: 'Tutoring & Support',  href: '/student-resources/tutoring', note: 'Free academic help' },
           { label: 'Student Portal Hub',  href: '/portal',                    note: 'New & returning students' },
         ],
       },
@@ -151,17 +175,18 @@ const MOBILE_GROUPS: MobileGroup[] = [
       { label: 'New Students',        href: '/admissions' },
       { label: 'Transfer Students',   href: '/admissions/transfer' },
       { label: 'Dual Enrollment',     href: '/admissions/dual-enrollment' },
-      { label: 'Veterans & Military', href: '/admissions' },
+      { label: 'Veterans & Military', href: '/admissions/veterans' },
     ],
   },
   {
     label: 'Financial Aid',
     href: '/financial-aid',
     items: [
-      { label: 'Aid Overview',          href: '/financial-aid' },
-      { label: 'Grants & Scholarships', href: '/financial-aid' },
-      { label: 'Tuition & Fees',        href: '/financial-aid' },
-      { label: 'Advising',              href: '/contact' },
+      { label: 'FAFSA Guide',       href: '/financial-aid/fafsa',        gold: true },
+      { label: 'Scholarships',      href: '/financial-aid/scholarships' },
+      { label: 'Aid Overview',      href: '/financial-aid' },
+      { label: 'Tuition & Fees',    href: '/financial-aid' },
+      { label: 'Contact Aid Office', href: '/contact' },
     ],
   },
   {
@@ -172,6 +197,8 @@ const MOBILE_GROUPS: MobileGroup[] = [
       { label: 'Canvas',                href: 'https://lawsonstate.instructure.com', external: true },
       { label: 'Student Email',         href: 'https://webmail.lawsonstate.edu',     external: true },
       { label: 'Student Resources',     href: '/student-resources' },
+      { label: 'Tutoring & Support',    href: '/student-resources/tutoring' },
+      { label: 'Career Services',       href: '/student-resources/career' },
       { label: 'Transcript Requests',   href: '/student-resources/transcripts' },
       { label: 'Graduation Info',       href: '/student-resources/graduation' },
       { label: 'Concerns & Complaints', href: '/student-resources/concerns' },
@@ -181,9 +208,9 @@ const MOBILE_GROUPS: MobileGroup[] = [
     label: 'Campus Life',
     href: '/campus-life',
     items: [
-      { label: 'Student Life',       href: '/campus-life' },
-      { label: 'Monarch Athletics',  href: '/campus-life' },
-      { label: 'Tutoring & Support', href: '/campus-life' },
+      { label: 'Clubs & Activities', href: '/campus-life/clubs' },
+      { label: 'Monarch Athletics',  href: '/campus-life/athletics' },
+      { label: 'Tutoring & Support', href: '/student-resources/tutoring' },
       { label: 'Campus Calendar',    href: '/calendar' },
     ],
   },

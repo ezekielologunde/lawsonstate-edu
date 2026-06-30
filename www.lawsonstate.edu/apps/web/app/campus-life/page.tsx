@@ -47,17 +47,17 @@ const SUPPORT_SERVICES = [
   {
     name: 'Academic Support',
     desc: 'In-person and virtual tutoring, counseling, and testing services. Free 24/7 access to Tutor.com (500+ subjects). Also includes the R.A.C.E Advising Center and S.P.A.C.E. Center on both campuses.',
-    href: '/contact',
+    href: '/student-resources/tutoring',
   },
   {
     name: 'Career Services',
     desc: 'Resume builder, mock interviews, job board (College Central), Career Coach assessments, annual Career & Community Resource Fair. On-campus visits from 4-year colleges every week.',
-    href: '/contact',
+    href: '/student-resources/career',
   },
   {
     name: 'Health & Wellness',
     desc: 'Physical and mental health resources. Lawson State is a Caring Campus. Access the Cougar Pantry for food assistance, and the Cougar Clothing Closet for professional attire.',
-    href: '/contact',
+    href: '/student-resources/health',
   },
   {
     name: 'Disability Support (ADA)',
@@ -72,7 +72,7 @@ const SUPPORT_SERVICES = [
   {
     name: 'Veterans Services',
     desc: 'Help deciphering VA education benefits, Cougar Professional Wear for Veterans, and specialized counseling. Serving those who served.',
-    href: '/admissions',
+    href: '/admissions/veterans',
   },
 ]
 
@@ -168,6 +168,11 @@ export default function CampusLifePage() {
               </div>
             ))}
           </div>
+          <div className="mb-4">
+            <Link href="/campus-life/athletics" className="press btn-shimmer inline-flex items-center font-bold px-6 py-3 rounded-lg" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.95rem' }}>
+              View All 14 Sports →
+            </Link>
+          </div>
           <div className="rounded-2xl p-6 scroll-reveal" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
@@ -207,6 +212,11 @@ export default function CampusLifePage() {
                 </Link>
               </div>
             ))}
+          </div>
+          <div className="mb-4">
+            <Link href="/campus-life/clubs" className="press btn-shimmer inline-flex items-center font-bold px-6 py-3 rounded-lg" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.95rem' }}>
+              Browse All Clubs →
+            </Link>
           </div>
           <div className="rounded-2xl p-6 scroll-reveal" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
             <p className="mb-3" style={{ fontSize: '1.05rem', color: 'oklch(0.40 0.04 261)' }}>

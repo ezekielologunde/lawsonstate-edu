@@ -10,6 +10,8 @@ const STUDENT_ACTIONS: StudentAction[] = [
   { label: 'Register', href: 'https://my.lawsonstate.edu', external: true, primary: false },
   { label: 'Pay Bill', href: 'https://my.lawsonstate.edu', external: true, primary: false },
   { label: 'Financial Aid', href: '/financial-aid', primary: false },
+  { label: 'Student Resources', href: '/student-resources', primary: false },
+  { label: 'Tutoring', href: '/student-resources/tutoring', primary: false },
   { label: 'Advising', href: '/contact', primary: false },
 ]
 

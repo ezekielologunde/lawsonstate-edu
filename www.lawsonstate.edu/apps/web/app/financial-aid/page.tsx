@@ -97,8 +97,8 @@ export default function FinancialAidPage() {
             Lawson State is one of the most affordable paths to a college education. At $131/credit hour in-state, your investment goes further here.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
-            <Link href="https://studentaid.gov/h/apply-for-aid/fafsa" className="press btn-shimmer hero-cta-gold font-bold px-6 py-3 rounded-lg inline-block" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}>
-              Complete the FAFSA
+            <Link href="/financial-aid/fafsa" className="press btn-shimmer hero-cta-gold font-bold px-6 py-3 rounded-lg inline-block" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}>
+              FAFSA Guide →
             </Link>
             <Link href="/admissions/apply" className="press hero-cta-ghost font-semibold px-6 py-3 rounded-lg inline-block" style={{ border: '1.5px solid oklch(1 0 0 / 0.28)', fontSize: '1rem', color: 'white' }}>
               Apply Now
@@ -106,6 +106,24 @@ export default function FinancialAidPage() {
           </div>
         </div>
       </section>
+
+      {/* Sub-page nav */}
+      <nav aria-label="Financial Aid navigation" className="border-b overflow-x-auto" style={{ background: 'white', borderColor: 'oklch(0.92 0.01 263)' }}>
+        <ul className="max-w-7xl mx-auto px-6 flex gap-0 min-w-max">
+          {[
+            { label: 'Overview', href: '/financial-aid' },
+            { label: 'FAFSA Guide', href: '/financial-aid/fafsa' },
+            { label: 'Scholarships', href: '/financial-aid/scholarships' },
+          ].map(({ label, href }) => (
+            <li key={href}>
+              <Link href={href} className="inline-block py-4 px-4 text-sm font-medium border-b-2 transition-colors whitespace-nowrap"
+                style={{ borderColor: href === '/financial-aid' ? 'oklch(0.79 0.19 78)' : 'transparent', color: href === '/financial-aid' ? 'oklch(0.22 0.17 261)' : 'oklch(0.45 0.08 263)' }}>
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
       {/* IMPORTANT NOTICE */}
       <div style={{ background: 'oklch(0.79 0.19 78)' }}>
