@@ -237,7 +237,7 @@ export default function NewsEvents({
 
         {/* Mobile links */}
         <div className="md:hidden flex gap-6 mt-8" style={{ borderTop: '1px solid oklch(1 0 0 / 0.08)', paddingTop: '1.5rem' }}>
-          <Link href="/calendar" className="font-semibold" style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}>All News →</Link>
+          <Link href="/news" className="font-semibold" style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}>All News →</Link>
           <Link href="/calendar" className="font-semibold" style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}>Full Calendar →</Link>
         </div>
       </div>

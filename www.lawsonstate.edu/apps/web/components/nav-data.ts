@@ -38,7 +38,7 @@ export const NAV: NavEntry[] = [
         title: 'Resources',
         items: [
           { label: 'All 200+ Programs',  href: '/academics',                  highlight: true },
-          { label: 'Academic Catalog',   href: '/academics/catalog',           note: '2025–2026 course catalog' },
+          { label: 'Academic Catalog',   href: '/academics/catalog',           note: '2026–2027 course catalog' },
           { label: 'Alabama Transfer',   href: '/academics/alabama-transfer',  note: 'AGSC / STARS — transfer ready' },
           { label: 'Workforce Training', href: '/workforce',                    note: 'Industry certs in months' },
           { label: 'Academic Calendar',  href: '/calendar',                    note: 'Important dates' },
@@ -134,7 +134,7 @@ export const NAV: NavEntry[] = [
         title: 'Student Life',
         items: [
           { label: 'Clubs & Activities',     href: '/campus-life/clubs',          note: '30+ student organizations' },
-          { label: 'Monarch Athletics',      href: '/campus-life/athletics',      note: 'NJCAA — 14 sports' },
+          { label: 'Cougar Athletics',       href: '/campus-life/athletics',      note: 'NJCAA — 14 sports' },
           { label: 'Housing & Residential',  href: '/campus-life/housing',        note: 'Off-campus resources' },
           { label: 'Student Safety',         href: '/campus-life/safety',         note: 'Cougar Alert, security' },
           { label: 'Tutoring & Support',     href: '/student-resources/tutoring', note: 'Free academic help' },
