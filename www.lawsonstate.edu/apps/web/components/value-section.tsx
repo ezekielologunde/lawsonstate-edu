@@ -14,7 +14,7 @@ type StatDef = {
 
 const STATS: StatDef[] = [
   {
-    prefix: '$', target: 148, suffix: '',
+    prefix: '$', target: 131, suffix: '',
     unit: '/credit hr',
     label: 'In-state tuition',
     sub: 'One of the most affordable colleges in Alabama',
