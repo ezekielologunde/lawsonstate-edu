@@ -19,6 +19,44 @@ const CATEGORY_HERO_IMAGES: Record<ProgramCategory, { src: string; alt: string }
   other:                { src: 'https://live.staticflickr.com/65535/55212927272_fb910af83c.jpg', alt: 'Lawson State Community College campus' },
 }
 
+// Program-specific hero photos, keyed by program id — real Lawson State lab
+// and shop photos that were sitting unused in the asset library, verified
+// live against www.lawsonstate.edu before wiring in. Overrides the generic
+// per-category photo above for the programs that have their own real shot.
+const PROGRAM_HERO_IMAGES: Record<string, { src: string; alt: string }> = {
+  'ford-asset-aas':     { src: 'https://www.lawsonstate.edu/_resources/assets/img/automotive_pictures/Ford%20Alignment.jpg', alt: 'Ford ASSET alignment bay at the Alabama Center for Automotive Excellence' },
+  'gm-asep-aas':        { src: 'https://www.lawsonstate.edu/_resources/assets/img/automotive_pictures/GM%20lab1.jpg', alt: 'GM ASEP lab with vehicles on lifts' },
+  'toyota-tten-aas':    { src: 'https://www.lawsonstate.edu/_resources/assets/img/automotive_pictures/Toyota%20Lab.jpg', alt: 'Toyota T-TEN lab with vehicles on lifts' },
+  'mercedes-aas':       { src: 'https://www.lawsonstate.edu/_resources/assets/img/automotive_pictures/Lawson%20State%20ACAE%202.JPG', alt: 'Alabama Center for Automotive Excellence facility' },
+  'auto-body-repair-aot': { src: 'https://www.lawsonstate.edu/_resources/assets/img/automotive_pictures/AutoBody4.jpg', alt: 'Auto body and collision repair training bay' },
+  'auto-body-repair-cer': { src: 'https://www.lawsonstate.edu/_resources/assets/img/automotive_pictures/AutoBody4.jpg', alt: 'Auto body and collision repair training bay' },
+  'auto-body-repair-stc': { src: 'https://www.lawsonstate.edu/_resources/assets/img/automotive_pictures/AutoBody4.jpg', alt: 'Auto body and collision repair training bay' },
+  'auto-mechanic-aot':    { src: 'https://www.lawsonstate.edu/_resources/assets/img/automotive_pictures/Engine%20repair.jpg', alt: 'Student performing engine repair' },
+  'auto-mechanics-cer':   { src: 'https://www.lawsonstate.edu/_resources/assets/img/automotive_pictures/Engine%20repair.jpg', alt: 'Student performing engine repair' },
+  'auto-mechanics-stc':   { src: 'https://www.lawsonstate.edu/_resources/assets/img/automotive_pictures/Engine%20repair.jpg', alt: 'Student performing engine repair' },
+
+  'manufacturing-tech-aas':        { src: 'https://www.lawsonstate.edu/_resources/assets/img/manufacturing/MTT.png', alt: 'Machine Tool Technology student operating a mill' },
+  'manufacturing-robotics-stc':    { src: 'https://www.lawsonstate.edu/_resources/assets/img/manufacturing/Robotics.jpg', alt: 'Students programming an industrial robot arm' },
+  'manufacturing-mechatronics-stc':{ src: 'https://www.lawsonstate.edu/_resources/assets/img/manufacturing/Lawson%20State%20Mechatronics%20Lab%202.JPG', alt: 'Mechatronics lab at Lawson State' },
+  'welding-aot': { src: 'https://www.lawsonstate.edu/_resources/assets/img/manufacturing/welding_pictures/WDT%20Pic%201.jpg', alt: 'Welding student at a training bay' },
+  'welding-cer': { src: 'https://www.lawsonstate.edu/_resources/assets/img/manufacturing/welding_pictures/WDT%20Pic%208.jpg', alt: 'Welding student at a training bay' },
+  'welding-stc': { src: 'https://www.lawsonstate.edu/_resources/assets/img/manufacturing/welding_pictures/146749214_welding_pic_6.jpg', alt: 'Welding student at a training bay' },
+
+  'building-construction-aas': { src: 'https://www.lawsonstate.edu/_resources/assets/img/construction/Lawson%20State%20Building%20Construction.JPG', alt: 'Building construction technology training' },
+  'building-construction-stc': { src: 'https://www.lawsonstate.edu/_resources/assets/img/construction/Lawson%20State%20Building%20Construction.JPG', alt: 'Building construction technology training' },
+  'electrical-stc': { src: 'https://www.lawsonstate.edu/_resources/assets/img/construction/Electrical.jpg', alt: 'Electrical technology training' },
+  'plumbing-stc':    { src: 'https://www.lawsonstate.edu/_resources/assets/img/construction/Plumbing.jpg', alt: 'Plumbing technology training' },
+  'air-conditioning-aot': { src: 'https://www.lawsonstate.edu/_resources/assets/img/construction/HVAC.jpg', alt: 'Students servicing an HVAC unit' },
+  'air-conditioning-cer': { src: 'https://www.lawsonstate.edu/_resources/assets/img/construction/HVAC.jpg', alt: 'Students servicing an HVAC unit' },
+  'air-conditioning-stc': { src: 'https://www.lawsonstate.edu/_resources/assets/img/construction/HVAC.jpg', alt: 'Students servicing an HVAC unit' },
+
+  'dental-assistant-aas': { src: 'https://www.lawsonstate.edu/_resources/assets/img/health-programs/DENTAL.png', alt: 'Dental assisting student in a clinical training exercise' },
+  'dental-assistant-aot': { src: 'https://www.lawsonstate.edu/_resources/assets/img/health-programs/DENTAL.png', alt: 'Dental assisting student in a clinical training exercise' },
+  'dental-assistant-cer': { src: 'https://www.lawsonstate.edu/_resources/assets/img/health-programs/DENTAL.png', alt: 'Dental assisting student in a clinical training exercise' },
+  'radiologic-technology-aas': { src: 'https://www.lawsonstate.edu/_resources/assets/img/health-programs/RAD.png', alt: 'Radiologic technology students reviewing a chest X-ray' },
+  'diagnostic-medical-sonography-aas': { src: 'https://www.lawsonstate.edu/_resources/assets/img/health-programs/DMS.png', alt: 'Diagnostic medical sonography student performing an ultrasound' },
+}
+
 // Short "who this is for" framing per category — combined with the program's
 // own duration/delivery data for a program-specific sentence, no new fields needed.
 const WHO_FOR: Record<ProgramCategory, string> = {
@@ -214,7 +252,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
   const related = SAMPLE_PROGRAMS
     .filter(p => p.category === program.category && p.id !== program.id)
     .slice(0, 3)
-  const heroImg = CATEGORY_HERO_IMAGES[program.category]
+  const heroImg = PROGRAM_HERO_IMAGES[program.id] ?? CATEGORY_HERO_IMAGES[program.category]
   const accreditor = program.tags?.map(t => ACCREDITOR_TAGS[t.toLowerCase()]).find(Boolean)
   const recognitions = RECOGNITION_BY_ID[program.id]
   const curriculum = CURRICULUM_BY_ID[program.id]
