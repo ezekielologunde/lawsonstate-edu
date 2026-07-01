@@ -20,6 +20,11 @@ export default function LiveCalendarWidget() {
       s.async = true
       s.src = WIDGET_SRC
       s.id = 'omnicms-calendar'
+      // No integrity/SRI hash: Modern Campus updates this hosted script on
+      // their own schedule, so a pinned hash would break the widget the next
+      // time they ship a change. Same trust boundary the real lawsonstate.edu
+      // site itself accepts loading the identical script the same way.
+      s.referrerPolicy = 'no-referrer'
       document.head.appendChild(s)
     }
   }, [])
