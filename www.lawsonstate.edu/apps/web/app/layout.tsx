@@ -3,6 +3,7 @@ import { Poppins, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import AnnouncementBanner from '@/components/announcement-banner'
 import ClickRipple from '@/components/click-ripple'
+import PageLoader from '@/components/page-loader'
 import NavigationProgress from '@/components/navigation-progress'
 import AdvisingBot from '@/components/advising-bot'
 
@@ -58,6 +59,7 @@ export default function RootLayout({
       className={`${poppins.variable} ${jakarta.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <PageLoader />
         {/* Sets --lscc-banner-h synchronously before first paint so nav never jumps */}
         <script dangerouslySetInnerHTML={{ __html: `(function(){try{if(!sessionStorage.getItem('lscc-banner-dismissed-summer2026'))document.documentElement.style.setProperty('--lscc-banner-h','44px')}catch(e){}})()` }} />
         <NavigationProgress />

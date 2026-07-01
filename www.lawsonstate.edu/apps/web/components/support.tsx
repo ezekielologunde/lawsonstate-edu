@@ -68,7 +68,7 @@ export default function Support({ content = {} }: { content?: SupportContent }) 
             05 — Support that never stops
           </p>
           <h2
-            className="font-display font-black leading-none"
+            className="font-display font-black leading-none wipe-reveal"
             style={{ fontSize: 'clamp(2.6rem, 5.5vw, 4.4rem)', letterSpacing: '-0.04em', color: 'oklch(0.16 0.04 261)' }}
           >
             {c.headline_line1}

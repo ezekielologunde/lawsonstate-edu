@@ -14,6 +14,7 @@ import StatsTicker from '@/components/stats-ticker'
 import Testimonials from '@/components/testimonials'
 import ValueSection from '@/components/value-section'
 import AthleticsCallout from '@/components/athletics-callout'
+import CinematicSection from '@/components/cinematic-section'
 import ActionStrip from '@/components/action-strip'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
@@ -77,6 +78,7 @@ export default async function Home() {
         <PathwayCards />
         <Programs programs={programs ?? []} content={content.programs} />
         <Testimonials />
+        <CinematicSection />
         <ValueSection />
         <AthleticsCallout />
         <Support content={content.support} />

@@ -146,14 +146,16 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
             </span>
           </div>
 
-          {/* Headline — short, premium, single gold accent */}
-          <h1 className="font-display font-black page-fade-2" style={{
+          {/* Headline — kinetic word stagger + gold shimmer accent */}
+          <h1 className="font-display font-black kinetic-text" style={{
             fontSize: 'clamp(2.8rem, 6.4vw, 5rem)', letterSpacing: '-0.04em',
             lineHeight: 0.98, color: 'white', marginBottom: '1.5rem',
             textShadow: '0 2px 30px oklch(0.08 0.04 263 / 0.5)',
           }}>
-            Your future starts{' '}
-            <span className="text-shimmer">here.</span>
+            {(['Your', 'future', 'starts '] as const).map((word, i) => (
+              <span key={word} style={{ animationDelay: `${0.12 + i * 0.09}s` }}>{word}{' '}</span>
+            ))}
+            <span className="text-shimmer" style={{ animationDelay: '0.42s' }}>here.</span>
           </h1>
 
           {/* Subhead — one concise line */}
