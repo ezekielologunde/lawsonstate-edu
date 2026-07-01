@@ -29,6 +29,7 @@ const DIVISIONS: Division[] = [
     href: '/programs?area=career-technical',
     bg: 'white',
     dark: false,
+    icon: 'career-technical',
   },
   {
     id: 'college-transfer',
@@ -46,6 +47,7 @@ const DIVISIONS: Division[] = [
     href: '/programs?area=college-transfer',
     bg: 'white',
     dark: false,
+    icon: 'college-transfer',
   },
   {
     id: 'health-professions',
@@ -65,6 +67,7 @@ const DIVISIONS: Division[] = [
     href: '/programs?area=health-professions',
     bg: 'white',
     dark: false,
+    icon: 'health-professions',
   },
   {
     id: 'business-it',
@@ -83,6 +86,7 @@ const DIVISIONS: Division[] = [
     href: '/programs?area=business-it',
     bg: 'white',
     dark: false,
+    icon: 'business-it',
   },
 ]
 
@@ -177,7 +181,7 @@ export default function AcademicsPage() {
       </div>
 
       {/* Division cards */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
+      <section className="px-6" style={{ background: 'oklch(0.95 0.03 255)', paddingBlock: '6.5rem' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Program Divisions</p>
@@ -188,7 +192,7 @@ export default function AcademicsPage() {
       </section>
 
       {/* Find Your Program — routes into the faceted finder (the single catalog) */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
+      <section className="px-6" style={{ background: 'oklch(0.92 0.05 255)', paddingBlock: '3.5rem' }}>
         <div className="max-w-7xl mx-auto">
           <div className="relative rounded-3xl overflow-hidden scroll-reveal"
             style={{ background: 'oklch(0.22 0.17 261)' }}>
@@ -225,30 +229,43 @@ export default function AcademicsPage() {
       </section>
 
       {/* Specialty programs */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
+      <section className="px-6" style={{ background: 'oklch(0.95 0.03 255)', paddingBlock: '5rem' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Beyond the Classroom</p>
             <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>SPECIALTY PROGRAMS</h2>
           </div>
-          <div className="stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {SPECIALTY.map(s => (
-              <Link
-                key={s.name}
-                href={s.href}
-                className="card-lift press rounded-2xl p-6 block"
-                style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}
-              >
-                <h3 className="font-display font-bold mb-2" style={{ fontSize: '1.08rem', letterSpacing: '-0.01em', color: 'oklch(0.16 0.04 261)' }}>{s.name}</h3>
-                <p className="leading-relaxed" style={{ fontSize: '0.96rem', color: 'oklch(0.40 0.04 261)' }}>{s.desc}</p>
-              </Link>
-            ))}
+          <div className="stagger-grid flex flex-col lg:flex-row gap-5">
+            {/* First entry (STEM) is the deepest, most distinctive program — give it room
+                to breathe as a spotlight instead of matching the other three cards exactly. */}
+            <Link
+              href={SPECIALTY[0].href}
+              className="card-lift press rounded-2xl p-8 flex flex-col justify-end lg:w-[38%]"
+              style={{ background: 'oklch(0.22 0.17 261)', minHeight: '260px' }}
+            >
+              <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.76rem', letterSpacing: '0.18em' }}>Featured</p>
+              <h3 className="font-display font-black mb-3 leading-tight" style={{ fontSize: '1.6rem', letterSpacing: '-0.02em', color: 'white' }}>{SPECIALTY[0].name}</h3>
+              <p className="leading-relaxed" style={{ fontSize: '0.98rem', color: 'oklch(1 0 0 / 0.75)' }}>{SPECIALTY[0].desc}</p>
+            </Link>
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:flex lg:flex-col gap-5 flex-1">
+              {SPECIALTY.slice(1).map(s => (
+                <Link
+                  key={s.name}
+                  href={s.href}
+                  className="card-lift press rounded-2xl p-6 flex-1 flex flex-col justify-center"
+                  style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}
+                >
+                  <h3 className="font-display font-bold mb-2" style={{ fontSize: '1.08rem', letterSpacing: '-0.01em', color: 'oklch(0.16 0.04 261)' }}>{s.name}</h3>
+                  <p className="leading-relaxed" style={{ fontSize: '0.96rem', color: 'oklch(0.40 0.04 261)' }}>{s.desc}</p>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Workforce Development */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
+      <section className="px-6" style={{ background: 'oklch(0.92 0.05 255)', paddingBlock: '6rem' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Fast-Track Training</p>
@@ -290,7 +307,7 @@ export default function AcademicsPage() {
       </section>
 
       {/* Dual Enrollment */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
+      <section className="px-6" style={{ background: 'oklch(0.95 0.03 255)', paddingBlock: '7rem' }}>
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>

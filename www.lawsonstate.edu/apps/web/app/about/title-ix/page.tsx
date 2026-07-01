@@ -78,23 +78,23 @@ export default function TitleIXPage() {
             style={{ background: 'oklch(0.22 0.17 261)', boxShadow: '0 4px 24px oklch(0.22 0.17 261 / 0.25)' }}
           >
             <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.72rem', letterSpacing: '0.2em' }}>Report a Concern</p>
-            <p className="font-display font-black text-white mb-5" style={{ fontSize: '1.5rem', letterSpacing: '-0.02em' }}>TITLE IX COORDINATOR</p>
+            <p className="font-display font-black text-white mb-5" style={{ fontSize: '1.5rem', letterSpacing: '-0.02em' }}>TITLE IX / SECTION 504 COORDINATOR</p>
             <div className="flex flex-col gap-3 text-sm" style={{ color: 'oklch(1 0 0 / 0.80)' }}>
               <div>
                 <span style={{ color: 'var(--lscc-eyebrow-on-dark)', fontWeight: 700, display: 'block', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.15rem' }}>Office</span>
-                Office of Student Affairs, Lawson State Community College
+                Dean of Students, Lawson State Community College
               </div>
               <div>
                 <span style={{ color: 'var(--lscc-eyebrow-on-dark)', fontWeight: 700, display: 'block', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.15rem' }}>Phone</span>
-                205.929.6437
+                205.929.6361
               </div>
               <div>
                 <span style={{ color: 'var(--lscc-eyebrow-on-dark)', fontWeight: 700, display: 'block', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.15rem' }}>Email</span>
-                titleix@lawsonstate.edu
+                cvance@lawsonstate.edu
               </div>
               <div>
                 <span style={{ color: 'var(--lscc-eyebrow-on-dark)', fontWeight: 700, display: 'block', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.15rem' }}>Location</span>
-                Birmingham Campus · Student Services Building
+                3060 Wilson Road SW, Birmingham, AL 35221 · Academic Success Building, 2nd Floor
               </div>
               <div>
                 <span style={{ color: 'var(--lscc-eyebrow-on-dark)', fontWeight: 700, display: 'block', fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '0.15rem' }}>Hours</span>
@@ -102,6 +102,13 @@ export default function TitleIXPage() {
               </div>
             </div>
             <div className="mt-6 pt-5" style={{ borderTop: '1px solid oklch(1 0 0 / 0.12)' }}>
+              <p className="text-xs font-bold uppercase mb-1" style={{ color: 'var(--lscc-eyebrow-on-dark)', letterSpacing: '0.1em' }}>Deputy Title IX Coordinator</p>
+              <p className="text-xs" style={{ color: 'oklch(1 0 0 / 0.70)', lineHeight: 1.6 }}>
+                Director of Human Resources · 205.929.6313 · ebell@lawsonstate.edu<br />
+                Dr. Perry W. Ward Alabama Center for Advanced Technology &amp; Training Building, 3rd Floor
+              </p>
+            </div>
+            <div className="mt-5 pt-5" style={{ borderTop: '1px solid oklch(1 0 0 / 0.12)' }}>
               <p className="text-xs" style={{ color: 'oklch(1 0 0 / 0.55)' }}>
                 Reports may also be submitted to the U.S. Department of Education, Office for Civil Rights: <span style={{ color: 'oklch(0.79 0.19 78)' }}>ed.gov/ocr</span>
               </p>

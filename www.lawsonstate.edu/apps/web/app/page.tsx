@@ -1,10 +1,12 @@
 export const revalidate = 3600 // 1 hour ISR
 
 import { createServerClient, buildContentMap } from '@/lib/supabase'
+import { NEWS_ARTICLES } from '@/lib/news-data'
 import SkipToMainLink from '@/components/skip-to-main-link'
 import StickyStudentNav from '@/components/sticky-student-nav'
 import Nav from '@/components/nav'
 import Hero from '@/components/hero'
+import PathwayCards from '@/components/pathway-cards'
 import Programs from '@/components/programs'
 import Support from '@/components/support'
 import NewsEvents from '@/components/news-events'
@@ -23,9 +25,25 @@ export default async function Home() {
   const db = createServerClient()
   const today = new Date().toISOString().split('T')[0]
 
+  // "What's Happening" pulls from the real, complete news archive (108 articles,
+  // kept current with the live site) rather than the Supabase `announcements`
+  // table, which only ever has a handful of admin-entered rows — this is the
+  // same single source of truth used by /news.
+  const stories = [...NEWS_ARTICLES]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 4)
+    .map(a => ({
+      id: a.slug,
+      title: a.title,
+      excerpt: a.excerpt,
+      image_url: a.image,
+      category: a.category,
+      href: `/news/${a.slug}`,
+      published_at: a.date,
+    }))
+
   const [
     { data: programs },
-    { data: featuredStory },
     { data: upcomingEvents },
     { data: pageRows },
   ] = await Promise.all([
@@ -33,14 +51,6 @@ export default async function Home() {
       .select('id, name, description, tag, href, grid_slot, image_url')
       .eq('is_featured_home', true)
       .order('display_order'),
-
-    db.from('announcements')
-      .select('id, title, excerpt, image_url, category, href, published_at')
-      .eq('is_featured', true)
-      .eq('is_published', true)
-      .order('published_at', { ascending: false })
-      .limit(1)
-      .maybeSingle(),
 
     db.from('events')
       .select('id, title, event_date, href')
@@ -64,13 +74,14 @@ export default async function Home() {
       <main id="main-content" className="mobile-nav-spacer">
         <Hero content={content.hero} />
         <StatsTicker />
+        <PathwayCards />
         <Programs programs={programs ?? []} content={content.programs} />
         <Testimonials />
         <ValueSection />
         <AthleticsCallout />
         <Support content={content.support} />
         <NewsEvents
-          featuredStory={featuredStory ?? null}
+          stories={stories}
           events={upcomingEvents ?? []}
         />
         <ActionStrip />

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
@@ -27,24 +28,31 @@ const NEW_STEPS = [
   {
     step: '03',
     label: 'Talk to an Advisor',
-    desc: 'Book a free appointment with Admissions before you register. They will review your placement, program fit, and transfer credits.',
-    href: '/contact',
-    cta: 'Contact Admissions →',
+    desc: 'Book a free appointment before you register. Your advisor will review your placement, program fit, and transfer credits. Walk in anytime.',
+    href: '/advising',
+    cta: 'Advising Center →',
   },
   {
     step: '04',
+    label: 'Attend Orientation',
+    desc: 'New Student Orientation (NSO) is required before your first semester. Meet advisors, set up your accounts, and leave ready to register.',
+    href: '/orientation',
+    cta: 'Orientation Guide →',
+  },
+  {
+    step: '05',
     label: 'Register for Classes',
-    desc: 'Log into MyLawson to register once your application is processed and your financial aid is confirmed.',
-    href: 'https://my.lawsonstate.edu',
-    cta: 'Go to MyLawson →',
+    desc: 'Follow the 7-step registration process — clear your holds, build your schedule in Banner/MyLawson, and confirm your financial aid.',
+    href: '/registration',
+    cta: 'Registration Steps →',
   },
 ]
 
 const TOOLS = [
-  { label: 'MyLawson',       desc: 'Register, view grades, pay bills, email',       href: 'https://my.lawsonstate.edu',           external: true },
-  { label: 'Canvas LMS',     desc: 'All your online courses and assignments',        href: 'https://lawsonstate.instructure.com',   external: true },
+  { label: 'MyLawson',       desc: 'Register, view grades, pay bills, email',       href: 'https://experience.elluciancloud.com/lcc45/',           external: true },
+  { label: 'Canvas LMS',     desc: 'All your online courses and assignments',        href: 'https://alabama.instructure.com',   external: true },
   { label: 'Tutor.com',      desc: 'Free 24/7 tutoring — 500+ subjects',            href: 'https://tutor.com',                     external: true },
-  { label: 'Library',        desc: 'Research databases, study rooms, e-books',       href: 'https://lawsonstate.edu/Library',        external: true },
+  { label: 'Library',        desc: 'Research databases, study rooms, e-books',       href: '/library',                              external: false },
   { label: 'Bookstore',      desc: 'Birmingham Campus — 205.929.6010',              href: 'https://lawsonstatebirmingham.bkstr.com', external: true },
   { label: 'Academic Calendar', desc: 'Registration, finals, and holiday dates',   href: '/calendar',                              external: false },
   { label: 'Financial Aid',  desc: 'Check your aid status and disbursements',        href: '/financial-aid',                        external: false },
@@ -78,7 +86,7 @@ export default function PortalPage() {
         className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}
       >
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://live.staticflickr.com/65535/55214074644_fb8b844f53_c.jpg" alt="A Lawson State student" position="center 35%" />
         <div className="relative max-w-7xl mx-auto w-full" style={{ position: 'relative', zIndex: 1 }}>
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Student Gateway · Lawson State CC
@@ -89,6 +97,28 @@ export default function PortalPage() {
           <p style={{ fontSize: '1.08rem', color: 'oklch(1 0 0 / 0.65)', maxWidth: '52ch' }}>
             Everything you need — from first application to graduation — in one place.
           </p>
+          <div className="flex flex-wrap gap-3 mt-6">
+            <a
+              href="https://experience.elluciancloud.com/lcc45/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="press btn-shimmer inline-flex items-center gap-2 font-bold px-6 py-3 rounded-lg"
+              style={{ background: 'oklch(0.55 0.22 27)', color: 'white', fontSize: '0.95rem' }}
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden width="18" height="18">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              Log In to MyLawson
+              <span className="sr-only"> (Ellucian Banner — opens in new tab)</span>
+            </a>
+            <Link
+              href="/registration"
+              className="press inline-flex items-center font-semibold px-6 py-3 rounded-lg text-white"
+              style={{ border: '1.5px solid oklch(1 0 0 / 0.28)', fontSize: '0.95rem' }}
+            >
+              How to Register ↓
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
 const STATS = [
   { number: '1949', label: 'Founded' },
   { number: '70+', label: 'Years of Service' },
-  { number: '3,000+', label: 'Students Enrolled' },
+  { number: '3,453', label: 'Students Enrolled' },
   { number: '2', label: 'Campuses' },
 ]
 
@@ -78,8 +80,7 @@ export default function AboutPage() {
         className="page-hero relative py-20 px-6 flex items-end overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '38vh' }}
       >
-        <div className="absolute inset-0" aria-hidden
-          style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://live.staticflickr.com/65535/55281549902_c1ba0b4a66_h.jpg" alt="Lawson State Community College campus" position="center 45%" />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Est. 1949 · Birmingham, AL
@@ -180,8 +181,15 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-12 items-start">
             <div>
-              <div className="aspect-[3/4] rounded-2xl mb-4 flex items-center justify-center" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
-                <span className="font-display font-black" style={{ fontSize: '5rem', color: 'oklch(0.16 0.04 261 / 0.15)' }}>CTA</span>
+              <div className="relative aspect-[3/4] rounded-2xl mb-4 overflow-hidden" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
+                <Image
+                  src="https://www.lawsonstate.edu/_resources/assets/img/News/lawson-president-joins-UAB-west-hospital-board.webp"
+                  alt="Dr. Cynthia T. Anthony, President of Lawson State Community College"
+                  fill
+                  sizes="260px"
+                  className="object-cover"
+                  style={{ objectPosition: 'center 20%' }}
+                />
               </div>
               <p className="font-display font-black" style={{ fontSize: '1rem', color: 'oklch(0.16 0.04 261)' }}>Dr. Cynthia T. Anthony</p>
               <p style={{ color: 'oklch(0.40 0.04 261)', fontSize: '0.8rem' }}>5th President, Lawson State CC</p>
@@ -270,6 +278,46 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
+          <div className="mt-8 flex flex-wrap gap-3">
+            {[
+              { label: 'Meet the President', href: '/about/president' },
+              { label: 'Faculty & Staff Directory', href: '/about/faculty' },
+              { label: 'Administrative Services', href: '/about/administrative-services' },
+              { label: 'Human Resources', href: '/about/human-resources' },
+              { label: 'Public Relations', href: '/about/public-relations' },
+              { label: 'Facts & Data', href: '/about/facts' },
+              { label: 'Consumer Information & Disclosures', href: '/about/consumer-information' },
+            ].map((l) => (
+              <Link key={l.label} href={l.href} className="press text-sm font-semibold px-5 py-2.5 rounded-xl" style={{ background: 'white', border: '1.5px solid oklch(0 0 0 / 0.08)', color: 'oklch(0.28 0.05 261)' }}>
+                {l.label} →
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Foundation */}
+      <section className="py-20 px-6" style={{ background: 'oklch(0.22 0.17 261)' }}>
+        <div className="max-w-7xl mx-auto scroll-reveal grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-center">
+          <div>
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.2em' }}>Giving Back</p>
+            <h2 className="font-display font-black leading-none mb-5" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.025em', color: 'white' }}>LAWSON STATE FOUNDATION</h2>
+            <p className="leading-relaxed mb-3" style={{ color: 'oklch(1 0 0 / 0.75)', fontSize: '1.08rem', maxWidth: '62ch' }}>
+              Incorporated February 9, 1995, the Lawson State Community College Foundation is a separate nonprofit that empowers, encourages, and administers gifts for the exclusive benefit of the College, its students, and its staff — with a focus on funding scholarships and building a permanent endowment.
+            </p>
+            <p className="leading-relaxed" style={{ color: 'oklch(1 0 0 / 0.60)', fontSize: '0.95rem', maxWidth: '62ch' }}>
+              The Foundation awards generous scholarships and financial assistance to nearly 400 students each year, ensuring continued access to education for the community Lawson State serves.
+            </p>
+          </div>
+          <a
+            href="https://lawsonstatefoundation.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="press btn-shimmer font-bold px-8 py-4 rounded-lg whitespace-nowrap text-center"
+            style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
+          >
+            Give to the Foundation →<span className="sr-only"> (opens in new tab)</span>
+          </a>
         </div>
       </section>
 

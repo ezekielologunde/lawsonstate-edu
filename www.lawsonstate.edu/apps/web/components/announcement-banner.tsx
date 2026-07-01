@@ -74,7 +74,7 @@ export default function AnnouncementBanner() {
 
         <div className="flex items-center gap-2.5 shrink-0">
           <a
-            href="https://my.lawsonstate.edu"
+            href="https://reg-prod.ec.accs.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search&mepCode=LAWSON"
             target="_blank"
             rel="noopener noreferrer"
             className="press btn-shimmer font-bold whitespace-nowrap rounded-lg px-4 py-1.5"

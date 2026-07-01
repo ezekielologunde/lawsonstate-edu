@@ -24,6 +24,23 @@ const ExternalIcon = () => (
     <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
   </svg>
 )
+const PhoneIcon = () => (
+  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.36 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+  </svg>
+)
+
+// Six core destinations get the primary row. Everything a returning
+// user or specific persona (faculty/staff, quick logins) needs lives in
+// the slim utility strip above it — a double-nav pattern instead of
+// cramming every audience into one row.
+const DESKTOP_LABELS = new Set(['Programs', 'Admissions & Aid', 'Students', 'Campus Life', 'About'])
+
+const UTILITY_LINKS = [
+  { label: 'MyLawson',        href: 'https://experience.elluciancloud.com/lcc45/', external: true },
+  { label: 'Canvas',          href: 'https://alabama.instructure.com',             external: true },
+  { label: 'Faculty & Staff', href: '/about/faculty',                              external: false },
+]
 
 // ── Component ────────────────────────────────────────────────────
 
@@ -62,8 +79,9 @@ export default function Nav() {
     if (closeTimer.current) clearTimeout(closeTimer.current)
   }, [])
 
+  const desktopNav = NAV.filter(item => DESKTOP_LABELS.has(item.label))
+
   const lc = 'oklch(1 0 0 / 0.88)'
-  const wc = 'white'
   const sc = 'oklch(1 0 0 / 0.42)'
   const bc = 'white'
 
@@ -80,7 +98,61 @@ export default function Nav() {
         transition: 'box-shadow 0.3s ease',
       }}
     >
-      <div className="max-w-7xl mx-auto px-5 h-16 md:h-[70px] flex items-center justify-between gap-5">
+      {/* ── Utility strip — desktop only. Quick logins + Faculty/Staff live
+           here so the primary row below can stay to six core destinations. ── */}
+      <div
+        className="hidden lg:block"
+        style={{ borderBottom: '1px solid oklch(1 0 0 / 0.07)', background: 'oklch(0.10 0.10 261 / 0.6)' }}
+      >
+        <div className="max-w-7xl mx-auto px-5 h-9 flex items-center justify-between gap-5">
+          <a
+            href="tel:12059252515"
+            className="flex items-center gap-1.5 transition-colors hover:text-white"
+            style={{ fontSize: '0.72rem', color: sc }}
+          >
+            <PhoneIcon />
+            205.925.2515 · Birmingham &amp; Bessemer
+          </a>
+          <div className="flex items-center gap-4">
+            {UTILITY_LINKS.map((l) =>
+              l.external ? (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 font-semibold transition-colors hover:text-white"
+                  style={{ fontSize: '0.72rem', color: sc }}
+                >
+                  {l.label}
+                  <span className="sr-only"> (opens in new tab)</span>
+                  <ExternalIcon />
+                </a>
+              ) : (
+                <Link
+                  key={l.label}
+                  href={l.href}
+                  className="font-semibold transition-colors hover:text-white"
+                  style={{ fontSize: '0.72rem', color: sc }}
+                >
+                  {l.label}
+                </Link>
+              )
+            )}
+            <span aria-hidden style={{ width: '1px', height: '12px', background: 'oklch(1 0 0 / 0.14)' }} />
+            <Link
+              href="/portal"
+              className="font-semibold transition-colors hover:text-white"
+              style={{ fontSize: '0.72rem', color: 'var(--lscc-eyebrow-on-dark)' }}
+            >
+              Student Portal
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Primary row — six core destinations + one clear CTA ── */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-5 h-14 flex items-center justify-between gap-5">
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 shrink-0 leading-none" onClick={() => setOpen(false)}>
@@ -91,22 +163,21 @@ export default function Nav() {
             LS
           </div>
           <div className="hidden md:flex flex-col leading-none gap-[3px]">
-            <span className="font-display font-extrabold transition-colors duration-200" style={{ fontSize: '0.88rem', letterSpacing: '0.07em', color: wc }}>LAWSON STATE</span>
+            <span className="font-display font-extrabold transition-colors duration-200" style={{ fontSize: '0.88rem', letterSpacing: '0.07em', color: 'white' }}>LAWSON STATE</span>
             <span className="transition-colors duration-200" style={{ fontSize: '0.43rem', letterSpacing: '0.22em', color: sc }}>COMMUNITY COLLEGE</span>
           </div>
         </Link>
 
-        {/* ── Desktop nav ── */}
+        {/* Desktop nav — 6 core destinations, mega-menus intact */}
         <nav
           className="hidden lg:flex items-center gap-0 flex-1 justify-center"
           onMouseLeave={scheduleClose}
           onMouseEnter={cancelClose}
           aria-label="Main navigation"
         >
-          {NAV.map((item: NavEntry) => (
+          {desktopNav.map((item: NavEntry) => (
             <div key={item.label} className="relative">
 
-              {/* Trigger */}
               <Link
                 href={item.href}
                 className="flex items-center gap-1 px-3 py-2 text-[0.80rem] font-semibold rounded-lg transition-colors duration-150 hover:bg-white/8"
@@ -123,7 +194,6 @@ export default function Nav() {
                 )}
               </Link>
 
-              {/* Mega-menu panel */}
               {item.mega && openMenu === item.label && (
                 <div
                   style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-50%)', zIndex: 60 }}
@@ -132,7 +202,7 @@ export default function Nav() {
                   <div
                     className="nav-dropdown mt-2"
                     style={{
-                      minWidth: '520px',
+                      minWidth: item.mega.length >= 3 ? '680px' : '520px',
                       background: 'white',
                       borderRadius: '18px',
                       border: '1px solid oklch(0 0 0 / 0.08)',
@@ -175,13 +245,15 @@ export default function Nav() {
           ))}
         </nav>
 
-        {/* Desktop CTAs */}
+        {/* Desktop CTAs — Portal now lives in the utility strip above, so
+             this row keeps just search + the one strong conversion action. */}
         <div className="hidden md:flex items-center gap-3 shrink-0">
           <SearchModal dark={!scrolled} />
-          <a href="https://my.lawsonstate.edu" target="_blank" rel="noreferrer" className="text-[0.82rem] font-semibold transition-opacity hover:opacity-60 whitespace-nowrap" style={{ color: lc }}>
-            My Portal<span className="sr-only"> (opens in new tab)</span>
-          </a>
-          <Link href="/admissions/apply" className="press btn-shimmer text-[0.82rem] font-bold px-5 py-2 rounded-lg whitespace-nowrap" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', boxShadow: '0 2px 12px oklch(0.79 0.19 78 / 0.35)' }}>
+          <Link
+            href="/admissions/apply"
+            className="press btn-shimmer text-[0.82rem] font-bold px-5 py-2 rounded-lg whitespace-nowrap"
+            style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', boxShadow: '0 2px 12px oklch(0.79 0.19 78 / 0.35)' }}
+          >
             Apply Now
           </Link>
         </div>
@@ -204,10 +276,9 @@ export default function Nav() {
       <div
         id="mobile-nav"
         className="lg:hidden fixed inset-0 z-40 pointer-events-none"
-        style={{ top: 'calc(var(--lscc-banner-h, 0px) + 64px)' }}
+        style={{ top: 'calc(var(--lscc-banner-h, 0px) + 56px)' }}
         aria-hidden={!open}
       >
-        {/* Backdrop */}
         <div
           className="absolute inset-0 transition-opacity duration-300"
           style={{ background: 'oklch(0 0 0 / 0.50)', opacity: open ? 1 : 0, backdropFilter: open ? 'blur(4px)' : 'none', pointerEvents: open ? 'auto' : 'none' }}
@@ -215,18 +286,16 @@ export default function Nav() {
           aria-hidden
         />
 
-        {/* Slide-down panel */}
         <div
           className="absolute inset-x-0 top-0 pointer-events-auto transition-all duration-300"
           style={{
             background: 'white',
-            maxHeight: open ? 'calc(100dvh - 64px)' : '0',
+            maxHeight: open ? 'calc(100dvh - 56px)' : '0',
             opacity: open ? 1 : 0,
             overflow: open ? 'auto' : 'hidden',
             boxShadow: '0 24px 80px oklch(0 0 0 / 0.22)',
           }}
         >
-          {/* Pinned CTA */}
           <div className="px-4 pt-4 pb-2">
             <Link
               href="/admissions/apply"
@@ -239,7 +308,6 @@ export default function Nav() {
             </Link>
           </div>
 
-          {/* Accordion groups */}
           <nav className="px-4 py-2 flex flex-col gap-0.5" aria-label="Mobile navigation">
             {MOBILE_GROUPS.map((group) => {
               const isExp = expandedGroup === group.label
@@ -279,7 +347,6 @@ export default function Nav() {
             })}
           </nav>
 
-          {/* Footer row */}
           <div className="px-4 pb-6 pt-3 flex flex-col gap-1" style={{ borderTop: '1px solid oklch(0 0 0 / 0.07)', marginTop: '0.5rem' }}>
             <Link
               href="/portal"
@@ -287,11 +354,11 @@ export default function Nav() {
               className="flex items-center justify-between text-sm font-semibold px-3 py-3 rounded-xl hover:bg-black/[0.04] transition-colors"
               style={{ color: 'oklch(0.22 0.05 261)' }}
             >
-              Student Portal Hub
+              Student Portal
               <ArrowRight />
             </Link>
             <a
-              href="https://my.lawsonstate.edu"
+              href="https://experience.elluciancloud.com/lcc45/"
               target="_blank" rel="noreferrer"
               onClick={() => setOpen(false)}
               className="flex items-center justify-between text-sm font-semibold px-3 py-3 rounded-xl hover:bg-black/[0.04] transition-colors"

@@ -60,14 +60,14 @@ const PATHS = [
     headline: 'EVERYTHING YOU NEED',
     summary: 'Everything you need to stay on track this semester — registration, financial aid status, tutoring support, and academic advising.',
     steps: [
-      { label: 'Register for classes', href: 'https://my.lawsonstate.edu' },
-      { label: 'Student portal login', href: 'https://my.lawsonstate.edu' },
+      { label: 'Register for classes', href: 'https://reg-prod.ec.accs.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search&mepCode=LAWSON' },
+      { label: 'Student portal login', href: '/portal' },
       { label: 'Financial aid status', href: '/financial-aid' },
-      { label: 'Pay your bill', href: 'https://my.lawsonstate.edu' },
+      { label: 'Pay your bill', href: 'https://experience.elluciancloud.com/lcc45/' },
       { label: 'Get tutoring support', href: '/student-resources/tutoring' },
     ],
     cta: 'Go to Student Portal',
-    ctaHref: 'https://my.lawsonstate.edu',
+    ctaHref: '/portal',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" aria-hidden className="w-10 h-10">
         <circle cx="24" cy="24" r="18" stroke="currentColor" strokeWidth="2.5" />

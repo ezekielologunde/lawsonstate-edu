@@ -6,13 +6,13 @@ import { useState, useEffect } from 'react'
 type StudentAction = { label: string; href: string; primary: boolean; external?: boolean }
 
 const STUDENT_ACTIONS: StudentAction[] = [
-  { label: 'Student Portal', href: 'https://my.lawsonstate.edu', external: true, primary: true },
-  { label: 'Register', href: 'https://my.lawsonstate.edu', external: true, primary: false },
-  { label: 'Pay Bill', href: 'https://my.lawsonstate.edu', external: true, primary: false },
+  { label: 'Student Portal', href: '/portal', primary: true },
+  { label: 'Register', href: 'https://reg-prod.ec.accs.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search&mepCode=LAWSON', external: true, primary: false },
+  { label: 'Pay Bill', href: 'https://experience.elluciancloud.com/lcc45/', external: true, primary: false },
   { label: 'Financial Aid', href: '/financial-aid', primary: false },
   { label: 'Student Resources', href: '/student-resources', primary: false },
   { label: 'Tutoring', href: '/student-resources/tutoring', primary: false },
-  { label: 'Advising', href: '/contact', primary: false },
+  { label: 'Advising', href: '/advising', primary: false },
 ]
 
 export default function StickyStudentNav() {
@@ -20,12 +20,21 @@ export default function StickyStudentNav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show after scrolling past hero (80vh ≈ ~1500px on desktop)
-      setIsVisible(window.scrollY > 400)
+      // Returning students get their re-entry bar on page load — no scroll gate.
+      // It only steps aside once the footer is in view so it never covers the
+      // footer's compliance links (Title IX, Non-Discrimination, etc.).
+      const footer = document.querySelector('footer')
+      const footerInView = footer ? footer.getBoundingClientRect().top < window.innerHeight : false
+      setIsVisible(!footerInView)
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleScroll)
+    }
   }, [])
 
   if (!isVisible) return null

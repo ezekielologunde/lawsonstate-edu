@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
 import Prefooter from '@/components/prefooter'
@@ -41,7 +42,7 @@ export default function AthleticsPage() {
         className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '40vh', display: 'flex', alignItems: 'flex-end', paddingTop: '9rem', paddingBottom: '4.5rem' }}
       >
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://www.lawsonstate.edu/_resources/assets/img/athletics/hero-athletics.webp" alt="Lawson State Cougars student-athletes" position="center 30%" />
         <div className="relative max-w-7xl mx-auto w-full" style={{ position: 'relative', zIndex: 1 }}>
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -61,7 +62,7 @@ export default function AthleticsPage() {
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
             <a
-              href="https://monarchsports.lawsonstate.edu"
+              href="https://www.acccathletics.com/landing/index"
               target="_blank"
               rel="noopener noreferrer"
               className="press btn-shimmer inline-flex items-center font-bold px-6 py-3 rounded-lg"

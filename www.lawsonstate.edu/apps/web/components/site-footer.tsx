@@ -1,19 +1,23 @@
 import Link from 'next/link'
 import NewsletterSignup from './newsletter-signup'
 
-const footerLinks: Record<string, { label: string; href: string }[]> = {
-  Academics: [
-    { label: 'Programs & Degrees', href: '/academics' },
+const footerLinks: Record<string, { label: string; href: string; external?: boolean }[]> = {
+  Programs: [
     { label: 'Find Your Program', href: '/programs' },
+    { label: 'Explore Academics', href: '/academics' },
     { label: 'Academic Calendar', href: '/calendar' },
-    { label: 'Library & Resources', href: 'https://lawsonstate.edu/Library' },
+    { label: 'Library & Resources', href: '/library' },
   ],
   Admissions: [
     { label: 'Apply Now', href: '/admissions/apply' },
+    { label: 'Transfer Students', href: '/admissions/transfer' },
+    { label: 'Veterans & Military', href: '/admissions/veterans' },
+    { label: 'Visit Campus', href: '/contact' },
+  ],
+  'Financial Aid': [
+    { label: 'Financial Aid', href: '/financial-aid' },
     { label: 'FAFSA Guide', href: '/financial-aid/fafsa' },
     { label: 'Scholarships', href: '/financial-aid/scholarships' },
-    { label: 'Financial Aid', href: '/financial-aid' },
-    { label: 'Visit Campus', href: '/contact' },
   ],
   'Student Services': [
     { label: 'Student Resources', href: '/student-resources' },
@@ -25,9 +29,10 @@ const footerLinks: Record<string, { label: string; href: string }[]> = {
   Institution: [
     { label: 'About Lawson State', href: '/about' },
     { label: 'Career Opportunities', href: '/careers' },
-    { label: 'Accreditation', href: '/about/accreditation' },
     { label: 'Facts & Data', href: '/about/facts' },
-    { label: 'Disclosures', href: '/about/disclosures' },
+    { label: 'Accreditation', href: '/about/accreditation' },
+    { label: 'Consumer Information', href: '/about/consumer-information' },
+    { label: 'Give to the Foundation', href: 'https://lawsonstatefoundation.org', external: true },
     { label: 'Contact Us', href: '/contact' },
   ],
 }
@@ -116,7 +121,7 @@ export default function SiteFooter() {
         </div>
 
         {/* Nav links */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-8">
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
               <div
@@ -128,13 +133,26 @@ export default function SiteFooter() {
               <ul className="flex flex-col gap-2.5">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm transition-opacity hover:opacity-50"
-                      style={{ color: BODY }}
-                    >
-                      {link.label}
-                    </Link>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm transition-opacity hover:opacity-50"
+                        style={{ color: BODY }}
+                      >
+                        {link.label}
+                        <span className="sr-only"> (opens in new tab)</span>
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-sm transition-opacity hover:opacity-50"
+                        style={{ color: BODY }}
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -148,7 +166,7 @@ export default function SiteFooter() {
           style={{ borderTop: `1px solid ${LINE}`, color: MUTE }}
         >
           <p>© 2026 Lawson State Community College. All rights reserved.</p>
-          <div className="flex flex-wrap gap-x-5 gap-y-1">
+          <div className="flex flex-nowrap items-center gap-x-5 overflow-x-auto scrollbar-hide">
             {[
               { label: 'Privacy Policy',    href: '/about/privacy' },
               { label: 'Accessibility',     href: '/about/accessibility' },
@@ -159,7 +177,7 @@ export default function SiteFooter() {
               <Link
                 key={l.label}
                 href={l.href}
-                className="transition-opacity hover:opacity-60"
+                className="shrink-0 whitespace-nowrap transition-opacity hover:opacity-60"
                 style={{ color: MUTE }}
               >
                 {l.label}

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
@@ -17,7 +18,7 @@ const ORIENTATION_STEPS = [
     tag: 'Online',
     title: 'Complete My Lawson Online Orientation',
     body: 'All new students must complete the My Lawson New Student Online Orientation before attending Connection Days or registering for classes. This self-paced module covers essential information about campus resources, academic policies, financial aid, and student services.',
-    cta: { label: 'Access Online Orientation', href: 'https://my.lawsonstate.edu' },
+    cta: { label: 'Access Online Orientation', href: 'https://experience.elluciancloud.com/lcc45/' },
     external: true,
   },
   {
@@ -55,8 +56,7 @@ export default function OrientationPage() {
         className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}
       >
-        <div className="absolute inset-0" aria-hidden
-          style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://www.lawsonstate.edu/_resources/assets/img/News/Birmingham-Promise-Orientation-3.webp" alt="New student orientation at Lawson State" position="center 30%" />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>

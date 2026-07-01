@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
 import Prefooter from '@/components/prefooter'
@@ -52,7 +53,7 @@ export default function WeekendCollegePage() {
         className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '36vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}
       >
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://live.staticflickr.com/65535/55259062004_8c4065e0ef_z.jpg" alt="Weekend College students at Lawson State" position="center 30%" />
         <div className="relative max-w-7xl mx-auto w-full" style={{ position: 'relative', zIndex: 1 }}>
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -72,7 +73,7 @@ export default function WeekendCollegePage() {
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
             <a
-              href="https://my.lawsonstate.edu"
+              href="https://reg-prod.ec.accs.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search&mepCode=LAWSON"
               target="_blank"
               rel="noopener noreferrer"
               className="press btn-shimmer inline-flex items-center font-bold px-6 py-3 rounded-lg"
@@ -157,7 +158,7 @@ export default function WeekendCollegePage() {
               In MyLawson, search for classes and filter by meeting day — select Friday or Saturday to see all Weekend College sections. You can also filter by campus (Birmingham or Bessemer) and subject.
             </p>
             <a
-              href="https://my.lawsonstate.edu"
+              href="https://reg-prod.ec.accs.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search&mepCode=LAWSON"
               target="_blank"
               rel="noopener noreferrer"
               className="press btn-shimmer inline-flex items-center font-bold px-6 py-3 rounded-lg text-sm"
@@ -195,7 +196,7 @@ export default function WeekendCollegePage() {
             <p style={{ fontSize: '0.9rem', color: 'oklch(1 0 0 / 0.65)', marginTop: '0.3rem' }}>Registration · 205.929.6301 · registration@lawsonstate.edu</p>
           </div>
           <div className="flex gap-3 flex-wrap">
-            <a href="https://my.lawsonstate.edu" target="_blank" rel="noopener noreferrer" className="press btn-shimmer shrink-0 font-bold px-7 py-3.5 rounded-xl text-sm" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)' }}>
+            <a href="https://reg-prod.ec.accs.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search&mepCode=LAWSON" target="_blank" rel="noopener noreferrer" className="press btn-shimmer shrink-0 font-bold px-7 py-3.5 rounded-xl text-sm" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)' }}>
               Register Now
               <span className="sr-only"> (opens in new tab)</span>
             </a>

@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
 import Prefooter from '@/components/prefooter'
@@ -31,7 +32,7 @@ export default function AccreditationPage() {
         className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}
       >
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://live.staticflickr.com/65535/55259062249_bda6f008e2_z.jpg" alt="Lawson State Community College campus" position="center 35%" />
         <div className="relative max-w-7xl mx-auto w-full" style={{ position: 'relative', zIndex: 1 }}>
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>

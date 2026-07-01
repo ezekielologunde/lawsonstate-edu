@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
@@ -61,13 +62,18 @@ const AID_TYPES = [
   },
 ]
 
+const PELL_BOOKS_STEPS = [
+  { n: '01', title: 'Log In to MyLawson', body: 'From the site’s Current Students menu, select MyLawson and sign in with your Lawson State username and password.' },
+  { n: '02', title: 'Open Financial Aid Status', body: 'On the MyLawson portal, find the Financial Aid Self-Service card and click "Financial Aid Status."' },
+  { n: '03', title: 'Authorize Your Aid', body: 'Click Resources, then "Authorize Your Aid" and "Terms and Conditions." Confirm everything on the page — once done, your Pell can be applied to books, equipment, and fees.' },
+]
+
 const REFUND = [
-  { week: 'Before classes begin', pct: '100%' },
-  { week: '1st week of classes', pct: '100%' },
-  { week: '2nd week of classes', pct: '75%' },
-  { week: '3rd week of classes', pct: '50%' },
-  { week: '4th week of classes', pct: '25%' },
-  { week: '5th week and beyond', pct: '0%' },
+  { week: 'Before the first day of class', pct: '100%' },
+  { week: 'Withdrawal during 1st week', pct: '75%' },
+  { week: 'Withdrawal during 2nd week', pct: '50%' },
+  { week: 'Withdrawal during 3rd week', pct: '25%' },
+  { week: 'Withdrawal after 3rd week', pct: '0%' },
 ]
 
 const TRANSFER_SCHOLARSHIPS = [
@@ -88,8 +94,7 @@ export default function FinancialAidPage() {
         className="page-hero relative py-20 px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
       >
-        <div className="absolute inset-0" aria-hidden
-          style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://www.lawsonstate.edu/_resources/assets/img/News/stem-scholar-interships.webp" alt="Lawson State students who receive financial aid" position="center 25%" />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>2026–2027 · Grants, Scholarships & More</p>
           <h1 className="font-display font-black leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em', color: 'white' }}>FINANCIAL AID</h1>
@@ -227,6 +232,35 @@ export default function FinancialAidPage() {
         </div>
       </section>
 
+      {/* Authorize Pell for Books */}
+      <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-10 scroll-reveal">
+            <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Already Have Pell?</p>
+            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>AUTHORIZE YOUR PELL FOR BOOKS</h2>
+            <p className="mt-2" style={{ fontSize: '1.08rem', color: 'oklch(0.50 0.03 261)' }}>Apply your Pell Grant toward books, equipment, and fees in three steps through MyLawson.</p>
+          </div>
+          <div className="stagger-grid grid grid-cols-1 md:grid-cols-3 gap-6">
+            {PELL_BOOKS_STEPS.map((s) => (
+              <div key={s.n} className="rounded-2xl p-6" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
+                <div className="font-display font-black mb-2" style={{ fontSize: '2.2rem', color: 'var(--lscc-eyebrow)', lineHeight: 1, letterSpacing: '-0.04em' }}>{s.n}</div>
+                <h3 className="font-display font-black mb-2" style={{ fontSize: '1rem', color: 'oklch(0.16 0.04 261)' }}>{s.title}</h3>
+                <p style={{ fontSize: '0.92rem', color: 'oklch(0.40 0.04 261)', lineHeight: 1.65 }}>{s.body}</p>
+              </div>
+            ))}
+          </div>
+          <a
+            href="https://experience.elluciancloud.com/lcc45/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="press btn-shimmer font-bold px-6 py-3 rounded-lg inline-block mt-8"
+            style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
+          >
+            Go to MyLawson →<span className="sr-only"> (opens in new tab)</span>
+          </a>
+        </div>
+      </section>
+
       {/* Refund Schedule */}
       <section className="py-20 px-6" style={{ background: 'white' }}>
         <div className="max-w-7xl mx-auto">
@@ -258,6 +292,9 @@ export default function FinancialAidPage() {
               </tbody>
             </table>
           </div>
+          <p className="mt-4 max-w-[36rem]" style={{ fontSize: '0.85rem', color: 'oklch(0.55 0.04 261)' }}>
+            An administrative fee — up to 5% of tuition and institutional charges, or $100, whichever is smaller — applies to withdrawals between the first day of class and the end of the third week.
+          </p>
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
@@ -53,10 +54,10 @@ const STEPS = [
   {
     step: '01',
     title: 'Apply Online — Free',
-    desc: 'Complete the application at apply.lawsonstate.edu. No fee, no deadline — applications are open year-round.',
-    href: 'https://lawsonstate.edu/admissions/apply',
+    desc: 'Complete the application online. No fee, no deadline — applications are open year-round.',
+    href: '/admissions/apply',
     linkLabel: 'Start Your Application',
-    external: true,
+    external: false,
   },
   {
     step: '02',
@@ -78,7 +79,7 @@ const STEPS = [
     step: '04',
     title: 'Register & You\'re In',
     desc: 'Once admitted, log in to MyLawson to register for classes and confirm your financial aid. Your advisor is ready to help.',
-    href: 'https://my.lawsonstate.edu',
+    href: 'https://experience.elluciancloud.com/lcc45/',
     linkLabel: 'Log In to MyLawson',
     external: true,
   },
@@ -97,8 +98,8 @@ const TYPES = [
       'Register through MyLawson once admitted',
     ],
     cta: 'Apply as a New Student',
-    ctaHref: 'https://lawsonstate.edu/admissions/apply',
-    external: true,
+    ctaHref: '/admissions/apply',
+    external: false,
   },
   {
     id: 'transfer',
@@ -112,8 +113,8 @@ const TYPES = [
       'Alabama STARS protects your credits across all ACCS colleges',
     ],
     cta: 'Apply as a Transfer Student',
-    ctaHref: 'https://lawsonstate.edu/admissions/apply',
-    external: true,
+    ctaHref: '/admissions/apply',
+    external: false,
   },
   {
     id: 'dual',
@@ -166,7 +167,7 @@ export default function AdmissionsPage() {
         className="page-hero relative overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '42vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem', paddingLeft: '1.5rem', paddingRight: '1.5rem' }}
       >
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://live.staticflickr.com/65535/55259062249_bda6f008e2_z.jpg" alt="Students on the Lawson State campus" position="center 30%" />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="page-fade-1 font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Rolling Admissions · Free to Apply · No GPA Minimum
@@ -178,16 +179,13 @@ export default function AdmissionsPage() {
             Four steps. No fee. No minimum GPA. Our admissions team is here for you every step of the way.
           </p>
           <div className="flex flex-wrap gap-3">
-            <a
-              href="https://lawsonstate.edu/admissions/apply"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/admissions/apply"
               className="press btn-shimmer hero-cta-gold font-bold px-6 py-3 rounded-lg inline-block"
               style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
             >
               Start My Application
-              <span className="sr-only"> (opens in new tab)</span>
-            </a>
+            </Link>
             <Link
               href="/financial-aid"
               className="press hero-cta-ghost font-semibold px-6 py-3 rounded-lg text-white inline-block"

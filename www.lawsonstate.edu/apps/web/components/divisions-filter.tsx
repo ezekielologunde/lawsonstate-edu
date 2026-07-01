@@ -1,7 +1,9 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, type ReactNode } from 'react'
 import Link from 'next/link'
+
+export type DivisionIcon = 'career-technical' | 'college-transfer' | 'health-professions' | 'business-it'
 
 export type Division = {
   id: string
@@ -12,6 +14,36 @@ export type Division = {
   href: string
   bg: string
   dark: boolean
+  icon: DivisionIcon
+}
+
+// One glyph per division, matched to what the division actually trains for —
+// not decorative, so keep the set small and legible at 28px.
+const ICONS: Record<DivisionIcon, ReactNode> = {
+  'career-technical': (
+    <path d="M14.7 6.3a1 1 0 0 0-1.4 0L11 8.6 8.4 6 6 8.4 8.6 11l-2.3 2.3a1 1 0 0 0 0 1.4l3.5 3.5a1 1 0 0 0 1.4 0L13.5 16l4.5 4.5a2 2 0 0 0 2.8-2.8L16.3 13l1.7-1.7a1 1 0 0 0 0-1.4z" />
+  ),
+  'college-transfer': (
+    <path d="M12 3 1 9l11 6 9-4.9V17h2V9zM5 12.2v4.5c0 1.9 3.1 3.3 7 3.3s7-1.4 7-3.3v-4.5l-7 3.8z" />
+  ),
+  'health-professions': (
+    <path d="M12 21s-7.5-4.6-10-9.1C.5 8.6 2 5 5.4 5c1.9 0 3.4 1 4.6 2.6C11.2 6 12.7 5 14.6 5 18 5 19.5 8.6 22 11.9 19.5 16.4 12 21 12 21z" />
+  ),
+  'business-it': (
+    <path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm5-2h6v2H9zM2 20h20v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+  ),
+}
+
+function DivisionIconGlyph({ icon, dark }: { icon: DivisionIcon; dark: boolean }) {
+  return (
+    <svg
+      width="26" height="26" viewBox="0 0 24 24"
+      fill={dark ? 'oklch(0.79 0.19 78)' : 'oklch(0.22 0.17 261)'}
+      aria-hidden="true"
+    >
+      {ICONS[icon]}
+    </svg>
+  )
 }
 
 type FilterId = 'all' | 'career-technical' | 'college-transfer' | 'health-professions' | 'business-it'
@@ -91,11 +123,19 @@ export default function DivisionsFilter({ divisions }: { divisions: Division[] }
           >
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 items-start">
               <div>
-                <div
-                  className="font-display font-black mb-2"
-                  style={{ fontSize: '0.96rem', color: div.dark ? 'var(--lscc-eyebrow-on-dark)' : 'var(--lscc-eyebrow)', letterSpacing: '0.1em' }}
-                >
-                  {div.number}
+                <div className="flex items-center gap-3 mb-2">
+                  <span
+                    className="flex items-center justify-center shrink-0 rounded-full"
+                    style={{ width: '44px', height: '44px', background: div.dark ? 'oklch(1 0 0 / 0.10)' : 'oklch(0.79 0.19 78 / 0.14)' }}
+                  >
+                    <DivisionIconGlyph icon={div.icon} dark={div.dark} />
+                  </span>
+                  <span
+                    className="font-display font-black"
+                    style={{ fontSize: '0.96rem', color: div.dark ? 'var(--lscc-eyebrow-on-dark)' : 'var(--lscc-eyebrow)', letterSpacing: '0.1em' }}
+                  >
+                    {div.number}
+                  </span>
                 </div>
                 <h3
                   className="font-display font-black leading-none mb-3"

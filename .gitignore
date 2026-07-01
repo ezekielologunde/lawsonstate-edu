@@ -1,0 +1,12 @@
+node_modules
+
+# local dev/tooling artifacts — not part of the site
+.playwright-mcp/
+.vercel
+.env*
+!.env.example
+
+# ad-hoc screenshots/audit images dropped at repo root during manual QA
+/*.png
+/*.jpeg
+/*.jpg

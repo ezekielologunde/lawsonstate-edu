@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
@@ -77,12 +78,12 @@ const SUPPORT_SERVICES = [
 ]
 
 const RESOURCES = [
-  { name: 'MyLawson Student Portal', desc: 'Register, view grades, pay bills, access email', href: 'https://my.lawsonstate.edu',           external: true },
-  { name: 'Canvas LMS',              desc: 'Online courses, assignments, grades',            href: 'https://lawsonstate.instructure.com',   external: true },
+  { name: 'MyLawson Student Portal', desc: 'Register, view grades, pay bills, access email', href: '/portal',                              external: false },
+  { name: 'Canvas LMS',              desc: 'Online courses, assignments, grades',            href: 'https://alabama.instructure.com',   external: true },
   { name: 'Tutor.com',               desc: 'Free 24/7 tutoring, 500+ subjects',              href: 'https://tutor.com',                     external: true },
   { name: 'Bookstore',               desc: 'Birmingham Campus — 205.929.6010',               href: 'https://lawsonstatebirmingham.bkstr.com', external: true },
   { name: 'Help Desk',               desc: 'help@lawsonstate.edu',                           href: 'mailto:help@lawsonstate.edu',            external: false },
-  { name: 'Library',                 desc: 'Research, databases, study spaces',               href: 'https://lawsonstate.edu/Library',        external: true },
+  { name: 'Library',                 desc: 'Research, databases, study spaces',               href: '/library',                              external: false },
   { name: 'Cengage Unlimited',       desc: '$214.99/yr — 65+ courses covered',               href: 'https://cengage.com',                   external: true },
   { name: 'Cougar Alert',            desc: 'Emergency notification system',                   href: '/contact',                              external: false },
 ]
@@ -97,8 +98,7 @@ export default function CampusLifePage() {
         className="page-hero relative py-20 px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
       >
-        <div className="absolute inset-0" aria-hidden
-          style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://live.staticflickr.com/65535/55282695209_241aa02f03_c.jpg" alt="Student life at Lawson State" position="center 35%" />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>Cougars · Birmingham & Bessemer</p>
           <h1 className="font-display font-black leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em', color: 'white' }}>CAMPUS LIFE</h1>

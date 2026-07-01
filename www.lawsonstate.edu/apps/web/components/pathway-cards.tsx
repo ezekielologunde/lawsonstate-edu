@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const PATHS = [
   {
@@ -19,7 +20,7 @@ const PATHS = [
     ],
     cta:     'Start my application',
     ctaHref: '/admissions/apply',
-    photo:   'https://live.staticflickr.com/65535/55212927272_fb910af83c.jpg',
+    photo:   'https://live.staticflickr.com/65535/55214074644_fb8b844f53_c.jpg',
   },
   {
     id:       'transfer',
@@ -34,7 +35,7 @@ const PATHS = [
     ],
     cta:     'Check my credits',
     ctaHref: '/admissions/transfer',
-    photo:   'https://live.staticflickr.com/65535/55258970853_28b8ea04e9_z.jpg',
+    photo:   'https://live.staticflickr.com/65535/55281549902_c1ba0b4a66_h.jpg',
   },
   {
     id:       'current',
@@ -43,14 +44,14 @@ const PATHS = [
     headline: 'EVERYTHING YOU NEED',
     desc:     'Everything you need to stay on track this semester — class registration, financial aid status, tutoring support, and academic advising.',
     links: [
-      { label: 'Register for classes',  href: 'https://my.lawsonstate.edu' },
-      { label: 'Student portal login',  href: 'https://my.lawsonstate.edu' },
+      { label: 'Register for classes',  href: 'https://reg-prod.ec.accs.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search&mepCode=LAWSON' },
+      { label: 'Student portal login',  href: '/portal' },
       { label: 'Financial aid status',  href: '/financial-aid' },
-      { label: 'Pay your bill',         href: 'https://my.lawsonstate.edu' },
+      { label: 'Pay your bill',         href: 'https://experience.elluciancloud.com/lcc45/' },
     ],
     cta:     'Go to student portal',
-    ctaHref: 'https://my.lawsonstate.edu',
-    photo:   'https://live.staticflickr.com/65535/55214074644_fb8b844f53_c.jpg',
+    ctaHref: '/portal',
+    photo:   'https://live.staticflickr.com/65535/55212928957_04ab31902e.jpg',
   },
   {
     id:       'workforce',
@@ -65,7 +66,7 @@ const PATHS = [
     ],
     cta:     'Explore workforce programs',
     ctaHref: '/workforce',
-    photo:   'https://live.staticflickr.com/65535/55259233505_3af8bb2b74_z.jpg',
+    photo:   'https://live.staticflickr.com/65535/55282617308_c78af37ffb.jpg',
   },
 ]
 
@@ -154,13 +155,13 @@ export default function PathwayCards() {
 
           {/* Photo panel */}
           <div className="hidden md:block relative" style={{ minHeight: '280px' }}>
-            <img
+            <Image
               src={path.photo}
               alt=""
               aria-hidden
-              className="absolute inset-0 w-full h-full object-cover object-center"
-              loading="lazy"
-              decoding="async"
+              fill
+              sizes="40vw"
+              className="object-cover object-center"
             />
             <div
               aria-hidden

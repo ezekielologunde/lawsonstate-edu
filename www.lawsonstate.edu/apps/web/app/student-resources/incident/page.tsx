@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
 import Prefooter from '@/components/prefooter'
@@ -36,7 +37,7 @@ export default function StudentIncidentPage() {
         className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '36vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}
       >
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://live.staticflickr.com/65535/55258970853_28b8ea04e9_z.jpg" alt="Lawson State campus" position="center 40%" />
         <div className="relative max-w-7xl mx-auto w-full" style={{ position: 'relative', zIndex: 1 }}>
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -56,7 +57,7 @@ export default function StudentIncidentPage() {
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
             <a
-              href="https://lawsonstate.edu/studentaffairs/incident"
+              href="https://lawsonstate-advocate.symplicity.com/public_report/index.php/pid693456"
               target="_blank"
               rel="noopener noreferrer"
               className="press btn-shimmer inline-flex items-center font-bold px-6 py-3 rounded-lg"

@@ -1,12 +1,13 @@
 ﻿import type { Metadata } from 'next'
 import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
 import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 export const metadata: Metadata = {
-  title: 'Transferring from Another College â€” Admissions | Lawson State',
+  title: 'Transferring from Another College — Admissions | Lawson State',
   description:
     'Transfer to Lawson State Community College. Most credits transfer. Learn about transfer requirements, credit evaluation, and the Alabama STARS system.',
 }
@@ -47,18 +48,17 @@ export default function TransferPage() {
       {/* Hero */}
       <section className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}>
-        <div className="absolute inset-0" aria-hidden
-          style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://www.lawsonstate.edu/_resources/assets/img/News/daniel-burrell.webp" alt="A Lawson State transfer student" position="center 25%" />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span className="mx-2" aria-hidden>â€º</span>
+            <span className="mx-2" aria-hidden>›</span>
             <Link href="/admissions" className="hover:text-white transition-colors">How to Apply</Link>
-            <span className="mx-2" aria-hidden>â€º</span>
+            <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Transferring from Another College</span>
           </p>
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
-            Credits Transfer Â· Alabama STARS Â· Free Application
+            Credits Transfer · Alabama STARS · Free Application
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4"
             style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
@@ -99,12 +99,12 @@ export default function TransferPage() {
               YOUR HOME AWAY FROM HOME
             </h2>
             <p className="text-lscc-muted mb-6" style={{ fontSize: '1.02rem', lineHeight: 1.75, maxWidth: '54ch' }}>
-              Lawson State is a great place to continue your education after attending another college or university. Most credits transfer â€” follow the steps below to get started.
+              Lawson State is a great place to continue your education after attending another college or university. Most credits transfer — follow the steps below to get started.
             </p>
-            <a href="https://lawsonstate.edu/admissions/default.aspx" target="_blank" rel="noopener noreferrer"
+            <a href="https://lawsonstate.my.site.com/apply/TX_SiteLogin?startURL=%2Fapply%2FTargetX_Base__Portal" target="_blank" rel="noopener noreferrer"
               className="press btn-shimmer inline-flex items-center font-bold px-8 py-3.5 rounded-xl"
               style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.97rem' }}>
-              Apply as a Transfer Student â†’
+              Apply as a Transfer Student →
             </a>
           </div>
 
@@ -114,7 +114,7 @@ export default function TransferPage() {
             <ul className="space-y-2.5">
               {REQUIREMENTS.map(r => (
                 <li key={r} className="flex items-start gap-2 text-sm" style={{ color: 'oklch(0.45 0.08 263)' }}>
-                  <span style={{ color: 'oklch(0.79 0.19 78)', flexShrink: 0, marginTop: '0.1rem' }}>âœ“</span>
+                  <span style={{ color: 'oklch(0.79 0.19 78)', flexShrink: 0, marginTop: '0.1rem' }}>✓</span>
                   {r}
                 </li>
               ))}
@@ -164,7 +164,7 @@ export default function TransferPage() {
           </div>
           <div className="rounded-2xl p-6" style={{ background: 'oklch(0.97 0.012 263)', border: '1px solid oklch(0.92 0.01 263)' }}>
             <div className="font-bold text-lscc-ink mb-2">Hours</div>
-            <div className="text-sm text-lscc-muted mb-3">Monâ€“Thu: 8:00 AM â€“ 6:30 PM<br />Fri: 8:00 AM â€“ 5:00 PM</div>
+            <div className="text-sm text-lscc-muted mb-3">Mon–Thu: 8:00 AM – 6:30 PM<br />Fri: 8:00 AM – 5:00 PM</div>
             <a href="mailto:admissions@lawsonstate.edu" className="font-semibold text-sm" style={{ color: 'oklch(0.22 0.17 261)' }}>admissions@lawsonstate.edu</a>
           </div>
         </div>

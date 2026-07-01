@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
 import Prefooter from '@/components/prefooter'
@@ -55,6 +56,20 @@ const DIVISIONS = [
   },
 ]
 
+// Quick-access tools — the links faculty/staff reach for most often. URLs are
+// the same verified real endpoints already used on /portal and /academics/online
+// (Ellucian Banner, Instructure Canvas) — employee email is accessed through the
+// MyLawson portal, same as it is for students, so it isn't a separate domain.
+const QUICK_TOOLS = [
+  { name: 'MyLawson', desc: 'HR self-service, pay, benefits, and employee records', href: 'https://experience.elluciancloud.com/lcc45/', external: true },
+  { name: 'Canvas', desc: 'Course management for faculty', href: 'https://alabama.instructure.com', external: true },
+  { name: 'Employee Email', desc: 'Accessed through MyLawson', href: 'https://experience.elluciancloud.com/lcc45/', external: true },
+  { name: 'IT Help Desk', desc: 'help@lawsonstate.edu · 205.929.6329', href: 'mailto:help@lawsonstate.edu', external: false },
+  { name: 'Faculty & Staff Directory', desc: 'Division chairs and administrative offices', href: '#directory', external: false },
+  { name: 'Concerns / Complaints', desc: 'Submit a formal concern or complaint', href: '/student-resources/concerns', external: false },
+  { name: 'Submit a Student Incident', desc: 'Report a student conduct or safety incident', href: '/student-resources/incident', external: false },
+]
+
 const OFFICES = [
   { name: 'President\'s Office',            contact: '205.925.2515', email: 'president@lawsonstate.edu' },
   { name: 'Dean of Students',               contact: '205.929.6437', email: 'studentaffairs@lawsonstate.edu' },
@@ -76,7 +91,7 @@ export default function FacultyStaffPage() {
         className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}
       >
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://www.lawsonstate.edu/_resources/images/.private_ldp/a403553/production/thumb/116f7b04-9a01-4577-aecb-ceb89a6c70f1.jpg" alt="A Lawson State faculty member honored for excellence" position="center 25%" />
         <div className="relative max-w-7xl mx-auto w-full" style={{ position: 'relative', zIndex: 1 }}>
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -96,25 +111,63 @@ export default function FacultyStaffPage() {
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
             <a
-              href="mailto:hr@lawsonstate.edu"
-              className="press btn-shimmer inline-flex items-center font-bold px-6 py-3 rounded-lg"
-              style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.95rem' }}
+              href="https://experience.elluciancloud.com/lcc45/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="press btn-shimmer inline-flex items-center gap-2 font-bold px-6 py-3 rounded-lg"
+              style={{ background: 'oklch(0.55 0.22 27)', color: 'white', fontSize: '0.95rem' }}
             >
-              Employment Opportunities
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden width="18" height="18">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              Log In to MyLawson
+              <span className="sr-only"> (Ellucian Banner — opens in new tab)</span>
             </a>
-            <Link
-              href="/contact"
+            <a
+              href="mailto:hr@lawsonstate.edu"
               className="press inline-flex items-center font-semibold px-6 py-3 rounded-lg text-white"
               style={{ border: '1.5px solid oklch(1 0 0 / 0.28)', fontSize: '0.95rem' }}
             >
-              Contact Directory ↓
-            </Link>
+              Employment Opportunities
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick tools — the links faculty/staff need most, front and center */}
+      <section className="py-14 px-6" style={{ background: 'white' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-8">
+            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>Quick Access</p>
+            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.4rem)', letterSpacing: '-0.02em', color: 'oklch(0.16 0.04 261)' }}>FACULTY &amp; STAFF RESOURCES</h2>
+          </div>
+          <div className="stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {QUICK_TOOLS.map((t) => {
+              const linkProps = t.external
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {}
+              return (
+                <a
+                  key={t.name}
+                  href={t.href}
+                  {...linkProps}
+                  className="card-lift press rounded-2xl p-5 block"
+                  style={{ background: 'oklch(0.97 0.015 255)', border: '1px solid oklch(0 0 0 / 0.08)' }}
+                >
+                  <p className="font-display font-bold mb-1" style={{ fontSize: '1rem', letterSpacing: '-0.01em', color: 'oklch(0.16 0.04 261)' }}>
+                    {t.name}
+                    {t.external && <span className="sr-only"> (opens in new tab)</span>}
+                  </p>
+                  <p style={{ fontSize: '0.82rem', color: 'oklch(0.42 0.04 261)', lineHeight: 1.5 }}>{t.desc}</p>
+                </a>
+              )
+            })}
           </div>
         </div>
       </section>
 
       {/* Academic divisions */}
-      <section className="py-16 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
+      <section id="directory" className="py-16 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10">
             <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>Instruction</p>

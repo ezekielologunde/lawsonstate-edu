@@ -1,12 +1,13 @@
 ﻿import type { Metadata } from 'next'
 import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
 import MobileBottomNav from '@/components/mobile-bottom-nav'
 
 export const metadata: Metadata = {
-  title: 'Non-Degree Seekers â€” Admissions | Lawson State',
+  title: 'Non-Degree Seekers — Admissions | Lawson State',
   description:
     'Enroll at Lawson State as a non-degree seeker. Take up to 7 semester hours per semester for personal enrichment, career development, or lifelong learning.',
 }
@@ -46,18 +47,17 @@ export default function NonDegreePage() {
       {/* Hero */}
       <section className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}>
-        <div className="absolute inset-0" aria-hidden
-          style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://live.staticflickr.com/65535/55258970853_28b8ea04e9_z.jpg" alt="Lawson State campus" position="center 30%" />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span className="mx-2" aria-hidden>â€º</span>
+            <span className="mx-2" aria-hidden>›</span>
             <Link href="/admissions" className="hover:text-white transition-colors">How to Apply</Link>
-            <span className="mx-2" aria-hidden>â€º</span>
+            <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Non-Degree Seekers</span>
           </p>
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
-            Personal Enrichment Â· Career Development Â· Lifelong Learning
+            Personal Enrichment · Career Development · Lifelong Learning
           </p>
           <h1 className="font-display font-black text-white leading-none mb-4"
             style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
@@ -99,16 +99,16 @@ export default function NonDegreePage() {
             </h2>
             <p className="text-lscc-muted mb-4"
               style={{ fontSize: '1.02rem', lineHeight: 1.75, maxWidth: '54ch' }}>
-              A non-degree seeking student enrolls in <strong className="text-lscc-ink">up to 7 semester hours per semester</strong> for personal enrichment â€” and who is not seeking a formal academic award.
+              A non-degree seeking student enrolls in <strong className="text-lscc-ink">up to 7 semester hours per semester</strong> for personal enrichment — and who is not seeking a formal academic award.
             </p>
             <p className="text-lscc-muted mb-6"
               style={{ fontSize: '1rem', lineHeight: 1.75, maxWidth: '54ch' }}>
               Reach out to Admissions if you have any questions. We are currently accepting applications year-round.
             </p>
-            <a href="https://lawsonstate.edu/admissions/default.aspx" target="_blank" rel="noopener noreferrer"
+            <a href="https://lawsonstate.my.site.com/apply/TX_SiteLogin?startURL=%2Fapply%2FTargetX_Base__Portal" target="_blank" rel="noopener noreferrer"
               className="press btn-shimmer inline-flex items-center font-bold px-8 py-3.5 rounded-xl"
               style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.97rem' }}>
-              Apply Now â€” It&apos;s Free â†’
+              Apply Now — It&apos;s Free →
             </a>
           </div>
 
@@ -185,7 +185,7 @@ export default function NonDegreePage() {
             </div>
             <div className="rounded-2xl p-6" style={{ background: 'oklch(0.97 0.012 263)', border: '1px solid oklch(0.92 0.01 263)' }}>
               <div className="font-display font-bold mb-2 text-lscc-ink">Hours &amp; Contact</div>
-              <div className="text-lscc-muted text-sm leading-relaxed mb-3">Monâ€“Thu: 8:00 AM â€“ 6:30 PM<br />Fri: 8:00 AM â€“ 5:00 PM</div>
+              <div className="text-lscc-muted text-sm leading-relaxed mb-3">Mon–Thu: 8:00 AM – 6:30 PM<br />Fri: 8:00 AM – 5:00 PM</div>
               <a href="sms:+12057076422" className="font-semibold text-sm block mb-1" style={{ color: 'oklch(0.22 0.17 261)' }}>Text: 205-707-6422</a>
               <a href="mailto:admissions@lawsonstate.edu" className="font-semibold text-sm block" style={{ color: 'oklch(0.22 0.17 261)' }}>admissions@lawsonstate.edu</a>
             </div>

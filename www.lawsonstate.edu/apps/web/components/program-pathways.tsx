@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const PATHWAYS = [
   {
@@ -74,13 +75,13 @@ export default function ProgramPathways() {
               style={{ minHeight: '340px', textDecoration: 'none' }}
             >
               {/* Photo */}
-              <img
+              <Image
                 src={p.photo}
                 alt=""
                 aria-hidden
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                loading="lazy"
-                decoding="async"
+                fill
+                sizes="(min-width: 640px) 50vw, 100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               {/* Gradient overlay */}
               <div

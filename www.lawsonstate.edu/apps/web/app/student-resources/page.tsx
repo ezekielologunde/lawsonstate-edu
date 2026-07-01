@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
 import Prefooter from '@/components/prefooter'
@@ -8,19 +9,19 @@ const TOOLS = [
   {
     label: 'MyLawson',
     desc: 'Register for classes, view grades, pay your bill, and manage your account.',
-    href: 'https://my.lawsonstate.edu',
+    href: 'https://experience.elluciancloud.com/lcc45/',
     icon: '🎓',
   },
   {
     label: 'Canvas LMS',
     desc: 'Access all your online and hybrid courses, assignments, and instructor feedback.',
-    href: 'https://lawsonstate.instructure.com',
+    href: 'https://alabama.instructure.com',
     icon: '📚',
   },
   {
     label: 'Student Email',
     desc: 'Check your official LSCC email — all important notices are sent here.',
-    href: 'https://webmail.lawsonstate.edu',
+    href: 'https://outlook.office.com/mail/',
     icon: '✉️',
   },
   {
@@ -82,9 +83,9 @@ const SERVICES = [
   },
   {
     label: 'Academic Advising',
-    desc: 'Your advisor helps you plan courses, stay on track for graduation, and connect with support on both campuses.',
-    href: '/contact',
-    cta: 'Find Your Advisor',
+    desc: 'Your advisor helps you plan courses, stay on track for graduation, and connect with support on both campuses. Walk in or email advising@lawsonstate.edu.',
+    href: '/advising',
+    cta: 'Schedule or Walk In',
   },
 ]
 
@@ -98,7 +99,7 @@ export default function StudentResourcesPage() {
         className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '36vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}
       >
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://live.staticflickr.com/65535/55258970853_28b8ea04e9_z.jpg" alt="Lawson State students" position="center 30%" />
         <div className="relative max-w-7xl mx-auto w-full" style={{ position: 'relative', zIndex: 1 }}>
           <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
             Current Students · Lawson State CC

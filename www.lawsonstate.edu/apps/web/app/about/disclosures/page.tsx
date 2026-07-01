@@ -9,14 +9,14 @@ const DISCLOSURES = [
     title: 'Net Price Calculator',
     required: 'Higher Education Act § 132(h)',
     desc: 'Federal law requires us to provide a net price calculator to help prospective students estimate their actual cost of attendance after grants and scholarships. Lawson State\'s net price is among the lowest in Alabama.',
-    href: 'https://lawsonstate.edu/netpricecalculator',
+    href: 'https://nces.ed.gov/ipeds/netpricecalculator/#/',
     label: 'Use Net Price Calculator',
   },
   {
     title: 'Student Right-to-Know',
     required: 'Student Right-to-Know Act (20 U.S.C. § 1092)',
     desc: 'Lawson State is required to disclose information about graduation rates, transfer rates, and the completion or graduation rates of students receiving athletically related student aid.',
-    href: 'https://collegenavigator.ed.gov',
+    href: 'https://nces.ed.gov/collegenavigator/',
     label: 'View on College Navigator',
   },
   {
@@ -39,8 +39,9 @@ const DISCLOSURES = [
     title: 'Gainful Employment (GE) Disclosures',
     required: 'U.S. Department of Education Regulations',
     desc: 'For certain vocational and certificate programs, federal regulations require us to disclose information about program costs, completion rates, typical debt, and the occupations students may enter.',
-    href: 'https://lawsonstate.edu/gainful-employment',
-    label: 'View GE Disclosures',
+    href: '/programs',
+    label: 'View Program Disclosures',
+    internal: true,
   },
   {
     title: 'Equity in Athletics',

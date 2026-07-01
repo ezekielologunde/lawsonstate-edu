@@ -83,31 +83,32 @@ export default function NonDiscriminationPage() {
             <p className="font-display font-black text-white mb-5" style={{ fontSize: '1.2rem', letterSpacing: '-0.02em' }}>WHO TO CONTACT</p>
             <div className="flex flex-col gap-5">
               <div>
-                <p className="text-xs uppercase font-bold mb-1" style={{ color: 'var(--lscc-eyebrow-on-dark)', letterSpacing: '0.12em' }}>Title IX / Sex Discrimination</p>
+                <p className="text-xs uppercase font-bold mb-1" style={{ color: 'var(--lscc-eyebrow-on-dark)', letterSpacing: '0.12em' }}>Title IX &amp; Section 504 Coordinator</p>
                 <p className="text-sm" style={{ color: 'oklch(1 0 0 / 0.75)', lineHeight: 1.6 }}>
-                  Title IX Coordinator · Office of Student Affairs<br />
-                  205.929.6437 · titleix@lawsonstate.edu
+                  Dean of Students<br />
+                  205.929.6361 · cvance@lawsonstate.edu<br />
+                  Academic Success Building, 2nd Floor
                 </p>
                 <Link href="/about/title-ix" className="text-xs underline mt-1 inline-block" style={{ color: 'oklch(0.79 0.19 78)' }}>
                   Title IX information →
                 </Link>
               </div>
               <div style={{ borderTop: '1px solid oklch(1 0 0 / 0.12)', paddingTop: '1.2rem' }}>
-                <p className="text-xs uppercase font-bold mb-1" style={{ color: 'var(--lscc-eyebrow-on-dark)', letterSpacing: '0.12em' }}>Disability / Section 504 / ADA</p>
+                <p className="text-xs uppercase font-bold mb-1" style={{ color: 'var(--lscc-eyebrow-on-dark)', letterSpacing: '0.12em' }}>Deputy Title IX Coordinator</p>
                 <p className="text-sm" style={{ color: 'oklch(1 0 0 / 0.75)', lineHeight: 1.6 }}>
-                  Section 504 / ADA Coordinator · Student Affairs<br />
-                  205.929.6437 · ada@lawsonstate.edu
+                  Director of Human Resources<br />
+                  205.929.6313 · ebell@lawsonstate.edu<br />
+                  Dr. Perry W. Ward Alabama Center for Advanced Technology &amp; Training Building, 3rd Floor
+                </p>
+              </div>
+              <div style={{ borderTop: '1px solid oklch(1 0 0 / 0.12)', paddingTop: '1.2rem' }}>
+                <p className="text-xs uppercase font-bold mb-1" style={{ color: 'var(--lscc-eyebrow-on-dark)', letterSpacing: '0.12em' }}>Disability Services</p>
+                <p className="text-sm" style={{ color: 'oklch(1 0 0 / 0.75)', lineHeight: 1.6 }}>
+                  ADA accommodations &amp; support
                 </p>
                 <Link href="/student-resources/disability" className="text-xs underline mt-1 inline-block" style={{ color: 'oklch(0.79 0.19 78)' }}>
                   Disability Services →
                 </Link>
-              </div>
-              <div style={{ borderTop: '1px solid oklch(1 0 0 / 0.12)', paddingTop: '1.2rem' }}>
-                <p className="text-xs uppercase font-bold mb-1" style={{ color: 'var(--lscc-eyebrow-on-dark)', letterSpacing: '0.12em' }}>All Other Discrimination</p>
-                <p className="text-sm" style={{ color: 'oklch(1 0 0 / 0.75)', lineHeight: 1.6 }}>
-                  Office of the President / Human Resources<br />
-                  205.925.2515 · hr@lawsonstate.edu
-                </p>
               </div>
             </div>
           </div>

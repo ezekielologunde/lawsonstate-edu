@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
 import Prefooter from '@/components/prefooter'
@@ -14,12 +15,11 @@ const CATALOG_SECTIONS = [
 ]
 
 const QUICK_LINKS = [
-  { label: 'Current Catalog (PDF)', desc: 'Download the full 2026–2027 catalog', href: 'https://lawsonstate.edu/catalog', external: true },
-  { label: 'Previous Catalogs Archive', desc: 'Access catalogs from prior academic years', href: 'https://lawsonstate.edu/catalog', external: true },
+  { label: 'Browse the Program Catalog', desc: 'Full 2026–2027 program and degree listings', href: '/programs', external: false },
   { label: 'Alabama Transfer (AGSC)', desc: 'AGSC core and transfer planning', href: '/academics/alabama-transfer', external: false },
-  { label: 'Class Schedule (MyLawson)', desc: 'Search current course sections', href: 'https://my.lawsonstate.edu', external: true },
+  { label: 'Class Schedule', desc: 'Search current course sections', href: 'https://reg-prod.ec.accs.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search&mepCode=LAWSON', external: true },
   { label: 'Transcript Requests', desc: 'Order official or unofficial transcripts', href: '/student-resources/transcripts', external: false },
-  { label: 'Degree Audit', desc: 'Check your progress via MyLawson', href: 'https://my.lawsonstate.edu', external: true },
+  { label: 'Degree Audit', desc: 'Check your progress via MyLawson', href: 'https://experience.elluciancloud.com/lcc45/', external: true },
 ]
 
 const DIVISIONS = [
@@ -41,7 +41,7 @@ export default function CatalogPage() {
         className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}
       >
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://live.staticflickr.com/65535/55212927272_fb910af83c.jpg" alt="Lawson State campus" position="center 40%" />
         <div className="relative max-w-7xl mx-auto w-full" style={{ position: 'relative', zIndex: 1 }}>
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -60,16 +60,13 @@ export default function CatalogPage() {
             The official guide to all programs, courses, policies, and requirements at Lawson State Community College.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
-            <a
-              href="https://lawsonstate.edu/catalog"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/programs"
               className="press btn-shimmer inline-flex items-center font-bold px-6 py-3 rounded-lg"
               style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.95rem' }}
             >
-              Download PDF Catalog
-              <span className="sr-only"> (opens in new tab)</span>
-            </a>
+              Browse the Program Catalog
+            </Link>
             <Link href="/academics" className="press inline-flex items-center font-semibold px-6 py-3 rounded-lg text-white" style={{ border: '1.5px solid oklch(1 0 0 / 0.28)', fontSize: '0.95rem' }}>
               Browse Programs →
             </Link>

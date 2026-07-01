@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
 import Prefooter from '@/components/prefooter'
@@ -12,11 +13,11 @@ const ONLINE_PROGRAMS = [
 ]
 
 const TECH_TOOLS = [
-  { label: 'Canvas LMS', desc: 'Your course hub — assignments, grades, discussions, announcements, video lectures.', href: 'https://lawsonstate.instructure.com', external: true },
+  { label: 'Canvas LMS', desc: 'Your course hub — assignments, grades, discussions, announcements, video lectures.', href: 'https://alabama.instructure.com', external: true },
   { label: 'Tutor.com', desc: '24/7 online tutoring in 500+ subjects. Free with your student ID.', href: 'https://tutor.com', external: true },
-  { label: 'MyLawson', desc: 'Register for classes, pay bills, view your schedule and financial aid status.', href: 'https://my.lawsonstate.edu', external: true },
-  { label: 'Microsoft 365', desc: 'Free Word, Excel, PowerPoint, Teams, and 1TB OneDrive for all students.', href: 'https://my.lawsonstate.edu', external: true },
-  { label: 'Library Databases', desc: 'Remote access to EBSCO, ProQuest, and 20+ research databases.', href: 'https://lawsonstate.edu/Library', external: true },
+  { label: 'MyLawson', desc: 'Register for classes, pay bills, view your schedule and financial aid status.', href: 'https://experience.elluciancloud.com/lcc45/', external: true },
+  { label: 'Microsoft 365', desc: 'Free Word, Excel, PowerPoint, Teams, and 1TB OneDrive for students and faculty — via the MyLawson portal.', href: 'https://experience.elluciancloud.com/lcc45/', external: true },
+  { label: 'Library Databases', desc: 'Remote access to EBSCO, ProQuest, and 20+ research databases.', href: '/library', external: false },
   { label: 'IT Help Desk', desc: 'Tech support for login issues, network access, and Canvas problems.', href: 'mailto:help@lawsonstate.edu', external: false },
 ]
 
@@ -37,7 +38,7 @@ export default function OnlineProgramsPage() {
         className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '36vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}
       >
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://live.staticflickr.com/65535/55214074644_fb8b844f53_c.jpg" alt="A Lawson State online student" position="center 35%" />
         <div className="relative max-w-7xl mx-auto w-full" style={{ position: 'relative', zIndex: 1 }}>
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -111,8 +112,8 @@ export default function OnlineProgramsPage() {
           <div className="mt-6 rounded-2xl p-5" style={{ background: 'oklch(0.22 0.17 261 / 0.06)', border: '1px solid oklch(0.22 0.17 261 / 0.12)' }}>
             <p style={{ fontSize: '0.875rem', color: 'oklch(0.38 0.04 261)', lineHeight: 1.65 }}>
               This list is representative. For a complete, current list of online course sections, search the{' '}
-              <a href="https://my.lawsonstate.edu" target="_blank" rel="noopener noreferrer" className="underline font-medium" style={{ color: 'oklch(0.42 0.17 261)' }}>
-                MyLawson class schedule
+              <a href="https://reg-prod.ec.accs.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search&mepCode=LAWSON" target="_blank" rel="noopener noreferrer" className="underline font-medium" style={{ color: 'oklch(0.42 0.17 261)' }}>
+                class schedule
                 <span className="sr-only"> (opens in new tab)</span>
               </a>{' '}
               and filter by "Online" delivery method.

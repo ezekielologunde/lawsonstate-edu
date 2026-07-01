@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
@@ -17,7 +18,7 @@ const STEPS = [
     title: 'Complete the Application',
     body: 'Our online application process is free and easy to complete. Complete your free general admissions application and review the General Admissions Table to see what you must submit.',
     extras: [
-      { label: 'Start your free application', href: 'https://lawsonstate.edu/admissions/default.aspx' },
+      { label: 'Start your free application', href: 'https://lawsonstate.my.site.com/apply/TX_SiteLogin?startURL=%2Fapply%2FTargetX_Base__Portal' },
       { label: 'Contact an Enrollment Specialist', href: '#specialists' },
     ],
   },
@@ -26,7 +27,7 @@ const STEPS = [
     title: 'Submit Required Admissions Documents',
     body: 'Log back into your Lawson State Application portal to view the required admissions checklist. These documents must be submitted to the Admissions & Enrollment Services Office to complete your general admissions process.',
     extras: [
-      { label: 'Log in to your Application Portal', href: 'https://lawsonstate.edu/admissions/default.aspx' },
+      { label: 'Log in to your Application Portal', href: 'https://lawsonstate.my.site.com/apply/TX_SiteLogin?startURL=%2Fapply%2FTargetX_Base__Portal' },
     ],
   },
   {
@@ -41,7 +42,7 @@ const STEPS = [
     title: 'Confirm Your Admission Status',
     body: 'Log back into your Lawson State Application Portal and confirm that all admissions requirements are complete. You will receive a communication confirming your acceptance status.',
     extras: [
-      { label: 'Log in to Application Portal', href: 'https://lawsonstate.edu/admissions/default.aspx' },
+      { label: 'Log in to Application Portal', href: 'https://lawsonstate.my.site.com/apply/TX_SiteLogin?startURL=%2Fapply%2FTargetX_Base__Portal' },
     ],
   },
 ]
@@ -79,8 +80,7 @@ export default function ApplyPage() {
         className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}
       >
-        <div className="absolute inset-0" aria-hidden
-          style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://www.lawsonstate.edu/_resources/assets/img/News/free-application-week-2026.webp" alt="Apply to Lawson State Community College" position="center 30%" />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -138,7 +138,7 @@ export default function ApplyPage() {
               Our online application process is <strong className="text-lscc-ink">free and easy to complete.</strong> If you need help, reach out to us. We are here to help!
             </p>
             <a
-              href="https://lawsonstate.edu/admissions/default.aspx"
+              href="https://lawsonstate.my.site.com/apply/TX_SiteLogin?startURL=%2Fapply%2FTargetX_Base__Portal"
               target="_blank"
               rel="noopener noreferrer"
               className="press btn-shimmer inline-flex items-center font-bold px-8 py-3.5 rounded-xl"

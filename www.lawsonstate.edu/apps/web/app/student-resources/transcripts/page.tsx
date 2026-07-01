@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
 import Prefooter from '@/components/prefooter'
@@ -8,7 +9,7 @@ const STEPS = [
   {
     num: '01',
     title: 'Log In to MyLawson',
-    desc: 'Access your student account at my.lawsonstate.edu using your student ID and password.',
+    desc: 'Open the MyLawson (Ellucian) portal and sign in with your student ID and password.',
   },
   {
     num: '02',
@@ -56,7 +57,7 @@ export default function TranscriptsPage() {
         className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}
       >
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://live.staticflickr.com/65535/55212927272_fb910af83c.jpg" alt="Lawson State campus" position="center 40%" />
         <div className="relative max-w-7xl mx-auto w-full" style={{ position: 'relative', zIndex: 1 }}>
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -76,7 +77,7 @@ export default function TranscriptsPage() {
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
             <a
-              href="https://my.lawsonstate.edu"
+              href="https://experience.elluciancloud.com/lcc45/"
               target="_blank"
               rel="noopener noreferrer"
               className="press btn-shimmer inline-flex items-center font-bold px-6 py-3 rounded-lg"
@@ -172,7 +173,7 @@ export default function TranscriptsPage() {
             </ul>
             <div className="flex flex-wrap gap-3 mt-8">
               <a
-                href="https://my.lawsonstate.edu"
+                href="https://experience.elluciancloud.com/lcc45/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="press btn-shimmer inline-flex items-center font-bold px-6 py-3 rounded-lg"

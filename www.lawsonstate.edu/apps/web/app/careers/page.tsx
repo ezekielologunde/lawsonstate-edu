@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import SiteFooter from '@/components/site-footer'
 import Prefooter from '@/components/prefooter'
@@ -21,7 +22,7 @@ const CATEGORIES = [
 ]
 
 const STEPS = [
-  { n: '01', title: 'Search Open Positions', body: 'All current vacancies are posted on the ACCS Employment portal (jobs.accs.edu). Create a profile and search for Lawson State Community College positions.' },
+  { n: '01', title: 'Search Open Positions', body: 'All current vacancies are posted on the ACCS Employment portal (accs.edu/employment). Create a profile and search for Lawson State Community College positions.' },
   { n: '02', title: 'Submit Your Application', body: 'Apply directly through the ACCS portal. Most positions require a résumé, cover letter, official transcripts (for faculty), and professional references.' },
   { n: '03', title: 'Review & Interview', body: 'Qualified applicants are contacted by Human Resources. Interviews may include a skills demonstration or teaching presentation for faculty positions.' },
   { n: '04', title: 'Background Check & Offer', body: 'Selected candidates complete a background check as required by the Alabama Community College System. Official offer letters are issued by Human Resources.' },
@@ -36,7 +37,7 @@ export default function CareersPage() {
         className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}
       >
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://www.lawsonstate.edu/news/Career-Transfer-Fair-2025-30.JPG" alt="Career and Transfer Fair at Lawson State" position="center 30%" />
         <div className="relative max-w-7xl mx-auto w-full" style={{ position: 'relative', zIndex: 1 }}>
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -56,7 +57,7 @@ export default function CareersPage() {
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
             <a
-              href="https://jobs.accs.edu"
+              href="https://www.accs.edu/employment/"
               target="_blank"
               rel="noopener noreferrer"
               className="press btn-shimmer inline-flex items-center font-bold px-6 py-3 rounded-lg"
@@ -90,7 +91,7 @@ export default function CareersPage() {
           </div>
           <div className="mt-8 text-center">
             <a
-              href="https://jobs.accs.edu"
+              href="https://www.accs.edu/employment/"
               target="_blank"
               rel="noopener noreferrer"
               className="press btn-shimmer inline-flex items-center font-bold px-7 py-3.5 rounded-xl text-sm"
@@ -147,7 +148,7 @@ export default function CareersPage() {
             <p style={{ fontSize: '0.9rem', color: 'oklch(1 0 0 / 0.65)', marginTop: '0.3rem' }}>205.929.6301 · hr@lawsonstate.edu · Birmingham Campus</p>
           </div>
           <a
-            href="https://jobs.accs.edu"
+            href="https://www.accs.edu/employment/"
             target="_blank"
             rel="noopener noreferrer"
             className="press btn-shimmer shrink-0 font-bold px-7 py-3.5 rounded-xl text-sm"

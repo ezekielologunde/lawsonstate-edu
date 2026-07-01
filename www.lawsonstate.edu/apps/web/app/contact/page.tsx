@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
@@ -45,7 +46,7 @@ const DEPARTMENTS = [
 const QUICK_LINKS = [
   { label: 'Apply Now', desc: 'Start your application today', href: '/admissions', gold: true },
   { label: 'Financial Aid', desc: 'FAFSA, scholarships & grants', href: '/financial-aid', gold: false },
-  { label: 'MyLawson Portal', desc: 'Register, grades, billing', href: 'https://my.lawsonstate.edu', gold: false },
+  { label: 'MyLawson Portal', desc: 'Register, grades, billing', href: 'https://experience.elluciancloud.com/lcc45/', gold: false },
   { label: 'Browse Programs', desc: '60+ degrees & certificates', href: '/academics', gold: false },
 ]
 
@@ -56,7 +57,7 @@ export default function ContactPage() {
     <main>
       {/* Hero */}
       <section className="page-hero" style={{ background: 'oklch(0.22 0.17 261)', paddingTop: '8rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
-        <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://live.staticflickr.com/65535/55281549902_c1ba0b4a66_h.jpg" alt="Lawson State Community College campus" position="center 45%" />
         <div className="max-w-7xl mx-auto px-6" style={{ position: 'relative', zIndex: 1 }}>
           <nav
             className="page-fade-1 flex items-center gap-2 text-sm mb-8"

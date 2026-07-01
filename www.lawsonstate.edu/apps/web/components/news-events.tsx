@@ -34,12 +34,13 @@ function formatStoryDate(iso: string): string {
 }
 
 export default function NewsEvents({
-  featuredStory,
+  stories,
   events,
 }: {
-  featuredStory: NewsStory | null
+  stories: NewsStory[]
   events: CalendarEvent[]
 }) {
+  const [featuredStory, ...moreStories] = stories
   return (
     <section
       style={{ background: 'oklch(0.14 0.10 261)', paddingBlock: '5rem' }}
@@ -234,6 +235,46 @@ export default function NewsEvents({
             </div>
           </div>
         </div>
+
+        {/* More campus news — fills out the section with the rest of what's published
+            instead of stopping at a single featured story. */}
+        {moreStories.length > 0 && (
+          <div className="stagger-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
+            {moreStories.map((story) => (
+              <Link
+                key={story.id}
+                href={story.href ?? '/news'}
+                className="group flex gap-4 rounded-2xl overflow-hidden p-3 transition-colors hover:bg-white/5"
+              >
+                <div className="relative shrink-0 overflow-hidden rounded-xl" style={{ width: '92px', height: '92px' }}>
+                  <img
+                    src={story.image_url ?? 'https://www.lawsonstate.edu/_resources/assets/img/Lawson%20State%20Pic%204.jpg'}
+                    alt={story.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="flex flex-col justify-center min-w-0">
+                  <p style={{ fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--lscc-eyebrow-on-dark)', fontWeight: 700, marginBottom: '0.3rem' }}>
+                    {story.category ?? 'Campus News'}
+                  </p>
+                  <p
+                    className="text-sm font-semibold leading-snug text-white"
+                    style={{
+                      display: '-webkit-box',
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: 'vertical',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    {story.title}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
 
         {/* Mobile links */}
         <div className="md:hidden flex gap-6 mt-8" style={{ borderTop: '1px solid oklch(1 0 0 / 0.08)', paddingTop: '1.5rem' }}>

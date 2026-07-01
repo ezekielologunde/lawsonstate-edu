@@ -39,6 +39,17 @@ const TABS = [
     href: '/programs?area=career-technical',
     cta: 'Explore CTE Programs',
   },
+  {
+    id: 'save',
+    label: 'Save',
+    photo: 'https://www.lawsonstate.edu/_resources/assets/img/grads.jpg',
+    program: 'College Transfer',
+    quote: "I did my first two years at Lawson State for a fraction of university tuition, and every credit transferred. I walked this stage knowing I was starting my junior year already ahead financially.",
+    name: 'Aaliyah J.',
+    detail: 'General Studies (AA) · Transferred to UAB',
+    href: '/programs?area=college-transfer',
+    cta: 'Explore Transfer Programs',
+  },
 ]
 
 export default function Testimonials() {

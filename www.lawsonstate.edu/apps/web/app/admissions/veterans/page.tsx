@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
@@ -109,8 +110,7 @@ export default function VeteransPage() {
       {/* Hero */}
       <section className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}>
-        <div className="absolute inset-0" aria-hidden
-          style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+        <HeroPhoto src="https://www.lawsonstate.edu/_resources/assets/img/News/soldier-tree.webp" alt="Lawson State supports veterans and military families" position="center 30%" />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -244,7 +244,7 @@ export default function VeteransPage() {
           </div>
           <div className="flex flex-wrap gap-3">
             <a
-              href="https://lawsonstate.edu/admissions/default.aspx"
+              href="https://lawsonstate.my.site.com/apply/TX_SiteLogin?startURL=%2Fapply%2FTargetX_Base__Portal"
               target="_blank"
               rel="noopener noreferrer"
               className="press btn-shimmer shrink-0 font-bold px-7 py-3.5 rounded-xl"

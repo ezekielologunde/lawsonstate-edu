@@ -1,4 +1,5 @@
 'use client'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 
@@ -21,7 +22,7 @@ const ACTIONS: Action[] = [
   },
   {
     label: 'Register',
-    href:  'https://my.lawsonstate.edu',
+    href:  'https://reg-prod.ec.accs.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search&mepCode=LAWSON',
     external: true,
     primary: false,
     icon: (
@@ -48,7 +49,7 @@ const ACTIONS: Action[] = [
     ),
   },
   {
-    label: 'Schedule',
+    label: 'Events',
     href:  '/calendar',
     primary: false,
     icon: (
@@ -64,13 +65,34 @@ const ACTIONS: Action[] = [
 ]
 
 export default function MobileBottomNav() {
+  const [hidden, setHidden] = useState(false)
+  const lastY = useRef(0)
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY
+      // Hide when scrolling down past 80px; show when scrolling up
+      if (y > lastY.current + 6 && y > 80) {
+        setHidden(true)
+      } else if (y < lastY.current - 6) {
+        setHidden(false)
+      }
+      lastY.current = y
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
     <nav
       className="lg:hidden fixed bottom-0 left-0 right-0 z-50 flex"
       style={{
-        background:       'oklch(0.22 0.17 261)',
-        borderTop:        '1px solid oklch(0.28 0.15 261)',
-        paddingBottom:    'env(safe-area-inset-bottom)',
+        background:    'oklch(0.22 0.17 261)',
+        borderTop:     '1px solid oklch(0.28 0.15 261)',
+        paddingBottom: 'env(safe-area-inset-bottom)',
+        transform:     hidden ? 'translateY(100%)' : 'translateY(0)',
+        transition:    'transform 0.28s cubic-bezier(0.4,0,0.2,1)',
+        willChange:    'transform',
       }}
       aria-label="Quick actions"
     >
