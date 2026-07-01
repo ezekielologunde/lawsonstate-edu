@@ -64,7 +64,7 @@ export default function RootLayout({
         <AnnouncementBanner />
         {children}
         <ClickRipple />
-        {/* Kobi — advising + site-search assistant, available site-wide */}
+        {/* Cora — advising + site-search assistant, available site-wide */}
         <AdvisingBot />
       </body>
     </html>
