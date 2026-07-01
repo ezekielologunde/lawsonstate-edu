@@ -104,6 +104,15 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
         />
       </div>
 
+      {/* Blue-black cinematic shadow over the video — grounds the footage and
+          keeps the headline legible without flattening it into a solid scrim. */}
+      <div aria-hidden className="absolute inset-0" style={{
+        background: 'linear-gradient(180deg, oklch(0.14 0.08 263 / 0.30) 0%, oklch(0.12 0.08 263 / 0.20) 40%, oklch(0.09 0.07 263 / 0.72) 100%)',
+      }} />
+      <div aria-hidden className="absolute inset-0" style={{
+        background: 'linear-gradient(100deg, oklch(0.11 0.08 263 / 0.55) 0%, oklch(0.12 0.08 263 / 0.22) 45%, transparent 75%)',
+      }} />
+
       {/* Mouse-follow atmospheric glow — updated via direct DOM, no re-renders */}
       <div ref={glowRef} aria-hidden className="absolute inset-0 pointer-events-none" style={{ zIndex: 1, transition: 'background 0.35s ease' }} />
 
