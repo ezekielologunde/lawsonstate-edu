@@ -56,6 +56,7 @@ export default function RootLayout({
       lang="en"
       data-scroll-behavior="smooth"
       className={`${poppins.variable} ${jakarta.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
         {/* Sets --lscc-banner-h synchronously before first paint so nav never jumps */}

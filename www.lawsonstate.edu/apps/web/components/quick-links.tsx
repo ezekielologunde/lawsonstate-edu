@@ -1,12 +1,5 @@
 import Link from 'next/link'
 
-const NEW_VISITOR_ACTIONS = [
-  { label: 'Apply Now', href: '/admissions/apply', primary: true },
-  { label: 'Explore Programs', href: '/academics', primary: false },
-  { label: 'Financial Aid Info', href: '/financial-aid', primary: false },
-  { label: 'Visit Campus', href: '/visit', primary: false },
-]
-
 const QUICK_ACTIONS = [
   { label: 'Apply Now', href: '/admissions/apply', primary: true },
   { label: 'Student Portal', href: '/portal', primary: false },

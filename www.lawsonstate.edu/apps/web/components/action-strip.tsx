@@ -35,7 +35,7 @@ export default function ActionStrip() {
       >
         {ACTIONS.map((action, i) => (
           <Link
-            key={action.href}
+            key={action.label}
             href={action.href}
             className="action-item group flex items-center justify-between gap-4 press"
             style={{

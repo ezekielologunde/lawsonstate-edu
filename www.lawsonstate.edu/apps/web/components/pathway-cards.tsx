@@ -86,7 +86,7 @@ export default function PathwayCards() {
           >
             FIND YOUR PATH
           </h2>
-          <p className="text-lscc-muted text-sm">Wherever you're starting from, we have a route for you.</p>
+          <p className="text-lscc-muted text-sm">Wherever you&apos;re starting from, we have a route for you.</p>
         </div>
 
         {/* Tab strip */}
