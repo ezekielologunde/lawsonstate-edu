@@ -3,6 +3,7 @@ export const revalidate = 3600 // 1 hour ISR
 import { createServerClient, buildContentMap } from '@/lib/supabase'
 import { NEWS_ARTICLES } from '@/lib/news-data'
 import { FEATURED_PROGRAMS_FALLBACK } from '@/lib/featured-programs-fallback'
+import { fetchCalendarFeed } from '@/lib/calendar-feed'
 import SkipToMainLink from '@/components/skip-to-main-link'
 import StickyStudentNav from '@/components/sticky-student-nav'
 import Nav from '@/components/nav'
@@ -73,6 +74,13 @@ export default async function Home() {
   // instead of letting the section silently collapse to the generic teaser.
   const featuredPrograms = programs && programs.length > 0 ? programs : FEATURED_PROGRAMS_FALLBACK
 
+  // Same fallback as /calendar: if Supabase events come back empty, use the
+  // live public RSS feed so the homepage's "Upcoming Events" widget never
+  // shows a false "no events" state.
+  const events = upcomingEvents && upcomingEvents.length > 0
+    ? upcomingEvents
+    : (await fetchCalendarFeed()).slice(0, 7)
+
   return (
     <>
       <SkipToMainLink />
@@ -88,7 +96,7 @@ export default async function Home() {
         <Support content={content.support} />
         <NewsEvents
           stories={stories}
-          events={upcomingEvents ?? []}
+          events={events}
         />
         <ActionStrip />
         <Prefooter content={content.prefooter} />
