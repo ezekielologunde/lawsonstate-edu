@@ -70,7 +70,7 @@ export default function AdvisingBot() {
     setOpen(true)
     if (!inited) {
       setInited(true)
-      after(() => bot("Hi, I'm Kobi. Tell me what you need — I can find a page, answer a quick question, or book you an advisor."), 160)
+      after(() => bot("I'm Kobi, your Lawson State Cougar guide — strong, fast, here to help. Tell me what you need: find a page, get a quick answer, or book you an advisor."), 160)
     }
     setTimeout(() => inputRef.current?.focus(), 250)
   }
@@ -218,10 +218,10 @@ export default function AdvisingBot() {
         >
           {/* Header */}
           <div className="flex items-center gap-3 px-4 py-3 shrink-0" style={{ background: 'oklch(0.22 0.17 261)', borderBottom: '1px solid oklch(1 0 0 / 0.08)' }}>
-            <div className="w-9 h-9 rounded-xl flex items-center justify-center font-display font-black shrink-0" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.92rem' }}>C</div>
+            <div className="w-9 h-9 rounded-xl flex items-center justify-center font-display font-black shrink-0" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.92rem' }}>K</div>
             <div className="flex-1 min-w-0">
               <p className="font-display font-bold text-white leading-none" style={{ fontSize: '0.88rem' }}>Kobi</p>
-              <p style={{ fontSize: '0.68rem', color: 'oklch(1 0 0 / 0.48)', marginTop: '2px' }}>Lawson State assistant</p>
+              <p style={{ fontSize: '0.68rem', color: 'oklch(1 0 0 / 0.48)', marginTop: '2px' }}>Your Lawson State Cougar guide</p>
             </div>
             <div className="flex items-center gap-1.5 shrink-0">
               <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'oklch(0.72 0.18 155)' }} aria-hidden />
@@ -235,7 +235,7 @@ export default function AdvisingBot() {
               <div key={m.id}>
                 <div className={`flex ${m.from === 'user' ? 'justify-end' : 'items-end gap-2'}`}>
                   {m.from === 'bot' && (
-                    <div className="w-5 h-5 rounded-md flex items-center justify-center shrink-0 font-black leading-none" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.65rem' }}>C</div>
+                    <div className="w-5 h-5 rounded-md flex items-center justify-center shrink-0 font-black leading-none" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.65rem' }}>K</div>
                   )}
                   <div className="px-3.5 py-2.5 max-w-[82%]" style={{
                     background: m.from === 'bot' ? 'white' : 'oklch(0.22 0.17 261)',
