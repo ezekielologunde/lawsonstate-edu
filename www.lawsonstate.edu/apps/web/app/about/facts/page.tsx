@@ -16,12 +16,47 @@ const FAST_FACTS = [
 ]
 
 const ENROLLMENT = [
-  { label: 'Female Students', value: '65%' },
-  { label: 'Male Students', value: '34%' },
-  { label: 'Average Student Age', value: '24.5' },
+  { label: 'Female Students', value: '65.2%' },
+  { label: 'Male Students', value: '34.8%' },
+  { label: 'Students Age 20+', value: '60.2%' },
+  { label: 'Part-Time Students', value: '64.8%' },
   { label: 'Student-to-Faculty Ratio', value: '17 to 1' },
   { label: 'Dual Enrollment Students (Fall 2024)', value: '512' },
-  { label: 'Credit Enrollment Growth (YoY)', value: '+14.91%' },
+]
+
+// Verified against the source institutional page directly (about_us/facts_and_data/
+// student_achievement_facts.aspx.html) — not paraphrased from a secondary summary.
+const ACHIEVEMENT_GOALS = [
+  { metric: 'Course Completion', target: '70%', actual: '73.2%', met: true, note: '6-year average, including COVID years' },
+  { metric: 'Fall-to-Fall Retention', target: '42%', actual: '51.4%', met: true, note: 'Full- and part-time combined' },
+  { metric: 'Graduation Rate', target: '25%', actual: '26%', met: true, note: '2024, 150% IPEDS time-to-completion' },
+  { metric: 'Transfer-Ready Rate', target: '25%', actual: '32.4–34.7%', met: true, note: 'A.A./A.S. share of annual awards, 2022–2024' },
+  { metric: 'NCLEX Licensure Pass Rate', target: '80%', actual: '97.2%', met: true, note: 'ADN, 2024 — exceeded 3 straight testing cycles' },
+  { metric: 'Job Placement Rate', target: 'State target ±10%', actual: '94.1%', met: true, note: '2023–24, vs. 75.2% state target' },
+]
+
+const GRADUATION_COMPARISON = [
+  { school: 'Lawson State', rate: 26, highlight: true },
+  { school: 'Gadsden State', rate: 32 },
+  { school: 'Calhoun', rate: 41 },
+  { school: 'Jefferson State', rate: 23 },
+  { school: 'Shelton State', rate: 21 },
+]
+
+const NCLEX_ADN = [
+  { year: '2020', tested: 47, passed: 45, rate: '95.7%' },
+  { year: '2021', tested: 39, passed: 35, rate: '89.7%' },
+  { year: '2022', tested: 30, passed: 25, rate: '83.3%' },
+  { year: '2023', tested: 42, passed: 40, rate: '95.24%' },
+  { year: '2024', tested: 36, passed: 35, rate: '97.22%' },
+]
+
+const NCLEX_PN = [
+  { year: '2020', tested: 21, passed: 21, rate: '100%' },
+  { year: '2021', tested: 18, passed: 17, rate: '94.4%' },
+  { year: '2022', tested: 23, passed: 22, rate: '95.7%' },
+  { year: '2023', tested: 17, passed: 17, rate: '100%' },
+  { year: '2024', tested: 14, passed: 12, rate: '85.7%' },
 ]
 
 const OUTCOMES = [
@@ -135,6 +170,110 @@ export default function FactsDataPage() {
                   <p style={{ fontSize: '0.84rem', color: 'oklch(0.42 0.04 261)', lineHeight: 1.6 }}>{o.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Student Achievement — real 2019-2025 completion/retention/NCLEX data,
+          reported to SACSCOC per the College's institutional mission. */}
+      <section className="py-16 px-6" style={{ background: 'oklch(0.97 0.015 255)' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-10">
+            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>SACSCOC-Reported · Institutional Goals</p>
+            <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', letterSpacing: '-0.02em', color: 'oklch(0.16 0.04 261)' }}>STUDENT ACHIEVEMENT</h2>
+            <p className="mt-3 max-w-[68ch]" style={{ fontSize: '0.95rem', color: 'oklch(0.45 0.04 261)', lineHeight: 1.7 }}>
+              Lawson State sets internal threshold targets for student success and measures itself against them annually, per SACSCOC requirements. The College has met every benchmark below.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+            {ACHIEVEMENT_GOALS.map((g) => (
+              <div key={g.metric} className="rounded-2xl p-5" style={{ background: 'white', border: '1.5px solid oklch(0 0 0 / 0.06)' }}>
+                <div className="flex items-center justify-between mb-2">
+                  <p className="font-display font-bold" style={{ fontSize: '0.85rem', color: 'oklch(0.16 0.04 261)' }}>{g.metric}</p>
+                  {g.met && (
+                    <span className="text-xs font-bold px-2 py-0.5 rounded-full" style={{ background: 'oklch(0.55 0.16 160 / 0.12)', color: 'oklch(0.40 0.16 160)' }}>Met</span>
+                  )}
+                </div>
+                <div className="flex items-baseline gap-2 mb-1">
+                  <span className="font-display font-black" style={{ fontSize: '1.6rem', color: 'oklch(0.79 0.19 78)', letterSpacing: '-0.03em' }}>{g.actual}</span>
+                  <span style={{ fontSize: '0.78rem', color: 'oklch(0.55 0.04 261)' }}>vs. {g.target} target</span>
+                </div>
+                <p style={{ fontSize: '0.78rem', color: 'oklch(0.55 0.04 261)', lineHeight: 1.5 }}>{g.note}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {/* Graduation rate comparison */}
+            <div>
+              <p className="font-display font-bold mb-4" style={{ fontSize: '0.95rem', color: 'oklch(0.16 0.04 261)' }}>2024 Graduation Rate vs. Alabama Two-Year Peers</p>
+              <div className="flex flex-col gap-2.5">
+                {GRADUATION_COMPARISON.map((s) => (
+                  <div key={s.school} className="flex items-center gap-3">
+                    <span className="shrink-0" style={{ width: '8.5rem', fontSize: '0.82rem', fontWeight: s.highlight ? 700 : 500, color: s.highlight ? 'oklch(0.16 0.04 261)' : 'oklch(0.45 0.04 261)' }}>{s.school}</span>
+                    <div className="flex-1 rounded-full overflow-hidden" style={{ background: 'oklch(0 0 0 / 0.06)', height: '10px' }}>
+                      <div style={{ width: `${(s.rate / 41) * 100}%`, height: '100%', background: s.highlight ? 'oklch(0.79 0.19 78)' : 'oklch(0.22 0.17 261 / 0.35)', borderRadius: '999px' }} />
+                    </div>
+                    <span className="shrink-0 font-bold" style={{ width: '2.5rem', fontSize: '0.82rem', textAlign: 'right', color: 'oklch(0.16 0.04 261)' }}>{s.rate}%</span>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-xs" style={{ color: 'oklch(0.55 0.04 261)' }}>Source: Alabama Commission of Higher Education, 2024 comparison data.</p>
+            </div>
+
+            {/* NCLEX pass rates */}
+            <div>
+              <p className="font-display font-bold mb-4" style={{ fontSize: '0.95rem', color: 'oklch(0.16 0.04 261)' }}>NCLEX Licensure Pass Rates — Nursing Programs</p>
+              <div className="overflow-x-auto rounded-xl mb-3" style={{ border: '1px solid oklch(0 0 0 / 0.07)' }}>
+                <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
+                  <thead>
+                    <tr style={{ background: 'oklch(0.22 0.17 261)', color: 'white' }}>
+                      <th className="text-left px-3 py-2 text-xs font-bold uppercase">Year</th>
+                      <th className="text-right px-3 py-2 text-xs font-bold uppercase">Tested</th>
+                      <th className="text-right px-3 py-2 text-xs font-bold uppercase">Passed</th>
+                      <th className="text-right px-3 py-2 text-xs font-bold uppercase">ADN Rate</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {NCLEX_ADN.map((r, i) => (
+                      <tr key={r.year} style={{ background: i % 2 === 0 ? 'white' : 'oklch(0.97 0.015 255)' }}>
+                        <td className="px-3 py-2" style={{ color: 'oklch(0.28 0.05 261)' }}>{r.year}</td>
+                        <td className="px-3 py-2 text-right" style={{ color: 'oklch(0.45 0.04 261)' }}>{r.tested}</td>
+                        <td className="px-3 py-2 text-right" style={{ color: 'oklch(0.45 0.04 261)' }}>{r.passed}</td>
+                        <td className="px-3 py-2 text-right font-bold" style={{ color: 'var(--lscc-eyebrow)' }}>{r.rate}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <details>
+                <summary className="text-xs font-semibold cursor-pointer" style={{ color: 'oklch(0.42 0.17 261)' }}>Show Practical Nursing (PN) pass rates</summary>
+                <div className="overflow-x-auto rounded-xl mt-2" style={{ border: '1px solid oklch(0 0 0 / 0.07)' }}>
+                  <table className="w-full text-sm" style={{ borderCollapse: 'collapse' }}>
+                    <thead>
+                      <tr style={{ background: 'oklch(0.95 0.03 255)' }}>
+                        <th className="text-left px-3 py-2 text-xs font-bold uppercase" style={{ color: 'oklch(0.45 0.04 261)' }}>Year</th>
+                        <th className="text-right px-3 py-2 text-xs font-bold uppercase" style={{ color: 'oklch(0.45 0.04 261)' }}>Tested</th>
+                        <th className="text-right px-3 py-2 text-xs font-bold uppercase" style={{ color: 'oklch(0.45 0.04 261)' }}>Passed</th>
+                        <th className="text-right px-3 py-2 text-xs font-bold uppercase" style={{ color: 'oklch(0.45 0.04 261)' }}>PN Rate</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {NCLEX_PN.map((r, i) => (
+                        <tr key={r.year} style={{ background: i % 2 === 0 ? 'white' : 'oklch(0.97 0.015 255)' }}>
+                          <td className="px-3 py-2" style={{ color: 'oklch(0.28 0.05 261)' }}>{r.year}</td>
+                          <td className="px-3 py-2 text-right" style={{ color: 'oklch(0.45 0.04 261)' }}>{r.tested}</td>
+                          <td className="px-3 py-2 text-right" style={{ color: 'oklch(0.45 0.04 261)' }}>{r.passed}</td>
+                          <td className="px-3 py-2 text-right font-bold" style={{ color: 'var(--lscc-eyebrow)' }}>{r.rate}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+              <p className="mt-3 text-xs" style={{ color: 'oklch(0.55 0.04 261)' }}>State benchmark: 80% for both programs. Source: Alabama Board of Nursing.</p>
             </div>
           </div>
         </div>

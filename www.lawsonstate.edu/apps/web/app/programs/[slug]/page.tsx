@@ -64,6 +64,32 @@ const RECOGNITION_BY_ID: Record<string, { label: string; body: string; href?: st
   'manufacturing-mechatronics-stc': [{ label: 'Center of Excellence', body: 'Mechatronics Center of Excellence (NC3 designated)' }],
 }
 
+// Real program director quotes, transcribed verbatim from the legacy program
+// pages (learn_at_lawson/programs_and_divisions/health_professions_programs/) —
+// only added where a specific named director and direct quote could be verified.
+const DIRECTOR_QUOTES: Record<string, { quote: string; name: string; title: string }> = {
+  'dental-assistant-aas': {
+    quote: 'As Program Director of the Dental Assisting Program, I welcome each student and will facilitate the attainment of his/her career goals. It is my intent to support the success of each student by providing additional help and cooperation as needed.',
+    name: 'Mrs. Kordrilus Ruff',
+    title: 'Dental Assisting Program Director',
+  },
+  'dental-assistant-aot': {
+    quote: 'As Program Director of the Dental Assisting Program, I welcome each student and will facilitate the attainment of his/her career goals. It is my intent to support the success of each student by providing additional help and cooperation as needed.',
+    name: 'Mrs. Kordrilus Ruff',
+    title: 'Dental Assisting Program Director',
+  },
+  'dental-assistant-cer': {
+    quote: 'As Program Director of the Dental Assisting Program, I welcome each student and will facilitate the attainment of his/her career goals. It is my intent to support the success of each student by providing additional help and cooperation as needed.',
+    name: 'Mrs. Kordrilus Ruff',
+    title: 'Dental Assisting Program Director',
+  },
+  'radiologic-technology-aas': {
+    quote: 'I enjoy teaching because it allows me to have a positive impact on the quality of care our students and graduates are able to provide.',
+    name: 'Gleb Scosyrev',
+    title: 'Radiologic Technology Program Director',
+  },
+}
+
 // Selective-admission programs that require a separate competitive application
 // beyond general college admission. Sourced from the 2024 Advising Manual,
 // Department of Health Professions.
@@ -192,6 +218,7 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
   const accreditor = program.tags?.map(t => ACCREDITOR_TAGS[t.toLowerCase()]).find(Boolean)
   const recognitions = RECOGNITION_BY_ID[program.id]
   const curriculum = CURRICULUM_BY_ID[program.id]
+  const directorQuote = DIRECTOR_QUOTES[program.id]
   const advisorHref = `/advising?program=${encodeURIComponent(program.name)}&category=${program.category}`
 
   return (
@@ -428,6 +455,26 @@ export default async function ProgramPage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
       </section>
+
+      {/* ── Program Director quote (only where a real, sourced quote exists) ── */}
+      {directorQuote && (
+        <section className="py-14 px-6" style={{ background: 'oklch(0.22 0.17 261)' }}>
+          <div className="max-w-4xl mx-auto text-center">
+            <svg
+              width="40" height="30" viewBox="0 0 48 36" fill="none" aria-hidden
+              className="mx-auto mb-6"
+              style={{ color: 'oklch(0.79 0.19 78)', opacity: 0.7 }}
+            >
+              <path d="M0 36V20C0 8.954 8.954 0 20 0h4v8h-4c-6.627 0-12 5.373-12 12v1h12V36H0zm28 0V20C28 8.954 36.954 0 48 0h0v8h-4c-6.627 0-12 5.373-12 12v1h12V36H28z" fill="currentColor" />
+            </svg>
+            <blockquote className="font-display font-bold text-white mb-5" style={{ fontSize: 'clamp(1.1rem, 2vw, 1.4rem)', lineHeight: 1.6, letterSpacing: '-0.01em' }}>
+              &ldquo;{directorQuote.quote}&rdquo;
+            </blockquote>
+            <p className="font-semibold text-white" style={{ fontSize: '0.95rem' }}>{directorQuote.name}</p>
+            <p style={{ fontSize: '0.82rem', color: 'oklch(1 0 0 / 0.60)' }}>{directorQuote.title}</p>
+          </div>
+        </section>
+      )}
 
       {/* ── Recognition & Accreditation (only where a specific, sourced fact exists) ── */}
       {recognitions && recognitions.length > 0 && (

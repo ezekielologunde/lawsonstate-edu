@@ -110,7 +110,7 @@ export default function VeteransPage() {
       {/* Hero */}
       <section className="page-hero relative px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}>
-        <HeroPhoto src="https://www.lawsonstate.edu/_resources/assets/img/News/soldier-tree.webp" alt="Lawson State supports veterans and military families" position="center 30%" />
+        <HeroPhoto src="https://www.lawsonstate.edu/_resources/assets/img/Veterans%20Picture.jpg" alt="Lawson State's Veterans and Military Affairs office honoring veterans on campus" position="center 30%" />
         <div className="relative max-w-7xl mx-auto w-full">
           <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>

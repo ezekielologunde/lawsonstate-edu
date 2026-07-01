@@ -165,6 +165,7 @@ export const NAV: NavEntry[] = [
           { label: 'Administrative Services',   href: '/about/administrative-services', note: 'Offices & departments' },
           { label: 'Human Resources',           href: '/about/human-resources',         note: 'Employment & benefits' },
           { label: 'Public Relations',          href: '/about/public-relations',        note: 'Media & community affairs' },
+          { label: 'Foundation Board',          href: '/about/foundation',              note: 'Est. 1995 · Scholarships & giving' },
           { label: 'Career Opportunities',      href: '/careers',                       note: 'Work at Lawson State' },
           { label: 'AI Usage Guidelines',       href: '/about/ai-usage',                note: 'Draft — under review' },
         ],
