@@ -1,0 +1,56 @@
+# Vercel Speed Insights Integration
+
+## Summary
+Successfully installed and configured Vercel Speed Insights for the Next.js application following the official Vercel documentation.
+
+## Changes Made
+
+### 1. Package Installation
+- **File**: `apps/web/package.json`
+- **Action**: Installed `@vercel/speed-insights@^2.0.0` as a dependency
+- **Command**: `npm install @vercel/speed-insights --workspace=web`
+
+### 2. Component Configuration
+- **File**: `apps/web/app/layout.tsx`
+- **Action**: Added SpeedInsights component to root layout
+- **Changes**:
+  - Added import: `import { SpeedInsights } from '@vercel/speed-insights/next'`
+  - Added `<SpeedInsights />` component at the end of the body, after `<AdvisingBot />`
+  
+### 3. Lock File Update
+- **File**: `package-lock.json`
+- **Action**: Updated with the new dependency and its transitive dependencies
+
+## Implementation Details
+
+The implementation follows the official Vercel Speed Insights quickstart guide for Next.js 13.5+ projects:
+- Retrieved latest documentation from: https://vercel.com/docs/speed-insights/quickstart
+- Used the Next.js-specific import path: `@vercel/speed-insights/next`
+- Placed the component at the root layout level to track performance across all pages
+- Positioned the component at the end of the body element as recommended by the documentation
+
+## Framework & Package Manager
+- **Framework**: Next.js 16.2.9 (latest)
+- **Package Manager**: npm 10.9.2 (workspace monorepo)
+- **Project Type**: Next.js App Router with TypeScript
+
+## Verification
+- ✅ Package successfully installed
+- ✅ No TypeScript errors introduced
+- ✅ No linting errors in modified layout.tsx file
+- ✅ Lock file properly updated
+- ✅ Code follows existing project patterns and conventions
+
+## Next Steps
+To enable Speed Insights monitoring:
+1. Deploy the application to Vercel
+2. Navigate to the Vercel dashboard
+3. Select "Speed Insights" from the sidebar
+4. Choose the project and click "Enable"
+5. Performance metrics will appear in the dashboard after users visit the site
+
+## Notes
+- The SpeedInsights component is added at the root layout level, making it available site-wide
+- Pre-existing linting errors in other files remain unchanged (not related to this implementation)
+- Build failure due to missing Supabase environment variables is unrelated to Speed Insights changes
+- The integration is non-invasive and maintains the existing code structure

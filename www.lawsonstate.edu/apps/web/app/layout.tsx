@@ -5,6 +5,7 @@ import AnnouncementBanner from '@/components/announcement-banner'
 import ClickRipple from '@/components/click-ripple'
 import NavigationProgress from '@/components/navigation-progress'
 import AdvisingBot from '@/components/advising-bot'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -66,6 +67,7 @@ export default function RootLayout({
         <ClickRipple />
         {/* Cora — advising + site-search assistant, available site-wide */}
         <AdvisingBot />
+        <SpeedInsights />
       </body>
     </html>
   )
