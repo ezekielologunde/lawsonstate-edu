@@ -46,7 +46,7 @@ const BROWSE = [
 const QUICK = [
   { label: 'Financial Aid',   sub: 'Grants, loans, scholarships',  href: '/financial-aid' },
   { label: 'Tuition & Fees', sub: '$131 / credit hour',            href: '/admissions/apply' },
-  { label: 'Visit Campus',   sub: '2 Birmingham locations',         href: '/contact' },
+  { label: 'Visit Campus',   sub: '2 Birmingham locations',         href: '/visit' },
   { label: 'Advising',       sub: 'Talk to an advisor',            href: '/contact' },
 ]
 

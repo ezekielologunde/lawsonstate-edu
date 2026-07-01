@@ -12,7 +12,7 @@ const footerLinks: Record<string, { label: string; href: string; external?: bool
     { label: 'Apply Now', href: '/admissions/apply' },
     { label: 'Transfer Students', href: '/admissions/transfer' },
     { label: 'Veterans & Military', href: '/admissions/veterans' },
-    { label: 'Visit Campus', href: '/contact' },
+    { label: 'Visit Campus', href: '/visit' },
   ],
   'Financial Aid': [
     { label: 'Financial Aid', href: '/financial-aid' },

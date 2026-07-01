@@ -8,7 +8,7 @@ const ACTIONS = [
   },
   {
     label: 'Schedule a Visit',
-    href: '/contact',
+    href: '/visit',
     sublabel: 'See campus in person',
   },
   {

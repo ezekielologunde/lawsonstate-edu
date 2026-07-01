@@ -10,7 +10,7 @@ const DEFAULTS: PrefooterContent = {
   cta_2_label: 'Request Info',
   cta_2_href:  '/admissions',
   cta_3_label: 'Visit Campus',
-  cta_3_href:  '/contact',
+  cta_3_href:  '/visit',
 }
 
 export default function Prefooter({ content = {} }: { content?: PrefooterContent }) {

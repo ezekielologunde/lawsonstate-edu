@@ -15,7 +15,7 @@ const PATHS = [
       { label: 'Apply for admission',      href: '/admissions/apply' },
       { label: 'Explore financial aid',    href: '/financial-aid' },
       { label: 'Browse all 200+ programs', href: '/academics' },
-      { label: 'Schedule a campus visit',  href: '/contact' },
+      { label: 'Schedule a campus visit',  href: '/visit' },
       { label: 'Attend orientation',       href: '/orientation' },
     ],
     cta:     'Start my application',

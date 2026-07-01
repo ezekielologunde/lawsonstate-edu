@@ -85,7 +85,7 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
       ref={sectionRef}
       className="hero-video relative flex items-center overflow-hidden"
       aria-label="Welcome to Lawson State Community College"
-      style={{ minHeight: 'clamp(600px, 84vh, 820px)', boxShadow: '0 32px 56px -16px oklch(0.08 0.04 263 / 0.45)' }}
+      style={{ minHeight: 'clamp(600px, 84vh, 820px)', boxShadow: '0 48px 96px -20px oklch(0.08 0.04 263 / 0.65)' }}
     >
       {/* Background video (poster fallback) — slow Ken Burns on the <video>,
           parallax translate on the wrapper (separate layers, no transform clash). */}
