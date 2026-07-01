@@ -22,8 +22,15 @@ function formatDate(iso: string): string {
   return new Date(y, m - 1, d).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
 }
 
+// Pre-render only the most recent stories at build time; the rest render on
+// first request and are cached from then on (dynamicParams defaults to true).
+// All 108 articles generated eagerly overwhelmed the 2-core production build
+// machine and silently dropped unrelated routes queued after this step.
 export async function generateStaticParams() {
-  return NEWS_ARTICLES.map((a) => ({ slug: a.slug }))
+  return [...NEWS_ARTICLES]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 12)
+    .map((a) => ({ slug: a.slug }))
 }
 
 export async function generateMetadata(

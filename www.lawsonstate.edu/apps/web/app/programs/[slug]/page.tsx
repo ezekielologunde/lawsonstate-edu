@@ -156,8 +156,12 @@ const CURRICULUM_BY_ID: Record<string, { totalCredits: number; groups: Curriculu
   },
 }
 
+// Pre-render only the top programs at build time; the rest render on first
+// request and are cached from then on (dynamicParams defaults to true). All
+// ~90 programs generated eagerly overwhelmed the 2-core production build
+// machine and silently dropped unrelated routes queued after this step.
 export async function generateStaticParams() {
-  return SAMPLE_PROGRAMS.map(p => ({
+  return SAMPLE_PROGRAMS.slice(0, 12).map(p => ({
     slug: p.href.replace('/programs/', ''),
   }))
 }
