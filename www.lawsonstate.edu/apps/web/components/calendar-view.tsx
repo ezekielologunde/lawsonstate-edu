@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import LiveCalendarWidget from './live-calendar-widget'
 
 export type CalendarEvent = { id: string; title: string; event_date: string; href: string }
 
@@ -86,20 +87,14 @@ export default function CalendarView({ events }: { events: CalendarEvent[] }) {
     setSelectedDate(null)
   }
 
+  // Fall back to the live, officially-maintained calendar widget rather than
+  // dead-ending on an empty state — covers us if our own events table is
+  // ever empty or unreachable.
   if (events.length === 0) {
     return (
-      <section className="py-20 px-6" style={{ background: 'white' }}>
-        <div className="max-w-4xl mx-auto text-center py-24">
-          <p className="text-lscc-muted mb-6" style={{ fontSize: '1.1rem' }}>No upcoming events at this time.</p>
-          <Link
-            href="https://www.lawsonstate.edu/calendar/default.aspx"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="press btn-shimmer font-bold px-6 py-3 rounded-lg inline-block"
-            style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
-          >
-            View Academic Calendar →
-          </Link>
+      <section className="py-16 px-6" style={{ background: 'white' }}>
+        <div className="max-w-4xl mx-auto">
+          <LiveCalendarWidget />
         </div>
       </section>
     )
