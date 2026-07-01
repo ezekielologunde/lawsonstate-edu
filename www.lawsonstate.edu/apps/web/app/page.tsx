@@ -2,6 +2,7 @@ export const revalidate = 3600 // 1 hour ISR
 
 import { createServerClient, buildContentMap } from '@/lib/supabase'
 import { NEWS_ARTICLES } from '@/lib/news-data'
+import { FEATURED_PROGRAMS_FALLBACK } from '@/lib/featured-programs-fallback'
 import SkipToMainLink from '@/components/skip-to-main-link'
 import StickyStudentNav from '@/components/sticky-student-nav'
 import Nav from '@/components/nav'
@@ -67,6 +68,11 @@ export default async function Home() {
 
   const content = buildContentMap(pageRows ?? [])
 
+  // Supabase can come back empty in Production due to env var misconfiguration
+  // (same issue as the calendar) — fall back to the real featured-program data
+  // instead of letting the section silently collapse to the generic teaser.
+  const featuredPrograms = programs && programs.length > 0 ? programs : FEATURED_PROGRAMS_FALLBACK
+
   return (
     <>
       <SkipToMainLink />
@@ -75,7 +81,7 @@ export default async function Home() {
         <Hero content={content.hero} />
         <StatsTicker />
         <PathwayCards />
-        <Programs programs={programs ?? []} content={content.programs} />
+        <Programs programs={featuredPrograms} content={content.programs} />
         <Testimonials />
         <ValueSection />
         <AthleticsCallout />

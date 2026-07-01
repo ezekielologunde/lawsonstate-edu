@@ -70,7 +70,7 @@ export default function AdvisingBot() {
     setOpen(true)
     if (!inited) {
       setInited(true)
-      after(() => bot("Hi, I'm Cora. Tell me what you need — I can find a page, answer a quick question, or book you an advisor."), 160)
+      after(() => bot("Hi, I'm Kobi. Tell me what you need — I can find a page, answer a quick question, or book you an advisor."), 160)
     }
     setTimeout(() => inputRef.current?.focus(), 250)
   }
@@ -181,14 +181,14 @@ export default function AdvisingBot() {
             className="lscc-bot-anim rounded-2xl px-4 py-2 shadow-lg font-semibold text-sm whitespace-nowrap"
             style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', animation: 'lscc-bot-rise 0.4s 0.8s both' }}
           >
-            Ask Cora
+            Ask Kobi
           </div>
         )}
         <button
           onClick={() => open ? setOpen(false) : launch()}
           className="w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-transform active:scale-95 hover:scale-105"
           style={{ background: 'oklch(0.22 0.17 261)', border: '2.5px solid oklch(0.79 0.19 78 / 0.35)' }}
-          aria-label={open ? 'Close Cora assistant' : 'Open Cora — Lawson State assistant'}
+          aria-label={open ? 'Close Kobi assistant' : 'Open Kobi — Lawson State assistant'}
         >
           {open ? (
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="oklch(0.79 0.19 78)" strokeWidth="2.5" strokeLinecap="round" aria-hidden>
@@ -213,14 +213,14 @@ export default function AdvisingBot() {
             border: '1px solid oklch(0 0 0 / 0.09)', animation: 'lscc-bot-rise 0.22s cubic-bezier(0.32,0,0.17,1) both',
           }}
           role="dialog"
-          aria-label="Cora — Lawson State assistant"
+          aria-label="Kobi — Lawson State assistant"
           aria-modal="false"
         >
           {/* Header */}
           <div className="flex items-center gap-3 px-4 py-3 shrink-0" style={{ background: 'oklch(0.22 0.17 261)', borderBottom: '1px solid oklch(1 0 0 / 0.08)' }}>
             <div className="w-9 h-9 rounded-xl flex items-center justify-center font-display font-black shrink-0" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.92rem' }}>C</div>
             <div className="flex-1 min-w-0">
-              <p className="font-display font-bold text-white leading-none" style={{ fontSize: '0.88rem' }}>Cora</p>
+              <p className="font-display font-bold text-white leading-none" style={{ fontSize: '0.88rem' }}>Kobi</p>
               <p style={{ fontSize: '0.68rem', color: 'oklch(1 0 0 / 0.48)', marginTop: '2px' }}>Lawson State assistant</p>
             </div>
             <div className="flex items-center gap-1.5 shrink-0">
@@ -304,9 +304,9 @@ export default function AdvisingBot() {
                   </div>
                 )}
                 <form onSubmit={e => { e.preventDefault(); route(input) }} className="flex gap-2">
-                  <label htmlFor="cora-input" className="sr-only">Ask Cora</label>
+                  <label htmlFor="kobi-input" className="sr-only">Ask Kobi</label>
                   <input
-                    id="cora-input" ref={inputRef} type="text" value={input}
+                    id="kobi-input" ref={inputRef} type="text" value={input}
                     onChange={e => setInput(e.target.value)}
                     placeholder="Type what you need… e.g. “pay my bill”"
                     className="flex-1 rounded-xl px-3 py-2.5 outline-none text-sm"

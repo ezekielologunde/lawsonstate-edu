@@ -104,16 +104,6 @@ export default function Hero({ content = {} }: { content?: HeroContent }) {
         />
       </div>
 
-      {/* Premium scrim — dense on the left for text legibility (≥4.5:1 white),
-          easing to reveal the video on the right. Plus a soft bottom vignette. */}
-      <div aria-hidden className="absolute inset-0" style={{
-        background:
-          'linear-gradient(96deg, oklch(0.13 0.07 263 / 0.88) 0%, oklch(0.15 0.07 263 / 0.66) 42%, oklch(0.18 0.06 263 / 0.18) 78%, transparent 100%)',
-      }} />
-      <div aria-hidden className="absolute inset-0" style={{
-        background: 'linear-gradient(0deg, oklch(0.11 0.05 263 / 0.55) 0%, transparent 32%)',
-      }} />
-
       {/* Mouse-follow atmospheric glow — updated via direct DOM, no re-renders */}
       <div ref={glowRef} aria-hidden className="absolute inset-0 pointer-events-none" style={{ zIndex: 1, transition: 'background 0.35s ease' }} />
 
