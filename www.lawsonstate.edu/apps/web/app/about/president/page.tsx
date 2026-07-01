@@ -90,12 +90,12 @@ export default function PresidentPage() {
             <figure className="rounded-2xl overflow-hidden" style={{ border: '1.5px solid oklch(0 0 0 / 0.07)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.10)' }}>
               <div className="relative w-full" style={{ aspectRatio: '4 / 5' }}>
                 <Image
-                  src="https://www.lawsonstate.edu/_resources/assets/img/News/lawson-president-joins-UAB-west-hospital-board.webp"
+                  src="https://www.lawsonstate.edu/_resources/assets/img/about_us/Lawson%20State%20Dr.%20Cynthia%20T.%20Anthony.jpg"
                   alt="Dr. Cynthia T. Anthony, President of Lawson State Community College"
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
                   className="object-cover"
-                  style={{ objectPosition: 'center 20%' }}
+                  style={{ objectPosition: 'center 15%' }}
                 />
               </div>
               <figcaption className="px-4 py-3" style={{ background: 'oklch(0.22 0.17 261)' }}>
