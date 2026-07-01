@@ -13,6 +13,7 @@ import SiteFooter from '@/components/site-footer'
 import MobileBottomNav from '@/components/mobile-bottom-nav'
 import CalendarView from '@/components/calendar-view'
 import { createServerClient } from '@/lib/supabase'
+import { fetchCalendarFeed } from '@/lib/calendar-feed'
 
 export const metadata: Metadata = {
   title: 'Upcoming Events — Lawson State',
@@ -32,6 +33,12 @@ export default async function CalendarPage() {
     .order('event_date')
     .order('sort_order')
     .limit(200)
+
+  // Supabase is the richer, hand-curated source when it's working. If it
+  // comes back empty (e.g. misconfigured credentials), fall back to the
+  // real-time public RSS feed from the same calendar system the official
+  // site uses — no credentials required, so it can't suffer the same failure.
+  const events = data && data.length > 0 ? data : await fetchCalendarFeed()
 
   return (
     <>
@@ -75,7 +82,7 @@ export default async function CalendarPage() {
         </div>
       </section>
 
-      <CalendarView events={data ?? []} />
+      <CalendarView events={events} />
 
       <Prefooter />
       <SiteFooter />
