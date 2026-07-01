@@ -32,3 +32,9 @@ node_modules
 /www.lawsonstate.edu/packages
 www.lawsonstate.edu/apps/mobile
 www.lawsonstate.edu/apps/axion
+
+# Safety net: the wildcard extension patterns above (*.png, *.jpg, etc.) are
+# meant to exclude the legacy scraped-site image dumps, but being unanchored
+# they also match real app source assets like apps/web/app/icon.png. Never
+# let them exclude anything under the actual Next.js app.
+!www.lawsonstate.edu/apps/web/**
