@@ -8,6 +8,8 @@ const SPORTS_STATS = [
   { n: '2', label: 'Campuses' },
 ]
 
+const SPORTS = ['Soccer', 'Basketball', 'Baseball', 'Volleyball', 'Track & Field', 'Tennis']
+
 export default function AthleticsCallout() {
   return (
     <section
@@ -85,34 +87,34 @@ export default function AthleticsCallout() {
             </Link>
           </div>
 
-          {/* Right — sport name tiles */}
-          <div
-            className="stagger-grid hidden lg:grid grid-cols-2 gap-2"
-            aria-hidden
-          >
-            {['Soccer', 'Basketball', 'Baseball', 'Volleyball', 'Track & Field', 'Tennis'].map((sport, i) => {
-              const tone = i % 3
-              const bg = tone === 0 ? 'oklch(0.79 0.19 78)' : tone === 2 ? 'oklch(0.96 0.05 88)' : 'white'
-              const fg = 'oklch(0.16 0.04 261)'
-              return (
-              <div
-                key={sport}
-                className="flex items-center justify-center font-display font-bold rounded-xl"
-                style={{
-                  padding: '1rem 1.1rem',
-                  background: bg,
-                  border: tone === 0 ? '1px solid transparent' : '1px solid oklch(0 0 0 / 0.08)',
-                  boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)',
-                  fontSize: '0.72rem',
-                  letterSpacing: '0.10em',
-                  textTransform: 'uppercase',
-                  color: fg,
-                }}
-              >
-                {sport}
-              </div>
-              )
-            })}
+          {/* Right — sport tiles, drifting in a slow marquee for a living, in-motion feel */}
+          <div className="hidden lg:block marquee-strip marquee-pause" aria-hidden style={{ width: '420px' }}>
+            <div className="marquee-track" style={{ gap: '0.6rem', animationDuration: '18s' }}>
+              {[...SPORTS, ...SPORTS].map((sport, i) => {
+                const tone = i % 3
+                const bg = tone === 0 ? 'oklch(0.79 0.19 78)' : tone === 2 ? 'oklch(0.96 0.05 88)' : 'white'
+                const fg = 'oklch(0.16 0.04 261)'
+                return (
+                  <div
+                    key={`${sport}-${i}`}
+                    className="shrink-0 flex items-center justify-center font-display font-bold rounded-xl"
+                    style={{
+                      padding: '1rem 1.4rem',
+                      background: bg,
+                      border: tone === 0 ? '1px solid transparent' : '1px solid oklch(0 0 0 / 0.08)',
+                      boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)',
+                      fontSize: '0.72rem',
+                      letterSpacing: '0.10em',
+                      textTransform: 'uppercase',
+                      color: fg,
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    {sport}
+                  </div>
+                )
+              })}
+            </div>
           </div>
 
         </div>

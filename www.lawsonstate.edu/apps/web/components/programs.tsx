@@ -110,15 +110,17 @@ export default function Programs({
                   style={{ background: SLOT_BG[slot] ?? SLOT_BG.business }}
                 >
                   {program.image_url && (
-                    <div
-                      className="absolute inset-0 program-img"
-                      style={{
-                        backgroundImage: `url('${program.image_url}')`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        opacity: isDark ? 0.28 : 0.14,
-                      }}
-                    />
+                    <div className="absolute inset-0 program-img">
+                      <div
+                        className="absolute inset-0 program-img-live"
+                        style={{
+                          backgroundImage: `url('${program.image_url}')`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                          opacity: isDark ? 0.28 : 0.14,
+                        }}
+                      />
+                    </div>
                   )}
 
                   <div className="relative z-10 flex flex-col h-full">
