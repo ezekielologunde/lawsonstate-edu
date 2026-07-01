@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const PHOTOS = [
   {
@@ -104,11 +105,12 @@ export default function MakersFixers() {
                 gridColumn: i === 0 ? 'span 2' : undefined,
               }}
             >
-              <img
+              <Image
                 src={photo.src}
                 alt={photo.alt}
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                loading="lazy"
+                fill
+                sizes={i === 0 ? '(min-width: 1024px) 50vw, 100vw' : '(min-width: 1024px) 25vw, 50vw'}
+                className="object-cover transition-transform duration-700 hover:scale-105"
               />
               <div
                 className="absolute inset-0 pointer-events-none"

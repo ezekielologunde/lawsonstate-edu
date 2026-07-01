@@ -1,0 +1,200 @@
+name: lawson-sweep-all
+description: |
+  Use when: Running the full design-system sweep across all Lawson State pages.
+  Input: Optional comma-separated page paths to limit scope. Defaults to all 24 routes.
+  Does: Audits all pages in parallel → reports violations → applies lawson-page-redesign
+        to each page with violations → final TypeScript validation → commit summary.
+  NOT for: Single pages (use lawson-page-redesign), new page creation.
+
+provider: claude
+
+nodes:
+  # ═══════════════════════════════════════════════════════════════
+  # PHASE 1: DISCOVER — Find all page files
+  # ═══════════════════════════════════════════════════════════════
+
+  - id: discover
+    bash: |
+      echo "=== Lawson State Pages ==="
+      find app -name "page.tsx" \
+        -not -path "*/node_modules/*" \
+        -not -path "*/.next/*" \
+        -not -path "*/[*" \
+        | sort
+      echo ""
+      echo "=== Components ==="
+      ls components/*.tsx 2>/dev/null | head -30
+    timeout: 15000
+
+  # ═══════════════════════════════════════════════════════════════
+  # PHASE 2: AUDIT ALL — Scan each page for violations
+  # ═══════════════════════════════════════════════════════════════
+
+  - id: audit-all
+    prompt: |
+      Audit all Lawson State pages for design system violations.
+
+      ## Pages Found
+      $discover.output
+
+      ## Design Rules
+
+      For each page file listed, check:
+
+      1. **Hero background**: Should be `oklch(0.22 0.17 261)`. Flag if light (`oklch(0.95 0.03 255)` etc.)
+      2. **Eyebrow token on light sections**: Should be `var(--lscc-eyebrow)`. Flag hardcoded values.
+      3. **Gold badge contrast**: `oklch(0.79 0.19 78)` background must use `oklch(0.11 0.03 261)` text, not white.
+      4. **External link a11y**: `target="_blank"` links need sr-only hint and `rel="noopener noreferrer"`.
+
+      ## Instructions
+
+      1. For each page file, use Read to scan it (read the full file)
+      2. Check each rule
+      3. Write results to `$ARTIFACTS_DIR/sweep-audit.md`:
+
+      ```
+      ## Sweep Audit Results
+
+      | Page | Hero | Eyebrow | Contrast | A11y | Action |
+      |------|------|---------|----------|------|--------|
+      | app/about/page.tsx | PASS | PASS | PASS | PASS | skip |
+      | app/contact/page.tsx | FAIL | PASS | PASS | FAIL | fix |
+      ...
+
+      ## Pages Needing Fixes
+      - app/contact/page.tsx (hero bg, a11y)
+      - ...
+
+      ## Pages Clean
+      - app/about/page.tsx
+      - ...
+      ```
+    depends_on: [discover]
+    context: fresh
+    denied_tools: [Edit, Bash]
+
+  # ═══════════════════════════════════════════════════════════════
+  # PHASE 3: APPLY FIXES — Run lawson-page-redesign per page
+  # ═══════════════════════════════════════════════════════════════
+
+  - id: apply-fixes
+    prompt: |
+      Apply the Lawson State design system to all pages that need fixes.
+
+      ## Audit Results
+      Read `$ARTIFACTS_DIR/sweep-audit.md` to get the list of pages needing fixes.
+
+      ## Instructions
+
+      If no pages need fixes → respond "All pages clean." and stop.
+
+      Otherwise, for each page listed under "Pages Needing Fixes":
+
+      1. Read the page file
+      2. Apply ALL needed fixes in a single Edit pass:
+
+         **Hero fix** (when hero background is light):
+         - Change section style: `background: 'oklch(0.22 0.17 261)'`, add `position: 'relative'`, `overflow: 'hidden'`
+         - Add gradient overlay immediately inside: `<div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />`
+         - Content wrapper: add `style={{ position: 'relative', zIndex: 1 }}`
+         - Eyebrow: `color: 'oklch(0.79 0.19 78)'`
+         - h1: `color: 'white'`
+         - Subtitle: `color: 'oklch(1 0 0 / 0.70)'`
+         - Breadcrumb links: `color: 'oklch(1 0 0 / 0.55)'`
+         - Ghost CTA: `border: '1.5px solid oklch(1 0 0 / 0.28)'`, `color: 'white'`
+
+         **Eyebrow token fix** (hardcoded values on light sections):
+         - Replace hardcoded `oklch(0.60 0.12 68)`, `oklch(0.55 0.15 68)` → `var(--lscc-eyebrow)`
+
+         **Gold badge contrast fix**:
+         - Any `background: 'oklch(0.79 0.19 78)'` element with `color: 'white'` → change to `color: 'oklch(0.11 0.03 261)'`
+
+         **External link a11y fix**:
+         - Change `<Link href="https://...">` to `<a href="https://..." target="_blank" rel="noopener noreferrer">`
+         - Add `<span className="sr-only"> (opens in new tab)</span>` inside
+         - Make sure to import `Link` is still used if needed for internal links
+
+      3. Keep curly apostrophes out of JS strings (use `&apos;` in JSX text or double-quoted strings)
+      4. After editing each page, note it in your progress
+
+      Write a summary of all changes to `$ARTIFACTS_DIR/apply-summary.md`.
+    depends_on: [audit-all]
+    context: fresh
+    hooks:
+      PostToolUse:
+        - matcher: "Write|Edit"
+          response:
+            systemMessage: >
+              You just edited a page. Continue to the next page in the list.
+              Do not run TypeScript yet — validation happens after all pages are fixed.
+
+  # ═══════════════════════════════════════════════════════════════
+  # PHASE 4: VALIDATE — TypeScript check across all pages
+  # ═══════════════════════════════════════════════════════════════
+
+  - id: validate
+    bash: |
+      echo "=== TypeScript Check (all pages) ==="
+      npx tsc --noEmit 2>&1
+      TS_EXIT=$?
+      echo ""
+      if [ $TS_EXIT -eq 0 ]; then
+        echo "VALIDATION_STATUS: PASS"
+      else
+        echo "VALIDATION_STATUS: FAIL"
+      fi
+    depends_on: [apply-fixes]
+    timeout: 90000
+
+  # ═══════════════════════════════════════════════════════════════
+  # PHASE 5: FIX TS ERRORS
+  # ═══════════════════════════════════════════════════════════════
+
+  - id: fix-ts-errors
+    prompt: |
+      ## Validation Output
+      $validate.output
+
+      If "VALIDATION_STATUS: PASS" → respond "TypeScript clean." and stop.
+
+      Otherwise fix each error. Common Lawson errors:
+      - Curly apostrophe in single-quoted string → switch to double quotes
+      - Stale `.next/dev/types/validator.ts` errors → ignore (cache, not source)
+      - `<a>` used where `<Link>` was expected → verify `<a>` is correct for external URLs
+    depends_on: [validate]
+    context: fresh
+
+  # ═══════════════════════════════════════════════════════════════
+  # PHASE 6: COMMIT ALL
+  # ═══════════════════════════════════════════════════════════════
+
+  - id: commit-all
+    prompt: |
+      Commit all sweep changes.
+
+      ## Summary
+      Read `$ARTIFACTS_DIR/apply-summary.md` for what was changed.
+
+      ## Instructions
+
+      If summary says "All pages clean" → respond "Nothing to commit." and stop.
+
+      1. `git status --porcelain` — identify all modified source files
+      2. Stage ONLY the modified page/component files:
+         `git add [specific file paths]`
+         Never `git add -A` or `git add .`
+      3. Commit with:
+         `git commit -m "design(sweep): dark canvas + eyebrow token + a11y across all routes"`
+      4. Report which files were committed and the commit hash
+
+      **Never stage**: `.archon/`, `$ARTIFACTS_DIR/`, `.env`, `*.log`
+    depends_on: [fix-ts-errors]
+    context: fresh
+    hooks:
+      PreToolUse:
+        - matcher: "Write|Edit"
+          response:
+            hookSpecificOutput:
+              hookEventName: PreToolUse
+              permissionDecision: deny
+              permissionDecisionReason: "Commit node — git commands only, no source file edits."

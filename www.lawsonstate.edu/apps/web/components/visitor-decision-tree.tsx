@@ -17,7 +17,7 @@ const PATHS = [
       { label: 'Explore financial aid', href: '/financial-aid' },
       { label: 'Browse all 200+ programs', href: '/academics' },
       { label: 'Schedule a campus visit', href: '/contact' },
-      { label: 'Attend orientation', href: '/admissions/apply' },
+      { label: 'Attend orientation', href: '/orientation' },
     ],
     cta: 'Start My Application',
     ctaHref: '/admissions/apply',
@@ -41,7 +41,7 @@ const PATHS = [
       { label: 'Transfer admissions info', href: '/admissions/transfer' },
       { label: 'Credit transfer guide', href: '/admissions/transfer' },
       { label: 'Transfer program options', href: '/programs?area=college-transfer' },
-      { label: 'Meet with an advisor', href: '/campus-life' },
+      { label: 'Meet with an advisor', href: '/contact' },
     ],
     cta: 'Check My Credits',
     ctaHref: '/admissions/transfer',
@@ -60,14 +60,14 @@ const PATHS = [
     headline: 'EVERYTHING YOU NEED',
     summary: 'Everything you need to stay on track this semester — registration, financial aid status, tutoring support, and academic advising.',
     steps: [
-      { label: 'Register for classes', href: 'https://my.lawsonstate.edu' },
-      { label: 'Student portal login', href: 'https://my.lawsonstate.edu' },
+      { label: 'Register for classes', href: 'https://reg-prod.ec.accs.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search&mepCode=LAWSON' },
+      { label: 'Student portal login', href: '/portal' },
       { label: 'Financial aid status', href: '/financial-aid' },
-      { label: 'Pay your bill', href: 'https://my.lawsonstate.edu' },
-      { label: 'Get tutoring support', href: '/campus-life' },
+      { label: 'Pay your bill', href: 'https://experience.elluciancloud.com/lcc45/' },
+      { label: 'Get tutoring support', href: '/student-resources/tutoring' },
     ],
     cta: 'Go to Student Portal',
-    ctaHref: 'https://my.lawsonstate.edu',
+    ctaHref: '/portal',
     icon: (
       <svg viewBox="0 0 48 48" fill="none" aria-hidden className="w-10 h-10">
         <circle cx="24" cy="24" r="18" stroke="currentColor" strokeWidth="2.5" />

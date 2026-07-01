@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "lawson-web-dev",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d www.lawsonstate.edu\\apps\\web && npm run dev"],
+      "port": 3000
+    },
+    {
+      "name": "lawson-web-prod",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d www.lawsonstate.edu\\apps\\web && npm run start -- -p 3001"],
+      "port": 3001
+    }
+  ]
+}

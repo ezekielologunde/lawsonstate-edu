@@ -3,8 +3,29 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  /* Scroll padding for fixed header */
   scroll-padding-top: 100px;
+}
+
+/* ── Nav height token — used by hero and page-hero to clear the fixed bar ── */
+:root {
+  --lscc-nav-h: 56px;   /* mobile — single row */
+
+  /* Canonical dark-section navy — the ONE value every homepage dark section
+     (StatsTicker, AthleticsCallout, NewsEvents, Testimonials, Prefooter) uses.
+     Consolidated from three drifting variants per the homepage redesign council. */
+  --lscc-section-navy: oklch(0.18 0.14 261);
+
+  /* Program category accent hues — chip/border only, never a section or card
+     fill, so they never compete with gold (=action) or navy (=dark section). */
+  --lscc-accent-health:  oklch(0.55 0.16 160); /* teal-green */
+  --lscc-accent-trades:  oklch(0.62 0.19 48);  /* amber-orange */
+  --lscc-accent-transfer:oklch(0.55 0.18 280); /* violet */
+  --lscc-accent-business:oklch(0.55 0.15 230); /* blue */
+}
+@media (min-width: 1024px) {
+  :root {
+    --lscc-nav-h: 92px; /* desktop — utility strip (36px) + primary row (56px) */
+  }
 }
 
 /* Smooth scroll for internal links */
@@ -114,6 +135,14 @@ body {
     0 28px 60px oklch(0.11 0.03 261 / 0.10);
 }
 
+/* Glass panel — for CTA clusters sitting on top of photo/video (e.g. hero). */
+.glass-panel {
+  background: oklch(0.22 0.17 261 / 0.55);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid oklch(1 0 0 / 0.14);
+}
+
 /* ── Programs section asymmetric grid ── */
 .programs-grid {
   display: grid;
@@ -166,9 +195,55 @@ body {
   .pathways-grid .path-new { min-height: 320px; }
 }
 
-/* Mobile + tablet bottom nav clearance (bottom bar shows below lg/1024px) */
+/* Mobile + tablet bottom nav clearance */
 @media (max-width: 1023px) {
-  .mobile-nav-spacer { padding-bottom: 5rem; }
+  .mobile-nav-spacer { padding-bottom: 4.5rem; }
+}
+
+/* ── Responsive section vertical rhythm ────────────────────────────────────
+   Single source of truth: replaces all the fixed paddingBlock / py-XX values
+   that were identical across breakpoints and felt dense on mobile.
+────────────────────────────────────────────────────────────────────────────── */
+
+/* Utility class for home-page component sections */
+.section-py {
+  padding-block: clamp(2.5rem, 7vw, 5rem);
+}
+
+@media (max-width: 767px) {
+
+  /* Override inline paddingBlock on any <section> (e.g. paddingBlock:'5rem') */
+  section[style*="paddingBlock"] {
+    padding-block: 3rem !important;
+  }
+
+  /* Override Tailwind py classes used on inner-page sections */
+  section.py-16 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  section.py-20 { padding-top: 3rem;   padding-bottom: 3rem;   }
+  section.py-24 { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+
+  /* Inner-page heroes — clear the mobile nav + banner, tighter bottom */
+  .page-hero {
+    padding-top: calc(var(--lscc-banner-h, 0px) + var(--lscc-nav-h, 56px) + 1.5rem) !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* contact page uses explicit paddingTop/Bottom on the page-hero — also catch this */
+  section.page-hero[style],
+  div.page-hero[style] {
+    padding-top: calc(var(--lscc-banner-h, 0px) + var(--lscc-nav-h, 56px) + 1.5rem) !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* Inner-page heroes must clear the fixed TWO-TIER header on EVERY breakpoint —
+   the rule above only fires under 768px, so desktop heroes were being covered by
+   the utility strip. --lscc-nav-h is 56px on phones and 92px on desktop, so this
+   single global rule offsets both. (Overrides each hero's inline paddingTop: 8rem.) */
+.page-hero,
+section.page-hero[style],
+div.page-hero[style] {
+  padding-top: calc(var(--lscc-banner-h, 0px) + var(--lscc-nav-h, 56px) + 1.5rem) !important;
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -267,6 +342,46 @@ body {
 .float-slow   { animation: float-y 5.2s ease-in-out infinite; }
 .float-medium { animation: float-y 3.8s ease-in-out infinite; }
 
+/* ── Skeleton shimmer (loading.tsx route skeletons) ──
+   Directional sweep instead of plain opacity-pulse — reads as "in progress"
+   rather than "broken/stalled". */
+@keyframes skeleton-sweep {
+  from { background-position: -150% 0; }
+  to   { background-position: 150% 0; }
+}
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: oklch(0 0 0 / 0.06);
+}
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    100deg,
+    transparent 30%,
+    oklch(1 0 0 / 0.45) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-sweep 1.6s ease-in-out infinite;
+}
+.skeleton-dark {
+  background-color: oklch(1 0 0 / 0.07);
+}
+.skeleton-dark::after {
+  background-image: linear-gradient(
+    100deg,
+    transparent 30%,
+    oklch(1 0 0 / 0.14) 50%,
+    transparent 70%
+  );
+}
+@media (prefers-reduced-motion: reduce) {
+  .skeleton::after { animation: none; display: none; }
+}
+
 /* ── Marquee ── */
 .marquee-strip {
   overflow: hidden;
@@ -283,9 +398,9 @@ body {
 .card-lift {
   transition: transform 0.22s cubic-bezier(0.23, 1, 0.32, 1),
               box-shadow 0.22s cubic-bezier(0.23, 1, 0.32, 1);
-  will-change: transform;
 }
 .card-lift:hover {
+  will-change: transform;
   transform: translateY(-5px);
   box-shadow: 0 20px 56px oklch(0.11 0.03 261 / 0.16);
 }
@@ -355,6 +470,12 @@ a:hover .program-img { transform: scale(1.06); }
 @keyframes tab-in {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Testimonial photo crossfade ── */
+@keyframes tfade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 .tab-content {
   animation: tab-in 0.22s cubic-bezier(0.23, 1, 0.32, 1) both;

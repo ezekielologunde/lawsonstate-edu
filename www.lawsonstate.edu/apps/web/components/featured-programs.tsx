@@ -85,7 +85,7 @@ export default function FeaturedPrograms({ programs = [] }: FeaturedProgramsProp
                     className="inline-block text-xs font-semibold uppercase px-2.5 py-1 rounded-full mb-2"
                     style={{
                       background: 'oklch(0.79 0.19 78)',
-                      color: 'white',
+                      color: 'oklch(0.11 0.03 261)',
                       letterSpacing: '0.05em',
                     }}
                   >

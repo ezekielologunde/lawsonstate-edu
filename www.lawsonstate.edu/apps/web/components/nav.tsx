@@ -3,164 +3,8 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import SearchModal from './search-modal'
-
-// ── Types ───────────────────────────────────────────────────────
-
-type NavChild = {
-  label: string
-  href: string
-  note?: string
-  highlight?: boolean
-  external?: boolean
-}
-
-type NavGroup = { title: string; items: NavChild[] }
-
-type NavEntry = { label: string; href: string; mega?: NavGroup[] }
-
-type MobileItem = NavChild & { gold?: boolean }
-
-type MobileGroup = { label: string; href: string; items: MobileItem[] }
-
-// ── Desktop nav data ────────────────────────────────────────────
-
-const NAV: NavEntry[] = [
-  {
-    label: 'Programs',
-    href: '/academics',
-    mega: [
-      {
-        title: 'Program Areas',
-        items: [
-          { label: 'Health Sciences',   href: '/academics?tag=health',               note: 'Nursing, Dental, EMS' },
-          { label: 'Business & IT',     href: '/academics?tag=business',             note: 'Accounting, CIS, Admin' },
-          { label: 'Trades & CTE',      href: '/academics?tag=trades',               note: 'Mechatronics, HVAC, Welding' },
-          { label: 'Transfer Degrees',  href: '/academics?tag=transfer',             note: 'To UAB, Auburn & more' },
-          { label: 'Online Learning',   href: 'https://lawsonstate.instructure.com', note: 'Canvas LMS', external: true },
-        ],
-      },
-      {
-        title: 'More Options',
-        items: [
-          { label: 'All 200+ Programs',  href: '/academics',  highlight: true },
-          { label: 'Workforce Training', href: '/workforce',   note: 'Industry certs in months' },
-          { label: 'Continuing Ed',      href: '/academics',  note: 'Non-credit courses' },
-          { label: 'Academic Calendar',  href: '/calendar',   note: 'Important dates' },
-        ],
-      },
-    ],
-  },
-  {
-    label: 'Admissions',
-    href: '/admissions',
-    mega: [
-      {
-        title: 'Get Started',
-        items: [
-          { label: 'Apply Now',           href: '/admissions/apply',           highlight: true },
-          { label: 'New Students',        href: '/admissions',                 note: 'First-time college' },
-          { label: 'Transfer Students',   href: '/admissions/transfer',        note: 'Credits transfer easily' },
-          { label: 'Dual Enrollment',     href: '/admissions/dual-enrollment', note: 'High school + college' },
-          { label: 'Veterans & Military', href: '/admissions',                 note: 'GI Bill & benefits' },
-        ],
-      },
-      {
-        title: 'Resources',
-        items: [
-          { label: 'Financial Aid',  href: '/financial-aid', note: 'Grants, loans, scholarships' },
-          { label: 'Tuition & Fees', href: '/financial-aid', note: '$148 / credit hour' },
-          { label: 'Visit Campus',   href: '/contact',       note: '2 Birmingham locations' },
-          { label: 'Advising',       href: '/contact',       note: 'Talk to an advisor' },
-        ],
-      },
-    ],
-  },
-  { label: 'Financial Aid', href: '/financial-aid' },
-  {
-    label: 'Campus Life',
-    href: '/campus-life',
-    mega: [
-      {
-        title: 'Student Life',
-        items: [
-          { label: 'Clubs & Activities',  href: '/campus-life', note: '30+ student organizations' },
-          { label: 'Monarch Athletics',   href: '/campus-life', note: 'NJCAA — 14 sports' },
-          { label: 'Tutoring & Support',  href: '/campus-life', note: 'Free academic help' },
-          { label: 'Student Portal',      href: 'https://my.lawsonstate.edu', note: 'MyLawson login', external: true },
-        ],
-      },
-      {
-        title: 'Campus',
-        items: [
-          { label: 'Campus Calendar', href: '/calendar',    note: 'Events & deadlines' },
-          { label: 'News & Stories',  href: '/about',       note: 'Latest from LSCC' },
-          { label: 'Contact & Hours', href: '/contact',     note: 'Call, email, or visit' },
-          { label: 'About LSCC',      href: '/about',       note: 'Mission & HBCU legacy' },
-        ],
-      },
-    ],
-  },
-  { label: 'About', href: '/about' },
-]
-
-// ── Mobile nav data ─────────────────────────────────────────────
-
-const MOBILE_GROUPS: MobileGroup[] = [
-  {
-    label: 'Programs',
-    href: '/academics',
-    items: [
-      { label: 'All 200+ Programs',  href: '/academics' },
-      { label: 'Health Sciences',    href: '/academics?tag=health' },
-      { label: 'Business & IT',      href: '/academics?tag=business' },
-      { label: 'Trades & CTE',       href: '/academics?tag=trades' },
-      { label: 'Transfer Degrees',   href: '/academics?tag=transfer' },
-      { label: 'Online Learning',    href: 'https://lawsonstate.instructure.com', external: true },
-      { label: 'Workforce Training', href: '/workforce' },
-    ],
-  },
-  {
-    label: 'Admissions',
-    href: '/admissions',
-    items: [
-      { label: 'Apply Now',           href: '/admissions/apply',           gold: true },
-      { label: 'New Students',        href: '/admissions' },
-      { label: 'Transfer Students',   href: '/admissions/transfer' },
-      { label: 'Dual Enrollment',     href: '/admissions/dual-enrollment' },
-      { label: 'Veterans & Military', href: '/admissions' },
-    ],
-  },
-  {
-    label: 'Financial Aid',
-    href: '/financial-aid',
-    items: [
-      { label: 'Aid Overview',          href: '/financial-aid' },
-      { label: 'Grants & Scholarships', href: '/financial-aid' },
-      { label: 'Tuition & Fees',        href: '/financial-aid' },
-      { label: 'Advising',              href: '/contact' },
-    ],
-  },
-  {
-    label: 'Campus Life',
-    href: '/campus-life',
-    items: [
-      { label: 'Student Life',       href: '/campus-life' },
-      { label: 'Monarch Athletics',  href: '/campus-life' },
-      { label: 'Tutoring & Support', href: '/campus-life' },
-      { label: 'Campus Calendar',    href: '/calendar' },
-    ],
-  },
-  {
-    label: 'About & Contact',
-    href: '/about',
-    items: [
-      { label: 'About Lawson State', href: '/about' },
-      { label: 'News & Stories',     href: '/about' },
-      { label: 'Contact Us',         href: '/contact' },
-      { label: 'Visit Campus',       href: '/contact' },
-    ],
-  },
-]
+import { NAV, MOBILE_GROUPS } from './nav-data'
+import type { NavEntry } from './nav-data'
 
 // ── Icons ────────────────────────────────────────────────────────
 
@@ -180,6 +24,23 @@ const ExternalIcon = () => (
     <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
   </svg>
 )
+const PhoneIcon = () => (
+  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.36 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+  </svg>
+)
+
+// Six core destinations get the primary row. Everything a returning
+// user or specific persona (faculty/staff, quick logins) needs lives in
+// the slim utility strip above it — a double-nav pattern instead of
+// cramming every audience into one row.
+const DESKTOP_LABELS = new Set(['Programs', 'Admissions & Aid', 'Students', 'Campus Life', 'About'])
+
+const UTILITY_LINKS = [
+  { label: 'MyLawson',        href: 'https://experience.elluciancloud.com/lcc45/', external: true },
+  { label: 'Canvas',          href: 'https://alabama.instructure.com',             external: true },
+  { label: 'Faculty & Staff', href: '/about/faculty',                              external: false },
+]
 
 // ── Component ────────────────────────────────────────────────────
 
@@ -218,8 +79,9 @@ export default function Nav() {
     if (closeTimer.current) clearTimeout(closeTimer.current)
   }, [])
 
+  const desktopNav = NAV.filter(item => DESKTOP_LABELS.has(item.label))
+
   const lc = 'oklch(1 0 0 / 0.88)'
-  const wc = 'white'
   const sc = 'oklch(1 0 0 / 0.42)'
   const bc = 'white'
 
@@ -236,7 +98,61 @@ export default function Nav() {
         transition: 'box-shadow 0.3s ease',
       }}
     >
-      <div className="max-w-7xl mx-auto px-5 h-16 md:h-[70px] flex items-center justify-between gap-5">
+      {/* ── Utility strip — desktop only. Quick logins + Faculty/Staff live
+           here so the primary row below can stay to six core destinations. ── */}
+      <div
+        className="hidden lg:block"
+        style={{ borderBottom: '1px solid oklch(1 0 0 / 0.07)', background: 'oklch(0.10 0.10 261 / 0.6)' }}
+      >
+        <div className="max-w-7xl mx-auto px-5 h-9 flex items-center justify-between gap-5">
+          <a
+            href="tel:12059252515"
+            className="flex items-center gap-1.5 transition-colors hover:text-white"
+            style={{ fontSize: '0.72rem', color: sc }}
+          >
+            <PhoneIcon />
+            205.925.2515 · Birmingham &amp; Bessemer
+          </a>
+          <div className="flex items-center gap-4">
+            {UTILITY_LINKS.map((l) =>
+              l.external ? (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 font-semibold transition-colors hover:text-white"
+                  style={{ fontSize: '0.72rem', color: sc }}
+                >
+                  {l.label}
+                  <span className="sr-only"> (opens in new tab)</span>
+                  <ExternalIcon />
+                </a>
+              ) : (
+                <Link
+                  key={l.label}
+                  href={l.href}
+                  className="font-semibold transition-colors hover:text-white"
+                  style={{ fontSize: '0.72rem', color: sc }}
+                >
+                  {l.label}
+                </Link>
+              )
+            )}
+            <span aria-hidden style={{ width: '1px', height: '12px', background: 'oklch(1 0 0 / 0.14)' }} />
+            <Link
+              href="/portal"
+              className="font-semibold transition-colors hover:text-white"
+              style={{ fontSize: '0.72rem', color: 'var(--lscc-eyebrow-on-dark)' }}
+            >
+              Student Portal
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Primary row — six core destinations + one clear CTA ── */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-5 h-14 flex items-center justify-between gap-5">
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 shrink-0 leading-none" onClick={() => setOpen(false)}>
@@ -247,25 +163,24 @@ export default function Nav() {
             LS
           </div>
           <div className="hidden md:flex flex-col leading-none gap-[3px]">
-            <span className="font-display font-extrabold transition-colors duration-200" style={{ fontSize: '0.88rem', letterSpacing: '0.07em', color: wc }}>LAWSON STATE</span>
+            <span className="font-display font-extrabold transition-colors duration-200" style={{ fontSize: '0.88rem', letterSpacing: '0.07em', color: 'white' }}>LAWSON STATE</span>
             <span className="transition-colors duration-200" style={{ fontSize: '0.43rem', letterSpacing: '0.22em', color: sc }}>COMMUNITY COLLEGE</span>
           </div>
         </Link>
 
-        {/* ── Desktop nav ── */}
+        {/* Desktop nav — 6 core destinations, mega-menus intact */}
         <nav
           className="hidden lg:flex items-center gap-0 flex-1 justify-center"
           onMouseLeave={scheduleClose}
           onMouseEnter={cancelClose}
           aria-label="Main navigation"
         >
-          {NAV.map((item) => (
+          {desktopNav.map((item: NavEntry) => (
             <div key={item.label} className="relative">
 
-              {/* Trigger */}
               <Link
                 href={item.href}
-                className="flex items-center gap-1 px-3.5 py-2 text-[0.83rem] font-semibold rounded-lg transition-colors duration-150 hover:bg-white/8"
+                className="flex items-center gap-1 px-3 py-2 text-[0.80rem] font-semibold rounded-lg transition-colors duration-150 hover:bg-white/8"
                 style={{ color: lc }}
                 onMouseEnter={() => { cancelClose(); setOpenMenu(item.mega ? item.label : null) }}
                 aria-haspopup={item.mega ? 'true' : undefined}
@@ -279,7 +194,6 @@ export default function Nav() {
                 )}
               </Link>
 
-              {/* Mega-menu panel */}
               {item.mega && openMenu === item.label && (
                 <div
                   style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-50%)', zIndex: 60 }}
@@ -288,7 +202,7 @@ export default function Nav() {
                   <div
                     className="nav-dropdown mt-2"
                     style={{
-                      minWidth: '480px',
+                      minWidth: item.mega.length >= 3 ? '680px' : '520px',
                       background: 'white',
                       borderRadius: '18px',
                       border: '1px solid oklch(0 0 0 / 0.08)',
@@ -299,16 +213,16 @@ export default function Nav() {
                     <div className="grid gap-5" style={{ gridTemplateColumns: `repeat(${item.mega.length}, 1fr)` }}>
                       {item.mega.map((group) => (
                         <div key={group.title}>
-                          <p style={{ fontSize: '0.64rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'oklch(0.60 0.12 68)', fontWeight: 700, marginBottom: '0.55rem' }}>
+                          <p style={{ fontSize: '0.64rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--lscc-eyebrow)', fontWeight: 700, marginBottom: '0.55rem' }}>
                             {group.title}
                           </p>
                           <div className="flex flex-col gap-0.5">
                             {group.items.map((sub) => {
                               const inner = (
                                 <div className="flex flex-col gap-0.5 px-2.5 py-2 rounded-xl transition-colors hover:bg-black/[0.04]">
-                                  <span className="text-[0.84rem] font-semibold flex items-center gap-1.5" style={{ color: sub.highlight ? 'oklch(0.55 0.15 68)' : 'oklch(0.16 0.04 261)' }}>
+                                  <span className="text-[0.84rem] font-semibold flex items-center gap-1.5" style={{ color: sub.highlight ? 'var(--lscc-eyebrow)' : 'oklch(0.16 0.04 261)' }}>
                                     {sub.label}
-                                    {sub.highlight && <span style={{ fontSize: '0.60rem', background: 'oklch(0.96 0.05 82)', color: 'oklch(0.55 0.15 68)', padding: '0.12rem 0.45rem', borderRadius: '999px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Browse</span>}
+                                    {sub.highlight && <span style={{ fontSize: '0.60rem', background: 'oklch(0.96 0.05 82)', color: 'var(--lscc-eyebrow)', padding: '0.12rem 0.45rem', borderRadius: '999px', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Browse</span>}
                                     {sub.external && <ExternalIcon />}
                                   </span>
                                   {sub.note && <span style={{ fontSize: '0.70rem', color: 'oklch(0.55 0.05 261)', lineHeight: 1.3 }}>{sub.note}</span>}
@@ -331,13 +245,15 @@ export default function Nav() {
           ))}
         </nav>
 
-        {/* Desktop CTAs */}
+        {/* Desktop CTAs — Portal now lives in the utility strip above, so
+             this row keeps just search + the one strong conversion action. */}
         <div className="hidden md:flex items-center gap-3 shrink-0">
           <SearchModal dark={!scrolled} />
-          <a href="https://my.lawsonstate.edu" target="_blank" rel="noreferrer" className="text-[0.82rem] font-semibold transition-opacity hover:opacity-60 whitespace-nowrap" style={{ color: lc }}>
-            My Portal
-          </a>
-          <Link href="/admissions/apply" className="press btn-shimmer text-[0.82rem] font-bold px-5 py-2 rounded-lg whitespace-nowrap" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', boxShadow: '0 2px 12px oklch(0.79 0.19 78 / 0.35)' }}>
+          <Link
+            href="/admissions/apply"
+            className="press btn-shimmer text-[0.82rem] font-bold px-5 py-2 rounded-lg whitespace-nowrap"
+            style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', boxShadow: '0 2px 12px oklch(0.79 0.19 78 / 0.35)' }}
+          >
             Apply Now
           </Link>
         </div>
@@ -360,10 +276,9 @@ export default function Nav() {
       <div
         id="mobile-nav"
         className="lg:hidden fixed inset-0 z-40 pointer-events-none"
-        style={{ top: 'calc(var(--lscc-banner-h, 0px) + 64px)' }}
+        style={{ top: 'calc(var(--lscc-banner-h, 0px) + 56px)' }}
         aria-hidden={!open}
       >
-        {/* Backdrop */}
         <div
           className="absolute inset-0 transition-opacity duration-300"
           style={{ background: 'oklch(0 0 0 / 0.50)', opacity: open ? 1 : 0, backdropFilter: open ? 'blur(4px)' : 'none', pointerEvents: open ? 'auto' : 'none' }}
@@ -371,18 +286,16 @@ export default function Nav() {
           aria-hidden
         />
 
-        {/* Slide-down panel */}
         <div
           className="absolute inset-x-0 top-0 pointer-events-auto transition-all duration-300"
           style={{
             background: 'white',
-            maxHeight: open ? 'calc(100dvh - 64px)' : '0',
+            maxHeight: open ? 'calc(100dvh - 56px)' : '0',
             opacity: open ? 1 : 0,
             overflow: open ? 'auto' : 'hidden',
             boxShadow: '0 24px 80px oklch(0 0 0 / 0.22)',
           }}
         >
-          {/* Pinned CTA */}
           <div className="px-4 pt-4 pb-2">
             <Link
               href="/admissions/apply"
@@ -395,7 +308,6 @@ export default function Nav() {
             </Link>
           </div>
 
-          {/* Accordion groups */}
           <nav className="px-4 py-2 flex flex-col gap-0.5" aria-label="Mobile navigation">
             {MOBILE_GROUPS.map((group) => {
               const isExp = expandedGroup === group.label
@@ -435,16 +347,24 @@ export default function Nav() {
             })}
           </nav>
 
-          {/* Footer row */}
-          <div className="px-4 pb-6 pt-3" style={{ borderTop: '1px solid oklch(0 0 0 / 0.07)', marginTop: '0.5rem' }}>
+          <div className="px-4 pb-6 pt-3 flex flex-col gap-1" style={{ borderTop: '1px solid oklch(0 0 0 / 0.07)', marginTop: '0.5rem' }}>
+            <Link
+              href="/portal"
+              onClick={() => setOpen(false)}
+              className="flex items-center justify-between text-sm font-semibold px-3 py-3 rounded-xl hover:bg-black/[0.04] transition-colors"
+              style={{ color: 'oklch(0.22 0.05 261)' }}
+            >
+              Student Portal
+              <ArrowRight />
+            </Link>
             <a
-              href="https://my.lawsonstate.edu"
+              href="https://experience.elluciancloud.com/lcc45/"
               target="_blank" rel="noreferrer"
               onClick={() => setOpen(false)}
               className="flex items-center justify-between text-sm font-semibold px-3 py-3 rounded-xl hover:bg-black/[0.04] transition-colors"
               style={{ color: 'oklch(0.22 0.05 261)' }}
             >
-              Student Portal (MyLawson)
+              MyLawson (Login)
               <ExternalIcon />
             </a>
           </div>

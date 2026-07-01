@@ -1,5 +1,6 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
@@ -19,6 +20,7 @@ const SUBNAV = [
   { label: 'Transient Students',                href: '/admissions/transient' },
   { label: 'Admissions Policies & Forms',       href: '/admissions/policies' },
   { label: 'Dual Enrollment',                   href: '/admissions/dual-enrollment' },
+  { label: 'Veterans & Military',               href: '/admissions/veterans' },
 ]
 const ACTIVE = '/admissions/non-degree'
 
@@ -43,22 +45,27 @@ export default function NonDegreePage() {
       <Nav />
 
       {/* Hero */}
-      <section className="page-hero relative py-14 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.42 0.17 261)', minHeight: '24vh', display: 'flex', alignItems: 'flex-end' }}>
-        <div className="absolute inset-0" aria-hidden
-          style={{ background: 'linear-gradient(to right, oklch(0.42 0.17 261 / 0.97) 0%, oklch(0.38 0.15 263 / 0.75) 100%)' }} />
+      <section className="page-hero relative px-6 overflow-hidden"
+        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}>
+        <HeroPhoto src="https://live.staticflickr.com/65535/55258970853_28b8ea04e9_z.jpg" alt="Lawson State campus" position="center 30%" />
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
+          <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span className="mx-2" aria-hidden>›</span>
             <Link href="/admissions" className="hover:text-white transition-colors">How to Apply</Link>
             <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>Non-Degree Seekers</span>
           </p>
-          <h1 className="font-display font-black text-white leading-none"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.6rem)', letterSpacing: '-0.025em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+            Personal Enrichment · Career Development · Lifelong Learning
+          </p>
+          <h1 className="font-display font-black text-white leading-none mb-4"
+            style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
             NON-DEGREE SEEKERS
           </h1>
+          <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.15rem)', color: 'oklch(1 0 0 / 0.70)', maxWidth: '56ch', lineHeight: 1.7 }}>
+            Not working toward a degree? Enroll in up to 7 semester hours per semester for personal enrichment, career development, or lifelong learning. No diploma required.
+          </p>
         </div>
       </section>
 
@@ -85,6 +92,7 @@ export default function NonDegreePage() {
       <section className="py-14 px-6" style={{ background: 'white' }}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 items-start">
           <div>
+            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>Non-Degree Enrollment</p>
             <h2 className="font-display font-black text-lscc-ink mb-4"
               style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', letterSpacing: '-0.02em' }}>
               LEARN FOR THE JOY OF LEARNING
@@ -95,9 +103,9 @@ export default function NonDegreePage() {
             </p>
             <p className="text-lscc-muted mb-6"
               style={{ fontSize: '1rem', lineHeight: 1.75, maxWidth: '54ch' }}>
-              Reach out to Admissions if you have any questions. We are currently accepting applications for all 2025 semesters.
+              Reach out to Admissions if you have any questions. We are currently accepting applications year-round.
             </p>
-            <a href="https://lawsonstate.edu/admissions/default.aspx" target="_blank" rel="noopener noreferrer"
+            <a href="https://lawsonstate.my.site.com/apply/TX_SiteLogin?startURL=%2Fapply%2FTargetX_Base__Portal" target="_blank" rel="noopener noreferrer"
               className="press btn-shimmer inline-flex items-center font-bold px-8 py-3.5 rounded-xl"
               style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.97rem' }}>
               Apply Now — It&apos;s Free →
@@ -111,8 +119,8 @@ export default function NonDegreePage() {
             </div>
             <div className="space-y-4">
               {[
-                { sem: 'Summer 2025', date: 'May 21st' },
-                { sem: 'Fall 2025',   date: 'August 18th' },
+                { sem: 'Fall 2026',   date: 'August 17th' },
+                { sem: 'Spring 2027', date: 'January 12th' },
               ].map(s => (
                 <div key={s.sem} className="flex items-center justify-between py-3 border-b"
                   style={{ borderColor: 'oklch(0 0 0 / 0.10)' }}>
@@ -131,6 +139,7 @@ export default function NonDegreePage() {
       {/* Steps */}
       <section className="py-14 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
+          <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>Step-by-Step</p>
           <h2 className="font-display font-black text-lscc-ink mb-8"
             style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', letterSpacing: '-0.02em' }}>
             THE APPLICATION PROCESS
@@ -158,6 +167,7 @@ export default function NonDegreePage() {
       {/* Contact */}
       <section className="py-14 px-6" style={{ background: 'white' }}>
         <div className="max-w-7xl mx-auto">
+          <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>Admissions Office</p>
           <h2 className="font-display font-black text-lscc-ink mb-8"
             style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', letterSpacing: '-0.02em' }}>
             GET IN TOUCH WITH ADMISSIONS
@@ -190,3 +200,4 @@ export default function NonDegreePage() {
     </>
   )
 }
+

@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    optimizePackageImports: ['next/font'],
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error'] } : false,
+  },
   images: {
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 828, 1200, 1920],
+    imageSizes: [16, 32, 64, 128, 256],
     remotePatterns: [
       { hostname: 'www.lawsonstate.edu' },
       { hostname: 'live.staticflickr.com' },
@@ -12,11 +21,9 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // Admissions sub-routes → admissions hub or nearest page
-      { source: '/admissions/apply',        destination: '/admissions',    permanent: false },
       { source: '/admissions/visit',        destination: '/admissions',    permanent: false },
       { source: '/admissions/request-info', destination: '/admissions',    permanent: false },
       { source: '/admissions/tuition',      destination: '/financial-aid', permanent: false },
-      { source: '/visit',                   destination: '/admissions',    permanent: false },
 
       // Academic sub-division paths → pre-filtered program finder.
       // permanent:false (302) — these route into a facet, not a permanent canonical move.
@@ -26,17 +33,30 @@ const nextConfig: NextConfig = {
       { source: '/academics/health',             destination: '/programs?area=health-professions', permanent: false },
       { source: '/academics/business-it',        destination: '/programs?area=business-it',         permanent: false },
       { source: '/academics/stem',               destination: '/programs?area=stem',                permanent: false },
-      { source: '/academics/online',             destination: '/programs?delivery=online',          permanent: false },
       { source: '/academics/certificates',       destination: '/programs?type=CER',                 permanent: false },
       { source: '/academics/degrees',            destination: '/programs',                          permanent: false },
       // No finder equivalent → editorial hub / real page
       { source: '/academics/honors',             destination: '/academics',                  permanent: false },
-      { source: '/academics/weekend-college',    destination: '/academics',                  permanent: false },
       { source: '/academics/departments',        destination: '/academics',                  permanent: false },
       { source: '/academics/dual-enrollment',    destination: '/admissions/dual-enrollment', permanent: false },
 
       // Removed orphan page → editorial hub (permanent: equity consolidation)
       { source: '/learn', destination: '/academics', permanent: true },
+
+      // Consolidated: Financial Data merged into Facts & Data (permanent)
+      { source: '/about/financial-data', destination: '/about/facts#financial', permanent: true },
+
+      // "Specialized Programs" has no standalone page → the full program finder
+      { source: '/academics/specialized-programs', destination: '/programs', permanent: false },
+      { source: '/specialized-programs',           destination: '/programs', permanent: false },
+
+      // Short-URL aliases → About sub-pages (menu items / legacy paths)
+      { source: '/president',              destination: '/about/president',               permanent: false },
+      { source: '/human-resources',        destination: '/about/human-resources',         permanent: false },
+      { source: '/hr',                     destination: '/about/human-resources',         permanent: false },
+      { source: '/administrative-services', destination: '/about/administrative-services', permanent: false },
+      { source: '/public-relations',       destination: '/about/public-relations',        permanent: false },
+      { source: '/commencement',           destination: '/student-resources/graduation',  permanent: false },
 
       // Campus life subpages → campus life hub
       { source: '/campus-life/honor-societies',   destination: '/campus-life', permanent: false },
@@ -52,17 +72,18 @@ const nextConfig: NextConfig = {
       { source: '/support/veterans', destination: '/campus-life', permanent: false },
 
       // Utility pages → nearest equivalent
-      { source: '/news',      destination: '/calendar', permanent: false },
-      { source: '/directory', destination: '/about',    permanent: false },
+      { source: '/directory',   destination: '/about',        permanent: false },
+      { source: '/student-life', destination: '/campus-life', permanent: false },
 
-      // External redirects (student systems + official Lawson State pages)
-      { source: '/portal',             destination: 'https://my.lawsonstate.edu',                      permanent: false },
-      { source: '/library',            destination: 'https://www.lawsonstate.edu/library',             permanent: false },
-      { source: '/athletics',          destination: 'https://www.lawsonstate.edu/athletics',           permanent: false },
-      { source: '/privacy',            destination: 'https://www.lawsonstate.edu/privacy-policy',      permanent: false },
-      { source: '/accessibility',      destination: 'https://www.lawsonstate.edu/accessibility',       permanent: false },
-      { source: '/title-ix',           destination: 'https://www.lawsonstate.edu/title-ix',            permanent: false },
-      { source: '/non-discrimination', destination: 'https://www.lawsonstate.edu/non-discrimination',  permanent: false },
+      // External redirects (student systems)
+      { source: '/mylawson',           destination: 'https://my.lawsonstate.edu',                      permanent: false },
+
+      // Shortcut URLs → real internal pages
+      { source: '/athletics',          destination: '/campus-life/athletics',      permanent: false },
+      { source: '/privacy',            destination: '/about/privacy',              permanent: false },
+      { source: '/accessibility',      destination: '/about/accessibility',        permanent: false },
+      { source: '/title-ix',           destination: '/about/title-ix',             permanent: false },
+      { source: '/non-discrimination', destination: '/about/non-discrimination',   permanent: false },
     ]
   },
 };

@@ -53,7 +53,7 @@ export default function AnnouncementBanner() {
 
           <span
             className="shrink-0 font-display font-black px-2 py-0.5 rounded"
-            style={{ fontSize: '0.65rem', letterSpacing: '0.10em', textTransform: 'uppercase', background: 'oklch(0.11 0.03 261)', color: 'oklch(0.79 0.19 78)' }}
+            style={{ fontSize: '0.65rem', letterSpacing: '0.10em', textTransform: 'uppercase', background: 'oklch(0.11 0.03 261)', color: 'var(--lscc-eyebrow-on-dark)' }}
           >
             Now Open
           </span>
@@ -74,13 +74,13 @@ export default function AnnouncementBanner() {
 
         <div className="flex items-center gap-2.5 shrink-0">
           <a
-            href="https://my.lawsonstate.edu"
+            href="https://reg-prod.ec.accs.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search&mepCode=LAWSON"
             target="_blank"
             rel="noopener noreferrer"
             className="press btn-shimmer font-bold whitespace-nowrap rounded-lg px-4 py-1.5"
             style={{ background: 'oklch(0.22 0.17 261)', color: 'white', fontSize: '0.80rem' }}
           >
-            Register Now →
+            Register Now →<span className="sr-only"> (opens in new tab)</span>
           </a>
           <button
             onClick={dismiss}

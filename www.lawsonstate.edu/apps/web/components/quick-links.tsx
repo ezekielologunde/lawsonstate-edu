@@ -4,14 +4,14 @@ const NEW_VISITOR_ACTIONS = [
   { label: 'Apply Now', href: '/admissions/apply', primary: true },
   { label: 'Explore Programs', href: '/academics', primary: false },
   { label: 'Financial Aid Info', href: '/financial-aid', primary: false },
-  { label: 'Schedule Campus Tour', href: '/contact', primary: false },
+  { label: 'Visit Campus', href: '/contact', primary: false },
 ]
 
 const QUICK_ACTIONS = [
   { label: 'Apply Now', href: '/admissions/apply', primary: true },
-  { label: 'Student Portal', href: 'https://my.lawsonstate.edu', primary: false },
-  { label: 'Register', href: 'https://my.lawsonstate.edu', primary: false },
-  { label: 'Pay Bill', href: 'https://my.lawsonstate.edu', primary: false },
+  { label: 'Student Portal', href: '/portal', primary: false },
+  { label: 'Register', href: 'https://reg-prod.ec.accs.edu/StudentRegistrationSsb/ssb/term/termSelection?mode=search&mepCode=LAWSON', primary: false },
+  { label: 'Pay Bill', href: 'https://experience.elluciancloud.com/lcc45/', primary: false },
 ]
 
 export default function QuickLinks() {

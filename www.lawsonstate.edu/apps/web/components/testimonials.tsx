@@ -25,8 +25,8 @@ const TABS = [
     quote: "I was the first person in my family to go to college. Walking onto campus for the first time felt like I'd finally found the right room. Everyone here is rooting for each other.",
     name: 'Marcus W.',
     detail: 'Business Administration · Class of 2025',
-    href: '/student-life',
-    cta: 'Discover Student Life',
+    href: '/campus-life',
+    cta: 'Discover Campus Life',
   },
   {
     id: 'transform',
@@ -38,6 +38,17 @@ const TABS = [
     detail: 'Mechatronics Technology · Class of 2023',
     href: '/programs?area=career-technical',
     cta: 'Explore CTE Programs',
+  },
+  {
+    id: 'save',
+    label: 'Save',
+    photo: 'https://www.lawsonstate.edu/_resources/assets/img/grads.jpg',
+    program: 'College Transfer',
+    quote: "I did my first two years at Lawson State for a fraction of university tuition, and every credit transferred. I walked this stage knowing I was starting my junior year already ahead financially.",
+    name: 'Aaliyah J.',
+    detail: 'General Studies (AA) · Transferred to UAB',
+    href: '/programs?area=college-transfer',
+    cta: 'Explore Transfer Programs',
   },
 ]
 
@@ -98,7 +109,7 @@ export default function Testimonials() {
         {/* Header row */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
           <div>
-            <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'oklch(0.79 0.19 78)', textTransform: 'uppercase', marginBottom: '0.4rem', fontWeight: 700 }}>
+            <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'var(--lscc-eyebrow-on-dark)', textTransform: 'uppercase', marginBottom: '0.4rem', fontWeight: 700 }}>
               02 — Real Student Stories
             </p>
             <h2 className="font-display font-black text-white leading-none wipe-reveal" style={{ fontSize: 'clamp(2.6rem, 5.5vw, 4.2rem)', letterSpacing: '-0.04em' }}>
@@ -162,6 +173,7 @@ export default function Testimonials() {
               className="absolute inset-0 w-full h-full object-cover"
               style={{ animation: 'tfade 0.55s ease' }}
               loading="lazy"
+              decoding="async"
             />
             <div
               className="absolute inset-0 pointer-events-none"
@@ -225,7 +237,7 @@ export default function Testimonials() {
             <Link
               href={tab.href}
               className="press inline-flex items-center gap-2 font-bold self-start"
-              style={{ fontSize: '0.85rem', color: 'oklch(0.79 0.19 78)', letterSpacing: '0.02em' }}
+              style={{ fontSize: '0.85rem', color: 'var(--lscc-eyebrow-on-dark)', letterSpacing: '0.02em' }}
             >
               {tab.cta}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>

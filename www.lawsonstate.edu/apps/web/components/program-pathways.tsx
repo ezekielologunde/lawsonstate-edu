@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const PATHWAYS = [
   {
@@ -36,7 +37,7 @@ const PATHWAYS = [
     sub: 'We Honor Your Service',
     description: 'Dedicated support for active-duty service members, veterans, and their families. Your service translates to real college credit.',
     photo: 'https://www.lawsonstate.edu/_resources/assets/img/college_students3.jpg',
-    href: '/admissions',
+    href: '/admissions/veterans',
     tag: 'Military-friendly',
     accent: 'oklch(0.60 0.18 152)',
     textColor: 'white',
@@ -78,11 +79,13 @@ export default function ProgramPathways() {
               style={{ minHeight: '340px', textDecoration: 'none' }}
             >
               {/* Photo */}
-              <img
+              <Image
                 src={p.photo}
                 alt=""
                 aria-hidden
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                fill
+                sizes="(min-width: 640px) 50vw, 100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               {/* Gradient overlay */}
               <div

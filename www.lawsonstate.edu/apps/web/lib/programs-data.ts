@@ -230,10 +230,16 @@ export const SAMPLE_PROGRAMS: Program[] = [
     description: 'Chair-side dental procedures, patient care, radiography, and dental office management.',
     href: '/programs/dental-assisting-aas', tags: ['dental','healthcare','licensed-profession'] },
 
-  { id: 'diagnostic-medical-sonography-aas', name: 'Diagnostic Medical Sonography (AAS)',
+  { id: 'dental-assistant-aot', name: 'Dental Assisting (AOT)',
+    category: 'health-professions', degreeType: 'AOT', deliveryModes: ['ground'],
+    duration: '2 years', durationMonths: 24, transferable: false, jobPlacementRate: 89,
+    description: 'Occupational technology track for chair-side dental procedures, patient care, radiography, and dental office management.',
+    href: '/programs/dental-assisting-aot', tags: ['dental','healthcare','licensed-profession'] },
+
+  { id: 'diagnostic-medical-sonography-aas', name: 'Diagnostic Medical Sonography – Echo Cardiac (AAS)',
     category: 'health-professions', degreeType: 'AAS', deliveryModes: ['ground'],
     duration: '2 years', durationMonths: 24, transferable: false, jobPlacementRate: 92,
-    description: 'Ultrasound imaging for abdominal, OB/GYN, and vascular applications. ARDMS registry prep.',
+    description: 'Echocardiography and cardiac ultrasound imaging, plus abdominal, OB/GYN, and vascular applications. ARDMS registry prep.',
     href: '/programs/diagnostic-medical-sonography-aas', tags: ['sonography','imaging','healthcare','high-demand'] },
 
   { id: 'radiologic-technology-aas', name: 'Radiologic Technology (AAS)',

@@ -37,7 +37,7 @@ export default function SearchBar() {
         const json = await res.json()
         const newResults = json.results ?? []
         setResults(newResults)
-        setOpen(newResults.length > 0)
+        setOpen(true) // open even with 0 results so the Google escalation is offered
         setHighlightedIndex(-1)
       } finally {
         setLoading(false)
@@ -137,6 +137,7 @@ export default function SearchBar() {
           open={open}
           highlightedIndex={highlightedIndex}
           onSelect={handleResultSelect}
+          query={query}
         />
       </div>
     </div>

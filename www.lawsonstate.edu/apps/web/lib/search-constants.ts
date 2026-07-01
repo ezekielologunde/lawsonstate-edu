@@ -10,4 +10,6 @@ export const CATEGORY_LABELS: Record<string, string> = {
   faculty: 'Faculty',
   'student-services': 'Student Services',
   athletics: 'Athletics',
+  'campus-life': 'Campus Life',
+  legal: 'Policy',
 }

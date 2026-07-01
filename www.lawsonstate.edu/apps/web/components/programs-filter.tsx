@@ -330,45 +330,45 @@ export default function ProgramsFilter() {
                 </button>
               </div>
             ) : (
-              <div className="grid gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {filteredPrograms.map((program, i) => (
-                  <Link key={program.id} href={program.href}>
+                  <Link key={program.id} href={program.href} className="flex">
                     <article
-                      className="card-appear group p-5 rounded-xl transition-colors"
-                      style={{ border: '1px solid oklch(0 0 0 / 0.08)', background: 'white', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)', animationDelay: `${i * 0.04}s` }}
+                      className="card-appear group flex flex-col w-full p-5 rounded-2xl transition-colors"
+                      style={{ border: '1px solid oklch(0 0 0 / 0.08)', background: 'white', boxShadow: '0 4px 20px oklch(0.16 0.06 261 / 0.07)', animationDelay: `${i * 0.04}s` }}
                     >
-                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 mb-2">
-                            <span className="inline-block px-2.5 py-1 rounded-full text-xs font-bold text-white"
-                              style={{ background: CATEGORIES[program.category].color }}>
-                              {program.degreeType}
-                            </span>
-                            {program.jobPlacementRate && (
-                              <span className="text-xs font-semibold" style={{ color: 'oklch(0.50 0.03 261)' }}>
-                                {program.jobPlacementRate}% placement
-                              </span>
-                            )}
-                          </div>
-                          <h3 className="text-lg font-bold mb-2 transition-colors"
-                            style={{ color: 'oklch(0.16 0.04 261)', '--hover-color': 'var(--lscc-eyebrow)' } as React.CSSProperties}>
-                            {program.name}
-                          </h3>
-                          <p className="text-sm mb-3" style={{ color: 'oklch(0.40 0.04 261)' }}>{program.description}</p>
-                          <div className="flex flex-wrap gap-2">
-                            {program.deliveryModes.map(mode => (
-                              <span key={mode} className="text-xs px-2.5 py-1 rounded-full"
-                                style={{ background: 'oklch(0 0 0 / 0.06)', color: 'oklch(0.40 0.04 261)' }}>
-                                {DELIVERY_MODES[mode].label}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                        <div className="text-right shrink-0">
-                          <div className="text-sm font-semibold mb-1" style={{ color: 'oklch(0.16 0.04 261)' }}>{program.duration}</div>
-                          <div className="text-xs mb-3" style={{ color: 'oklch(0.50 0.03 261)' }}>{program.durationMonths} months</div>
-                          <span style={{ color: 'var(--lscc-eyebrow)' }} className="group-hover:translate-x-1 transition-transform inline-block">→</span>
-                        </div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="inline-block px-2.5 py-1 rounded-full text-xs font-bold text-white"
+                          style={{ background: CATEGORIES[program.category].color }}>
+                          {program.degreeType}
+                        </span>
+                        {program.jobPlacementRate && (
+                          <span className="text-xs font-semibold" style={{ color: 'oklch(0.50 0.03 261)' }}>
+                            {program.jobPlacementRate}%
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="font-bold mb-2 leading-snug"
+                        style={{ fontSize: '0.97rem', color: 'oklch(0.16 0.04 261)' }}>
+                        {program.name}
+                      </h3>
+                      <p className="text-xs mb-4 flex-1" style={{ color: 'oklch(0.45 0.04 261)', lineHeight: 1.65 }}>
+                        {program.description}
+                      </p>
+                      <div className="flex flex-wrap gap-1.5 mb-3">
+                        {program.deliveryModes.map(mode => (
+                          <span key={mode} className="text-xs px-2 py-0.5 rounded-full"
+                            style={{ background: 'oklch(0 0 0 / 0.06)', color: 'oklch(0.40 0.04 261)' }}>
+                            {DELIVERY_MODES[mode].label}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex items-center justify-between pt-3"
+                        style={{ borderTop: '1px solid oklch(0 0 0 / 0.07)' }}>
+                        <span className="text-xs font-semibold" style={{ color: 'oklch(0.50 0.03 261)' }}>
+                          {program.duration}
+                        </span>
+                        <span style={{ color: 'var(--lscc-eyebrow)' }} className="group-hover:translate-x-1 transition-transform inline-block text-sm">→</span>
                       </div>
                     </article>
                   </Link>

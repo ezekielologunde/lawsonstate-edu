@@ -2,9 +2,10 @@ import type { Metadata } from 'next'
 import { Poppins, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
 import AnnouncementBanner from '@/components/announcement-banner'
-import DynamicIsland from '@/components/dynamic-island'
 import ClickRipple from '@/components/click-ripple'
 import PageLoader from '@/components/page-loader'
+import NavigationProgress from '@/components/navigation-progress'
+import AdvisingBot from '@/components/advising-bot'
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -61,10 +62,12 @@ export default function RootLayout({
         <PageLoader />
         {/* Sets --lscc-banner-h synchronously before first paint so nav never jumps */}
         <script dangerouslySetInnerHTML={{ __html: `(function(){try{if(!sessionStorage.getItem('lscc-banner-dismissed-summer2026'))document.documentElement.style.setProperty('--lscc-banner-h','44px')}catch(e){}})()` }} />
+        <NavigationProgress />
         <AnnouncementBanner />
         {children}
-        <DynamicIsland />
         <ClickRipple />
+        {/* Cora — advising + site-search assistant, available site-wide */}
+        <AdvisingBot />
       </body>
     </html>
   )

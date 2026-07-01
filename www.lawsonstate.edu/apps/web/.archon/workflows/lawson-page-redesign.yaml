@@ -1,0 +1,282 @@
+name: lawson-page-redesign
+description: |
+  Use when: Applying the Lawson State design system to a single page.
+  Input: Path to a page file, e.g. "app/about/page.tsx"
+  Does: Audits the page → plans fixes → implements → validates TypeScript → commits.
+  Fixes applied:
+    - Hero: dark canvas oklch(0.22 0.17 261) with gradient overlay, white h1, gold eyebrow
+    - Eyebrow on dark bg: oklch(0.79 0.19 78) — on light bg: var(--lscc-eyebrow)
+    - Gold badges (oklch(0.79 0.19 78) bg) must use dark ink oklch(0.11 0.03 261), never white
+    - External links: <a target="_blank" rel="noopener noreferrer"> + sr-only "(opens in new tab)"
+    - Breadcrumb text: oklch(1 0 0 / 0.55) on dark heroes
+    - Ghost CTAs on dark: border oklch(1 0 0 / 0.28), color white
+    - File must stay under 500 lines
+  NOT for: Creating new pages, multi-page sweeps (use lawson-sweep-all for that).
+
+provider: claude
+model: large
+
+nodes:
+  # ═══════════════════════════════════════════════════════════════
+  # PHASE 1: AUDIT — Read the page and identify all violations
+  # Read-only: no edits
+  # ═══════════════════════════════════════════════════════════════
+
+  - id: audit
+    prompt: |
+      You are auditing a Lawson State Community College Next.js page for design system violations.
+
+      ## Target Page
+      $ARGUMENTS
+
+      ## Design Rules to Check
+
+      ### Hero Section
+      - Background MUST be `oklch(0.22 0.17 261)` (dark navy canvas)
+      - If hero uses `oklch(0.95 0.03 255)` or any light value → VIOLATION
+      - Must have a gradient overlay div: `aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }}`
+      - h1 must use `color: 'white'`
+      - Subtitle/description must use `color: 'oklch(1 0 0 / 0.70)'`
+      - Eyebrow (small uppercase label above h1) must use `color: 'oklch(0.79 0.19 78)'`
+      - Breadcrumb links: `color: 'oklch(1 0 0 / 0.55)'`, active crumb: `color: 'oklch(1 0 0 / 0.85)'`
+      - Ghost CTAs: `border: '1.5px solid oklch(1 0 0 / 0.28)'`, `color: 'white'`
+
+      ### Eyebrow Token on Light Sections
+      - On light/white background sections, eyebrow must use `color: 'var(--lscc-eyebrow)'`
+      - Hardcoded values like `oklch(0.60 0.12 68)`, `oklch(0.55 0.15 68)`, `oklch(0.48 0.13 66)` → VIOLATION
+
+      ### Gold Badge Contrast
+      - Any element with `background: 'oklch(0.79 0.19 78)'` (gold) must use `color: 'oklch(0.11 0.03 261)'` (dark navy ink)
+      - `color: 'white'` on a gold background → VIOLATION (fails WCAG contrast)
+
+      ### External Link A11y
+      - Links with `target="_blank"` must have `rel="noopener noreferrer"`
+      - Links with `target="_blank"` must render a `<span className="sr-only"> (opens in new tab)</span>` inside them
+      - `<Link href="https://...">` for external URLs → should be `<a>` tag
+      - Missing sr-only hint on external link → VIOLATION
+
+      ### File Size
+      - File must be under 500 lines
+      - If over 500 lines → flag but do not split (out of scope for this workflow)
+
+      ## Instructions
+
+      1. Read the target file: $ARGUMENTS
+      2. Check every rule above
+      3. Write your audit to `$ARTIFACTS_DIR/audit.md` with this format:
+
+      ### File: [path]
+      ### Line Count: [n]
+
+      #### Hero Section
+      - Current background: [value]
+      - Status: PASS | FAIL
+      - Issues: [list or "none"]
+
+      #### Eyebrow Token
+      - Status: PASS | FAIL
+      - Issues: [list specific hardcoded values at line numbers]
+
+      #### Gold Badge Contrast
+      - Status: PASS | FAIL
+      - Issues: [list or "none"]
+
+      #### External Link A11y
+      - Status: PASS | FAIL
+      - Issues: [list specific links missing sr-only at line numbers]
+
+      #### File Size
+      - Lines: [n]
+      - Status: PASS | WARN (over 500)
+
+      #### Summary
+      VIOLATIONS: [count]
+      CHANGES NEEDED: [yes/no]
+    denied_tools: [Edit, Bash]
+
+  # ═══════════════════════════════════════════════════════════════
+  # PHASE 2: PLAN — Produce a precise change list
+  # Read-only: no edits
+  # ═══════════════════════════════════════════════════════════════
+
+  - id: plan
+    prompt: |
+      You are planning precise code changes for a Lawson State page redesign.
+
+      ## Audit Results
+      $audit.output
+
+      ## Target File
+      $ARGUMENTS
+
+      ## Instructions
+
+      1. Read the audit from `$ARTIFACTS_DIR/audit.md`
+      2. If the audit says "CHANGES NEEDED: no" → write `$ARTIFACTS_DIR/plan.md` with
+         "NO_CHANGES_NEEDED" and stop.
+      3. Otherwise, read the full target file to understand its exact current structure
+      4. Write a precise change list to `$ARTIFACTS_DIR/plan.md`:
+
+      For EACH violation, write:
+      ```
+      ## Change [N]: [short description]
+      Line(s): [line numbers]
+      Current: [exact current code — copy verbatim from file]
+      Replace with: [exact new code]
+      Reason: [which rule this fixes]
+      ```
+
+      ### Dark Canvas Hero Template (when hero needs updating)
+
+      The hero section style must become:
+      ```tsx
+      style={{ background: 'oklch(0.22 0.17 261)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end', position: 'relative', overflow: 'hidden' }}
+      ```
+      Add immediately inside the section (before content div):
+      ```tsx
+      <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.97) 0%, oklch(0.18 0.15 262 / 0.80) 100%)' }} />
+      ```
+      Content wrapper div must have `style={{ position: 'relative', zIndex: 1 }}`.
+
+      Be exact — the implementing agent will follow this plan literally.
+    depends_on: [audit]
+    context: fresh
+    denied_tools: [Edit, Bash]
+
+  # ═══════════════════════════════════════════════════════════════
+  # PHASE 3: IMPLEMENT — Apply all planned changes
+  # ═══════════════════════════════════════════════════════════════
+
+  - id: implement
+    prompt: |
+      You are implementing a precise set of code changes to a Lawson State page.
+
+      ## Plan
+      Read the full plan from `$ARTIFACTS_DIR/plan.md`.
+
+      ## Rules
+
+      - If the plan says "NO_CHANGES_NEEDED" → respond "No changes needed." and stop.
+      - Follow the plan EXACTLY — do not add improvements beyond what's listed
+      - After EVERY Edit, pause and mentally verify the change matches the plan
+      - Keep curly apostrophes out of JS string literals — use `&apos;` in JSX or double-quoted strings
+      - Never add `Co-Authored-By` to commits
+      - Never commit `.env` files or secrets
+
+      ## Process
+
+      1. Read the plan from `$ARTIFACTS_DIR/plan.md`
+      2. Read the target file: $ARGUMENTS
+      3. Apply each change in order using Edit
+      4. After all changes, write a brief summary to `$ARTIFACTS_DIR/implementation.md`
+         listing what was changed and why
+    depends_on: [plan]
+    context: fresh
+    hooks:
+      PostToolUse:
+        - matcher: "Write|Edit"
+          response:
+            systemMessage: >
+              You just edited a file. Before making another change:
+              1. Check the next item in the plan
+              2. Verify your last edit matches what the plan specified
+              3. Do NOT run TypeScript yet — that happens in the validate node
+
+  # ═══════════════════════════════════════════════════════════════
+  # PHASE 4: VALIDATE — TypeScript check
+  # ═══════════════════════════════════════════════════════════════
+
+  - id: validate
+    bash: |
+      echo "=== TypeScript Check ==="
+      cd "$(dirname "$ARGUMENTS")/../.."
+      # Walk up to find the tsconfig
+      DIR="$PWD"
+      while [ "$DIR" != "/" ] && [ ! -f "$DIR/tsconfig.json" ]; do
+        DIR=$(dirname "$DIR")
+      done
+      if [ -f "$DIR/tsconfig.json" ]; then
+        npx tsc --noEmit -p "$DIR/tsconfig.json" 2>&1
+        TS_EXIT=$?
+      else
+        echo "No tsconfig.json found, running from current dir"
+        npx tsc --noEmit 2>&1
+        TS_EXIT=$?
+      fi
+      echo ""
+      if [ $TS_EXIT -eq 0 ]; then
+        echo "VALIDATION_STATUS: PASS"
+      else
+        echo "VALIDATION_STATUS: FAIL"
+      fi
+    depends_on: [implement]
+    timeout: 60000
+
+  # ═══════════════════════════════════════════════════════════════
+  # PHASE 5: FIX — Resolve any TypeScript errors
+  # ═══════════════════════════════════════════════════════════════
+
+  - id: fix-ts-errors
+    prompt: |
+      Review the TypeScript validation output.
+
+      ## Validation Output
+      $validate.output
+
+      ## Instructions
+
+      If output ends with "VALIDATION_STATUS: PASS" → respond "TypeScript clean." and stop.
+
+      If there are errors:
+      1. Read each error carefully — note the file, line, and error message
+      2. Read the offending file
+      3. Fix ONLY the TypeScript error — do not refactor or improve surrounding code
+      4. Common Lawson TS errors:
+         - Curly/smart apostrophes (`'`) inside single-quoted JS strings → switch to double quotes or use `’`
+         - Stale `.next/types/validator.ts` errors → these are cache issues, ignore them (they're not in source)
+         - Missing type on inline object → add explicit type annotation
+      5. After each fix, note it in your response
+    depends_on: [validate]
+    context: fresh
+
+  # ═══════════════════════════════════════════════════════════════
+  # PHASE 6: COMMIT
+  # ═══════════════════════════════════════════════════════════════
+
+  - id: commit
+    prompt: |
+      Commit the changes to the page.
+
+      ## Context
+      - Target: $ARGUMENTS
+      - Implementation notes: read `$ARTIFACTS_DIR/implementation.md`
+
+      ## Instructions
+
+      If `$ARTIFACTS_DIR/implementation.md` contains "No changes needed" → respond
+      "Nothing to commit." and stop.
+
+      Otherwise:
+      1. Check git status: `git status --porcelain`
+      2. Stage ONLY the target file and any files you modified:
+         `git add [specific file paths]`
+         Never use `git add -A` or `git add .`
+      3. Write a commit message:
+         - Format: `design([page-name]): [brief description of changes]`
+         - Example: `design(about): dark canvas hero, gold eyebrow, a11y external links`
+         - Under 72 chars
+         - No `Co-Authored-By`
+      4. Commit: `git commit -m "[message]"`
+      5. Report the commit hash
+
+      **Never stage**: `.archon/`, `$ARTIFACTS_DIR/`, `.env`, `*.log`
+    depends_on: [fix-ts-errors]
+    context: fresh
+    hooks:
+      PreToolUse:
+        - matcher: "Write|Edit"
+          response:
+            hookSpecificOutput:
+              hookEventName: PreToolUse
+              permissionDecision: deny
+              permissionDecisionReason: "Commit node — do not edit source files. Use only Bash for git commands."

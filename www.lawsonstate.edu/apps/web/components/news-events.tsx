@@ -34,12 +34,13 @@ function formatStoryDate(iso: string): string {
 }
 
 export default function NewsEvents({
-  featuredStory,
+  stories,
   events,
 }: {
-  featuredStory: NewsStory | null
+  stories: NewsStory[]
   events: CalendarEvent[]
 }) {
+  const [featuredStory, ...moreStories] = stories
   return (
     <section
       style={{ background: 'oklch(0.14 0.10 261)', paddingBlock: '5rem' }}
@@ -50,7 +51,7 @@ export default function NewsEvents({
         {/* Header */}
         <div className="flex items-end justify-between mb-12 scroll-reveal">
           <div>
-            <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'oklch(0.79 0.19 78)', marginBottom: '0.4rem', fontWeight: 700 }}>
+            <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--lscc-eyebrow-on-dark)', marginBottom: '0.4rem', fontWeight: 700 }}>
               06 — Campus life
             </p>
             <h2
@@ -62,7 +63,7 @@ export default function NewsEvents({
           </div>
           <div className="hidden md:flex gap-5">
             <Link
-              href="/calendar"
+              href="/news"
               className="inline-flex items-center gap-1 font-semibold transition-colors"
               style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}
             >
@@ -99,6 +100,8 @@ export default function NewsEvents({
                   src={featuredStory.image_url ?? 'https://www.lawsonstate.edu/_resources/assets/img/Lawson%20State%20Pic%204.jpg'}
                   alt={featuredStory.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
                 />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0"
@@ -168,7 +171,7 @@ export default function NewsEvents({
             style={{ background: 'oklch(0.22 0.16 261)' }}
           >
             <div className="px-5 pt-5 pb-4" style={{ borderBottom: '1px solid oklch(1 0 0 / 0.10)' }}>
-              <p style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'oklch(0.79 0.19 78)', fontWeight: 700 }}>
+              <p style={{ fontSize: '0.72rem', letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--lscc-eyebrow-on-dark)', fontWeight: 700 }}>
                 Upcoming Events
               </p>
             </div>
@@ -189,7 +192,7 @@ export default function NewsEvents({
                         className="shrink-0 flex flex-col items-center justify-center rounded-xl"
                         style={{ width: '44px', height: '44px', background: 'oklch(0.30 0.20 261)' }}
                       >
-                        <span style={{ fontSize: '0.52rem', fontWeight: 700, letterSpacing: '0.10em', color: 'oklch(0.79 0.19 78)', lineHeight: 1 }}>
+                        <span style={{ fontSize: '0.52rem', fontWeight: 700, letterSpacing: '0.10em', color: 'var(--lscc-eyebrow-on-dark)', lineHeight: 1 }}>
                           {month}
                         </span>
                         <span className="font-display font-black text-white leading-none" style={{ fontSize: '1.3rem', letterSpacing: '-0.03em' }}>
@@ -233,9 +236,49 @@ export default function NewsEvents({
           </div>
         </div>
 
+        {/* More campus news — fills out the section with the rest of what's published
+            instead of stopping at a single featured story. */}
+        {moreStories.length > 0 && (
+          <div className="stagger-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
+            {moreStories.map((story) => (
+              <Link
+                key={story.id}
+                href={story.href ?? '/news'}
+                className="group flex gap-4 rounded-2xl overflow-hidden p-3 transition-colors hover:bg-white/5"
+              >
+                <div className="relative shrink-0 overflow-hidden rounded-xl" style={{ width: '92px', height: '92px' }}>
+                  <img
+                    src={story.image_url ?? 'https://www.lawsonstate.edu/_resources/assets/img/Lawson%20State%20Pic%204.jpg'}
+                    alt={story.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="flex flex-col justify-center min-w-0">
+                  <p style={{ fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--lscc-eyebrow-on-dark)', fontWeight: 700, marginBottom: '0.3rem' }}>
+                    {story.category ?? 'Campus News'}
+                  </p>
+                  <p
+                    className="text-sm font-semibold leading-snug text-white"
+                    style={{
+                      display: '-webkit-box',
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: 'vertical',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    {story.title}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
+
         {/* Mobile links */}
         <div className="md:hidden flex gap-6 mt-8" style={{ borderTop: '1px solid oklch(1 0 0 / 0.08)', paddingTop: '1.5rem' }}>
-          <Link href="/calendar" className="font-semibold" style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}>All News →</Link>
+          <Link href="/news" className="font-semibold" style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}>All News →</Link>
           <Link href="/calendar" className="font-semibold" style={{ fontSize: '0.82rem', color: 'oklch(0.79 0.19 78)' }}>Full Calendar →</Link>
         </div>
       </div>

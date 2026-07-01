@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
@@ -29,17 +30,17 @@ const ORGS = [
   {
     name: 'Honor Societies',
     desc: 'High-achieving students may be invited to join a program-specific honor society — a resume builder and network amplifier.',
-    href: '/campus-life/honor-societies',
+    href: 'mailto:tburns@lawsonstate.edu',
   },
   {
     name: 'Miss Lawson State & Court',
     desc: 'Annual celebration honoring high-achieving women with a ceremony, dancing, and community recognition.',
-    href: '/campus-life/miss-lawson-state',
+    href: 'mailto:tburns@lawsonstate.edu',
   },
   {
     name: 'FBLA Collegiate',
     desc: 'Future Business Leaders of America chapter for Business & IT students. Build professional skills, compete, and network.',
-    href: '/programs?area=business-it',
+    href: '/academics',
   },
 ]
 
@@ -47,44 +48,44 @@ const SUPPORT_SERVICES = [
   {
     name: 'Academic Support',
     desc: 'In-person and virtual tutoring, counseling, and testing services. Free 24/7 access to Tutor.com (500+ subjects). Also includes the R.A.C.E Advising Center and S.P.A.C.E. Center on both campuses.',
-    href: '/support/academic',
+    href: '/student-resources/tutoring',
   },
   {
     name: 'Career Services',
     desc: 'Resume builder, mock interviews, job board (College Central), Career Coach assessments, annual Career & Community Resource Fair. On-campus visits from 4-year colleges every week.',
-    href: '/support/career',
+    href: '/student-resources/career',
   },
   {
     name: 'Health & Wellness',
     desc: 'Physical and mental health resources. Lawson State is a Caring Campus. Access the Cougar Pantry for food assistance, and the Cougar Clothing Closet for professional attire.',
-    href: '/support/health',
+    href: '/student-resources/health',
   },
   {
     name: 'Disability Support (ADA)',
     desc: 'Academic accommodations for students with disabilities. Apply online and connect with our counselors for a personalized accommodation plan.',
-    href: '/support/ada',
+    href: '/student-resources/disability',
   },
   {
     name: 'TRiO Programs',
     desc: 'Individualized academic support, workshops, cultural enrichment, and financial habit-building. Open to qualifying first-generation and low-income students.',
-    href: '/support/trio',
+    href: '/student-resources/trio',
   },
   {
     name: 'Veterans Services',
     desc: 'Help deciphering VA education benefits, Cougar Professional Wear for Veterans, and specialized counseling. Serving those who served.',
-    href: '/support/veterans',
+    href: '/admissions/veterans',
   },
 ]
 
 const RESOURCES = [
-  { name: 'MyLawson Student Portal', desc: 'Register, view grades, pay bills, access email', href: 'https://my.lawsonstate.edu' },
-  { name: 'Canvas LMS', desc: 'Online courses, assignments, grades', href: 'https://lawsonstate.instructure.com' },
-  { name: 'Tutor.com', desc: 'Free 24/7 tutoring, 500+ subjects', href: 'https://tutor.com' },
-  { name: 'Bookstore', desc: 'Birmingham Campus — 205.929.6010', href: 'https://lawsonstatebirmingham.bkstr.com' },
-  { name: 'Help Desk', desc: 'help@lawsonstate.edu', href: 'mailto:help@lawsonstate.edu' },
-  { name: 'Library', desc: 'Research, databases, study spaces', href: 'https://lawsonstate.edu/Library' },
-  { name: 'Cengage Unlimited', desc: '$214.99/yr — 65+ courses covered', href: 'https://cengage.com' },
-  { name: 'Cougar Alert', desc: 'Emergency notification system', href: '/campus-life/cougar-alert' },
+  { name: 'MyLawson Student Portal', desc: 'Register, view grades, pay bills, access email', href: '/portal',                              external: false },
+  { name: 'Canvas LMS',              desc: 'Online courses, assignments, grades',            href: 'https://alabama.instructure.com',   external: true },
+  { name: 'Tutor.com',               desc: 'Free 24/7 tutoring, 500+ subjects',              href: 'https://tutor.com',                     external: true },
+  { name: 'Bookstore',               desc: 'Birmingham Campus — 205.929.6010',               href: 'https://lawsonstatebirmingham.bkstr.com', external: true },
+  { name: 'Help Desk',               desc: 'help@lawsonstate.edu',                           href: 'mailto:help@lawsonstate.edu',            external: false },
+  { name: 'Library',                 desc: 'Research, databases, study spaces',               href: '/library',                              external: false },
+  { name: 'Cengage Unlimited',       desc: '$214.99/yr — 65+ courses covered',               href: 'https://cengage.com',                   external: true },
+  { name: 'Cougar Alert',            desc: 'Emergency notification system',                   href: '/contact',                              external: false },
 ]
 
 export default function CampusLifePage() {
@@ -95,14 +96,31 @@ export default function CampusLifePage() {
       {/* Hero */}
       <section
         className="page-hero relative py-20 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.95 0.03 255)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
+        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
       >
+        <HeroPhoto src="https://live.staticflickr.com/65535/55282695209_241aa02f03_c.jpg" alt="Student life at Lawson State" position="center 35%" />
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>Cougars · Birmingham & Bessemer</p>
-          <h1 className="font-display font-black leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>CAMPUS LIFE</h1>
-          <p className="max-w-xl" style={{ fontSize: 'clamp(1.05rem, 1.6vw, 1.2rem)', lineHeight: 1.7, color: 'oklch(0.40 0.04 261)' }}>
-            If you're looking for a place where you can grow and develop into a leader who will make a difference, you're in the right place.
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>Cougars · Birmingham & Bessemer</p>
+          <h1 className="font-display font-black leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em', color: 'white' }}>CAMPUS LIFE</h1>
+          <p className="max-w-xl" style={{ fontSize: 'clamp(1.05rem, 1.6vw, 1.2rem)', lineHeight: 1.7, color: 'oklch(1 0 0 / 0.70)' }}>
+            If you&apos;re looking for a place where you can grow and develop into a leader who will make a difference, you&apos;re in the right place.
           </p>
+          <div className="flex flex-wrap gap-3 mt-8">
+            <Link
+              href="/admissions"
+              className="press btn-shimmer font-bold px-6 py-3 rounded-lg inline-block"
+              style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '1rem' }}
+            >
+              Get Involved →
+            </Link>
+            <a
+              href="mailto:tburns@lawsonstate.edu"
+              className="press font-semibold px-6 py-3 rounded-lg inline-block"
+              style={{ border: '1.5px solid oklch(1 0 0 / 0.28)', fontSize: '1rem', color: 'white' }}
+            >
+              Contact Student Life
+            </a>
+          </div>
         </div>
       </section>
 
@@ -150,6 +168,11 @@ export default function CampusLifePage() {
               </div>
             ))}
           </div>
+          <div className="mb-4">
+            <Link href="/campus-life/athletics" className="press btn-shimmer inline-flex items-center font-bold px-6 py-3 rounded-lg" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.95rem' }}>
+              View All 14 Sports →
+            </Link>
+          </div>
           <div className="rounded-2xl p-6 scroll-reveal" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
@@ -189,6 +212,11 @@ export default function CampusLifePage() {
                 </Link>
               </div>
             ))}
+          </div>
+          <div className="mb-4">
+            <Link href="/campus-life/clubs" className="press btn-shimmer inline-flex items-center font-bold px-6 py-3 rounded-lg" style={{ background: 'oklch(0.79 0.19 78)', color: 'oklch(0.11 0.03 261)', fontSize: '0.95rem' }}>
+              Browse All Clubs →
+            </Link>
           </div>
           <div className="rounded-2xl p-6 scroll-reveal" style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}>
             <p className="mb-3" style={{ fontSize: '1.05rem', color: 'oklch(0.40 0.04 261)' }}>
@@ -248,17 +276,23 @@ export default function CampusLifePage() {
             <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>STUDENT RESOURCES</h2>
           </div>
           <div className="stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {RESOURCES.map(r => (
-              <Link
-                key={r.name}
-                href={r.href}
-                className="card-lift press rounded-xl p-5 block"
-                style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}
-              >
-                <h3 className="font-display font-bold mb-1" style={{ fontSize: '1.05rem', color: 'oklch(0.16 0.04 261)' }}>{r.name}</h3>
-                <p style={{ fontSize: '0.92rem', color: 'oklch(0.50 0.03 261)' }}>{r.desc}</p>
-              </Link>
-            ))}
+            {RESOURCES.map(r => {
+              const cls = "card-lift press rounded-xl p-5 block"
+              const sty = { background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }
+              const inner = (
+                <>
+                  <h3 className="font-display font-bold mb-1" style={{ fontSize: '1.05rem', color: 'oklch(0.16 0.04 261)' }}>
+                    {r.name}{r.external && <span className="sr-only"> (opens in new tab)</span>}
+                  </h3>
+                  <p style={{ fontSize: '0.92rem', color: 'oklch(0.50 0.03 261)' }}>{r.desc}</p>
+                </>
+              )
+              return r.external ? (
+                <a key={r.name} href={r.href} target="_blank" rel="noopener noreferrer" className={cls} style={sty}>{inner}</a>
+              ) : (
+                <Link key={r.name} href={r.href} className={cls} style={sty}>{inner}</Link>
+              )
+            })}
           </div>
         </div>
       </section>

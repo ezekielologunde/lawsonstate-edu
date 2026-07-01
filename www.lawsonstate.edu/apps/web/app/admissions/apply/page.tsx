@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import HeroPhoto from '@/components/hero-photo'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
 import SiteFooter from '@/components/site-footer'
@@ -17,7 +18,7 @@ const STEPS = [
     title: 'Complete the Application',
     body: 'Our online application process is free and easy to complete. Complete your free general admissions application and review the General Admissions Table to see what you must submit.',
     extras: [
-      { label: 'Start your free application', href: 'https://lawsonstate.edu/admissions/default.aspx' },
+      { label: 'Start your free application', href: 'https://lawsonstate.my.site.com/apply/TX_SiteLogin?startURL=%2Fapply%2FTargetX_Base__Portal' },
       { label: 'Contact an Enrollment Specialist', href: '#specialists' },
     ],
   },
@@ -26,7 +27,7 @@ const STEPS = [
     title: 'Submit Required Admissions Documents',
     body: 'Log back into your Lawson State Application portal to view the required admissions checklist. These documents must be submitted to the Admissions & Enrollment Services Office to complete your general admissions process.',
     extras: [
-      { label: 'Log in to your Application Portal', href: 'https://lawsonstate.edu/admissions/default.aspx' },
+      { label: 'Log in to your Application Portal', href: 'https://lawsonstate.my.site.com/apply/TX_SiteLogin?startURL=%2Fapply%2FTargetX_Base__Portal' },
     ],
   },
   {
@@ -41,7 +42,7 @@ const STEPS = [
     title: 'Confirm Your Admission Status',
     body: 'Log back into your Lawson State Application Portal and confirm that all admissions requirements are complete. You will receive a communication confirming your acceptance status.',
     extras: [
-      { label: 'Log in to Application Portal', href: 'https://lawsonstate.edu/admissions/default.aspx' },
+      { label: 'Log in to Application Portal', href: 'https://lawsonstate.my.site.com/apply/TX_SiteLogin?startURL=%2Fapply%2FTargetX_Base__Portal' },
     ],
   },
 ]
@@ -66,6 +67,7 @@ const SUBNAV = [
   { label: 'Transient Students',           href: '/admissions/transient' },
   { label: 'Admissions Policies & Forms',  href: '/admissions/policies' },
   { label: 'Dual Enrollment',              href: '/admissions/dual-enrollment' },
+  { label: 'Veterans & Military',          href: '/admissions/veterans' },
 ]
 
 export default function ApplyPage() {
@@ -75,23 +77,28 @@ export default function ApplyPage() {
 
       {/* Hero */}
       <section
-        className="page-hero relative py-14 px-6 overflow-hidden"
-        style={{ background: 'oklch(0.42 0.17 261)', minHeight: '24vh', display: 'flex', alignItems: 'flex-end' }}
+        className="page-hero relative px-6 overflow-hidden"
+        style={{ background: 'oklch(0.22 0.17 261)', minHeight: '34vh', display: 'flex', alignItems: 'flex-end', paddingTop: '8rem', paddingBottom: '4rem' }}
       >
-        <div className="absolute inset-0" aria-hidden
-          style={{ background: 'linear-gradient(to right, oklch(0.42 0.17 261 / 0.97) 0%, oklch(0.38 0.15 263 / 0.75) 100%)' }} />
+        <HeroPhoto src="https://www.lawsonstate.edu/_resources/assets/img/News/free-application-week-2026.webp" alt="Apply to Lawson State Community College" position="center 30%" />
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.45)' }}>
+          <p className="text-sm mb-2" style={{ color: 'oklch(1 0 0 / 0.50)' }}>
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span className="mx-2" aria-hidden>›</span>
             <Link href="/admissions" className="hover:text-white transition-colors">How to Apply</Link>
             <span className="mx-2" aria-hidden>›</span>
             <span style={{ color: 'oklch(0.79 0.19 78)' }}>First Time Students</span>
           </p>
-          <h1 className="font-display font-black text-white leading-none"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.6rem)', letterSpacing: '-0.025em' }}>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.82rem', letterSpacing: '0.22em' }}>
+            Free Application · Rolling Admissions
+          </p>
+          <h1 className="font-display font-black text-white leading-none mb-4"
+            style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)', letterSpacing: '-0.025em' }}>
             HOW TO APPLY
           </h1>
+          <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.15rem)', color: 'oklch(1 0 0 / 0.70)', maxWidth: '56ch', lineHeight: 1.7 }}>
+            Our online application is free and takes minutes. Follow four steps to complete your admissions process and get started at Lawson State.
+          </p>
         </div>
       </section>
 
@@ -120,6 +127,7 @@ export default function ApplyPage() {
       <section className="py-14 px-6" style={{ background: 'white' }}>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 items-start">
           <div>
+            <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>First Time Students</p>
             <h2 className="font-display font-black text-lscc-ink mb-4" style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', letterSpacing: '-0.02em' }}>
               TAKE THE FIRST STEP TOWARD YOUR FUTURE
             </h2>
@@ -130,7 +138,7 @@ export default function ApplyPage() {
               Our online application process is <strong className="text-lscc-ink">free and easy to complete.</strong> If you need help, reach out to us. We are here to help!
             </p>
             <a
-              href="https://lawsonstate.edu/admissions/default.aspx"
+              href="https://lawsonstate.my.site.com/apply/TX_SiteLogin?startURL=%2Fapply%2FTargetX_Base__Portal"
               target="_blank"
               rel="noopener noreferrer"
               className="press btn-shimmer inline-flex items-center font-bold px-8 py-3.5 rounded-xl"
@@ -160,6 +168,7 @@ export default function ApplyPage() {
       {/* 4-Step Process */}
       <section className="py-16 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
         <div className="max-w-7xl mx-auto">
+          <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>Step-by-Step</p>
           <h2 className="font-display font-black text-lscc-ink mb-10" style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', letterSpacing: '-0.02em' }}>
             THE APPLICATION PROCESS
           </h2>
@@ -260,6 +269,7 @@ export default function ApplyPage() {
       {/* Next Steps */}
       <section className="py-16 px-6" style={{ background: 'white' }}>
         <div className="max-w-7xl mx-auto">
+          <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow)', fontSize: '0.78rem', letterSpacing: '0.22em' }}>After Acceptance</p>
           <h2 className="font-display font-black text-lscc-ink mb-10"
             style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', letterSpacing: '-0.02em' }}>
             NEXT STEPS AFTER ACCEPTANCE

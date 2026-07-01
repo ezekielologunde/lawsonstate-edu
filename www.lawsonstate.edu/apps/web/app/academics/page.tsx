@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import Nav from '@/components/nav'
 import Prefooter from '@/components/prefooter'
@@ -28,6 +29,7 @@ const DIVISIONS: Division[] = [
     href: '/programs?area=career-technical',
     bg: 'white',
     dark: false,
+    icon: 'career-technical',
   },
   {
     id: 'college-transfer',
@@ -45,6 +47,7 @@ const DIVISIONS: Division[] = [
     href: '/programs?area=college-transfer',
     bg: 'white',
     dark: false,
+    icon: 'college-transfer',
   },
   {
     id: 'health-professions',
@@ -64,6 +67,7 @@ const DIVISIONS: Division[] = [
     href: '/programs?area=health-professions',
     bg: 'white',
     dark: false,
+    icon: 'health-professions',
   },
   {
     id: 'business-it',
@@ -82,6 +86,7 @@ const DIVISIONS: Division[] = [
     href: '/programs?area=business-it',
     bg: 'white',
     dark: false,
+    icon: 'business-it',
   },
 ]
 
@@ -129,16 +134,18 @@ export default function AcademicsPage() {
         className="page-hero relative py-20 px-6 overflow-hidden"
         style={{ background: 'oklch(0.22 0.17 261)', minHeight: '38vh', display: 'flex', alignItems: 'flex-end' }}
       >
-        <img
+        <Image
           src="https://live.staticflickr.com/65535/55214074644_fb8b844f53_c.jpg"
           alt=""
-          aria-hidden
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          loading="eager"
+          aria-hidden="true"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
         />
         <div className="absolute inset-0" aria-hidden style={{ background: 'linear-gradient(to right, oklch(0.22 0.17 261 / 0.96) 0%, oklch(0.22 0.17 261 / 0.80) 55%, oklch(0.16 0.13 263 / 0.55) 100%)' }} />
         <div className="relative max-w-7xl mx-auto w-full">
-          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'oklch(0.79 0.19 78)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>Degrees · Certificates · Skills Training</p>
+          <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '1.08rem', letterSpacing: '0.22em' }}>Degrees · Certificates · Skills Training</p>
           <h1 className="font-display font-black text-white leading-none mb-4" style={{ fontSize: 'clamp(2.8rem, 6.5vw, 5.5rem)', letterSpacing: '-0.025em' }}>200+ PROGRAMS</h1>
           <p className="text-white/75 max-w-xl" style={{ fontSize: 'clamp(1.05rem, 1.6vw, 1.2rem)', lineHeight: 1.7 }}>
             Whether you want to enter the workforce or transfer to a four-year college, Lawson State has hundreds of programs to equip you with the knowledge to succeed.
@@ -174,7 +181,7 @@ export default function AcademicsPage() {
       </div>
 
       {/* Division cards */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
+      <section className="px-6" style={{ background: 'oklch(0.95 0.03 255)', paddingBlock: '6.5rem' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Program Divisions</p>
@@ -185,7 +192,7 @@ export default function AcademicsPage() {
       </section>
 
       {/* Find Your Program — routes into the faceted finder (the single catalog) */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
+      <section className="px-6" style={{ background: 'oklch(0.92 0.05 255)', paddingBlock: '3.5rem' }}>
         <div className="max-w-7xl mx-auto">
           <div className="relative rounded-3xl overflow-hidden scroll-reveal"
             style={{ background: 'oklch(0.22 0.17 261)' }}>
@@ -196,7 +203,7 @@ export default function AcademicsPage() {
             }} />
             <div className="relative px-8 py-14 md:px-14 md:py-16 text-center">
               <p className="font-display font-semibold uppercase mb-3"
-                style={{ color: 'oklch(0.79 0.19 78)', fontSize: '0.92rem', letterSpacing: '0.2em' }}>
+                style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.92rem', letterSpacing: '0.2em' }}>
                 Know what you want?
               </p>
               <h2 className="font-display font-black text-white leading-none mb-4"
@@ -222,30 +229,43 @@ export default function AcademicsPage() {
       </section>
 
       {/* Specialty programs */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
+      <section className="px-6" style={{ background: 'oklch(0.95 0.03 255)', paddingBlock: '5rem' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Beyond the Classroom</p>
             <h2 className="font-display font-black leading-none" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)', letterSpacing: '-0.025em', color: 'oklch(0.16 0.04 261)' }}>SPECIALTY PROGRAMS</h2>
           </div>
-          <div className="stagger-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {SPECIALTY.map(s => (
-              <Link
-                key={s.name}
-                href={s.href}
-                className="card-lift press rounded-2xl p-6 block"
-                style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}
-              >
-                <h3 className="font-display font-bold mb-2" style={{ fontSize: '1.08rem', letterSpacing: '-0.01em', color: 'oklch(0.16 0.04 261)' }}>{s.name}</h3>
-                <p className="leading-relaxed" style={{ fontSize: '0.96rem', color: 'oklch(0.40 0.04 261)' }}>{s.desc}</p>
-              </Link>
-            ))}
+          <div className="stagger-grid flex flex-col lg:flex-row gap-5">
+            {/* First entry (STEM) is the deepest, most distinctive program — give it room
+                to breathe as a spotlight instead of matching the other three cards exactly. */}
+            <Link
+              href={SPECIALTY[0].href}
+              className="card-lift press rounded-2xl p-8 flex flex-col justify-end lg:w-[38%]"
+              style={{ background: 'oklch(0.22 0.17 261)', minHeight: '260px' }}
+            >
+              <p className="font-display font-semibold uppercase mb-2" style={{ color: 'var(--lscc-eyebrow-on-dark)', fontSize: '0.76rem', letterSpacing: '0.18em' }}>Featured</p>
+              <h3 className="font-display font-black mb-3 leading-tight" style={{ fontSize: '1.6rem', letterSpacing: '-0.02em', color: 'white' }}>{SPECIALTY[0].name}</h3>
+              <p className="leading-relaxed" style={{ fontSize: '0.98rem', color: 'oklch(1 0 0 / 0.75)' }}>{SPECIALTY[0].desc}</p>
+            </Link>
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:flex lg:flex-col gap-5 flex-1">
+              {SPECIALTY.slice(1).map(s => (
+                <Link
+                  key={s.name}
+                  href={s.href}
+                  className="card-lift press rounded-2xl p-6 flex-1 flex flex-col justify-center"
+                  style={{ background: 'white', border: '1px solid oklch(0 0 0 / 0.08)', boxShadow: '0 8px 30px oklch(0.16 0.06 261 / 0.08)' }}
+                >
+                  <h3 className="font-display font-bold mb-2" style={{ fontSize: '1.08rem', letterSpacing: '-0.01em', color: 'oklch(0.16 0.04 261)' }}>{s.name}</h3>
+                  <p className="leading-relaxed" style={{ fontSize: '0.96rem', color: 'oklch(0.40 0.04 261)' }}>{s.desc}</p>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Workforce Development */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.92 0.05 255)' }}>
+      <section className="px-6" style={{ background: 'oklch(0.92 0.05 255)', paddingBlock: '6rem' }}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-10 scroll-reveal">
             <p className="font-display font-semibold uppercase mb-3" style={{ color: 'var(--lscc-eyebrow)', fontSize: '1.08rem', letterSpacing: '0.2em' }}>Fast-Track Training</p>
@@ -287,7 +307,7 @@ export default function AcademicsPage() {
       </section>
 
       {/* Dual Enrollment */}
-      <section className="py-20 px-6" style={{ background: 'oklch(0.95 0.03 255)' }}>
+      <section className="px-6" style={{ background: 'oklch(0.95 0.03 255)', paddingBlock: '7rem' }}>
         <div className="max-w-7xl mx-auto scroll-reveal">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
