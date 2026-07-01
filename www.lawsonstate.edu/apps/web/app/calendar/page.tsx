@@ -1,4 +1,9 @@
-export const revalidate = 1800 // 30 min ISR — was force-dynamic, hit Supabase on every request
+// force-dynamic: the ISR build-time snapshot was baking in an empty events
+// list (Vercel's build-time static generation wasn't reliably returning fresh
+// Supabase data here, even though the same query works correctly at request
+// time and via RLS-as-anon). Real events data matters more than shaving a
+// request off a low-traffic page, so always fetch fresh per request.
+export const dynamic = 'force-dynamic'
 
 import type { Metadata } from 'next'
 import Image from 'next/image'
